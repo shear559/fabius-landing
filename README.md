@@ -4,6 +4,10 @@
 
 **Live:** [fabius-landing.vercel.app](https://fabius-landing.vercel.app)
 
+<p align="center">
+  <img src="assets/preview.webp" alt="fabius-landing — the live site" width="100%">
+</p>
+
 The repo is the whole page: a 90 KB `index.html` (fourteen `<section>` blocks, 24 inline SVG symbols, 15 of them per-skill beetles), an 80 KB `styles.css`, a 20 KB `main.js`, a self-hosted 48 KB Inter, and the 5 MB paper it serves. White canvas, one accent (`#7a3dff`). Its argument: the model is the engine, fabius supplies the operating brain — instruction, routing, skills, memory, verification — over eight implemented runtime paths (Anthropic, OpenAI, Google, Mistral, Groq, Hugging Face, OpenRouter, Ollama).
 
 ## Narrowing fourteen sections to two exits
