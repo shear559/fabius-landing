@@ -1,7 +1,7 @@
 {
   "name": "fabius — scout wide · strike narrow",
   "short_name": "fabius",
-  "description": "One autonomous agent above every major model. fabius supplies the operating brain; the selected model executes.",
+  "description": "fabius — a plugin, not a platform. One set of operating rules above every model; the model you already run executes.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

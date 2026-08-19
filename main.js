@@ -43,8 +43,8 @@
   const revealTargets = $$(
     '.sec-head, .ladder-fig, .text-link, ' +
     '.formula-band, .gate-fig, .math-work, .flow-loop, .rloop, .rescard, .uc-card, ' +
-    '.research-copy, .research-pts li, .tool-list li, .install-in, .idea-in, .core-in, ' +
-    '.voice-console, .voice-features li, .provider-card, .surface-rail, .local-terminal, .local-features li'
+    '.research-copy, .research-pts li, .idea-in, .core-in, ' +
+    '.fam-card, .route-rail, .harness-head, .harness-chip, .install-terminal, .install-points li'
   );
   if (!reduce && 'IntersectionObserver' in window) {
     // orchestrated stagger: grouped items cascade by their position within the group.
@@ -54,10 +54,9 @@
       const sibs = el.parentElement ? [...el.parentElement.children].indexOf(el) : 0;
       let i = 0;
       if (el.matches('.uc-card')) i = sibs % 3;
-      else if (el.matches('.tool-list li')) i = sibs % 2;
-      else if (el.matches('.provider-card')) i = sibs % 3;
-      else if (el.matches('.voice-features li')) i = sibs % 2;
-      else if (el.matches('.local-features li')) i = sibs % 3;
+      else if (el.matches('.fam-card')) i = sibs % 4;
+      else if (el.matches('.harness-chip')) i = sibs % 3;
+      else if (el.matches('.install-points li')) i = Math.min(sibs, 3);
       else if (el.matches('.research-pts li')) i = Math.min(sibs, 3);
       if (i) el.style.setProperty('--reveal-i', i);
     });
@@ -245,6 +244,33 @@
   if ('requestIdleCallback' in window) requestIdleCallback(buildSwarms, { timeout: 700 });
   else setTimeout(buildSwarms, 150);
 
+  /* ── install tabs — roving tabindex, arrow keys, hidden panels ── */
+  $$('[role="tablist"]').forEach((list) => {
+    const tabs = $$('[role="tab"]', list);
+    if (!tabs.length) return;
+    const panels = tabs.map((t) => document.getElementById(t.getAttribute('aria-controls')));
+    const select = (i, focus) => {
+      tabs.forEach((t, j) => {
+        const on = i === j;
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+        if (panels[j]) panels[j].hidden = !on;
+      });
+      if (focus) tabs[i].focus();
+    };
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => select(i));
+      t.addEventListener('keydown', (e) => {
+        let n = null;
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') n = (i + 1) % tabs.length;
+        else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') n = (i - 1 + tabs.length) % tabs.length;
+        else if (e.key === 'Home') n = 0;
+        else if (e.key === 'End') n = tabs.length - 1;
+        if (n !== null) { e.preventDefault(); select(n, true); }
+      });
+    });
+  });
+
   /* ── active section in nav ──────────────────────────────── */
   const links = $$('.nav-links a');
   if (links.length && 'IntersectionObserver' in window) {
@@ -264,7 +290,7 @@
 })();
 
 /* ── the system map: router → lean core → 13 layers → spine, drawn as a
-   curved fan with packets flowing along the connectors — the synapse
+   curved fan with packets flowing along the connectors — the system-map
    console view. Connectors draw in on scroll, then the packets flow.
    Reduced-motion: fully drawn, static, no packets. */
 (() => {

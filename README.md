@@ -1,6 +1,6 @@
 # fabius — landing page
 
-> **The single-page marketing site for fabius — one autonomous agent layer above interchangeable model engines — for anyone deciding whether to hand it real work.**
+> **The single-page marketing site for fabius — a plugin, not a platform: one set of operating rules above every model — for anyone deciding whether to install it.**
 
 **Live:** [fabius-landing.vercel.app](https://fabius-landing.vercel.app)
 
@@ -8,11 +8,11 @@
   <img src="assets/preview.webp" alt="fabius-landing — the live site" width="100%">
 </p>
 
-The repo is the whole page: a 90 KB `index.html` (fourteen `<section>` blocks, 24 inline SVG symbols, 15 of them per-skill beetles), an 80 KB `styles.css`, a 20 KB `main.js`, a self-hosted 48 KB Inter, and the 5 MB paper it serves. White canvas, one accent (`#7a3dff`). Its argument: the model is the engine, fabius supplies the operating brain — instruction, routing, skills, memory, verification — over eight implemented runtime paths (Anthropic, OpenAI, Google, Mistral, Groq, Hugging Face, OpenRouter, Ollama).
+The repo is the whole page: a 106 KB `index.html` (twelve `<section>` blocks, 24 inline SVG symbols, 15 of them per-skill beetles), a 67 KB `styles.css`, a 21 KB `main.js`, a self-hosted 48 KB Inter, 43 self-hosted official model/harness marks, and the 5 MB paper it serves. White canvas, one accent (`#7a3dff`). Its argument: the model is the engine, fabius is the rulebook — fifteen coordinated skills and twenty-two proven routing rules loaded on top of whatever model you already run (thirty-six families shown with their official marks), inside the harness you already use (Claude Code · Codex · Grok Build · any AGENTS.md reader). Nothing to host; no console of its own.
 
-## Narrowing fourteen sections to two exits
+## Narrowing twelve sections to two exits
 
-One `<h1>`, and two things to do at the end: open the synapse console or read the paper — the only outbound links. First paint costs 233 KB of markup, CSS, JS and font; the 2.9 MB explainer waits behind a poster at `preload="metadata"`, and 26 of 34 images are lazy, all 34 sized.
+One `<h1>`, and two things to do at the end: install the plugin (GitHub) or read the paper — the only outbound links. The install block is a tabbed terminal (Claude Code · Codex · Grok Build · Anywhere) with one copy button per harness, and the hero carries the two Claude Code commands with a single copy. First paint costs ~250 KB of markup, CSS, JS, font and the hero marquee's marks; the 3.4 MB explainer waits behind a poster at `preload="metadata"`, and every image below the hero is lazy and sized.
 
 ## Building the system map in the browser, not shipping a picture
 
@@ -24,14 +24,14 @@ Scroll reveal has four ways to finish: an IntersectionObserver (`rootMargin: 0 0
 
 ## Serving it under a near-self-only CSP
 
-`vercel.json` sets `default-src 'self'` — script, connect and font too, `object-src 'none'`, `frame-ancestors 'none'` — relaxed only for inline `style-src` and `data:` images, plus `nosniff` and CORS pinned to this origin. It fits: one deferred first-party script, no iframes, no analytics, every provider mark self-hosted and disclaimed in `assets/brands/README.md`. `Permissions-Policy` denies `microphone=()` though a section is about talking to the agent: the page describes voice, the console runs it. `/assets/*` is `immutable` for a year, so a replaced mark needs a new name; the root files revalidate every load and still carry a dated `?v=`.
+`vercel.json` sets `default-src 'self'` — script, connect and font too, `object-src 'none'`, `frame-ancestors 'none'` — relaxed only for inline `style-src` and `data:` images, plus `nosniff` and CORS pinned to this origin. It fits: one deferred first-party script, no iframes, no analytics, every provider mark self-hosted and disclaimed in `assets/brands/README.md`. `Permissions-Policy` denies `microphone=()` — the page has no voice feature. `/assets/*` is `immutable` for a year, so a replaced mark needs a new name; the root files revalidate every load and still carry a dated `?v=`.
 
 ## Verifying on the deployed URL, not the local file
 
-Releases run in headless Chrome at desktop and phone widths: zero console errors, zero horizontal overflow, correct DOM (16 nodes, 28 links), and a reduced-motion pass asserting the figures settle rather than vanish. The nine visible FAQ entries are diffed word-for-word against the nine `FAQPage` JSON-LD answers — 9/9 on the deployed HTML, because a rich result that quotes the page differently is a lie with a schema wrapper. Probes then re-run against the live origin under production CSP: page, stylesheet, script, font, mp4 and PDF all 200, live `main.js` byte-identical to the repo.
+Releases run in headless Chrome at desktop and phone widths: zero console errors, zero horizontal overflow, correct DOM (16 nodes, 28 links), and a reduced-motion pass asserting the figures settle rather than vanish. The ten visible FAQ entries are generated from the same source as the ten `FAQPage` JSON-LD answers and diffed word-for-word — 10/10 on the deployed HTML, because a rich result that quotes the page differently is a lie with a schema wrapper. Probes then re-run against the live origin under production CSP: page, stylesheet, script, font, mp4 and PDF all 200, live `main.js` byte-identical to the repo.
 
 ## Stack
 
 `Vanilla HTML/CSS/JS, no build` · `runtime-built inline SVG + SMIL` · `Vercel static + CSP headers` · `headless-Chrome verification`
 
-Built by [@ArielShemesh1999](https://github.com/ArielShemesh1999). The fabius agent is private and provenance-sealed; this page is its public surface.
+Built by [@ArielShemesh1999](https://github.com/ArielShemesh1999). The fabius plugin is proprietary and provenance-sealed (public repo, personal-use install grant); this page is its public surface.
