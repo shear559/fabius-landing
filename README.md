@@ -5,14 +5,14 @@
 **Live:** [fabius-landing.vercel.app](https://fabius-landing.vercel.app)
 
 <p align="center">
-  <img src="assets/preview.webp" alt="fabius-landing — the live site" width="100%">
+  <img src="assets/preview-2026-08-19.webp" alt="fabius-landing — one set of rules above every model" width="100%">
 </p>
 
 The repo is the whole page: a 106 KB `index.html` (twelve `<section>` blocks, 24 inline SVG symbols, 15 of them per-skill beetles), a 67 KB `styles.css`, a 21 KB `main.js`, a self-hosted 48 KB Inter, 43 self-hosted official model/harness marks, and the 5 MB paper it serves. White canvas, one accent (`#7a3dff`). Its argument: the model is the engine, fabius is the rulebook — fifteen coordinated skills and twenty-two proven routing rules loaded on top of whatever model you already run (thirty-six families shown with their official marks), inside the harness you already use (Claude Code · Codex · Grok Build · any AGENTS.md reader). Nothing to host; no console of its own.
 
 ## Narrowing twelve sections to two exits
 
-One `<h1>`, and two things to do at the end: install the plugin (GitHub) or read the paper — the only outbound links. The install block is a tabbed terminal (Claude Code · Codex · Grok Build · Anywhere) with one copy button per harness, and the hero carries the two Claude Code commands with a single copy. First paint costs ~250 KB of markup, CSS, JS, font and the hero marquee's marks; the 3.4 MB explainer waits behind a poster at `preload="metadata"`, and every image below the hero is lazy and sized.
+One `<h1>`, and two things to do at the end: install the plugin (GitHub) or read the paper — the only outbound links. The install block is a tabbed terminal (Claude Code · Codex · Grok Build · Anywhere) with one copy button per harness, and the hero carries the two Claude Code commands with a single copy. First paint costs ~200 KB of markup, CSS, JS, font and the hero marquee's 96 px WebP marks (the full-size marks in `assets/brands/` are the provenance source, never served); the 3.4 MB explainer waits behind a poster at `preload="metadata"`, and every image below the hero is lazy and sized.
 
 ## Building the system map in the browser, not shipping a picture
 

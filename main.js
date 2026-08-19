@@ -195,7 +195,10 @@
       const w = document.createElement('div');
       // legs are imperceptible below ~52px — skip their two keyframe animations there
       w.className = 'walker' + (c.dir < 0 ? ' rtl' : '') + (c.size < 52 ? ' no-legs' : '');
-      w.style.cssText = `--lane:${c.lane}%;--size:${c.size}px;--dur:${c.dur}s;--delay:${c.delay}s;--op:${c.op};--bd:${c.bob}s;--ld:${c.leg}s`;
+      // --x parks the walker at a scattered resting spot under prefers-reduced-motion,
+      // where the crossing animation is off and every walker would otherwise pile up at left:0
+      const x = ((c.lane * 1.7 + c.size * 2.3) % 88) + 4;
+      w.style.cssText = `--lane:${c.lane}%;--size:${c.size}px;--dur:${c.dur}s;--delay:${c.delay}s;--op:${c.op};--bd:${c.bob}s;--ld:${c.leg}s;--x:${x.toFixed(1)}%`;
       if (c.color) w.style.color = c.color;
       w.innerHTML = `<div class="walker-bob">${WB}</div>`;
       frag.appendChild(w);
@@ -244,6 +247,16 @@
   if ('requestIdleCallback' in window) requestIdleCallback(buildSwarms, { timeout: 700 });
   else setTimeout(buildSwarms, 150);
 
+  /* ── marquee: a pause control everyone can reach (WCAG 2.2.2) ── */
+  const mq = $('#marquee'), mqBtn = $('#mqPause');
+  if (mq && mqBtn) {
+    mqBtn.addEventListener('click', () => {
+      const paused = mq.classList.toggle('paused');
+      mqBtn.setAttribute('aria-pressed', paused ? 'true' : 'false');
+      mqBtn.setAttribute('aria-label', paused ? 'Resume the moving model list' : 'Pause the moving model list');
+    });
+  }
+
   /* ── install tabs — roving tabindex, arrow keys, hidden panels ── */
   $$('[role="tablist"]').forEach((list) => {
     const tabs = $$('[role="tab"]', list);
@@ -291,7 +304,7 @@
 
 /* ── the system map: router → lean core → 13 layers → spine, drawn as a
    curved fan with packets flowing along the connectors — the system-map
-   console view. Connectors draw in on scroll, then the packets flow.
+   fan view. Connectors draw in on scroll, then the packets flow.
    Reduced-motion: fully drawn, static, no packets. */
 (() => {
   'use strict';
