@@ -166,15 +166,15 @@
     { lane: 80, size: 14, dur: 2.3, delay: -1, op: .16, dir: 1,  bob: .36 },
   ];
   const coreWalk = [
-    { lane: 20, size: 84, dur: 28, delay: -6, op: .82, dir: 1,  bob: 1.8, leg: .72, color: '#b491ff' },
-    { lane: 68, size: 52, dur: 21, delay: -11, op: .66, dir: -1, bob: 1.5, leg: .6,  color: '#8a5cff' },
-    { lane: 44, size: 20, dur: 3.6, delay: -2, op: .6,  dir: 1,  bob: .46, color: '#c9b6ff' },
-    { lane: 86, size: 16, dur: 2.8, delay: -1, op: .55, dir: -1, bob: .4,  color: '#9b6bff' },
-    { lane: 34, size: 18, dur: 3,   delay: -3, op: .55, dir: 1,  bob: .42, color: '#b491ff' },
-    { lane: 58, size: 14, dur: 2.4, delay: -1, op: .5,  dir: -1, bob: .38, color: '#c9b6ff' },
-    { lane: 78, size: 18, dur: 3.2, delay: -2, op: .5,  dir: 1,  bob: .44, color: '#9b6bff' },
-    { lane: 14, size: 16, dur: 2.6, delay: -1, op: .52, dir: -1, bob: .4,  color: '#b491ff' },
-    { lane: 50, size: 14, dur: 2.3, delay: -3, op: .48, dir: 1,  bob: .36, color: '#c9b6ff' },
+    { lane: 20, size: 84, dur: 28, delay: -6, op: .82, dir: 1,  bob: 1.8, leg: .72, color: '#a5d65a' },
+    { lane: 68, size: 52, dur: 21, delay: -11, op: .66, dir: -1, bob: 1.5, leg: .6,  color: '#76b900' },
+    { lane: 44, size: 20, dur: 3.6, delay: -2, op: .6,  dir: 1,  bob: .46, color: '#c9ef7e' },
+    { lane: 86, size: 16, dur: 2.8, delay: -1, op: .55, dir: -1, bob: .4,  color: '#8ccb2e' },
+    { lane: 34, size: 18, dur: 3,   delay: -3, op: .55, dir: 1,  bob: .42, color: '#a5d65a' },
+    { lane: 58, size: 14, dur: 2.4, delay: -1, op: .5,  dir: -1, bob: .38, color: '#c9ef7e' },
+    { lane: 78, size: 18, dur: 3.2, delay: -2, op: .5,  dir: 1,  bob: .44, color: '#8ccb2e' },
+    { lane: 14, size: 16, dur: 2.6, delay: -1, op: .52, dir: -1, bob: .4,  color: '#a5d65a' },
+    { lane: 50, size: 14, dur: 2.3, delay: -3, op: .48, dir: 1,  bob: .36, color: '#c9ef7e' },
   ].filter((_, i) => small ? i < 5 : true);
   // defer the decorative swarm DOM build off the critical path → smoother first paint / input
   const buildSwarms = () => {
@@ -256,11 +256,11 @@
     return n;
   };
   const LAYERS = [
-    ['disciplina', 'process', '#2563eb'], ['decor', 'design', '#db2777'], ['cohors', 'agents', '#0891b2'],
-    ['archivum', 'memory', '#d97706'], ['mercatus', 'go-to-market', '#059669'], ['praesidium', 'security', '#e11d48'],
-    ['ludus', 'games', '#7c3aed'], ['catena', 'on-chain · seal', '#ca8a04'], ['machina', 'automation', '#0d9488'],
-    ['scientia', 'science', '#3730a3'], ['doctrina', 'AI/ML eng.', '#4338ca'], ['fortuna', 'markets', '#15803d'],
-    ['concilium', 'council', '#0ea5e9'],
+    ['disciplina', 'process', '#76b900'], ['decor', 'design', '#9ade2b'], ['cohors', 'agents', '#5e9400'],
+    ['archivum', 'memory', '#8ccb2e'], ['mercatus', 'go-to-market', '#76b900'], ['praesidium', 'security', '#9ade2b'],
+    ['ludus', 'games', '#5e9400'], ['catena', 'on-chain · seal', '#8ccb2e'], ['machina', 'automation', '#76b900'],
+    ['scientia', 'science', '#9ade2b'], ['doctrina', 'AI/ML eng.', '#5e9400'], ['fortuna', 'markets', '#8ccb2e'],
+    ['concilium', 'council', '#76b900'],
   ];
   const W = 1280, n = LAYERS.length;
   const router = { cx: 640, cy: 52, w: 252, h: 56 };
