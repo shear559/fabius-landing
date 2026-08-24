@@ -42,7 +42,7 @@
   /* ── scroll reveals ─────────────────────────────────────── */
   const revealTargets = $$(
     '.sec-head, .ladder-fig, .text-link, ' +
-    '.formula-band, .gate-fig, .math-work, .flow-loop, .rloop, .rescard, ' +
+    '.formula-band, .gate-fig, .math-work, .rloop, .rescard, ' +
     '.research-copy, .research-pts li, .core-in, ' +
     '.install-terminal, .install-points li'
   );
@@ -146,7 +146,7 @@
   // two-tier swarm: a few LARGE + SLOW anchors (graceful depth) and MANY tiny + very fast ones
   const heroWalk = [
     // large, slow anchors
-    { lane: 16, size: 102, dur: 32, delay: -5,  op: .46, dir: 1,  bob: 1.9, leg: .74, color: '#9b6bff' },
+    { lane: 16, size: 102, dur: 32, delay: -5,  op: .46, dir: 1,  bob: 1.9, leg: .74, color: '#76b900' },
     { lane: 70, size: 90,  dur: 36, delay: -16, op: .4,  dir: -1, bob: 2.1, leg: .82 },
     { lane: 44, size: 56,  dur: 24, delay: -9,  op: .3,  dir: 1,  bob: 1.6, leg: .64 },
     // many small, very fast
