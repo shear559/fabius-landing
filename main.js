@@ -108,66 +108,6 @@
     drift();
   }
 
-  /* ── emblem: draw-in "creation" on every spiral it appears (not nav/footer) ── */
-  const emblems = $$('.draw-emblem');
-  if (emblems.length && !reduce && 'IntersectionObserver' in window) {
-    emblems.forEach((svg) => {
-      const path = $('.draw-spiral', svg), dot = $('.draw-dot', svg);
-      if (!path) return;
-      const len = path.getTotalLength();
-      path.style.strokeDasharray = len;
-      path.style.strokeDashoffset = len;
-      path.style.transition = 'stroke-dashoffset 1.4s cubic-bezier(.4,0,.2,1)';
-      if (dot) { dot.style.opacity = '0'; dot.style.transition = 'opacity .4s ease .95s'; }
-    });
-    const io = new IntersectionObserver((entries, obs) => {
-      entries.forEach((en) => {
-        if (!en.isIntersecting) return;
-        const path = $('.draw-spiral', en.target), dot = $('.draw-dot', en.target);
-        if (path) path.style.strokeDashoffset = '0';
-        if (dot) dot.style.opacity = '1';
-        // keep a restrained static glow once the draw-in completes
-        setTimeout(() => en.target.classList.add('drawn'), 1500);
-        obs.unobserve(en.target);
-      });
-    }, { threshold: 0.4 });
-    emblems.forEach((svg) => io.observe(svg));
-  }
-
-  /* ── explainer video: play-in-view + auto-hiding controls ──────── */
-  const dVideo = $('#demoVideo'), dFrame = $('#demoFrame'), dToggle = $('#demoToggle');
-  if (dVideo && dFrame) {
-    let hideTimer = null;
-    // keep the button up only while sitting on the poster (so it stays discoverable)
-    const atPoster = () => dVideo.paused && dVideo.currentTime < 0.06;
-    const showControls = () => {
-      dFrame.classList.add('show-controls');
-      clearTimeout(hideTimer);
-      if (!atPoster()) hideTimer = setTimeout(() => dFrame.classList.remove('show-controls'), 2600);
-    };
-    const hideControls = () => { clearTimeout(hideTimer); dFrame.classList.remove('show-controls'); };
-    const setPlay = (play) => {
-      if (play) dVideo.play().catch(() => {});
-      else dVideo.pause();
-      if (dToggle) dToggle.setAttribute('aria-label', play ? 'Pause the explainer' : 'Play the explainer');
-    };
-    const toggle = () => { setPlay(dVideo.paused); showControls(); };
-    dToggle && dToggle.addEventListener('click', (e) => { e.stopPropagation(); toggle(); });
-    dVideo.addEventListener('click', toggle);
-    dVideo.addEventListener('play', () => { dFrame.classList.add('playing'); showControls(); });
-    dVideo.addEventListener('pause', () => { dFrame.classList.remove('playing'); showControls(); });
-    dFrame.addEventListener('pointermove', showControls);
-    dFrame.addEventListener('pointerleave', () => { if (!atPoster()) hideControls(); });
-    // tap/click anywhere outside the video dismisses the controls
-    document.addEventListener('pointerdown', (e) => { if (!dFrame.contains(e.target)) hideControls(); });
-    showControls();
-    if (!reduce && 'IntersectionObserver' in window) {
-      new IntersectionObserver((ents) => {
-        ents.forEach((en) => setPlay(en.isIntersecting && en.intersectionRatio >= 0.4));
-      }, { threshold: [0, 0.4, 0.75] }).observe(dFrame);
-    }
-  }
-
   /* ── living walkers (sakana-style beetles crossing the field) ── */
   const WB = `<svg class="wb" viewBox="0 0 120 150" fill="none">
     <g stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">

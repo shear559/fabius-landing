@@ -230,35 +230,8 @@ img{display:block;max-width:100%}
 
 /* ── section heads ───────────────────────────────────────── */
 .sec-head{max-width:760px;margin:0 0 48px}
-.eyebrow-text{font-family:var(--mono);font-size:11.5px;font-weight:650;letter-spacing:.075em;text-transform:uppercase;color:var(--primary-ink);margin-bottom:15px}
-.eyebrow-text .eb-n{font-family:var(--mono);color:#7d52d4;margin-right:9px;font-weight:700;letter-spacing:0}
 .sec-title{font-size:clamp(31px,4.2vw,48px);font-weight:640;letter-spacing:-0.045em;margin-bottom:16px}
 .sec-lede{font-size:clamp(16px,1.7vw,18.5px);color:var(--muted);line-height:1.55;font-weight:420}
-
-/* ── the explainer (video) ───────────────────────────────── */
-.demo{padding:var(--sec) 0;background:
-  radial-gradient(48% 48% at 50% 58%,rgba(122,61,255,.075),transparent 76%),
-  var(--canvas);position:relative}
-.demo-head{max-width:720px;margin-inline:auto;margin-bottom:44px;text-align:center}
-.demo-emblem{width:56px;height:56px;color:var(--primary);display:block;margin:0 auto 24px}
-.demo-frame{position:relative;max-width:1080px;margin-inline:auto;padding:8px;border-radius:32px;overflow:hidden;background:rgba(255,255,255,.66);border:1px solid var(--glass-edge);box-shadow:var(--glass-shadow);isolation:isolate;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
-.demo-frame.playing::before{content:"";position:absolute;inset:-3px;z-index:-1;background:radial-gradient(58% 58% at 50% 38%,rgba(123,61,255,.30),transparent 70%);filter:blur(40px)}
-.demo-chrome{height:38px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 10px;color:var(--faint);font-family:var(--mono);font-size:10px;letter-spacing:.035em}
-.window-dots{display:flex;align-items:center;gap:6px}.window-dots i{width:7px;height:7px;border-radius:50%;background:#d8d3e3}.window-dots i:nth-child(1){background:#d6a7ff}.window-dots i:nth-child(2){background:#85d7d0}.window-dots i:nth-child(3){background:#ffd192}
-.demo-path{justify-self:center}.demo-status{justify-self:end;display:flex;align-items:center;gap:6px}.demo-status i{width:6px;height:6px;border-radius:50%;background:var(--tone-cyan)}
-.demo-media{position:relative;aspect-ratio:16/9;overflow:hidden;border-radius:23px;background:var(--canvas-ink)}
-.demo-video{width:100%;height:100%;object-fit:cover;display:block;cursor:pointer}
-.demo-toggle{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);width:84px;height:84px;border-radius:50%;border:1px solid rgba(255,255,255,.30);background:rgba(18,14,28,.46);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff;display:grid;place-items:center;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s var(--ease),background .2s var(--ease)}
-.demo-frame.show-controls .demo-toggle,.demo-toggle:focus-visible{opacity:1;pointer-events:auto}
-.demo-toggle:hover{background:rgba(123,61,255,.52)}
-.demo-toggle:active{transform:translate(-50%,-50%) scale(.95)}
-.demo-toggle:focus-visible{outline:2px solid #fff;outline-offset:4px}
-.demo-toggle svg{width:34px;height:34px;fill:currentColor}
-.demo-toggle .ic-play{margin-left:3px}
-.demo-toggle .ic-pause{display:none}
-.demo-frame.playing .demo-toggle .ic-play{display:none}
-.demo-frame.playing .demo-toggle .ic-pause{display:block;margin-left:0}
-@media (max-width:560px){.demo-toggle{width:64px;height:64px}.demo-toggle svg{width:26px;height:26px}}
 
 /* ── charts (tokenized, data-ink) ────────────────────────── */
 .chart{width:100%;height:auto;display:block}
@@ -429,7 +402,6 @@ img{display:block;max-width:100%}
 .system .sec-title{color:#fff}
 .system .sec-lede{color:#b6b0d6}
 .system .sec-lede em{color:#fff}
-.system .eyebrow-text{color:var(--primary-lite)}
 
 /* system map — SVG fan diagram (router → lean core → 13 layers → spine), built + animated by main.js */
 .smap-wrap{max-width:1120px;margin:0 auto;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none}
@@ -545,7 +517,6 @@ img{display:block;max-width:100%}
 /* ── micro-motion (tasteful, reduced-motion gated) ───────── */
 @media (prefers-reduced-motion:no-preference){
   .hero-cmd code::after{content:"";display:inline-block;width:8px;height:1.05em;margin-left:6px;vertical-align:-2px;background:var(--lav);border-radius:1px;animation:blink 1.15s step-end infinite}
-  .draw-emblem.drawn{filter:drop-shadow(0 8px 20px rgba(122,61,255,.26))}
   /* hero swarm parallax is driven per-frame by JS (rAF) — no CSS transition to fight it */
   .swarm{will-change:transform}
 }
@@ -597,7 +568,6 @@ img{display:block;max-width:100%}
   .flow-back{flex-direction:row;margin-left:0;gap:8px}
   .rl-node{width:76px}
   .sm-chip{min-width:0;flex:1 1 132px}
-  .demo-frame{padding:6px;border-radius:24px}.demo-media{border-radius:18px}.demo-chrome{height:34px}.demo-path{display:none}
 }
 @media (max-width:380px){
   .hero-cmd{font-size:12.5px;padding-left:14px}
