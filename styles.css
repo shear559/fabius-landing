@@ -221,13 +221,6 @@ img{display:block;max-width:100%}
 @keyframes stepB{0%,100%{transform:rotate(9deg)}50%{transform:rotate(-9deg)}}
 @media (prefers-reduced-motion:reduce){.walker{animation:none;left:var(--x,50%);opacity:calc(var(--op,.4) * .8)}.walker-bob,.wb .leg{animation:none}}
 
-/* ── trust strip ─────────────────────────────────────────── */
-.strip{border-top:1px solid rgba(122,61,255,.08);border-bottom:1px solid rgba(122,61,255,.08);background:rgba(244,242,250,.7);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
-.strip-in{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;
-  padding:16px var(--gut);font-size:13px;color:var(--muted);font-weight:480}
-.strip-in span{display:inline-flex;align-items:baseline;gap:5px}.strip-in b{font-family:var(--mono);font-size:12px;color:var(--primary-ink)}
-.strip-in i{width:4px;height:4px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--tone-cyan));flex:none}
-
 /* ── section heads ───────────────────────────────────────── */
 .sec-head{max-width:760px;margin:0 0 48px}
 .sec-title{font-size:clamp(31px,4.2vw,48px);font-weight:640;letter-spacing:-0.045em;margin-bottom:16px}
@@ -558,7 +551,6 @@ img{display:block;max-width:100%}
   .hero-sub{font-size:16.5px}
   .router-caption{flex-wrap:wrap;gap:7px;margin-top:10px}.router-caption i{width:12px}
   .foot-base{flex-direction:column;gap:6px}
-  .strip-in{gap:10px 14px;font-size:12.5px}
   .core-kicker{font-size:10px;letter-spacing:.18em}
   .rescards{grid-template-columns:1fr}
   .flow-loop{flex-direction:column;align-items:stretch;gap:8px}
