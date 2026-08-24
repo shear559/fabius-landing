@@ -34,4 +34,4 @@ Releases run in headless Chrome at desktop and phone widths: zero console errors
 
 `Vanilla HTML/CSS/JS, no build` · `runtime-built inline SVG + SMIL` · `Vercel static + CSP headers` · `headless-Chrome verification`
 
-Built by [@ArielShemesh1999](https://github.com/ArielShemesh1999). The fabius plugin is proprietary and provenance-sealed (public repo, personal-use install grant); this page is its public surface.
+Built by [@shear559](https://github.com/shear559). The fabius plugin is proprietary and provenance-sealed (public repo, personal-use install grant); this page is its public surface.
