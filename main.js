@@ -42,9 +42,9 @@
   /* ── scroll reveals ─────────────────────────────────────── */
   const revealTargets = $$(
     '.sec-head, .ladder-fig, .text-link, ' +
-    '.formula-band, .gate-fig, .math-work, .flow-loop, .rloop, .rescard, .uc-card, ' +
-    '.research-copy, .research-pts li, .idea-in, .core-in, ' +
-    '.fam-card, .route-rail, .harness-head, .harness-chip, .install-terminal, .install-points li'
+    '.formula-band, .gate-fig, .math-work, .flow-loop, .rloop, .rescard, ' +
+    '.research-copy, .research-pts li, .core-in, ' +
+    '.install-terminal, .install-points li'
   );
   if (!reduce && 'IntersectionObserver' in window) {
     // orchestrated stagger: grouped items cascade by their position within the group.
@@ -53,10 +53,7 @@
       el.classList.add('reveal');
       const sibs = el.parentElement ? [...el.parentElement.children].indexOf(el) : 0;
       let i = 0;
-      if (el.matches('.uc-card')) i = sibs % 3;
-      else if (el.matches('.fam-card')) i = sibs % 4;
-      else if (el.matches('.harness-chip')) i = sibs % 3;
-      else if (el.matches('.install-points li')) i = Math.min(sibs, 3);
+      if (el.matches('.install-points li')) i = Math.min(sibs, 3);
       else if (el.matches('.research-pts li')) i = Math.min(sibs, 3);
       if (i) el.style.setProperty('--reveal-i', i);
     });

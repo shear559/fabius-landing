@@ -36,14 +36,14 @@
 <meta name="twitter:image:alt" content="fabius wordmark with the tagline scout wide, strike narrow and the line one set of rules, above every model." />
 
 <link rel="preload" href="/assets/inter.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="/styles.css?v=2026-08-24a" />
+<link rel="stylesheet" href="/styles.css?v=2026-08-24b" />
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"fabius","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","alternateName":"fabius plugin","description":"fabius is a plugin, not a platform: one set of operating rules — fifteen coordinated skills and twenty-two proven routing rules — loaded on top of any model you already run: Claude, GPT, Gemini, DeepSeek, GLM, Qwen, Llama, Mistral, Kimi, Grok, Command and more. You choose the goal; fabius chooses the machinery. Nothing to host, no account, no runtime of its own. Installs into Claude Code, Codex and Grok Build; travels to any other tool through AGENTS.md.","url":"https://fabius-landing.vercel.app/","image":"https://fabius-landing.vercel.app/assets/og.png?v=2026-08-19a","downloadUrl":"https://github.com/ArielShemesh1999/fabius","installUrl":"https://github.com/ArielShemesh1999/fabius","softwareVersion":"2.6.0","author":{"@type":"Person","name":"Ariel Shemesh","url":"https://github.com/ArielShemesh1999"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD","description":"Free to install for personal use; proprietary licence."},"featureList":["One set of rules above every model","You choose the goal; fabius chooses the machinery","Capability-first routing with expected-value stopping","Meeting transcripts into filed records, decks and infographics, draft-only GTM outreach","Fifteen coordinated skills","Twenty-two proven routing rules","Scout → Plan → Strike → Prove → Record loop","Independent verification","Persistent memory","Defensive security","Cryptographically sealed provenance","Installs in Claude Code, Codex, Grok Build; AGENTS.md everywhere else"]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is fabius?","acceptedAnswer":{"@type":"Answer","text":"fabius is a plugin — one set of operating rules loaded on top of the model you already run. Fifteen coordinated skills and twenty-two proven routing rules give Claude, GPT, Gemini, DeepSeek, GLM, Qwen, Llama, Mistral, Kimi, Grok, Command and any other model the same discipline: scope, routing, specialist skills, safety, memory and verification. The model stays the engine; fabius is the rulebook it follows from the task to the proof."}},{"@type":"Question","name":"Is there a console, an app or a server?","acceptedAnswer":{"@type":"Answer","text":"No — deliberately. fabius has no runtime of its own and no place where it “runs”: it always runs above a model, inside the harness you already use. Nothing to host, no account, no server, no data leaving your tools through us. Install the plugin once and every session, on every model, starts with the same rules."}},{"@type":"Question","name":"Which models does it run on?","acceptedAnswer":{"@type":"Answer","text":"Any model your harness can reach. fabius does not pin a roster — the rules are plain markdown handed to whichever model you select: Claude, GPT, Gemini, DeepSeek, GLM, Qwen, Llama, Mistral, Kimi, Grok, Command, Gemma, Phi, Nemotron, Granite, Nova and the rest — hosted, routed through OpenRouter or Hugging Face, or local through Ollama. The blind benchmark was measured on the Claude family, with cross-family demos on GPT, Grok and Mistral."}},{"@type":"Question","name":"How do I install it?","acceptedAnswer":{"@type":"Answer","text":"In Claude Code: /plugin marketplace add ArielShemesh1999/fabius, then /plugin install fabius@fabius, then /reload-plugins. In Codex: add the fabius git marketplace to ~/.codex/config.toml and enable fabius@fabius. In Grok Build: grok plugin install ArielShemesh1999/fabius --trust, then grok plugin enable fabius. Anywhere else — Cursor, Windsurf, Cline, GitHub Copilot, Gemini CLI, OpenCode or a raw system prompt — carry the repo’s AGENTS.md in at the path your tool reads (OpenCode takes it at the project root; the others have their own, listed on this page) and the same rules apply."}},{"@type":"Question","name":"Can it run without a harness?","acceptedAnswer":{"@type":"Answer","text":"Yes. The repository ships a zero-dependency Node runner that reads the same sealed rule files and hands them to a model through your own API key — node runtime/fabius.mjs run \"…\". It is a convenience for the same rules, not a platform: read-only until you allow writes, the working directory is a boundary it cannot escape, secrets and key files are refused, and even in autonomous mode it still stops before anything irreversible — a push, a production deploy, a recursive delete. Once you let it act, it runs the code it hands you before calling the job done, and a failing exit overrules its own review."}},{"@type":"Question","name":"Is it free? Is the source public?","acceptedAnswer":{"@type":"Answer","text":"The repository is public and free to install for personal use — that permission is written into the licence. It is proprietary, not open source: no redistribution, modification or commercial use without permission. The rules are cryptographically sealed (SHA-256 over every skill, a Merkle root anchored to Bitcoin), so authorship is provable if anyone copies them. The only thing that costs money is the model you already pay for."}},{"@type":"Question","name":"What does fabius add to the model?","acceptedAnswer":{"@type":"Answer","text":"It does not retrain or alter the model. It adds the rules around it: instructions, routing, specialist skills, memory, safety and verification. The same model follows that contract, so it works more consistently and with less waste. In the benchmark — blind, judged against both a bare baseline and a generic “be concise” control — every capable tier (Fable 5, Sonnet 5, Opus 4.8) beats both controls on the four Claude models measured (the roster current at the 2026-07-01 run). Under fabius the smallest model passes 93% of real tests and factual checks vs 75.6% bare, and parameterized SQL goes 67.5% → 100%, on 12–25% less output. The misses are printed in the receipt, not hidden."}},{"@type":"Question","name":"Who decides which tools and how much research a task gets?","acceptedAnswer":{"@type":"Answer","text":"fabius does — that is the job. You state the goal; the rules decide the how: which capability the task needs (named capability-first, never by a favorite tool), which of the tools your harness exposes fills it — native ability is the default and a tool must beat it — which model tier, where your harness lets it dispatch, is the cheapest that holds, and how deep to research. Every step of machinery must clear one gate, the expected value of the next action against its cost, and research stops on decision stability: when nothing fabius still expects to find could change the decision, it stops and delivers. The rules treat acting as a ladder — read, analyze, draft, write, execute — drafting a message is never sending it, and irreversible actions stay behind your harness's approvals and the bundled runner's gate."}},{"@type":"Question","name":"How is fabius evaluated?","acceptedAnswer":{"@type":"Answer","text":"Against its own written contract. The identity is fixed in the rules: fabius is an intelligence amplification layer, so the only fair question is whether the exact same model achieves better outcomes with less waste. The Fabius Benchmark Suite runs 100 neutral, production-shaped tasks in three modes — bare model, under the shipped fabius files, and with recalled memory added — scored by two blind judges and objective per-task checks. Latest run: on the mid tier, which ran the full suite, quality holds at 93% on 10–12% less output; on the fast tier's 20-task smoke set the score climbs 25.27 → 26.00 → 26.73 of 28 on 11–14% less output."}},{"@type":"Question","name":"How is it different from telling the model to “be concise”?","acceptedAnswer":{"@type":"Answer","text":"That is exactly the control it was tested against — and on every capable tier it wins (the fast tier is the printed exception). fabius is structure, not brevity: a scope-control system that knows when to compress and when to expand. Method and caveats are in the whitepaper."}},{"@type":"Question","name":"Can it clean AI marks off my content?","acceptedAnswer":{"@type":"Answer","text":"Yes — on content you own. Asked for it, fabius runs a deterministic hygiene pass before the artifact ships: invisible Unicode — zero-width characters, bidirectional marks, tag characters, the same character classes Trojan-Source attacks hide in — is stripped from generated text and code, and file metadata (EXIF, XMP, C2PA, document properties) is cleaned from images and documents with standard tools. Two boundaries, stated straight: statistical text watermarks live in the wording itself, so removing them means rewording — which degrades the copy — and no tool can certify that a vendor’s detector will fail afterwards, so fabius never promises that."}}]}
 </script>
-<script defer src="/main.js?v=2026-08-19a"></script>
+<script defer src="/main.js?v=2026-08-24b"></script>
 </head>
 <body>
 
@@ -85,9 +85,9 @@
       <span class="brand-name">fabius</span>
     </a>
     <nav class="nav-links" aria-label="Primary">
-      <a href="#idea">Idea</a>
+      <a href="#flow">The loop</a>
       <a href="#system">System</a>
-      <a href="#models">Models</a>
+      <a href="#research">Research</a>
       <a href="#install">Install</a>
       <a href="#faq">FAQ</a>
     </nav>
@@ -100,12 +100,9 @@
     </button>
   </div>
   <div class="mobile-menu" id="mobileMenu" hidden>
-    <a href="#idea">Idea</a>
     <a href="#flow">The loop</a>
     <a href="#system">System</a>
-    <a href="#usecases">Use cases</a>
     <a href="#research">Research</a>
-    <a href="#models">Models</a>
     <a href="#install">Install</a>
     <a href="#faq">FAQ</a>
     <a class="btn ghost" href="https://github.com/ArielShemesh1999/fabius" target="_blank" rel="noopener">GitHub</a>
@@ -120,7 +117,7 @@
 <section class="hero">
   <div class="swarm" id="swarm" aria-hidden="true"></div>
   <div class="wrap hero-in">
-    <a class="eyebrow" href="#idea">
+    <a class="eyebrow" href="#flow">
       <span class="dot"></span> fabius · a plugin, not a platform <span class="arrow">→</span>
     </a>
     <h1 class="hero-title">
@@ -134,7 +131,7 @@
     </p>
     <div class="hero-actions">
       <a class="btn primary lg" href="#install">Install the plugin</a>
-      <a class="btn ghost lg" href="#idea">See how it works</a>
+      <a class="btn ghost lg" href="#flow">See how it works</a>
     </div>
     <div class="hero-cmd hero-cmd-stack" data-copy="/plugin marketplace add ArielShemesh1999/fabius
 /plugin install fabius@fabius">
@@ -220,58 +217,11 @@
 </section>
 
 
-<!-- ── the one idea · rules above the model ────────────────────── -->
-<section class="idea" id="idea">
-  <div class="wrap idea-in">
-    <div class="idea-copy">
-      <p class="eyebrow-text"><span class="eb-n">01</span>The architecture</p>
-      <h2 class="idea-title">The model is the engine.<br/><span class="accent">fabius is the rulebook.</span></h2>
-      <p class="idea-body">fabius sits above the model as a plugin. It does not replace, retrain or host Claude, GPT, Gemini,
-        DeepSeek, GLM, Qwen, Llama, Mistral, Kimi, Grok, or any other model. You say what you want to achieve; the rules decide how —
-        what to investigate, which capability the work needs, how much machinery it deserves, which model tier — where the harness lets it dispatch — is the cheapest that holds,
-        when to act, how to verify, how deep to research and when researching stops paying, and what to remember. Swap the engine; the rules stay.</p>
-      <ol class="idea-principles">
-        <li><span>01</span><div><b>You choose the goal.</b><small>Say what you want to achieve, inside the harness you already use — you are never asked to pick tools.</small></div></li>
-        <li><span>02</span><div><b>fabius chooses the machinery.</b><small>Capability, routing, skills, research depth, safety, memory, and proof — the same on every model.</small></div></li>
-        <li><span>03</span><div><b>The model follows the contract.</b><small>The engine can change; the rules and the standards stay.</small></div></li>
-      </ol>
-    </div>
-    <div class="brain-stack" role="img" aria-label="A task enters; the fabius plugin supplies one operating contract to whichever model you selected; the model returns a verified artifact">
-      <div class="brain-stack-head"><span><i></i> the architecture</span><small>one set of rules · any engine</small></div>
-      <div class="brain-task"><small>incoming task</small><b>Build it correctly. Show the proof.</b></div>
-      <div class="stack-link"><span>the plugin takes the wheel</span></div>
-      <div class="brain-agent">
-        <span class="brain-agent-mark"><svg aria-hidden="true"><use href="#emblem"/></svg></span>
-        <span><small>the plugin · one set of rules</small><b>fabius</b><em>decides how the model works</em></span>
-        <strong>rules</strong>
-      </div>
-      <div class="brain-contract">
-        <small>operating contract</small>
-        <div><span>scope</span><span>route</span><span>skills</span><span>safety</span><span>memory</span><span>proof</span></div>
-      </div>
-      <div class="stack-link"><span>the model you chose follows them</span></div>
-      <div class="brain-engines" aria-hidden="true">
-        <span><img src="/assets/brands/s/anthropic.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></span>
-        <span><img src="/assets/brands/s/openai.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></span>
-        <span><img src="/assets/brands/gemini.svg" alt="" width="40" height="40" loading="lazy" decoding="async" /></span>
-        <span><img src="/assets/brands/s/deepseek.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></span>
-        <span><img src="/assets/brands/s/glm.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></span>
-        <span><img src="/assets/brands/s/qwen.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></span>
-        <span><img src="/assets/brands/s/llama.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></span>
-        <span><img src="/assets/brands/s/mistral.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></span>
-      </div>
-      <div class="brain-output"><span><i></i> verified artifact</span><b>executed · checked · remembered</b></div>
-    </div>
-    <p class="idea-foot">Scout wide in what you investigate. Strike narrow in what you ship. The model supplies the capability; fabius supplies the discipline.</p>
-  </div>
-</section>
-
-
 <!-- ── how it flows · the five-beat loop ───────────────────────── -->
 <section class="flow" id="flow">
   <div class="wrap">
     <header class="sec-head flow-head">
-      <p class="eyebrow-text"><span class="eb-n">02</span>The loop</p>
+      <p class="eyebrow-text"><span class="eb-n">01</span>The loop</p>
       <h2 class="sec-title">One operating loop. Any model underneath.</h2>
       <p class="sec-lede">You choose the model; fabius supplies the behaviour. Every model receives the same five-beat loop — investigate broadly, and keep investigating only while the next step still pays; plan deliberately; ship narrowly; prove the result; and keep what was learned.</p>
     </header>
@@ -316,7 +266,7 @@
   <div class="sys-grid-bg" aria-hidden="true"></div>
   <div class="wrap sys-wrap">
     <header class="sec-head sys-head">
-      <p class="eyebrow-text"><span class="eb-n">03</span>The system</p>
+      <p class="eyebrow-text"><span class="eb-n">02</span>The system</p>
       <h2 class="sec-title">The rules stay. The model can change.</h2>
       <p class="sec-lede">fabius owns the operating contract: one router, an always-on lean core, thirteen specialist layers, shared memory, and verification — all of it plain rules the harness hands to the model. Swap the engine — DeepSeek, Claude, GPT, GLM, Qwen, Llama, Kimi, Grok, or any other model — and the instructions and standards stay.</p>
     </header>
@@ -447,32 +397,6 @@
 </section>
 
 
-<!-- ── what you can hand it · use-case gallery ─────────────────── -->
-<section class="usecases" id="usecases">
-  <div class="wrap">
-    <header class="sec-head">
-      <p class="eyebrow-text"><span class="eb-n">04</span>What you can hand it</p>
-      <h2 class="sec-title">One rulebook. Whichever model you choose.</h2>
-      <p class="sec-lede">Hand the model the whole job — you choose the goal; fabius chooses the machinery. Under fabius it reads the task, selects the skills, follows the operating plan, and is held to the same loop — scout, strike, prove, record — whichever model is underneath.</p>
-    </header>
-    <div class="uc-grid">
-      <article class="uc-card"><span class="uc-ic"><svg aria-hidden="true"><use href="#bug-decor"/></svg></span><div><span class="uc-tag">decor</span><h3>Ship a landing page</h3><p>Design tokens, one accent, mobile-first — and live-verified with a headless screenshot before it’s called done.</p></div></article>
-      <article class="uc-card"><span class="uc-ic"><svg aria-hidden="true"><use href="#bug-praesidium"/></svg></span><div><span class="uc-tag">praesidium</span><h3>Audit an API</h3><p>STRIDE per trust boundary. Each finding ships a severity, a fix, and a regression test that runs red → green.</p></div></article>
-      <article class="uc-card"><span class="uc-ic"><svg aria-hidden="true"><use href="#bug-fortuna"/></svg></span><div><span class="uc-tag">fortuna</span><h3>Backtest a strategy</h3><p>Out-of-sample, costs modeled, risk sized first. Analysis, never advice — and no look-ahead leak.</p></div></article>
-      <article class="uc-card"><span class="uc-ic"><svg aria-hidden="true"><use href="#bug-cohors"/></svg></span><div><span class="uc-tag">cohors</span><h3>Orchestrate an agent</h3><p>Least privilege, a precise output contract, and the smallest orchestration that holds — up to a swarm.</p></div></article>
-      <article class="uc-card"><span class="uc-ic"><svg aria-hidden="true"><use href="#bug-archivum"/></svg></span><div><span class="uc-tag">archivum</span><h3>Remember a convention</h3><p>One note, one index pointer, interlinked — recalled cold next session, so it never re-derives it.</p></div></article>
-      <article class="uc-card"><span class="uc-ic"><svg aria-hidden="true"><use href="#bug-ludus"/></svg></span><div><span class="uc-tag">ludus</span><h3>Make a small game</h3><p>Core loop first, deliberate juice, a jam-sized cut that actually ships — and is actually fun to play.</p></div></article>
-      <article class="uc-card"><span class="uc-ic"><svg aria-hidden="true"><use href="#bug-machina"/></svg></span><div><span class="uc-tag">machina</span><h3>Automate a workflow</h3><p>Discover from the live schema, build incrementally, verify the wiring before it runs live — no silent miswire.</p></div></article>
-      <article class="uc-card"><span class="uc-ic"><svg aria-hidden="true"><use href="#bug-concilium"/></svg></span><div><span class="uc-tag">concilium</span><h3>Convene a model council</h3><p>N models answer blind → anonymized peer-review → a chairman synthesizes one better answer. For the costly calls.</p></div></article>
-      <article class="uc-card"><span class="uc-ic"><svg aria-hidden="true"><use href="#bug-disciplina"/></svg></span><div><span class="uc-tag">disciplina</span><h3>Diagnose a nasty bug</h3><p>Reproduce → root cause → the minimal fix, locked by a regression test. Not a symptom patch.</p></div></article>
-      <article class="uc-card"><span class="uc-ic"><svg aria-hidden="true"><use href="#bug-archivum"/></svg></span><div><span class="uc-tag">archivum</span><h3>Turn a meeting into a record</h3><p>A transcript in — decisions with owners and dates out, numbers quoted, filed into memory, follow-up drafted.</p></div></article>
-      <article class="uc-card"><span class="uc-ic"><svg aria-hidden="true"><use href="#bug-decor"/></svg></span><div><span class="uc-tag">decor</span><h3>Build a deck or infographic</h3><p>Outline first, one idea per slide, one message per graphic — every number sourced, brand tokens throughout.</p></div></article>
-      <article class="uc-card"><span class="uc-ic"><svg aria-hidden="true"><use href="#bug-mercatus"/></svg></span><div><span class="uc-tag">mercatus</span><h3>Research and draft outreach</h3><p>ICP first, leads qualified honestly, personalization that is true. Drafts only — sending stays yours.</p></div></article>
-    </div>
-  </div>
-</section>
-
-
 <!-- ── core band (pixel wordmark + walkers) ────────────────────── -->
 <section class="core" id="core">
   <div class="core-grid" aria-hidden="true"></div>
@@ -490,7 +414,7 @@
 <section class="research" id="research">
   <div class="wrap research-in">
     <div class="research-copy">
-      <p class="eyebrow-text"><span class="eb-n">05</span>Grounded in research</p>
+      <p class="eyebrow-text"><span class="eb-n">03</span>Grounded in research</p>
       <h2 class="sec-title">Decisions, not hand-waving.</h2>
       <p class="sec-lede">fabius’s routing is our own research — a whole field of agent behaviour investigated, convened, and forged into a documented decision policy: twenty-two proven rules, each one derived and adversarially verified, coordinating fifteen skills without contradicting one another.</p>
       <ul class="research-pts">
@@ -512,89 +436,11 @@
 </section>
 
 
-<!-- ── the model field · every model, the same rules ─────────────── -->
-<section class="models" id="models">
-  <div class="wrap">
-    <header class="sec-head models-head">
-      <p class="eyebrow-text"><span class="eb-n">06</span>Every model</p>
-      <h2 class="sec-title">Runs above every model.<br/>Exactly the same rules.</h2>
-      <p class="sec-lede">fabius has no model roster and no runtime of its own — it is a set of rules the harness hands to whichever model you choose. Frontier or open-weight, hosted, routed or local: the contract is identical. Below, 36 of the families it already runs above.</p>
-    </header>
-    <ul class="fam-grid" aria-label="Model families fabius runs above">
-      <li class="fam-card" style="--family:#e47d58;--reveal-i:0"><span class="fam-logo"><img src="/assets/brands/s/anthropic.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>Claude</b><small>Anthropic</small><em>Fable 5 · Opus 5 · Sonnet 5 · Haiku 4.5</em></span></li>
-      <li class="fam-card" style="--family:#159b76;--reveal-i:1"><span class="fam-logo"><img src="/assets/brands/s/openai.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>GPT</b><small>OpenAI</small><em>GPT-5.6 · GPT-5.4 mini</em></span></li>
-      <li class="fam-card" style="--family:#4d79ff;--reveal-i:2"><span class="fam-logo"><img src="/assets/brands/gemini.svg" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>Gemini</b><small>Google</small><em>2.5 Flash · 3.5 Flash · Pro</em></span></li>
-      <li class="fam-card" style="--family:#4d6bfe;--reveal-i:3"><span class="fam-logo"><img src="/assets/brands/s/deepseek.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>DeepSeek</b><small>DeepSeek</small><em>V3 · R1</em></span></li>
-      <li class="fam-card" style="--family:#1f1d2b;--reveal-i:0"><span class="fam-logo"><img src="/assets/brands/s/glm.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>GLM</b><small>Z.ai · Zhipu</small><em>GLM-4.5 · GLM-4.6</em></span></li>
-      <li class="fam-card" style="--family:#7155ff;--reveal-i:1"><span class="fam-logo"><img src="/assets/brands/s/qwen.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>Qwen</b><small>Alibaba</small><em>Qwen3 · Qwen3-Coder</em></span></li>
-      <li class="fam-card" style="--family:#0a7ee8;--reveal-i:2"><span class="fam-logo"><img src="/assets/brands/s/llama.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>Llama</b><small>Meta</small><em>Llama 4 · Llama 3.3</em></span></li>
-      <li class="fam-card" style="--family:#e59a28;--reveal-i:3"><span class="fam-logo"><img src="/assets/brands/s/mistral.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>Mistral</b><small>Mistral AI</small><em>Large · Medium · Devstral</em></span></li>
-      <li class="fam-card" style="--family:#25252a;--reveal-i:0"><span class="fam-logo"><img src="/assets/brands/s/kimi.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>Kimi</b><small>Moonshot AI</small><em>Kimi K2</em></span></li>
-      <li class="fam-card" style="--family:#25252a;--reveal-i:1"><span class="fam-logo"><img src="/assets/brands/s/xai.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>Grok</b><small>xAI</small><em>Grok 4</em></span></li>
-      <li class="fam-card" style="--family:#39594d;--reveal-i:2"><span class="fam-logo"><img src="/assets/brands/s/cohere.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>Command</b><small>Cohere</small><em>Command A · Command R+</em></span></li>
-      <li class="fam-card" style="--family:#4285f4;--reveal-i:3"><span class="fam-logo"><img src="/assets/brands/s/google.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>Gemma</b><small>Google</small><em>Gemma 3 · Gemma 3n</em></span></li>
-      <li class="fam-card" style="--family:#0078d4;--reveal-i:0"><span class="fam-logo"><img src="/assets/brands/s/microsoft.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>Phi</b><small>Microsoft</small><em>Phi-4</em></span></li>
-      <li class="fam-card" style="--family:#76b900;--reveal-i:1"><span class="fam-logo"><img src="/assets/brands/s/nvidia.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>Nemotron</b><small>NVIDIA</small><em>Nemotron Nano · Super</em></span></li>
-      <li class="fam-card" style="--family:#0f62fe;--reveal-i:2"><span class="fam-logo"><img src="/assets/brands/s/ibm.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>Granite</b><small>IBM</small><em>Granite 4</em></span></li>
-      <li class="fam-card" style="--family:#ff9900;--reveal-i:3"><span class="fam-logo"><img src="/assets/brands/s/aws.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>Nova</b><small>Amazon</small><em>Nova Pro · Nova Micro</em></span></li>
-      <li class="fam-card" style="--family:#20808d;--reveal-i:0"><span class="fam-logo"><img src="/assets/brands/s/perplexity.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>Sonar</b><small>Perplexity</small><em>Sonar · Sonar Pro</em></span></li>
-      <li class="fam-card" style="--family:#f23f5d;--reveal-i:1"><span class="fam-logo"><img src="/assets/brands/s/minimax.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>MiniMax</b><small>MiniMax</small><em>M1 · M2</em></span></li>
-      <li class="fam-card" style="--family:#1a6ff5;--reveal-i:2"><span class="fam-logo"><img src="/assets/brands/s/hunyuan.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>Hunyuan</b><small>Tencent</small><em>Hunyuan-A13B · T1</em></span></li>
-      <li class="fam-card" style="--family:#2932e1;--reveal-i:3"><span class="fam-logo"><img src="/assets/brands/s/baidu.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>ERNIE</b><small>Baidu</small><em>ERNIE 4.5</em></span></li>
-      <li class="fam-card" style="--family:#1c1c1c;--reveal-i:0"><span class="fam-logo"><img src="/assets/brands/s/bytedance-seed.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>Seed</b><small>ByteDance</small><em>Seed-OSS · Doubao</em></span></li>
-      <li class="fam-card" style="--family:#12c2b8;--reveal-i:1"><span class="fam-logo"><img src="/assets/brands/s/stepfun.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>Step</b><small>StepFun</small><em>Step-3</em></span></li>
-      <li class="fam-card" style="--family:#0e8f6a;--reveal-i:2"><span class="fam-logo"><img src="/assets/brands/s/yi.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>Yi</b><small>01.AI</small><em>Yi-Lightning · Yi-1.5</em></span></li>
-      <li class="fam-card" style="--family:#4a2fd8;--reveal-i:3"><span class="fam-logo"><img src="/assets/brands/s/tii.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>Falcon</b><small>TII</small><em>Falcon-H1 · Falcon 3</em></span></li>
-      <li class="fam-card" style="--family:#e8285f;--reveal-i:0"><span class="fam-logo"><img src="/assets/brands/s/ai21.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>Jamba</b><small>AI21 Labs</small><em>Jamba 1.7</em></span></li>
-      <li class="fam-card" style="--family:#3a3a3a;--reveal-i:1"><span class="fam-logo"><img src="/assets/brands/s/reka.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>Reka</b><small>Reka AI</small><em>Reka Flash · Core</em></span></li>
-      <li class="fam-card" style="--family:#0f5f5c;--reveal-i:2"><span class="fam-logo"><img src="/assets/brands/s/allenai.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>OLMo</b><small>Ai2</small><em>OLMo 3</em></span></li>
-      <li class="fam-card" style="--family:#1c1c1c;--reveal-i:3"><span class="fam-logo"><img src="/assets/brands/s/nous.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>Hermes</b><small>Nous Research</small><em>Hermes 4</em></span></li>
-      <li class="fam-card" style="--family:#1c1c1c;--reveal-i:0"><span class="fam-logo"><img src="/assets/brands/s/liquid.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>LFM</b><small>Liquid AI</small><em>LFM2</em></span></li>
-      <li class="fam-card" style="--family:#a03cff;--reveal-i:1"><span class="fam-logo"><img src="/assets/brands/s/exaone.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>EXAONE</b><small>LG AI Research</small><em>EXAONE 4.0</em></span></li>
-      <li class="fam-card" style="--family:#7d5cff;--reveal-i:2"><span class="fam-logo"><img src="/assets/brands/s/upstage.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>Solar</b><small>Upstage</small><em>Solar Pro 2</em></span></li>
-      <li class="fam-card" style="--family:#ff6900;--reveal-i:3"><span class="fam-logo"><img src="/assets/brands/s/xiaomi-mimo.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>MiMo</b><small>Xiaomi</small><em>MiMo · MiMo-VL</em></span></li>
-      <li class="fam-card" style="--family:#1c1c1c;--reveal-i:0"><span class="fam-logo"><img src="/assets/brands/s/sarvam.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>Sarvam</b><small>Sarvam AI</small><em>Sarvam-M</em></span></li>
-      <li class="fam-card" style="--family:#f2aa16;--reveal-i:1"><span class="fam-logo"><img src="/assets/brands/s/huggingface.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>SmolLM</b><small>Hugging Face</small><em>SmolLM3</em></span></li>
-      <li class="fam-card" style="--family:#159b76;--reveal-i:2"><span class="fam-logo"><img src="/assets/brands/s/openai.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>GPT-OSS</b><small>OpenAI · open weights</small><em>gpt-oss-120b · gpt-oss-20b</em></span></li>
-      <li class="fam-card" style="--family:#d52b1e;--reveal-i:3"><span class="fam-logo"><img src="/assets/brands/s/swiss-ai.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /></span><span class="fam-copy"><b>Apertus</b><small>Swiss AI</small><em>Apertus 70B · 8B</em></span></li>
-    </ul>
-    <div class="route-rail" role="group" aria-label="Providers, routers and local runtimes the model can be served through">
-      <div class="route-copy"><small>…served any way you like</small><b>Direct, routed or local — fabius does not care.</b></div>
-      <ul class="route-list">
-        <li><span class="route-logo"><img src="/assets/brands/s/groq.webp" alt="" width="24" height="24" loading="lazy" decoding="async" /></span>Groq</li>
-        <li><span class="route-logo"><img class="openrouter-logo" src="/assets/brands/openrouter.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span>OpenRouter</li>
-        <li><span class="route-logo"><img src="/assets/brands/s/huggingface.webp" alt="" width="24" height="24" loading="lazy" decoding="async" /></span>Hugging Face</li>
-        <li><span class="route-logo"><img class="ollama-logo" src="/assets/brands/ollama.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span>Ollama · local</li>
-      </ul>
-    </div>
-    <p class="brand-note">Model, maker and platform marks identify compatible engines only; example model names are illustrative and change with each vendor’s roster. No affiliation or endorsement is implied.</p>
-
-    <div class="harness-block">
-      <div class="harness-head">
-        <p class="eyebrow-text">How the rules reach the model</p>
-        <h3 class="harness-title">Loads into the harness you already use.</h3>
-        <p class="sec-lede">The rules are plain markdown. Claude Code, Codex and Grok Build load the plugin natively; every other tool that reads a standing-instructions file gets the same stance through <code>AGENTS.md</code>. Nothing new to open, nothing to host.</p>
-      </div>
-      <ul class="harness-rail" aria-label="Harnesses that load fabius">
-          <li class="harness-chip"><span class="harness-logo"><img src="/assets/brands/s/anthropic.webp" alt="" width="32" height="32" loading="lazy" decoding="async" /></span><span><b>Claude Code</b><small>plugin · verified</small></span></li>
-          <li class="harness-chip"><span class="harness-logo"><img src="/assets/brands/s/openai.webp" alt="" width="32" height="32" loading="lazy" decoding="async" /></span><span><b>Codex</b><small>plugin marketplace · verified</small></span></li>
-          <li class="harness-chip"><span class="harness-logo"><img src="/assets/brands/s/xai.webp" alt="" width="32" height="32" loading="lazy" decoding="async" /></span><span><b>Grok Build</b><small>native plugin format · verified</small></span></li>
-          <li class="harness-chip"><span class="harness-logo"><img src="/assets/brands/s/cursor.webp" alt="" width="32" height="32" loading="lazy" decoding="async" /></span><span><b>Cursor</b><small>AGENTS.md</small></span></li>
-          <li class="harness-chip"><span class="harness-logo"><img src="/assets/brands/s/cline.webp" alt="" width="32" height="32" loading="lazy" decoding="async" /></span><span><b>Cline</b><small>AGENTS.md</small></span></li>
-          <li class="harness-chip"><span class="harness-logo"><img src="/assets/brands/s/github.webp" alt="" width="32" height="32" loading="lazy" decoding="async" /></span><span><b>GitHub Copilot</b><small>AGENTS.md</small></span></li>
-          <li class="harness-chip"><span class="harness-logo"><img src="/assets/brands/s/google-gemini.webp" alt="" width="32" height="32" loading="lazy" decoding="async" /></span><span><b>Gemini CLI</b><small>AGENTS.md</small></span></li>
-          <li class="harness-chip"><span class="harness-logo"><img src="/assets/brands/s/opencode.webp" alt="" width="32" height="32" loading="lazy" decoding="async" /></span><span><b>OpenCode</b><small>AGENTS.md</small></span></li>
-          <li class="harness-chip harness-plain"><span class="harness-logo harness-glyph"><svg aria-hidden="true"><use href="#icon-terminal"/></svg></span><span><b>Windsurf · any system prompt</b><small>AGENTS.md · paste the rules</small></span></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
 <!-- ── install ─────────────────────────────────────────────────── -->
 <section class="install" id="install">
   <div class="wrap">
     <header class="sec-head install-head">
-      <p class="eyebrow-text"><span class="eb-n">07</span>Install</p>
+      <p class="eyebrow-text"><span class="eb-n">04</span>Install</p>
       <h2 class="sec-title">Install once. Every model, every session.</h2>
       <p class="sec-lede">The rules load into the harness you already use. Nothing to host, no account, no server — the model you already run is the only thing that costs money. Free to install for personal use.</p>
     </header>
@@ -678,7 +524,7 @@ grok plugin enable fabius">
 <section class="faq" id="faq">
   <div class="wrap">
     <header class="sec-head">
-      <p class="eyebrow-text"><span class="eb-n">08</span>Questions</p>
+      <p class="eyebrow-text"><span class="eb-n">05</span>Questions</p>
       <h2 class="sec-title">Frequently asked.</h2>
     </header>
     <div class="faq-list">
@@ -746,11 +592,11 @@ grok plugin enable fabius">
       <a href="https://github.com/ArielShemesh1999/fabius" target="_blank" rel="noopener">GitHub</a>
       <a href="/fabius-as-a-system.pdf" target="_blank" rel="noopener">Paper</a>
       <a href="#research">Research</a>
-      <a href="#models">Models</a>
-      <a href="#faq">FAQ</a>
+        <a href="#faq">FAQ</a>
       <a href="#install">Install</a>
     </nav>
   </div>
+  <div class="wrap"><p class="brand-note">Model, maker and platform marks identify compatible engines only; example model names are illustrative and change with each vendor’s roster. No affiliation or endorsement is implied.</p></div>
   <div class="wrap foot-base">
     <span>© 2026 Ariel Shemesh</span>
     <span>Proprietary · provenance-sealed</span>
