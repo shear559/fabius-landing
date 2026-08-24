@@ -2,17 +2,21 @@
 
 > **The single-page marketing site for fabius — a plugin, not a platform: one set of operating rules above every model — for anyone deciding whether to install it.**
 
-**Live:** [fabius-landing.vercel.app](https://fabius-landing.vercel.app)
+**Live:** [fabius-landing.vercel.app](https://fabius-landing.vercel.app) · **The plugin:** [github.com/shear559/fabius](https://github.com/shear559/fabius)
 
 <p align="center">
-  <img src="assets/preview-2026-08-19.webp" alt="fabius-landing — one set of rules above every model" width="100%">
+  <img src="assets/preview-2026-08-24.webp" alt="fabius-landing — one set of rules above every model, in the green system" width="100%">
 </p>
 
-The repo is the whole page: a 106 KB `index.html` (twelve `<section>` blocks, 24 inline SVG symbols, 15 of them per-skill beetles), a 67 KB `styles.css`, a 21 KB `main.js`, a self-hosted 48 KB Inter, 43 self-hosted official model/harness marks, and the 5 MB paper it serves. White canvas, one accent (`#7a3dff`). Its argument: the model is the engine, fabius is the rulebook — fifteen coordinated skills and twenty-two proven routing rules loaded on top of whatever model you already run (thirty-six families shown with their official marks), inside the harness you already use (Claude Code · Codex · Grok Build · any AGENTS.md reader). Nothing to host; no console of its own.
+The repo is the whole page: a 77 KB `index.html` (six `<section>` blocks, 16 inline SVG symbols, 15 of them per-skill beetles), a 49 KB `styles.css`, an 18 KB `main.js`, self-hosted Barlow (400/500/600/700, preloaded) with Inter as fallback, 41 self-hosted official model/harness marks, and the 5 MB whitepaper it serves. Its argument is the plugin's contract: **you choose the goal; fabius chooses the machinery** — fifteen coordinated skills and twenty-two proven routing rules loaded on top of whatever model you already run (thirty-six families shown with their official marks), inside the harness you already use (Claude Code · Codex · Grok Build · any AGENTS.md reader). Nothing to host; no console of its own.
 
-## Narrowing twelve sections to two exits
+## One design system, two grounds
 
-One `<h1>`, and two things to do at the end: install the plugin (GitHub) or read the paper — the only outbound links. The install block is a tabbed terminal (Claude Code · Codex · Grok Build · Anywhere) with one copy button per harness, and the hero carries the two Claude Code commands with a single copy. First paint costs ~200 KB of markup, CSS, JS, font and the hero marquee's 96 px WebP marks (the full-size marks in `assets/brands/` are the provenance source, never served); the 3.4 MB explainer waits behind a poster at `preload="metadata"`, and every image below the hero is lazy and sized.
+The light sections run the green system: one accent `#76b900` with an AA ramp (`#5e9400` for hover, large text and data ink at ≥3:1; `#4e7a00` for small text at ≥4.5:1), flat square buttons — green fill with black text, or a 2 px green outline — and liquid-glass surfaces (backdrop blur + a specular top edge) on the FAQ and the research card. The dark system band speaks the same language on black: green grid, green node strokes and packet dots, green rule badges and chart ink. Every color pair on the page passes WCAG AA for its role, including focus rings and chart data ink.
+
+## Narrowing six sections to two exits
+
+One `<h1>`, and two things to do at the end: install the plugin (GitHub) or read the paper — the only outbound links. The install block is a tabbed terminal (Claude Code · Codex · Grok Build · Anywhere) with one copy button per harness, and the hero carries the two Claude Code commands with a single copy. First paint costs ~200 KB of markup, CSS, JS, fonts and the hero marquee's 96 px WebP marks (the full-size marks in `assets/brands/` are the provenance source, never served); every image below the hero is lazy and sized.
 
 ## Building the system map in the browser, not shipping a picture
 
@@ -20,7 +24,7 @@ One `<h1>`, and two things to do at the end: install the plugin (GitHub) or read
 
 ## Making the motion cheap and fail-open
 
-Scroll reveal has four ways to finish: an IntersectionObserver (`rootMargin: 0 0 -12%`, threshold `0.12`); a passive scroll probe 24 ms later, because WebKit can coalesce observer work during fast programmatic scrolls; a 350 ms sweep; and a 4.5 s catch-all. Reduced motion skips it, so nothing is hidden to begin with. The swarm is not in the HTML: `buildWalkers()` injects 17 hero and 9 dark-band walkers (9 and 5 on phones) inside `requestIdleCallback(…, { timeout: 700 })`.
+Scroll reveal has four ways to finish: an IntersectionObserver (`rootMargin: 0 0 -12%`, threshold `0.12`); a passive scroll probe 24 ms later, because WebKit can coalesce observer work during fast programmatic scrolls; a 350 ms sweep; and a 4.5 s catch-all. Reduced motion skips it, so nothing is hidden to begin with. The swarm is not in the HTML: `buildWalkers()` injects the hero and dark-band walkers (fewer on phones) inside `requestIdleCallback(…, { timeout: 700 })` — green beetles on the light ground, green on the dark.
 
 ## Serving it under a near-self-only CSP
 
@@ -28,7 +32,7 @@ Scroll reveal has four ways to finish: an IntersectionObserver (`rootMargin: 0 0
 
 ## Verifying on the deployed URL, not the local file
 
-Releases run in headless Chrome at desktop and phone widths: zero console errors, zero horizontal overflow, correct DOM (16 nodes, 28 links), and a reduced-motion pass asserting the figures settle rather than vanish. The ten visible FAQ entries are generated from the same source as the ten `FAQPage` JSON-LD answers and diffed word-for-word — 10/10 on the deployed HTML, because a rich result that quotes the page differently is a lie with a schema wrapper. Probes then re-run against the live origin under production CSP: page, stylesheet, script, font, mp4 and PDF all 200, live `main.js` byte-identical to the repo.
+Releases run in headless Chrome at desktop and phone widths: zero console errors, zero horizontal overflow, correct DOM (16 nodes, 28 links), and a reduced-motion pass asserting the figures settle rather than vanish. The eleven visible FAQ entries are generated from the same source as the eleven `FAQPage` JSON-LD answers and diffed word-for-word — 11/11 on the deployed HTML, because a rich result that quotes the page differently is a lie with a schema wrapper. Probes then re-run against the live origin under production CSP: page, stylesheet, script, fonts and PDF all 200, live `main.js` byte-identical to the repo.
 
 ## Stack
 
