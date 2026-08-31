@@ -712,9 +712,9 @@ img{display:block;max-width:100%}
 .marquee.paused .mq-track{animation-play-state:paused}
 @media (prefers-reduced-motion:reduce){.mq-pause{display:none}}
 
-/* ── phone: never truncate a fact, wrap it (A14) and never clip a command (A8) ── */
+/* ── phone: never truncate a fact, wrap it (A14); a command scrolls sideways, it never breaks mid-token (A8) ── */
 @media (max-width:640px){
-  .hero-cmd-lines code{font-size:11.5px;white-space:pre-wrap;word-break:break-all;overflow-x:visible}
+  .hero-cmd-lines code{font-size:11.5px;white-space:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch}
   .mq-pause{right:8px;bottom:-17px;width:28px;height:28px}
 }
 
