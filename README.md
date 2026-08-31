@@ -8,7 +8,16 @@
   <img src="assets/preview-2026-08-24.webp" alt="fabius-landing — one set of rules above every model, in the green system" width="100%">
 </p>
 
-The repo is the whole page: a 77 KB `index.html` (six `<section>` blocks, 16 inline SVG symbols, 15 of them per-skill beetles), a 49 KB `styles.css`, an 18 KB `main.js`, self-hosted Barlow (400/500/600/700, preloaded) with Inter as fallback, 41 self-hosted official model/harness marks, and the 5 MB whitepaper it serves. Its argument is the plugin's contract: **you choose the goal; fabius chooses the machinery** — fifteen coordinated skills and twenty-two proven routing rules loaded on top of whatever model you already run (thirty-six families shown with their official marks), inside the harness you already use (Claude Code · Codex · Grok Build · any AGENTS.md reader). Nothing to host; no console of its own.
+## Screenshots
+
+<p align="center">
+  <img src="assets/system-map.webp" alt="The dark system band — the 16-node system map drawn in the browser: router, lean core, thirteen specialist layers and the spine, green on black" width="100%">
+</p>
+<p align="center">
+  <img src="assets/mobile-home.webp" alt="The hero on a phone — one set of rules above every model, the two calls to action and the install commands" width="42%">
+</p>
+
+The repo is the whole page: a 78 KB `index.html` (six `<section>` blocks, 16 inline SVG symbols, 13 of them per-specialist beetles), a 49 KB `styles.css`, an 18 KB `main.js`, self-hosted Barlow (400/500/600/700; 400 and 700 preloaded) with Inter as fallback, 43 self-hosted official model, provider and harness marks (35 appear in the hero marquee), and the 5 MB whitepaper it serves. Its argument is the plugin's contract: **you choose the goal; fabius chooses the machinery** — fifteen coordinated skills and twenty-two proven routing rules loaded on top of whatever model you already run (thirty-six families shown with their official marks), inside the harness you already use (Claude Code · Codex · Grok Build · any AGENTS.md reader). Nothing to host; no console of its own.
 
 ## One design system, two grounds
 
@@ -16,7 +25,7 @@ The light sections run the green system: one accent `#76b900` with an AA ramp (`
 
 ## Narrowing six sections to two exits
 
-One `<h1>`, and two things to do at the end: install the plugin (GitHub) or read the paper — the only outbound links. The install block is a tabbed terminal (Claude Code · Codex · Grok Build · Anywhere) with one copy button per harness, and the hero carries the two Claude Code commands with a single copy. First paint costs ~200 KB of markup, CSS, JS, fonts and the hero marquee's 96 px WebP marks (the full-size marks in `assets/brands/` are the provenance source, never served); every image below the hero is lazy and sized.
+One `<h1>`, and two things to do at the end: install the plugin (GitHub) or read the paper — the only outbound links. The install block is a tabbed terminal (Claude Code · Codex · Grok Build · Anywhere) with one copy button per harness, and the hero carries the two Claude Code commands with a single copy. The whole page is ~220 KB over the wire — markup, CSS, JS, fonts and the hero marquee's 96 px WebP marks (the full-size marks in `assets/brands/` are the provenance source; only `gemini.svg` is served as-is, having no raster derivative). Those marquee `<img>`s, each sized, are the page's only raster images — every figure below the hero is inline SVG.
 
 ## Building the system map in the browser, not shipping a picture
 
