@@ -32,7 +32,7 @@
 
 <link rel="preload" href="/assets/barlow-700.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/barlow-400.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="/styles.css?v=2026-09-07" />
+<link rel="stylesheet" href="/styles.css?v=2026-09-07a" />
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"fabius","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","alternateName":"fabius plugin","description":"Add an installable skill layer to your AI model: planning, code, research, memory and verification, plus images, video and automation through your tools. Available through compatible agent environments; execution depends on connected tools and permissions.","url":"https://fabius-landing.vercel.app/","image":"https://fabius-landing.vercel.app/assets/og.png?v=2026-09-07","downloadUrl":"https://github.com/shear559/fabius","installUrl":"https://github.com/shear559/fabius","softwareVersion":"2.7.1","author":{"@type":"Person","name":"shear559","url":"https://github.com/shear559"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD","description":"Free to install for personal use; proprietary licence."},"featureList":["Installable, model-agnostic AI skill layer","15 coordinated public skills","Planning and capability-first routing","Code development, debugging and verification","Video workflows using connected or local media tools","Images, websites, decks and data visualization","Automation through configured APIs and MCP tools","Permissioned project memory and source-grounded research","Agent orchestration and multi-model review with model access"]}
 </script>
@@ -197,25 +197,6 @@
       </article>
     </div>
 
-    <article class="cap-video" aria-labelledby="video-title">
-      <div class="cap-video-copy">
-        <p class="cap-kicker">Video creation &amp; editing</p>
-        <h3 id="video-title">From a brief to a finished video.</h3>
-        <p>Plan the script and scenes, create assets with a connected generator, and assemble clips, captions, audio and transitions with video tools.</p>
-        <p class="cap-video-note">fabius supplies the workflow. A connected media service or separately installed tools such as FFmpeg, Remotion or HyperFrames handle generation and rendering. Paid services use your own account or API keys.</p>
-        <a class="cap-source" href="https://github.com/shear559/fabius/blob/main/skills/fabius-decor/references/motion-libraries.md#video--the-production-lane-beyond-web-motion" target="_blank" rel="noopener">Explore the video workflow <span aria-hidden="true">↗</span></a>
-      </div>
-      <div class="cap-video-flow">
-        <p class="cap-flow-label">Example workflow · a product video</p>
-        <ol>
-          <li><span class="cap-step" aria-hidden="true">01</span><div><h4>Brief &amp; storyboard</h4><p>Turn the message into a script and shot plan.</p></div></li>
-          <li><span class="cap-step" aria-hidden="true">02</span><div><h4>Create &amp; collect</h4><p>Use your assets or an available media generator.</p></div></li>
-          <li><span class="cap-step" aria-hidden="true">03</span><div><h4>Edit &amp; combine</h4><p>Compose the clips, timing, captions and sound.</p></div></li>
-          <li><span class="cap-step" aria-hidden="true">04</span><div><h4>Render &amp; review</h4><p>Export with your tools and inspect the result.</p></div></li>
-        </ol>
-      </div>
-    </article>
-
     <div class="cap-grid">
       <article class="cap-card">
         <p class="cap-category">Development</p>
@@ -225,8 +206,8 @@
       </article>
       <article class="cap-card">
         <p class="cap-category">Visual creation</p>
-        <h3>Create images, slides and websites.</h3>
-        <p>Apply a consistent visual direction to interfaces, decks, charts and infographics. Use connected image tools for generated visuals.</p>
+        <h3>Create interfaces, images and video.</h3>
+        <p>Apply one visual direction across screens, decks, charts and infographics — and script, assemble and render video. Generation and rendering run on connected tools, such as an image service, FFmpeg or Remotion.</p>
         <a class="cap-source" href="https://github.com/shear559/fabius/tree/main/skills/fabius-decor" target="_blank" rel="noopener">Design skill <span aria-hidden="true">↗</span></a>
       </article>
       <article class="cap-card">
@@ -255,11 +236,39 @@
       </article>
     </div>
 
+    <section class="cap-layers" aria-labelledby="layers-title">
+      <p class="cap-kicker">The fifteen layers</p>
+      <h3 id="layers-title">Two always on. Thirteen specialists on call.</h3>
+      <p class="cap-layers-lede">The six areas above are where most work lands. This is the whole set — one owner per domain, loaded only when the task calls for it, so nothing is answered by a tool it does not need.</p>
+
+      <ul class="cap-layer-list cap-layer-core">
+        <li><b>fabius</b><span>The router. Reads the task, names the capability it needs, loads the layers that cover it.</span></li>
+        <li><b>parcus</b><span>The lean core. Say less, build less, change less — running underneath every other layer.</span></li>
+      </ul>
+
+      <ul class="cap-layer-list">
+        <li><b>disciplina</b><span>Engineering process — scope, plan, debug to root cause, prove it</span></li>
+        <li><b>decor</b><span>Design, UI, data visualization, images and video</span></li>
+        <li><b>cohors</b><span>Agent engineering and multi-agent orchestration</span></li>
+        <li><b>archivum</b><span>Persistent memory, project records and retrieval</span></li>
+        <li><b>machina</b><span>Deterministic automation across APIs, MCP and webhooks</span></li>
+        <li><b>scientia</b><span>Scientific method, bioinformatics and source-grounded data</span></li>
+        <li><b>praesidium</b><span>Defensive security — threat model, harden, regression-test</span></li>
+        <li><b>mercatus</b><span>Go-to-market, positioning and outreach drafts</span></li>
+        <li><b>catena</b><span>On-chain code and cryptographic provenance seals</span></li>
+        <li><b>doctrina</b><span>AI/ML engineering — train, serve, evaluate, monitor</span></li>
+        <li><b>fortuna</b><span>Markets and financial analysis</span></li>
+        <li><b>ludus</b><span>Game design and development</span></li>
+        <li><b>concilium</b><span>Cross-model council — several models, one aggregated answer</span></li>
+      </ul>
+
+      <a class="cap-source cap-layers-link" href="#system">See how the router connects them <span aria-hidden="true">↓</span></a>
+    </section>
+
     <div class="cap-setup">
       <div><h3>Start with the skill layer.</h3><p>The plugin includes 15 skill contracts, routing and planning rules, verification methods and memory practices.</p></div>
       <div><h3>Extend with your tools.</h3><p>Media generators, live apps, external data and extra models connect through your environment. Their setup, permissions and any service fees remain with your accounts.</p></div>
     </div>
-    <p class="cap-depth">Specialist depth also covers marketing, defensive security, game development, on-chain work, science, AI/ML engineering and market analysis. <a href="#system">Explore all 15 layers <span aria-hidden="true">↓</span></a></p>
   </div>
 </section>
 

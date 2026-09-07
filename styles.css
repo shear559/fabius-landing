@@ -243,20 +243,8 @@ img{display:block;max-width:100%}
 .cap-outcomes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin:32px 0 56px;padding:28px 0;border-block:1px solid var(--hairline-2)}
 .cap-outcomes h3{font-size:1.375rem;line-height:1.2;margin-bottom:12px}
 .cap-outcomes p,.cap-card p,.cap-setup p{font-size:1rem;line-height:1.6;color:var(--muted);text-wrap:pretty}
-.cap-video{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;padding:clamp(24px,4vw,48px);background:var(--canvas-ink);color:var(--surface);border-top:4px solid var(--primary)}
-.cap-video .cap-kicker{color:var(--primary-lite)}
-.cap-video h3{font-size:clamp(2rem,3.4vw,3rem);line-height:1.08;color:var(--surface);text-wrap:balance;margin-bottom:24px}
-.cap-video-copy>p:not(.cap-kicker):not(.cap-video-note){font-size:1.125rem;line-height:1.6;color:var(--hairline)}
-.cap-video-copy>.cap-video-note{margin-top:20px;font-size:1rem;line-height:1.6;color:var(--hairline-2)}
 .cap-source{display:inline-flex;align-items:center;gap:8px;min-height:44px;width:fit-content;color:var(--primary-ink);font-size:.875rem;font-weight:600;line-height:1.4;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
 .cap-source:hover{text-decoration-thickness:2px}
-.cap-video .cap-source{color:var(--primary-lite);margin-top:16px}
-.cap-flow-label{font-size:.875rem;line-height:1.4;color:var(--hairline-2);margin:0 0 20px}
-.cap-video-flow ol{list-style:none;margin:0;padding:0;display:grid;gap:0}
-.cap-video-flow li{display:grid;grid-template-columns:36px minmax(0,1fr);gap:16px;padding:18px 0;border-top:1px solid rgba(255,255,255,.11)}
-.cap-step{color:var(--primary-lite);font:500 .875rem/1.5 var(--mono);padding-top:2px}
-.cap-video-flow h4{margin:0 0 6px;font-size:1.125rem;font-weight:600;line-height:1.3}
-.cap-video-flow li p{font-size:1rem;line-height:1.5;color:var(--hairline-2)}
 .cap-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:36px;margin-top:40px}
 .cap-card{display:flex;flex-direction:column;align-items:flex-start;padding:28px 0;border-bottom:1px solid var(--hairline-2);min-width:0}
 .cap-card .cap-category{font-size:.875rem;color:var(--primary-ink);font-weight:600;line-height:1.4;margin-bottom:16px}
@@ -266,19 +254,28 @@ img{display:block;max-width:100%}
 .cap-card .cap-links .cap-source{margin-top:0;padding-top:0;min-height:44px}
 .cap-setup{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:48px;padding:28px 32px;background:var(--canvas-alt);border-inline-start:3px solid var(--primary)}
 .cap-setup h3{font-size:1.25rem;line-height:1.3;margin-bottom:12px}
-.cap-depth{margin-top:24px;max-width:960px;font-size:1rem;line-height:1.6;color:var(--muted)}
-.cap-depth a{color:var(--primary-ink);font-weight:600;display:inline-block;padding-block:10px;text-decoration:underline;text-underline-offset:4px}
+.cap-layers{margin-top:48px;padding-top:40px;border-top:1px solid var(--hairline-2)}
+.cap-layers h3{font-size:clamp(1.375rem,2.1vw,1.75rem);line-height:1.2;margin-bottom:14px;max-width:26ch;text-wrap:balance}
+.cap-layers-lede{font-size:1rem;line-height:1.6;color:var(--muted);max-width:62ch;margin-bottom:28px;text-wrap:pretty}
+.cap-layer-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 36px}
+.cap-layer-list li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:baseline;padding:11px 0;border-top:1px solid var(--hairline);min-width:0}
+.cap-layer-list b{font:600 .8125rem/1.6 var(--mono);color:var(--primary-ink);letter-spacing:.02em}
+.cap-layer-list span{font-size:.9375rem;line-height:1.5;color:var(--muted);text-wrap:pretty}
+.cap-layer-core{grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:28px}
+.cap-layer-core b{color:var(--ink)}
+.cap-layer-core span{color:var(--ink-2)}
+.cap-layers-link{margin-top:22px}
 @media(max-width:900px){
-  .cap-video{grid-template-columns:1fr;gap:32px}
   .cap-grid{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px}
   .cap-outcomes{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
   .cap-setup{grid-template-columns:1fr;gap:24px}
+  .cap-layer-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px}
 }
 @media(max-width:600px){
   .cap-outcomes{grid-template-columns:1fr;gap:24px;margin-bottom:32px}
   .cap-grid{grid-template-columns:1fr;margin-top:20px}
   .cap-setup{grid-template-columns:1fr;gap:24px;padding:24px;margin-top:32px}
-  .cap-video-flow li{gap:12px}
+  .cap-layer-list,.cap-layer-core{grid-template-columns:1fr}
   .hero-compat{font-size:1rem}
 }
 
