@@ -1,7 +1,7 @@
 {
   "name": "fabius — scout wide · strike narrow",
   "short_name": "fabius",
-  "description": "fabius — a plugin, not a platform. One set of operating rules above every model; the model you already run executes.",
+  "description": "Add an installable skill layer to your AI model: planning, code, research, memory and verification, plus images, videos and automations through connected tools.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

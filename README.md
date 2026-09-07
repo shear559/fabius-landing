@@ -1,12 +1,40 @@
 # fabius — landing page
 
-> **The single-page marketing site for fabius — a plugin, not a platform: one set of operating rules above every model — for anyone deciding whether to install it.**
+> **The single-page site for fabius: an installable skill layer for the AI model you already use.**
 
 **Live:** [fabius-landing.vercel.app](https://fabius-landing.vercel.app) · **The plugin:** [github.com/shear559/fabius](https://github.com/shear559/fabius)
 
 <p align="center">
   <img src="assets/preview-2026-08-24.webp" alt="fabius-landing — one set of rules above every model, in the green system" width="100%">
 </p>
+
+## September 7, 2026: capability-focused positioning
+
+The opening is now **your model. more capable.** The page explains that fabius adds skills and workflows inside a compatible agent environment, while the chosen model and connected tools carry out the work. It does not change model weights or guarantee gains on every model.
+
+The new capabilities section appears before the detailed architecture. It covers improvements to execution and reuse, a featured video workflow, and six practical areas: development, visual creation, automation, research, project memory, and agent/model coordination. Video generators, rendering tools, live integrations and additional model access are explicitly separate from the included skill contracts. The page preserves the existing green design, system map, install tabs and social-preview image.
+
+Claims were checked against the plugin's 2.7.1 source at commit b907fc687893e3f8041503df67a8af91cbb5cd2f:
+
+| Landing-page topic | Source in shear559/fabius |
+| --- | --- |
+| Identity, process improvement, unchanged model weights | IDENTITY.md |
+| Fifteen public skills, installation, optional dependencies | README.md; .claude-plugin/plugin.json; ARCHITECTURE.md |
+| Video production, FFmpeg, Remotion, HyperFrames, external generators | skills/fabius-decor/references/motion-libraries.md, production-lane section |
+| UI, images, charts, slides | skills/fabius-decor/SKILL.md |
+| Engineering process and verification | skills/fabius-disciplina/SKILL.md |
+| API/MCP automation and separate live connections | skills/fabius-machina/SKILL.md |
+| Research, source-grounding, video ingest and memory | skills/fabius-scientia/SKILL.md; skills/fabius-archivum/SKILL.md |
+| Agents and model councils | skills/fabius-cohors/SKILL.md; skills/fabius-concilium/SKILL.md |
+| Dated measurements, regressions and replay limits | BENCHMARKS.md |
+
+The visible FAQ and FAQPage structured data share the same 13 questions and answers. Search descriptions and the web manifest use the new positioning. Model compatibility, execution access and any external service fees are stated separately.
+
+This is a static HTML/CSS/JavaScript site with no package installation or build step. Validate HTML structure and local asset/anchor references, JSON-LD/FAQ parity, install-copy text, CSS and JavaScript syntax before release. No browser or visual test was performed for this content update.
+
+## Original design notes (August 24, 2026)
+
+The screenshots and measurements below document the previous design revision.
 
 ## Screenshots
 
