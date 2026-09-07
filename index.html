@@ -32,7 +32,7 @@
 
 <link rel="preload" href="/assets/barlow-700.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/barlow-400.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="/styles.css?v=2026-09-07a" />
+<link rel="stylesheet" href="/styles.css?v=2026-09-07b" />
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"fabius","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","alternateName":"fabius plugin","description":"Add an installable skill layer to your AI model: fifteen skills, one owner per domain — engineering, design, research, automation, security and memory. Available through compatible agent environments; execution depends on connected tools and permissions.","url":"https://fabius-landing.vercel.app/","image":"https://fabius-landing.vercel.app/assets/og.png?v=2026-09-07a","downloadUrl":"https://github.com/shear559/fabius","installUrl":"https://github.com/shear559/fabius","softwareVersion":"2.7.1","author":{"@type":"Person","name":"shear559","url":"https://github.com/shear559"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD","description":"Free to install for personal use; proprietary licence."},"featureList":["Installable, model-agnostic AI skill layer","15 coordinated public skills","Planning and capability-first routing","Code development, debugging and verification","Video workflows using connected or local media tools","Images, websites, decks and data visualization","Automation through configured APIs and MCP tools","Permissioned project memory and source-grounded research","Agent orchestration and multi-model review with model access"]}
 </script>
@@ -197,73 +197,90 @@
       </article>
     </div>
 
-    <div class="cap-grid">
+    <p class="cap-group">Always on — every task, every model</p>
+    <div class="cap-grid cap-grid-core">
       <article class="cap-card">
-        <p class="cap-category">Development</p>
-        <h3>Build, debug and review code.</h3>
-        <p>Move from a requirement to a working implementation. Reproduce bugs, make focused fixes and use the available tests or toolchain to verify them.</p>
-        <a class="cap-source" href="https://github.com/shear559/fabius/tree/main/skills/fabius-disciplina" target="_blank" rel="noopener">Engineering skill <span aria-hidden="true">↗</span></a>
+        <p class="cap-category">fabius</p>
+        <h3>Decide how to work, before any work starts.</h3>
+        <p>The router. It reads the task, names the capability the task actually needs, and loads the layers that cover it — scout wide, then strike narrow. No specialist fires until it has.</p>
       </article>
       <article class="cap-card">
-        <p class="cap-category">Visual creation</p>
-        <h3>Create interfaces, images and video.</h3>
-        <p>Apply one visual direction across screens, decks, charts and infographics — and script, assemble and render video. Generation and rendering run on connected tools, such as an image service, FFmpeg or Remotion.</p>
-        <a class="cap-source" href="https://github.com/shear559/fabius/tree/main/skills/fabius-decor" target="_blank" rel="noopener">Design skill <span aria-hidden="true">↗</span></a>
-      </article>
-      <article class="cap-card">
-        <p class="cap-category">Connected work</p>
-        <h3>Connect apps. Automate tasks.</h3>
-        <p>Design and validate workflows across APIs, MCP connections and platforms such as n8n. Run them against your connected services with the required access.</p>
-        <a class="cap-source" href="https://github.com/shear559/fabius/tree/main/skills/fabius-machina" target="_blank" rel="noopener">Automation skill <span aria-hidden="true">↗</span></a>
-      </article>
-      <article class="cap-card">
-        <p class="cap-category">Research &amp; analysis</p>
-        <h3>Turn sources into useful findings.</h3>
-        <p>Structure research, compare evidence and analyze data with the tools available. Work from your documents and sources, and keep every finding tied to the one it came from.</p>
-        <a class="cap-source" href="https://github.com/shear559/fabius/tree/main/skills/fabius-scientia" target="_blank" rel="noopener">Research skill <span aria-hidden="true">↗</span></a>
-      </article>
-      <article class="cap-card">
-        <p class="cap-category">Project memory</p>
-        <h3>Pick up with the context intact.</h3>
-        <p>Keep approved decisions, project notes, meeting records and video transcripts in a reusable knowledge base. Recall relevant context across sessions when storage and recall are enabled.</p>
-        <a class="cap-source" href="https://github.com/shear559/fabius/tree/main/skills/fabius-archivum" target="_blank" rel="noopener">Memory skill <span aria-hidden="true">↗</span></a>
-      </article>
-      <article class="cap-card">
-        <p class="cap-category">Agent &amp; model coordination</p>
-        <h3>Bring in the right help.</h3>
-        <p>Split suitable work between specialist agents, or compare independent answers from several models. Multi-model review needs access to those models and is used when it earns its cost.</p>
-        <div class="cap-links"><a class="cap-source" href="https://github.com/shear559/fabius/tree/main/skills/fabius-cohors" target="_blank" rel="noopener">Agent orchestration <span aria-hidden="true">↗</span></a><a class="cap-source" href="https://github.com/shear559/fabius/tree/main/skills/fabius-concilium" target="_blank" rel="noopener">Model council <span aria-hidden="true">↗</span></a></div>
+        <p class="cap-category">parcus</p>
+        <h3>Say less. Build less. Change less.</h3>
+        <p>The lean core, running underneath every other layer. Four trims: terse output, a YAGNI ladder on new code, surgical diffs instead of rewrites, and assumptions checked rather than guessed.</p>
       </article>
     </div>
 
-    <section class="cap-layers" aria-labelledby="layers-title">
-      <p class="cap-kicker">The fifteen layers</p>
-      <h3 id="layers-title">Two always on. Thirteen specialists on call.</h3>
-      <p class="cap-layers-lede">The six areas above are where most work lands. This is the whole set — one owner per domain, loaded only when the task calls for it, so nothing is answered by a tool it does not need.</p>
+    <p class="cap-group">Thirteen specialists — loaded only when the task calls for one</p>
+    <div class="cap-grid">
+      <article class="cap-card">
+        <p class="cap-category">disciplina</p>
+        <h3>Build it, debug it, prove it.</h3>
+        <p>One repeatable procedure for every change: scope, plan, map what the edit touches, strengthen the test that would catch a mistake, then prove it ran. Bugs get traced to a root cause instead of patched at the symptom.</p>
+      </article>
+      <article class="cap-card">
+        <p class="cap-category">decor</p>
+        <h3>Make it look shipped, not generated.</h3>
+        <p>A token vocabulary and the laws that separate amateur UI from production work — spacing, type, one accent, motion, contrast and focus states. Covers screens, landing pages, slides, charts, diagrams, images, video and right-to-left layout.</p>
+      </article>
+      <article class="cap-card">
+        <p class="cap-category">cohors</p>
+        <h3>Define agents. Orchestrate them.</h3>
+        <p>How to write an agent's contract and its permissions, when one agent beats a team, and five orchestration shapes — sequential, parallel, hierarchical, human-in-the-loop and swarm.</p>
+      </article>
+      <article class="cap-card">
+        <p class="cap-category">archivum</p>
+        <h3>Stop re-deriving what you already learned.</h3>
+        <p>A persistent knowledge base in plain markdown: write findings down, link them, retrieve them cheaply, and keep the index and log healthy — so the next session starts ahead of this one instead of level with it.</p>
+      </article>
+      <article class="cap-card">
+        <p class="cap-category">mercatus</p>
+        <h3>Make the value legible, the next step obvious.</h3>
+        <p>Positioning, matching the message to what the reader already knows, proof instead of adjectives, and a one-action funnel. Owns the words on a landing page, a launch, an email or an ad — decor owns how it looks.</p>
+      </article>
+      <article class="cap-card">
+        <p class="cap-category">praesidium</p>
+        <h3>Find it before an attacker does.</h3>
+        <p>Threat-model each trust boundary, run the OWASP pass, then check secrets, least privilege and the supply chain. Every finding ships with a severity, a fix and a regression test. Defensive only — it hardens, never weaponizes.</p>
+      </article>
+      <article class="cap-card">
+        <p class="cap-category">ludus</p>
+        <h3>Find the loop that's actually fun.</h3>
+        <p>Core loop first, then game feel added deliberately rather than sprinkled on. State modelled as an explicit machine, one balance knob moved at a time, and scope cut to something that ships.</p>
+      </article>
+      <article class="cap-card">
+        <p class="cap-category">catena</p>
+        <h3>Trustless code, and provenance anyone can re-check.</h3>
+        <p>EVM and Solana programs written account-validation-first and money-safe by default — plus sealing any artifact with a content-bound hash, a signature and a Bitcoin-anchored timestamp that still verifies offline years later.</p>
+      </article>
+      <article class="cap-card">
+        <p class="cap-category">machina</p>
+        <h3>Wire the services, then prove the wiring.</h3>
+        <p>Deterministic automation across APIs, MCP servers and platforms such as n8n: triggers, webhooks, scheduled jobs, branching, and the error paths most builds forget. Validated before it runs against anything live.</p>
+      </article>
+      <article class="cap-card">
+        <p class="cap-category">scientia</p>
+        <h3>Run the method, not a summary of it.</h3>
+        <p>Competing falsifiable hypotheses, an experiment designed to separate them, and every factual claim grounded in an authoritative database rather than recalled. Sequences bioinformatics, cheminformatics and omics pipelines over field-standard tools.</p>
+      </article>
+      <article class="cap-card">
+        <p class="cap-category">doctrina</p>
+        <h3>Train it, serve it, measure whether it improved.</h3>
+        <p>The model lifecycle as production software: datasets, fine-tuning, serving and inference, experiment tracking, and evaluation strict enough to gate a release. It owns the model an agent calls, not the agent.</p>
+      </article>
+      <article class="cap-card">
+        <p class="cap-category">fortuna</p>
+        <h3>Bring method to money.</h3>
+        <p>Equity, market and economic analysis, financial modeling, backtests with honest statistics, and risk-first position sizing — turned into a sourced, falsifiable analysis rather than a confident prediction.</p>
+      </article>
+      <article class="cap-card">
+        <p class="cap-category">concilium</p>
+        <h3>Ask several models. Weigh the answers.</h3>
+        <p>Each model answers independently, then blind-ranks every anonymized answer — its own included — before a chairman synthesizes the field. Reached for when repeated samples of one strong model keep failing the same way.</p>
+      </article>
+    </div>
 
-      <ul class="cap-layer-list cap-layer-core">
-        <li><b>fabius</b><span>The router. Reads the task, names the capability it needs, loads the layers that cover it.</span></li>
-        <li><b>parcus</b><span>The lean core. Say less, build less, change less — running underneath every other layer.</span></li>
-      </ul>
-
-      <ul class="cap-layer-list">
-        <li><b>disciplina</b><span>Engineering process — scope, plan, debug to root cause, prove it</span></li>
-        <li><b>decor</b><span>Design, UI, data visualization, images and video</span></li>
-        <li><b>cohors</b><span>Agent engineering and multi-agent orchestration</span></li>
-        <li><b>archivum</b><span>Persistent memory, project records and retrieval</span></li>
-        <li><b>machina</b><span>Deterministic automation across APIs, MCP and webhooks</span></li>
-        <li><b>scientia</b><span>Scientific method, bioinformatics and source-grounded data</span></li>
-        <li><b>praesidium</b><span>Defensive security — threat model, harden, regression-test</span></li>
-        <li><b>mercatus</b><span>Go-to-market, positioning and outreach drafts</span></li>
-        <li><b>catena</b><span>On-chain code and cryptographic provenance seals</span></li>
-        <li><b>doctrina</b><span>AI/ML engineering — train, serve, evaluate, monitor</span></li>
-        <li><b>fortuna</b><span>Markets and financial analysis</span></li>
-        <li><b>ludus</b><span>Game design and development</span></li>
-        <li><b>concilium</b><span>Cross-model council — several models, one aggregated answer</span></li>
-      </ul>
-
-      <a class="cap-source cap-layers-link" href="#system">See how the router connects them <span aria-hidden="true">↓</span></a>
-    </section>
+    <a class="cap-source cap-layers-link" href="#system">See how the router connects them <span aria-hidden="true">↓</span></a>
 
     <div class="cap-setup">
       <div><h3>Start with the skill layer.</h3><p>The plugin includes 15 skill contracts, routing and planning rules, verification methods and memory practices.</p></div>
