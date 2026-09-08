@@ -306,12 +306,11 @@ img{display:block;max-width:100%}
   radial-gradient(36% 60% at 10% 16%,rgba(118,185,0,.08),transparent 76%),
   var(--canvas-alt);border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
 .research-in{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
-.research-pts{list-style:none;padding:0;margin:26px 0 30px;display:flex;flex-direction:column;gap:16px}
+.research-pts{list-style:none;padding:0;margin:26px 0 0;display:flex;flex-direction:column;gap:16px}
 .research-pts li{position:relative;padding-left:26px;font-size:15.5px;color:var(--muted);line-height:1.55}
 .research-pts li b{color:var(--ink);font-weight:560}
 .research-pts li code{font-family:var(--mono);font-size:.82em;background:#fff;border:1px solid var(--hairline-2);padding:1px 6px;border-radius:6px;color:var(--primary-ink)}
 .research-pts li::before{content:"";position:absolute;left:0;top:8px;width:13px;height:13px;border-radius:50%;background:var(--c-teal);box-shadow:0 0 0 4px var(--c-teal-wash)}
-.research-actions{display:flex;gap:12px;flex-wrap:wrap}
 
 /* ── the decision · formula band + gate chart + worked example (now inside the system band) ── */
 .formula-band{text-align:center;margin-bottom:30px;padding:clamp(30px,5vw,50px) 24px;
