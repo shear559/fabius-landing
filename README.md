@@ -1,78 +1,48 @@
 # fabius — landing page
 
-> **The single-page site for fabius: an installable skill layer for the AI model you already use.**
+The public site for **fabius**, an installable skill layer for supported agent environments.
 
-**Live:** [fabius-landing.vercel.app](https://fabius-landing.vercel.app) · **The plugin:** [github.com/shear559/fabius](https://github.com/shear559/fabius)
+[Website](https://fabius-landing.vercel.app) · [Plugin repository](https://github.com/shear559/fabius) · [Whitepaper](fabius-as-a-system.pdf)
 
-<p align="center">
-  <img src="assets/preview-2026-08-24.webp" alt="fabius-landing — one set of rules above every model, in the green system" width="100%">
-</p>
+![The current green landing-page hero](assets/preview-2026-09-08.webp)
 
-## September 7, 2026: capability-focused positioning
+## Content baseline
 
-The opening is now **your model. more capable.** The page explains that fabius adds skills and workflows inside a compatible agent environment, while the chosen model and connected tools carry out the work. It does not change model weights or guarantee gains on every model.
+Aligned with the **2.8.1** plugin source. The page keeps the existing “your model. more capable.” opening, green palette, Barlow typography, system map and three capability outcomes. The previously removed skill-card grids, setup split and explainer video remain absent.
 
-The new capabilities section appears before the detailed architecture. It covers improvements to execution and reuse, a featured video workflow, and six practical areas: development, visual creation, automation, research, project memory, and agent/model coordination. Video generators, rendering tools, live integrations and additional model access are explicitly separate from the included skill contracts. The page preserves the existing green design, system map, install tabs and social-preview image.
+Fabius supplies instructions and workflows. The host supplies the model, tools and permissions. Model marks illustrate families; they do not establish tested integration or a universal quality gain.
 
-Claims were checked against the plugin's 2.7.1 source at commit b907fc687893e3f8041503df67a8af91cbb5cd2f:
-
-| Landing-page topic | Source in shear559/fabius |
+| Public claim | Canonical plugin source |
 | --- | --- |
-| Identity, process improvement, unchanged model weights | IDENTITY.md |
-| Fifteen public skills, installation, optional dependencies | README.md; .claude-plugin/plugin.json; ARCHITECTURE.md |
-| Video production, FFmpeg, Remotion, HyperFrames, external generators | skills/fabius-decor/references/motion-libraries.md, production-lane section |
-| UI, images, charts, slides | skills/fabius-decor/SKILL.md |
-| Engineering process and verification | skills/fabius-disciplina/SKILL.md |
-| API/MCP automation and separate live connections | skills/fabius-machina/SKILL.md |
-| Research, source-grounding, video ingest and memory | skills/fabius-scientia/SKILL.md; skills/fabius-archivum/SKILL.md |
-| Agents and model councils | skills/fabius-cohors/SKILL.md; skills/fabius-concilium/SKILL.md |
-| Dated measurements, regressions and replay limits | BENCHMARKS.md |
+| Fifteen skills and capability ownership | `README.md`, `ARCHITECTURE.md`, `skills/*/SKILL.md` |
+| Installation, updates and active-session loading | `README.md`, `skills/fabius/references/skill-frontmatter.md` |
+| Twenty-two core rules, mathematical assumptions and heuristics | `RESEARCH.md`, `paper/proofs.json` |
+| Historical gains, regressions and missing artifacts | `BENCHMARKS.md`, `evals/verify-receipts.mjs` |
+| Local execution, provider processing and permission limits | `runtime/README.md`, `runtime/src/tools.mjs` |
+| Content hashes, signed releases and timestamp status | `PROVENANCE.md`, `provenance/verify.sh` |
 
-The visible FAQ and FAQPage structured data share the same 13 questions and answers. Search descriptions and the web manifest use the new positioning. Model compatibility, execution access and any external service fees are stated separately.
+The reviewer example uses explicitly hypothetical probabilities. Its independence assumption and cost comparison are stated. Research curves are illustrative decision models, not measured performance. The page does not equate release checks with improved model quality.
 
-This is a static HTML/CSS/JavaScript site with no package installation or build step. Validate HTML structure and local asset/anchor references, JSON-LD/FAQ parity, install-copy text, CSS and JavaScript syntax before release. No browser or visual test was performed for this content update.
+## Structure and design
 
-## Original design notes (August 24, 2026)
+Static `index.html`, `styles.css` and `main.js`; no build or package installation. The page contains the hero, three capability outcomes, system/research explanations, installation tabs and thirteen FAQ entries. The FAQ and its JSON-LD must remain word-for-word equivalent.
 
-The screenshots and measurements below document the previous design revision.
+The design uses the existing green tokens (`#76b900`, with darker text variants), self-hosted Barlow, square buttons and green-on-black system diagrams. The map has sixteen nodes: router, lean core, thirteen specialists and the shared reference spine. Its twenty-eight connectors are built from the specialist table in `main.js`. On narrow screens the map scrolls inside its own container. Reduced motion renders a static diagram.
 
-## Screenshots
+## Local preview and verification
 
-<p align="center">
-  <img src="assets/system-map.webp" alt="The dark system band — the 16-node system map drawn in the browser: router, lean core, thirteen specialist layers and the spine, green on black" width="100%">
-</p>
-<p align="center">
-  <img src="assets/mobile-home.webp" alt="The hero on a phone — one set of rules above every model, the two calls to action and the install commands" width="42%">
-</p>
+```sh
+python3 -m http.server 8799
+```
 
-The repo is the whole page: a 78 KB `index.html` (six `<section>` blocks, 16 inline SVG symbols, 13 of them per-specialist beetles), a 49 KB `styles.css`, an 18 KB `main.js`, self-hosted Barlow (400/500/600/700; 400 and 700 preloaded) with Inter as fallback, 43 self-hosted official model, provider and harness marks (35 appear in the hero marquee), and the 5 MB whitepaper it serves. Its argument is the plugin's contract: **you choose the goal; fabius chooses the machinery** — fifteen coordinated skills and twenty-two proven routing rules loaded on top of whatever model you already run (thirty-six families shown with their official marks), inside the harness you already use (Claude Code · Codex · Grok Build · any AGENTS.md reader). Nothing to host; no console of its own.
+Serve from the repository root. Before publishing, check the actual page in a browser at phone, tablet and desktop widths, including WebKit. Exercise menu, keyboard tabs, copy buttons, FAQ parity, internal links, images, console and network failures. Inspect reduced motion and verify that the PDF bytes match the plugin artifact manifest. Test production security headers as well; a plain local server does not supply them.
 
-## One design system, two grounds
+The September 8 accuracy pass verified the changed content locally in Chromium and WebKit. It did not establish that this batch was deployed. Production status must be checked separately after publication.
 
-The light sections run the green system: one accent `#76b900` with an AA ramp (`#5e9400` for hover, large text and data ink at ≥3:1; `#4e7a00` for small text at ≥4.5:1), flat square buttons — green fill with black text, or a 2 px green outline — and liquid-glass surfaces (backdrop blur + a specular top edge) on the FAQ and the research card. The dark system band speaks the same language on black: green grid, green node strokes and packet dots, green rule badges and chart ink. Every color pair on the page passes WCAG AA for its role, including focus rings and chart data ink.
+## Publication
 
-## Narrowing six sections to two exits
+The existing Vercel project is linked to `main`; pushing the website can publish it. Owner approval is required before pushing. Verify the deployed HTML, scripts, stylesheet, PDF hash, console and rendered page on the exact website URL above.
 
-One `<h1>`, and two things to do at the end: install the plugin (GitHub) or read the paper — the only outbound links. The install block is a tabbed terminal (Claude Code · Codex · Grok Build · Anywhere) with one copy button per harness, and the hero carries the two Claude Code commands with a single copy. The whole page is ~220 KB over the wire — markup, CSS, JS, fonts and the hero marquee's 96 px WebP marks (the full-size marks in `assets/brands/` are the provenance source; only `gemini.svg` is served as-is, having no raster derivative). Those marquee `<img>`s, each sized, are the page's only raster images — every figure below the hero is inline SVG.
+`vercel.json` supplies a same-origin CSP and restricts microphone, camera and geolocation. Keep executable scripts external. Files under `assets/` are cached immutably: use a new filename for a replaced image. Root CSS and JavaScript references carry dated version suffixes when those files change. The whitepaper is served at the root and must match the corresponding plugin release.
 
-## Building the system map in the browser, not shipping a picture
-
-`main.js` builds `#sysmapSvg` from a thirteen-entry `LAYERS` table: 16 nodes — router → lean core → 13 specialist layers → the spine — joined by 28 connectors (26 beziers, two straight trunks). They draw in on `stroke-dashoffset`, staggered 28 ms apart, at a 0.2 IntersectionObserver threshold; 1.5 s later a packet dot loops every path via `animateMotion` + `mpath`, carrying both `href` and `xlink:href` for older WebKit. Under `prefers-reduced-motion` it settles into the finished drawing with no packets, never into nothing. On phones it keeps its 760 px width and scrolls inside `overflow-x:auto`, so the body never does.
-
-## Making the motion cheap and fail-open
-
-Scroll reveal has four ways to finish: an IntersectionObserver (`rootMargin: 0 0 -12%`, threshold `0.12`); a passive scroll probe 24 ms later, because WebKit can coalesce observer work during fast programmatic scrolls; a 350 ms sweep; and a 4.5 s catch-all. Reduced motion skips it, so nothing is hidden to begin with. The swarm is not in the HTML: `buildWalkers()` injects the hero and dark-band walkers (fewer on phones) inside `requestIdleCallback(…, { timeout: 700 })` — green beetles on the light ground, green on the dark.
-
-## Serving it under a near-self-only CSP
-
-`vercel.json` sets `default-src 'self'` — script, connect and font too, `object-src 'none'`, `frame-ancestors 'none'` — relaxed only for inline `style-src` and `data:` images, plus `nosniff` and CORS pinned to this origin. It fits: one deferred first-party script, no iframes, no analytics, every provider mark self-hosted and disclaimed in `assets/brands/README.md`. `Permissions-Policy` denies `microphone=()` — the page has no voice feature. `/assets/*` is `immutable` for a year, so a replaced mark needs a new name; the root files revalidate every load and still carry a dated `?v=`.
-
-## Verifying on the deployed URL, not the local file
-
-Releases run in headless Chrome at desktop and phone widths: zero console errors, zero horizontal overflow, correct DOM (16 nodes, 28 links), and a reduced-motion pass asserting the figures settle rather than vanish. The eleven visible FAQ entries are generated from the same source as the eleven `FAQPage` JSON-LD answers and diffed word-for-word — 11/11 on the deployed HTML, because a rich result that quotes the page differently is a lie with a schema wrapper. Probes then re-run against the live origin under production CSP: page, stylesheet, script, fonts and PDF all 200, live `main.js` byte-identical to the repo.
-
-## Stack
-
-`Vanilla HTML/CSS/JS, no build` · `runtime-built inline SVG + SMIL` · `Vercel static + CSP headers` · `headless-Chrome verification`
-
-Built by [@shear559](https://github.com/shear559). The fabius plugin is proprietary and provenance-sealed (public repo, personal-use install grant); this page is its public surface.
+Public source does not imply an open-source licence. The Fabius plugin is proprietary with a personal-use installation grant; its [licence](https://github.com/shear559/fabius/blob/main/LICENSE) states the terms.
