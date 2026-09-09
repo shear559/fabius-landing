@@ -64,6 +64,8 @@
   --wrap:1280px;
   --gut:26px;
   --sec:clamp(72px,8vw,112px);
+  --space-1:.5rem; --space-2:1rem; --space-3:1.5rem; --space-4:2rem; --space-6:3rem;
+  --control:2.75rem; --note-size:.875rem; --info-width:50rem; --label-width:7.5rem;
 
   /* radius */
   --r-s:12px; --r-m:18px; --r-l:28px; --r-xl:36px; --r-pill:999px;
@@ -742,3 +744,49 @@ img{display:block;max-width:100%}
 
 /* ── FAQ centered (owner) ── */
 .faq .sec-head{max-width:760px;margin-inline:auto;text-align:center}
+
+/* ── copy feedback, first tasks and reference pages ── */
+.copy[aria-disabled="true"]{cursor:wait}
+.copy-feedback{width:100%;min-width:0;text-align:left;font-family:var(--sans);color:var(--ink-2)}
+.hero-cmd + .copy-feedback{max-width:40rem;margin-inline:auto}
+.copy-status{margin:0;font-size:var(--note-size);line-height:1.5}
+.copy-status:not(:empty){margin-block:var(--space-2)}
+.copy-manual{display:block;width:100%;max-width:100%;padding:var(--space-2);border:1px solid var(--hairline-2);border-radius:var(--r-s);background:var(--surface);color:var(--ink);font:var(--note-size)/1.6 var(--mono);resize:vertical;white-space:pre}
+.copy-manual[hidden]{display:none}
+.tab-panel .copy-feedback{color:var(--surface)}
+.install-resources{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:var(--space-1) var(--space-3);margin-block:var(--space-2)}
+.install-resources a{display:inline-flex;align-items:center;min-height:var(--control)}
+.install-resources a,.install-head a,.install-note a,.starter-note a{color:var(--primary-ink);text-decoration:underline;text-underline-offset:.2em}
+.install-check{max-width:var(--info-width);margin-inline:auto;text-align:center;color:var(--muted);font-size:var(--note-size);line-height:1.6}
+.starters{max-width:var(--info-width);margin:var(--space-6) auto 0}
+.starters h3{font-size:clamp(1.4rem,3vw,1.75rem);letter-spacing:-.03em;margin-bottom:var(--space-3)}
+.starter-list{list-style:none;padding:0;margin:0}
+.starter-list li{padding-block:var(--space-3);border-top:1px solid var(--hairline-2)}
+.starter-list h4{font:600 var(--note-size)/1.5 var(--mono);color:var(--primary-ink);margin-bottom:var(--space-1)}
+.starter-list p{font-size:1rem;line-height:1.6;color:var(--ink-2)}
+.starter-example{border-top:1px solid var(--hairline-2);padding-top:var(--space-3);font-size:var(--note-size);line-height:1.6;color:var(--ink-2)}
+.starter-example code{font:inherit;overflow-wrap:anywhere}
+.starter-note{margin-top:var(--space-2);font-size:var(--note-size);line-height:1.6;color:var(--muted)}
+.foot-links{max-width:var(--info-width)}
+.info-header{border-bottom:1px solid var(--hairline)}
+.info-header .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--space-2) var(--space-4);padding-block:var(--space-3)}
+.info-nav{display:flex;flex-wrap:wrap;gap:var(--space-1) var(--space-3)}
+.info-nav a{display:inline-flex;align-items:center;min-height:var(--control);font-size:var(--note-size);color:var(--ink-2)}
+.info-nav a[aria-current="page"]{color:var(--primary-ink);text-decoration:underline;text-underline-offset:.3em}
+.info-main{max-width:var(--info-width);padding-block:var(--sec)}
+.info-main h1{font-size:clamp(2.25rem,6vw,3.5rem);letter-spacing:-.045em;line-height:1.1;margin-bottom:var(--space-3)}
+.info-main .info-lede{font-size:1.2rem;line-height:1.6;color:var(--muted)}
+.info-main section{margin-top:var(--space-6)}
+.info-main h2{font-size:1.5rem;letter-spacing:-.025em;margin-bottom:var(--space-2)}
+.info-main p,.info-main li{font-size:1rem;line-height:1.7;color:var(--ink-2)}
+.info-main p + p,.info-main ul{margin-top:var(--space-2)}
+.info-main ul{padding-left:var(--space-3)}
+.info-main a{color:var(--primary-ink);text-decoration:underline;text-underline-offset:.2em;overflow-wrap:anywhere}
+.info-main code{font-family:var(--mono);font-size:.875em;overflow-wrap:anywhere}
+.info-footer{padding-block:var(--space-4);border-top:1px solid var(--hairline);color:var(--muted);font-size:var(--note-size)}
+.info-footer .wrap{display:flex;flex-wrap:wrap;gap:var(--space-2) var(--space-3)}
+.info-footer a{color:var(--primary-ink)}
+@media(min-width:640px){
+  .starter-list li{display:grid;grid-template-columns:var(--label-width) minmax(0,1fr);gap:var(--space-3)}
+  .starter-list h4{margin:0}
+}

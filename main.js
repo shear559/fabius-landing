@@ -25,17 +25,66 @@
   matchMedia('(min-width:901px)').addEventListener('change', (e) => { if (e.matches) setMenu(false); });
 
   /* ── copy buttons ───────────────────────────────────────── */
-  $$('[data-copy]').forEach((box) => {
+  $$('[data-copy]').forEach((box, i) => {
     const btn = $('.copy', box);
     if (!btn) return;
+    const commands = box.dataset.copy;
+    const label = btn.textContent;
+    const feedback = document.createElement('div');
+    feedback.className = 'copy-feedback';
+    const status = document.createElement('p');
+    status.className = 'copy-status';
+    status.id = `copy-status-${i}`;
+    status.setAttribute('role', 'status');
+    status.setAttribute('aria-live', 'polite');
+    status.setAttribute('aria-atomic', 'true');
+    const manual = document.createElement('textarea');
+    manual.className = 'copy-manual';
+    manual.readOnly = true;
+    manual.hidden = true;
+    manual.wrap = 'off';
+    manual.rows = commands.split('\n').length;
+    manual.value = commands;
+    manual.setAttribute('aria-label', 'Commands for manual copy');
+    manual.setAttribute('aria-describedby', status.id);
+    feedback.append(status, manual);
+    if (box.classList.contains('hero-cmd')) box.insertAdjacentElement('afterend', feedback);
+    else box.append(feedback);
+    btn.setAttribute('aria-describedby', status.id);
+    let pending = false, resetTimer;
+    const selectForCopy = (message) => {
+      manual.hidden = false;
+      manual.focus({ preventScroll: true });
+      manual.select();
+      manual.setSelectionRange(0, commands.length);
+      status.textContent = `${message} The commands below are selected. Press Ctrl+C or Command+C, or use your device’s Copy action.`;
+      btn.textContent = label;
+    };
     btn.addEventListener('click', async () => {
+      if (pending) return;
+      pending = true;
+      clearTimeout(resetTimer);
+      btn.classList.remove('done');
+      btn.setAttribute('aria-disabled', 'true');
+      btn.textContent = 'Copying…';
+      status.textContent = '';
       try {
-        await navigator.clipboard.writeText(box.dataset.copy);
-        const old = btn.textContent;
+        if (!navigator.clipboard || typeof navigator.clipboard.writeText !== 'function') {
+          selectForCopy('Automatic copy is unavailable.');
+          return;
+        }
+        await navigator.clipboard.writeText(commands);
+        manual.hidden = true;
+        status.textContent = 'Commands copied to clipboard.';
         btn.textContent = 'Copied';
         btn.classList.add('done');
-        setTimeout(() => { btn.textContent = old; btn.classList.remove('done'); }, 1600);
-      } catch (_) { /* clipboard blocked — no-op */ }
+        resetTimer = setTimeout(() => { btn.textContent = label; btn.classList.remove('done'); }, 1600);
+      } catch (error) {
+        selectForCopy('Automatic copy failed.');
+      } finally {
+        pending = false;
+        btn.removeAttribute('aria-disabled');
+      }
     });
   });
 

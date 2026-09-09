@@ -8,7 +8,7 @@ The public site for **fabius**, an installable skill layer for supported agent e
 
 ## Content baseline
 
-Aligned with the **2.8.1** plugin source. The page keeps the existing “your model. more capable.” opening, green palette, Barlow typography, system map and three capability outcomes. The previously removed skill-card grids, setup split and explainer video remain absent.
+Aligned with the **2.8.2** plugin source. The page keeps the existing “your model. more capable.” opening, green palette, Barlow typography, system map and three capability outcomes. The previously removed skill-card grids, setup split and explainer video remain absent.
 
 Fabius supplies instructions and workflows. The host supplies the model, tools and permissions. Model marks illustrate families; they do not establish tested integration or a universal quality gain.
 
