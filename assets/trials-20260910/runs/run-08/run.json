@@ -1,0 +1,102 @@
+{
+  "id": "run-08",
+  "task": "app",
+  "repeat": 1,
+  "arm": "fabius",
+  "model": "gpt-6-astra",
+  "effort": "high",
+  "status": "completed",
+  "elapsed_seconds": 506.084,
+  "usage": [
+    {
+      "input_tokens": 981061,
+      "cached_input_tokens": 932608,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 24998,
+      "reasoning_output_tokens": 3051
+    }
+  ],
+  "task_sha256": "7116b83075469f773ce51f72f708041e221d97b2b055d75cb309f0ff39239d1d",
+  "developer_sha256": "e82b9975409d856b8509a598dd085475b40cc5af261dadb94f732fbb44a87e2a",
+  "public_instructions_sha256": "3a715babb6dfce2857fae6a22c1be3e0ee98c4f7941fd41f042ea78396706654",
+  "prompt_input_sha256": "c19003c157b468a50a0fa6c068b58198eabb4090850139ea6dfd672a89f97817",
+  "events_sha256": "0777027a01d01b5f3089fe6c96f9dfa65394f9c92461ecfe0691dd36368cb97d",
+  "artifact": {
+    "entries": [
+      {
+        "path": "README.md",
+        "recorded_sha256": "1a892c1da65c5726692078e9178876378e291efc1481587f1f6ee6435cde2ad9",
+        "public_sha256": "1a892c1da65c5726692078e9178876378e291efc1481587f1f6ee6435cde2ad9"
+      },
+      {
+        "path": "app.js",
+        "recorded_sha256": "0b4ae55ace09bb0782a677308afcb0daf69a2187f492b374144a6497752de476",
+        "public_sha256": "0b4ae55ace09bb0782a677308afcb0daf69a2187f492b374144a6497752de476"
+      },
+      {
+        "path": "desktop.png",
+        "recorded_sha256": "453e38e60e1b91eeb1f8a6b4bf42a2f728ef1d70289a2f216f36896befc803ec",
+        "public_sha256": "453e38e60e1b91eeb1f8a6b4bf42a2f728ef1d70289a2f216f36896befc803ec"
+      },
+      {
+        "path": "edge-results.json",
+        "recorded_sha256": "3070a0750f1860bf3f609b35fe0493aeb8d91744799762b9bad604b884a0a2da",
+        "public_sha256": "3070a0750f1860bf3f609b35fe0493aeb8d91744799762b9bad604b884a0a2da"
+      },
+      {
+        "path": "final.txt",
+        "recorded_sha256": "344e02c41f22c150ae8202a48f71355e50f06beeea61ef13e6db85152340b1ed",
+        "public_sha256": "344e02c41f22c150ae8202a48f71355e50f06beeea61ef13e6db85152340b1ed"
+      },
+      {
+        "path": "index.html",
+        "recorded_sha256": "75829a568a138a63014a331437dbf630db0d5c24abb6184570fb6505158f88d6",
+        "public_sha256": "75829a568a138a63014a331437dbf630db0d5c24abb6184570fb6505158f88d6"
+      },
+      {
+        "path": "mobile-form.png",
+        "recorded_sha256": "880d8d2e83693193761df2bfa43ae64c9fd2f88aa84515029b378bc4ff7df5e0",
+        "public_sha256": "880d8d2e83693193761df2bfa43ae64c9fd2f88aa84515029b378bc4ff7df5e0"
+      },
+      {
+        "path": "mobile.png",
+        "recorded_sha256": "0cb97226446b6582090d01b8eb2e73820b3ea9c99885aef3e260178b82a1c5a4",
+        "public_sha256": "0cb97226446b6582090d01b8eb2e73820b3ea9c99885aef3e260178b82a1c5a4"
+      },
+      {
+        "path": "styles.css",
+        "recorded_sha256": "7e9a37ef70f56127d96aae19729ee7af96c97f5c46171d4d2bde1e6145d6348c",
+        "public_sha256": "7e9a37ef70f56127d96aae19729ee7af96c97f5c46171d4d2bde1e6145d6348c"
+      },
+      {
+        "path": "verification-results.json",
+        "recorded_sha256": "a95fbc7d1cf97e4382b415b9a87feb56c12e159e55dea4e9be93cab224a5ed87",
+        "public_sha256": "a95fbc7d1cf97e4382b415b9a87feb56c12e159e55dea4e9be93cab224a5ed87"
+      },
+      {
+        "path": "verify-edge.mjs",
+        "recorded_sha256": "38fa5f6c1eec5e8ef46386aba307e6cdd90fcb3151191c85d1a5dd8cd673f64e",
+        "public_sha256": "b10d4bc59125a12707af0d02179146aa22b676e419fdf38f8f2e057961f44401"
+      },
+      {
+        "path": "verify.mjs",
+        "recorded_sha256": "e4ba41082082f7ef3d1f211cb9dbb255fd09d68130b99b90a0e67583c82da2ba",
+        "public_sha256": "b34e8251a885d2a295175bf5790d4a825c284f6db5e313114dfab057e448cf0b"
+      }
+    ],
+    "path_redactions": [
+      "verify-edge.mjs",
+      "verify.mjs"
+    ],
+    "note": "Only private machine paths are normalized in public text files. The immutable originals were graded before this packaging; no product repair was applied.",
+    "zip_sha256": "2066576ef2731774ec562908afdaeb62877747d1c7b5a79688c3aad6f15f94b8"
+  },
+  "contract_names": [
+    "fabius",
+    "fabius-parcus",
+    "fabius-disciplina",
+    "fabius-decor"
+  ],
+  "checks_met": 16,
+  "criteria": 16
+}

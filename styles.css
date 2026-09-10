@@ -756,7 +756,7 @@ img{display:block;max-width:100%}
 .tab-panel .copy-feedback{color:var(--surface)}
 .install-resources{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:var(--space-1) var(--space-3);margin-block:var(--space-2)}
 .install-resources a{display:inline-flex;align-items:center;min-height:var(--control)}
-.install-resources a,.install-head a,.install-note a,.starter-note a{color:var(--primary-ink);text-decoration:underline;text-underline-offset:.2em}
+.install-resources a,.install-head a,.install-note a,.starter-note a,.starter-list a,.starter-example a{color:var(--primary-ink);text-decoration:underline;text-underline-offset:.2em}
 .install-check{max-width:var(--info-width);margin-inline:auto;text-align:center;color:var(--muted);font-size:var(--note-size);line-height:1.6}
 .starters{max-width:var(--info-width);margin:var(--space-6) auto 0}
 .starters h3{font-size:clamp(1.4rem,3vw,1.75rem);letter-spacing:-.03em;margin-bottom:var(--space-3)}

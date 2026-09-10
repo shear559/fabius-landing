@@ -1,0 +1,198 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>A working task app · With Fabius · run 2 · Fabius trials</title><link rel="stylesheet" href="/styles.css?v=2026-09-10"><link rel="stylesheet" href="/assets/trials-20260910/evidence.css"></head><body class="evidence-page"><main class="evidence"><a class="evidence-home" href="/#trials">← Fabius · paired build trials</a><h1>A working task app · With Fabius · run 2</h1><p>Fictional product prototype. Checks measure the supplied contract across Chromium/WebKit at 360px and 1440px; visual quality is reviewed separately. Additional review found 1 issue(s) outside the recorded matrix; inspect the check record for reproduction and limits.</p><p>15/16 recorded check groups passed. Elapsed 509.831 seconds; output tokens 24874. No original artifact was repaired for this comparison.</p><p><a href="/assets/trials-20260910/runs/run-04/source.zip">Submitted source ZIP</a> · <a href="/assets/trials-20260910/runs/run-04/checks.json">Full check data</a> · <a href="/assets/trials-20260910/runs/run-04/run.json">Run metadata</a> · <a href="/assets/trials-20260910/runs/run-04/instructions.txt">Trial instructions</a></p><details><summary>PASS · Empty-storage initialization</summary><p>4/4 browser scenario executions passed.</p></details><details><summary>PASS · Create/edit and persistence</summary><p>4/4 browser scenario executions passed.</p></details><details><summary>PASS · Status update preserves other records</summary><p>4/4 browser scenario executions passed.</p></details><details><summary>PASS · Delete and exact undo</summary><p>4/4 browser scenario executions passed.</p></details><details><summary>PASS · Combined search and filters</summary><p>4/4 browser scenario executions passed.</p></details><details><summary>FAIL · Form validation and modal keyboard lifecycle</summary><p>2/4 browser scenario executions passed. webkit-360: modalEscape | webkit-1440: modalEscape</p></details><details><summary>PASS · Full export and confirmed import round trip</summary><p>4/4 browser scenario executions passed.</p></details><details><summary>PASS · Reject malformed/unsupported import atomically</summary><p>4/4 browser scenario executions passed.</p></details><details><summary>PASS · Reject duplicate IDs and invalid date atomically</summary><p>4/4 browser scenario executions passed.</p></details><details><summary>PASS · Import size boundary</summary><p>4/4 browser scenario executions passed.</p></details><details><summary>PASS · Imported hostile text remains text</summary><p>4/4 browser scenario executions passed.</p></details><details><summary>PASS · Corrupt storage recovery</summary><p>4/4 browser scenario executions passed.</p></details><details><summary>PASS · Storage write failure keeps work recoverable</summary><p>4/4 browser scenario executions passed.</p></details><details><summary>PASS · Cross-tab stale-write protection</summary><p>4/4 browser scenario executions passed.</p></details><details><summary>PASS · Responsive rendering and accessible controls</summary><p>4/4 browser scenario executions passed.</p></details><details><summary>PASS · No-JavaScript notice and reduced motion</summary><p>8/8 browser scenario executions passed.</p></details><h2>Observed working process</h2><p>The Fabius app run expanded an initially passing suite, instrumented focus behavior and distinguished a wait-condition correction from a modal keyboard fix.</p><p>This retrospective, unblinded review describes observable actions. It does not score hidden reasoning or equate more tools with better work.</p><h3>Planning and decomposition</h3><p>The public plan separates board implementation from persistence, imports, recovery, keyboard and responsive verification.</p><h3>Reference and verification use</h3><p>The pinned design reference was read. The first browser suite passed, after which the candidate expanded boundary, focus, nested-path and no-JavaScript checks.</p><h3>Diagnosis and test correction</h3><p>After a focus-restoration assertion failed, a temporary helper recorded focus events. The test then replaced a fixed delay with a condition-based wait while retaining the same focus identity assertion.</p><h3>Product correction and retest</h3><p>The expanded suite next failed at forward Tab wrapping. The candidate added explicit wrapping, reran the extra suite successfully and later reran the main suite.</p><h3>Handoff</h3><p>The final record includes the retained scripts/results/captures and explicitly limits verification to Chrome and local browser storage.</p><ul><li>The first passing suite did not expose every later keyboard problem.</li><li>Test timing and product focus behavior required separate attention; a failed assertion alone does not identify the faulty layer.</li><li>Full orchestration and cross-engine candidate testing remain outside these trial conditions.</li></ul><h2>Captured states</h2><ul><li><a href="/assets/trials-20260910/runs/run-04/initial.webp">Desktop first visit — untouched initial output</a></li><li><a href="/assets/trials-20260910/runs/run-04/new-task-form.webp">New task form opened</a></li><li><a href="/assets/trials-20260910/runs/run-04/after-create.webp">Review launch evidence created and present in saved board</a></li><li><a href="/assets/trials-20260910/runs/run-04/search.webp">Search for Review launch evidence; matching task shown</a></li><li><a href="/assets/trials-20260910/runs/run-04/import-error.webp">Malformed JSON selected; visible error and saved board unchanged</a></li><li><a href="/assets/trials-20260910/runs/run-04/mobile-initial.webp">Mobile first visit — separate fresh context</a></li></ul><h2>Adjudication evidence</h2><p>Additional observed states used to distinguish candidate defects from evaluator mistakes. The full check data contains the reasoning and unchanged-storage evidence.</p><ul><li><a href="/assets/trials-20260910/runs/run-04/review-adjudication-focus-chromium-1440-keyboard-after-escape.webp">adjudication-focus/chromium-1440-keyboard-after-escape.png</a></li><li><a href="/assets/trials-20260910/runs/run-04/review-adjudication-focus-chromium-1440-pointer-after-escape.webp">adjudication-focus/chromium-1440-pointer-after-escape.png</a></li><li><a href="/assets/trials-20260910/runs/run-04/review-adjudication-focus-chromium-360-keyboard-after-escape.webp">adjudication-focus/chromium-360-keyboard-after-escape.png</a></li><li><a href="/assets/trials-20260910/runs/run-04/review-adjudication-focus-chromium-360-pointer-after-escape.webp">adjudication-focus/chromium-360-pointer-after-escape.png</a></li><li><a href="/assets/trials-20260910/runs/run-04/review-adjudication-focus-webkit-1440-keyboard-after-escape.webp">adjudication-focus/webkit-1440-keyboard-after-escape.png</a></li><li><a href="/assets/trials-20260910/runs/run-04/review-adjudication-focus-webkit-1440-pointer-after-escape.webp">adjudication-focus/webkit-1440-pointer-after-escape.png</a></li><li><a href="/assets/trials-20260910/runs/run-04/review-adjudication-focus-webkit-360-keyboard-after-escape.webp">adjudication-focus/webkit-360-keyboard-after-escape.png</a></li><li><a href="/assets/trials-20260910/runs/run-04/review-adjudication-focus-webkit-360-pointer-after-escape.webp">adjudication-focus/webkit-360-pointer-after-escape.png</a></li><li><a href="/assets/trials-20260910/runs/run-04/review-exploratory-project-sentinel-chromium-1440-project-all-filter.webp">exploratory-project-sentinel/chromium-1440-project-all-filter.png</a></li><li><a href="/assets/trials-20260910/runs/run-04/review-exploratory-project-sentinel-chromium-360-project-all-filter.webp">exploratory-project-sentinel/chromium-360-project-all-filter.png</a></li><li><a href="/assets/trials-20260910/runs/run-04/review-exploratory-project-sentinel-webkit-1440-project-all-filter.webp">exploratory-project-sentinel/webkit-1440-project-all-filter.png</a></li><li><a href="/assets/trials-20260910/runs/run-04/review-exploratory-project-sentinel-webkit-360-project-all-filter.webp">exploratory-project-sentinel/webkit-360-project-all-filter.png</a></li></ul><h2>Exploratory findings outside the recorded matrix</h2><p>These probes were added after inspecting candidates and were applied to both conditions. They do not change the original matrix count; confirmed defects and specification ambiguities remain part of this artifact assessment.</p><pre>[
+  {
+    &quot;id&quot;: &quot;project-name-all-sentinel-collision&quot;,
+    &quot;confirmed&quot;: true,
+    &quot;classification&quot;: &quot;exploratory-after-primary-rubric-freeze&quot;,
+    &quot;criterion&quot;: &quot;A05 project filtering&quot;,
+    &quot;primaryScoresChanged&quot;: false,
+    &quot;contractAmbiguity&quot;: &quot;The brief reserves the select value all for the All projects sentinel while allowing any nonempty project string, including all. This edge was not in the predeclared concrete fixtures; selecting the distinct project option should still be distinguishable from selecting the sentinel.&quot;,
+    &quot;impact&quot;: &quot;The valid project named all cannot be isolated; selecting it resets the selector to All projects and displays unrelated projects too. Stored records are unchanged.&quot;,
+    &quot;repro&quot;: [
+      &quot;In an isolated context load the same valid two-task board used for all four apps: project all and project Atlas.&quot;,
+      &quot;Select the actual project option labelled all. A capture-phase event trace records selection of index 1; the app then rerenders the selection to index 0 (All projects).&quot;,
+      &quot;Compare rendered task IDs and saved bytes.&quot;
+    ],
+    &quot;expectedVisibleIds&quot;: [
+      &quot;project-all&quot;
+    ],
+    &quot;observedPasses&quot;: 0,
+    &quot;executions&quot;: 4,
+    &quot;storageUnchangedInEveryExecution&quot;: true,
+    &quot;evidence&quot;: &quot;exploratory-project-sentinel/results.json&quot;,
+    &quot;screenshots&quot;: [
+      &quot;exploratory-project-sentinel/chromium-360-project-all-filter.png&quot;,
+      &quot;exploratory-project-sentinel/chromium-1440-project-all-filter.png&quot;,
+      &quot;exploratory-project-sentinel/webkit-360-project-all-filter.png&quot;,
+      &quot;exploratory-project-sentinel/webkit-1440-project-all-filter.png&quot;
+    ],
+    &quot;sourceEvidence&quot;: [
+      &quot;artifact/app.js:136-138 rebuilds project options and restores by value; duplicate value all resolves to the first All projects option.&quot;,
+      &quot;artifact/app.js:146 treats project value all as an unconditional filter.&quot;
+    ],
+    &quot;diagnosticSelectionTrace&quot;: &quot;exploratory-project-sentinel/selection-trace.json&quot;
+  }
+]</pre><h2>Failed raw assertions and their adjudication</h2><p>Raw evaluator assertions are retained below. A raw assertion is a product failure only when the final group remains FAIL above; corrected harness errors are documented in the adjudication record.</p><details><summary>A06 · webkit-360</summary><pre>{
+  &quot;id&quot;: &quot;A06&quot;,
+  &quot;environment&quot;: &quot;webkit-360&quot;,
+  &quot;browser&quot;: &quot;webkit&quot;,
+  &quot;width&quot;: 360,
+  &quot;noJS&quot;: false,
+  &quot;observations&quot;: [
+    {
+      &quot;key&quot;: &quot;blank-title&quot;,
+      &quot;pass&quot;: true,
+      &quot;actual&quot;: {
+        &quot;constrained&quot;: false,
+        &quot;feedback&quot;: {
+          &quot;hasFeedback&quot;: true,
+          &quot;native&quot;: [],
+          &quot;notice&quot;: &quot;&quot;,
+          &quot;addedVisibleFeedback&quot;: [
+            &quot;Title is required and must be trimmed, with at most 120 characters.&quot;
+          ]
+        },
+        &quot;storedCount&quot;: 6
+      }
+    },
+    {
+      &quot;key&quot;: &quot;long-title&quot;,
+      &quot;pass&quot;: true,
+      &quot;actual&quot;: {
+        &quot;constrained&quot;: false,
+        &quot;feedback&quot;: {
+          &quot;hasFeedback&quot;: true,
+          &quot;native&quot;: [],
+          &quot;notice&quot;: &quot;&quot;,
+          &quot;addedVisibleFeedback&quot;: [
+            &quot;Title is required and must be trimmed, with at most 120 characters.&quot;
+          ]
+        },
+        &quot;storedCount&quot;: 6
+      }
+    },
+    {
+      &quot;key&quot;: &quot;long-project&quot;,
+      &quot;pass&quot;: true,
+      &quot;actual&quot;: {
+        &quot;constrained&quot;: false,
+        &quot;feedback&quot;: {
+          &quot;hasFeedback&quot;: true,
+          &quot;native&quot;: [],
+          &quot;notice&quot;: &quot;&quot;,
+          &quot;addedVisibleFeedback&quot;: [
+            &quot;Project is required and must be trimmed, with at most 80 characters.&quot;
+          ]
+        },
+        &quot;storedCount&quot;: 6
+      }
+    },
+    {
+      &quot;key&quot;: &quot;invalidCalendarDate&quot;,
+      &quot;pass&quot;: true,
+      &quot;actual&quot;: {
+        &quot;type&quot;: &quot;date&quot;,
+        &quot;value&quot;: &quot;&quot;,
+        &quot;valid&quot;: true
+      },
+      &quot;expected&quot;: &quot;Native date input refuses impossible calendar date&quot;
+    },
+    {
+      &quot;key&quot;: &quot;modalEscape&quot;,
+      &quot;pass&quot;: false,
+      &quot;actual&quot;: {
+        &quot;visible&quot;: false,
+        &quot;focused&quot;: false
+      }
+    }
+  ],
+  &quot;screenshots&quot;: [],
+  &quot;manualReview&quot;: [],
+  &quot;console&quot;: [],
+  &quot;network&quot;: [],
+  &quot;dialogs&quot;: [],
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;durationMs&quot;: 3249,
+  &quot;publicScreenshots&quot;: []
+}</pre><p></p></details><details><summary>A06 · webkit-1440</summary><pre>{
+  &quot;id&quot;: &quot;A06&quot;,
+  &quot;environment&quot;: &quot;webkit-1440&quot;,
+  &quot;browser&quot;: &quot;webkit&quot;,
+  &quot;width&quot;: 1440,
+  &quot;noJS&quot;: false,
+  &quot;observations&quot;: [
+    {
+      &quot;key&quot;: &quot;blank-title&quot;,
+      &quot;pass&quot;: true,
+      &quot;actual&quot;: {
+        &quot;constrained&quot;: false,
+        &quot;feedback&quot;: {
+          &quot;hasFeedback&quot;: true,
+          &quot;native&quot;: [],
+          &quot;notice&quot;: &quot;&quot;,
+          &quot;addedVisibleFeedback&quot;: [
+            &quot;Title is required and must be trimmed, with at most 120 characters.&quot;
+          ]
+        },
+        &quot;storedCount&quot;: 6
+      }
+    },
+    {
+      &quot;key&quot;: &quot;long-title&quot;,
+      &quot;pass&quot;: true,
+      &quot;actual&quot;: {
+        &quot;constrained&quot;: false,
+        &quot;feedback&quot;: {
+          &quot;hasFeedback&quot;: true,
+          &quot;native&quot;: [],
+          &quot;notice&quot;: &quot;&quot;,
+          &quot;addedVisibleFeedback&quot;: [
+            &quot;Title is required and must be trimmed, with at most 120 characters.&quot;
+          ]
+        },
+        &quot;storedCount&quot;: 6
+      }
+    },
+    {
+      &quot;key&quot;: &quot;long-project&quot;,
+      &quot;pass&quot;: true,
+      &quot;actual&quot;: {
+        &quot;constrained&quot;: false,
+        &quot;feedback&quot;: {
+          &quot;hasFeedback&quot;: true,
+          &quot;native&quot;: [],
+          &quot;notice&quot;: &quot;&quot;,
+          &quot;addedVisibleFeedback&quot;: [
+            &quot;Project is required and must be trimmed, with at most 80 characters.&quot;
+          ]
+        },
+        &quot;storedCount&quot;: 6
+      }
+    },
+    {
+      &quot;key&quot;: &quot;invalidCalendarDate&quot;,
+      &quot;pass&quot;: true,
+      &quot;actual&quot;: {
+        &quot;type&quot;: &quot;date&quot;,
+        &quot;value&quot;: &quot;&quot;,
+        &quot;valid&quot;: true
+      },
+      &quot;expected&quot;: &quot;Native date input refuses impossible calendar date&quot;
+    },
+    {
+      &quot;key&quot;: &quot;modalEscape&quot;,
+      &quot;pass&quot;: false,
+      &quot;actual&quot;: {
+        &quot;visible&quot;: false,
+        &quot;focused&quot;: false
+      }
+    }
+  ],
+  &quot;screenshots&quot;: [],
+  &quot;manualReview&quot;: [],
+  &quot;console&quot;: [],
+  &quot;network&quot;: [],
+  &quot;dialogs&quot;: [],
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;durationMs&quot;: 3280,
+  &quot;publicScreenshots&quot;: []
+}</pre><p></p></details><h2>Qualitative design review</h2><p>A condition-blind agent reviewed these actual captured pixels. These observations are not a numerical design score or a general winner claim.</p><h3>Workspace hierarchy</h3><p>The desktop frame separates project navigation in a left rail, workspace actions in a top strip, an introductory heading, and three named task columns. A dark New task button is distinct from the quieter import and export controls.</p><p>The visual hierarchy provides identifiable places for navigation, creation, and reviewing existing work.</p><h3>Board density</h3><p>A large introductory area, a broad four-part overview, and a second Project board heading precede the search and task columns. Cards are generously spaced, with the next row only partly visible at the bottom of the desktop capture.</p><p>The overview receives substantial emphasis, while fewer existing tasks are visible without scrolling.</p><h3>Typography and visual coherence</h3><p>Cream and pale neutral surfaces, dark ink, restrained olive accents, and repeated fine borders form a consistent interface. The introductory heading mixes bold sans lettering with an italic serif phrase; task titles remain bold and visually separate from lighter project labels and tags.</p><p>The expressive heading adds identity while the repeated task styling makes the board easier to scan. Fine secondary metadata still requires closer attention than the task titles.</p><h3>Task form</h3><p>The centered form shows explicit title and project labels with Required markers, paired status and priority controls, an optional date field with a calendar affordance, and optional tags with comma and length guidance. The title field has a visible focus outline, and Save task is visually stronger than Cancel.</p><p>Required input, optional input, and the completion action are understandable from the captured form; the screenshot alone does not establish complete keyboard or screen-reader operation.</p><h3>Search and error feedback</h3><p>The filtered board displays the requested task, a matching count, Clear filters, and empty-column copy that explicitly says no tasks are in view. The malformed import capture shows a pale red notice stating: Import failed: This is not valid JSON. Your board is unchanged.</p><p>The search copy distinguishes an empty filtered view from an empty workspace. The import notice explains both the invalid input and the intended preservation outcome; the capture receipt separately records unchanged stored bytes for this one malformed input.</p><h3>Mobile task visibility</h3><p>At 360 by 800, the brand strip, a wrapped Project board breadcrumb, introduction, New task action, and a two-by-two overview fill almost the entire first viewport. The Project board heading appears near the bottom; search controls and task cards are below the captured viewport. No overlapping or clipped primary text is visible.</p><p>Task creation is available early, but reviewing or searching existing work requires scrolling past the overview. A more compact mobile introduction or overview would bring those actions into view sooner.</p><h3>Review limits</h3><ul><li>This review covers only the six supplied captured states. The mobile image is a first visit, not a complete mobile walkthrough.</li><li>Static pixels do not establish keyboard, screen-reader, motion, data-safety, or complete import correctness; those require the separate behavior rubric.</li><li>Board counts and progress belong to fictional seed data, not benchmark performance or adoption.</li><li>Partly visible surrounding content in anchored screenshots is capture framing, not proof that the source clips that content.</li><li>No condition mapping was inspected, no candidate source was edited, and no aesthetic score or causal improvement claim is made.</li><li>Visual appearance cannot reveal the generating agent planning, tool use, verification method, or experimental condition.</li></ul></main></body></html>

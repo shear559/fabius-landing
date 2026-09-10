@@ -18,6 +18,7 @@ Fabius supplies instructions, workflows and original local helpers for schedulin
 | Installation, updates and active-session loading | `README.md`, `skills/fabius/references/skill-frontmatter.md` |
 | Twenty-two core rules, mathematical assumptions and heuristics | `RESEARCH.md`, `paper/proofs.json` |
 | Historical gains, regressions and missing artifacts | `BENCHMARKS.md`, `evals/verify-receipts.mjs` |
+| September 10 paired mathematics, page and app trials | `assets/trials-20260910/protocol.html`, `report.html`, `runs.json` |
 | Local execution, provider processing and permission limits | `runtime/README.md`, `runtime/src/tools.mjs` |
 | Content hashes, signed releases and timestamp status | `PROVENANCE.md`, `provenance/verify.sh` |
 
@@ -25,9 +26,19 @@ The reviewer example uses explicitly hypothetical probabilities. Its independenc
 
 ## Structure and design
 
-Static `index.html`, `styles.css` and `main.js`; no build or package installation. The page contains the hero, three capability outcomes, system/research explanations, installation tabs and thirteen FAQ entries. The FAQ and its JSON-LD must remain word-for-word equivalent.
+Static `index.html`, `styles.css` and `main.js`; no build or package installation. The page contains the hero, three capability outcomes, the paired trial explorer, system/research explanations, installation tabs and thirteen FAQ entries. The FAQ and its JSON-LD must remain word-for-word equivalent.
 
 The design uses the existing green tokens (`#76b900`, with darker text variants), self-hosted Barlow, square buttons and green-on-black system diagrams. The map has sixteen nodes: router, lean core, thirteen specialists and the shared reference spine. Its twenty-eight connectors are built from the specialist table in `main.js`. On narrow screens the map scrolls inside its own container. Reduced motion renders a static diagram.
+
+## Paired artifact trials
+
+The `#trials` section reads the published `assets/trials-20260910/results.json`. Its external `trial-lab.css` and `trial-lab.js` provide task tabs, both repeated pairs, a mobile condition switch, an actual-sample math plot, captured walkthroughs and inspectable checks. The report includes every generated source artifact and its recorded usage. The control retains native Codex instructions; the treatment adds the pinned Fabius 3.0.1 contracts and reference resources.
+
+A separate expandable view describes actual planning, tool use, verification and correction sequences from each trace. This process audit was requested after outcomes existed and is explicitly retrospective and unblinded. It has no score. Delegation and external services were unavailable in both conditions, so the study does not claim to measure the full orchestration surface.
+
+The three briefs cover a six-regime constrained optimization problem, the fictional Lattice landing page, and the Fieldnote Board local-first application. Functional criteria, parameter probes and repeated browser configurations are different units; none is an overall quality percentage. Proof and design reviews are explicitly identified as blinded agent assessments. Ties, failed criteria, time caps and infrastructure attempts remain visible in their respective records.
+
+Animations advance through actual captured states or recorded math samples only. They require a user action, can be paused, and respect reduced motion. They are labelled as composed walkthroughs, not recordings of model generation. Source ZIPs provide the generated products; their JavaScript is not executed on the main site's origin. Public text files normalize private machine paths, with original/public hashes and a redaction list in each run receipt. The dated study does not change the source release or the historical whitepaper.
 
 ## Local preview and verification
 

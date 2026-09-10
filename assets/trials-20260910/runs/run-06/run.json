@@ -1,0 +1,97 @@
+{
+  "id": "run-06",
+  "task": "app",
+  "repeat": 1,
+  "arm": "baseline",
+  "model": "gpt-6-astra",
+  "effort": "high",
+  "status": "completed",
+  "elapsed_seconds": 563.043,
+  "usage": [
+    {
+      "input_tokens": 711283,
+      "cached_input_tokens": 659072,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 27816,
+      "reasoning_output_tokens": 4476
+    }
+  ],
+  "task_sha256": "7116b83075469f773ce51f72f708041e221d97b2b055d75cb309f0ff39239d1d",
+  "developer_sha256": "7e7658156be6fae574911dfd4b8bc921c6422d75239b2d83b4f448060469b842",
+  "public_instructions_sha256": "09092cf6410d714485de36b96df124b231ec3bb9ddc06d5cbc85e73029047996",
+  "prompt_input_sha256": "8c8e4319a8df81f9df4eaeba1b1a1a102f6b88a89850a394be9b1df7a7afc74d",
+  "events_sha256": "f3ef27d01de7736372c20e6439f069e6dfd7ab2e89537113439f4e1a685a16bc",
+  "artifact": {
+    "entries": [
+      {
+        "path": "README.md",
+        "recorded_sha256": "8ce12905e2c1a3cf9a7f5776ff02023bf35d0439b98ae270a3177f44eb22d586",
+        "public_sha256": "8ce12905e2c1a3cf9a7f5776ff02023bf35d0439b98ae270a3177f44eb22d586"
+      },
+      {
+        "path": "app.js",
+        "recorded_sha256": "1814ed7c35ca03e65816cf7cf17e17ea924a20fec5dcb8d6a555a16af36f585d",
+        "public_sha256": "1814ed7c35ca03e65816cf7cf17e17ea924a20fec5dcb8d6a555a16af36f585d"
+      },
+      {
+        "path": "checks/desktop.png",
+        "recorded_sha256": "a5898ae7f7ed2ddf80bf82c5efe565a12a8f7d6ccb46cb9c226605e06591a351",
+        "public_sha256": "a5898ae7f7ed2ddf80bf82c5efe565a12a8f7d6ccb46cb9c226605e06591a351"
+      },
+      {
+        "path": "checks/edge-cases.mjs",
+        "recorded_sha256": "be0b5904c1d0351eb06ec594e289a424fade3763439d678bf0e7be24e22cbc1f",
+        "public_sha256": "2b96ebdccd894b86498bd555777f6c2c1ee642cd7f2168e13a8813b3f4501765"
+      },
+      {
+        "path": "checks/edge-results.json",
+        "recorded_sha256": "a9025ba5278bbd7e9eb4bd413dfb1102ea0270afc14e08efcbc638e776fa1ef2",
+        "public_sha256": "a9025ba5278bbd7e9eb4bd413dfb1102ea0270afc14e08efcbc638e776fa1ef2"
+      },
+      {
+        "path": "checks/mobile-form.png",
+        "recorded_sha256": "d69b6e84fa71a500942579d3cf717c555b4766dc8afafae81a5a3aff42aefbb1",
+        "public_sha256": "d69b6e84fa71a500942579d3cf717c555b4766dc8afafae81a5a3aff42aefbb1"
+      },
+      {
+        "path": "checks/mobile.png",
+        "recorded_sha256": "4dec8ec01df186f72635e75c5fe1aae3fe039ecd99e7d2632d47d0650329f1eb",
+        "public_sha256": "4dec8ec01df186f72635e75c5fe1aae3fe039ecd99e7d2632d47d0650329f1eb"
+      },
+      {
+        "path": "checks/results.json",
+        "recorded_sha256": "91e6ad3f0b5957402adfee52bf4de87b53ef8ec0100e4c038342e33e2afc6c37",
+        "public_sha256": "91e6ad3f0b5957402adfee52bf4de87b53ef8ec0100e4c038342e33e2afc6c37"
+      },
+      {
+        "path": "checks/verify.mjs",
+        "recorded_sha256": "7ddace4211027fef1b8c998c2ad5025800610bd133e7652a07cb8675c6f3e600",
+        "public_sha256": "a18b04f851c709287e139532d127177275c0a5f0e4f603a4e4354caf787bf459"
+      },
+      {
+        "path": "final.txt",
+        "recorded_sha256": "869db63e01f6e068fea2728ca58dbdea29e6731a0a082880bb8b84045f343192",
+        "public_sha256": "869db63e01f6e068fea2728ca58dbdea29e6731a0a082880bb8b84045f343192"
+      },
+      {
+        "path": "index.html",
+        "recorded_sha256": "e509e93cf0b1fe40d230a866898da89d598e9f87e74580724a10b292dc97a43f",
+        "public_sha256": "e509e93cf0b1fe40d230a866898da89d598e9f87e74580724a10b292dc97a43f"
+      },
+      {
+        "path": "styles.css",
+        "recorded_sha256": "c2e47a0f8684403d068ba21a187a9261d66a85ac8139999004456e8e3709ae0a",
+        "public_sha256": "c2e47a0f8684403d068ba21a187a9261d66a85ac8139999004456e8e3709ae0a"
+      }
+    ],
+    "path_redactions": [
+      "checks/edge-cases.mjs",
+      "checks/verify.mjs"
+    ],
+    "note": "Only private machine paths are normalized in public text files. The immutable originals were graded before this packaging; no product repair was applied.",
+    "zip_sha256": "6bf10baa6a0bd377d70690da0d6ed4c7a8e95c256e2824590bc9b46fe54da184"
+  },
+  "contract_names": [],
+  "checks_met": 15,
+  "criteria": 16
+}

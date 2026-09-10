@@ -1,0 +1,78 @@
+{
+  "schema": "fabius-paired-build-protocol/v1",
+  "created_at": "2026-09-10T13:51:42.798319+00:00",
+  "source_release": "3.0.1",
+  "source_commit": "64cf9aaa44af8c3997bf82ad96d84489afe1e330",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "high",
+  "repetitions": 2,
+  "tasks": [
+    "math",
+    "landing",
+    "app"
+  ],
+  "arms": [
+    "baseline",
+    "fabius"
+  ],
+  "planned_generation_runs": 12,
+  "run_wall_limit_seconds": 720,
+  "max_parallel_runs": 2,
+  "task_hashes": {
+    "app.md": "7116b83075469f773ce51f72f708041e221d97b2b055d75cb309f0ff39239d1d",
+    "math.md": "cf9f4f3249d05d4dca212b0f2ec2b192002ce55088bb878ca5c00f83cb28e4b9",
+    "landing.md": "4b1927c9ff7421b0b8b1b8f914c1c425f31806e9ab7473b682bedad620b3f80c"
+  },
+  "contracts": {
+    "fabius": {
+      "path": "skills/fabius/SKILL.md",
+      "sha256": "ec942368868c6bd5b7ecb737eb2656dbbb8f52be6768919a028fc285bb3e30b8"
+    },
+    "fabius-parcus": {
+      "path": "skills/fabius-parcus/SKILL.md",
+      "sha256": "6ce3fd57a613affd6658baaa3a0e4978cac6ebe8d8a38e85d75afd53f2631060"
+    },
+    "fabius-disciplina": {
+      "path": "skills/fabius-disciplina/SKILL.md",
+      "sha256": "a406a0aa8b8108e92cef540b734ed399642404793bd94f2d5b0c237ebba2cdf7"
+    },
+    "fabius-decor": {
+      "path": "skills/fabius-decor/SKILL.md",
+      "sha256": "be5699ed84d5089c102d100caff1320b861e714ba510fce2f19c5a3c75cf3a38"
+    }
+  },
+  "conditions": "Identical task, model, effort, tools, execution boundary and time cap. Fabius arm alone receives pinned contract text and corresponding reference files. Extra instruction/input-token cost is part of treatment and reported. Independent fresh run for every arm/repetition. Generation order counterbalanced by repetition.",
+  "scoring": "Freeze independent math and browser oracles before scoring. Group by meaningful acceptance criteria. Report both repeats, all failures and raw observed outcomes; no cherry-picking, no hidden repair. Blind proof/design reviews are qualitative and separately identified. No overall percentage improvement or statistical significance claim from three tasks.",
+  "timeouts": "Preserve and grade existing artifact; report timeout/incomplete. Rerun only a demonstrated harness/setup failure, recording all attempts. No rerun just because an artifact loses.",
+  "lessons": "Freeze measured artifacts before deriving lessons. Any subsequent Fabius changes are outside this measured snapshot and cannot inherit these scores.",
+  "publication": "All 12 source artifacts, task briefs, contract hashes, check results and limitations are available. Publish screenshots from actual artifacts and native animations over those screenshots/data; never fabricate product UI or claim frames are an actual execution recording.",
+  "isolation_status": "Passed positive/negative model-visible input preflight; per-run input checks required before generation.",
+  "browser_environment": "Both arms receive a parent-managed isolated Chrome CDP endpoint and static HTTP server on localhost. Workspace network access is enabled for these; external service use is forbidden by the common instructions, and web/apps/MCP tools are disabled.",
+  "execution_boundary": "Existing account, no HOME/config mutation. One external macOS read-denial policy for CLI, Chrome and HTTP; native tool sandbox disabled to prevent unsupported nesting. No approvals. Selected sources/records/oracles blocked; allowed-resource restrictions also exist in shared instructions. Not an audited general-purpose security sandbox.",
+  "frozen_at": "2026-09-10T13:56:09.021219+00:00",
+  "runner_sha256": "a21bb2a9b2fad33489f7809f13eee9b28056bf0ac8d86ad07857f64cce89e4f4",
+  "math_oracle_freeze_sha256": "6f84fa18bccb14132d710f6ad926794e4ba295c2a645ee531c46ea128b47d0d6",
+  "web_rubric_sha256": "dce74ebefa667827386eafd630efb81f79f0cbe431c5ee815efc307829278cd5",
+  "pre_generation_amendments": [
+    {
+      "at": "2026-09-10T13:57:09.451636+00:00",
+      "reason": "Both first processes rejected the empty-config MCP transport before any model call. Debug must disable configured MCP entries; exec with --ignore-user-config must omit those entries entirely.",
+      "affected_attempts": [
+        "run-05",
+        "run-02"
+      ],
+      "model_calls": 0,
+      "artifact_files": 0,
+      "preserved": "attempts/config-transport",
+      "same_change_both_arms": true
+    },
+    {
+      "at": "2026-09-10T14:00:14.325935+00:00",
+      "reason": "Two actual model starts had all file/shell tools fail because macOS cannot nest Seatbelt. Neither produced artifact files. Both aborted and retained. Use one external sandbox; native tool sandbox and Chrome internal sandbox disabled under that external policy. Parent Chrome/HTTP now share read-denial.",
+      "preserved": "attempts/nested-sandbox",
+      "model_calls_started": 2,
+      "artifact_files": 0,
+      "same_change_both_arms": true
+    }
+  ]
+}

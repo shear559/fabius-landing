@@ -1,0 +1,5028 @@
+{
+  "meta": {
+    "model": "gpt-6-astra",
+    "effort": "high",
+    "version": "3.0.1",
+    "date": "2026-09-10",
+    "repeatCount": 2,
+    "runCapSeconds": 720,
+    "protocolUrl": "/assets/trials-20260910/protocol.html",
+    "reportUrl": "/assets/trials-20260910/report.html",
+    "artifactsUrl": "/assets/trials-20260910/all-artifacts.zip",
+    "limitations": "The control retains native Codex instructions. The treatment adds pinned Fabius contracts and reference resources. Elapsed time includes model calls and tools on a shared machine. Output tokens are reported by the CLI. This is not a calibrated visual-quality score or a general model-performance estimate."
+  },
+  "tasks": [
+    {
+      "id": "math",
+      "title": "Constrained mathematics",
+      "summary": "One parametric optimization problem, six regimes, a complete proof and executable formulas.",
+      "question": "Minimize x² + 2y² + 3z² + xy − yz + (2 − 2t)x + 5y + z, for every t ∈ [−2, 4].",
+      "feasibleSet": "x + y + z = 1; x, y, z ≥ 0; x ≤ 3/5; 2y + z ≥ 1/2. The plot shows each submitted solver’s sampled objective value.",
+      "runs": [
+        {
+          "repeat": 1,
+          "baseline": {
+            "passed": 9,
+            "total": 9,
+            "seconds": 298.763,
+            "tokens": 15120,
+            "checks": [
+              {
+                "id": "numeric",
+                "label": "Numerical optimizer and feasibility",
+                "passed": true,
+                "detail": "1233 of 1233 parameter probes passed for this one problem. This does not replace a proof."
+              },
+              {
+                "id": "global_existence_uniqueness",
+                "label": "Global existence uniqueness",
+                "passed": true,
+                "detail": "The feasible polygon is explicitly described with its five vertices and compactness. The positive quadratic form is correct for H=[[8,8],[8,12]] and proves strict convexity on the equality plane; the stated uniqueness conclusion follows."
+              },
+              {
+                "id": "complete_piecewise_optimizer",
+                "label": "Complete piecewise optimizer",
+                "passed": true,
+                "detail": "All six coordinate formulas and the five exact transitions match the independently derived reference. The closed intervals cover [-2,4]. The nonzero-length fixed vertex interval [-1/2,0] is explicitly present, not skipped."
+              },
+              {
+                "id": "exact_value_function",
+                "label": "Exact value function",
+                "passed": true,
+                "detail": "Every displayed value polynomial is algebraically identical to the exact reference, including C written as 4-(5+2t)^2/16. Values at transitions and domain endpoints are also correct. This assessment uses symbolic expressions, not numerical sample success."
+              },
+              {
+                "id": "primal_feasibility",
+                "label": "Primal feasibility",
+                "passed": true,
+                "detail": "The complete coordinate table and explicit closed interval bounds make all five inequalities directly checkable. Independent algebraic inspection verifies sums of one, nonnegative coordinates, x<=3/5 and 2y+z>=1/2 in every row. The proof retains z>=0 in the polygon and correctly establishes its positive slack along the solution."
+              },
+              {
+                "id": "dual_stationarity_certificate",
+                "label": "Dual stationarity certificate",
+                "passed": true,
+                "detail": "The original-variable Lagrangian and its sign convention are explicit. All five inequality multipliers, including the global gamma=0, and the equality multiplier are supplied for all six regimes. The three original stationarity equations and the reduction used to verify the table are correct."
+              },
+              {
+                "id": "dual_feasibility_complementarity",
+                "label": "Dual feasibility complementarity",
+                "passed": true,
+                "detail": "All listed multipliers are nonnegative on their stated closed intervals. Only tight constraints carry nonzero multipliers. The corner row has beta=-2t and epsilon=1+2t, which are simultaneously nonnegative precisely on [-1/2,0]. Boundary zero multipliers are explicitly distinguished from inactive constraints."
+              },
+              {
+                "id": "closed_transition_analysis",
+                "label": "Closed transition analysis",
+                "passed": true,
+                "detail": "Each transition is derived from a multiplier sign change or newly binding constraint, and the full transition table correctly supplies optimizer, active constraints, zero/nonzero multipliers, value and derivative. The matching coordinate/value/multiplier formulas are correct. The six derivative formulas V'(t)=-2x(t) match from both sides, and the proof explicitly states C1 with one-sided domain-endpoint derivatives. Thus the amended mandatory continuity/differentiability requirement is met."
+              },
+              {
+                "id": "global_all_real_sufficiency",
+                "label": "Global all real sufficiency",
+                "passed": true,
+                "detail": "The proof uses stationarity, affine constraints and complementarity to make the gradient term nonnegative for every feasible competitor. The exact positive quadratic remainder proves strict global superiority over every distinct point. Complete coverage by the six closed intervals proves the all-real-parameter assertion and excludes unexamined faces without relying on a numerical optimizer."
+              }
+            ],
+            "snapshots": [],
+            "artifactUrl": "/assets/trials-20260910/runs/run-02/source.zip",
+            "proofUrl": "/assets/trials-20260910/runs/run-02/checks.html",
+            "status": "Completed",
+            "note": "One parametric problem: one numerical criterion plus eight separately reviewed proof criteria. The blinded proof review is an agent assessment with file/line evidence.",
+            "process": [
+              {
+                "label": "Planning and decomposition",
+                "detail": "A public execution outline separated exact derivation, implementation and comparison with feasible-face enumeration before the first source write."
+              },
+              {
+                "label": "Tools and verification",
+                "detail": "The trace records source creation, a Python version check and two successful executions of the candidate-authored verification script."
+              },
+              {
+                "label": "Review and retest",
+                "detail": "After a successful first verification, the verifier was updated and rerun. This is an observable extension/retest sequence; it was not triggered by a recorded mathematical test failure."
+              },
+              {
+                "label": "Handoff",
+                "detail": "The run retained a verification record and named numerical limits in its final answer."
+              }
+            ],
+            "curve": [
+              {
+                "t": -2.0,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.945477,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.9,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.83,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.76,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.71,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.666606,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.624156,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.5714285714285714,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.53,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.5,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.45,
+                "x": 0.03750000000000003,
+                "y": 0.22499999999999998,
+                "z": 0.7375,
+                "value": 3.623125
+              },
+              {
+                "t": -1.419283,
+                "x": 0.060537749999999946,
+                "y": 0.20964150000000004,
+                "z": 0.72982075,
+                "value": 3.62011357443325
+              },
+              {
+                "t": -1.364401,
+                "x": 0.10169925000000002,
+                "y": 0.1822005,
+                "z": 0.71610025,
+                "value": 3.6112096833992497
+              },
+              {
+                "t": -1.31,
+                "x": 0.14249999999999996,
+                "y": 0.15500000000000003,
+                "z": 0.7025,
+                "value": 3.5979249999999996
+              },
+              {
+                "t": -1.264016,
+                "x": 0.17698799999999998,
+                "y": 0.13200800000000001,
+                "z": 0.691004,
+                "value": 3.5832336638079996
+              },
+              {
+                "t": -1.22,
+                "x": 0.21000000000000002,
+                "y": 0.10999999999999999,
+                "z": 0.6799999999999999,
+                "value": 3.5661999999999994
+              },
+              {
+                "t": -1.14,
+                "x": 0.2700000000000001,
+                "y": 0.06999999999999995,
+                "z": 0.6599999999999999,
+                "value": 3.527799999999999
+              },
+              {
+                "t": -1.09,
+                "x": 0.30749999999999994,
+                "y": 0.04500000000000004,
+                "z": 0.6475,
+                "value": 3.4989249999999994
+              },
+              {
+                "t": -1.05,
+                "x": 0.33749999999999997,
+                "y": 0.025000000000000022,
+                "z": 0.6375,
+                "value": 3.4731249999999996
+              },
+              {
+                "t": -1.000094,
+                "x": 0.37492949999999997,
+                "y": 4.700000000001925e-05,
+                "z": 0.6250235,
+                "value": 3.4375704933729994
+              },
+              {
+                "t": -1.0,
+                "x": 0.375,
+                "y": -0.0,
+                "z": 0.625,
+                "value": 3.4375
+              },
+              {
+                "t": -0.99,
+                "x": 0.3775,
+                "y": 0.0,
+                "z": 0.6225,
+                "value": 3.429975
+              },
+              {
+                "t": -0.94,
+                "x": 0.39,
+                "y": 0.0,
+                "z": 0.61,
+                "value": 3.3916
+              },
+              {
+                "t": -0.91,
+                "x": 0.39749999999999996,
+                "y": 0.0,
+                "z": 0.6025,
+                "value": 3.3679750000000004
+              },
+              {
+                "t": -0.855598,
+                "x": 0.4111005,
+                "y": 0.0,
+                "z": 0.5888995,
+                "value": 3.3239855155990004
+              },
+              {
+                "t": -0.813435,
+                "x": 0.42164124999999997,
+                "y": 0.0,
+                "z": 0.57835875,
+                "value": 3.28887462519375
+              },
+              {
+                "t": -0.771443,
+                "x": 0.43213925,
+                "y": 0.0,
+                "z": 0.56786075,
+                "value": 3.25302267443775
+              },
+              {
+                "t": -0.738571,
+                "x": 0.44035725000000003,
+                "y": 0.0,
+                "z": 0.55964275,
+                "value": 3.2243419694897497
+              },
+              {
+                "t": -0.68,
+                "x": 0.45499999999999996,
+                "y": 0.0,
+                "z": 0.545,
+                "value": 3.1719
+              },
+              {
+                "t": -0.631416,
+                "x": 0.467146,
+                "y": 0.0,
+                "z": 0.5328539999999999,
+                "value": 3.127098458736
+              },
+              {
+                "t": -0.57758,
+                "x": 0.480605,
+                "y": 0.0,
+                "z": 0.519395,
+                "value": 3.0760753359000006
+              },
+              {
+                "t": -0.52,
+                "x": 0.495,
+                "y": 0.0,
+                "z": 0.505,
+                "value": 3.0199
+              },
+              {
+                "t": -0.5,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 3.0
+              },
+              {
+                "t": -0.49999,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.99999
+              },
+              {
+                "t": -0.44,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.94
+              },
+              {
+                "t": -0.39,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.89
+              },
+              {
+                "t": -0.31,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.81
+              },
+              {
+                "t": -0.23,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.73
+              },
+              {
+                "t": -0.159362,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.659362
+              },
+              {
+                "t": -0.124972,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.624972
+              },
+              {
+                "t": -0.08,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.58
+              },
+              {
+                "t": -0.035275,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.535275
+              },
+              {
+                "t": 0.0,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.5
+              },
+              {
+                "t": 0.04,
+                "x": 0.5022222222222222,
+                "y": 0.0022222222222222222,
+                "z": 0.4955555555555556,
+                "value": 2.4599111111111114
+              },
+              {
+                "t": 0.1,
+                "x": 0.5055555555555555,
+                "y": 0.005555555555555556,
+                "z": 0.4888888888888889,
+                "value": 2.3994444444444443
+              },
+              {
+                "t": 0.127175,
+                "x": 0.5070652777777778,
+                "y": 0.007065277777777778,
+                "z": 0.48586944444444446,
+                "value": 2.371926473298611
+              },
+              {
+                "t": 0.171185,
+                "x": 0.5095102777777778,
+                "y": 0.009510277777777777,
+                "z": 0.48097944444444446,
+                "value": 2.327186983098611
+              },
+              {
+                "t": 0.22,
+                "x": 0.5122222222222222,
+                "y": 0.012222222222222223,
+                "z": 0.47555555555555556,
+                "value": 2.277311111111111
+              },
+              {
+                "t": 0.261125,
+                "x": 0.5145069444444444,
+                "y": 0.014506944444444444,
+                "z": 0.4709861111111111,
+                "value": 2.2350868741319445
+              },
+              {
+                "t": 0.30993,
+                "x": 0.5172183333333333,
+                "y": 0.017218333333333332,
+                "z": 0.46556333333333333,
+                "value": 2.18473352195
+              },
+              {
+                "t": 0.34,
+                "x": 0.5188888888888888,
+                "y": 0.01888888888888889,
+                "z": 0.4622222222222222,
+                "value": 2.1535777777777776
+              },
+              {
+                "t": 0.380094,
+                "x": 0.5211163333333333,
+                "y": 0.021116333333333334,
+                "z": 0.4577673333333333,
+                "value": 2.1118798083979997
+              },
+              {
+                "t": 0.43967,
+                "x": 0.5244261111111111,
+                "y": 0.02442611111111111,
+                "z": 0.45114777777777776,
+                "value": 2.0495905717277783
+              },
+              {
+                "t": 0.501557,
+                "x": 0.5278642777777778,
+                "y": 0.02786427777777778,
+                "z": 0.44427144444444444,
+                "value": 1.984467476430611
+              },
+              {
+                "t": 0.541761,
+                "x": 0.5300978333333334,
+                "y": 0.030097833333333338,
+                "z": 0.43980433333333335,
+                "value": 1.9419331677155003
+              },
+              {
+                "t": 0.573713,
+                "x": 0.5318729444444444,
+                "y": 0.03187294444444445,
+                "z": 0.4362541111111111,
+                "value": 1.9080010774239446
+              },
+              {
+                "t": 0.64691,
+                "x": 0.5359394444444444,
+                "y": 0.03593944444444444,
+                "z": 0.4281211111111111,
+                "value": 1.8298404139944444
+              },
+              {
+                "t": 0.69,
+                "x": 0.5383333333333333,
+                "y": 0.03833333333333333,
+                "z": 0.42333333333333334,
+                "value": 1.78355
+              },
+              {
+                "t": 0.73,
+                "x": 0.5405555555555556,
+                "y": 0.04055555555555555,
+                "z": 0.41888888888888887,
+                "value": 1.7403944444444441
+              },
+              {
+                "t": 0.772234,
+                "x": 0.5429018888888889,
+                "y": 0.042901888888888885,
+                "z": 0.41419622222222224,
+                "value": 1.6946357027357777
+              },
+              {
+                "t": 0.83,
+                "x": 0.5461111111111111,
+                "y": 0.04611111111111111,
+                "z": 0.4077777777777778,
+                "value": 1.6317277777777779
+              },
+              {
+                "t": 0.891428,
+                "x": 0.5495237777777777,
+                "y": 0.04952377777777778,
+                "z": 0.40095244444444444,
+                "value": 1.5644251178231112
+              },
+              {
+                "t": 0.952288,
+                "x": 0.5529048888888889,
+                "y": 0.05290488888888889,
+                "z": 0.3941902222222222,
+                "value": 1.4973313091697777
+              },
+              {
+                "t": 1.0,
+                "x": 0.5555555555555556,
+                "y": 0.05555555555555555,
+                "z": 0.3888888888888889,
+                "value": 1.4444444444444446
+              },
+              {
+                "t": 1.06,
+                "x": 0.5588888888888889,
+                "y": 0.05888888888888889,
+                "z": 0.38222222222222224,
+                "value": 1.3775777777777778
+              },
+              {
+                "t": 1.100729,
+                "x": 0.5611516111111111,
+                "y": 0.061151611111111115,
+                "z": 0.37769677777777777,
+                "value": 1.3319596482532776
+              },
+              {
+                "t": 1.15,
+                "x": 0.5638888888888889,
+                "y": 0.06388888888888888,
+                "z": 0.37222222222222223,
+                "value": 1.276527777777778
+              },
+              {
+                "t": 1.193042,
+                "x": 0.5662801111111111,
+                "y": 0.06628011111111111,
+                "z": 0.3674397777777778,
+                "value": 1.2278830436797779
+              },
+              {
+                "t": 1.25,
+                "x": 0.5694444444444444,
+                "y": 0.06944444444444445,
+                "z": 0.3611111111111111,
+                "value": 1.1631944444444444
+              },
+              {
+                "t": 1.32,
+                "x": 0.5733333333333334,
+                "y": 0.07333333333333333,
+                "z": 0.35333333333333333,
+                "value": 1.0832
+              },
+              {
+                "t": 1.371745,
+                "x": 0.5762080555555555,
+                "y": 0.07620805555555556,
+                "z": 0.3475838888888889,
+                "value": 1.0237169808319444
+              },
+              {
+                "t": 1.431332,
+                "x": 0.5795184444444444,
+                "y": 0.07951844444444445,
+                "z": 0.3409631111111111,
+                "value": 0.9548507058764444
+              },
+              {
+                "t": 1.48,
+                "x": 0.5822222222222222,
+                "y": 0.08222222222222222,
+                "z": 0.33555555555555555,
+                "value": 0.8983111111111111
+              },
+              {
+                "t": 1.53,
+                "x": 0.585,
+                "y": 0.085,
+                "z": 0.32999999999999996,
+                "value": 0.8399499999999999
+              },
+              {
+                "t": 1.570852,
+                "x": 0.5872695555555556,
+                "y": 0.08726955555555554,
+                "z": 0.3254608888888889,
+                "value": 0.7920604441164445
+              },
+              {
+                "t": 1.610681,
+                "x": 0.5894822777777777,
+                "y": 0.08948227777777779,
+                "z": 0.32103544444444443,
+                "value": 0.7451915953466111
+              },
+              {
+                "t": 1.666537,
+                "x": 0.5925853888888889,
+                "y": 0.09258538888888888,
+                "z": 0.3148292222222222,
+                "value": 0.6791660237572779
+              },
+              {
+                "t": 1.72,
+                "x": 0.5955555555555556,
+                "y": 0.09555555555555556,
+                "z": 0.3088888888888889,
+                "value": 0.6156444444444447
+              },
+              {
+                "t": 1.76,
+                "x": 0.5977777777777777,
+                "y": 0.09777777777777778,
+                "z": 0.3044444444444444,
+                "value": 0.567911111111111
+              },
+              {
+                "t": 1.8,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.52
+              },
+              {
+                "t": 1.834874,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.47815120000000005
+              },
+              {
+                "t": 1.87,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.4359999999999999
+              },
+              {
+                "t": 1.93,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.36400000000000005
+              },
+              {
+                "t": 1.98,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.304
+              },
+              {
+                "t": 2.02,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.25599999999999995
+              },
+              {
+                "t": 2.065841,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.2009908000000002
+              },
+              {
+                "t": 2.110283,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.14766040000000008
+              },
+              {
+                "t": 2.157623,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.09085239999999989
+              },
+              {
+                "t": 2.22,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.015999999999999737
+              },
+              {
+                "t": 2.25,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.020000000000000073
+              },
+              {
+                "t": 2.32,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.10399999999999993
+              },
+              {
+                "t": 2.37,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.1640000000000002
+              },
+              {
+                "t": 2.418199,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.22183880000000006
+              },
+              {
+                "t": 2.446299,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.2555587999999998
+              },
+              {
+                "t": 2.5,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.3199999999999999
+              },
+              {
+                "t": 2.56,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.39199999999999996
+              },
+              {
+                "t": 2.609447,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.4513363999999998
+              },
+              {
+                "t": 2.65,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.49999999999999983
+              },
+              {
+                "t": 2.71,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.5720000000000001
+              },
+              {
+                "t": 2.756141,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.6273692
+              },
+              {
+                "t": 2.82,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.7039999999999997
+              },
+              {
+                "t": 2.88,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.7759999999999998
+              },
+              {
+                "t": 2.935253,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.8423035999999997
+              },
+              {
+                "t": 2.963097,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.8757164
+              },
+              {
+                "t": 3.02,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.944
+              },
+              {
+                "t": 3.065986,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.9991832
+              },
+              {
+                "t": 3.11,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.0519999999999996
+              },
+              {
+                "t": 3.16,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.112
+              },
+              {
+                "t": 3.2,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.1600000000000001
+              },
+              {
+                "t": 3.24,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.208
+              },
+              {
+                "t": 3.29,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.2679999999999996
+              },
+              {
+                "t": 3.33,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.3159999999999996
+              },
+              {
+                "t": 3.392773,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.3913276
+              },
+              {
+                "t": 3.42953,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.435436
+              },
+              {
+                "t": 3.48264,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.4991679999999998
+              },
+              {
+                "t": 3.54,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.5680000000000003
+              },
+              {
+                "t": 3.59,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.628
+              },
+              {
+                "t": 3.64,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.6880000000000004
+              },
+              {
+                "t": 3.686807,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.7441684000000002
+              },
+              {
+                "t": 3.75,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.82
+              },
+              {
+                "t": 3.801272,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.8815264
+              },
+              {
+                "t": 3.84,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.9279999999999997
+              },
+              {
+                "t": 3.905051,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -2.0060611999999995
+              },
+              {
+                "t": 3.969549,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -2.0834588000000007
+              },
+              {
+                "t": 3.996821,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -2.1161852000000003
+              },
+              {
+                "t": 4.0,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -2.12
+              }
+            ]
+          },
+          "fabius": {
+            "passed": 9,
+            "total": 9,
+            "seconds": 353.08,
+            "tokens": 16631,
+            "checks": [
+              {
+                "id": "numeric",
+                "label": "Numerical optimizer and feasibility",
+                "passed": true,
+                "detail": "1233 of 1233 parameter probes passed for this one problem. This does not replace a proof."
+              },
+              {
+                "id": "global_existence_uniqueness",
+                "label": "Global existence uniqueness",
+                "passed": true,
+                "detail": "The polygon is explicitly specified, its vertices and vertical sections establish the geometry, and compactness gives existence. The exact positive quadratic remainder 4(dx+dy)^2+2dy^2 proves strict convexity on the equality plane and uniqueness of the certified minimizer."
+              },
+              {
+                "id": "complete_piecewise_optimizer",
+                "label": "Complete piecewise optimizer",
+                "passed": true,
+                "detail": "All six exact optimizer rows agree algebraically with the independent reference, and their closed intervals cover the entire domain with the five correct transitions. The fixed optimizer for [-1/2,0] appears explicitly and its interval is derived from the two active multiplier signs."
+              },
+              {
+                "id": "exact_value_function",
+                "label": "Exact value function",
+                "passed": true,
+                "detail": "Each of the six symbolic value formulas matches independent algebraic evaluation. The listed five transition values and both endpoint values are also exact and correct. This proof assessment is independent of the numerical execution result."
+              },
+              {
+                "id": "primal_feasibility",
+                "label": "Primal feasibility",
+                "passed": true,
+                "detail": "The proof retains all five inequalities in the reduced polygon, explains slackness or equality of the slanted constraint and cap across the regimes, and notes coordinate nonnegativity and z>=3/10. Independent interval substitution confirms each table row sums to one and satisfies every constraint, including the closed endpoints."
+              },
+              {
+                "id": "dual_stationarity_certificate",
+                "label": "Dual stationarity certificate",
+                "passed": true,
+                "detail": "A consistent original-variable Lagrangian with nonnegative inequality multipliers is defined. The full equality and inequality multiplier table, with gamma=0 stated globally, is correct. The three original stationarity equations are correct and direct symbolic substitution confirms them on every regime."
+              },
+              {
+                "id": "dual_feasibility_complementarity",
+                "label": "Dual feasibility complementarity",
+                "passed": true,
+                "detail": "Every inequality multiplier has the required nonnegative sign over its whole closed interval and nonzero multipliers occur only on active constraints. The fixed-vertex multiplier pair is explicitly derived. The boundary table correctly records active constraints with zero multipliers and does not confuse activity with strict positivity."
+              },
+              {
+                "id": "closed_transition_analysis",
+                "label": "Closed transition analysis",
+                "passed": true,
+                "detail": "All transition values follow from feasibility contacts or multiplier signs. The exact transition table and value list agree with both neighbouring formulas. The six derivative formulas V'(t)=-2x*(t) match at each transition with correct values 0,-3/4,-1,-1,-6/5; the proof explicitly states continuous differentiability and one-sided outer-endpoint derivatives. The required C1 result and fixed-vertex interval are justified."
+              },
+              {
+                "id": "global_all_real_sufficiency",
+                "label": "Global all real sufficiency",
+                "passed": true,
+                "detail": "Reduced stationarity and complementary slackness imply a nonnegative first-order gap against every feasible point. Adding the exact strictly positive quadratic remainder proves global optimality and uniqueness for every parameter represented by a certificate. The six closed intervals exhaust [-2,4], and the proof explicitly rules out unused edges and all other competing faces."
+              }
+            ],
+            "snapshots": [],
+            "artifactUrl": "/assets/trials-20260910/runs/run-05/source.zip",
+            "proofUrl": "/assets/trials-20260910/runs/run-05/checks.html",
+            "status": "Completed",
+            "note": "One parametric problem: one numerical criterion plus eight separately reviewed proof criteria. The blinded proof review is an agent assessment with file/line evidence.",
+            "process": [
+              {
+                "label": "Planning and decomposition",
+                "detail": "A public outline identified exact regimes, KKT certificates and verification against face enumeration before writing the solver."
+              },
+              {
+                "label": "Tools and reference use",
+                "detail": "Two inline Python calculations and several explicit proof read-backs are visible. The pinned contracts were supplied in context; no supplementary file read from the snapshot is recorded."
+              },
+              {
+                "label": "Verification",
+                "detail": "The candidate created and successfully ran its verifier, then performed a separate source/syntax read-back and read the verification record."
+              },
+              {
+                "label": "Diagnosis and retest",
+                "detail": "No mathematical check failure is recorded in this run, so the trace does not demonstrate recovery from one. Extra reads and calculations are activity evidence, not a quality score."
+              }
+            ],
+            "curve": [
+              {
+                "t": -2.0,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.945477,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.9,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.83,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.76,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.71,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.666606,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.624156,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.5714285714285714,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.53,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.5,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.45,
+                "x": 0.03750000000000003,
+                "y": 0.22499999999999998,
+                "z": 0.7374999999999999,
+                "value": 3.623125
+              },
+              {
+                "t": -1.419283,
+                "x": 0.060537749999999946,
+                "y": 0.20964150000000004,
+                "z": 0.72982075,
+                "value": 3.6201135744332498
+              },
+              {
+                "t": -1.364401,
+                "x": 0.10169925000000002,
+                "y": 0.1822005,
+                "z": 0.71610025,
+                "value": 3.6112096833992497
+              },
+              {
+                "t": -1.31,
+                "x": 0.14249999999999996,
+                "y": 0.15500000000000003,
+                "z": 0.7025,
+                "value": 3.597925
+              },
+              {
+                "t": -1.264016,
+                "x": 0.17698799999999998,
+                "y": 0.13200800000000001,
+                "z": 0.6910040000000001,
+                "value": 3.5832336638080005
+              },
+              {
+                "t": -1.22,
+                "x": 0.21000000000000002,
+                "y": 0.10999999999999999,
+                "z": 0.68,
+                "value": 3.5662000000000003
+              },
+              {
+                "t": -1.14,
+                "x": 0.2700000000000001,
+                "y": 0.06999999999999995,
+                "z": 0.66,
+                "value": 3.5278
+              },
+              {
+                "t": -1.09,
+                "x": 0.30749999999999994,
+                "y": 0.04500000000000004,
+                "z": 0.6475000000000001,
+                "value": 3.4989250000000003
+              },
+              {
+                "t": -1.05,
+                "x": 0.33749999999999997,
+                "y": 0.025000000000000022,
+                "z": 0.6375000000000001,
+                "value": 3.473125
+              },
+              {
+                "t": -1.000094,
+                "x": 0.37492949999999997,
+                "y": 4.700000000001925e-05,
+                "z": 0.6250235000000001,
+                "value": 3.4375704933730002
+              },
+              {
+                "t": -1.0,
+                "x": 0.375,
+                "y": -0.0,
+                "z": 0.625,
+                "value": 3.4375
+              },
+              {
+                "t": -0.99,
+                "x": 0.3775,
+                "y": 0.0,
+                "z": 0.6225,
+                "value": 3.429975
+              },
+              {
+                "t": -0.94,
+                "x": 0.39,
+                "y": 0.0,
+                "z": 0.61,
+                "value": 3.3916000000000004
+              },
+              {
+                "t": -0.91,
+                "x": 0.39749999999999996,
+                "y": 0.0,
+                "z": 0.6025,
+                "value": 3.3679750000000004
+              },
+              {
+                "t": -0.855598,
+                "x": 0.4111005,
+                "y": 0.0,
+                "z": 0.5888995,
+                "value": 3.323985515599
+              },
+              {
+                "t": -0.813435,
+                "x": 0.42164124999999997,
+                "y": 0.0,
+                "z": 0.57835875,
+                "value": 3.28887462519375
+              },
+              {
+                "t": -0.771443,
+                "x": 0.43213925,
+                "y": 0.0,
+                "z": 0.56786075,
+                "value": 3.25302267443775
+              },
+              {
+                "t": -0.738571,
+                "x": 0.44035725000000003,
+                "y": 0.0,
+                "z": 0.55964275,
+                "value": 3.2243419694897497
+              },
+              {
+                "t": -0.68,
+                "x": 0.45499999999999996,
+                "y": 0.0,
+                "z": 0.545,
+                "value": 3.1719
+              },
+              {
+                "t": -0.631416,
+                "x": 0.467146,
+                "y": 0.0,
+                "z": 0.5328539999999999,
+                "value": 3.1270984587359996
+              },
+              {
+                "t": -0.57758,
+                "x": 0.480605,
+                "y": 0.0,
+                "z": 0.519395,
+                "value": 3.0760753359
+              },
+              {
+                "t": -0.52,
+                "x": 0.495,
+                "y": 0.0,
+                "z": 0.505,
+                "value": 3.0199
+              },
+              {
+                "t": -0.5,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 3.0
+              },
+              {
+                "t": -0.49999,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.99999
+              },
+              {
+                "t": -0.44,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.94
+              },
+              {
+                "t": -0.39,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.89
+              },
+              {
+                "t": -0.31,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.81
+              },
+              {
+                "t": -0.23,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.73
+              },
+              {
+                "t": -0.159362,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.659362
+              },
+              {
+                "t": -0.124972,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.624972
+              },
+              {
+                "t": -0.08,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.58
+              },
+              {
+                "t": -0.035275,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.535275
+              },
+              {
+                "t": 0.0,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.5
+              },
+              {
+                "t": 0.04,
+                "x": 0.5022222222222222,
+                "y": 0.0022222222222222222,
+                "z": 0.4955555555555556,
+                "value": 2.459911111111111
+              },
+              {
+                "t": 0.1,
+                "x": 0.5055555555555555,
+                "y": 0.005555555555555556,
+                "z": 0.4888888888888889,
+                "value": 2.3994444444444443
+              },
+              {
+                "t": 0.127175,
+                "x": 0.5070652777777778,
+                "y": 0.007065277777777778,
+                "z": 0.48586944444444446,
+                "value": 2.371926473298611
+              },
+              {
+                "t": 0.171185,
+                "x": 0.5095102777777778,
+                "y": 0.009510277777777777,
+                "z": 0.48097944444444446,
+                "value": 2.327186983098611
+              },
+              {
+                "t": 0.22,
+                "x": 0.5122222222222222,
+                "y": 0.012222222222222223,
+                "z": 0.47555555555555556,
+                "value": 2.277311111111111
+              },
+              {
+                "t": 0.261125,
+                "x": 0.5145069444444444,
+                "y": 0.014506944444444444,
+                "z": 0.4709861111111111,
+                "value": 2.2350868741319445
+              },
+              {
+                "t": 0.30993,
+                "x": 0.5172183333333333,
+                "y": 0.017218333333333332,
+                "z": 0.46556333333333333,
+                "value": 2.18473352195
+              },
+              {
+                "t": 0.34,
+                "x": 0.5188888888888888,
+                "y": 0.01888888888888889,
+                "z": 0.4622222222222222,
+                "value": 2.1535777777777776
+              },
+              {
+                "t": 0.380094,
+                "x": 0.5211163333333333,
+                "y": 0.021116333333333334,
+                "z": 0.4577673333333333,
+                "value": 2.1118798083979997
+              },
+              {
+                "t": 0.43967,
+                "x": 0.5244261111111111,
+                "y": 0.02442611111111111,
+                "z": 0.45114777777777776,
+                "value": 2.049590571727778
+              },
+              {
+                "t": 0.501557,
+                "x": 0.5278642777777778,
+                "y": 0.02786427777777778,
+                "z": 0.44427144444444444,
+                "value": 1.9844674764306112
+              },
+              {
+                "t": 0.541761,
+                "x": 0.5300978333333334,
+                "y": 0.030097833333333338,
+                "z": 0.43980433333333335,
+                "value": 1.9419331677155
+              },
+              {
+                "t": 0.573713,
+                "x": 0.5318729444444444,
+                "y": 0.03187294444444445,
+                "z": 0.4362541111111111,
+                "value": 1.9080010774239444
+              },
+              {
+                "t": 0.64691,
+                "x": 0.5359394444444444,
+                "y": 0.03593944444444444,
+                "z": 0.4281211111111111,
+                "value": 1.8298404139944444
+              },
+              {
+                "t": 0.69,
+                "x": 0.5383333333333333,
+                "y": 0.03833333333333333,
+                "z": 0.42333333333333334,
+                "value": 1.78355
+              },
+              {
+                "t": 0.73,
+                "x": 0.5405555555555556,
+                "y": 0.04055555555555555,
+                "z": 0.41888888888888887,
+                "value": 1.7403944444444444
+              },
+              {
+                "t": 0.772234,
+                "x": 0.5429018888888889,
+                "y": 0.042901888888888885,
+                "z": 0.41419622222222224,
+                "value": 1.694635702735778
+              },
+              {
+                "t": 0.83,
+                "x": 0.5461111111111111,
+                "y": 0.04611111111111111,
+                "z": 0.4077777777777778,
+                "value": 1.6317277777777779
+              },
+              {
+                "t": 0.891428,
+                "x": 0.5495237777777777,
+                "y": 0.04952377777777778,
+                "z": 0.40095244444444444,
+                "value": 1.564425117823111
+              },
+              {
+                "t": 0.952288,
+                "x": 0.5529048888888889,
+                "y": 0.05290488888888889,
+                "z": 0.3941902222222222,
+                "value": 1.4973313091697777
+              },
+              {
+                "t": 1.0,
+                "x": 0.5555555555555556,
+                "y": 0.05555555555555555,
+                "z": 0.3888888888888889,
+                "value": 1.4444444444444444
+              },
+              {
+                "t": 1.06,
+                "x": 0.5588888888888889,
+                "y": 0.05888888888888889,
+                "z": 0.38222222222222224,
+                "value": 1.3775777777777778
+              },
+              {
+                "t": 1.100729,
+                "x": 0.5611516111111111,
+                "y": 0.061151611111111115,
+                "z": 0.37769677777777777,
+                "value": 1.3319596482532776
+              },
+              {
+                "t": 1.15,
+                "x": 0.5638888888888889,
+                "y": 0.06388888888888888,
+                "z": 0.37222222222222223,
+                "value": 1.276527777777778
+              },
+              {
+                "t": 1.193042,
+                "x": 0.5662801111111111,
+                "y": 0.06628011111111111,
+                "z": 0.3674397777777778,
+                "value": 1.2278830436797779
+              },
+              {
+                "t": 1.25,
+                "x": 0.5694444444444444,
+                "y": 0.06944444444444445,
+                "z": 0.3611111111111111,
+                "value": 1.1631944444444444
+              },
+              {
+                "t": 1.32,
+                "x": 0.5733333333333334,
+                "y": 0.07333333333333333,
+                "z": 0.35333333333333333,
+                "value": 1.0832
+              },
+              {
+                "t": 1.371745,
+                "x": 0.5762080555555555,
+                "y": 0.07620805555555556,
+                "z": 0.3475838888888889,
+                "value": 1.0237169808319446
+              },
+              {
+                "t": 1.431332,
+                "x": 0.5795184444444444,
+                "y": 0.07951844444444445,
+                "z": 0.3409631111111111,
+                "value": 0.9548507058764444
+              },
+              {
+                "t": 1.48,
+                "x": 0.5822222222222222,
+                "y": 0.08222222222222222,
+                "z": 0.33555555555555555,
+                "value": 0.8983111111111111
+              },
+              {
+                "t": 1.53,
+                "x": 0.585,
+                "y": 0.085,
+                "z": 0.32999999999999996,
+                "value": 0.8399499999999999
+              },
+              {
+                "t": 1.570852,
+                "x": 0.5872695555555556,
+                "y": 0.08726955555555554,
+                "z": 0.3254608888888889,
+                "value": 0.7920604441164445
+              },
+              {
+                "t": 1.610681,
+                "x": 0.5894822777777777,
+                "y": 0.08948227777777779,
+                "z": 0.32103544444444443,
+                "value": 0.7451915953466111
+              },
+              {
+                "t": 1.666537,
+                "x": 0.5925853888888889,
+                "y": 0.09258538888888888,
+                "z": 0.3148292222222222,
+                "value": 0.6791660237572779
+              },
+              {
+                "t": 1.72,
+                "x": 0.5955555555555556,
+                "y": 0.09555555555555556,
+                "z": 0.3088888888888889,
+                "value": 0.6156444444444445
+              },
+              {
+                "t": 1.76,
+                "x": 0.5977777777777777,
+                "y": 0.09777777777777778,
+                "z": 0.3044444444444444,
+                "value": 0.567911111111111
+              },
+              {
+                "t": 1.8,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.52
+              },
+              {
+                "t": 1.834874,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.47815120000000005
+              },
+              {
+                "t": 1.87,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.4359999999999999
+              },
+              {
+                "t": 1.93,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.36400000000000005
+              },
+              {
+                "t": 1.98,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.304
+              },
+              {
+                "t": 2.02,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.25599999999999995
+              },
+              {
+                "t": 2.065841,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.2009908000000002
+              },
+              {
+                "t": 2.110283,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.14766040000000008
+              },
+              {
+                "t": 2.157623,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.0908523999999999
+              },
+              {
+                "t": 2.22,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.01599999999999975
+              },
+              {
+                "t": 2.25,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.02000000000000006
+              },
+              {
+                "t": 2.32,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.10399999999999991
+              },
+              {
+                "t": 2.37,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.1640000000000002
+              },
+              {
+                "t": 2.418199,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.22183880000000006
+              },
+              {
+                "t": 2.446299,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.2555587999999998
+              },
+              {
+                "t": 2.5,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.3199999999999999
+              },
+              {
+                "t": 2.56,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.39199999999999996
+              },
+              {
+                "t": 2.609447,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.4513363999999998
+              },
+              {
+                "t": 2.65,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.49999999999999983
+              },
+              {
+                "t": 2.71,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.5720000000000001
+              },
+              {
+                "t": 2.756141,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.6273692
+              },
+              {
+                "t": 2.82,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.7039999999999997
+              },
+              {
+                "t": 2.88,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.7759999999999998
+              },
+              {
+                "t": 2.935253,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.8423035999999997
+              },
+              {
+                "t": 2.963097,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.8757164
+              },
+              {
+                "t": 3.02,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.944
+              },
+              {
+                "t": 3.065986,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.9991832
+              },
+              {
+                "t": 3.11,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.0519999999999996
+              },
+              {
+                "t": 3.16,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.112
+              },
+              {
+                "t": 3.2,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.1600000000000001
+              },
+              {
+                "t": 3.24,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.2080000000000002
+              },
+              {
+                "t": 3.29,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.2679999999999998
+              },
+              {
+                "t": 3.33,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.3159999999999998
+              },
+              {
+                "t": 3.392773,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.3913275999999999
+              },
+              {
+                "t": 3.42953,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.4354360000000002
+              },
+              {
+                "t": 3.48264,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.499168
+              },
+              {
+                "t": 3.54,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.568
+              },
+              {
+                "t": 3.59,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.6279999999999997
+              },
+              {
+                "t": 3.64,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.6880000000000002
+              },
+              {
+                "t": 3.686807,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.7441684
+              },
+              {
+                "t": 3.75,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.8199999999999998
+              },
+              {
+                "t": 3.801272,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.8815263999999998
+              },
+              {
+                "t": 3.84,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.928
+              },
+              {
+                "t": 3.905051,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -2.0060611999999995
+              },
+              {
+                "t": 3.969549,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -2.0834588000000003
+              },
+              {
+                "t": 3.996821,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -2.1161852000000003
+              },
+              {
+                "t": 4.0,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -2.1199999999999997
+              }
+            ]
+          }
+        },
+        {
+          "repeat": 2,
+          "fabius": {
+            "passed": 9,
+            "total": 9,
+            "seconds": 288.597,
+            "tokens": 14650,
+            "checks": [
+              {
+                "id": "numeric",
+                "label": "Numerical optimizer and feasibility",
+                "passed": true,
+                "detail": "1233 of 1233 parameter probes passed for this one problem. This does not replace a proof."
+              },
+              {
+                "id": "global_existence_uniqueness",
+                "label": "Global existence uniqueness",
+                "passed": true,
+                "detail": "Existence is justified by an explicit feasible point and compactness. The full original Hessian is correct, with positive leading minors 2,7,40. Positive definiteness and the later strictly positive quadratic-gap argument establish uniqueness, an accepted alternative to using the reduced Hessian."
+              },
+              {
+                "id": "complete_piecewise_optimizer",
+                "label": "Complete piecewise optimizer",
+                "passed": true,
+                "detail": "All six exact optimizer formulas and all five transition parameters match the independent reference. The six closed intervals cover [-2,4]. The fixed-vertex interval [-1/2,0] is derived from the opposite signs of the left and right derivatives of the reduced one-variable function, not merely asserted."
+              },
+              {
+                "id": "exact_value_function",
+                "label": "Exact value function",
+                "passed": true,
+                "detail": "All six displayed symbolic value formulas and the transition values are exact and correct. Independent expansion of the fixed-x minimization gives the stated three W_t pieces; substitution at their minimizers yields the value table. This assessment relies on algebra, not the numeric probe result."
+              },
+              {
+                "id": "primal_feasibility",
+                "label": "Primal feasibility",
+                "passed": true,
+                "detail": "The polygon is represented as exact x bounds and the full allowable y interval. The fixed-x unconstrained minimizer lies strictly below the upper bound, and clamping it to the lower bound gives the correct feasible Y(x) on all three intervals. Combining Y(x), the exact x-domain restrictions and z=1-x-y proves all original constraints, including the unused z=0 face."
+              },
+              {
+                "id": "dual_stationarity_certificate",
+                "label": "Dual stationarity certificate",
+                "passed": true,
+                "detail": "The original-variable Lagrangian and sign convention are explicit and consistent. All five inequality multipliers and the equality multiplier are tabulated for every closed regime. The three stationarity equations and equivalent reduced identities are correct; direct symbolic substitution verifies every row."
+              },
+              {
+                "id": "dual_feasibility_complementarity",
+                "label": "Dual feasibility complementarity",
+                "passed": true,
+                "detail": "Each inequality multiplier is nonnegative on its complete interval and has a tight corresponding constraint when nonzero. The active sets and zero multipliers are correct at all transitions and endpoints. The statement of strict positivity applies only to active inequalities in open regime interiors and is valid; it does not incorrectly impose strict complementarity at boundaries."
+              },
+              {
+                "id": "closed_transition_analysis",
+                "label": "Closed transition analysis",
+                "passed": true,
+                "detail": "The increasing piecewise derivative of W_t establishes the exact transitions and the nonzero-length corner interval. The optimizer/value table, multiplier table and boundary data agree on every shared endpoint. The six value derivatives equal -2x(t) and have the correct coincident boundary values; continuity, C1 regularity and one-sided outer-endpoint derivatives are explicitly established as required."
+              },
+              {
+                "id": "global_all_real_sufficiency",
+                "label": "Global all real sufficiency",
+                "passed": true,
+                "detail": "There are two valid complete arguments: exact minimization in y followed by globally increasing one-dimensional derivatives covers the entire feasible polygon, and the full-Hessian KKT quadratic-gap identity proves strict optimality against any distinct feasible competitor. Both arguments apply to all six closed parameter intervals, including unused faces and all boundaries."
+              }
+            ],
+            "snapshots": [],
+            "artifactUrl": "/assets/trials-20260910/runs/run-09/source.zip",
+            "proofUrl": "/assets/trials-20260910/runs/run-09/checks.html",
+            "status": "Completed",
+            "note": "One parametric problem: one numerical criterion plus eight separately reviewed proof criteria. The blinded proof review is an agent assessment with file/line evidence.",
+            "process": [
+              {
+                "label": "Planning and decomposition",
+                "detail": "The public execution outline separated exact derivation, KKT certificates, implementation and boundary/face comparisons."
+              },
+              {
+                "label": "Tools and verification",
+                "detail": "Two inline exact-arithmetic checks preceded the solver write. The candidate then created a verification helper, executed it and explicitly read its saved output."
+              },
+              {
+                "label": "Review and handoff",
+                "detail": "Later edits clarify proof wording and add reproducibility notes; source compilation and artifact-presence checks are recorded. No mathematical verifier failure appears in this run."
+              }
+            ],
+            "curve": [
+              {
+                "t": -2.0,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.945477,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.9,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.83,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.76,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.71,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.666606,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.624156,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.5714285714285714,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.53,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.5,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.45,
+                "x": 0.03750000000000003,
+                "y": 0.22499999999999998,
+                "z": 0.7374999999999999,
+                "value": 3.623125
+              },
+              {
+                "t": -1.419283,
+                "x": 0.060537749999999946,
+                "y": 0.20964150000000004,
+                "z": 0.72982075,
+                "value": 3.6201135744332498
+              },
+              {
+                "t": -1.364401,
+                "x": 0.10169925000000002,
+                "y": 0.1822005,
+                "z": 0.71610025,
+                "value": 3.6112096833992497
+              },
+              {
+                "t": -1.31,
+                "x": 0.14249999999999996,
+                "y": 0.15500000000000003,
+                "z": 0.7025,
+                "value": 3.597925
+              },
+              {
+                "t": -1.264016,
+                "x": 0.17698799999999998,
+                "y": 0.13200800000000001,
+                "z": 0.6910040000000001,
+                "value": 3.5832336638080005
+              },
+              {
+                "t": -1.22,
+                "x": 0.21000000000000002,
+                "y": 0.10999999999999999,
+                "z": 0.68,
+                "value": 3.5662000000000003
+              },
+              {
+                "t": -1.14,
+                "x": 0.2700000000000001,
+                "y": 0.06999999999999995,
+                "z": 0.66,
+                "value": 3.5278
+              },
+              {
+                "t": -1.09,
+                "x": 0.30749999999999994,
+                "y": 0.04500000000000004,
+                "z": 0.6475000000000001,
+                "value": 3.4989250000000003
+              },
+              {
+                "t": -1.05,
+                "x": 0.33749999999999997,
+                "y": 0.025000000000000022,
+                "z": 0.6375000000000001,
+                "value": 3.473125
+              },
+              {
+                "t": -1.000094,
+                "x": 0.37492949999999997,
+                "y": 4.700000000001925e-05,
+                "z": 0.6250235000000001,
+                "value": 3.4375704933730002
+              },
+              {
+                "t": -1.0,
+                "x": 0.375,
+                "y": -0.0,
+                "z": 0.625,
+                "value": 3.4375
+              },
+              {
+                "t": -0.99,
+                "x": 0.3775,
+                "y": 0.0,
+                "z": 0.6225,
+                "value": 3.429975
+              },
+              {
+                "t": -0.94,
+                "x": 0.39,
+                "y": 0.0,
+                "z": 0.61,
+                "value": 3.3916000000000004
+              },
+              {
+                "t": -0.91,
+                "x": 0.39749999999999996,
+                "y": 0.0,
+                "z": 0.6025,
+                "value": 3.3679750000000004
+              },
+              {
+                "t": -0.855598,
+                "x": 0.4111005,
+                "y": 0.0,
+                "z": 0.5888995,
+                "value": 3.323985515599
+              },
+              {
+                "t": -0.813435,
+                "x": 0.42164124999999997,
+                "y": 0.0,
+                "z": 0.57835875,
+                "value": 3.28887462519375
+              },
+              {
+                "t": -0.771443,
+                "x": 0.43213925,
+                "y": 0.0,
+                "z": 0.56786075,
+                "value": 3.25302267443775
+              },
+              {
+                "t": -0.738571,
+                "x": 0.44035725000000003,
+                "y": 0.0,
+                "z": 0.55964275,
+                "value": 3.2243419694897497
+              },
+              {
+                "t": -0.68,
+                "x": 0.45499999999999996,
+                "y": 0.0,
+                "z": 0.545,
+                "value": 3.1719
+              },
+              {
+                "t": -0.631416,
+                "x": 0.467146,
+                "y": 0.0,
+                "z": 0.5328539999999999,
+                "value": 3.1270984587359996
+              },
+              {
+                "t": -0.57758,
+                "x": 0.480605,
+                "y": 0.0,
+                "z": 0.519395,
+                "value": 3.0760753359
+              },
+              {
+                "t": -0.52,
+                "x": 0.495,
+                "y": 0.0,
+                "z": 0.505,
+                "value": 3.0199
+              },
+              {
+                "t": -0.5,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 3.0
+              },
+              {
+                "t": -0.49999,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.99999
+              },
+              {
+                "t": -0.44,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.94
+              },
+              {
+                "t": -0.39,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.89
+              },
+              {
+                "t": -0.31,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.81
+              },
+              {
+                "t": -0.23,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.73
+              },
+              {
+                "t": -0.159362,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.659362
+              },
+              {
+                "t": -0.124972,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.624972
+              },
+              {
+                "t": -0.08,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.58
+              },
+              {
+                "t": -0.035275,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.535275
+              },
+              {
+                "t": 0.0,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.5
+              },
+              {
+                "t": 0.04,
+                "x": 0.5022222222222222,
+                "y": 0.0022222222222222222,
+                "z": 0.4955555555555555,
+                "value": 2.459911111111111
+              },
+              {
+                "t": 0.1,
+                "x": 0.5055555555555555,
+                "y": 0.005555555555555556,
+                "z": 0.48888888888888893,
+                "value": 2.3994444444444447
+              },
+              {
+                "t": 0.127175,
+                "x": 0.5070652777777778,
+                "y": 0.007065277777777778,
+                "z": 0.48586944444444446,
+                "value": 2.371926473298611
+              },
+              {
+                "t": 0.171185,
+                "x": 0.5095102777777778,
+                "y": 0.009510277777777777,
+                "z": 0.4809794444444444,
+                "value": 2.3271869830986107
+              },
+              {
+                "t": 0.22,
+                "x": 0.5122222222222222,
+                "y": 0.012222222222222223,
+                "z": 0.4755555555555555,
+                "value": 2.277311111111111
+              },
+              {
+                "t": 0.261125,
+                "x": 0.5145069444444444,
+                "y": 0.014506944444444444,
+                "z": 0.4709861111111111,
+                "value": 2.2350868741319445
+              },
+              {
+                "t": 0.30993,
+                "x": 0.5172183333333333,
+                "y": 0.017218333333333332,
+                "z": 0.46556333333333333,
+                "value": 2.18473352195
+              },
+              {
+                "t": 0.34,
+                "x": 0.5188888888888888,
+                "y": 0.01888888888888889,
+                "z": 0.46222222222222226,
+                "value": 2.1535777777777776
+              },
+              {
+                "t": 0.380094,
+                "x": 0.5211163333333333,
+                "y": 0.021116333333333334,
+                "z": 0.45776733333333336,
+                "value": 2.111879808398
+              },
+              {
+                "t": 0.43967,
+                "x": 0.5244261111111111,
+                "y": 0.02442611111111111,
+                "z": 0.45114777777777776,
+                "value": 2.049590571727778
+              },
+              {
+                "t": 0.501557,
+                "x": 0.5278642777777778,
+                "y": 0.02786427777777778,
+                "z": 0.44427144444444444,
+                "value": 1.9844674764306112
+              },
+              {
+                "t": 0.541761,
+                "x": 0.5300978333333334,
+                "y": 0.030097833333333338,
+                "z": 0.4398043333333333,
+                "value": 1.9419331677155
+              },
+              {
+                "t": 0.573713,
+                "x": 0.5318729444444444,
+                "y": 0.03187294444444445,
+                "z": 0.4362541111111111,
+                "value": 1.9080010774239444
+              },
+              {
+                "t": 0.64691,
+                "x": 0.5359394444444444,
+                "y": 0.03593944444444444,
+                "z": 0.4281211111111112,
+                "value": 1.8298404139944446
+              },
+              {
+                "t": 0.69,
+                "x": 0.5383333333333333,
+                "y": 0.03833333333333333,
+                "z": 0.42333333333333334,
+                "value": 1.78355
+              },
+              {
+                "t": 0.73,
+                "x": 0.5405555555555556,
+                "y": 0.04055555555555555,
+                "z": 0.41888888888888887,
+                "value": 1.7403944444444444
+              },
+              {
+                "t": 0.772234,
+                "x": 0.5429018888888889,
+                "y": 0.042901888888888885,
+                "z": 0.4141962222222222,
+                "value": 1.6946357027357777
+              },
+              {
+                "t": 0.83,
+                "x": 0.5461111111111111,
+                "y": 0.04611111111111111,
+                "z": 0.4077777777777778,
+                "value": 1.6317277777777779
+              },
+              {
+                "t": 0.891428,
+                "x": 0.5495237777777777,
+                "y": 0.04952377777777778,
+                "z": 0.4009524444444445,
+                "value": 1.5644251178231112
+              },
+              {
+                "t": 0.952288,
+                "x": 0.5529048888888889,
+                "y": 0.05290488888888889,
+                "z": 0.3941902222222222,
+                "value": 1.4973313091697777
+              },
+              {
+                "t": 1.0,
+                "x": 0.5555555555555556,
+                "y": 0.05555555555555555,
+                "z": 0.38888888888888884,
+                "value": 1.4444444444444444
+              },
+              {
+                "t": 1.06,
+                "x": 0.5588888888888889,
+                "y": 0.05888888888888889,
+                "z": 0.38222222222222224,
+                "value": 1.3775777777777778
+              },
+              {
+                "t": 1.100729,
+                "x": 0.5611516111111111,
+                "y": 0.061151611111111115,
+                "z": 0.37769677777777777,
+                "value": 1.3319596482532776
+              },
+              {
+                "t": 1.15,
+                "x": 0.5638888888888889,
+                "y": 0.06388888888888888,
+                "z": 0.37222222222222223,
+                "value": 1.276527777777778
+              },
+              {
+                "t": 1.193042,
+                "x": 0.5662801111111111,
+                "y": 0.06628011111111111,
+                "z": 0.3674397777777778,
+                "value": 1.2278830436797779
+              },
+              {
+                "t": 1.25,
+                "x": 0.5694444444444444,
+                "y": 0.06944444444444445,
+                "z": 0.36111111111111116,
+                "value": 1.1631944444444446
+              },
+              {
+                "t": 1.32,
+                "x": 0.5733333333333334,
+                "y": 0.07333333333333333,
+                "z": 0.3533333333333333,
+                "value": 1.0831999999999997
+              },
+              {
+                "t": 1.371745,
+                "x": 0.5762080555555555,
+                "y": 0.07620805555555556,
+                "z": 0.3475838888888889,
+                "value": 1.0237169808319446
+              },
+              {
+                "t": 1.431332,
+                "x": 0.5795184444444444,
+                "y": 0.07951844444444445,
+                "z": 0.3409631111111111,
+                "value": 0.9548507058764444
+              },
+              {
+                "t": 1.48,
+                "x": 0.5822222222222222,
+                "y": 0.08222222222222222,
+                "z": 0.3355555555555556,
+                "value": 0.8983111111111113
+              },
+              {
+                "t": 1.53,
+                "x": 0.585,
+                "y": 0.085,
+                "z": 0.33,
+                "value": 0.83995
+              },
+              {
+                "t": 1.570852,
+                "x": 0.5872695555555556,
+                "y": 0.08726955555555554,
+                "z": 0.32546088888888886,
+                "value": 0.7920604441164444
+              },
+              {
+                "t": 1.610681,
+                "x": 0.5894822777777777,
+                "y": 0.08948227777777779,
+                "z": 0.3210354444444445,
+                "value": 0.7451915953466112
+              },
+              {
+                "t": 1.666537,
+                "x": 0.5925853888888889,
+                "y": 0.09258538888888888,
+                "z": 0.3148292222222222,
+                "value": 0.6791660237572779
+              },
+              {
+                "t": 1.72,
+                "x": 0.5955555555555556,
+                "y": 0.09555555555555556,
+                "z": 0.3088888888888888,
+                "value": 0.6156444444444444
+              },
+              {
+                "t": 1.76,
+                "x": 0.5977777777777777,
+                "y": 0.09777777777777778,
+                "z": 0.30444444444444446,
+                "value": 0.5679111111111111
+              },
+              {
+                "t": 1.8,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.52
+              },
+              {
+                "t": 1.834874,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.47815120000000005
+              },
+              {
+                "t": 1.87,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.4359999999999999
+              },
+              {
+                "t": 1.93,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.36400000000000005
+              },
+              {
+                "t": 1.98,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.304
+              },
+              {
+                "t": 2.02,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.25599999999999995
+              },
+              {
+                "t": 2.065841,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.2009908000000002
+              },
+              {
+                "t": 2.110283,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.14766040000000008
+              },
+              {
+                "t": 2.157623,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.0908523999999999
+              },
+              {
+                "t": 2.22,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.01599999999999975
+              },
+              {
+                "t": 2.25,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.02000000000000006
+              },
+              {
+                "t": 2.32,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.10399999999999991
+              },
+              {
+                "t": 2.37,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.1640000000000002
+              },
+              {
+                "t": 2.418199,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.22183880000000006
+              },
+              {
+                "t": 2.446299,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.2555587999999998
+              },
+              {
+                "t": 2.5,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.3199999999999999
+              },
+              {
+                "t": 2.56,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.39199999999999996
+              },
+              {
+                "t": 2.609447,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.4513363999999998
+              },
+              {
+                "t": 2.65,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.49999999999999983
+              },
+              {
+                "t": 2.71,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.5720000000000001
+              },
+              {
+                "t": 2.756141,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.6273692
+              },
+              {
+                "t": 2.82,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.7039999999999997
+              },
+              {
+                "t": 2.88,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.7759999999999998
+              },
+              {
+                "t": 2.935253,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.8423035999999997
+              },
+              {
+                "t": 2.963097,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.8757164
+              },
+              {
+                "t": 3.02,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.944
+              },
+              {
+                "t": 3.065986,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.9991832
+              },
+              {
+                "t": 3.11,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.0519999999999996
+              },
+              {
+                "t": 3.16,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.112
+              },
+              {
+                "t": 3.2,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.1600000000000001
+              },
+              {
+                "t": 3.24,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.2080000000000002
+              },
+              {
+                "t": 3.29,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.2679999999999998
+              },
+              {
+                "t": 3.33,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.3159999999999998
+              },
+              {
+                "t": 3.392773,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.3913275999999999
+              },
+              {
+                "t": 3.42953,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.4354360000000002
+              },
+              {
+                "t": 3.48264,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.499168
+              },
+              {
+                "t": 3.54,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.568
+              },
+              {
+                "t": 3.59,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.6279999999999997
+              },
+              {
+                "t": 3.64,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.6880000000000002
+              },
+              {
+                "t": 3.686807,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.7441684
+              },
+              {
+                "t": 3.75,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.8199999999999998
+              },
+              {
+                "t": 3.801272,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.8815263999999998
+              },
+              {
+                "t": 3.84,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.928
+              },
+              {
+                "t": 3.905051,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -2.0060611999999995
+              },
+              {
+                "t": 3.969549,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -2.0834588000000003
+              },
+              {
+                "t": 3.996821,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -2.1161852000000003
+              },
+              {
+                "t": 4.0,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -2.1199999999999997
+              }
+            ]
+          },
+          "baseline": {
+            "passed": 9,
+            "total": 9,
+            "seconds": 262.152,
+            "tokens": 12959,
+            "checks": [
+              {
+                "id": "numeric",
+                "label": "Numerical optimizer and feasibility",
+                "passed": true,
+                "detail": "1233 of 1233 parameter probes passed for this one problem. This does not replace a proof."
+              },
+              {
+                "id": "global_existence_uniqueness",
+                "label": "Global existence uniqueness",
+                "passed": true,
+                "detail": "The feasible polygon is correctly retained and its five vertices listed. Nonemptiness and compactness establish existence. The reduced Hessian has the correct positive leading minors 8 and 32; the equivalent positive quadratic remainder proves strict convexity and uniqueness on the equality plane."
+              },
+              {
+                "id": "complete_piecewise_optimizer",
+                "label": "Complete piecewise optimizer",
+                "passed": true,
+                "detail": "The six exact optimizer formulas coincide with the independent reference. The five transitions -3/2,-1,-1/2,0,9/5 and the full closed domain are represented without gaps. The constant vertex interval [-1/2,0] is explicitly included and derived using its incident feasible directions."
+              },
+              {
+                "id": "exact_value_function",
+                "label": "Exact value function",
+                "passed": true,
+                "detail": "All six exact value formulas are correct. In particular the shifted-square formula in B expands to 31/16-9t/4-3t^2/4, and C written as 4-(5+2t)^2/16 matches the reference. Transition and endpoint values are independently consistent. This is a symbolic assessment rather than an inference from numeric tests."
+              },
+              {
+                "id": "primal_feasibility",
+                "label": "Primal feasibility",
+                "passed": true,
+                "detail": "The reduced polygon includes every original constraint. The derivation gives explicit coordinate bounds for B, the lower-edge feasibility limit for C and the slanted-edge interval for E. Together with the closed table, these establish nonnegative coordinates, unit sum, the cap and slanted constraint; z>=3/10 is correctly stated throughout."
+              },
+              {
+                "id": "dual_stationarity_certificate",
+                "label": "Dual stationarity certificate",
+                "passed": true,
+                "detail": "The original-variable Lagrangian and all three stationarity equations are correct. The table explicitly supplies the equality multiplier and all five inequality multipliers for every closed interval. Its equivalent reduced stationarity equations correctly recover the table, and direct symbolic substitution confirms every row."
+              },
+              {
+                "id": "dual_feasibility_complementarity",
+                "label": "Dual feasibility complementarity",
+                "passed": true,
+                "detail": "Complementarity is written explicitly and all inequality multipliers are nonnegative on their complete intervals. The D row supports both active constraints with multipliers -2t and 1+2t. Boundary active sets and vanishing multipliers are correct. The additional assertion that the listed active gradients plus the equality gradient are independent is also correct here."
+              },
+              {
+                "id": "closed_transition_analysis",
+                "label": "Closed transition analysis",
+                "passed": true,
+                "detail": "Each transition is derived from feasibility contact, directional derivative sign or multiplier support. Both vertex intervals are correctly justified. The explicit transition table agrees with adjoining optimizer, value and multiplier formulas. The six derivative formulas equal -2x*(t), have the correct shared values and are stated with one-sided outer-endpoint derivatives, satisfying the mandatory C1 requirement."
+              },
+              {
+                "id": "global_all_real_sufficiency",
+                "label": "Global all real sufficiency",
+                "passed": true,
+                "detail": "For an arbitrary feasible competitor, affine constraints, nonnegative multipliers and complementary slackness give a nonnegative first-order gap. The exact strictly positive quadratic remainder establishes global optimality and uniqueness. The proof explicitly applies this to every polygon point and the six closed parameter intervals, so no competing face or real-parameter range is omitted."
+              }
+            ],
+            "snapshots": [],
+            "artifactUrl": "/assets/trials-20260910/runs/run-11/source.zip",
+            "proofUrl": "/assets/trials-20260910/runs/run-11/checks.html",
+            "status": "Completed",
+            "note": "One parametric problem: one numerical criterion plus eight separately reviewed proof criteria. The blinded proof review is an agent assessment with file/line evidence.",
+            "process": [
+              {
+                "label": "Planning and decomposition",
+                "detail": "The public outline identified regime derivation, KKT multipliers, implementation and comparison with feasible-face enumeration before code was written."
+              },
+              {
+                "label": "Tools and verification",
+                "detail": "The candidate wrote the solver and verification helper, executed the helper successfully and recorded the Python version. The helper includes local import and guarded module-execution checks."
+              },
+              {
+                "label": "Review and handoff",
+                "detail": "A final command wrote the verification record, checked expected files and cleaned candidate-created bytecode. No mathematical check failure or corrective solver edit is recorded."
+              }
+            ],
+            "curve": [
+              {
+                "t": -2.0,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.945477,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.9,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.83,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.76,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.71,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.666606,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.624156,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.5714285714285714,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.53,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.5,
+                "x": 0.0,
+                "y": 0.25,
+                "z": 0.75,
+                "value": 3.625
+              },
+              {
+                "t": -1.45,
+                "x": 0.03750000000000003,
+                "y": 0.22499999999999998,
+                "z": 0.7375,
+                "value": 3.623125
+              },
+              {
+                "t": -1.419283,
+                "x": 0.060537749999999946,
+                "y": 0.20964150000000004,
+                "z": 0.72982075,
+                "value": 3.62011357443325
+              },
+              {
+                "t": -1.364401,
+                "x": 0.10169925000000002,
+                "y": 0.1822005,
+                "z": 0.71610025,
+                "value": 3.61120968339925
+              },
+              {
+                "t": -1.31,
+                "x": 0.14249999999999996,
+                "y": 0.15500000000000003,
+                "z": 0.7025,
+                "value": 3.597925
+              },
+              {
+                "t": -1.264016,
+                "x": 0.17698799999999998,
+                "y": 0.13200800000000001,
+                "z": 0.691004,
+                "value": 3.583233663808
+              },
+              {
+                "t": -1.22,
+                "x": 0.21000000000000002,
+                "y": 0.10999999999999999,
+                "z": 0.6799999999999999,
+                "value": 3.5662
+              },
+              {
+                "t": -1.14,
+                "x": 0.2700000000000001,
+                "y": 0.06999999999999995,
+                "z": 0.6599999999999999,
+                "value": 3.5278
+              },
+              {
+                "t": -1.09,
+                "x": 0.30749999999999994,
+                "y": 0.04500000000000004,
+                "z": 0.6475,
+                "value": 3.498925
+              },
+              {
+                "t": -1.05,
+                "x": 0.33749999999999997,
+                "y": 0.025000000000000022,
+                "z": 0.6375,
+                "value": 3.473125
+              },
+              {
+                "t": -1.000094,
+                "x": 0.37492949999999997,
+                "y": 4.700000000001925e-05,
+                "z": 0.6250235,
+                "value": 3.4375704933730002
+              },
+              {
+                "t": -1.0,
+                "x": 0.375,
+                "y": -0.0,
+                "z": 0.625,
+                "value": 3.4375
+              },
+              {
+                "t": -0.99,
+                "x": 0.3775,
+                "y": 0.0,
+                "z": 0.6225,
+                "value": 3.4299749999999998
+              },
+              {
+                "t": -0.94,
+                "x": 0.39,
+                "y": 0.0,
+                "z": 0.61,
+                "value": 3.3916
+              },
+              {
+                "t": -0.91,
+                "x": 0.39749999999999996,
+                "y": 0.0,
+                "z": 0.6025,
+                "value": 3.3679750000000004
+              },
+              {
+                "t": -0.855598,
+                "x": 0.4111005,
+                "y": 0.0,
+                "z": 0.5888995,
+                "value": 3.323985515599
+              },
+              {
+                "t": -0.813435,
+                "x": 0.42164124999999997,
+                "y": 0.0,
+                "z": 0.57835875,
+                "value": 3.28887462519375
+              },
+              {
+                "t": -0.771443,
+                "x": 0.43213925,
+                "y": 0.0,
+                "z": 0.56786075,
+                "value": 3.25302267443775
+              },
+              {
+                "t": -0.738571,
+                "x": 0.44035725000000003,
+                "y": 0.0,
+                "z": 0.55964275,
+                "value": 3.2243419694897497
+              },
+              {
+                "t": -0.68,
+                "x": 0.45499999999999996,
+                "y": 0.0,
+                "z": 0.545,
+                "value": 3.1719
+              },
+              {
+                "t": -0.631416,
+                "x": 0.467146,
+                "y": 0.0,
+                "z": 0.5328539999999999,
+                "value": 3.127098458736
+              },
+              {
+                "t": -0.57758,
+                "x": 0.480605,
+                "y": 0.0,
+                "z": 0.519395,
+                "value": 3.0760753358999997
+              },
+              {
+                "t": -0.52,
+                "x": 0.495,
+                "y": 0.0,
+                "z": 0.505,
+                "value": 3.0199
+              },
+              {
+                "t": -0.5,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 3.0
+              },
+              {
+                "t": -0.49999,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.99999
+              },
+              {
+                "t": -0.44,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.94
+              },
+              {
+                "t": -0.39,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.89
+              },
+              {
+                "t": -0.31,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.81
+              },
+              {
+                "t": -0.23,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.73
+              },
+              {
+                "t": -0.159362,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.659362
+              },
+              {
+                "t": -0.124972,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.624972
+              },
+              {
+                "t": -0.08,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.58
+              },
+              {
+                "t": -0.035275,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.535275
+              },
+              {
+                "t": 0.0,
+                "x": 0.5,
+                "y": 0.0,
+                "z": 0.5,
+                "value": 2.5
+              },
+              {
+                "t": 0.04,
+                "x": 0.5022222222222222,
+                "y": 0.0022222222222222222,
+                "z": 0.4955555555555556,
+                "value": 2.459911111111111
+              },
+              {
+                "t": 0.1,
+                "x": 0.5055555555555555,
+                "y": 0.005555555555555556,
+                "z": 0.4888888888888889,
+                "value": 2.3994444444444443
+              },
+              {
+                "t": 0.127175,
+                "x": 0.5070652777777778,
+                "y": 0.007065277777777778,
+                "z": 0.48586944444444446,
+                "value": 2.371926473298611
+              },
+              {
+                "t": 0.171185,
+                "x": 0.5095102777777778,
+                "y": 0.009510277777777777,
+                "z": 0.48097944444444446,
+                "value": 2.327186983098611
+              },
+              {
+                "t": 0.22,
+                "x": 0.5122222222222222,
+                "y": 0.012222222222222223,
+                "z": 0.47555555555555556,
+                "value": 2.277311111111111
+              },
+              {
+                "t": 0.261125,
+                "x": 0.5145069444444444,
+                "y": 0.014506944444444444,
+                "z": 0.4709861111111111,
+                "value": 2.2350868741319445
+              },
+              {
+                "t": 0.30993,
+                "x": 0.5172183333333333,
+                "y": 0.017218333333333332,
+                "z": 0.46556333333333333,
+                "value": 2.18473352195
+              },
+              {
+                "t": 0.34,
+                "x": 0.5188888888888888,
+                "y": 0.01888888888888889,
+                "z": 0.4622222222222222,
+                "value": 2.153577777777778
+              },
+              {
+                "t": 0.380094,
+                "x": 0.5211163333333333,
+                "y": 0.021116333333333334,
+                "z": 0.4577673333333333,
+                "value": 2.1118798083979997
+              },
+              {
+                "t": 0.43967,
+                "x": 0.5244261111111111,
+                "y": 0.02442611111111111,
+                "z": 0.45114777777777776,
+                "value": 2.049590571727778
+              },
+              {
+                "t": 0.501557,
+                "x": 0.5278642777777778,
+                "y": 0.02786427777777778,
+                "z": 0.44427144444444444,
+                "value": 1.9844674764306112
+              },
+              {
+                "t": 0.541761,
+                "x": 0.5300978333333334,
+                "y": 0.030097833333333338,
+                "z": 0.43980433333333335,
+                "value": 1.9419331677154998
+              },
+              {
+                "t": 0.573713,
+                "x": 0.5318729444444444,
+                "y": 0.03187294444444445,
+                "z": 0.4362541111111111,
+                "value": 1.9080010774239442
+              },
+              {
+                "t": 0.64691,
+                "x": 0.5359394444444444,
+                "y": 0.03593944444444444,
+                "z": 0.4281211111111111,
+                "value": 1.8298404139944444
+              },
+              {
+                "t": 0.69,
+                "x": 0.5383333333333333,
+                "y": 0.03833333333333333,
+                "z": 0.42333333333333334,
+                "value": 1.78355
+              },
+              {
+                "t": 0.73,
+                "x": 0.5405555555555556,
+                "y": 0.04055555555555555,
+                "z": 0.41888888888888887,
+                "value": 1.7403944444444446
+              },
+              {
+                "t": 0.772234,
+                "x": 0.5429018888888889,
+                "y": 0.042901888888888885,
+                "z": 0.41419622222222224,
+                "value": 1.6946357027357777
+              },
+              {
+                "t": 0.83,
+                "x": 0.5461111111111111,
+                "y": 0.04611111111111111,
+                "z": 0.4077777777777778,
+                "value": 1.6317277777777777
+              },
+              {
+                "t": 0.891428,
+                "x": 0.5495237777777777,
+                "y": 0.04952377777777778,
+                "z": 0.40095244444444444,
+                "value": 1.5644251178231112
+              },
+              {
+                "t": 0.952288,
+                "x": 0.5529048888888889,
+                "y": 0.05290488888888889,
+                "z": 0.3941902222222222,
+                "value": 1.4973313091697777
+              },
+              {
+                "t": 1.0,
+                "x": 0.5555555555555556,
+                "y": 0.05555555555555555,
+                "z": 0.3888888888888889,
+                "value": 1.4444444444444444
+              },
+              {
+                "t": 1.06,
+                "x": 0.5588888888888889,
+                "y": 0.05888888888888889,
+                "z": 0.38222222222222224,
+                "value": 1.3775777777777778
+              },
+              {
+                "t": 1.100729,
+                "x": 0.5611516111111111,
+                "y": 0.061151611111111115,
+                "z": 0.37769677777777777,
+                "value": 1.3319596482532776
+              },
+              {
+                "t": 1.15,
+                "x": 0.5638888888888889,
+                "y": 0.06388888888888888,
+                "z": 0.37222222222222223,
+                "value": 1.276527777777778
+              },
+              {
+                "t": 1.193042,
+                "x": 0.5662801111111111,
+                "y": 0.06628011111111111,
+                "z": 0.3674397777777778,
+                "value": 1.2278830436797779
+              },
+              {
+                "t": 1.25,
+                "x": 0.5694444444444444,
+                "y": 0.06944444444444445,
+                "z": 0.3611111111111111,
+                "value": 1.1631944444444444
+              },
+              {
+                "t": 1.32,
+                "x": 0.5733333333333334,
+                "y": 0.07333333333333333,
+                "z": 0.35333333333333333,
+                "value": 1.0832
+              },
+              {
+                "t": 1.371745,
+                "x": 0.5762080555555555,
+                "y": 0.07620805555555556,
+                "z": 0.3475838888888889,
+                "value": 1.0237169808319444
+              },
+              {
+                "t": 1.431332,
+                "x": 0.5795184444444444,
+                "y": 0.07951844444444445,
+                "z": 0.3409631111111111,
+                "value": 0.9548507058764444
+              },
+              {
+                "t": 1.48,
+                "x": 0.5822222222222222,
+                "y": 0.08222222222222222,
+                "z": 0.33555555555555555,
+                "value": 0.8983111111111112
+              },
+              {
+                "t": 1.53,
+                "x": 0.585,
+                "y": 0.085,
+                "z": 0.32999999999999996,
+                "value": 0.83995
+              },
+              {
+                "t": 1.570852,
+                "x": 0.5872695555555556,
+                "y": 0.08726955555555554,
+                "z": 0.3254608888888889,
+                "value": 0.7920604441164445
+              },
+              {
+                "t": 1.610681,
+                "x": 0.5894822777777777,
+                "y": 0.08948227777777779,
+                "z": 0.32103544444444443,
+                "value": 0.7451915953466111
+              },
+              {
+                "t": 1.666537,
+                "x": 0.5925853888888889,
+                "y": 0.09258538888888888,
+                "z": 0.3148292222222222,
+                "value": 0.6791660237572779
+              },
+              {
+                "t": 1.72,
+                "x": 0.5955555555555556,
+                "y": 0.09555555555555556,
+                "z": 0.3088888888888889,
+                "value": 0.6156444444444444
+              },
+              {
+                "t": 1.76,
+                "x": 0.5977777777777777,
+                "y": 0.09777777777777778,
+                "z": 0.3044444444444444,
+                "value": 0.5679111111111111
+              },
+              {
+                "t": 1.8,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.52
+              },
+              {
+                "t": 1.834874,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.47815120000000055
+              },
+              {
+                "t": 1.87,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.43599999999999994
+              },
+              {
+                "t": 1.93,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.3640000000000003
+              },
+              {
+                "t": 1.98,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.30400000000000027
+              },
+              {
+                "t": 2.02,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.2559999999999998
+              },
+              {
+                "t": 2.065841,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.20099080000000047
+              },
+              {
+                "t": 2.110283,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.14766040000000036
+              },
+              {
+                "t": 2.157623,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.09085240000000017
+              },
+              {
+                "t": 2.22,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": 0.016000000000000014
+              },
+              {
+                "t": 2.25,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.020000000000000018
+              },
+              {
+                "t": 2.32,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.10399999999999965
+              },
+              {
+                "t": 2.37,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.16400000000000015
+              },
+              {
+                "t": 2.418199,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.2218388
+              },
+              {
+                "t": 2.446299,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.25555879999999975
+              },
+              {
+                "t": 2.5,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.31999999999999984
+              },
+              {
+                "t": 2.56,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.3919999999999999
+              },
+              {
+                "t": 2.609447,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.45133639999999975
+              },
+              {
+                "t": 2.65,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.49999999999999956
+              },
+              {
+                "t": 2.71,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.5719999999999996
+              },
+              {
+                "t": 2.756141,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.6273692
+              },
+              {
+                "t": 2.82,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.7039999999999993
+              },
+              {
+                "t": 2.88,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.7760000000000002
+              },
+              {
+                "t": 2.935253,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.8423035999999997
+              },
+              {
+                "t": 2.963097,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.8757164
+              },
+              {
+                "t": 3.02,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.944
+              },
+              {
+                "t": 3.065986,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -0.9991831999999996
+              },
+              {
+                "t": 3.11,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.052
+              },
+              {
+                "t": 3.16,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.112
+              },
+              {
+                "t": 3.2,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.1600000000000006
+              },
+              {
+                "t": 3.24,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.2080000000000002
+              },
+              {
+                "t": 3.29,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.2680000000000002
+              },
+              {
+                "t": 3.33,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.3159999999999998
+              },
+              {
+                "t": 3.392773,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.3913275999999999
+              },
+              {
+                "t": 3.42953,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.4354360000000006
+              },
+              {
+                "t": 3.48264,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.4991679999999996
+              },
+              {
+                "t": 3.54,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.568
+              },
+              {
+                "t": 3.59,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.6279999999999997
+              },
+              {
+                "t": 3.64,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.6880000000000002
+              },
+              {
+                "t": 3.686807,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.7441684
+              },
+              {
+                "t": 3.75,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.8199999999999998
+              },
+              {
+                "t": 3.801272,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.8815263999999998
+              },
+              {
+                "t": 3.84,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -1.9279999999999995
+              },
+              {
+                "t": 3.905051,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -2.006061199999999
+              },
+              {
+                "t": 3.969549,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -2.0834588000000003
+              },
+              {
+                "t": 3.996821,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -2.1161852
+              },
+              {
+                "t": 4.0,
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.3,
+                "value": -2.1199999999999997
+              }
+            ]
+          }
+        }
+      ],
+      "lessons": [
+        "Correctness ties in both repetitions. All four submissions satisfy the numerical probes and all eight reviewed proof criteria, including the constant-vertex interval and C1 behavior at the transitions.",
+        "Fabius took longer and emitted more output tokens in both math pairs: 353.080 s / 16,631 tokens versus 298.763 s / 15,120 in the first; 288.597 s / 14,650 versus 262.152 s / 12,959 in the second. These shared-environment timings describe the runs, not an isolated speed benchmark.",
+        "Different valid derivations reached the same answer. Extra instructions did not establish a correctness gain on this problem; longer proofs and floating-point last digits are not evidence of superiority. The next evaluation needs different problems and more repetitions before making a broader claim."
+      ]
+    },
+    {
+      "id": "landing",
+      "title": "A complete landing page",
+      "summary": "Lattice: a fictional research notebook, with feature tabs, billing controls, mobile navigation and keyboard behavior.",
+      "runs": [
+        {
+          "repeat": 1,
+          "baseline": {
+            "passed": 7,
+            "total": 7,
+            "seconds": 417.384,
+            "tokens": 21487,
+            "checks": [
+              {
+                "id": "L01",
+                "label": "Useful factual content and valid navigation",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "L02",
+                "label": "Mobile navigation lifecycle",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "L03",
+                "label": "Feature tab state and keyboard",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "L04",
+                "label": "Billing round trip",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "L05",
+                "label": "Native FAQ interactions and supplied answers",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "L06",
+                "label": "No-JavaScript fallback",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "L07",
+                "label": "Responsive rendering, keyboard names and reduced motion",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              }
+            ],
+            "snapshots": [
+              {
+                "id": "initial",
+                "label": "Desktop first visit — untouched initial output",
+                "url": "/assets/trials-20260910/runs/run-12/initial.webp"
+              },
+              {
+                "id": "feature-connect",
+                "label": "Connect feature selected; its panel is visible",
+                "url": "/assets/trials-20260910/runs/run-12/feature-connect.webp"
+              },
+              {
+                "id": "billing-yearly",
+                "label": "Yearly billing selected; displayed prices are 108 and 264",
+                "url": "/assets/trials-20260910/runs/run-12/billing-yearly.webp"
+              },
+              {
+                "id": "workflow",
+                "label": "Workflow section in the viewport",
+                "url": "/assets/trials-20260910/runs/run-12/workflow.webp"
+              },
+              {
+                "id": "faq",
+                "label": "First FAQ opened; actual answer shown",
+                "url": "/assets/trials-20260910/runs/run-12/faq.webp"
+              },
+              {
+                "id": "mobile-initial",
+                "label": "Mobile first visit — separate fresh context",
+                "url": "/assets/trials-20260910/runs/run-12/mobile-initial.webp"
+              }
+            ],
+            "artifactUrl": "/assets/trials-20260910/runs/run-12/source.zip",
+            "proofUrl": "/assets/trials-20260910/runs/run-12/checks.html",
+            "status": "Completed",
+            "note": "Fictional product prototype. Checks measure the supplied contract across Chromium/WebKit at 360px and 1440px; visual quality is reviewed separately.",
+            "process": [
+              {
+                "label": "Planning and decomposition",
+                "detail": "A public outline separated visual implementation from browser interaction and responsive verification."
+              },
+              {
+                "label": "Tools and verification",
+                "detail": "The candidate built and ran a browser verifier, then a separate responsive/contrast helper and an HTML/syntax audit."
+              },
+              {
+                "label": "Diagnose, edit and retest",
+                "detail": "The first browser check failed on focus visibility after programmatic focus. The next command added actual Tab/Shift+Tab input, edited layout styles and reran the verifier successfully. The changed test preserved its visible-focus assertion."
+              },
+              {
+                "label": "Handoff",
+                "detail": "The run retained browser scripts, captures and a README identifying Chrome-only verification and the illustrative product scope."
+              }
+            ]
+          },
+          "fabius": {
+            "passed": 7,
+            "total": 7,
+            "seconds": 480.043,
+            "tokens": 23299,
+            "checks": [
+              {
+                "id": "L01",
+                "label": "Useful factual content and valid navigation",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "L02",
+                "label": "Mobile navigation lifecycle",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "L03",
+                "label": "Feature tab state and keyboard",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "L04",
+                "label": "Billing round trip",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "L05",
+                "label": "Native FAQ interactions and supplied answers",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "L06",
+                "label": "No-JavaScript fallback",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "L07",
+                "label": "Responsive rendering, keyboard names and reduced motion",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              }
+            ],
+            "snapshots": [
+              {
+                "id": "initial",
+                "label": "Desktop first visit — untouched initial output",
+                "url": "/assets/trials-20260910/runs/run-03/initial.webp"
+              },
+              {
+                "id": "feature-connect",
+                "label": "Connect feature selected; its panel is visible",
+                "url": "/assets/trials-20260910/runs/run-03/feature-connect.webp"
+              },
+              {
+                "id": "billing-yearly",
+                "label": "Yearly billing selected; displayed prices are 108 and 264",
+                "url": "/assets/trials-20260910/runs/run-03/billing-yearly.webp"
+              },
+              {
+                "id": "workflow",
+                "label": "Workflow section in the viewport",
+                "url": "/assets/trials-20260910/runs/run-03/workflow.webp"
+              },
+              {
+                "id": "faq",
+                "label": "First FAQ opened; actual answer shown",
+                "url": "/assets/trials-20260910/runs/run-03/faq.webp"
+              },
+              {
+                "id": "mobile-initial",
+                "label": "Mobile first visit — separate fresh context",
+                "url": "/assets/trials-20260910/runs/run-03/mobile-initial.webp"
+              }
+            ],
+            "artifactUrl": "/assets/trials-20260910/runs/run-03/source.zip",
+            "proofUrl": "/assets/trials-20260910/runs/run-03/checks.html",
+            "status": "Completed",
+            "note": "Fictional product prototype. Checks measure the supplied contract across Chromium/WebKit at 360px and 1440px; visual quality is reviewed separately.",
+            "process": [
+              {
+                "label": "Planning and decomposition",
+                "detail": "The public outline named design, responsive layouts, keyboard interactions, billing and no-JavaScript checks before the implementation command."
+              },
+              {
+                "label": "Reference use",
+                "detail": "An actual tool command read the pinned design-system reference before implementation."
+              },
+              {
+                "label": "Diagnose, edit and retest",
+                "detail": "A browser run failed in the no-JavaScript pricing fallback. The run inspected the failing check and DOM, replaced the fallback with ordinary HTML, and reran the expanded browser suite successfully."
+              },
+              {
+                "label": "Verification and handoff",
+                "detail": "Further commands exercised nested paths, more widths, keyboard states and contrast; another browser run followed the later diagram CSS change. Scripts, captures and limitations were retained."
+              }
+            ]
+          }
+        },
+        {
+          "repeat": 2,
+          "fabius": {
+            "passed": 7,
+            "total": 7,
+            "seconds": 405.173,
+            "tokens": 20460,
+            "checks": [
+              {
+                "id": "L01",
+                "label": "Useful factual content and valid navigation",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "L02",
+                "label": "Mobile navigation lifecycle",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "L03",
+                "label": "Feature tab state and keyboard",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "L04",
+                "label": "Billing round trip",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "L05",
+                "label": "Native FAQ interactions and supplied answers",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "L06",
+                "label": "No-JavaScript fallback",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "L07",
+                "label": "Responsive rendering, keyboard names and reduced motion",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              }
+            ],
+            "snapshots": [
+              {
+                "id": "initial",
+                "label": "Desktop first visit — untouched initial output",
+                "url": "/assets/trials-20260910/runs/run-07/initial.webp"
+              },
+              {
+                "id": "feature-connect",
+                "label": "Connect feature selected; its panel is visible",
+                "url": "/assets/trials-20260910/runs/run-07/feature-connect.webp"
+              },
+              {
+                "id": "billing-yearly",
+                "label": "Yearly billing selected; displayed prices are 108 and 264",
+                "url": "/assets/trials-20260910/runs/run-07/billing-yearly.webp"
+              },
+              {
+                "id": "workflow",
+                "label": "Workflow section in the viewport",
+                "url": "/assets/trials-20260910/runs/run-07/workflow.webp"
+              },
+              {
+                "id": "faq",
+                "label": "First FAQ opened; actual answer shown",
+                "url": "/assets/trials-20260910/runs/run-07/faq.webp"
+              },
+              {
+                "id": "mobile-initial",
+                "label": "Mobile first visit — separate fresh context",
+                "url": "/assets/trials-20260910/runs/run-07/mobile-initial.webp"
+              }
+            ],
+            "artifactUrl": "/assets/trials-20260910/runs/run-07/source.zip",
+            "proofUrl": "/assets/trials-20260910/runs/run-07/checks.html",
+            "status": "Completed",
+            "note": "Fictional product prototype. Checks measure the supplied contract across Chromium/WebKit at 360px and 1440px; visual quality is reviewed separately.",
+            "process": [
+              {
+                "label": "Planning and decomposition",
+                "detail": "A public outline separated content/styling from keyboard, billing, FAQ and no-JavaScript verification before implementation."
+              },
+              {
+                "label": "Reference and diagnostic tool use",
+                "detail": "The design reference was read. When the first 360px check failed, an inline browser probe collected element bounding boxes to locate overflow."
+              },
+              {
+                "label": "Diagnose, edit and retest",
+                "detail": "A source edit clipped decorative orbit artwork after the overflow failure; the verifier then exited successfully. Subsequent header changes were followed by another expanded browser run."
+              },
+              {
+                "label": "Verification and handoff",
+                "detail": "The later checks add intermediate widths, nested hosting and token contrast calculations; screenshots, script and prototype/Chrome limits were retained."
+              }
+            ]
+          },
+          "baseline": {
+            "passed": 7,
+            "total": 7,
+            "seconds": 472.766,
+            "tokens": 23949,
+            "checks": [
+              {
+                "id": "L01",
+                "label": "Useful factual content and valid navigation",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "L02",
+                "label": "Mobile navigation lifecycle",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "L03",
+                "label": "Feature tab state and keyboard",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "L04",
+                "label": "Billing round trip",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "L05",
+                "label": "Native FAQ interactions and supplied answers",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "L06",
+                "label": "No-JavaScript fallback",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "L07",
+                "label": "Responsive rendering, keyboard names and reduced motion",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              }
+            ],
+            "snapshots": [
+              {
+                "id": "initial",
+                "label": "Desktop first visit — untouched initial output",
+                "url": "/assets/trials-20260910/runs/run-01/initial.webp"
+              },
+              {
+                "id": "feature-connect",
+                "label": "Connect feature selected; its panel is visible",
+                "url": "/assets/trials-20260910/runs/run-01/feature-connect.webp"
+              },
+              {
+                "id": "billing-yearly",
+                "label": "Yearly billing selected; displayed prices are 108 and 264",
+                "url": "/assets/trials-20260910/runs/run-01/billing-yearly.webp"
+              },
+              {
+                "id": "workflow",
+                "label": "Workflow section in the viewport",
+                "url": "/assets/trials-20260910/runs/run-01/workflow.webp"
+              },
+              {
+                "id": "faq",
+                "label": "First FAQ opened; actual answer shown",
+                "url": "/assets/trials-20260910/runs/run-01/faq.webp"
+              },
+              {
+                "id": "mobile-initial",
+                "label": "Mobile first visit — separate fresh context",
+                "url": "/assets/trials-20260910/runs/run-01/mobile-initial.webp"
+              }
+            ],
+            "artifactUrl": "/assets/trials-20260910/runs/run-01/source.zip",
+            "proofUrl": "/assets/trials-20260910/runs/run-01/checks.html",
+            "status": "Completed",
+            "note": "Fictional product prototype. Checks measure the supplied contract across Chromium/WebKit at 360px and 1440px; visual quality is reviewed separately.",
+            "process": [
+              {
+                "label": "Planning and decomposition",
+                "detail": "A public execution outline named visual construction, accessible controls, responsive layout and browser verification before the source write."
+              },
+              {
+                "label": "Tools and verification",
+                "detail": "The candidate ran syntax validation and a browser verifier covering interactions, responsive states, no-JavaScript behavior and nested hosting."
+              },
+              {
+                "label": "Review, edit and retest",
+                "detail": "After the initial suite passed, a command changed supporting text styles and illustration labels, then reran the same verifier successfully. No substantive test failure was recorded."
+              },
+              {
+                "label": "Targeted follow-up and handoff",
+                "detail": "Additional inline checks exercised actual keyboard focus, mobile alternate panels and HTML/ARIA references. The README records executed checks and Chromium-only limits."
+              }
+            ]
+          }
+        }
+      ],
+      "lessons": [
+        "All four landing pages pass the seven recorded groups, including the actual month/year labels, keyboard tabs, mobile menu and no-JavaScript content. Each produced a coherent fictional product page; the functional counts do not rank their visual quality.",
+        "The observed process adds context: the Fabius runs read the pinned design reference, and its second run measured a mobile overflow, changed the artwork container and retested. The baseline also planned, tested, revised presentation and checked keyboard behavior. More tool calls alone are not a benefit score.",
+        "The mobile captures reveal real tradeoffs. In the first pair, the Fabius page gives explanatory text more room but delays the product illustration; in the second pair, its long headline pushes the preview beyond the opening viewport, while the baseline shows more product. The next design check should examine what visitors actually see before scrolling.",
+        "Timing and output length change direction between repeats: the baseline is shorter/faster in the first pair, and Fabius is shorter/faster in the second. Two pairs on a shared environment do not establish a consistent speed or output-length effect."
+      ]
+    },
+    {
+      "id": "app",
+      "title": "A working task app",
+      "summary": "Fieldnote Board: editing, combined filters, persistent storage, import/export, recovery and cross-tab conflicts.",
+      "runs": [
+        {
+          "repeat": 1,
+          "baseline": {
+            "passed": 15,
+            "total": 16,
+            "seconds": 563.043,
+            "tokens": 27816,
+            "checks": [
+              {
+                "id": "A01",
+                "label": "Empty-storage initialization",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A02",
+                "label": "Create/edit and persistence",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A03",
+                "label": "Status update preserves other records",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A04",
+                "label": "Delete and exact undo",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A05",
+                "label": "Combined search and filters",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A06",
+                "label": "Form validation and modal keyboard lifecycle",
+                "passed": false,
+                "detail": "2/4 browser scenario executions passed. webkit-360: modalEscape | webkit-1440: modalEscape"
+              },
+              {
+                "id": "A07",
+                "label": "Full export and confirmed import round trip",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A08",
+                "label": "Reject malformed/unsupported import atomically",
+                "passed": true,
+                "detail": "0/4 browser scenario executions passed. chromium-360: malformed, unsupported-schema | chromium-1440: malformed, unsupported-schema | webkit-360: malformed, unsupported-schema | webkit-1440: malformed, unsupported-schema This initial harness result was overturned: a documented evaluator error was corrected and the same four-environment rerun passed. See the retained and corrected reports."
+              },
+              {
+                "id": "A09",
+                "label": "Reject duplicate IDs and invalid date atomically",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A10",
+                "label": "Import size boundary",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A11",
+                "label": "Imported hostile text remains text",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A12",
+                "label": "Corrupt storage recovery",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A13",
+                "label": "Storage write failure keeps work recoverable",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A14",
+                "label": "Cross-tab stale-write protection",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A15",
+                "label": "Responsive rendering and accessible controls",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A16",
+                "label": "No-JavaScript notice and reduced motion",
+                "passed": true,
+                "detail": "8/8 browser scenario executions passed."
+              }
+            ],
+            "snapshots": [
+              {
+                "id": "initial",
+                "label": "Desktop first visit — untouched initial output",
+                "url": "/assets/trials-20260910/runs/run-06/initial.webp"
+              },
+              {
+                "id": "new-task-form",
+                "label": "New task form opened",
+                "url": "/assets/trials-20260910/runs/run-06/new-task-form.webp"
+              },
+              {
+                "id": "after-create",
+                "label": "Review launch evidence created and present in saved board",
+                "url": "/assets/trials-20260910/runs/run-06/after-create.webp"
+              },
+              {
+                "id": "search",
+                "label": "Search for Review launch evidence; matching task shown",
+                "url": "/assets/trials-20260910/runs/run-06/search.webp"
+              },
+              {
+                "id": "import-error",
+                "label": "Malformed JSON selected; visible error and saved board unchanged",
+                "url": "/assets/trials-20260910/runs/run-06/import-error.webp"
+              },
+              {
+                "id": "mobile-initial",
+                "label": "Mobile first visit — separate fresh context",
+                "url": "/assets/trials-20260910/runs/run-06/mobile-initial.webp"
+              }
+            ],
+            "artifactUrl": "/assets/trials-20260910/runs/run-06/source.zip",
+            "proofUrl": "/assets/trials-20260910/runs/run-06/checks.html",
+            "status": "Completed",
+            "note": "Fictional product prototype. Checks measure the supplied contract across Chromium/WebKit at 360px and 1440px; visual quality is reviewed separately. Additional review found 1 issue(s) outside the recorded matrix; inspect the check record for reproduction and limits.",
+            "process": [
+              {
+                "label": "Planning and decomposition",
+                "detail": "The public plan named local-board implementation, storage recovery, accessible editing and failure-path verification before source creation."
+              },
+              {
+                "label": "Verification expansion",
+                "detail": "After the first workflow suite passed, the candidate tightened import types/tag preservation and added explicit boundary and failure checks."
+              },
+              {
+                "label": "Diagnose, edit and retest",
+                "detail": "The trace records a dialog-protocol failure and a modal-focus assertion failure. A source edit added explicit focus wrapping; subsequent workflow and edge-suite runs exited successfully. The trace does not establish a single cause for the dialog error."
+              },
+              {
+                "label": "Handoff",
+                "detail": "The final record includes syntax checks, browser artifacts and explicit local-storage/Chrome limits."
+              }
+            ]
+          },
+          "fabius": {
+            "passed": 16,
+            "total": 16,
+            "seconds": 506.084,
+            "tokens": 24998,
+            "checks": [
+              {
+                "id": "A01",
+                "label": "Empty-storage initialization",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A02",
+                "label": "Create/edit and persistence",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A03",
+                "label": "Status update preserves other records",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A04",
+                "label": "Delete and exact undo",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A05",
+                "label": "Combined search and filters",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A06",
+                "label": "Form validation and modal keyboard lifecycle",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A07",
+                "label": "Full export and confirmed import round trip",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A08",
+                "label": "Reject malformed/unsupported import atomically",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A09",
+                "label": "Reject duplicate IDs and invalid date atomically",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A10",
+                "label": "Import size boundary",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A11",
+                "label": "Imported hostile text remains text",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A12",
+                "label": "Corrupt storage recovery",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A13",
+                "label": "Storage write failure keeps work recoverable",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A14",
+                "label": "Cross-tab stale-write protection",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A15",
+                "label": "Responsive rendering and accessible controls",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A16",
+                "label": "No-JavaScript notice and reduced motion",
+                "passed": true,
+                "detail": "8/8 browser scenario executions passed."
+              }
+            ],
+            "snapshots": [
+              {
+                "id": "initial",
+                "label": "Desktop first visit — untouched initial output",
+                "url": "/assets/trials-20260910/runs/run-08/initial.webp"
+              },
+              {
+                "id": "new-task-form",
+                "label": "New task form opened",
+                "url": "/assets/trials-20260910/runs/run-08/new-task-form.webp"
+              },
+              {
+                "id": "after-create",
+                "label": "Review launch evidence created and present in saved board",
+                "url": "/assets/trials-20260910/runs/run-08/after-create.webp"
+              },
+              {
+                "id": "search",
+                "label": "Search for Review launch evidence; matching task shown",
+                "url": "/assets/trials-20260910/runs/run-08/search.webp"
+              },
+              {
+                "id": "import-error",
+                "label": "Malformed JSON selected; visible error and saved board unchanged",
+                "url": "/assets/trials-20260910/runs/run-08/import-error.webp"
+              },
+              {
+                "id": "mobile-initial",
+                "label": "Mobile first visit — separate fresh context",
+                "url": "/assets/trials-20260910/runs/run-08/mobile-initial.webp"
+              }
+            ],
+            "artifactUrl": "/assets/trials-20260910/runs/run-08/source.zip",
+            "proofUrl": "/assets/trials-20260910/runs/run-08/checks.html",
+            "status": "Completed",
+            "note": "Fictional product prototype. Checks measure the supplied contract across Chromium/WebKit at 360px and 1440px; visual quality is reviewed separately.",
+            "process": [
+              {
+                "label": "Planning and decomposition",
+                "detail": "The public plan separated board construction, guarded storage behavior, task workflows and mobile/desktop verification."
+              },
+              {
+                "label": "Reference use and review",
+                "detail": "The pinned design-system reference was read. After the first workflow suite passed, explicit source edits covered imported enum types, a project named all, tag preservation and open-form conflicts."
+              },
+              {
+                "label": "Diagnose, edit and retest",
+                "detail": "Edge checks failed on modal focus, then contrast. The run edited focus handling, calculated the color ratios and adjusted a color token. Dialog/protocol and workflow failures also appeared before later successful edge and main-suite runs."
+              },
+              {
+                "label": "Handoff",
+                "detail": "The final documentation was updated from retained result files and reports Chrome-only coverage and storage limitations."
+              }
+            ]
+          }
+        },
+        {
+          "repeat": 2,
+          "fabius": {
+            "passed": 15,
+            "total": 16,
+            "seconds": 509.831,
+            "tokens": 24874,
+            "checks": [
+              {
+                "id": "A01",
+                "label": "Empty-storage initialization",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A02",
+                "label": "Create/edit and persistence",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A03",
+                "label": "Status update preserves other records",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A04",
+                "label": "Delete and exact undo",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A05",
+                "label": "Combined search and filters",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A06",
+                "label": "Form validation and modal keyboard lifecycle",
+                "passed": false,
+                "detail": "2/4 browser scenario executions passed. webkit-360: modalEscape | webkit-1440: modalEscape"
+              },
+              {
+                "id": "A07",
+                "label": "Full export and confirmed import round trip",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A08",
+                "label": "Reject malformed/unsupported import atomically",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A09",
+                "label": "Reject duplicate IDs and invalid date atomically",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A10",
+                "label": "Import size boundary",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A11",
+                "label": "Imported hostile text remains text",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A12",
+                "label": "Corrupt storage recovery",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A13",
+                "label": "Storage write failure keeps work recoverable",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A14",
+                "label": "Cross-tab stale-write protection",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A15",
+                "label": "Responsive rendering and accessible controls",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A16",
+                "label": "No-JavaScript notice and reduced motion",
+                "passed": true,
+                "detail": "8/8 browser scenario executions passed."
+              }
+            ],
+            "snapshots": [
+              {
+                "id": "initial",
+                "label": "Desktop first visit — untouched initial output",
+                "url": "/assets/trials-20260910/runs/run-04/initial.webp"
+              },
+              {
+                "id": "new-task-form",
+                "label": "New task form opened",
+                "url": "/assets/trials-20260910/runs/run-04/new-task-form.webp"
+              },
+              {
+                "id": "after-create",
+                "label": "Review launch evidence created and present in saved board",
+                "url": "/assets/trials-20260910/runs/run-04/after-create.webp"
+              },
+              {
+                "id": "search",
+                "label": "Search for Review launch evidence; matching task shown",
+                "url": "/assets/trials-20260910/runs/run-04/search.webp"
+              },
+              {
+                "id": "import-error",
+                "label": "Malformed JSON selected; visible error and saved board unchanged",
+                "url": "/assets/trials-20260910/runs/run-04/import-error.webp"
+              },
+              {
+                "id": "mobile-initial",
+                "label": "Mobile first visit — separate fresh context",
+                "url": "/assets/trials-20260910/runs/run-04/mobile-initial.webp"
+              }
+            ],
+            "artifactUrl": "/assets/trials-20260910/runs/run-04/source.zip",
+            "proofUrl": "/assets/trials-20260910/runs/run-04/checks.html",
+            "status": "Completed",
+            "note": "Fictional product prototype. Checks measure the supplied contract across Chromium/WebKit at 360px and 1440px; visual quality is reviewed separately. Additional review found 1 issue(s) outside the recorded matrix; inspect the check record for reproduction and limits.",
+            "process": [
+              {
+                "label": "Planning and decomposition",
+                "detail": "The public plan separates board implementation from persistence, imports, recovery, keyboard and responsive verification."
+              },
+              {
+                "label": "Reference and verification use",
+                "detail": "The pinned design reference was read. The first browser suite passed, after which the candidate expanded boundary, focus, nested-path and no-JavaScript checks."
+              },
+              {
+                "label": "Diagnosis and test correction",
+                "detail": "After a focus-restoration assertion failed, a temporary helper recorded focus events. The test then replaced a fixed delay with a condition-based wait while retaining the same focus identity assertion."
+              },
+              {
+                "label": "Product correction and retest",
+                "detail": "The expanded suite next failed at forward Tab wrapping. The candidate added explicit wrapping, reran the extra suite successfully and later reran the main suite."
+              },
+              {
+                "label": "Handoff",
+                "detail": "The final record includes the retained scripts/results/captures and explicitly limits verification to Chrome and local browser storage."
+              }
+            ]
+          },
+          "baseline": {
+            "passed": 15,
+            "total": 16,
+            "seconds": 603.508,
+            "tokens": 32107,
+            "checks": [
+              {
+                "id": "A01",
+                "label": "Empty-storage initialization",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A02",
+                "label": "Create/edit and persistence",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A03",
+                "label": "Status update preserves other records",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A04",
+                "label": "Delete and exact undo",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A05",
+                "label": "Combined search and filters",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A06",
+                "label": "Form validation and modal keyboard lifecycle",
+                "passed": false,
+                "detail": "2/4 browser scenario executions passed. webkit-360: modalEscape | webkit-1440: modalEscape"
+              },
+              {
+                "id": "A07",
+                "label": "Full export and confirmed import round trip",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A08",
+                "label": "Reject malformed/unsupported import atomically",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A09",
+                "label": "Reject duplicate IDs and invalid date atomically",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A10",
+                "label": "Import size boundary",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A11",
+                "label": "Imported hostile text remains text",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A12",
+                "label": "Corrupt storage recovery",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A13",
+                "label": "Storage write failure keeps work recoverable",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A14",
+                "label": "Cross-tab stale-write protection",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A15",
+                "label": "Responsive rendering and accessible controls",
+                "passed": true,
+                "detail": "4/4 browser scenario executions passed."
+              },
+              {
+                "id": "A16",
+                "label": "No-JavaScript notice and reduced motion",
+                "passed": true,
+                "detail": "8/8 browser scenario executions passed."
+              }
+            ],
+            "snapshots": [
+              {
+                "id": "initial",
+                "label": "Desktop first visit — untouched initial output",
+                "url": "/assets/trials-20260910/runs/run-10/initial.webp"
+              },
+              {
+                "id": "new-task-form",
+                "label": "New task form opened",
+                "url": "/assets/trials-20260910/runs/run-10/new-task-form.webp"
+              },
+              {
+                "id": "after-create",
+                "label": "Review launch evidence created and present in saved board",
+                "url": "/assets/trials-20260910/runs/run-10/after-create.webp"
+              },
+              {
+                "id": "search",
+                "label": "Search for Review launch evidence; matching task shown",
+                "url": "/assets/trials-20260910/runs/run-10/search.webp"
+              },
+              {
+                "id": "import-error",
+                "label": "Malformed JSON selected; visible error and saved board unchanged",
+                "url": "/assets/trials-20260910/runs/run-10/import-error.webp"
+              },
+              {
+                "id": "mobile-initial",
+                "label": "Mobile first visit — separate fresh context",
+                "url": "/assets/trials-20260910/runs/run-10/mobile-initial.webp"
+              }
+            ],
+            "artifactUrl": "/assets/trials-20260910/runs/run-10/source.zip",
+            "proofUrl": "/assets/trials-20260910/runs/run-10/checks.html",
+            "status": "Completed",
+            "note": "Fictional product prototype. Checks measure the supplied contract across Chromium/WebKit at 360px and 1440px; visual quality is reviewed separately.",
+            "process": [
+              {
+                "label": "Planning and decomposition",
+                "detail": "The public outline separates board construction, storage recovery and cross-tab protection from browser workflow and responsive checks."
+              },
+              {
+                "label": "Tool and verification use",
+                "detail": "The candidate used the supplied browser and ran its main suite twice. It then expanded validation, imported-text, storage-denial and nested-path checks."
+              },
+              {
+                "label": "Diagnosis, correction and retest",
+                "detail": "The edge suite failed when Tab left the modal. The candidate added explicit keyboard wrapping and reran the unchanged edge helper successfully."
+              },
+              {
+                "label": "Final verification coverage",
+                "detail": "After later edits, direct browser checks covered four viewport widths, reverse Tab wrapping, reduced-motion CSS and a stale-write guard. The trace shows no later full main-suite rerun."
+              },
+              {
+                "label": "Handoff",
+                "detail": "The final record lists source, retained verification helpers, result files and captures, and states Chromium-only verification and session-only undo."
+              }
+            ]
+          }
+        }
+      ],
+      "lessons": [
+        "In the first pair, the Fabius application meets all 16 primary groups and the baseline meets 15. In the second pair, both meet 15. The confirmed miss in three of four artifacts is specific: after a pointer-opened dialog closes with Escape, WebKit leaves focus on the page body. Opening the same dialog by keyboard passes. This is one observed advantage in one pair, not a consistent win across both repetitions.",
+        "All four applications meet the primary storage, import validation, recovery and stale-write groups across the recorded browser configurations. These are meaningful local-app scenarios, including hostile text and corrupt storage; they are not a security certification or a guarantee about untested workflows.",
+        "The retrospective trace review shows planning, testing and correction in both conditions. It also records gaps, such as the second baseline run having no recorded full main-suite rerun after its later source edits. The independent grader evaluated the final immutable artifact in every case.",
+        "An additional exploratory probe found that a project literally named all collides with the project-filter sentinel in the first baseline app and the second Fabius app. The other two apps distinguish the project correctly. Stored data remains intact. This probe was added after initial outcomes, applied to all four artifacts and kept outside the primary scores. A follow-up brief should distinguish filter identity from a user-entered project name.",
+        "The mobile captures show that overview panels often push actual tasks below the opening viewport. The next design check should assess access to tasks and filters, alongside readable forms, recovery messages and empty states.",
+        "Fabius finished faster and emitted fewer output tokens in both recorded application pairs. Extra instruction and retrieval costs remain part of the treatment, and native input usage is available in each receipt. Two repetitions on a shared environment do not establish a general speed or cost advantage."
+      ]
+    }
+  ]
+}

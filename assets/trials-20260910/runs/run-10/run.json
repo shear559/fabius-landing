@@ -1,0 +1,97 @@
+{
+  "id": "run-10",
+  "task": "app",
+  "repeat": 2,
+  "arm": "baseline",
+  "model": "gpt-6-astra",
+  "effort": "high",
+  "status": "completed",
+  "elapsed_seconds": 603.508,
+  "usage": [
+    {
+      "input_tokens": 644055,
+      "cached_input_tokens": 598656,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 32107,
+      "reasoning_output_tokens": 4785
+    }
+  ],
+  "task_sha256": "7116b83075469f773ce51f72f708041e221d97b2b055d75cb309f0ff39239d1d",
+  "developer_sha256": "03ea22c054d8146025e616ad747da55b81e5e667f4a533c0f764f37e0eb02598",
+  "public_instructions_sha256": "67335d0e0197e2fbe268dab92028509524da9b75dc3ed4f78ae4623a95e3048b",
+  "prompt_input_sha256": "abb299e4f7915df2204869be1453f8631fb5f44448d494b904ec93d1aedca28b",
+  "events_sha256": "b6458ada609d437cfdf693e81b580279674eee67719bbb0924eba46e2555e200",
+  "artifact": {
+    "entries": [
+      {
+        "path": "README.md",
+        "recorded_sha256": "a23eada25bcbfc71d649edc2c799b855890d6cad8de8f0f5fbb65b837bcb4258",
+        "public_sha256": "a23eada25bcbfc71d649edc2c799b855890d6cad8de8f0f5fbb65b837bcb4258"
+      },
+      {
+        "path": "app.js",
+        "recorded_sha256": "fa75f155552aa16a35dea855490362ebde8258bb2e035d458501b51e43d3d300",
+        "public_sha256": "fa75f155552aa16a35dea855490362ebde8258bb2e035d458501b51e43d3d300"
+      },
+      {
+        "path": "desktop.png",
+        "recorded_sha256": "c539edea3dfe0dd1c509d9c73a58d8e966a0602d5ddee7081c094c0ffa8c3736",
+        "public_sha256": "c539edea3dfe0dd1c509d9c73a58d8e966a0602d5ddee7081c094c0ffa8c3736"
+      },
+      {
+        "path": "edge-verification-results.json",
+        "recorded_sha256": "2684f623987601e019a718d60e8d80cae89babcd7a13e57e8c9f7549e229d3db",
+        "public_sha256": "2684f623987601e019a718d60e8d80cae89babcd7a13e57e8c9f7549e229d3db"
+      },
+      {
+        "path": "final.txt",
+        "recorded_sha256": "b5a6c4d550120d4bd2aede030c65a93d3b594c8ac323cc68b8b217101d8ba843",
+        "public_sha256": "b5a6c4d550120d4bd2aede030c65a93d3b594c8ac323cc68b8b217101d8ba843"
+      },
+      {
+        "path": "index.html",
+        "recorded_sha256": "00b00550a4b74c70cae274f056cf66e5590aeb5d37675984856528c2fa9d57fe",
+        "public_sha256": "00b00550a4b74c70cae274f056cf66e5590aeb5d37675984856528c2fa9d57fe"
+      },
+      {
+        "path": "mobile-form.png",
+        "recorded_sha256": "afe4273993c151e97e0f1493f310c53ec666467259636e49b7b5de006d6f30e7",
+        "public_sha256": "afe4273993c151e97e0f1493f310c53ec666467259636e49b7b5de006d6f30e7"
+      },
+      {
+        "path": "mobile.png",
+        "recorded_sha256": "ec4b3e6b9bec80d04ca6ea39759e5224370af38714065a185bc914a9a6f98f52",
+        "public_sha256": "ec4b3e6b9bec80d04ca6ea39759e5224370af38714065a185bc914a9a6f98f52"
+      },
+      {
+        "path": "styles.css",
+        "recorded_sha256": "3bf34743b161e1461347de1fc15b81d301cad20b5f5c2a7276a4cb26c67eeb90",
+        "public_sha256": "3bf34743b161e1461347de1fc15b81d301cad20b5f5c2a7276a4cb26c67eeb90"
+      },
+      {
+        "path": "verification-results.json",
+        "recorded_sha256": "acbd1c2bd0c91e201cd45200e2eddda6935c60fe7e66d52658b2463ca1f596e1",
+        "public_sha256": "acbd1c2bd0c91e201cd45200e2eddda6935c60fe7e66d52658b2463ca1f596e1"
+      },
+      {
+        "path": "verify-edge.mjs",
+        "recorded_sha256": "5e63f2be571cc6b47e2035babd7679f91ccddd48df6c8f06d7dec88ec803f49e",
+        "public_sha256": "b02e7d88c21656cad926733c55859511d88832656d73475c9dc0d87e1f2fdfaa"
+      },
+      {
+        "path": "verify.mjs",
+        "recorded_sha256": "e747d283a13985c5228e0211fe74651b3329054331155103072d0d2f5d603f90",
+        "public_sha256": "287bfc7983d7193bfa2d909c259e19e47e5380565ad0f749139b669dd1ec8d55"
+      }
+    ],
+    "path_redactions": [
+      "verify-edge.mjs",
+      "verify.mjs"
+    ],
+    "note": "Only private machine paths are normalized in public text files. The immutable originals were graded before this packaging; no product repair was applied.",
+    "zip_sha256": "6251f69675ba086a754a708b0b82e2d75bea9b669ad547ee6bcfeea2077a8a09"
+  },
+  "contract_names": [],
+  "checks_met": 15,
+  "criteria": 16
+}

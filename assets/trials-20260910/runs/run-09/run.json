@@ -1,0 +1,68 @@
+{
+  "id": "run-09",
+  "task": "math",
+  "repeat": 2,
+  "arm": "fabius",
+  "model": "gpt-6-astra",
+  "effort": "high",
+  "status": "completed",
+  "elapsed_seconds": 288.597,
+  "usage": [
+    {
+      "input_tokens": 221496,
+      "cached_input_tokens": 197632,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 14650,
+      "reasoning_output_tokens": 4525
+    }
+  ],
+  "task_sha256": "cf9f4f3249d05d4dca212b0f2ec2b192002ce55088bb878ca5c00f83cb28e4b9",
+  "developer_sha256": "4f416900709a844827d50d037b39c80f9014b530a91d1a6194ca657677e26e8f",
+  "public_instructions_sha256": "04fee800669674347621849ecb08da7d80c39f8cc5f24b54937ee9f8899bc404",
+  "prompt_input_sha256": "cbf5ade6c6468c1b62988be8d95b18fece62e5a3b652aa1bcc003f4633669558",
+  "events_sha256": "df18262edad64cdf27eaddd02f5cd177d5a69fe543dc823202590dda63e8d957",
+  "artifact": {
+    "entries": [
+      {
+        "path": "final.txt",
+        "recorded_sha256": "0b428cae60f0267f857fcff9dfe53108d2aee4dbf59b15f2ee07e48ab1782772",
+        "public_sha256": "0b428cae60f0267f857fcff9dfe53108d2aee4dbf59b15f2ee07e48ab1782772"
+      },
+      {
+        "path": "solution.md",
+        "recorded_sha256": "58e44612765dc949303219a57546a7211f56a9aa32f205e8191a01ddf7c8b287",
+        "public_sha256": "58e44612765dc949303219a57546a7211f56a9aa32f205e8191a01ddf7c8b287"
+      },
+      {
+        "path": "solution.py",
+        "recorded_sha256": "7c41c4f2e6ae18e903aa3aea64f21ac5ecf857a6058618b0e73b076af3e5781b",
+        "public_sha256": "7c41c4f2e6ae18e903aa3aea64f21ac5ecf857a6058618b0e73b076af3e5781b"
+      },
+      {
+        "path": "verification-output.txt",
+        "recorded_sha256": "573effe1b6f410359d0c19b2208564b92d8dffdbc0cf78adf6f4d8dfe31577b8",
+        "public_sha256": "573effe1b6f410359d0c19b2208564b92d8dffdbc0cf78adf6f4d8dfe31577b8"
+      },
+      {
+        "path": "verification.md",
+        "recorded_sha256": "b8062b7283ab8b4b100a5a58c0581beee0b9379d58c6721dbf5a6564365c5e10",
+        "public_sha256": "b8062b7283ab8b4b100a5a58c0581beee0b9379d58c6721dbf5a6564365c5e10"
+      },
+      {
+        "path": "verify.py",
+        "recorded_sha256": "a19adf89e17f46faa720d120b7d8a97ac278e3af4258287bff7b9725140a09db",
+        "public_sha256": "a19adf89e17f46faa720d120b7d8a97ac278e3af4258287bff7b9725140a09db"
+      }
+    ],
+    "path_redactions": [],
+    "note": "Only private machine paths are normalized in public text files. The immutable originals were graded before this packaging; no product repair was applied.",
+    "zip_sha256": "8e51d2fd66322e27e8fe9aa4f0b7ccf9e337d77ab93c4cd9e3e30591f98aa2d4"
+  },
+  "contract_names": [
+    "fabius",
+    "fabius-parcus",
+    "fabius-disciplina"
+  ],
+  "checks_met": 9,
+  "criteria": 9
+}

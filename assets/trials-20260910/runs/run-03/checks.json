@@ -1,0 +1,3980 @@
+{
+  "browser": {
+    "schemaVersion": 1,
+    "runId": "run-03",
+    "kind": "landing",
+    "startedAt": "2026-09-10T14:17:40.184Z",
+    "rubricSha256": "dce74ebefa667827386eafd630efb81f79f0cbe431c5ee815efc307829278cd5",
+    "runnerSha256": "e10673649047a80f76e3e8b773e48974918b079aaf956aa1cfc1bda334ac660f",
+    "environment": {
+      "node": "v26.0.0",
+      "platform": "darwin",
+      "arch": "x64"
+    },
+    "results": [
+      {
+        "id": "L01",
+        "environment": "chromium-360",
+        "browser": "chromium",
+        "width": 360,
+        "noJS": false,
+        "observations": [
+          {
+            "key": "productAndFiction",
+            "pass": true,
+            "actual": {
+              "product": true,
+              "fiction": true
+            }
+          },
+          {
+            "key": "facts",
+            "pass": true,
+            "actual": {
+              "local": true,
+              "markdown": true,
+              "sources": true,
+              "templates": true,
+              "search": true
+            }
+          },
+          {
+            "key": "workflowSection",
+            "pass": true,
+            "actual": true
+          },
+          {
+            "key": "primaryCTA",
+            "pass": true,
+            "actual": "#workflow"
+          },
+          {
+            "key": "ctaNavigation",
+            "pass": true,
+            "actual": "#workflow"
+          },
+          {
+            "key": "navigationTargets",
+            "pass": true,
+            "actual": [
+              {
+                "text": "Skip to content",
+                "href": "#main",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Lattice.",
+                "href": "#",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "document-top"
+              },
+              {
+                "text": "Explore the workflow ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "01 Capture ↗",
+                "href": "#panel-capture",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "02 Connect ↗",
+                "href": "#panel-connect",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "03 Export ↗",
+                "href": "#panel-export",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "See how it comes together ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Explore the workflow ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Lattice.",
+                "href": "#",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "document-top"
+              },
+              {
+                "text": "Back to the top ↑",
+                "href": "#main",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              }
+            ]
+          },
+          {
+            "key": "requiredCounts",
+            "pass": true,
+            "actual": {
+              "faqs": 4,
+              "plans": 2
+            }
+          },
+          {
+            "key": "externalResourceRequests",
+            "pass": true,
+            "actual": []
+          }
+        ],
+        "screenshots": [
+          "chromium-360-L01-initial.png"
+        ],
+        "manualReview": [
+          "Check three-step workflow, useful distinct feature content, coherent visual hierarchy, and unsupported social-proof claims from screenshots/content."
+        ],
+        "console": [],
+        "network": [],
+        "dialogs": [],
+        "status": "pass",
+        "durationMs": 1406
+      },
+      {
+        "id": "L02",
+        "environment": "chromium-360",
+        "browser": "chromium",
+        "width": 360,
+        "noJS": false,
+        "observations": [
+          {
+            "key": "opened",
+            "pass": true,
+            "actual": {
+              "expanded": "true",
+              "visible": true
+            }
+          },
+          {
+            "key": "escapeClosed",
+            "pass": true,
+            "actual": {
+              "expanded": "false",
+              "visible": false,
+              "focused": true
+            }
+          },
+          {
+            "key": "linkCloses",
+            "pass": true,
+            "actual": {
+              "href": "#features",
+              "expanded": "false",
+              "visible": false,
+              "hash": "#features"
+            }
+          }
+        ],
+        "screenshots": [],
+        "manualReview": [],
+        "console": [],
+        "network": [],
+        "dialogs": [],
+        "status": "pass",
+        "durationMs": 1148
+      },
+      {
+        "id": "L03",
+        "environment": "chromium-360",
+        "browser": "chromium",
+        "width": 360,
+        "noJS": false,
+        "observations": [
+          {
+            "key": "tab-capture",
+            "pass": true,
+            "actual": [
+              {
+                "name": "capture",
+                "role": "tab",
+                "selected": "true",
+                "panelRole": "tabpanel",
+                "visible": true
+              },
+              {
+                "name": "connect",
+                "role": "tab",
+                "selected": "false",
+                "panelRole": "tabpanel",
+                "visible": false
+              },
+              {
+                "name": "export",
+                "role": "tab",
+                "selected": "false",
+                "panelRole": "tabpanel",
+                "visible": false
+              }
+            ]
+          },
+          {
+            "key": "tab-connect",
+            "pass": true,
+            "actual": [
+              {
+                "name": "capture",
+                "role": "tab",
+                "selected": "false",
+                "panelRole": "tabpanel",
+                "visible": false
+              },
+              {
+                "name": "connect",
+                "role": "tab",
+                "selected": "true",
+                "panelRole": "tabpanel",
+                "visible": true
+              },
+              {
+                "name": "export",
+                "role": "tab",
+                "selected": "false",
+                "panelRole": "tabpanel",
+                "visible": false
+              }
+            ]
+          },
+          {
+            "key": "tab-export",
+            "pass": true,
+            "actual": [
+              {
+                "name": "capture",
+                "role": "tab",
+                "selected": "false",
+                "panelRole": "tabpanel",
+                "visible": false
+              },
+              {
+                "name": "connect",
+                "role": "tab",
+                "selected": "false",
+                "panelRole": "tabpanel",
+                "visible": false
+              },
+              {
+                "name": "export",
+                "role": "tab",
+                "selected": "true",
+                "panelRole": "tabpanel",
+                "visible": true
+              }
+            ]
+          },
+          {
+            "key": "distinctPanelContent",
+            "pass": true,
+            "actual": [
+              "FIELD NOTE\n↗\nStart with a small\nobservation.\n\nThe best ideas often arrive before\nyou know what they’re for.\n\n+ Add a source\nA thought doesn’t need a title to matter.\n\nMAKE ROOM FOR THE RAW MATERIAL\n\nCatch the thought.\nKeep its origin.\n\nWrite a field note, save a passage, or get an idea out of your head. Keep a source link alongside each note, so you can always return to where it began.\n\nNotes stored on your own device\nSource links beside your thinking\nReusable templates for a familiar starting point\nSee how it comes together\n↗",
+              "QUESTION\nWho is this\nspace for?\nField observations\nReading notes\nDifferent sources. A shared question.\n\nRETURN TO WHAT CAUGHT YOUR ATTENTION\n\nGive a question\nsome company.\n\nKeep related notes in a project, with their source links close at hand. Revisit an observation next to a reading note and see where your own connections lead.\n\nReusable project templates bring structure\nSources remain alongside each note\nOptional local full-text search helps you find a phrase\nFind your research rhythm\n↗",
+              "places-to-pause.md\n↓\n# Places to pause\n\nA bench is an invitation to stay.\n\n## A question\nWho feels at home in a city?\n\n[source](source-url)\n.md\nAN OPEN FORMAT\nYour next chapter can happen anywhere.\n\nKEEP YOUR OPTIONS OPEN\n\nYour ideas.\nYour next destination.\n\nExport your notes as Markdown files. Keep a backup, open them in a text editor, or bring your thinking into your next writing project.\n\nA readable, portable file format\nExport files to make your own backup\nAlready exported files stay yours after cancellation\nA few practical details\n↗"
+            ]
+          },
+          {
+            "key": "arrowKeyboard",
+            "pass": true,
+            "actual": {
+              "focused": true,
+              "selected": "true"
+            }
+          }
+        ],
+        "screenshots": [],
+        "manualReview": [],
+        "console": [],
+        "network": [],
+        "dialogs": [],
+        "status": "pass",
+        "durationMs": 1052
+      },
+      {
+        "id": "L04",
+        "environment": "chromium-360",
+        "browser": "chromium",
+        "width": 360,
+        "noJS": false,
+        "observations": [
+          {
+            "key": "billing-monthly-0",
+            "pass": true,
+            "actual": {
+              "amounts": [
+                "$12",
+                "$29"
+              ],
+              "actual": [
+                12,
+                29
+              ],
+              "adjacent": [
+                {
+                  "price": "$12",
+                  "parent": "$12\n/ month",
+                  "grandparent": "Solo\n✳\n\nA home for your independent practice.\n\n$12\n/ month\n\nBilled monthly in USD.\n\nTHE RESEARCH ESSENTIALS\n\nNotes stored on your device\nSource links alongside each note\nMarkdown export\n\nOne researcher. Plenty of possibilities."
+                },
+                {
+                  "price": "$29",
+                  "parent": "$29\n/ month",
+                  "grandparent": "Studio\n▦\n\nMore structure for a growing body of work.\n\n$29\n/ month\n\nBilled monthly in USD.\n\nEVERYTHING IN SOLO, PLUS\n\nReusable project templates\nOptional local full-text search\nA repeatable starting point for each project\n\nFor an independent researcher with many threads."
+                }
+              ],
+              "periodLabel": true
+            },
+            "expected": [
+              12,
+              29
+            ]
+          },
+          {
+            "key": "billing-yearly-1",
+            "pass": true,
+            "actual": {
+              "amounts": [
+                "$108",
+                "$264"
+              ],
+              "actual": [
+                108,
+                264
+              ],
+              "adjacent": [
+                {
+                  "price": "$108",
+                  "parent": "$108\n/ year",
+                  "grandparent": "Solo\n✳\n\nA home for your independent practice.\n\n$108\n/ year\n\nBilled yearly in USD.\n\nTHE RESEARCH ESSENTIALS\n\nNotes stored on your device\nSource links alongside each note\nMarkdown export\n\nOne researcher. Plenty of possibilities."
+                },
+                {
+                  "price": "$264",
+                  "parent": "$264\n/ year",
+                  "grandparent": "Studio\n▦\n\nMore structure for a growing body of work.\n\n$264\n/ year\n\nBilled yearly in USD.\n\nEVERYTHING IN SOLO, PLUS\n\nReusable project templates\nOptional local full-text search\nA repeatable starting point for each project\n\nFor an independent researcher with many threads."
+                }
+              ],
+              "periodLabel": true
+            },
+            "expected": [
+              108,
+              264
+            ]
+          },
+          {
+            "key": "billing-monthly-2",
+            "pass": true,
+            "actual": {
+              "amounts": [
+                "$12",
+                "$29"
+              ],
+              "actual": [
+                12,
+                29
+              ],
+              "adjacent": [
+                {
+                  "price": "$12",
+                  "parent": "$12\n/ month",
+                  "grandparent": "Solo\n✳\n\nA home for your independent practice.\n\n$12\n/ month\n\nBilled monthly in USD.\n\nTHE RESEARCH ESSENTIALS\n\nNotes stored on your device\nSource links alongside each note\nMarkdown export\n\nOne researcher. Plenty of possibilities."
+                },
+                {
+                  "price": "$29",
+                  "parent": "$29\n/ month",
+                  "grandparent": "Studio\n▦\n\nMore structure for a growing body of work.\n\n$29\n/ month\n\nBilled monthly in USD.\n\nEVERYTHING IN SOLO, PLUS\n\nReusable project templates\nOptional local full-text search\nA repeatable starting point for each project\n\nFor an independent researcher with many threads."
+                }
+              ],
+              "periodLabel": true
+            },
+            "expected": [
+              12,
+              29
+            ]
+          }
+        ],
+        "screenshots": [],
+        "manualReview": [],
+        "console": [],
+        "network": [],
+        "dialogs": [],
+        "status": "pass",
+        "durationMs": 1134
+      },
+      {
+        "id": "L05",
+        "environment": "chromium-360",
+        "browser": "chromium",
+        "width": 360,
+        "noJS": false,
+        "observations": [
+          {
+            "key": "nativeFAQ-0",
+            "pass": true,
+            "actual": {
+              "tag": "SUMMARY",
+              "parent": "DETAILS"
+            }
+          },
+          {
+            "key": "faqOpen-0",
+            "pass": true,
+            "actual": true
+          },
+          {
+            "key": "nativeFAQ-1",
+            "pass": true,
+            "actual": {
+              "tag": "SUMMARY",
+              "parent": "DETAILS"
+            }
+          },
+          {
+            "key": "faqOpen-1",
+            "pass": true,
+            "actual": true
+          },
+          {
+            "key": "nativeFAQ-2",
+            "pass": true,
+            "actual": {
+              "tag": "SUMMARY",
+              "parent": "DETAILS"
+            }
+          },
+          {
+            "key": "faqOpen-2",
+            "pass": true,
+            "actual": true
+          },
+          {
+            "key": "nativeFAQ-3",
+            "pass": true,
+            "actual": {
+              "tag": "SUMMARY",
+              "parent": "DETAILS"
+            }
+          },
+          {
+            "key": "faqOpen-3",
+            "pass": true,
+            "actual": true
+          },
+          {
+            "key": "FAQFacts",
+            "pass": true,
+            "actual": {
+              "answers": [
+                "Where do my notes live?\n+\n\nIn this product concept, your notes are stored locally on your device. Lattice is designed around keeping your research close to you, with optional full-text search that also runs locally. This demonstration page does not store notes.",
+                "Can I take my notes somewhere else?\n+\n\nYes. Lattice’s proposed Markdown export gives you readable files you can open in a text editor or bring into another Markdown-compatible tool. Your thinking can move with you.",
+                "How would I back up my work?\n+\n\nExport your notes as files and keep a copy in a separate location you control, such as an external drive. Make exporting a regular habit. Automatic cloud backup is not included or promised.",
+                "What happens if I cancel?\n+\n\nCancellation has no effect on files you have already exported. Those files remain yours to read, edit, and keep. The prices and plans here are illustrative; this demo has no active subscriptions to cancel."
+              ],
+              "facts": {
+                "local": true,
+                "markdown": true,
+                "backup": true,
+                "cancellation": true
+              }
+            }
+          }
+        ],
+        "screenshots": [],
+        "manualReview": [],
+        "console": [],
+        "network": [],
+        "dialogs": [],
+        "status": "pass",
+        "durationMs": 1025
+      },
+      {
+        "id": "L06",
+        "environment": "chromium-360",
+        "browser": "chromium",
+        "width": 360,
+        "noJS": true,
+        "observations": [
+          {
+            "key": "noJSContent",
+            "pass": true,
+            "actual": {
+              "length": 4688,
+              "product": true,
+              "workflow": true
+            }
+          },
+          {
+            "key": "noJSPrices",
+            "pass": true,
+            "actual": [
+              "$12",
+              "$29"
+            ]
+          },
+          {
+            "key": "noJSNavigation",
+            "pass": true,
+            "actual": [
+              {
+                "text": "Skip to content",
+                "href": "#main",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Lattice.",
+                "href": "#",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "document-top"
+              },
+              {
+                "text": "The notebook",
+                "href": "#features",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "How it works",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Plans",
+                "href": "#pricing",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "FAQ",
+                "href": "#faq",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Explore the workflow ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "01 Capture ↗",
+                "href": "#panel-capture",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "02 Connect ↗",
+                "href": "#panel-connect",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "03 Export ↗",
+                "href": "#panel-export",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "See how it comes together ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Find your research rhythm ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "A few practical details ↗",
+                "href": "#faq",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Explore the workflow ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Lattice.",
+                "href": "#",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "document-top"
+              },
+              {
+                "text": "Back to the top ↑",
+                "href": "#main",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              }
+            ]
+          }
+        ],
+        "screenshots": [],
+        "manualReview": [],
+        "console": [],
+        "network": [],
+        "dialogs": [],
+        "status": "pass",
+        "durationMs": 808
+      },
+      {
+        "id": "L07",
+        "environment": "chromium-360",
+        "browser": "chromium",
+        "width": 360,
+        "noJS": false,
+        "observations": [
+          {
+            "key": "loadedLocalResources",
+            "pass": true,
+            "actual": []
+          },
+          {
+            "key": "rendering",
+            "pass": true,
+            "actual": {
+              "width": 360,
+              "scrollWidth": 360,
+              "contentLength": 3502,
+              "unnamed": [],
+              "brokenImages": [],
+              "visibleControls": 13
+            }
+          },
+          {
+            "key": "reducedMotion",
+            "pass": true,
+            "actual": []
+          }
+        ],
+        "screenshots": [
+          "chromium-360-L07-reduced-motion.png"
+        ],
+        "manualReview": [],
+        "console": [],
+        "network": [],
+        "dialogs": [],
+        "status": "pass",
+        "durationMs": 1201
+      },
+      {
+        "id": "L01",
+        "environment": "chromium-1440",
+        "browser": "chromium",
+        "width": 1440,
+        "noJS": false,
+        "observations": [
+          {
+            "key": "productAndFiction",
+            "pass": true,
+            "actual": {
+              "product": true,
+              "fiction": true
+            }
+          },
+          {
+            "key": "facts",
+            "pass": true,
+            "actual": {
+              "local": true,
+              "markdown": true,
+              "sources": true,
+              "templates": true,
+              "search": true
+            }
+          },
+          {
+            "key": "workflowSection",
+            "pass": true,
+            "actual": true
+          },
+          {
+            "key": "primaryCTA",
+            "pass": true,
+            "actual": "#workflow"
+          },
+          {
+            "key": "ctaNavigation",
+            "pass": true,
+            "actual": "#workflow"
+          },
+          {
+            "key": "navigationTargets",
+            "pass": true,
+            "actual": [
+              {
+                "text": "Skip to content",
+                "href": "#main",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Lattice.",
+                "href": "#",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "document-top"
+              },
+              {
+                "text": "The notebook",
+                "href": "#features",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "How it works",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Plans",
+                "href": "#pricing",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "FAQ",
+                "href": "#faq",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Explore the workflow ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Explore the workflow ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "01 Capture ↗",
+                "href": "#panel-capture",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "02 Connect ↗",
+                "href": "#panel-connect",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "03 Export ↗",
+                "href": "#panel-export",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "See how it comes together ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Explore the workflow ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Lattice.",
+                "href": "#",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "document-top"
+              },
+              {
+                "text": "Back to the top ↑",
+                "href": "#main",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              }
+            ]
+          },
+          {
+            "key": "requiredCounts",
+            "pass": true,
+            "actual": {
+              "faqs": 4,
+              "plans": 2
+            }
+          },
+          {
+            "key": "externalResourceRequests",
+            "pass": true,
+            "actual": []
+          }
+        ],
+        "screenshots": [
+          "chromium-1440-L01-initial.png"
+        ],
+        "manualReview": [
+          "Check three-step workflow, useful distinct feature content, coherent visual hierarchy, and unsupported social-proof claims from screenshots/content."
+        ],
+        "console": [],
+        "network": [],
+        "dialogs": [],
+        "status": "pass",
+        "durationMs": 1386
+      },
+      {
+        "id": "L02",
+        "environment": "chromium-1440",
+        "browser": "chromium",
+        "width": 1440,
+        "noJS": false,
+        "observations": [
+          {
+            "key": "desktopNavigation",
+            "pass": true,
+            "actual": [
+              {
+                "text": "Skip to content",
+                "href": "#main",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Lattice.",
+                "href": "#",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "document-top"
+              },
+              {
+                "text": "The notebook",
+                "href": "#features",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "How it works",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Plans",
+                "href": "#pricing",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "FAQ",
+                "href": "#faq",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Explore the workflow ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Explore the workflow ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "01 Capture ↗",
+                "href": "#panel-capture",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "02 Connect ↗",
+                "href": "#panel-connect",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "03 Export ↗",
+                "href": "#panel-export",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "See how it comes together ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Explore the workflow ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Lattice.",
+                "href": "#",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "document-top"
+              },
+              {
+                "text": "Back to the top ↑",
+                "href": "#main",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              }
+            ]
+          }
+        ],
+        "screenshots": [],
+        "manualReview": [],
+        "console": [],
+        "network": [],
+        "dialogs": [],
+        "status": "pass",
+        "durationMs": 803
+      },
+      {
+        "id": "L03",
+        "environment": "chromium-1440",
+        "browser": "chromium",
+        "width": 1440,
+        "noJS": false,
+        "observations": [
+          {
+            "key": "tab-capture",
+            "pass": true,
+            "actual": [
+              {
+                "name": "capture",
+                "role": "tab",
+                "selected": "true",
+                "panelRole": "tabpanel",
+                "visible": true
+              },
+              {
+                "name": "connect",
+                "role": "tab",
+                "selected": "false",
+                "panelRole": "tabpanel",
+                "visible": false
+              },
+              {
+                "name": "export",
+                "role": "tab",
+                "selected": "false",
+                "panelRole": "tabpanel",
+                "visible": false
+              }
+            ]
+          },
+          {
+            "key": "tab-connect",
+            "pass": true,
+            "actual": [
+              {
+                "name": "capture",
+                "role": "tab",
+                "selected": "false",
+                "panelRole": "tabpanel",
+                "visible": false
+              },
+              {
+                "name": "connect",
+                "role": "tab",
+                "selected": "true",
+                "panelRole": "tabpanel",
+                "visible": true
+              },
+              {
+                "name": "export",
+                "role": "tab",
+                "selected": "false",
+                "panelRole": "tabpanel",
+                "visible": false
+              }
+            ]
+          },
+          {
+            "key": "tab-export",
+            "pass": true,
+            "actual": [
+              {
+                "name": "capture",
+                "role": "tab",
+                "selected": "false",
+                "panelRole": "tabpanel",
+                "visible": false
+              },
+              {
+                "name": "connect",
+                "role": "tab",
+                "selected": "false",
+                "panelRole": "tabpanel",
+                "visible": false
+              },
+              {
+                "name": "export",
+                "role": "tab",
+                "selected": "true",
+                "panelRole": "tabpanel",
+                "visible": true
+              }
+            ]
+          },
+          {
+            "key": "distinctPanelContent",
+            "pass": true,
+            "actual": [
+              "FIELD NOTE\n↗\nStart with a small\nobservation.\n\nThe best ideas often arrive before\nyou know what they’re for.\n\n+ Add a source\nA thought doesn’t need a title to matter.\n\nMAKE ROOM FOR THE RAW MATERIAL\n\nCatch the thought.\nKeep its origin.\n\nWrite a field note, save a passage, or get an idea out of your head. Keep a source link alongside each note, so you can always return to where it began.\n\nNotes stored on your own device\nSource links beside your thinking\nReusable templates for a familiar starting point\nSee how it comes together\n↗",
+              "QUESTION\nWho is this\nspace for?\nField observations\nReading notes\nDifferent sources. A shared question.\n\nRETURN TO WHAT CAUGHT YOUR ATTENTION\n\nGive a question\nsome company.\n\nKeep related notes in a project, with their source links close at hand. Revisit an observation next to a reading note and see where your own connections lead.\n\nReusable project templates bring structure\nSources remain alongside each note\nOptional local full-text search helps you find a phrase\nFind your research rhythm\n↗",
+              "places-to-pause.md\n↓\n# Places to pause\n\nA bench is an invitation to stay.\n\n## A question\nWho feels at home in a city?\n\n[source](source-url)\n.md\nAN OPEN FORMAT\nYour next chapter can happen anywhere.\n\nKEEP YOUR OPTIONS OPEN\n\nYour ideas.\nYour next destination.\n\nExport your notes as Markdown files. Keep a backup, open them in a text editor, or bring your thinking into your next writing project.\n\nA readable, portable file format\nExport files to make your own backup\nAlready exported files stay yours after cancellation\nA few practical details\n↗"
+            ]
+          },
+          {
+            "key": "arrowKeyboard",
+            "pass": true,
+            "actual": {
+              "focused": true,
+              "selected": "true"
+            }
+          }
+        ],
+        "screenshots": [],
+        "manualReview": [],
+        "console": [],
+        "network": [],
+        "dialogs": [],
+        "status": "pass",
+        "durationMs": 1145
+      },
+      {
+        "id": "L04",
+        "environment": "chromium-1440",
+        "browser": "chromium",
+        "width": 1440,
+        "noJS": false,
+        "observations": [
+          {
+            "key": "billing-monthly-0",
+            "pass": true,
+            "actual": {
+              "amounts": [
+                "$12",
+                "$29"
+              ],
+              "actual": [
+                12,
+                29
+              ],
+              "adjacent": [
+                {
+                  "price": "$12",
+                  "parent": "$12\n/ month",
+                  "grandparent": "Solo\n✳\n\nA home for your independent practice.\n\n$12\n/ month\n\nBilled monthly in USD.\n\nTHE RESEARCH ESSENTIALS\n\nNotes stored on your device\nSource links alongside each note\nMarkdown export\n\nOne researcher. Plenty of possibilities."
+                },
+                {
+                  "price": "$29",
+                  "parent": "$29\n/ month",
+                  "grandparent": "Studio\n▦\n\nMore structure for a growing body of work.\n\n$29\n/ month\n\nBilled monthly in USD.\n\nEVERYTHING IN SOLO, PLUS\n\nReusable project templates\nOptional local full-text search\nA repeatable starting point for each project\n\nFor an independent researcher with many threads."
+                }
+              ],
+              "periodLabel": true
+            },
+            "expected": [
+              12,
+              29
+            ]
+          },
+          {
+            "key": "billing-yearly-1",
+            "pass": true,
+            "actual": {
+              "amounts": [
+                "$108",
+                "$264"
+              ],
+              "actual": [
+                108,
+                264
+              ],
+              "adjacent": [
+                {
+                  "price": "$108",
+                  "parent": "$108\n/ year",
+                  "grandparent": "Solo\n✳\n\nA home for your independent practice.\n\n$108\n/ year\n\nBilled yearly in USD.\n\nTHE RESEARCH ESSENTIALS\n\nNotes stored on your device\nSource links alongside each note\nMarkdown export\n\nOne researcher. Plenty of possibilities."
+                },
+                {
+                  "price": "$264",
+                  "parent": "$264\n/ year",
+                  "grandparent": "Studio\n▦\n\nMore structure for a growing body of work.\n\n$264\n/ year\n\nBilled yearly in USD.\n\nEVERYTHING IN SOLO, PLUS\n\nReusable project templates\nOptional local full-text search\nA repeatable starting point for each project\n\nFor an independent researcher with many threads."
+                }
+              ],
+              "periodLabel": true
+            },
+            "expected": [
+              108,
+              264
+            ]
+          },
+          {
+            "key": "billing-monthly-2",
+            "pass": true,
+            "actual": {
+              "amounts": [
+                "$12",
+                "$29"
+              ],
+              "actual": [
+                12,
+                29
+              ],
+              "adjacent": [
+                {
+                  "price": "$12",
+                  "parent": "$12\n/ month",
+                  "grandparent": "Solo\n✳\n\nA home for your independent practice.\n\n$12\n/ month\n\nBilled monthly in USD.\n\nTHE RESEARCH ESSENTIALS\n\nNotes stored on your device\nSource links alongside each note\nMarkdown export\n\nOne researcher. Plenty of possibilities."
+                },
+                {
+                  "price": "$29",
+                  "parent": "$29\n/ month",
+                  "grandparent": "Studio\n▦\n\nMore structure for a growing body of work.\n\n$29\n/ month\n\nBilled monthly in USD.\n\nEVERYTHING IN SOLO, PLUS\n\nReusable project templates\nOptional local full-text search\nA repeatable starting point for each project\n\nFor an independent researcher with many threads."
+                }
+              ],
+              "periodLabel": true
+            },
+            "expected": [
+              12,
+              29
+            ]
+          }
+        ],
+        "screenshots": [],
+        "manualReview": [],
+        "console": [],
+        "network": [],
+        "dialogs": [],
+        "status": "pass",
+        "durationMs": 1155
+      },
+      {
+        "id": "L05",
+        "environment": "chromium-1440",
+        "browser": "chromium",
+        "width": 1440,
+        "noJS": false,
+        "observations": [
+          {
+            "key": "nativeFAQ-0",
+            "pass": true,
+            "actual": {
+              "tag": "SUMMARY",
+              "parent": "DETAILS"
+            }
+          },
+          {
+            "key": "faqOpen-0",
+            "pass": true,
+            "actual": true
+          },
+          {
+            "key": "nativeFAQ-1",
+            "pass": true,
+            "actual": {
+              "tag": "SUMMARY",
+              "parent": "DETAILS"
+            }
+          },
+          {
+            "key": "faqOpen-1",
+            "pass": true,
+            "actual": true
+          },
+          {
+            "key": "nativeFAQ-2",
+            "pass": true,
+            "actual": {
+              "tag": "SUMMARY",
+              "parent": "DETAILS"
+            }
+          },
+          {
+            "key": "faqOpen-2",
+            "pass": true,
+            "actual": true
+          },
+          {
+            "key": "nativeFAQ-3",
+            "pass": true,
+            "actual": {
+              "tag": "SUMMARY",
+              "parent": "DETAILS"
+            }
+          },
+          {
+            "key": "faqOpen-3",
+            "pass": true,
+            "actual": true
+          },
+          {
+            "key": "FAQFacts",
+            "pass": true,
+            "actual": {
+              "answers": [
+                "Where do my notes live?\n+\n\nIn this product concept, your notes are stored locally on your device. Lattice is designed around keeping your research close to you, with optional full-text search that also runs locally. This demonstration page does not store notes.",
+                "Can I take my notes somewhere else?\n+\n\nYes. Lattice’s proposed Markdown export gives you readable files you can open in a text editor or bring into another Markdown-compatible tool. Your thinking can move with you.",
+                "How would I back up my work?\n+\n\nExport your notes as files and keep a copy in a separate location you control, such as an external drive. Make exporting a regular habit. Automatic cloud backup is not included or promised.",
+                "What happens if I cancel?\n+\n\nCancellation has no effect on files you have already exported. Those files remain yours to read, edit, and keep. The prices and plans here are illustrative; this demo has no active subscriptions to cancel."
+              ],
+              "facts": {
+                "local": true,
+                "markdown": true,
+                "backup": true,
+                "cancellation": true
+              }
+            }
+          }
+        ],
+        "screenshots": [],
+        "manualReview": [],
+        "console": [],
+        "network": [],
+        "dialogs": [],
+        "status": "pass",
+        "durationMs": 909
+      },
+      {
+        "id": "L06",
+        "environment": "chromium-1440",
+        "browser": "chromium",
+        "width": 1440,
+        "noJS": true,
+        "observations": [
+          {
+            "key": "noJSContent",
+            "pass": true,
+            "actual": {
+              "length": 4816,
+              "product": true,
+              "workflow": true
+            }
+          },
+          {
+            "key": "noJSPrices",
+            "pass": true,
+            "actual": [
+              "$12",
+              "$29"
+            ]
+          },
+          {
+            "key": "noJSNavigation",
+            "pass": true,
+            "actual": [
+              {
+                "text": "Skip to content",
+                "href": "#main",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Lattice.",
+                "href": "#",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "document-top"
+              },
+              {
+                "text": "The notebook",
+                "href": "#features",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "How it works",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Plans",
+                "href": "#pricing",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "FAQ",
+                "href": "#faq",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Explore the workflow ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Explore the workflow ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "01 Capture ↗",
+                "href": "#panel-capture",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "02 Connect ↗",
+                "href": "#panel-connect",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "03 Export ↗",
+                "href": "#panel-export",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "See how it comes together ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Find your research rhythm ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "A few practical details ↗",
+                "href": "#faq",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Explore the workflow ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Lattice.",
+                "href": "#",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "document-top"
+              },
+              {
+                "text": "Back to the top ↑",
+                "href": "#main",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              }
+            ]
+          }
+        ],
+        "screenshots": [],
+        "manualReview": [],
+        "console": [],
+        "network": [],
+        "dialogs": [],
+        "status": "pass",
+        "durationMs": 827
+      },
+      {
+        "id": "L07",
+        "environment": "chromium-1440",
+        "browser": "chromium",
+        "width": 1440,
+        "noJS": false,
+        "observations": [
+          {
+            "key": "loadedLocalResources",
+            "pass": true,
+            "actual": []
+          },
+          {
+            "key": "rendering",
+            "pass": true,
+            "actual": {
+              "width": 1440,
+              "scrollWidth": 1440,
+              "contentLength": 3666,
+              "unnamed": [],
+              "brokenImages": [],
+              "visibleControls": 17
+            }
+          },
+          {
+            "key": "reducedMotion",
+            "pass": true,
+            "actual": []
+          }
+        ],
+        "screenshots": [
+          "chromium-1440-L07-reduced-motion.png"
+        ],
+        "manualReview": [],
+        "console": [],
+        "network": [],
+        "dialogs": [],
+        "status": "pass",
+        "durationMs": 1331
+      },
+      {
+        "id": "L01",
+        "environment": "webkit-360",
+        "browser": "webkit",
+        "width": 360,
+        "noJS": false,
+        "observations": [
+          {
+            "key": "productAndFiction",
+            "pass": true,
+            "actual": {
+              "product": true,
+              "fiction": true
+            }
+          },
+          {
+            "key": "facts",
+            "pass": true,
+            "actual": {
+              "local": true,
+              "markdown": true,
+              "sources": true,
+              "templates": true,
+              "search": true
+            }
+          },
+          {
+            "key": "workflowSection",
+            "pass": true,
+            "actual": true
+          },
+          {
+            "key": "primaryCTA",
+            "pass": true,
+            "actual": "#workflow"
+          },
+          {
+            "key": "ctaNavigation",
+            "pass": true,
+            "actual": "#workflow"
+          },
+          {
+            "key": "navigationTargets",
+            "pass": true,
+            "actual": [
+              {
+                "text": "Skip to content",
+                "href": "#main",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Lattice.",
+                "href": "#",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "document-top"
+              },
+              {
+                "text": "Explore the workflow ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "01 Capture ↗",
+                "href": "#panel-capture",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "02 Connect ↗",
+                "href": "#panel-connect",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "03 Export ↗",
+                "href": "#panel-export",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "See how it comes together ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Explore the workflow ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Lattice.",
+                "href": "#",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "document-top"
+              },
+              {
+                "text": "Back to the top ↑",
+                "href": "#main",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              }
+            ]
+          },
+          {
+            "key": "requiredCounts",
+            "pass": true,
+            "actual": {
+              "faqs": 4,
+              "plans": 2
+            }
+          },
+          {
+            "key": "externalResourceRequests",
+            "pass": true,
+            "actual": []
+          }
+        ],
+        "screenshots": [
+          "webkit-360-L01-initial.png"
+        ],
+        "manualReview": [
+          "Check three-step workflow, useful distinct feature content, coherent visual hierarchy, and unsupported social-proof claims from screenshots/content."
+        ],
+        "console": [],
+        "network": [],
+        "dialogs": [],
+        "status": "pass",
+        "durationMs": 2491
+      },
+      {
+        "id": "L02",
+        "environment": "webkit-360",
+        "browser": "webkit",
+        "width": 360,
+        "noJS": false,
+        "observations": [
+          {
+            "key": "opened",
+            "pass": true,
+            "actual": {
+              "expanded": "true",
+              "visible": true
+            }
+          },
+          {
+            "key": "escapeClosed",
+            "pass": true,
+            "actual": {
+              "expanded": "false",
+              "visible": false,
+              "focused": true
+            }
+          },
+          {
+            "key": "linkCloses",
+            "pass": true,
+            "actual": {
+              "href": "#features",
+              "expanded": "false",
+              "visible": false,
+              "hash": "#features"
+            }
+          }
+        ],
+        "screenshots": [],
+        "manualReview": [],
+        "console": [],
+        "network": [],
+        "dialogs": [],
+        "status": "pass",
+        "durationMs": 1634
+      },
+      {
+        "id": "L03",
+        "environment": "webkit-360",
+        "browser": "webkit",
+        "width": 360,
+        "noJS": false,
+        "observations": [
+          {
+            "key": "tab-capture",
+            "pass": true,
+            "actual": [
+              {
+                "name": "capture",
+                "role": "tab",
+                "selected": "true",
+                "panelRole": "tabpanel",
+                "visible": true
+              },
+              {
+                "name": "connect",
+                "role": "tab",
+                "selected": "false",
+                "panelRole": "tabpanel",
+                "visible": false
+              },
+              {
+                "name": "export",
+                "role": "tab",
+                "selected": "false",
+                "panelRole": "tabpanel",
+                "visible": false
+              }
+            ]
+          },
+          {
+            "key": "tab-connect",
+            "pass": true,
+            "actual": [
+              {
+                "name": "capture",
+                "role": "tab",
+                "selected": "false",
+                "panelRole": "tabpanel",
+                "visible": false
+              },
+              {
+                "name": "connect",
+                "role": "tab",
+                "selected": "true",
+                "panelRole": "tabpanel",
+                "visible": true
+              },
+              {
+                "name": "export",
+                "role": "tab",
+                "selected": "false",
+                "panelRole": "tabpanel",
+                "visible": false
+              }
+            ]
+          },
+          {
+            "key": "tab-export",
+            "pass": true,
+            "actual": [
+              {
+                "name": "capture",
+                "role": "tab",
+                "selected": "false",
+                "panelRole": "tabpanel",
+                "visible": false
+              },
+              {
+                "name": "connect",
+                "role": "tab",
+                "selected": "false",
+                "panelRole": "tabpanel",
+                "visible": false
+              },
+              {
+                "name": "export",
+                "role": "tab",
+                "selected": "true",
+                "panelRole": "tabpanel",
+                "visible": true
+              }
+            ]
+          },
+          {
+            "key": "distinctPanelContent",
+            "pass": true,
+            "actual": [
+              "FIELD NOTE\n↗\nStart with a small\nobservation.\n\nThe best ideas often arrive before\nyou know what they’re for.\n\n+ Add a source\nA thought doesn’t need a title to matter.\n\nMAKE ROOM FOR THE RAW MATERIAL\n\nCatch the thought.\nKeep its origin.\n\nWrite a field note, save a passage, or get an idea out of your head. Keep a source link alongside each note, so you can always return to where it began.\n\nNotes stored on your own device\nSource links beside your thinking\nReusable templates for a familiar starting point\nSee how it comes together\n↗",
+              "QUESTION\nWho is this\nspace for?\nField observations\nReading notes\nDifferent sources. A shared question.\n\nRETURN TO WHAT CAUGHT YOUR ATTENTION\n\nGive a question\nsome company.\n\nKeep related notes in a project, with their source links close at hand. Revisit an observation next to a reading note and see where your own connections lead.\n\nReusable project templates bring structure\nSources remain alongside each note\nOptional local full-text search helps you find a phrase\nFind your research rhythm\n↗",
+              "places-to-pause.md\n↓\n# Places to pause\n\nA bench is an invitation to stay.\n\n## A question\nWho feels at home in a city?\n\n[source](source-url)\n.md\nAN OPEN FORMAT\nYour next chapter can happen anywhere.\n\nKEEP YOUR OPTIONS OPEN\n\nYour ideas.\nYour next destination.\n\nExport your notes as Markdown files. Keep a backup, open them in a text editor, or bring your thinking into your next writing project.\n\nA readable, portable file format\nExport files to make your own backup\nAlready exported files stay yours after cancellation\nA few practical details\n↗"
+            ]
+          },
+          {
+            "key": "arrowKeyboard",
+            "pass": true,
+            "actual": {
+              "focused": true,
+              "selected": "true"
+            }
+          }
+        ],
+        "screenshots": [],
+        "manualReview": [],
+        "console": [],
+        "network": [],
+        "dialogs": [],
+        "status": "pass",
+        "durationMs": 1440
+      },
+      {
+        "id": "L04",
+        "environment": "webkit-360",
+        "browser": "webkit",
+        "width": 360,
+        "noJS": false,
+        "observations": [
+          {
+            "key": "billing-monthly-0",
+            "pass": true,
+            "actual": {
+              "amounts": [
+                "$12",
+                "$29"
+              ],
+              "actual": [
+                12,
+                29
+              ],
+              "adjacent": [
+                {
+                  "price": "$12",
+                  "parent": "$12\n/ month",
+                  "grandparent": "Solo\n✳\n\nA home for your independent practice.\n\n$12\n/ month\n\nBilled monthly in USD.\n\nTHE RESEARCH ESSENTIALS\n\nNotes stored on your device\nSource links alongside each note\nMarkdown export\n\nOne researcher. Plenty of possibilities."
+                },
+                {
+                  "price": "$29",
+                  "parent": "$29\n/ month",
+                  "grandparent": "Studio\n▦\n\nMore structure for a growing body of work.\n\n$29\n/ month\n\nBilled monthly in USD.\n\nEVERYTHING IN SOLO, PLUS\n\nReusable project templates\nOptional local full-text search\nA repeatable starting point for each project\n\nFor an independent researcher with many threads."
+                }
+              ],
+              "periodLabel": true
+            },
+            "expected": [
+              12,
+              29
+            ]
+          },
+          {
+            "key": "billing-yearly-1",
+            "pass": true,
+            "actual": {
+              "amounts": [
+                "$108",
+                "$264"
+              ],
+              "actual": [
+                108,
+                264
+              ],
+              "adjacent": [
+                {
+                  "price": "$108",
+                  "parent": "$108\n/ year",
+                  "grandparent": "Solo\n✳\n\nA home for your independent practice.\n\n$108\n/ year\n\nBilled yearly in USD.\n\nTHE RESEARCH ESSENTIALS\n\nNotes stored on your device\nSource links alongside each note\nMarkdown export\n\nOne researcher. Plenty of possibilities."
+                },
+                {
+                  "price": "$264",
+                  "parent": "$264\n/ year",
+                  "grandparent": "Studio\n▦\n\nMore structure for a growing body of work.\n\n$264\n/ year\n\nBilled yearly in USD.\n\nEVERYTHING IN SOLO, PLUS\n\nReusable project templates\nOptional local full-text search\nA repeatable starting point for each project\n\nFor an independent researcher with many threads."
+                }
+              ],
+              "periodLabel": true
+            },
+            "expected": [
+              108,
+              264
+            ]
+          },
+          {
+            "key": "billing-monthly-2",
+            "pass": true,
+            "actual": {
+              "amounts": [
+                "$12",
+                "$29"
+              ],
+              "actual": [
+                12,
+                29
+              ],
+              "adjacent": [
+                {
+                  "price": "$12",
+                  "parent": "$12\n/ month",
+                  "grandparent": "Solo\n✳\n\nA home for your independent practice.\n\n$12\n/ month\n\nBilled monthly in USD.\n\nTHE RESEARCH ESSENTIALS\n\nNotes stored on your device\nSource links alongside each note\nMarkdown export\n\nOne researcher. Plenty of possibilities."
+                },
+                {
+                  "price": "$29",
+                  "parent": "$29\n/ month",
+                  "grandparent": "Studio\n▦\n\nMore structure for a growing body of work.\n\n$29\n/ month\n\nBilled monthly in USD.\n\nEVERYTHING IN SOLO, PLUS\n\nReusable project templates\nOptional local full-text search\nA repeatable starting point for each project\n\nFor an independent researcher with many threads."
+                }
+              ],
+              "periodLabel": true
+            },
+            "expected": [
+              12,
+              29
+            ]
+          }
+        ],
+        "screenshots": [],
+        "manualReview": [],
+        "console": [],
+        "network": [],
+        "dialogs": [],
+        "status": "pass",
+        "durationMs": 1435
+      },
+      {
+        "id": "L05",
+        "environment": "webkit-360",
+        "browser": "webkit",
+        "width": 360,
+        "noJS": false,
+        "observations": [
+          {
+            "key": "nativeFAQ-0",
+            "pass": true,
+            "actual": {
+              "tag": "SUMMARY",
+              "parent": "DETAILS"
+            }
+          },
+          {
+            "key": "faqOpen-0",
+            "pass": true,
+            "actual": true
+          },
+          {
+            "key": "nativeFAQ-1",
+            "pass": true,
+            "actual": {
+              "tag": "SUMMARY",
+              "parent": "DETAILS"
+            }
+          },
+          {
+            "key": "faqOpen-1",
+            "pass": true,
+            "actual": true
+          },
+          {
+            "key": "nativeFAQ-2",
+            "pass": true,
+            "actual": {
+              "tag": "SUMMARY",
+              "parent": "DETAILS"
+            }
+          },
+          {
+            "key": "faqOpen-2",
+            "pass": true,
+            "actual": true
+          },
+          {
+            "key": "nativeFAQ-3",
+            "pass": true,
+            "actual": {
+              "tag": "SUMMARY",
+              "parent": "DETAILS"
+            }
+          },
+          {
+            "key": "faqOpen-3",
+            "pass": true,
+            "actual": true
+          },
+          {
+            "key": "FAQFacts",
+            "pass": true,
+            "actual": {
+              "answers": [
+                "Where do my notes live?\n+\n\nIn this product concept, your notes are stored locally on your device. Lattice is designed around keeping your research close to you, with optional full-text search that also runs locally. This demonstration page does not store notes.",
+                "Can I take my notes somewhere else?\n+\n\nYes. Lattice’s proposed Markdown export gives you readable files you can open in a text editor or bring into another Markdown-compatible tool. Your thinking can move with you.",
+                "How would I back up my work?\n+\n\nExport your notes as files and keep a copy in a separate location you control, such as an external drive. Make exporting a regular habit. Automatic cloud backup is not included or promised.",
+                "What happens if I cancel?\n+\n\nCancellation has no effect on files you have already exported. Those files remain yours to read, edit, and keep. The prices and plans here are illustrative; this demo has no active subscriptions to cancel."
+              ],
+              "facts": {
+                "local": true,
+                "markdown": true,
+                "backup": true,
+                "cancellation": true
+              }
+            }
+          }
+        ],
+        "screenshots": [],
+        "manualReview": [],
+        "console": [],
+        "network": [],
+        "dialogs": [],
+        "status": "pass",
+        "durationMs": 1414
+      },
+      {
+        "id": "L06",
+        "environment": "webkit-360",
+        "browser": "webkit",
+        "width": 360,
+        "noJS": true,
+        "observations": [
+          {
+            "key": "noJSContent",
+            "pass": true,
+            "actual": {
+              "length": 4688,
+              "product": true,
+              "workflow": true
+            }
+          },
+          {
+            "key": "noJSPrices",
+            "pass": true,
+            "actual": [
+              "$12",
+              "$29"
+            ]
+          },
+          {
+            "key": "noJSNavigation",
+            "pass": true,
+            "actual": [
+              {
+                "text": "Skip to content",
+                "href": "#main",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Lattice.",
+                "href": "#",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "document-top"
+              },
+              {
+                "text": "The notebook",
+                "href": "#features",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "How it works",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Plans",
+                "href": "#pricing",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "FAQ",
+                "href": "#faq",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Explore the workflow ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "01 Capture ↗",
+                "href": "#panel-capture",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "02 Connect ↗",
+                "href": "#panel-connect",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "03 Export ↗",
+                "href": "#panel-export",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "See how it comes together ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Find your research rhythm ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "A few practical details ↗",
+                "href": "#faq",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Explore the workflow ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Lattice.",
+                "href": "#",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "document-top"
+              },
+              {
+                "text": "Back to the top ↑",
+                "href": "#main",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              }
+            ]
+          }
+        ],
+        "screenshots": [],
+        "manualReview": [],
+        "console": [],
+        "network": [],
+        "dialogs": [],
+        "status": "pass",
+        "durationMs": 1149
+      },
+      {
+        "id": "L07",
+        "environment": "webkit-360",
+        "browser": "webkit",
+        "width": 360,
+        "noJS": false,
+        "observations": [
+          {
+            "key": "loadedLocalResources",
+            "pass": true,
+            "actual": []
+          },
+          {
+            "key": "rendering",
+            "pass": true,
+            "actual": {
+              "width": 360,
+              "scrollWidth": 360,
+              "contentLength": 3502,
+              "unnamed": [],
+              "brokenImages": [],
+              "visibleControls": 13
+            }
+          },
+          {
+            "key": "reducedMotion",
+            "pass": true,
+            "actual": []
+          }
+        ],
+        "screenshots": [
+          "webkit-360-L07-reduced-motion.png"
+        ],
+        "manualReview": [],
+        "console": [],
+        "network": [],
+        "dialogs": [],
+        "status": "pass",
+        "durationMs": 1361
+      },
+      {
+        "id": "L01",
+        "environment": "webkit-1440",
+        "browser": "webkit",
+        "width": 1440,
+        "noJS": false,
+        "observations": [
+          {
+            "key": "productAndFiction",
+            "pass": true,
+            "actual": {
+              "product": true,
+              "fiction": true
+            }
+          },
+          {
+            "key": "facts",
+            "pass": true,
+            "actual": {
+              "local": true,
+              "markdown": true,
+              "sources": true,
+              "templates": true,
+              "search": true
+            }
+          },
+          {
+            "key": "workflowSection",
+            "pass": true,
+            "actual": true
+          },
+          {
+            "key": "primaryCTA",
+            "pass": true,
+            "actual": "#workflow"
+          },
+          {
+            "key": "ctaNavigation",
+            "pass": true,
+            "actual": "#workflow"
+          },
+          {
+            "key": "navigationTargets",
+            "pass": true,
+            "actual": [
+              {
+                "text": "Skip to content",
+                "href": "#main",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Lattice.",
+                "href": "#",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "document-top"
+              },
+              {
+                "text": "The notebook",
+                "href": "#features",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "How it works",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Plans",
+                "href": "#pricing",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "FAQ",
+                "href": "#faq",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Explore the workflow ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Explore the workflow ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "01 Capture ↗",
+                "href": "#panel-capture",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "02 Connect ↗",
+                "href": "#panel-connect",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "03 Export ↗",
+                "href": "#panel-export",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "See how it comes together ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Explore the workflow ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Lattice.",
+                "href": "#",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "document-top"
+              },
+              {
+                "text": "Back to the top ↑",
+                "href": "#main",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              }
+            ]
+          },
+          {
+            "key": "requiredCounts",
+            "pass": true,
+            "actual": {
+              "faqs": 4,
+              "plans": 2
+            }
+          },
+          {
+            "key": "externalResourceRequests",
+            "pass": true,
+            "actual": []
+          }
+        ],
+        "screenshots": [
+          "webkit-1440-L01-initial.png"
+        ],
+        "manualReview": [
+          "Check three-step workflow, useful distinct feature content, coherent visual hierarchy, and unsupported social-proof claims from screenshots/content."
+        ],
+        "console": [],
+        "network": [],
+        "dialogs": [],
+        "status": "pass",
+        "durationMs": 1644
+      },
+      {
+        "id": "L02",
+        "environment": "webkit-1440",
+        "browser": "webkit",
+        "width": 1440,
+        "noJS": false,
+        "observations": [
+          {
+            "key": "desktopNavigation",
+            "pass": true,
+            "actual": [
+              {
+                "text": "Skip to content",
+                "href": "#main",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Lattice.",
+                "href": "#",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "document-top"
+              },
+              {
+                "text": "The notebook",
+                "href": "#features",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "How it works",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Plans",
+                "href": "#pricing",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "FAQ",
+                "href": "#faq",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Explore the workflow ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Explore the workflow ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "01 Capture ↗",
+                "href": "#panel-capture",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "02 Connect ↗",
+                "href": "#panel-connect",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "03 Export ↗",
+                "href": "#panel-export",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "See how it comes together ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Explore the workflow ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Lattice.",
+                "href": "#",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "document-top"
+              },
+              {
+                "text": "Back to the top ↑",
+                "href": "#main",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              }
+            ]
+          }
+        ],
+        "screenshots": [],
+        "manualReview": [],
+        "console": [],
+        "network": [],
+        "dialogs": [],
+        "status": "pass",
+        "durationMs": 1242
+      },
+      {
+        "id": "L03",
+        "environment": "webkit-1440",
+        "browser": "webkit",
+        "width": 1440,
+        "noJS": false,
+        "observations": [
+          {
+            "key": "tab-capture",
+            "pass": true,
+            "actual": [
+              {
+                "name": "capture",
+                "role": "tab",
+                "selected": "true",
+                "panelRole": "tabpanel",
+                "visible": true
+              },
+              {
+                "name": "connect",
+                "role": "tab",
+                "selected": "false",
+                "panelRole": "tabpanel",
+                "visible": false
+              },
+              {
+                "name": "export",
+                "role": "tab",
+                "selected": "false",
+                "panelRole": "tabpanel",
+                "visible": false
+              }
+            ]
+          },
+          {
+            "key": "tab-connect",
+            "pass": true,
+            "actual": [
+              {
+                "name": "capture",
+                "role": "tab",
+                "selected": "false",
+                "panelRole": "tabpanel",
+                "visible": false
+              },
+              {
+                "name": "connect",
+                "role": "tab",
+                "selected": "true",
+                "panelRole": "tabpanel",
+                "visible": true
+              },
+              {
+                "name": "export",
+                "role": "tab",
+                "selected": "false",
+                "panelRole": "tabpanel",
+                "visible": false
+              }
+            ]
+          },
+          {
+            "key": "tab-export",
+            "pass": true,
+            "actual": [
+              {
+                "name": "capture",
+                "role": "tab",
+                "selected": "false",
+                "panelRole": "tabpanel",
+                "visible": false
+              },
+              {
+                "name": "connect",
+                "role": "tab",
+                "selected": "false",
+                "panelRole": "tabpanel",
+                "visible": false
+              },
+              {
+                "name": "export",
+                "role": "tab",
+                "selected": "true",
+                "panelRole": "tabpanel",
+                "visible": true
+              }
+            ]
+          },
+          {
+            "key": "distinctPanelContent",
+            "pass": true,
+            "actual": [
+              "FIELD NOTE\n↗\nStart with a small\nobservation.\n\nThe best ideas often arrive before\nyou know what they’re for.\n\n+ Add a source\nA thought doesn’t need a title to matter.\n\nMAKE ROOM FOR THE RAW MATERIAL\n\nCatch the thought.\nKeep its origin.\n\nWrite a field note, save a passage, or get an idea out of your head. Keep a source link alongside each note, so you can always return to where it began.\n\nNotes stored on your own device\nSource links beside your thinking\nReusable templates for a familiar starting point\nSee how it comes together\n↗",
+              "QUESTION\nWho is this\nspace for?\nField observations\nReading notes\nDifferent sources. A shared question.\n\nRETURN TO WHAT CAUGHT YOUR ATTENTION\n\nGive a question\nsome company.\n\nKeep related notes in a project, with their source links close at hand. Revisit an observation next to a reading note and see where your own connections lead.\n\nReusable project templates bring structure\nSources remain alongside each note\nOptional local full-text search helps you find a phrase\nFind your research rhythm\n↗",
+              "places-to-pause.md\n↓\n# Places to pause\n\nA bench is an invitation to stay.\n\n## A question\nWho feels at home in a city?\n\n[source](source-url)\n.md\nAN OPEN FORMAT\nYour next chapter can happen anywhere.\n\nKEEP YOUR OPTIONS OPEN\n\nYour ideas.\nYour next destination.\n\nExport your notes as Markdown files. Keep a backup, open them in a text editor, or bring your thinking into your next writing project.\n\nA readable, portable file format\nExport files to make your own backup\nAlready exported files stay yours after cancellation\nA few practical details\n↗"
+            ]
+          },
+          {
+            "key": "arrowKeyboard",
+            "pass": true,
+            "actual": {
+              "focused": true,
+              "selected": "true"
+            }
+          }
+        ],
+        "screenshots": [],
+        "manualReview": [],
+        "console": [],
+        "network": [],
+        "dialogs": [],
+        "status": "pass",
+        "durationMs": 1477
+      },
+      {
+        "id": "L04",
+        "environment": "webkit-1440",
+        "browser": "webkit",
+        "width": 1440,
+        "noJS": false,
+        "observations": [
+          {
+            "key": "billing-monthly-0",
+            "pass": true,
+            "actual": {
+              "amounts": [
+                "$12",
+                "$29"
+              ],
+              "actual": [
+                12,
+                29
+              ],
+              "adjacent": [
+                {
+                  "price": "$12",
+                  "parent": "$12\n/ month",
+                  "grandparent": "Solo\n✳\n\nA home for your independent practice.\n\n$12\n/ month\n\nBilled monthly in USD.\n\nTHE RESEARCH ESSENTIALS\n\nNotes stored on your device\nSource links alongside each note\nMarkdown export\n\nOne researcher. Plenty of possibilities."
+                },
+                {
+                  "price": "$29",
+                  "parent": "$29\n/ month",
+                  "grandparent": "Studio\n▦\n\nMore structure for a growing body of work.\n\n$29\n/ month\n\nBilled monthly in USD.\n\nEVERYTHING IN SOLO, PLUS\n\nReusable project templates\nOptional local full-text search\nA repeatable starting point for each project\n\nFor an independent researcher with many threads."
+                }
+              ],
+              "periodLabel": true
+            },
+            "expected": [
+              12,
+              29
+            ]
+          },
+          {
+            "key": "billing-yearly-1",
+            "pass": true,
+            "actual": {
+              "amounts": [
+                "$108",
+                "$264"
+              ],
+              "actual": [
+                108,
+                264
+              ],
+              "adjacent": [
+                {
+                  "price": "$108",
+                  "parent": "$108\n/ year",
+                  "grandparent": "Solo\n✳\n\nA home for your independent practice.\n\n$108\n/ year\n\nBilled yearly in USD.\n\nTHE RESEARCH ESSENTIALS\n\nNotes stored on your device\nSource links alongside each note\nMarkdown export\n\nOne researcher. Plenty of possibilities."
+                },
+                {
+                  "price": "$264",
+                  "parent": "$264\n/ year",
+                  "grandparent": "Studio\n▦\n\nMore structure for a growing body of work.\n\n$264\n/ year\n\nBilled yearly in USD.\n\nEVERYTHING IN SOLO, PLUS\n\nReusable project templates\nOptional local full-text search\nA repeatable starting point for each project\n\nFor an independent researcher with many threads."
+                }
+              ],
+              "periodLabel": true
+            },
+            "expected": [
+              108,
+              264
+            ]
+          },
+          {
+            "key": "billing-monthly-2",
+            "pass": true,
+            "actual": {
+              "amounts": [
+                "$12",
+                "$29"
+              ],
+              "actual": [
+                12,
+                29
+              ],
+              "adjacent": [
+                {
+                  "price": "$12",
+                  "parent": "$12\n/ month",
+                  "grandparent": "Solo\n✳\n\nA home for your independent practice.\n\n$12\n/ month\n\nBilled monthly in USD.\n\nTHE RESEARCH ESSENTIALS\n\nNotes stored on your device\nSource links alongside each note\nMarkdown export\n\nOne researcher. Plenty of possibilities."
+                },
+                {
+                  "price": "$29",
+                  "parent": "$29\n/ month",
+                  "grandparent": "Studio\n▦\n\nMore structure for a growing body of work.\n\n$29\n/ month\n\nBilled monthly in USD.\n\nEVERYTHING IN SOLO, PLUS\n\nReusable project templates\nOptional local full-text search\nA repeatable starting point for each project\n\nFor an independent researcher with many threads."
+                }
+              ],
+              "periodLabel": true
+            },
+            "expected": [
+              12,
+              29
+            ]
+          }
+        ],
+        "screenshots": [],
+        "manualReview": [],
+        "console": [],
+        "network": [],
+        "dialogs": [],
+        "status": "pass",
+        "durationMs": 1487
+      },
+      {
+        "id": "L05",
+        "environment": "webkit-1440",
+        "browser": "webkit",
+        "width": 1440,
+        "noJS": false,
+        "observations": [
+          {
+            "key": "nativeFAQ-0",
+            "pass": true,
+            "actual": {
+              "tag": "SUMMARY",
+              "parent": "DETAILS"
+            }
+          },
+          {
+            "key": "faqOpen-0",
+            "pass": true,
+            "actual": true
+          },
+          {
+            "key": "nativeFAQ-1",
+            "pass": true,
+            "actual": {
+              "tag": "SUMMARY",
+              "parent": "DETAILS"
+            }
+          },
+          {
+            "key": "faqOpen-1",
+            "pass": true,
+            "actual": true
+          },
+          {
+            "key": "nativeFAQ-2",
+            "pass": true,
+            "actual": {
+              "tag": "SUMMARY",
+              "parent": "DETAILS"
+            }
+          },
+          {
+            "key": "faqOpen-2",
+            "pass": true,
+            "actual": true
+          },
+          {
+            "key": "nativeFAQ-3",
+            "pass": true,
+            "actual": {
+              "tag": "SUMMARY",
+              "parent": "DETAILS"
+            }
+          },
+          {
+            "key": "faqOpen-3",
+            "pass": true,
+            "actual": true
+          },
+          {
+            "key": "FAQFacts",
+            "pass": true,
+            "actual": {
+              "answers": [
+                "Where do my notes live?\n+\n\nIn this product concept, your notes are stored locally on your device. Lattice is designed around keeping your research close to you, with optional full-text search that also runs locally. This demonstration page does not store notes.",
+                "Can I take my notes somewhere else?\n+\n\nYes. Lattice’s proposed Markdown export gives you readable files you can open in a text editor or bring into another Markdown-compatible tool. Your thinking can move with you.",
+                "How would I back up my work?\n+\n\nExport your notes as files and keep a copy in a separate location you control, such as an external drive. Make exporting a regular habit. Automatic cloud backup is not included or promised.",
+                "What happens if I cancel?\n+\n\nCancellation has no effect on files you have already exported. Those files remain yours to read, edit, and keep. The prices and plans here are illustrative; this demo has no active subscriptions to cancel."
+              ],
+              "facts": {
+                "local": true,
+                "markdown": true,
+                "backup": true,
+                "cancellation": true
+              }
+            }
+          }
+        ],
+        "screenshots": [],
+        "manualReview": [],
+        "console": [],
+        "network": [],
+        "dialogs": [],
+        "status": "pass",
+        "durationMs": 1411
+      },
+      {
+        "id": "L06",
+        "environment": "webkit-1440",
+        "browser": "webkit",
+        "width": 1440,
+        "noJS": true,
+        "observations": [
+          {
+            "key": "noJSContent",
+            "pass": true,
+            "actual": {
+              "length": 4816,
+              "product": true,
+              "workflow": true
+            }
+          },
+          {
+            "key": "noJSPrices",
+            "pass": true,
+            "actual": [
+              "$12",
+              "$29"
+            ]
+          },
+          {
+            "key": "noJSNavigation",
+            "pass": true,
+            "actual": [
+              {
+                "text": "Skip to content",
+                "href": "#main",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Lattice.",
+                "href": "#",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "document-top"
+              },
+              {
+                "text": "The notebook",
+                "href": "#features",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "How it works",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Plans",
+                "href": "#pricing",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "FAQ",
+                "href": "#faq",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Explore the workflow ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Explore the workflow ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "01 Capture ↗",
+                "href": "#panel-capture",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "02 Connect ↗",
+                "href": "#panel-connect",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "03 Export ↗",
+                "href": "#panel-export",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "See how it comes together ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Find your research rhythm ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "A few practical details ↗",
+                "href": "#faq",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Explore the workflow ↗",
+                "href": "#workflow",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              },
+              {
+                "text": "Lattice.",
+                "href": "#",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "document-top"
+              },
+              {
+                "text": "Back to the top ↑",
+                "href": "#main",
+                "visible": true,
+                "targetExists": true,
+                "targetKind": "section"
+              }
+            ]
+          }
+        ],
+        "screenshots": [],
+        "manualReview": [],
+        "console": [],
+        "network": [],
+        "dialogs": [],
+        "status": "pass",
+        "durationMs": 1164
+      },
+      {
+        "id": "L07",
+        "environment": "webkit-1440",
+        "browser": "webkit",
+        "width": 1440,
+        "noJS": false,
+        "observations": [
+          {
+            "key": "loadedLocalResources",
+            "pass": true,
+            "actual": []
+          },
+          {
+            "key": "rendering",
+            "pass": true,
+            "actual": {
+              "width": 1440,
+              "scrollWidth": 1440,
+              "contentLength": 3666,
+              "unnamed": [],
+              "brokenImages": [],
+              "visibleControls": 17
+            }
+          },
+          {
+            "key": "reducedMotion",
+            "pass": true,
+            "actual": []
+          }
+        ],
+        "screenshots": [
+          "webkit-1440-L07-reduced-motion.png"
+        ],
+        "manualReview": [],
+        "console": [],
+        "network": [],
+        "dialogs": [],
+        "status": "pass",
+        "durationMs": 1500
+      }
+    ],
+    "infrastructureErrors": [],
+    "finishedAt": "2026-09-10T14:18:17.344Z",
+    "summary": {
+      "passed": 28,
+      "failed": 0,
+      "scenarioExecutions": 28,
+      "infrastructureErrors": 0,
+      "byCheck": {
+        "L01": {
+          "passed": 4,
+          "executed": 4
+        },
+        "L02": {
+          "passed": 4,
+          "executed": 4
+        },
+        "L03": {
+          "passed": 4,
+          "executed": 4
+        },
+        "L04": {
+          "passed": 4,
+          "executed": 4
+        },
+        "L05": {
+          "passed": 4,
+          "executed": 4
+        },
+        "L06": {
+          "passed": 4,
+          "executed": 4
+        },
+        "L07": {
+          "passed": 4,
+          "executed": 4
+        }
+      }
+    }
+  },
+  "adjudication": {
+    "schemaVersion": 1,
+    "runId": "run-03",
+    "kind": "landing",
+    "reviewedAt": "2026-09-10T14:18:38.064742+00:00",
+    "blindReview": {
+      "treatmentMappingRead": false,
+      "inputs": [
+        "artifact/index.html",
+        "artifact/styles.css",
+        "artifact/app.js",
+        "artifact/README.md",
+        "browser DOM results",
+        "actual 360px and 1440px screenshots"
+      ]
+    },
+    "automated": {
+      "passed": 28,
+      "failed": 0,
+      "scenarioExecutions": 28,
+      "infrastructureErrors": 0,
+      "byCheck": {
+        "L01": {
+          "passed": 4,
+          "executed": 4
+        },
+        "L02": {
+          "passed": 4,
+          "executed": 4
+        },
+        "L03": {
+          "passed": 4,
+          "executed": 4
+        },
+        "L04": {
+          "passed": 4,
+          "executed": 4
+        },
+        "L05": {
+          "passed": 4,
+          "executed": 4
+        },
+        "L06": {
+          "passed": 4,
+          "executed": 4
+        },
+        "L07": {
+          "passed": 4,
+          "executed": 4
+        }
+      }
+    },
+    "adjudicatedGroups": {
+      "L01": true,
+      "L02": true,
+      "L03": true,
+      "L04": true,
+      "L05": true,
+      "L06": true,
+      "L07": true
+    },
+    "groupsPassed": 7,
+    "groupsTotal": 7,
+    "materialFailureIds": [],
+    "manualChecks": [
+      {
+        "id": "L01-workflow",
+        "pass": true,
+        "evidence": "Three actual #workflow .workflow-grid articles: Open a question; Gather what matters; Take the idea further. Descriptions cover starting with a reusable template, gathering sourced notes with optional local search, and exporting Markdown. All three appear in the mobile and desktop captures."
+      },
+      {
+        "id": "L01-supplied-content-and-claims",
+        "pass": true,
+        "evidence": "Fictional-product qualification is visible in the top banner, pricing and footer. Supplied device storage, Markdown export, source links, templates and optional local full-text search are present. No invented endorsements, ratings, customer/adoption totals or performance statistics observed. Numbers 06/04/08 are clearly sample project-note counts within the illustrated notebook, not business claims. Backup FAQ explicitly declines automatic cloud-backup promises."
+      },
+      {
+        "id": "L04-adjacent-billing-period",
+        "pass": true,
+        "observations": [
+          {
+            "environment": "chromium-360",
+            "state": "billing-monthly-0",
+            "plan": "solo",
+            "price": "$12",
+            "adjacentVisibleText": "$12\n/ month",
+            "pass": true
+          },
+          {
+            "environment": "chromium-360",
+            "state": "billing-monthly-0",
+            "plan": "studio",
+            "price": "$29",
+            "adjacentVisibleText": "$29\n/ month",
+            "pass": true
+          },
+          {
+            "environment": "chromium-360",
+            "state": "billing-yearly-1",
+            "plan": "solo",
+            "price": "$108",
+            "adjacentVisibleText": "$108\n/ year",
+            "pass": true
+          },
+          {
+            "environment": "chromium-360",
+            "state": "billing-yearly-1",
+            "plan": "studio",
+            "price": "$264",
+            "adjacentVisibleText": "$264\n/ year",
+            "pass": true
+          },
+          {
+            "environment": "chromium-360",
+            "state": "billing-monthly-2",
+            "plan": "solo",
+            "price": "$12",
+            "adjacentVisibleText": "$12\n/ month",
+            "pass": true
+          },
+          {
+            "environment": "chromium-360",
+            "state": "billing-monthly-2",
+            "plan": "studio",
+            "price": "$29",
+            "adjacentVisibleText": "$29\n/ month",
+            "pass": true
+          },
+          {
+            "environment": "chromium-1440",
+            "state": "billing-monthly-0",
+            "plan": "solo",
+            "price": "$12",
+            "adjacentVisibleText": "$12\n/ month",
+            "pass": true
+          },
+          {
+            "environment": "chromium-1440",
+            "state": "billing-monthly-0",
+            "plan": "studio",
+            "price": "$29",
+            "adjacentVisibleText": "$29\n/ month",
+            "pass": true
+          },
+          {
+            "environment": "chromium-1440",
+            "state": "billing-yearly-1",
+            "plan": "solo",
+            "price": "$108",
+            "adjacentVisibleText": "$108\n/ year",
+            "pass": true
+          },
+          {
+            "environment": "chromium-1440",
+            "state": "billing-yearly-1",
+            "plan": "studio",
+            "price": "$264",
+            "adjacentVisibleText": "$264\n/ year",
+            "pass": true
+          },
+          {
+            "environment": "chromium-1440",
+            "state": "billing-monthly-2",
+            "plan": "solo",
+            "price": "$12",
+            "adjacentVisibleText": "$12\n/ month",
+            "pass": true
+          },
+          {
+            "environment": "chromium-1440",
+            "state": "billing-monthly-2",
+            "plan": "studio",
+            "price": "$29",
+            "adjacentVisibleText": "$29\n/ month",
+            "pass": true
+          },
+          {
+            "environment": "webkit-360",
+            "state": "billing-monthly-0",
+            "plan": "solo",
+            "price": "$12",
+            "adjacentVisibleText": "$12\n/ month",
+            "pass": true
+          },
+          {
+            "environment": "webkit-360",
+            "state": "billing-monthly-0",
+            "plan": "studio",
+            "price": "$29",
+            "adjacentVisibleText": "$29\n/ month",
+            "pass": true
+          },
+          {
+            "environment": "webkit-360",
+            "state": "billing-yearly-1",
+            "plan": "solo",
+            "price": "$108",
+            "adjacentVisibleText": "$108\n/ year",
+            "pass": true
+          },
+          {
+            "environment": "webkit-360",
+            "state": "billing-yearly-1",
+            "plan": "studio",
+            "price": "$264",
+            "adjacentVisibleText": "$264\n/ year",
+            "pass": true
+          },
+          {
+            "environment": "webkit-360",
+            "state": "billing-monthly-2",
+            "plan": "solo",
+            "price": "$12",
+            "adjacentVisibleText": "$12\n/ month",
+            "pass": true
+          },
+          {
+            "environment": "webkit-360",
+            "state": "billing-monthly-2",
+            "plan": "studio",
+            "price": "$29",
+            "adjacentVisibleText": "$29\n/ month",
+            "pass": true
+          },
+          {
+            "environment": "webkit-1440",
+            "state": "billing-monthly-0",
+            "plan": "solo",
+            "price": "$12",
+            "adjacentVisibleText": "$12\n/ month",
+            "pass": true
+          },
+          {
+            "environment": "webkit-1440",
+            "state": "billing-monthly-0",
+            "plan": "studio",
+            "price": "$29",
+            "adjacentVisibleText": "$29\n/ month",
+            "pass": true
+          },
+          {
+            "environment": "webkit-1440",
+            "state": "billing-yearly-1",
+            "plan": "solo",
+            "price": "$108",
+            "adjacentVisibleText": "$108\n/ year",
+            "pass": true
+          },
+          {
+            "environment": "webkit-1440",
+            "state": "billing-yearly-1",
+            "plan": "studio",
+            "price": "$264",
+            "adjacentVisibleText": "$264\n/ year",
+            "pass": true
+          },
+          {
+            "environment": "webkit-1440",
+            "state": "billing-monthly-2",
+            "plan": "solo",
+            "price": "$12",
+            "adjacentVisibleText": "$12\n/ month",
+            "pass": true
+          },
+          {
+            "environment": "webkit-1440",
+            "state": "billing-monthly-2",
+            "plan": "studio",
+            "price": "$29",
+            "adjacentVisibleText": "$29\n/ month",
+            "pass": true
+          }
+        ]
+      }
+    ],
+    "runnerRevision": {
+      "sha256": "e10673649047a80f76e3e8b773e48974918b079aaf956aa1cfc1bda334ac660f",
+      "criteriaChanged": false,
+      "appliedCorrection": "Document-top anchors handled consistently with run-12; named fragments still require a real section."
+    },
+    "visualScore": null,
+    "scopeLimit": "Passing contract groups is not a universal quality, accessibility or security verdict. No numerical visual-design score was assigned."
+  },
+  "adjudicationCaptures": [],
+  "additionalReviewEvidence": {},
+  "capture": {
+    "schemaVersion": 1,
+    "runId": "run-03",
+    "kind": "landing",
+    "startedAt": "2026-09-10T14:17:55.347Z",
+    "helperSha256": "d41b69388807612ec786ce4340f6fc98d521e708ae76929a1a64b578177dc2c2",
+    "source": {
+      "files": [
+        {
+          "file": "app.js",
+          "bytes": 3873,
+          "sha256": "0ea0df470bbe88ca5e4d96a62734d505fd707e39af9e5efd6f2e05477be8cdf4"
+        },
+        {
+          "file": "checks/contrast-results.json",
+          "bytes": 1216,
+          "sha256": "00e71d26038c414267af5b9a90936b3f1daba31751778d57639c622dedd13168"
+        },
+        {
+          "file": "checks/contrast.py",
+          "bytes": 1001,
+          "sha256": "786de35d285d1a0999bfe18dcdf7286aa9baf75f13de5d0f002a3d2e07b806b0"
+        },
+        {
+          "file": "checks/desktop-hero.png",
+          "bytes": 148214,
+          "sha256": "cbf661cc4951cf13918f850ca937564898a0925f157d5b3e7843fcdc90e9f88c"
+        },
+        {
+          "file": "checks/desktop.png",
+          "bytes": 570031,
+          "sha256": "30785de88d4d678cef379c9df72b59b499d484b4f9934b9e316b2d83a574ae3c"
+        },
+        {
+          "file": "checks/mobile-capture.png",
+          "bytes": 84235,
+          "sha256": "347b626d79ef8488fcf2976a077238d0b60060155a3a3ad04135ccd1d6b02ca2"
+        },
+        {
+          "file": "checks/mobile-connect.png",
+          "bytes": 65181,
+          "sha256": "538085d47804b64e0087e476242adcab819cb79b1120067a6b0253bd3f06b9fb"
+        },
+        {
+          "file": "checks/mobile-export.png",
+          "bytes": 69891,
+          "sha256": "1c9c52f2c26f515bfbabf8d50615101ad8e3a291a1918ded6c713de5bc4fdcdf"
+        },
+        {
+          "file": "checks/mobile.png",
+          "bytes": 481629,
+          "sha256": "a8da2c40b35ded5b66e38c87418656a7a0b7cb285a0841e775edd62443e54b47"
+        },
+        {
+          "file": "checks/results.json",
+          "bytes": 1158,
+          "sha256": "4ed8d66d14fbb80fe0bf6bdfcdbdcbfa169f6813600e0d4ab2289ac8aaa24050"
+        },
+        {
+          "file": "checks/verify.mjs",
+          "bytes": 8854,
+          "sha256": "3c5431bb1e32858629bd7a3b0ba57294094f219c0a7c808c9c3db30a85eeff3d"
+        },
+        {
+          "file": "final.txt",
+          "bytes": 381,
+          "sha256": "fbd52813342b18109042a1226939782a787e2de18c1cd2d1ad668ea28d5e926a"
+        },
+        {
+          "file": "index.html",
+          "bytes": 16019,
+          "sha256": "5ac4691b9226bd251c51361c49b786dc7672d8eb74ac3ab664ba20e539bc35d4"
+        },
+        {
+          "file": "README.md",
+          "bytes": 5650,
+          "sha256": "773c49205bb3ee4bbdbf1c8470ca3189b32a0e0d4049b361d21469b0e680d3be"
+        },
+        {
+          "file": "styles.css",
+          "bytes": 23895,
+          "sha256": "16bc555a5d33ff08d7b49534a4b711301d7c7b3000c1f8b15850dea5aa8a0df8"
+        }
+      ],
+      "treeSha256": "112f97f2b6e28eb863712bb93beaa7f556febb5603389f8af41fa4b2fcc06e88"
+    },
+    "policy": {
+      "presentation": "Composed walkthrough from captured states; not a recording of model generation.",
+      "browser": "Google Chrome",
+      "desktopViewport": {
+        "width": 1440,
+        "height": 960
+      },
+      "mobileViewport": {
+        "width": 360,
+        "height": 800
+      },
+      "deviceScaleFactor": 1,
+      "fullPage": false,
+      "reducedMotion": "reduce",
+      "screenshotAnimations": "disabled",
+      "freshContexts": true,
+      "externalRequests": "blocked",
+      "candidateEdits": false,
+      "scoresProvided": false
+    },
+    "snapshots": [
+      {
+        "id": "initial",
+        "label": "Desktop first visit — untouched initial output",
+        "file": "initial.png",
+        "actionSucceeded": true,
+        "observed": {
+          "httpStatus": 200,
+          "freshStorage": true,
+          "render": {
+            "path": "/nested/benchmark/",
+            "viewport": {
+              "width": 1440,
+              "height": 960
+            },
+            "scroll": {
+              "x": 0,
+              "y": 0
+            },
+            "documentWidth": 1440,
+            "visibleText": "Skip to content\n An independent idea. A fictional product demonstration.\nLattice\n.\nThe notebook\nHow it works\nPlans\nFAQ\nExplore the workflow\n↗\n\n✳\nA notebook for independent minds\n\nGive your\nthinking\na place.\n\nFor the questions that don’t fit in a browser tab. Bring your notes, sources, and unfinished ideas together in a notebook that stays yours.\n\nExplore the workflow\n↗\n\nLocal-first. Open-ended. Entirely your own.\n\nFIELD NOTES / 001\nA little room to think ↘\n▦\nLattice\nOn this device\n⌘ K\nSearch notes\n\nYOUR PROJECTS\n\n▧\nUrban commons\n06\n▧\nReading room\n04\n▧\nLoose threads\n08\n⊕\nNew project\nUrban commons\n/\nField notes\n···\n\nSEPTEMBER 08 · OBSERVATION\n\nPlaces to pause\n\nA bench is more than somewhere to sit. It’s an invitation to stay without having to buy anything.\n\nWhat makes a public space feel like it belongs to everyone?\n\n↗\nSOURCE ATTACHED\nThe Social Life of Small Urban Spaces\nWilliam H. Whyte · Reading note\npublic space\nobservation\n Saved on this device\nMarkdown ↗\nA THREAD TO FOLLOW\n\nWho gets to feel\nat home in a city?\n\n01— A source. A thought. The beginning of something.\nYOUR WORK, ON YOUR TERMS\n\nStored on your device\n\nYours to export\n\nSources stay in sight\n\n01 / THE NOTEBOOK\n\nFollow the thread.\nKeep the context.\n\nA place for the messy middle of research.\nFrom the first interesting thing to the idea\nyou’re ready to share.\n\n01\nCapture\n↗\n02\nConnect\n↗\n03\nExport\n↗\nFIELD NOTE\n↗\nStart with a small\nobservation.\n\nThe best ideas often arrive before\nyou know what they’re for.\n\n+ Add a source\nA thought doesn’t need a title to matter.\n\nMAKE ROOM FOR THE RAW MATERIAL\n\nCatch the thought.\nKeep its origin.\n\nWrite a field note, save a passage, or get an idea out of your head. Keep a source link alongside each note, so you can always return to where it began.\n\nNotes stored on your own device\nSource links beside your thinking\nReusable templates for a familiar starting point\nSee how it comes together\n↗\n\n02 / A SIMPLE PRACTICE\n\nLess organizing.\nMore noticing.\n\nNo perfect system required.\nJust a question worth coming back to.\n\n01\nOpen a question.\n\nStart a project with a reusable template. Give it the question you’re exploring, even if the edges are still fuzzy.\n\n02\nGather what matters.\n\nAdd notes as you read and observe. Put source links beside them. Use optional local search to return to a word or phrase.\n\n03\nTake the idea further.\n\nReturn to your notes. Find the thread in your thinking. Export to Markdown when you’re ready to write, share, or back up.\n\n↳\nAnd when a new question ap",
+            "brokenVisibleImages": []
+          }
+        },
+        "capturedAt": "2026-09-10T14:17:58.002Z",
+        "actionStartedAt": "2026-09-10T14:17:57.061Z",
+        "sha256": "dccbcc6857d8a997f9733697d7f8512e72fe61f09c1b0563380c46a28abe12df",
+        "bytes": 147208,
+        "publicUrl": "/assets/trials-20260910/runs/run-03/initial.webp"
+      },
+      {
+        "id": "feature-connect",
+        "label": "Connect feature selected; its panel is visible",
+        "file": "feature-connect.png",
+        "actionSucceeded": true,
+        "observed": {
+          "selected": "true",
+          "panelVisible": true,
+          "panelText": "QUESTION\nWho is this\nspace for?\nField observations\nReading notes\nDifferent sources. A shared question.\n\nRETURN TO WHAT CAUGHT YOUR ATTENTION\n\nGive a question\nsome company.\n\nKeep related notes in a project, with their source links close at hand. Revisit an observation next to a reading note and see where your own connections lead.\n\nReusable project templates bring structure\nSources remain alongside each note\nOptional local full-text search helps you find a phrase\nFind your research rhythm\n↗",
+          "render": {
+            "path": "/nested/benchmark/",
+            "viewport": {
+              "width": 1440,
+              "height": 960
+            },
+            "scroll": {
+              "x": 0,
+              "y": 1254
+            },
+            "documentWidth": 1440,
+            "visibleText": "Skip to content\n An independent idea. A fictional product demonstration.\nLattice\n.\nThe notebook\nHow it works\nPlans\nFAQ\nExplore the workflow\n↗\n\n✳\nA notebook for independent minds\n\nGive your\nthinking\na place.\n\nFor the questions that don’t fit in a browser tab. Bring your notes, sources, and unfinished ideas together in a notebook that stays yours.\n\nExplore the workflow\n↗\n\nLocal-first. Open-ended. Entirely your own.\n\nFIELD NOTES / 001\nA little room to think ↘\n▦\nLattice\nOn this device\n⌘ K\nSearch notes\n\nYOUR PROJECTS\n\n▧\nUrban commons\n06\n▧\nReading room\n04\n▧\nLoose threads\n08\n⊕\nNew project\nUrban commons\n/\nField notes\n···\n\nSEPTEMBER 08 · OBSERVATION\n\nPlaces to pause\n\nA bench is more than somewhere to sit. It’s an invitation to stay without having to buy anything.\n\nWhat makes a public space feel like it belongs to everyone?\n\n↗\nSOURCE ATTACHED\nThe Social Life of Small Urban Spaces\nWilliam H. Whyte · Reading note\npublic space\nobservation\n Saved on this device\nMarkdown ↗\nA THREAD TO FOLLOW\n\nWho gets to feel\nat home in a city?\n\n01— A source. A thought. The beginning of something.\nYOUR WORK, ON YOUR TERMS\n\nStored on your device\n\nYours to export\n\nSources stay in sight\n\n01 / THE NOTEBOOK\n\nFollow the thread.\nKeep the context.\n\nA place for the messy middle of research.\nFrom the first interesting thing to the idea\nyou’re ready to share.\n\n01\nCapture\n↗\n02\nConnect\n↗\n03\nExport\n↗\nQUESTION\nWho is this\nspace for?\nField observations\nReading notes\nDifferent sources. A shared question.\n\nRETURN TO WHAT CAUGHT YOUR ATTENTION\n\nGive a question\nsome company.\n\nKeep related notes in a project, with their source links close at hand. Revisit an observation next to a reading note and see where your own connections lead.\n\nReusable project templates bring structure\nSources remain alongside each note\nOptional local full-text search helps you find a phrase\nFind your research rhythm\n↗\n\n02 / A SIMPLE PRACTICE\n\nLess organizing.\nMore noticing.\n\nNo perfect system required.\nJust a question worth coming back to.\n\n01\nOpen a question.\n\nStart a project with a reusable template. Give it the question you’re exploring, even if the edges are still fuzzy.\n\n02\nGather what matters.\n\nAdd notes as you read and observe. Put source links beside them. Use optional local search to return to a word or phrase.\n\n03\nTake the idea further.\n\nReturn to your notes. Find the thread in your thinking. Export to Markdown when you’re ready to write, share, or back up.\n\n↳\nAnd when a new question appears, begin again.\n\n03 / ROOM TO KEEP",
+            "brokenVisibleImages": []
+          }
+        },
+        "capturedAt": "2026-09-10T14:17:58.541Z",
+        "actionStartedAt": "2026-09-10T14:17:58.166Z",
+        "sha256": "6c20c0ae1bc3c351c3a04a18fdf52f21c4a13cccce405bf36e51d61098856c95",
+        "bytes": 114321,
+        "publicUrl": "/assets/trials-20260910/runs/run-03/feature-connect.webp"
+      },
+      {
+        "id": "billing-yearly",
+        "label": "Yearly billing selected; displayed prices are 108 and 264",
+        "file": "billing-yearly.png",
+        "actionSucceeded": true,
+        "observed": {
+          "solo": "$108",
+          "studio": "$264",
+          "amounts": [
+            108,
+            264
+          ],
+          "render": {
+            "path": "/nested/benchmark/",
+            "viewport": {
+              "width": 1440,
+              "height": 960
+            },
+            "scroll": {
+              "x": 0,
+              "y": 2866
+            },
+            "documentWidth": 1440,
+            "visibleText": "Skip to content\n An independent idea. A fictional product demonstration.\nLattice\n.\nThe notebook\nHow it works\nPlans\nFAQ\nExplore the workflow\n↗\n\n✳\nA notebook for independent minds\n\nGive your\nthinking\na place.\n\nFor the questions that don’t fit in a browser tab. Bring your notes, sources, and unfinished ideas together in a notebook that stays yours.\n\nExplore the workflow\n↗\n\nLocal-first. Open-ended. Entirely your own.\n\nFIELD NOTES / 001\nA little room to think ↘\n▦\nLattice\nOn this device\n⌘ K\nSearch notes\n\nYOUR PROJECTS\n\n▧\nUrban commons\n06\n▧\nReading room\n04\n▧\nLoose threads\n08\n⊕\nNew project\nUrban commons\n/\nField notes\n···\n\nSEPTEMBER 08 · OBSERVATION\n\nPlaces to pause\n\nA bench is more than somewhere to sit. It’s an invitation to stay without having to buy anything.\n\nWhat makes a public space feel like it belongs to everyone?\n\n↗\nSOURCE ATTACHED\nThe Social Life of Small Urban Spaces\nWilliam H. Whyte · Reading note\npublic space\nobservation\n Saved on this device\nMarkdown ↗\nA THREAD TO FOLLOW\n\nWho gets to feel\nat home in a city?\n\n01— A source. A thought. The beginning of something.\nYOUR WORK, ON YOUR TERMS\n\nStored on your device\n\nYours to export\n\nSources stay in sight\n\n01 / THE NOTEBOOK\n\nFollow the thread.\nKeep the context.\n\nA place for the messy middle of research.\nFrom the first interesting thing to the idea\nyou’re ready to share.\n\n01\nCapture\n↗\n02\nConnect\n↗\n03\nExport\n↗\nQUESTION\nWho is this\nspace for?\nField observations\nReading notes\nDifferent sources. A shared question.\n\nRETURN TO WHAT CAUGHT YOUR ATTENTION\n\nGive a question\nsome company.\n\nKeep related notes in a project, with their source links close at hand. Revisit an observation next to a reading note and see where your own connections lead.\n\nReusable project templates bring structure\nSources remain alongside each note\nOptional local full-text search helps you find a phrase\nFind your research rhythm\n↗\n\n02 / A SIMPLE PRACTICE\n\nLess organizing.\nMore noticing.\n\nNo perfect system required.\nJust a question worth coming back to.\n\n01\nOpen a question.\n\nStart a project with a reusable template. Give it the question you’re exploring, even if the edges are still fuzzy.\n\n02\nGather what matters.\n\nAdd notes as you read and observe. Put source links beside them. Use optional local search to return to a word or phrase.\n\n03\nTake the idea further.\n\nReturn to your notes. Find the thread in your thinking. Export to Markdown when you’re ready to write, share, or back up.\n\n↳\nAnd when a new question appears, begin again.\n\n03 / ROOM TO KEEP",
+            "brokenVisibleImages": []
+          }
+        },
+        "capturedAt": "2026-09-10T14:17:59.170Z",
+        "actionStartedAt": "2026-09-10T14:17:58.778Z",
+        "sha256": "ff943c4ad5d4e6694aa4a64088ea387def34a742a1a237e53d4aff7ca93c80a1",
+        "bytes": 102195,
+        "publicUrl": "/assets/trials-20260910/runs/run-03/billing-yearly.webp"
+      },
+      {
+        "id": "workflow",
+        "label": "Workflow section in the viewport",
+        "file": "workflow.png",
+        "actionSucceeded": true,
+        "observed": {
+          "visible": true,
+          "text": "02 / A SIMPLE PRACTICE\n\nLess organizing.\nMore noticing.\n\nNo perfect system required.\nJust a question worth coming back to.\n\n01\nOpen a question.\n\nStart a project with a reusable template. Give it the question you’re exploring, even if the edges are still fuzzy.\n\n02\nGather what matters.\n\nAdd notes as you read and observe. Put source links beside them. Use optional local search to return to a word or phrase.\n\n03\nTake the idea further.\n\nReturn to your notes. Find the thread in your thinking. Export to Markdown when you’re ready to write, share, or back up.\n\n↳\nAnd when a new question appears, begin again.",
+          "render": {
+            "path": "/nested/benchmark/",
+            "viewport": {
+              "width": 1440,
+              "height": 960
+            },
+            "scroll": {
+              "x": 0,
+              "y": 1922
+            },
+            "documentWidth": 1440,
+            "visibleText": "Skip to content\n An independent idea. A fictional product demonstration.\nLattice\n.\nThe notebook\nHow it works\nPlans\nFAQ\nExplore the workflow\n↗\n\n✳\nA notebook for independent minds\n\nGive your\nthinking\na place.\n\nFor the questions that don’t fit in a browser tab. Bring your notes, sources, and unfinished ideas together in a notebook that stays yours.\n\nExplore the workflow\n↗\n\nLocal-first. Open-ended. Entirely your own.\n\nFIELD NOTES / 001\nA little room to think ↘\n▦\nLattice\nOn this device\n⌘ K\nSearch notes\n\nYOUR PROJECTS\n\n▧\nUrban commons\n06\n▧\nReading room\n04\n▧\nLoose threads\n08\n⊕\nNew project\nUrban commons\n/\nField notes\n···\n\nSEPTEMBER 08 · OBSERVATION\n\nPlaces to pause\n\nA bench is more than somewhere to sit. It’s an invitation to stay without having to buy anything.\n\nWhat makes a public space feel like it belongs to everyone?\n\n↗\nSOURCE ATTACHED\nThe Social Life of Small Urban Spaces\nWilliam H. Whyte · Reading note\npublic space\nobservation\n Saved on this device\nMarkdown ↗\nA THREAD TO FOLLOW\n\nWho gets to feel\nat home in a city?\n\n01— A source. A thought. The beginning of something.\nYOUR WORK, ON YOUR TERMS\n\nStored on your device\n\nYours to export\n\nSources stay in sight\n\n01 / THE NOTEBOOK\n\nFollow the thread.\nKeep the context.\n\nA place for the messy middle of research.\nFrom the first interesting thing to the idea\nyou’re ready to share.\n\n01\nCapture\n↗\n02\nConnect\n↗\n03\nExport\n↗\nQUESTION\nWho is this\nspace for?\nField observations\nReading notes\nDifferent sources. A shared question.\n\nRETURN TO WHAT CAUGHT YOUR ATTENTION\n\nGive a question\nsome company.\n\nKeep related notes in a project, with their source links close at hand. Revisit an observation next to a reading note and see where your own connections lead.\n\nReusable project templates bring structure\nSources remain alongside each note\nOptional local full-text search helps you find a phrase\nFind your research rhythm\n↗\n\n02 / A SIMPLE PRACTICE\n\nLess organizing.\nMore noticing.\n\nNo perfect system required.\nJust a question worth coming back to.\n\n01\nOpen a question.\n\nStart a project with a reusable template. Give it the question you’re exploring, even if the edges are still fuzzy.\n\n02\nGather what matters.\n\nAdd notes as you read and observe. Put source links beside them. Use optional local search to return to a word or phrase.\n\n03\nTake the idea further.\n\nReturn to your notes. Find the thread in your thinking. Export to Markdown when you’re ready to write, share, or back up.\n\n↳\nAnd when a new question appears, begin again.\n\n03 / ROOM TO KEEP",
+            "brokenVisibleImages": []
+          }
+        },
+        "capturedAt": "2026-09-10T14:17:59.471Z",
+        "actionStartedAt": "2026-09-10T14:17:59.277Z",
+        "sha256": "7f73111aadd3d12e3b9ab7e13a491c007f4b691c53976fb108511c11d2188ca7",
+        "bytes": 80350,
+        "publicUrl": "/assets/trials-20260910/runs/run-03/workflow.webp"
+      },
+      {
+        "id": "faq",
+        "label": "First FAQ opened; actual answer shown",
+        "file": "faq.png",
+        "actionSucceeded": true,
+        "observed": {
+          "tag": "SUMMARY",
+          "parent": "DETAILS",
+          "open": true,
+          "text": "Where do my notes live?\n+\n\nIn this product concept, your notes are stored locally on your device. Lattice is designed around keeping your research close to you, with optional full-text search that also runs locally. This demonstration page does not store notes.",
+          "render": {
+            "path": "/nested/benchmark/",
+            "viewport": {
+              "width": 1440,
+              "height": 960
+            },
+            "scroll": {
+              "x": 0,
+              "y": 3772
+            },
+            "documentWidth": 1440,
+            "visibleText": "Skip to content\n An independent idea. A fictional product demonstration.\nLattice\n.\nThe notebook\nHow it works\nPlans\nFAQ\nExplore the workflow\n↗\n\n✳\nA notebook for independent minds\n\nGive your\nthinking\na place.\n\nFor the questions that don’t fit in a browser tab. Bring your notes, sources, and unfinished ideas together in a notebook that stays yours.\n\nExplore the workflow\n↗\n\nLocal-first. Open-ended. Entirely your own.\n\nFIELD NOTES / 001\nA little room to think ↘\n▦\nLattice\nOn this device\n⌘ K\nSearch notes\n\nYOUR PROJECTS\n\n▧\nUrban commons\n06\n▧\nReading room\n04\n▧\nLoose threads\n08\n⊕\nNew project\nUrban commons\n/\nField notes\n···\n\nSEPTEMBER 08 · OBSERVATION\n\nPlaces to pause\n\nA bench is more than somewhere to sit. It’s an invitation to stay without having to buy anything.\n\nWhat makes a public space feel like it belongs to everyone?\n\n↗\nSOURCE ATTACHED\nThe Social Life of Small Urban Spaces\nWilliam H. Whyte · Reading note\npublic space\nobservation\n Saved on this device\nMarkdown ↗\nA THREAD TO FOLLOW\n\nWho gets to feel\nat home in a city?\n\n01— A source. A thought. The beginning of something.\nYOUR WORK, ON YOUR TERMS\n\nStored on your device\n\nYours to export\n\nSources stay in sight\n\n01 / THE NOTEBOOK\n\nFollow the thread.\nKeep the context.\n\nA place for the messy middle of research.\nFrom the first interesting thing to the idea\nyou’re ready to share.\n\n01\nCapture\n↗\n02\nConnect\n↗\n03\nExport\n↗\nQUESTION\nWho is this\nspace for?\nField observations\nReading notes\nDifferent sources. A shared question.\n\nRETURN TO WHAT CAUGHT YOUR ATTENTION\n\nGive a question\nsome company.\n\nKeep related notes in a project, with their source links close at hand. Revisit an observation next to a reading note and see where your own connections lead.\n\nReusable project templates bring structure\nSources remain alongside each note\nOptional local full-text search helps you find a phrase\nFind your research rhythm\n↗\n\n02 / A SIMPLE PRACTICE\n\nLess organizing.\nMore noticing.\n\nNo perfect system required.\nJust a question worth coming back to.\n\n01\nOpen a question.\n\nStart a project with a reusable template. Give it the question you’re exploring, even if the edges are still fuzzy.\n\n02\nGather what matters.\n\nAdd notes as you read and observe. Put source links beside them. Use optional local search to return to a word or phrase.\n\n03\nTake the idea further.\n\nReturn to your notes. Find the thread in your thinking. Export to Markdown when you’re ready to write, share, or back up.\n\n↳\nAnd when a new question appears, begin again.\n\n03 / ROOM TO KEEP",
+            "brokenVisibleImages": []
+          }
+        },
+        "capturedAt": "2026-09-10T14:17:59.792Z",
+        "actionStartedAt": "2026-09-10T14:17:59.553Z",
+        "sha256": "b3c371d41550659eba41186a9601f204906ad85f24076f2964a7222452ffc556",
+        "bytes": 87958,
+        "publicUrl": "/assets/trials-20260910/runs/run-03/faq.webp"
+      }
+    ],
+    "mobilefile": "mobile-initial.png",
+    "mobile": {
+      "id": "mobile-initial",
+      "label": "Mobile first visit — separate fresh context",
+      "file": "mobile-initial.png",
+      "sha256": "68f597c9cd3cd4369d5f31f3854adf0eeba2a568a2eb94a2f2110f1723cbba6d",
+      "bytes": 48404,
+      "actionSucceeded": true,
+      "observed": {
+        "httpStatus": 200,
+        "freshStorage": true,
+        "render": {
+          "path": "/nested/benchmark/",
+          "viewport": {
+            "width": 360,
+            "height": 800
+          },
+          "scroll": {
+            "x": 0,
+            "y": 0
+          },
+          "documentWidth": 360,
+          "visibleText": "Skip to content\n An independent idea. A fictional product demonstration.\nLattice\n.\n\n✳\nA notebook for independent minds\n\nGive your thinking a place.\n\nFor the questions that don’t fit in a browser tab. Bring your notes, sources, and unfinished ideas together in a notebook that stays yours.\n\nExplore the workflow\n↗\n\nLocal-first. Open-ended. Entirely your own.\n\nFIELD NOTES / 001\nA little room to think ↘\n▦\nLattice\nOn this device\n⌘ K\nUrban commons\n/\nField notes\n···\n\nSEPTEMBER 08 · OBSERVATION\n\nPlaces to pause\n\nA bench is more than somewhere to sit. It’s an invitation to stay without having to buy anything.\n\nWhat makes a public space feel like it belongs to everyone?\n\n↗\nSOURCE ATTACHED\nThe Social Life of Small Urban Spaces\nWilliam H. Whyte · Reading note\npublic space\nobservation\n Saved on this device\nMarkdown ↗\nA THREAD TO FOLLOW\n\nWho gets to feel\nat home in a city?\n\n01— A source. A thought. The beginning of something.\nYOUR WORK, ON YOUR TERMS\n\nStored on your device\n\nYours to export\n\nSources stay in sight\n\n01 / THE NOTEBOOK\n\nFollow the thread.\nKeep the context.\n\nA place for the messy middle of research.\nFrom the first interesting thing to the idea you’re ready to share.\n\n01\nCapture\n02\nConnect\n03\nExport\nFIELD NOTE\n↗\nStart with a small\nobservation.\n\nThe best ideas often arrive before\nyou know what they’re for.\n\n+ Add a source\nA thought doesn’t need a title to matter.\n\nMAKE ROOM FOR THE RAW MATERIAL\n\nCatch the thought.\nKeep its origin.\n\nWrite a field note, save a passage, or get an idea out of your head. Keep a source link alongside each note, so you can always return to where it began.\n\nNotes stored on your own device\nSource links beside your thinking\nReusable templates for a familiar starting point\nSee how it comes together\n↗\n\n02 / A SIMPLE PRACTICE\n\nLess organizing.\nMore noticing.\n\nNo perfect system required.\nJust a question worth coming back to.\n\n01\nOpen a question.\n\nStart a project with a reusable template. Give it the question you’re exploring, even if the edges are still fuzzy.\n\n02\nGather what matters.\n\nAdd notes as you read and observe. Put source links beside them. Use optional local search to return to a word or phrase.\n\n03\nTake the idea further.\n\nReturn to your notes. Find the thread in your thinking. Export to Markdown when you’re ready to write, share, or back up.\n\n↳\nAnd when a new question appears, begin again.\n\n03 / ROOM TO KEEP GOING\n\nA plan for\nyour practice.\n\nTwo ways to make room for research.\nAll prices are part of this fictional demo.\n\nMonthly\nYe",
+          "brokenVisibleImages": []
+        }
+      },
+      "publicUrl": "/assets/trials-20260910/runs/run-03/mobile-initial.webp"
+    },
+    "missingStates": [],
+    "captureFailures": [],
+    "actionErrors": [],
+    "infrastructureErrors": [],
+    "console": [],
+    "network": [],
+    "dialogs": [],
+    "browserVersion": "152.0.7977.83",
+    "sourceAfterTreeSha256": "112f97f2b6e28eb863712bb93beaa7f556febb5603389f8af41fa4b2fcc06e88",
+    "sourceUnchanged": true,
+    "finishedAt": "2026-09-10T14:18:02.781Z"
+  },
+  "designReview": {
+    "schemaVersion": 1,
+    "runId": "run-03",
+    "reviewedAt": "2026-09-10T14:19:29.132330+00:00",
+    "method": "Single qualitative review of actual captured desktop and mobile pixels. No numerical aesthetic score.",
+    "conditionBlind": true,
+    "conditionMappingInspected": false,
+    "candidateSourceEdited": false,
+    "sourceTreeSha256": "112f97f2b6e28eb863712bb93beaa7f556febb5603389f8af41fa4b2fcc06e88",
+    "evidence": [
+      {
+        "file": "initial.png",
+        "sha256": "dccbcc6857d8a997f9733697d7f8512e72fe61f09c1b0563380c46a28abe12df",
+        "viewport": {
+          "width": 1440,
+          "height": 960
+        }
+      },
+      {
+        "file": "feature-connect.png",
+        "sha256": "6c20c0ae1bc3c351c3a04a18fdf52f21c4a13cccce405bf36e51d61098856c95",
+        "viewport": {
+          "width": 1440,
+          "height": 960
+        }
+      },
+      {
+        "file": "billing-yearly.png",
+        "sha256": "ff943c4ad5d4e6694aa4a64088ea387def34a742a1a237e53d4aff7ca93c80a1",
+        "viewport": {
+          "width": 1440,
+          "height": 960
+        }
+      },
+      {
+        "file": "workflow.png",
+        "sha256": "7f73111aadd3d12e3b9ab7e13a491c007f4b691c53976fb108511c11d2188ca7",
+        "viewport": {
+          "width": 1440,
+          "height": 960
+        }
+      },
+      {
+        "file": "faq.png",
+        "sha256": "b3c371d41550659eba41186a9601f204906ad85f24076f2964a7222452ffc556",
+        "viewport": {
+          "width": 1440,
+          "height": 960
+        }
+      },
+      {
+        "file": "mobile-initial.png",
+        "sha256": "68f597c9cd3cd4369d5f31f3854adf0eeba2a568a2eb94a2f2110f1723cbba6d",
+        "viewport": {
+          "width": 360,
+          "height": 800
+        }
+      }
+    ],
+    "observations": [
+      {
+        "area": "Hierarchy",
+        "kind": "strength",
+        "evidence": [
+          "initial.png"
+        ],
+        "observation": "The large three-line serif headline is balanced against a mostly upright notebook window. A single dark primary button follows the explanatory paragraph; the bordered header action is secondary.",
+        "implication": "The desktop page has a clear reading order from proposition to explanation to action, with the notebook illustration serving as a concrete companion."
+      },
+      {
+        "area": "Typography and readability",
+        "kind": "tradeoff",
+        "evidence": [
+          "initial.png",
+          "feature-connect.png",
+          "workflow.png",
+          "faq.png"
+        ],
+        "observation": "Large serif headings and green italic phrases recur with a consistent sans-serif body. Explanatory copy in the feature, workflow and FAQ captures is comfortably prominent. Small letter-spaced labels and notebook interface microcopy are much finer than the main text.",
+        "implication": "The explanatory text is easy to pick out, while the decorative metadata and scaled notebook details are less immediately readable."
+      },
+      {
+        "area": "Visual coherence",
+        "kind": "strength",
+        "evidence": [
+          "initial.png",
+          "feature-connect.png",
+          "billing-yearly.png",
+          "workflow.png",
+          "faq.png"
+        ],
+        "observation": "Off-white paper surfaces, dark green ink, light sage blocks, thin rules and grid/arrow motifs remain consistent. The workflow uses the same palette inverted into a dark band.",
+        "implication": "The sections maintain a recognizable editorial notebook identity, rather than a collection of unrelated component styles."
+      },
+      {
+        "area": "Product illustration",
+        "kind": "strength",
+        "evidence": [
+          "initial.png",
+          "feature-connect.png"
+        ],
+        "observation": "The hero notebook contains a sidebar, note text, a source attachment and tags, with a question card extending outside the frame. The Connect state shows a compact tree connecting one question to field observations and reading notes.",
+        "implication": "The product model is concrete and the Connect diagram is simple to parse. The capture alone does not establish that the illustrated notebook interface is interactive."
+      },
+      {
+        "area": "Mobile first viewport",
+        "kind": "tradeoff",
+        "evidence": [
+          "mobile-initial.png"
+        ],
+        "observation": "The mobile headline and body are large and fit the captured canvas. The header uses an icon-only menu button. Generous vertical spacing and the longer explanation place the notebook illustration near the bottom edge of the first viewport.",
+        "implication": "The opening favors readable text and breathing room, but visitors see little of the product illustration before scrolling. The menu is less explicitly labelled visually than a control that includes the word Menu; this is not a claim about its accessible name."
+      },
+      {
+        "area": "Pricing and answer presentation",
+        "kind": "strength",
+        "evidence": [
+          "billing-yearly.png",
+          "faq.png"
+        ],
+        "observation": "The yearly selector has a distinct dark selected state; the prices, per-year labels and plan contents are plainly separated. The expanded FAQ answer uses a generous line height and column width, with the remaining questions laid out as individual rows.",
+        "implication": "The captured information states are legible and consistently arranged. No obvious broken layout or clipped primary text is visible in the inspected viewports."
+      }
+    ],
+    "mobileLayoutObservation": {
+      "visibleOverlapOrClippedPrimaryText": false,
+      "captureViewportWidth": 360,
+      "capturedDocumentWidth": 360,
+      "note": "The width values come from the capture receipt; they are not an aesthetic score."
+    },
+    "limits": [
+      "Only the supplied captured states were reviewed. Mobile coverage here is the initial viewport, not a complete mobile walkthrough.",
+      "These static viewport captures do not evaluate motion quality, keyboard behavior, all scroll positions, every responsive breakpoint, or color contrast ratios.",
+      "Some anchored desktop captures start partway through a preceding heading; that is viewport framing, not evidence that the source page clips that heading.",
+      "The notebook mockups illustrate a fictional product. Their apparent controls are not evidence of implemented notebook functionality.",
+      "Both inspected candidates use a coherent serif-and-green editorial direction. These observations do not establish a general winner, causal improvement, or which condition produced either artifact."
+    ]
+  },
+  "processReview": {
+    "runId": "run-03",
+    "task": "landing",
+    "repeat": 1,
+    "condition": "fabius",
+    "summary": "The Fabius landing run read its design reference and used an observed fallback failure to drive a source fix and successful browser retests.",
+    "observations": [
+      {
+        "area": "Planning and decomposition",
+        "observed": "The public outline named design, responsive layouts, keyboard interactions, billing and no-JavaScript checks before the implementation command.",
+        "evidence": [
+          {
+            "type": "event",
+            "eventId": "item_2",
+            "eventType": "agent_message",
+            "eventFile": "runs/run-03/events.jsonl",
+            "eventLine": 5,
+            "eventSha256": "58af39391c4cfc546b7b34a10619195b4970f43567f5916a619bcb9e8eb0905a"
+          },
+          {
+            "type": "event",
+            "eventId": "item_6",
+            "eventType": "command_execution",
+            "eventFile": "runs/run-03/events.jsonl",
+            "eventLine": 12,
+            "eventSha256": "fc12794391930d413b5afcbac393c3ade4debd8588e0bcd93f26e27e206d3ad0",
+            "commandSha256": "a7e2e01850d887d93305bbe8769412cf446f6f43660129ed750b755f21cf38b3",
+            "exitCode": 0
+          }
+        ]
+      },
+      {
+        "area": "Reference use",
+        "observed": "An actual tool command read the pinned design-system reference before implementation.",
+        "evidence": [
+          {
+            "type": "event",
+            "eventId": "item_4",
+            "eventType": "command_execution",
+            "eventFile": "runs/run-03/events.jsonl",
+            "eventLine": 9,
+            "eventSha256": "478d558f76a983752c59090031ab0e53adf0f97e08986e0695b7029a76e4fb5a",
+            "commandSha256": "49e6f8e512ba8cff7be9b07658f60f98e22ad87b5787525ddee651941297a538",
+            "exitCode": 0
+          }
+        ]
+      },
+      {
+        "area": "Diagnose, edit and retest",
+        "observed": "A browser run failed in the no-JavaScript pricing fallback. The run inspected the failing check and DOM, replaced the fallback with ordinary HTML, and reran the expanded browser suite successfully.",
+        "evidence": [
+          {
+            "type": "event",
+            "eventId": "item_7",
+            "eventType": "command_execution",
+            "eventFile": "runs/run-03/events.jsonl",
+            "eventLine": 15,
+            "eventSha256": "2e7c24b5f6944158625ecd4b8360f93e35b1135f479499327431951cf06024c9",
+            "commandSha256": "d09d60cb97aea19fc789a7eec99946fbfc8052373997f7e7f3c8f773b100992d",
+            "exitCode": 1
+          },
+          {
+            "type": "event",
+            "eventId": "item_9",
+            "eventType": "command_execution",
+            "eventFile": "runs/run-03/events.jsonl",
+            "eventLine": 17,
+            "eventSha256": "585a9c4ebff69d8a6ee71f3790d22a11ebe9847f87898f75751608ccdd8dc9ff",
+            "commandSha256": "f4fe3f34f7bd4f0c264ecf82fbbaf650494e03216a7a391e283fc3672b0fa7bb",
+            "exitCode": 0
+          },
+          {
+            "type": "event",
+            "eventId": "item_10",
+            "eventType": "command_execution",
+            "eventFile": "runs/run-03/events.jsonl",
+            "eventLine": 19,
+            "eventSha256": "26e84897638b31c2545ff8171c4995c25670aad6f085b97a93f3c4db7705a8e3",
+            "commandSha256": "356f90f99557c3c3e77066c77e11c75f38c456ab3000179d8692c74bc9de5606",
+            "exitCode": 0
+          },
+          {
+            "type": "event",
+            "eventId": "item_11",
+            "eventType": "command_execution",
+            "eventFile": "runs/run-03/events.jsonl",
+            "eventLine": 21,
+            "eventSha256": "8340970896ff35023dc6c8dbb59cb8d1e40713ddb47cb11c8f316e30c12ee17c",
+            "commandSha256": "b5049edf3215d5c9f92b0f7776f812c5ee40f538abdab07a560e5c5e27f16809",
+            "exitCode": 0
+          },
+          {
+            "type": "event",
+            "eventId": "item_13",
+            "eventType": "command_execution",
+            "eventFile": "runs/run-03/events.jsonl",
+            "eventLine": 26,
+            "eventSha256": "329b83689d35c92e10796421b46f389b4712d6077faae019eba89e15bd4a0b6c",
+            "commandSha256": "ee160b3926754dcad0add6b39cfc8fbf07b13894d94f31a76abd4395e0c0230a",
+            "exitCode": 0
+          }
+        ]
+      },
+      {
+        "area": "Verification and handoff",
+        "observed": "Further commands exercised nested paths, more widths, keyboard states and contrast; another browser run followed the later diagram CSS change. Scripts, captures and limitations were retained.",
+        "evidence": [
+          {
+            "type": "event",
+            "eventId": "item_15",
+            "eventType": "command_execution",
+            "eventFile": "runs/run-03/events.jsonl",
+            "eventLine": 28,
+            "eventSha256": "c539fe20f26b4d64c34b568b005467d99171ffb6800f12d931413c739c79c981",
+            "commandSha256": "dd22115467e24222b78238e20a983639792c8e04d8818c2686d829f00ace322c",
+            "exitCode": 0
+          },
+          {
+            "type": "event",
+            "eventId": "item_18",
+            "eventType": "command_execution",
+            "eventFile": "runs/run-03/events.jsonl",
+            "eventLine": 33,
+            "eventSha256": "49d252e2a29b766fb1a1f89cef7ba1e0b058e4c2cafa01dc6fbbc0b848a68a3c",
+            "commandSha256": "59abb6b6f7742a20490d5e4277367290b40bb9197c624b8e85d0f0d0e3fc2053",
+            "exitCode": 0
+          },
+          {
+            "type": "event",
+            "eventId": "item_19",
+            "eventType": "command_execution",
+            "eventFile": "runs/run-03/events.jsonl",
+            "eventLine": 35,
+            "eventSha256": "b0455abf62509813e762fbdd67bbbfd9a3fc9bb9b3a7381fe566774ddd2c0392",
+            "commandSha256": "523e2aa366ea5c8787b5d6d4fe1a28b3d6f45f08290235432ec6068ed2961b1f",
+            "exitCode": 0
+          },
+          {
+            "type": "event",
+            "eventId": "item_20",
+            "eventType": "command_execution",
+            "eventFile": "runs/run-03/events.jsonl",
+            "eventLine": 40,
+            "eventSha256": "6d653aa3b48a3fd3a255e5dce84c67aa0c6f3d3d60223e1048cbb0883b02db79",
+            "commandSha256": "a6f403bd4dac3a686156241d1b6b98fb65a0f27de18a4268c408181841b22ec6",
+            "exitCode": 0
+          },
+          {
+            "type": "event",
+            "eventId": "item_22",
+            "eventType": "command_execution",
+            "eventFile": "runs/run-03/events.jsonl",
+            "eventLine": 39,
+            "eventSha256": "ffac165e34d7bd1c32101cf413bc831e28b7f6cb59a28ffdd33b18d256ec4a62",
+            "commandSha256": "876c5d416f5fef50cb16a762e809976fac615c1c07ee6a84a69b0a3343e6da86",
+            "exitCode": 0
+          },
+          {
+            "type": "event",
+            "eventId": "item_24",
+            "eventType": "agent_message",
+            "eventFile": "runs/run-03/events.jsonl",
+            "eventLine": 43,
+            "eventSha256": "50bed212c0ae6e4bad9bc895c9e9a499e76ac1c263be3586b4b5ae60c30f212c"
+          },
+          {
+            "type": "artifact",
+            "path": "runs/run-03/artifact/checks/verify.mjs",
+            "sha256": "3c5431bb1e32858629bd7a3b0ba57294094f219c0a7c808c9c3db30a85eeff3d",
+            "matchesRunManifest": true
+          },
+          {
+            "type": "artifact",
+            "path": "runs/run-03/artifact/checks/contrast.py",
+            "sha256": "786de35d285d1a0999bfe18dcdf7286aa9baf75f13de5d0f002a3d2e07b806b0",
+            "matchesRunManifest": true
+          },
+          {
+            "type": "artifact",
+            "path": "runs/run-03/artifact/README.md",
+            "sha256": "773c49205bb3ee4bbdbf1c8470ca3189b32a0e0d4049b361d21469b0e680d3be",
+            "matchesRunManifest": true
+          }
+        ]
+      }
+    ],
+    "limits": [
+      "The initial implementation required a functional fallback correction.",
+      "The candidate’s browser checks use Chrome; independent WebKit grading is a separate stage.",
+      "The trace shows reference access and a repair loop, not proof that the reference caused the repair."
+    ],
+    "reviewBlinded": false
+  },
+  "processReviewMethod": {
+    "type": "retrospective-descriptive-process-audit",
+    "limits": [
+      "This descriptive process audit was requested after outcomes existed. It is retrospective and exploratory, not a preregistered process endpoint.",
+      "The methods reviewer knows condition assignments; this review is not blinded. Separate proof/design reviewers have their own blinding procedures.",
+      "Only public progress messages, observable tool actions, check exits and retained artifact evidence are summarized. No hidden reasoning is inferred or published.",
+      "There is no process score, tool-call leaderboard or causal claim. More messages, calls, checks or elapsed time do not imply a better process.",
+      "The baseline retains native Codex instructions and the same common trial directions. It is not an unstructured or instruction-free model.",
+      "Delegation, external services and auxiliary model calls were prohibited for both conditions. Full orchestration, provider selection, collaboration and autonomous end-to-end deployment are unmeasured.",
+      "Treatment includes three or four pinned contracts plus a repository snapshot. Observed behavior cannot be assigned to an individual Fabius rule from this design.",
+      "Candidate-authored tests and self-reported passes are process evidence, not substitutes for the independent acceptance and proof checks.",
+      "Coverage includes all 12 finalized valid runs from the planned three-task, two-condition, two-repeat study. The two preserved setup attempts are documented separately."
+    ]
+  }
+}

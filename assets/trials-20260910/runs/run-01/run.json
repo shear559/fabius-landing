@@ -1,0 +1,91 @@
+{
+  "id": "run-01",
+  "task": "landing",
+  "repeat": 2,
+  "arm": "baseline",
+  "model": "gpt-6-astra",
+  "effort": "high",
+  "status": "completed",
+  "elapsed_seconds": 472.766,
+  "usage": [
+    {
+      "input_tokens": 236113,
+      "cached_input_tokens": 197248,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 23949,
+      "reasoning_output_tokens": 2661
+    }
+  ],
+  "task_sha256": "4b1927c9ff7421b0b8b1b8f914c1c425f31806e9ab7473b682bedad620b3f80c",
+  "developer_sha256": "07a44513807def03b2686841f53f361908c8692b83c1b5a6d768d505f70245f9",
+  "public_instructions_sha256": "21e07e0fb5b12fd8736ed8f185079e39b6b459d958ceb4a988433ca8691d2997",
+  "prompt_input_sha256": "5c45e7b3a57d57e7bdd3f97c6e411226c9e048937790adedd732e3c20c710e10",
+  "events_sha256": "6cfd59882e5414e741b6479e2a0a4ad09d53163f69e5be3f5dd14a4c8745d1b6",
+  "artifact": {
+    "entries": [
+      {
+        "path": "README.md",
+        "recorded_sha256": "393e514abc3cae35860a7b602af2aed6e4c3cd4278ef656962ab38a815f9f01c",
+        "public_sha256": "393e514abc3cae35860a7b602af2aed6e4c3cd4278ef656962ab38a815f9f01c"
+      },
+      {
+        "path": "app.js",
+        "recorded_sha256": "c37e375469ffecb28c70ec0d5c84eb7935e04b8ed99e11bc2630108c1e965517",
+        "public_sha256": "c37e375469ffecb28c70ec0d5c84eb7935e04b8ed99e11bc2630108c1e965517"
+      },
+      {
+        "path": "desktop-detail.png",
+        "recorded_sha256": "d0b4d4aacc15164eea310b21af59bf7470c42474599d3ea5ee206d6a8e1efb0a",
+        "public_sha256": "d0b4d4aacc15164eea310b21af59bf7470c42474599d3ea5ee206d6a8e1efb0a"
+      },
+      {
+        "path": "desktop.png",
+        "recorded_sha256": "e1868b4724c9a0f6e87bbdff7f10ce3851ea778c541482ae8f5b20cbb838b78b",
+        "public_sha256": "e1868b4724c9a0f6e87bbdff7f10ce3851ea778c541482ae8f5b20cbb838b78b"
+      },
+      {
+        "path": "final.txt",
+        "recorded_sha256": "3575c1274142ecbd1e0aef7fa5c8b6361a5f9f284ed064db1dc749acabd0d0a8",
+        "public_sha256": "3575c1274142ecbd1e0aef7fa5c8b6361a5f9f284ed064db1dc749acabd0d0a8"
+      },
+      {
+        "path": "index.html",
+        "recorded_sha256": "db7cb4ed9e0d896ff07a448463d66b498a865ff5d082e70a2a4bd96237662019",
+        "public_sha256": "db7cb4ed9e0d896ff07a448463d66b498a865ff5d082e70a2a4bd96237662019"
+      },
+      {
+        "path": "mobile-detail.png",
+        "recorded_sha256": "c2ea26906b2b285e246b3d07023fe954dc764c24b0157c1961ba08339742ac65",
+        "public_sha256": "c2ea26906b2b285e246b3d07023fe954dc764c24b0157c1961ba08339742ac65"
+      },
+      {
+        "path": "mobile.png",
+        "recorded_sha256": "e0c033839bb3cfdc7803823d5b238d98e00b2ad5b3f16d7c7c7c8bdbcd3aea61",
+        "public_sha256": "e0c033839bb3cfdc7803823d5b238d98e00b2ad5b3f16d7c7c7c8bdbcd3aea61"
+      },
+      {
+        "path": "styles.css",
+        "recorded_sha256": "ae6e33db80c727ab7757920c4824b3514dc4c3e2315e8ac735d086c876129c5f",
+        "public_sha256": "ae6e33db80c727ab7757920c4824b3514dc4c3e2315e8ac735d086c876129c5f"
+      },
+      {
+        "path": "verification-results.txt",
+        "recorded_sha256": "fc020cb2555ca092a989a012104deb0cebc738b0947c79af83b9db28cc99ac07",
+        "public_sha256": "fc020cb2555ca092a989a012104deb0cebc738b0947c79af83b9db28cc99ac07"
+      },
+      {
+        "path": "verify.mjs",
+        "recorded_sha256": "7a85126d93ec3e575da913710303a80f99b8f071b274bdcc529c3de3f7117a4b",
+        "public_sha256": "508ebb7524317ed082c58e1a6e4472d1dc17a3a5d3966257185ca701fbc8012d"
+      }
+    ],
+    "path_redactions": [
+      "verify.mjs"
+    ],
+    "note": "Only private machine paths are normalized in public text files. The immutable originals were graded before this packaging; no product repair was applied.",
+    "zip_sha256": "48761b000bdd298fa1b71b4724f4d7994cf58278263637abb50cbd69b83348b7"
+  },
+  "contract_names": [],
+  "checks_met": 7,
+  "criteria": 7
+}

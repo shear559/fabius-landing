@@ -1,0 +1,592 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>A working task app · Without Fabius · run 1 · Fabius trials</title><link rel="stylesheet" href="/styles.css?v=2026-09-10"><link rel="stylesheet" href="/assets/trials-20260910/evidence.css"></head><body class="evidence-page"><main class="evidence"><a class="evidence-home" href="/#trials">← Fabius · paired build trials</a><h1>A working task app · Without Fabius · run 1</h1><p>Fictional product prototype. Checks measure the supplied contract across Chromium/WebKit at 360px and 1440px; visual quality is reviewed separately. Additional review found 1 issue(s) outside the recorded matrix; inspect the check record for reproduction and limits.</p><p>15/16 recorded check groups passed. Elapsed 563.043 seconds; output tokens 27816. No original artifact was repaired for this comparison.</p><p><a href="/assets/trials-20260910/runs/run-06/source.zip">Submitted source ZIP</a> · <a href="/assets/trials-20260910/runs/run-06/checks.json">Full check data</a> · <a href="/assets/trials-20260910/runs/run-06/run.json">Run metadata</a> · <a href="/assets/trials-20260910/runs/run-06/instructions.txt">Trial instructions</a></p><details><summary>PASS · Empty-storage initialization</summary><p>4/4 browser scenario executions passed.</p></details><details><summary>PASS · Create/edit and persistence</summary><p>4/4 browser scenario executions passed.</p></details><details><summary>PASS · Status update preserves other records</summary><p>4/4 browser scenario executions passed.</p></details><details><summary>PASS · Delete and exact undo</summary><p>4/4 browser scenario executions passed.</p></details><details><summary>PASS · Combined search and filters</summary><p>4/4 browser scenario executions passed.</p></details><details><summary>FAIL · Form validation and modal keyboard lifecycle</summary><p>2/4 browser scenario executions passed. webkit-360: modalEscape | webkit-1440: modalEscape</p></details><details><summary>PASS · Full export and confirmed import round trip</summary><p>4/4 browser scenario executions passed.</p></details><details><summary>PASS · Reject malformed/unsupported import atomically</summary><p>0/4 browser scenario executions passed. chromium-360: malformed, unsupported-schema | chromium-1440: malformed, unsupported-schema | webkit-360: malformed, unsupported-schema | webkit-1440: malformed, unsupported-schema This initial harness result was overturned: a documented evaluator error was corrected and the same four-environment rerun passed. See the retained and corrected reports.</p></details><details><summary>PASS · Reject duplicate IDs and invalid date atomically</summary><p>4/4 browser scenario executions passed.</p></details><details><summary>PASS · Import size boundary</summary><p>4/4 browser scenario executions passed.</p></details><details><summary>PASS · Imported hostile text remains text</summary><p>4/4 browser scenario executions passed.</p></details><details><summary>PASS · Corrupt storage recovery</summary><p>4/4 browser scenario executions passed.</p></details><details><summary>PASS · Storage write failure keeps work recoverable</summary><p>4/4 browser scenario executions passed.</p></details><details><summary>PASS · Cross-tab stale-write protection</summary><p>4/4 browser scenario executions passed.</p></details><details><summary>PASS · Responsive rendering and accessible controls</summary><p>4/4 browser scenario executions passed.</p></details><details><summary>PASS · No-JavaScript notice and reduced motion</summary><p>8/8 browser scenario executions passed.</p></details><h2>Observed working process</h2><p>The baseline app run expanded an initially passing workflow suite, exposed modal-focus trouble, edited the implementation and retested.</p><p>This retrospective, unblinded review describes observable actions. It does not score hidden reasoning or equate more tools with better work.</p><h3>Planning and decomposition</h3><p>The public plan named local-board implementation, storage recovery, accessible editing and failure-path verification before source creation.</p><h3>Verification expansion</h3><p>After the first workflow suite passed, the candidate tightened import types/tag preservation and added explicit boundary and failure checks.</p><h3>Diagnose, edit and retest</h3><p>The trace records a dialog-protocol failure and a modal-focus assertion failure. A source edit added explicit focus wrapping; subsequent workflow and edge-suite runs exited successfully. The trace does not establish a single cause for the dialog error.</p><h3>Handoff</h3><p>The final record includes syntax checks, browser artifacts and explicit local-storage/Chrome limits.</p><ul><li>An initially passing main suite did not cover all subsequently found edge cases.</li><li>Candidate test-harness dialog errors occurred; they must not automatically be attributed to application defects.</li><li>The same candidate authored the app, tests and self-report.</li></ul><h2>Captured states</h2><ul><li><a href="/assets/trials-20260910/runs/run-06/initial.webp">Desktop first visit — untouched initial output</a></li><li><a href="/assets/trials-20260910/runs/run-06/new-task-form.webp">New task form opened</a></li><li><a href="/assets/trials-20260910/runs/run-06/after-create.webp">Review launch evidence created and present in saved board</a></li><li><a href="/assets/trials-20260910/runs/run-06/search.webp">Search for Review launch evidence; matching task shown</a></li><li><a href="/assets/trials-20260910/runs/run-06/import-error.webp">Malformed JSON selected; visible error and saved board unchanged</a></li><li><a href="/assets/trials-20260910/runs/run-06/mobile-initial.webp">Mobile first visit — separate fresh context</a></li></ul><h2>Adjudication evidence</h2><p>Additional observed states used to distinguish candidate defects from evaluator mistakes. The full check data contains the reasoning and unchanged-storage evidence.</p><ul><li><a href="/assets/trials-20260910/runs/run-06/review-adjudication-focus-chromium-1440-keyboard-after-escape.webp">adjudication-focus/chromium-1440-keyboard-after-escape.png</a></li><li><a href="/assets/trials-20260910/runs/run-06/review-adjudication-focus-chromium-1440-pointer-after-escape.webp">adjudication-focus/chromium-1440-pointer-after-escape.png</a></li><li><a href="/assets/trials-20260910/runs/run-06/review-adjudication-focus-chromium-360-keyboard-after-escape.webp">adjudication-focus/chromium-360-keyboard-after-escape.png</a></li><li><a href="/assets/trials-20260910/runs/run-06/review-adjudication-focus-chromium-360-pointer-after-escape.webp">adjudication-focus/chromium-360-pointer-after-escape.png</a></li><li><a href="/assets/trials-20260910/runs/run-06/review-adjudication-focus-webkit-1440-keyboard-after-escape.webp">adjudication-focus/webkit-1440-keyboard-after-escape.png</a></li><li><a href="/assets/trials-20260910/runs/run-06/review-adjudication-focus-webkit-1440-pointer-after-escape.webp">adjudication-focus/webkit-1440-pointer-after-escape.png</a></li><li><a href="/assets/trials-20260910/runs/run-06/review-adjudication-focus-webkit-360-keyboard-after-escape.webp">adjudication-focus/webkit-360-keyboard-after-escape.png</a></li><li><a href="/assets/trials-20260910/runs/run-06/review-adjudication-focus-webkit-360-pointer-after-escape.webp">adjudication-focus/webkit-360-pointer-after-escape.png</a></li><li><a href="/assets/trials-20260910/runs/run-06/review-exploratory-project-sentinel-chromium-1440-project-all-filter.webp">exploratory-project-sentinel/chromium-1440-project-all-filter.png</a></li><li><a href="/assets/trials-20260910/runs/run-06/review-exploratory-project-sentinel-chromium-360-project-all-filter.webp">exploratory-project-sentinel/chromium-360-project-all-filter.png</a></li><li><a href="/assets/trials-20260910/runs/run-06/review-exploratory-project-sentinel-webkit-1440-project-all-filter.webp">exploratory-project-sentinel/webkit-1440-project-all-filter.png</a></li><li><a href="/assets/trials-20260910/runs/run-06/review-exploratory-project-sentinel-webkit-360-project-all-filter.webp">exploratory-project-sentinel/webkit-360-project-all-filter.png</a></li><li><a href="/assets/trials-20260910/runs/run-06/review-revision-4-A08-chromium-1440-A08-import-error.webp">revision-4-A08/chromium-1440-A08-import-error.png</a></li><li><a href="/assets/trials-20260910/runs/run-06/review-revision-4-A08-chromium-360-A08-import-error.webp">revision-4-A08/chromium-360-A08-import-error.png</a></li><li><a href="/assets/trials-20260910/runs/run-06/review-revision-4-A08-webkit-1440-A08-import-error.webp">revision-4-A08/webkit-1440-A08-import-error.png</a></li><li><a href="/assets/trials-20260910/runs/run-06/review-revision-4-A08-webkit-360-A08-import-error.webp">revision-4-A08/webkit-360-A08-import-error.png</a></li></ul><h2>Exploratory findings outside the recorded matrix</h2><p>These probes were added after inspecting candidates and were applied to both conditions. They do not change the original matrix count; confirmed defects and specification ambiguities remain part of this artifact assessment.</p><pre>[
+  {
+    &quot;id&quot;: &quot;project-name-all-sentinel-collision&quot;,
+    &quot;confirmed&quot;: true,
+    &quot;classification&quot;: &quot;exploratory-after-primary-rubric-freeze&quot;,
+    &quot;criterion&quot;: &quot;A05 project filtering&quot;,
+    &quot;primaryScoresChanged&quot;: false,
+    &quot;contractAmbiguity&quot;: &quot;The brief reserves the select value all for the All projects sentinel while allowing any nonempty project string, including all. This edge was not in the predeclared concrete fixtures; selecting the distinct project option should still be distinguishable from selecting the sentinel.&quot;,
+    &quot;impact&quot;: &quot;The valid project named all cannot be isolated; selecting it displays unrelated projects too. Stored records are unchanged.&quot;,
+    &quot;repro&quot;: [
+      &quot;In an isolated context load the same valid two-task board used for both apps: project all and project Atlas.&quot;,
+      &quot;Select the actual project option labelled all (selectedIndex 1), not the All projects sentinel.&quot;,
+      &quot;Compare rendered task IDs and saved bytes.&quot;
+    ],
+    &quot;expectedVisibleIds&quot;: [
+      &quot;project-all&quot;
+    ],
+    &quot;observedPasses&quot;: 0,
+    &quot;executions&quot;: 4,
+    &quot;storageUnchangedInEveryExecution&quot;: true,
+    &quot;evidence&quot;: &quot;exploratory-project-sentinel/results.json&quot;,
+    &quot;screenshots&quot;: [
+      &quot;exploratory-project-sentinel/chromium-360-project-all-filter.png&quot;,
+      &quot;exploratory-project-sentinel/chromium-1440-project-all-filter.png&quot;,
+      &quot;exploratory-project-sentinel/webkit-360-project-all-filter.png&quot;,
+      &quot;exploratory-project-sentinel/webkit-1440-project-all-filter.png&quot;
+    ],
+    &quot;diagnosticSelectionTrace&quot;: &quot;exploratory-project-sentinel/selection-trace.json&quot;
+  }
+]</pre><h2>Failed raw assertions and their adjudication</h2><p>Raw evaluator assertions are retained below. A raw assertion is a product failure only when the final group remains FAIL above; corrected harness errors are documented in the adjudication record.</p><details><summary>A08 · chromium-360</summary><pre>{
+  &quot;id&quot;: &quot;A08&quot;,
+  &quot;environment&quot;: &quot;chromium-360&quot;,
+  &quot;browser&quot;: &quot;chromium&quot;,
+  &quot;width&quot;: 360,
+  &quot;noJS&quot;: false,
+  &quot;observations&quot;: [
+    {
+      &quot;key&quot;: &quot;malformed&quot;,
+      &quot;pass&quot;: false,
+      &quot;actual&quot;: {
+        &quot;unchanged&quot;: true,
+        &quot;error&quot;: {
+          &quot;hasFeedback&quot;: false,
+          &quot;native&quot;: [],
+          &quot;notice&quot;: &quot;&quot;,
+          &quot;addedVisibleFeedback&quot;: []
+        }
+      }
+    },
+    {
+      &quot;key&quot;: &quot;unsupported-schema&quot;,
+      &quot;pass&quot;: false,
+      &quot;actual&quot;: {
+        &quot;unchanged&quot;: true,
+        &quot;error&quot;: {
+          &quot;hasFeedback&quot;: false,
+          &quot;native&quot;: [],
+          &quot;notice&quot;: &quot;&quot;,
+          &quot;addedVisibleFeedback&quot;: []
+        }
+      }
+    },
+    {
+      &quot;key&quot;: &quot;unsupported-enum&quot;,
+      &quot;pass&quot;: true,
+      &quot;actual&quot;: {
+        &quot;unchanged&quot;: true,
+        &quot;error&quot;: {
+          &quot;hasFeedback&quot;: true,
+          &quot;native&quot;: [],
+          &quot;notice&quot;: &quot;n Saved in this browser only Workspace / Team board ST Import could not be completed Task 6: Status must be todo, doing or done. Dismiss THE BIG PICTURE Good work starts here. Gather the details. Find your focus. Move things forward. ＋ New task On the board 6 ▦ Ideas&quot;,
+          &quot;addedVisibleFeedback&quot;: []
+        }
+      }
+    }
+  ],
+  &quot;screenshots&quot;: [
+    &quot;chromium-360-A08-import-error.png&quot;
+  ],
+  &quot;manualReview&quot;: [],
+  &quot;console&quot;: [],
+  &quot;network&quot;: [],
+  &quot;dialogs&quot;: [],
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;durationMs&quot;: 2157,
+  &quot;publicScreenshots&quot;: [
+    &quot;/assets/trials-20260910/runs/run-06/check-chromium-360-A08-import-error.webp&quot;
+  ]
+}</pre><p><a href="/assets/trials-20260910/runs/run-06/check-chromium-360-A08-import-error.webp">Failure capture 1</a></p></details><details><summary>A08 · chromium-1440</summary><pre>{
+  &quot;id&quot;: &quot;A08&quot;,
+  &quot;environment&quot;: &quot;chromium-1440&quot;,
+  &quot;browser&quot;: &quot;chromium&quot;,
+  &quot;width&quot;: 1440,
+  &quot;noJS&quot;: false,
+  &quot;observations&quot;: [
+    {
+      &quot;key&quot;: &quot;malformed&quot;,
+      &quot;pass&quot;: false,
+      &quot;actual&quot;: {
+        &quot;unchanged&quot;: true,
+        &quot;error&quot;: {
+          &quot;hasFeedback&quot;: false,
+          &quot;native&quot;: [],
+          &quot;notice&quot;: &quot;&quot;,
+          &quot;addedVisibleFeedback&quot;: []
+        }
+      }
+    },
+    {
+      &quot;key&quot;: &quot;unsupported-schema&quot;,
+      &quot;pass&quot;: false,
+      &quot;actual&quot;: {
+        &quot;unchanged&quot;: true,
+        &quot;error&quot;: {
+          &quot;hasFeedback&quot;: false,
+          &quot;native&quot;: [],
+          &quot;notice&quot;: &quot;&quot;,
+          &quot;addedVisibleFeedback&quot;: []
+        }
+      }
+    },
+    {
+      &quot;key&quot;: &quot;unsupported-enum&quot;,
+      &quot;pass&quot;: true,
+      &quot;actual&quot;: {
+        &quot;unchanged&quot;: true,
+        &quot;error&quot;: {
+          &quot;hasFeedback&quot;: true,
+          &quot;native&quot;: [],
+          &quot;notice&quot;: &quot;rowser only Workspace / Team board FICTIONAL STUDIO ST Import could not be completed Task 6: Status must be todo, doing or done. Dismiss THE BIG PICTURE Good work starts here. Gather the details. Find your focus. Move things forward. ＋ New task On the board 6 ▦ Ideas&quot;,
+          &quot;addedVisibleFeedback&quot;: []
+        }
+      }
+    }
+  ],
+  &quot;screenshots&quot;: [
+    &quot;chromium-1440-A08-import-error.png&quot;
+  ],
+  &quot;manualReview&quot;: [],
+  &quot;console&quot;: [],
+  &quot;network&quot;: [],
+  &quot;dialogs&quot;: [],
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;durationMs&quot;: 2124,
+  &quot;publicScreenshots&quot;: [
+    &quot;/assets/trials-20260910/runs/run-06/check-chromium-1440-A08-import-error.webp&quot;
+  ]
+}</pre><p><a href="/assets/trials-20260910/runs/run-06/check-chromium-1440-A08-import-error.webp">Failure capture 1</a></p></details><details><summary>A06 · webkit-360</summary><pre>{
+  &quot;id&quot;: &quot;A06&quot;,
+  &quot;environment&quot;: &quot;webkit-360&quot;,
+  &quot;browser&quot;: &quot;webkit&quot;,
+  &quot;width&quot;: 360,
+  &quot;noJS&quot;: false,
+  &quot;observations&quot;: [
+    {
+      &quot;key&quot;: &quot;blank-title&quot;,
+      &quot;pass&quot;: true,
+      &quot;actual&quot;: {
+        &quot;constrained&quot;: false,
+        &quot;feedback&quot;: {
+          &quot;hasFeedback&quot;: true,
+          &quot;native&quot;: [],
+          &quot;notice&quot;: &quot;&quot;,
+          &quot;addedVisibleFeedback&quot;: [
+            &quot;Title is required.&quot;
+          ]
+        },
+        &quot;storedCount&quot;: 6
+      }
+    },
+    {
+      &quot;key&quot;: &quot;long-title&quot;,
+      &quot;pass&quot;: true,
+      &quot;actual&quot;: {
+        &quot;constrained&quot;: false,
+        &quot;feedback&quot;: {
+          &quot;hasFeedback&quot;: true,
+          &quot;native&quot;: [],
+          &quot;notice&quot;: &quot;&quot;,
+          &quot;addedVisibleFeedback&quot;: [
+            &quot;Title must be 120 characters or fewer.&quot;
+          ]
+        },
+        &quot;storedCount&quot;: 6
+      }
+    },
+    {
+      &quot;key&quot;: &quot;long-project&quot;,
+      &quot;pass&quot;: true,
+      &quot;actual&quot;: {
+        &quot;constrained&quot;: false,
+        &quot;feedback&quot;: {
+          &quot;hasFeedback&quot;: true,
+          &quot;native&quot;: [],
+          &quot;notice&quot;: &quot;&quot;,
+          &quot;addedVisibleFeedback&quot;: [
+            &quot;Project must be 80 characters or fewer.&quot;
+          ]
+        },
+        &quot;storedCount&quot;: 6
+      }
+    },
+    {
+      &quot;key&quot;: &quot;invalidCalendarDate&quot;,
+      &quot;pass&quot;: true,
+      &quot;actual&quot;: {
+        &quot;dateResult&quot;: {
+          &quot;type&quot;: &quot;text&quot;,
+          &quot;value&quot;: &quot;2028-02-30&quot;,
+          &quot;valid&quot;: true
+        },
+        &quot;board&quot;: {
+          &quot;schemaVersion&quot;: 1,
+          &quot;tasks&quot;: [
+            {
+              &quot;id&quot;: &quot;oracle-a&quot;,
+              &quot;title&quot;: &quot;Sample literature review&quot;,
+              &quot;project&quot;: &quot;Atlas&quot;,
+              &quot;status&quot;: &quot;todo&quot;,
+              &quot;priority&quot;: &quot;high&quot;,
+              &quot;dueDate&quot;: &quot;2028-02-29&quot;,
+              &quot;tags&quot;: [
+                &quot;methods&quot;,
+                &quot;Research&quot;
+              ]
+            },
+            {
+              &quot;id&quot;: &quot;oracle-b&quot;,
+              &quot;title&quot;: &quot;Dataset audit&quot;,
+              &quot;project&quot;: &quot;Boreal&quot;,
+              &quot;status&quot;: &quot;doing&quot;,
+              &quot;priority&quot;: &quot;medium&quot;,
+              &quot;dueDate&quot;: &quot;&quot;,
+              &quot;tags&quot;: [
+                &quot;cleanup&quot;
+              ]
+            },
+            {
+              &quot;id&quot;: &quot;oracle-c&quot;,
+              &quot;title&quot;: &quot;Draft methods note&quot;,
+              &quot;project&quot;: &quot;Atlas&quot;,
+              &quot;status&quot;: &quot;done&quot;,
+              &quot;priority&quot;: &quot;low&quot;,
+              &quot;dueDate&quot;: &quot;2028-12-31&quot;,
+              &quot;tags&quot;: [
+                &quot;Writing&quot;
+              ]
+            },
+            {
+              &quot;id&quot;: &quot;oracle-d&quot;,
+              &quot;title&quot;: &quot;Field observations&quot;,
+              &quot;project&quot;: &quot;Boreal&quot;,
+              &quot;status&quot;: &quot;todo&quot;,
+              &quot;priority&quot;: &quot;low&quot;,
+              &quot;dueDate&quot;: &quot;&quot;,
+              &quot;tags&quot;: [
+                &quot;Research&quot;
+              ]
+            },
+            {
+              &quot;id&quot;: &quot;oracle-e&quot;,
+              &quot;title&quot;: &quot;Review source links&quot;,
+              &quot;project&quot;: &quot;Atlas&quot;,
+              &quot;status&quot;: &quot;doing&quot;,
+              &quot;priority&quot;: &quot;high&quot;,
+              &quot;dueDate&quot;: &quot;2028-03-01&quot;,
+              &quot;tags&quot;: [
+                &quot;Sources&quot;
+              ]
+            },
+            {
+              &quot;id&quot;: &quot;oracle-f&quot;,
+              &quot;title&quot;: &quot;Archive completed work&quot;,
+              &quot;project&quot;: &quot;Boreal&quot;,
+              &quot;status&quot;: &quot;done&quot;,
+              &quot;priority&quot;: &quot;medium&quot;,
+              &quot;dueDate&quot;: &quot;&quot;,
+              &quot;tags&quot;: [
+                &quot;archive&quot;
+              ]
+            }
+          ]
+        },
+        &quot;error&quot;: {
+          &quot;hasFeedback&quot;: true,
+          &quot;native&quot;: [],
+          &quot;notice&quot;: &quot;&quot;,
+          &quot;addedVisibleFeedback&quot;: [
+            &quot;Due date must be a real calendar date in YYYY-MM-DD format, or blank.&quot;
+          ]
+        }
+      }
+    },
+    {
+      &quot;key&quot;: &quot;modalEscape&quot;,
+      &quot;pass&quot;: false,
+      &quot;actual&quot;: {
+        &quot;visible&quot;: false,
+        &quot;focused&quot;: false
+      }
+    }
+  ],
+  &quot;screenshots&quot;: [],
+  &quot;manualReview&quot;: [],
+  &quot;console&quot;: [],
+  &quot;network&quot;: [],
+  &quot;dialogs&quot;: [],
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;durationMs&quot;: 3438,
+  &quot;publicScreenshots&quot;: []
+}</pre><p></p></details><details><summary>A08 · webkit-360</summary><pre>{
+  &quot;id&quot;: &quot;A08&quot;,
+  &quot;environment&quot;: &quot;webkit-360&quot;,
+  &quot;browser&quot;: &quot;webkit&quot;,
+  &quot;width&quot;: 360,
+  &quot;noJS&quot;: false,
+  &quot;observations&quot;: [
+    {
+      &quot;key&quot;: &quot;malformed&quot;,
+      &quot;pass&quot;: false,
+      &quot;actual&quot;: {
+        &quot;unchanged&quot;: true,
+        &quot;error&quot;: {
+          &quot;hasFeedback&quot;: false,
+          &quot;native&quot;: [],
+          &quot;notice&quot;: &quot;&quot;,
+          &quot;addedVisibleFeedback&quot;: []
+        }
+      }
+    },
+    {
+      &quot;key&quot;: &quot;unsupported-schema&quot;,
+      &quot;pass&quot;: false,
+      &quot;actual&quot;: {
+        &quot;unchanged&quot;: true,
+        &quot;error&quot;: {
+          &quot;hasFeedback&quot;: false,
+          &quot;native&quot;: [],
+          &quot;notice&quot;: &quot;&quot;,
+          &quot;addedVisibleFeedback&quot;: []
+        }
+      }
+    },
+    {
+      &quot;key&quot;: &quot;unsupported-enum&quot;,
+      &quot;pass&quot;: true,
+      &quot;actual&quot;: {
+        &quot;unchanged&quot;: true,
+        &quot;error&quot;: {
+          &quot;hasFeedback&quot;: true,
+          &quot;native&quot;: [],
+          &quot;notice&quot;: &quot;n Saved in this browser only Workspace / Team board ST Import could not be completed Task 6: Status must be todo, doing or done. Dismiss THE BIG PICTURE Good work starts here. Gather the details. Find your focus. Move things forward. ＋ New task On the board 6 ▦ Ideas&quot;,
+          &quot;addedVisibleFeedback&quot;: []
+        }
+      }
+    }
+  ],
+  &quot;screenshots&quot;: [
+    &quot;webkit-360-A08-import-error.png&quot;
+  ],
+  &quot;manualReview&quot;: [],
+  &quot;console&quot;: [],
+  &quot;network&quot;: [],
+  &quot;dialogs&quot;: [],
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;durationMs&quot;: 2623,
+  &quot;publicScreenshots&quot;: [
+    &quot;/assets/trials-20260910/runs/run-06/check-webkit-360-A08-import-error.webp&quot;
+  ]
+}</pre><p><a href="/assets/trials-20260910/runs/run-06/check-webkit-360-A08-import-error.webp">Failure capture 1</a></p></details><details><summary>A06 · webkit-1440</summary><pre>{
+  &quot;id&quot;: &quot;A06&quot;,
+  &quot;environment&quot;: &quot;webkit-1440&quot;,
+  &quot;browser&quot;: &quot;webkit&quot;,
+  &quot;width&quot;: 1440,
+  &quot;noJS&quot;: false,
+  &quot;observations&quot;: [
+    {
+      &quot;key&quot;: &quot;blank-title&quot;,
+      &quot;pass&quot;: true,
+      &quot;actual&quot;: {
+        &quot;constrained&quot;: false,
+        &quot;feedback&quot;: {
+          &quot;hasFeedback&quot;: true,
+          &quot;native&quot;: [],
+          &quot;notice&quot;: &quot;&quot;,
+          &quot;addedVisibleFeedback&quot;: [
+            &quot;Title is required.&quot;
+          ]
+        },
+        &quot;storedCount&quot;: 6
+      }
+    },
+    {
+      &quot;key&quot;: &quot;long-title&quot;,
+      &quot;pass&quot;: true,
+      &quot;actual&quot;: {
+        &quot;constrained&quot;: false,
+        &quot;feedback&quot;: {
+          &quot;hasFeedback&quot;: true,
+          &quot;native&quot;: [],
+          &quot;notice&quot;: &quot;&quot;,
+          &quot;addedVisibleFeedback&quot;: [
+            &quot;Title must be 120 characters or fewer.&quot;
+          ]
+        },
+        &quot;storedCount&quot;: 6
+      }
+    },
+    {
+      &quot;key&quot;: &quot;long-project&quot;,
+      &quot;pass&quot;: true,
+      &quot;actual&quot;: {
+        &quot;constrained&quot;: false,
+        &quot;feedback&quot;: {
+          &quot;hasFeedback&quot;: true,
+          &quot;native&quot;: [],
+          &quot;notice&quot;: &quot;&quot;,
+          &quot;addedVisibleFeedback&quot;: [
+            &quot;Project must be 80 characters or fewer.&quot;
+          ]
+        },
+        &quot;storedCount&quot;: 6
+      }
+    },
+    {
+      &quot;key&quot;: &quot;invalidCalendarDate&quot;,
+      &quot;pass&quot;: true,
+      &quot;actual&quot;: {
+        &quot;dateResult&quot;: {
+          &quot;type&quot;: &quot;text&quot;,
+          &quot;value&quot;: &quot;2028-02-30&quot;,
+          &quot;valid&quot;: true
+        },
+        &quot;board&quot;: {
+          &quot;schemaVersion&quot;: 1,
+          &quot;tasks&quot;: [
+            {
+              &quot;id&quot;: &quot;oracle-a&quot;,
+              &quot;title&quot;: &quot;Sample literature review&quot;,
+              &quot;project&quot;: &quot;Atlas&quot;,
+              &quot;status&quot;: &quot;todo&quot;,
+              &quot;priority&quot;: &quot;high&quot;,
+              &quot;dueDate&quot;: &quot;2028-02-29&quot;,
+              &quot;tags&quot;: [
+                &quot;methods&quot;,
+                &quot;Research&quot;
+              ]
+            },
+            {
+              &quot;id&quot;: &quot;oracle-b&quot;,
+              &quot;title&quot;: &quot;Dataset audit&quot;,
+              &quot;project&quot;: &quot;Boreal&quot;,
+              &quot;status&quot;: &quot;doing&quot;,
+              &quot;priority&quot;: &quot;medium&quot;,
+              &quot;dueDate&quot;: &quot;&quot;,
+              &quot;tags&quot;: [
+                &quot;cleanup&quot;
+              ]
+            },
+            {
+              &quot;id&quot;: &quot;oracle-c&quot;,
+              &quot;title&quot;: &quot;Draft methods note&quot;,
+              &quot;project&quot;: &quot;Atlas&quot;,
+              &quot;status&quot;: &quot;done&quot;,
+              &quot;priority&quot;: &quot;low&quot;,
+              &quot;dueDate&quot;: &quot;2028-12-31&quot;,
+              &quot;tags&quot;: [
+                &quot;Writing&quot;
+              ]
+            },
+            {
+              &quot;id&quot;: &quot;oracle-d&quot;,
+              &quot;title&quot;: &quot;Field observations&quot;,
+              &quot;project&quot;: &quot;Boreal&quot;,
+              &quot;status&quot;: &quot;todo&quot;,
+              &quot;priority&quot;: &quot;low&quot;,
+              &quot;dueDate&quot;: &quot;&quot;,
+              &quot;tags&quot;: [
+                &quot;Research&quot;
+              ]
+            },
+            {
+              &quot;id&quot;: &quot;oracle-e&quot;,
+              &quot;title&quot;: &quot;Review source links&quot;,
+              &quot;project&quot;: &quot;Atlas&quot;,
+              &quot;status&quot;: &quot;doing&quot;,
+              &quot;priority&quot;: &quot;high&quot;,
+              &quot;dueDate&quot;: &quot;2028-03-01&quot;,
+              &quot;tags&quot;: [
+                &quot;Sources&quot;
+              ]
+            },
+            {
+              &quot;id&quot;: &quot;oracle-f&quot;,
+              &quot;title&quot;: &quot;Archive completed work&quot;,
+              &quot;project&quot;: &quot;Boreal&quot;,
+              &quot;status&quot;: &quot;done&quot;,
+              &quot;priority&quot;: &quot;medium&quot;,
+              &quot;dueDate&quot;: &quot;&quot;,
+              &quot;tags&quot;: [
+                &quot;archive&quot;
+              ]
+            }
+          ]
+        },
+        &quot;error&quot;: {
+          &quot;hasFeedback&quot;: true,
+          &quot;native&quot;: [],
+          &quot;notice&quot;: &quot;&quot;,
+          &quot;addedVisibleFeedback&quot;: [
+            &quot;Due date must be a real calendar date in YYYY-MM-DD format, or blank.&quot;
+          ]
+        }
+      }
+    },
+    {
+      &quot;key&quot;: &quot;modalEscape&quot;,
+      &quot;pass&quot;: false,
+      &quot;actual&quot;: {
+        &quot;visible&quot;: false,
+        &quot;focused&quot;: false
+      }
+    }
+  ],
+  &quot;screenshots&quot;: [],
+  &quot;manualReview&quot;: [],
+  &quot;console&quot;: [],
+  &quot;network&quot;: [],
+  &quot;dialogs&quot;: [],
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;durationMs&quot;: 3782,
+  &quot;publicScreenshots&quot;: []
+}</pre><p></p></details><details><summary>A08 · webkit-1440</summary><pre>{
+  &quot;id&quot;: &quot;A08&quot;,
+  &quot;environment&quot;: &quot;webkit-1440&quot;,
+  &quot;browser&quot;: &quot;webkit&quot;,
+  &quot;width&quot;: 1440,
+  &quot;noJS&quot;: false,
+  &quot;observations&quot;: [
+    {
+      &quot;key&quot;: &quot;malformed&quot;,
+      &quot;pass&quot;: false,
+      &quot;actual&quot;: {
+        &quot;unchanged&quot;: true,
+        &quot;error&quot;: {
+          &quot;hasFeedback&quot;: false,
+          &quot;native&quot;: [],
+          &quot;notice&quot;: &quot;&quot;,
+          &quot;addedVisibleFeedback&quot;: []
+        }
+      }
+    },
+    {
+      &quot;key&quot;: &quot;unsupported-schema&quot;,
+      &quot;pass&quot;: false,
+      &quot;actual&quot;: {
+        &quot;unchanged&quot;: true,
+        &quot;error&quot;: {
+          &quot;hasFeedback&quot;: false,
+          &quot;native&quot;: [],
+          &quot;notice&quot;: &quot;&quot;,
+          &quot;addedVisibleFeedback&quot;: []
+        }
+      }
+    },
+    {
+      &quot;key&quot;: &quot;unsupported-enum&quot;,
+      &quot;pass&quot;: true,
+      &quot;actual&quot;: {
+        &quot;unchanged&quot;: true,
+        &quot;error&quot;: {
+          &quot;hasFeedback&quot;: true,
+          &quot;native&quot;: [],
+          &quot;notice&quot;: &quot;rowser only Workspace / Team board FICTIONAL STUDIO ST Import could not be completed Task 6: Status must be todo, doing or done. Dismiss THE BIG PICTURE Good work starts here. Gather the details. Find your focus. Move things forward. ＋ New task On the board 6 ▦ Ideas&quot;,
+          &quot;addedVisibleFeedback&quot;: []
+        }
+      }
+    }
+  ],
+  &quot;screenshots&quot;: [
+    &quot;webkit-1440-A08-import-error.png&quot;
+  ],
+  &quot;manualReview&quot;: [],
+  &quot;console&quot;: [],
+  &quot;network&quot;: [],
+  &quot;dialogs&quot;: [],
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;durationMs&quot;: 2750,
+  &quot;publicScreenshots&quot;: [
+    &quot;/assets/trials-20260910/runs/run-06/check-webkit-1440-A08-import-error.webp&quot;
+  ]
+}</pre><p><a href="/assets/trials-20260910/runs/run-06/check-webkit-1440-A08-import-error.webp">Failure capture 1</a></p></details><h2>Qualitative design review</h2><p>A condition-blind agent reviewed these actual captured pixels. These observations are not a numerical design score or a general winner claim.</p><h3>Hierarchy and visual coherence</h3><p>The desktop uses a narrow workspace/project rail, a serif introductory heading, three summary cards, a wide search field and three task columns. Cream surfaces, sage borders, dark green controls and small status/priority accents recur consistently.</p><p>The app has a coherent identity and a readable grouping of workspace, summary, controls and tasks. The project list also gives context to the task cards.</p><h3>Task density and typography</h3><p>Task cards put date, compact status selector and edit/delete controls on a shared bottom row. This keeps multiple cards visible, but project labels, tags, dates, sidebar details and summary captions use small, fine text.</p><p>The board uses space efficiently, while secondary information and small action icons demand closer reading than the bold task titles.</p><h3>Task creation form</h3><p>The centered form separates task title and project from a two-column status/priority row, followed by due date and tags. Required markers and input guidance are visible, and the title field has a strong focus outline. Cancel and Create task are differentiated.</p><p>The layout supports a straightforward entry sequence and makes the focused control clear. Static appearance does not prove complete focus trapping or assistive-technology behavior.</p><h3>Import error presentation</h3><p>Malformed JSON produces a prominent warm-tinted alert above the main heading, with an explicit failure title, a file-format explanation and a Dismiss button. The existing board remains visible below it.</p><p>The error is hard to overlook and gives a recovery direction. The capture receipt confirms unchanged stored bytes for this input; the visible alert could also state that preservation explicitly.</p><h3>Filtered empty-state wording</h3><p>The active search shows one matching task and a Clear filters control, but empty status columns say Room for the next step and Completed work will land here. The summary still shows existing completed tasks outside the filter.</p><p>Those empty-state messages sound like an empty board rather than excluded search results. Context-specific wording such as No matching tasks would make the filtering state clearer.</p><h3>Mobile first viewport</h3><p>The mobile view keeps a full-width New task button, three summary cards, search and filters within the opening screen; the top of the first status column reaches its lower edge. Primary content fits the width, but metadata, summary captions and filter text are small.</p><p>The compact arrangement brings board navigation into view sooner, at the cost of finer text. A complete task card still requires scrolling, and this single capture does not evaluate the remainder of the mobile board.</p><h3>Review limits</h3><ul><li>Only the supplied captured states were reviewed. Mobile coverage here is the initial viewport, not a complete mobile walkthrough.</li><li>Static screenshots cannot establish all keyboard behavior, screen-reader output, motion quality, data safety or import correctness. Those need the separate behavioral rubric.</li><li>The board counts and progress percentages belong to this fictional seeded application, not benchmark performance or product adoption.</li><li>Anchored screenshots preserve actual viewport framing; partial surrounding content does not by itself imply source-page clipping.</li><li>No condition mapping was inspected, no candidate code was changed and no numerical aesthetic score or causal improvement claim is assigned.</li></ul></main></body></html>

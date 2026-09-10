@@ -1,0 +1,2340 @@
+{
+  "reviewType": "retrospective-descriptive-process-audit",
+  "schema": "fabius-process-review/v1",
+  "reviewedAt": "2026-09-10T14:51:22.140041+00:00",
+  "reviewBlinded": false,
+  "requestedAfterOutcomes": true,
+  "score": null,
+  "criteria": [
+    "Explicit public planning/decomposition",
+    "Actual tool/reference use",
+    "Checks executed",
+    "Observable diagnose/edit/retest sequence",
+    "Evidence handoff and limits"
+  ],
+  "coveredRunIds": [
+    "run-02",
+    "run-05",
+    "run-03",
+    "run-12",
+    "run-06",
+    "run-08",
+    "run-09",
+    "run-11",
+    "run-07",
+    "run-01",
+    "run-04",
+    "run-10"
+  ],
+  "plannedRunCount": 12,
+  "limits": [
+    "This descriptive process audit was requested after outcomes existed. It is retrospective and exploratory, not a preregistered process endpoint.",
+    "The methods reviewer knows condition assignments; this review is not blinded. Separate proof/design reviewers have their own blinding procedures.",
+    "Only public progress messages, observable tool actions, check exits and retained artifact evidence are summarized. No hidden reasoning is inferred or published.",
+    "There is no process score, tool-call leaderboard or causal claim. More messages, calls, checks or elapsed time do not imply a better process.",
+    "The baseline retains native Codex instructions and the same common trial directions. It is not an unstructured or instruction-free model.",
+    "Delegation, external services and auxiliary model calls were prohibited for both conditions. Full orchestration, provider selection, collaboration and autonomous end-to-end deployment are unmeasured.",
+    "Treatment includes three or four pinned contracts plus a repository snapshot. Observed behavior cannot be assigned to an individual Fabius rule from this design.",
+    "Candidate-authored tests and self-reported passes are process evidence, not substitutes for the independent acceptance and proof checks.",
+    "Coverage includes all 12 finalized valid runs from the planned three-task, two-condition, two-repeat study. The two preserved setup attempts are documented separately."
+  ],
+  "runs": [
+    {
+      "runId": "run-02",
+      "task": "math",
+      "repeat": 1,
+      "condition": "baseline",
+      "summary": "The baseline stated a derive–implement–verify sequence, executed its verifier, expanded it and reran it successfully.",
+      "observations": [
+        {
+          "area": "Planning and decomposition",
+          "observed": "A public execution outline separated exact derivation, implementation and comparison with feasible-face enumeration before the first source write.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_2",
+              "eventType": "agent_message",
+              "eventFile": "runs/run-02/events.jsonl",
+              "eventLine": 5,
+              "eventSha256": "a571bad3e7e299a146904eafbf639d913fcfd45683bcdc2f5f316afca1aa8766"
+            },
+            {
+              "type": "event",
+              "eventId": "item_6",
+              "eventType": "file_change",
+              "eventFile": "runs/run-02/events.jsonl",
+              "eventLine": 12,
+              "eventSha256": "05bd516cceb3c37ce6bd8ed1eae30dddde90ac89ff5e0b31ba704e580244af64"
+            }
+          ]
+        },
+        {
+          "area": "Tools and verification",
+          "observed": "The trace records source creation, a Python version check and two successful executions of the candidate-authored verification script.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_6",
+              "eventType": "file_change",
+              "eventFile": "runs/run-02/events.jsonl",
+              "eventLine": 12,
+              "eventSha256": "05bd516cceb3c37ce6bd8ed1eae30dddde90ac89ff5e0b31ba704e580244af64"
+            },
+            {
+              "type": "event",
+              "eventId": "item_7",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-02/events.jsonl",
+              "eventLine": 14,
+              "eventSha256": "f005f77dab3344586e7ff9fc00b4dda37ef44e5ee8d429afde7d65ac0b8b0411",
+              "commandSha256": "adc795246d752f2ea97d8b0ecd86bd5500a35c9c96513cd179909b6c400cf6c2",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_8",
+              "eventType": "file_change",
+              "eventFile": "runs/run-02/events.jsonl",
+              "eventLine": 16,
+              "eventSha256": "485588b1b5b1f29417a2685229c857ca092513848171c9e06a12cde332dd37d1"
+            },
+            {
+              "type": "event",
+              "eventId": "item_9",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-02/events.jsonl",
+              "eventLine": 18,
+              "eventSha256": "f8b374082104c20654ae8851399b09392923939cabfbd7184522fcd3d046624c",
+              "commandSha256": "77ff0e9e84da35be63e97ce6adad50417ca01cd4c9027782a44e0ba7d6d3c51b",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_12",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-02/events.jsonl",
+              "eventLine": 23,
+              "eventSha256": "250ed3628acf5afbafb049a3c9587e7051c7992c1f25090bcbb189ac31a3da42",
+              "commandSha256": "77ff0e9e84da35be63e97ce6adad50417ca01cd4c9027782a44e0ba7d6d3c51b",
+              "exitCode": 0
+            },
+            {
+              "type": "artifact",
+              "path": "runs/run-02/artifact/verify_solution.py",
+              "sha256": "8d139dc430c9448851e5fd78d33cbce668314b3bff104220d4dfe7065a37a0eb",
+              "matchesRunManifest": true
+            }
+          ]
+        },
+        {
+          "area": "Review and retest",
+          "observed": "After a successful first verification, the verifier was updated and rerun. This is an observable extension/retest sequence; it was not triggered by a recorded mathematical test failure.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_9",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-02/events.jsonl",
+              "eventLine": 18,
+              "eventSha256": "f8b374082104c20654ae8851399b09392923939cabfbd7184522fcd3d046624c",
+              "commandSha256": "77ff0e9e84da35be63e97ce6adad50417ca01cd4c9027782a44e0ba7d6d3c51b",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_11",
+              "eventType": "file_change",
+              "eventFile": "runs/run-02/events.jsonl",
+              "eventLine": 21,
+              "eventSha256": "ecb1025d78a48315ea9b946ce946f4f7dbbaa9bbc9958eeff2796b4dd6d8bcbf"
+            },
+            {
+              "type": "event",
+              "eventId": "item_12",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-02/events.jsonl",
+              "eventLine": 23,
+              "eventSha256": "250ed3628acf5afbafb049a3c9587e7051c7992c1f25090bcbb189ac31a3da42",
+              "commandSha256": "77ff0e9e84da35be63e97ce6adad50417ca01cd4c9027782a44e0ba7d6d3c51b",
+              "exitCode": 0
+            }
+          ]
+        },
+        {
+          "area": "Handoff",
+          "observed": "The run retained a verification record and named numerical limits in its final answer.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_14",
+              "eventType": "file_change",
+              "eventFile": "runs/run-02/events.jsonl",
+              "eventLine": 26,
+              "eventSha256": "a82ef7bea97575a239dff20d94197dacb75121ce3c5d73660612ab1230151eae"
+            },
+            {
+              "type": "event",
+              "eventId": "item_16",
+              "eventType": "agent_message",
+              "eventFile": "runs/run-02/events.jsonl",
+              "eventLine": 29,
+              "eventSha256": "5a6aab039ab349b754f5b9bbaa46773e32a5448dd7624e4630f4ce8f2674619d"
+            },
+            {
+              "type": "artifact",
+              "path": "runs/run-02/artifact/verification.md",
+              "sha256": "e8cb8403575c6a8ed78134043ba9feb11d3e422fd3a5eef0c768e1246ad6bf43",
+              "matchesRunManifest": true
+            }
+          ]
+        }
+      ],
+      "limits": [
+        "The supplied baseline already includes native Codex process guidance.",
+        "The verifier was written by the same candidate; its green exit is not an independent proof grade.",
+        "No external reference lookup, durable dependency graph or agent orchestration was observed."
+      ],
+      "reviewBlinded": false
+    },
+    {
+      "runId": "run-05",
+      "task": "math",
+      "repeat": 1,
+      "condition": "fabius",
+      "summary": "The Fabius run stated a derivation plan, used exact-arithmetic scratch work, reread its proof and executed a separate verification program.",
+      "observations": [
+        {
+          "area": "Planning and decomposition",
+          "observed": "A public outline identified exact regimes, KKT certificates and verification against face enumeration before writing the solver.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_2",
+              "eventType": "agent_message",
+              "eventFile": "runs/run-05/events.jsonl",
+              "eventLine": 5,
+              "eventSha256": "7e5dfc6829f61bbe8884794743eeed0726794536a436b19e1ad3ad5f6c87bb41"
+            },
+            {
+              "type": "event",
+              "eventId": "item_7",
+              "eventType": "file_change",
+              "eventFile": "runs/run-05/events.jsonl",
+              "eventLine": 14,
+              "eventSha256": "40795c27fb02ceff9c56906df017d22a193eed72b05d0b30a747e956a0d85169"
+            }
+          ]
+        },
+        {
+          "area": "Tools and reference use",
+          "observed": "Two inline Python calculations and several explicit proof read-backs are visible. The pinned contracts were supplied in context; no supplementary file read from the snapshot is recorded.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_4",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-05/events.jsonl",
+              "eventLine": 9,
+              "eventSha256": "4d6b7d2e8bcb7bdd5103de694c7ea3ffef1edde2927c620350e1179f14d7f860",
+              "commandSha256": "bff15e9f4f68ed16afb25a7adc2f60a157b6779b3fe1a0781969d035bc8ec02f",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_8",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-05/events.jsonl",
+              "eventLine": 16,
+              "eventSha256": "458c0553ba1152157d9cef982321f4caf46efc53d05b03a960ea950bc68392ab",
+              "commandSha256": "3e7f7a79ed8e135be98fc0cee97747010c62a4aec1ba41526d68048af93b7fde",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_9",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-05/events.jsonl",
+              "eventLine": 18,
+              "eventSha256": "caf5169ef2ce18e091b68f356202108a8f983ee60bd572223e875d7527a0d9c4",
+              "commandSha256": "bfd57e460e08fc74f9262ccb94ecb2fc00e6342d67da2bbb743ab3425b93e15d",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_10",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-05/events.jsonl",
+              "eventLine": 20,
+              "eventSha256": "0e65bc8c2628fd26b67fbb8edf99323b82dd3a5a8ea8b720c1e3714a743bfcf5",
+              "commandSha256": "e7888aa38389315d261b868c7cdf2090671b3b56678d333aacaa7498cd55fd20",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_14",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-05/events.jsonl",
+              "eventLine": 27,
+              "eventSha256": "92ee03d85b47f04902f9320f81d36c39d1fdfd99b7af74a72674eb3fd36ef73f",
+              "commandSha256": "bf67a3c7e3ae64949e45610e13336ae26aa5420fbe7679ba493cc96025bd553c",
+              "exitCode": 0
+            }
+          ]
+        },
+        {
+          "area": "Verification",
+          "observed": "The candidate created and successfully ran its verifier, then performed a separate source/syntax read-back and read the verification record.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_11",
+              "eventType": "file_change",
+              "eventFile": "runs/run-05/events.jsonl",
+              "eventLine": 22,
+              "eventSha256": "bd79ba45a7047e8a21e349a80b346948ac35b20cb6b64c2f2f2b5e2c77509058"
+            },
+            {
+              "type": "event",
+              "eventId": "item_13",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-05/events.jsonl",
+              "eventLine": 25,
+              "eventSha256": "9f9a21f8f045936ec5973d3b55585b179fa2b38510b3644be2c0bb9deff3847b",
+              "commandSha256": "77ff0e9e84da35be63e97ce6adad50417ca01cd4c9027782a44e0ba7d6d3c51b",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_16",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-05/events.jsonl",
+              "eventLine": 31,
+              "eventSha256": "452f8a702d80172d17bc593dd9a3b621f93b8e6a6495949eaaa5484936283786",
+              "commandSha256": "d6308b4071cd12a6e7b13755a86e05da9d5e74db73c3c74b6ebf4398afd14093",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_19",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-05/events.jsonl",
+              "eventLine": 36,
+              "eventSha256": "501272e96ca2c4f16819751a8824ddfedf3761f642ee51501d8e5f4b0abc2a86",
+              "commandSha256": "a6e1b413773697d9b661c410cd37f1d2593ba48090ff1c13aee9cfba054092f0",
+              "exitCode": 0
+            },
+            {
+              "type": "artifact",
+              "path": "runs/run-05/artifact/verify_solution.py",
+              "sha256": "f667e5e84038556440c16554a287e5a6c4f6266020e684c59e45f2450a4d4e4e",
+              "matchesRunManifest": true
+            },
+            {
+              "type": "artifact",
+              "path": "runs/run-05/artifact/verification.md",
+              "sha256": "e3ab5522c3952e4c5dbbe91eca53bc51135715f009cdb8b901621d7eadc180a9",
+              "matchesRunManifest": true
+            }
+          ]
+        },
+        {
+          "area": "Diagnosis and retest",
+          "observed": "No mathematical check failure is recorded in this run, so the trace does not demonstrate recovery from one. Extra reads and calculations are activity evidence, not a quality score.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_13",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-05/events.jsonl",
+              "eventLine": 25,
+              "eventSha256": "9f9a21f8f045936ec5973d3b55585b179fa2b38510b3644be2c0bb9deff3847b",
+              "commandSha256": "77ff0e9e84da35be63e97ce6adad50417ca01cd4c9027782a44e0ba7d6d3c51b",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_16",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-05/events.jsonl",
+              "eventLine": 31,
+              "eventSha256": "452f8a702d80172d17bc593dd9a3b621f93b8e6a6495949eaaa5484936283786",
+              "commandSha256": "d6308b4071cd12a6e7b13755a86e05da9d5e74db73c3c74b6ebf4398afd14093",
+              "exitCode": 0
+            }
+          ]
+        }
+      ],
+      "limits": [
+        "The candidate-authored verifier is not an independent external assessment.",
+        "Visible scratch calculations do not expose or prove the model’s hidden reasoning.",
+        "Use of the supplied contracts cannot by itself establish which instruction caused a particular action."
+      ],
+      "reviewBlinded": false
+    },
+    {
+      "runId": "run-03",
+      "task": "landing",
+      "repeat": 1,
+      "condition": "fabius",
+      "summary": "The Fabius landing run read its design reference and used an observed fallback failure to drive a source fix and successful browser retests.",
+      "observations": [
+        {
+          "area": "Planning and decomposition",
+          "observed": "The public outline named design, responsive layouts, keyboard interactions, billing and no-JavaScript checks before the implementation command.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_2",
+              "eventType": "agent_message",
+              "eventFile": "runs/run-03/events.jsonl",
+              "eventLine": 5,
+              "eventSha256": "58af39391c4cfc546b7b34a10619195b4970f43567f5916a619bcb9e8eb0905a"
+            },
+            {
+              "type": "event",
+              "eventId": "item_6",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-03/events.jsonl",
+              "eventLine": 12,
+              "eventSha256": "fc12794391930d413b5afcbac393c3ade4debd8588e0bcd93f26e27e206d3ad0",
+              "commandSha256": "a7e2e01850d887d93305bbe8769412cf446f6f43660129ed750b755f21cf38b3",
+              "exitCode": 0
+            }
+          ]
+        },
+        {
+          "area": "Reference use",
+          "observed": "An actual tool command read the pinned design-system reference before implementation.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_4",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-03/events.jsonl",
+              "eventLine": 9,
+              "eventSha256": "478d558f76a983752c59090031ab0e53adf0f97e08986e0695b7029a76e4fb5a",
+              "commandSha256": "49e6f8e512ba8cff7be9b07658f60f98e22ad87b5787525ddee651941297a538",
+              "exitCode": 0
+            }
+          ]
+        },
+        {
+          "area": "Diagnose, edit and retest",
+          "observed": "A browser run failed in the no-JavaScript pricing fallback. The run inspected the failing check and DOM, replaced the fallback with ordinary HTML, and reran the expanded browser suite successfully.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_7",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-03/events.jsonl",
+              "eventLine": 15,
+              "eventSha256": "2e7c24b5f6944158625ecd4b8360f93e35b1135f479499327431951cf06024c9",
+              "commandSha256": "d09d60cb97aea19fc789a7eec99946fbfc8052373997f7e7f3c8f773b100992d",
+              "exitCode": 1
+            },
+            {
+              "type": "event",
+              "eventId": "item_9",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-03/events.jsonl",
+              "eventLine": 17,
+              "eventSha256": "585a9c4ebff69d8a6ee71f3790d22a11ebe9847f87898f75751608ccdd8dc9ff",
+              "commandSha256": "f4fe3f34f7bd4f0c264ecf82fbbaf650494e03216a7a391e283fc3672b0fa7bb",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_10",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-03/events.jsonl",
+              "eventLine": 19,
+              "eventSha256": "26e84897638b31c2545ff8171c4995c25670aad6f085b97a93f3c4db7705a8e3",
+              "commandSha256": "356f90f99557c3c3e77066c77e11c75f38c456ab3000179d8692c74bc9de5606",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_11",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-03/events.jsonl",
+              "eventLine": 21,
+              "eventSha256": "8340970896ff35023dc6c8dbb59cb8d1e40713ddb47cb11c8f316e30c12ee17c",
+              "commandSha256": "b5049edf3215d5c9f92b0f7776f812c5ee40f538abdab07a560e5c5e27f16809",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_13",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-03/events.jsonl",
+              "eventLine": 26,
+              "eventSha256": "329b83689d35c92e10796421b46f389b4712d6077faae019eba89e15bd4a0b6c",
+              "commandSha256": "ee160b3926754dcad0add6b39cfc8fbf07b13894d94f31a76abd4395e0c0230a",
+              "exitCode": 0
+            }
+          ]
+        },
+        {
+          "area": "Verification and handoff",
+          "observed": "Further commands exercised nested paths, more widths, keyboard states and contrast; another browser run followed the later diagram CSS change. Scripts, captures and limitations were retained.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_15",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-03/events.jsonl",
+              "eventLine": 28,
+              "eventSha256": "c539fe20f26b4d64c34b568b005467d99171ffb6800f12d931413c739c79c981",
+              "commandSha256": "dd22115467e24222b78238e20a983639792c8e04d8818c2686d829f00ace322c",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_18",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-03/events.jsonl",
+              "eventLine": 33,
+              "eventSha256": "49d252e2a29b766fb1a1f89cef7ba1e0b058e4c2cafa01dc6fbbc0b848a68a3c",
+              "commandSha256": "59abb6b6f7742a20490d5e4277367290b40bb9197c624b8e85d0f0d0e3fc2053",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_19",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-03/events.jsonl",
+              "eventLine": 35,
+              "eventSha256": "b0455abf62509813e762fbdd67bbbfd9a3fc9bb9b3a7381fe566774ddd2c0392",
+              "commandSha256": "523e2aa366ea5c8787b5d6d4fe1a28b3d6f45f08290235432ec6068ed2961b1f",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_20",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-03/events.jsonl",
+              "eventLine": 40,
+              "eventSha256": "6d653aa3b48a3fd3a255e5dce84c67aa0c6f3d3d60223e1048cbb0883b02db79",
+              "commandSha256": "a6f403bd4dac3a686156241d1b6b98fb65a0f27de18a4268c408181841b22ec6",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_22",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-03/events.jsonl",
+              "eventLine": 39,
+              "eventSha256": "ffac165e34d7bd1c32101cf413bc831e28b7f6cb59a28ffdd33b18d256ec4a62",
+              "commandSha256": "876c5d416f5fef50cb16a762e809976fac615c1c07ee6a84a69b0a3343e6da86",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_24",
+              "eventType": "agent_message",
+              "eventFile": "runs/run-03/events.jsonl",
+              "eventLine": 43,
+              "eventSha256": "50bed212c0ae6e4bad9bc895c9e9a499e76ac1c263be3586b4b5ae60c30f212c"
+            },
+            {
+              "type": "artifact",
+              "path": "runs/run-03/artifact/checks/verify.mjs",
+              "sha256": "3c5431bb1e32858629bd7a3b0ba57294094f219c0a7c808c9c3db30a85eeff3d",
+              "matchesRunManifest": true
+            },
+            {
+              "type": "artifact",
+              "path": "runs/run-03/artifact/checks/contrast.py",
+              "sha256": "786de35d285d1a0999bfe18dcdf7286aa9baf75f13de5d0f002a3d2e07b806b0",
+              "matchesRunManifest": true
+            },
+            {
+              "type": "artifact",
+              "path": "runs/run-03/artifact/README.md",
+              "sha256": "773c49205bb3ee4bbdbf1c8470ca3189b32a0e0d4049b361d21469b0e680d3be",
+              "matchesRunManifest": true
+            }
+          ]
+        }
+      ],
+      "limits": [
+        "The initial implementation required a functional fallback correction.",
+        "The candidate’s browser checks use Chrome; independent WebKit grading is a separate stage.",
+        "The trace shows reference access and a repair loop, not proof that the reference caused the repair."
+      ],
+      "reviewBlinded": false
+    },
+    {
+      "runId": "run-12",
+      "task": "landing",
+      "repeat": 1,
+      "condition": "baseline",
+      "summary": "The baseline landing run planned browser verification, corrected a test’s keyboard modality and retested alongside responsive layout edits.",
+      "observations": [
+        {
+          "area": "Planning and decomposition",
+          "observed": "A public outline separated visual implementation from browser interaction and responsive verification.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_2",
+              "eventType": "agent_message",
+              "eventFile": "runs/run-12/events.jsonl",
+              "eventLine": 5,
+              "eventSha256": "a2c06f4d43d3b0e6b5aea5638c64d748cdf53b72a123bf19d13eadf1bee8e75c"
+            },
+            {
+              "type": "event",
+              "eventId": "item_4",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-12/events.jsonl",
+              "eventLine": 9,
+              "eventSha256": "fe2ebbb9f1ea870c496abd11294ebf5e8a6dff8577da4a6b9e2b6d026414f459",
+              "commandSha256": "e080b7c470620dbe8c6f33d49a62a0a05cdc31c9af30d556ca31dea705fae0a3",
+              "exitCode": 0
+            }
+          ]
+        },
+        {
+          "area": "Tools and verification",
+          "observed": "The candidate built and ran a browser verifier, then a separate responsive/contrast helper and an HTML/syntax audit.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_6",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-12/events.jsonl",
+              "eventLine": 12,
+              "eventSha256": "f2083ccb7fe690bcfd3934835974092ec6e5ce82bdc881f2fbad67916c39d81d",
+              "commandSha256": "799dc4df066f5bb18ff709441d1e47323ba7c5f1890f9e6c2e41fc519f5aec62",
+              "exitCode": 1
+            },
+            {
+              "type": "event",
+              "eventId": "item_9",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-12/events.jsonl",
+              "eventLine": 17,
+              "eventSha256": "34cec0dd4026accbd3f589b9a32fa116f50027bcf8238c5525e9481866d4e3cf",
+              "commandSha256": "a5302c6464e83cc0d181bdd0a483c98057ea22fa3731fca530a8e8d784297eab",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_10",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-12/events.jsonl",
+              "eventLine": 19,
+              "eventSha256": "500cefdc3b2df25bc5bc8f041695a10f4bbc07f1471d07b7938636fff8d4e17c",
+              "commandSha256": "7d71c9746d824051fbb21933caf8c0c4e4ac9eece94166bea48f83801b6d82c6",
+              "exitCode": 0
+            },
+            {
+              "type": "artifact",
+              "path": "runs/run-12/artifact/verify.mjs",
+              "sha256": "8bcb84a2bd098b74b195104106d48ce768598e84337fe2829fa2f033abf05d19",
+              "matchesRunManifest": true
+            },
+            {
+              "type": "artifact",
+              "path": "runs/run-12/artifact/responsive-check.mjs",
+              "sha256": "0fff7a33e6eb54b82f1f13fff003446e093ad0e73871d7061af7983b1c51f7b3",
+              "matchesRunManifest": true
+            }
+          ]
+        },
+        {
+          "area": "Diagnose, edit and retest",
+          "observed": "The first browser check failed on focus visibility after programmatic focus. The next command added actual Tab/Shift+Tab input, edited layout styles and reran the verifier successfully. The changed test preserved its visible-focus assertion.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_6",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-12/events.jsonl",
+              "eventLine": 12,
+              "eventSha256": "f2083ccb7fe690bcfd3934835974092ec6e5ce82bdc881f2fbad67916c39d81d",
+              "commandSha256": "799dc4df066f5bb18ff709441d1e47323ba7c5f1890f9e6c2e41fc519f5aec62",
+              "exitCode": 1
+            },
+            {
+              "type": "event",
+              "eventId": "item_7",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-12/events.jsonl",
+              "eventLine": 14,
+              "eventSha256": "28b43ce7619e0d4ca85da8a091e9985c666c8f7d512098750e9010785d019ba3",
+              "commandSha256": "88bfc79433db1d8dcf094743c83e04dd0892d1dab1c2eca68b09b6276f5752d6",
+              "exitCode": 0
+            }
+          ]
+        },
+        {
+          "area": "Handoff",
+          "observed": "The run retained browser scripts, captures and a README identifying Chrome-only verification and the illustrative product scope.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_10",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-12/events.jsonl",
+              "eventLine": 19,
+              "eventSha256": "500cefdc3b2df25bc5bc8f041695a10f4bbc07f1471d07b7938636fff8d4e17c",
+              "commandSha256": "7d71c9746d824051fbb21933caf8c0c4e4ac9eece94166bea48f83801b6d82c6",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_12",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-12/events.jsonl",
+              "eventLine": 22,
+              "eventSha256": "9bdc8b43c09aad84c62da1226b2f724337e9459cf93432b0e789720ee6d7589a",
+              "commandSha256": "dc19d7a45cb8bc81d668a5d051f7e4f707d22d0122159289c4d32de334eaa986",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_13",
+              "eventType": "agent_message",
+              "eventFile": "runs/run-12/events.jsonl",
+              "eventLine": 23,
+              "eventSha256": "fe5d95e1dcc2fe1abb0413e72c350cd7352703fd249a976733bf38e1fa420201"
+            },
+            {
+              "type": "artifact",
+              "path": "runs/run-12/artifact/README.md",
+              "sha256": "4cd17385e3c17725d7c9d7f998b5e1b34774a7ec1c8974f4f4c4e929e6f80e44",
+              "matchesRunManifest": true
+            }
+          ]
+        }
+      ],
+      "limits": [
+        "The first verification script used an unsuitable input modality for its focus-visible assertion.",
+        "Test corrections and product changes occurred in one command, limiting attribution of each observed improvement.",
+        "Chrome-only candidate checks do not establish physical-device or cross-engine coverage."
+      ],
+      "reviewBlinded": false
+    },
+    {
+      "runId": "run-06",
+      "task": "app",
+      "repeat": 1,
+      "condition": "baseline",
+      "summary": "The baseline app run expanded an initially passing workflow suite, exposed modal-focus trouble, edited the implementation and retested.",
+      "observations": [
+        {
+          "area": "Planning and decomposition",
+          "observed": "The public plan named local-board implementation, storage recovery, accessible editing and failure-path verification before source creation.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_2",
+              "eventType": "agent_message",
+              "eventFile": "runs/run-06/events.jsonl",
+              "eventLine": 5,
+              "eventSha256": "d5f7e252928e0384ba465e70260642d52c20a61c1613c58643c81001503bcb1f"
+            },
+            {
+              "type": "event",
+              "eventId": "item_4",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-06/events.jsonl",
+              "eventLine": 9,
+              "eventSha256": "488fa6f0d6ed55dc6e8a55d97e934d483a27694797751b985d065865b5cd3ab6",
+              "commandSha256": "22393905345fdf2a93848505e7ce18c9e28cecd820ac4a500d1bf0bc56400cee",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_5",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-06/events.jsonl",
+              "eventLine": 11,
+              "eventSha256": "bd59117a4a6c55645ac4015380db8c50e17455aa5368b8ea284d617ae299cb16",
+              "commandSha256": "befb9ff4bc573ad9fbcdbefbe724972a63249b94d6988a537a32818fcdd5bcc2",
+              "exitCode": 0
+            }
+          ]
+        },
+        {
+          "area": "Verification expansion",
+          "observed": "After the first workflow suite passed, the candidate tightened import types/tag preservation and added explicit boundary and failure checks.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_8",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-06/events.jsonl",
+              "eventLine": 16,
+              "eventSha256": "71037d1386666b179346d6a085798074ed873079393b02deed427b12f9f3451f",
+              "commandSha256": "b4af66e102a1745114de6909b25065a5b43c04941b7e2c81e0fb5c65a5c400fd",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_11",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-06/events.jsonl",
+              "eventLine": 21,
+              "eventSha256": "0a47871c9369d91f058f73449ae762e0154b2e2ae1c6b4f7dbf9f93b355397a9",
+              "commandSha256": "116b87c05aab24c6dccdb30406c60d45f081c8ad8531137f02860fd098d8c450",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_12",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-06/events.jsonl",
+              "eventLine": 24,
+              "eventSha256": "5e1a5cfcaa75abdb617fe66a3a5175f5f0a4ccaafa94951b72b21cf5a501df4d",
+              "commandSha256": "4bda1be0ba3aad2d279044453271724ef60ff94838adb50f1171e9732b93418f",
+              "exitCode": 1
+            },
+            {
+              "type": "artifact",
+              "path": "runs/run-06/artifact/checks/verify.mjs",
+              "sha256": "7ddace4211027fef1b8c998c2ad5025800610bd133e7652a07cb8675c6f3e600",
+              "matchesRunManifest": true
+            },
+            {
+              "type": "artifact",
+              "path": "runs/run-06/artifact/checks/edge-cases.mjs",
+              "sha256": "be0b5904c1d0351eb06ec594e289a424fade3763439d678bf0e7be24e22cbc1f",
+              "matchesRunManifest": true
+            }
+          ]
+        },
+        {
+          "area": "Diagnose, edit and retest",
+          "observed": "The trace records a dialog-protocol failure and a modal-focus assertion failure. A source edit added explicit focus wrapping; subsequent workflow and edge-suite runs exited successfully. The trace does not establish a single cause for the dialog error.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_12",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-06/events.jsonl",
+              "eventLine": 24,
+              "eventSha256": "5e1a5cfcaa75abdb617fe66a3a5175f5f0a4ccaafa94951b72b21cf5a501df4d",
+              "commandSha256": "4bda1be0ba3aad2d279044453271724ef60ff94838adb50f1171e9732b93418f",
+              "exitCode": 1
+            },
+            {
+              "type": "event",
+              "eventId": "item_13",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-06/events.jsonl",
+              "eventLine": 25,
+              "eventSha256": "1ac5487c565cec5e6bd46a8cb4f87e469624553f2651fcecc07fa7c4f47aff50",
+              "commandSha256": "e4927a0d3f0735a325ea8ea6e3d6e902cdde565fb237b160ac9c407dd785a642",
+              "exitCode": 1
+            },
+            {
+              "type": "event",
+              "eventId": "item_14",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-06/events.jsonl",
+              "eventLine": 27,
+              "eventSha256": "47bac81be6ba00c2ed70871b0c1124ac13c7bb4efd1d0e6413cc74a7af8707c1",
+              "commandSha256": "ebf24e5d167a3589cc1ca315d02a317c0e69233f65d30f306aa3a56575c98755",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_16",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-06/events.jsonl",
+              "eventLine": 32,
+              "eventSha256": "bed375f8b85e800e814ca33c201b51077489caad87f98676a006af474e70b58b",
+              "commandSha256": "e4927a0d3f0735a325ea8ea6e3d6e902cdde565fb237b160ac9c407dd785a642",
+              "exitCode": 0
+            }
+          ]
+        },
+        {
+          "area": "Handoff",
+          "observed": "The final record includes syntax checks, browser artifacts and explicit local-storage/Chrome limits.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_18",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-06/events.jsonl",
+              "eventLine": 34,
+              "eventSha256": "2143e87ea010a3718d93d74cb8a2d37b37e81c594c1bc5d12b6b24696b4fa5db",
+              "commandSha256": "2e1c857b6241453159b6ccdf3556e122f5a6ebdce9cee22f234ad2c673ef0185",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_19",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-06/events.jsonl",
+              "eventLine": 36,
+              "eventSha256": "2c983785d6081f1a4e945639c3e681d0372d55359d22f1487ecbfeefa5ae2d9e",
+              "commandSha256": "49338ca8ea34eabc9bab4231150391b486ecf3d875f51b178f438570a6e2e02e",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_20",
+              "eventType": "agent_message",
+              "eventFile": "runs/run-06/events.jsonl",
+              "eventLine": 37,
+              "eventSha256": "49fcceb90217cb504f7d85de0485153e808f4c020a2bccb1849396b327bad425"
+            },
+            {
+              "type": "artifact",
+              "path": "runs/run-06/artifact/README.md",
+              "sha256": "8ce12905e2c1a3cf9a7f5776ff02023bf35d0439b98ae270a3177f44eb22d586",
+              "matchesRunManifest": true
+            }
+          ]
+        }
+      ],
+      "limits": [
+        "An initially passing main suite did not cover all subsequently found edge cases.",
+        "Candidate test-harness dialog errors occurred; they must not automatically be attributed to application defects.",
+        "The same candidate authored the app, tests and self-report."
+      ],
+      "reviewBlinded": false
+    },
+    {
+      "runId": "run-08",
+      "task": "app",
+      "repeat": 1,
+      "condition": "fabius",
+      "summary": "The Fabius app run read its design reference, expanded failure checks and iterated through focus, contrast and dialog-test failures before successful retests.",
+      "observations": [
+        {
+          "area": "Planning and decomposition",
+          "observed": "The public plan separated board construction, guarded storage behavior, task workflows and mobile/desktop verification.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_2",
+              "eventType": "agent_message",
+              "eventFile": "runs/run-08/events.jsonl",
+              "eventLine": 5,
+              "eventSha256": "48e0f865413b780a2f8dd3a70c7d43d421b1ae64e05c9aced5d3349e2c7482a2"
+            },
+            {
+              "type": "event",
+              "eventId": "item_5",
+              "eventType": "agent_message",
+              "eventFile": "runs/run-08/events.jsonl",
+              "eventLine": 10,
+              "eventSha256": "9099a50d07b7cfb44486b26673f3229a9abd0ce0efd328eb6caabe76906aa47c"
+            },
+            {
+              "type": "event",
+              "eventId": "item_6",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-08/events.jsonl",
+              "eventLine": 12,
+              "eventSha256": "5305b76e2f7c1e8fba98d3c7f95ea1487ad8b6b2ee0fecec62ebcf4791215cd5",
+              "commandSha256": "40134f0ffb6c63dd7b808474d3547ab631fa667cc6d4efa60fedc5409cd15ba2",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_7",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-08/events.jsonl",
+              "eventLine": 14,
+              "eventSha256": "008cafb7c48d70078ad0eaa16b7103152e1c746fb47451fd4c371c317a737d95",
+              "commandSha256": "142c508cfebc87f5a48cc0cf1b14520cf21186aff3aaf638f107d6bfc5a7fddc",
+              "exitCode": 0
+            }
+          ]
+        },
+        {
+          "area": "Reference use and review",
+          "observed": "The pinned design-system reference was read. After the first workflow suite passed, explicit source edits covered imported enum types, a project named all, tag preservation and open-form conflicts.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_4",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-08/events.jsonl",
+              "eventLine": 9,
+              "eventSha256": "478d558f76a983752c59090031ab0e53adf0f97e08986e0695b7029a76e4fb5a",
+              "commandSha256": "49e6f8e512ba8cff7be9b07658f60f98e22ad87b5787525ddee651941297a538",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_9",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-08/events.jsonl",
+              "eventLine": 17,
+              "eventSha256": "a97618dc8502d4e814b9f51f8eaf97ebe2061e597f310f106c336e265e7479c9",
+              "commandSha256": "7e3bf07b05d33c9efb5fdce39b02971df08355df5e4090f55d341b20f4291441",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_11",
+              "eventType": "agent_message",
+              "eventFile": "runs/run-08/events.jsonl",
+              "eventLine": 20,
+              "eventSha256": "1e2ac48f71838fb3fdae578abfea5b4e3a4ef45a45c75752391e46577d918da2"
+            },
+            {
+              "type": "event",
+              "eventId": "item_12",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-08/events.jsonl",
+              "eventLine": 22,
+              "eventSha256": "48d978a288e29feb6ade6ff008efdeb6ca6c814eb95f0a1d86abed56db9f4524",
+              "commandSha256": "4e0898c85240f608acaf4058474ba456d2d81b0fcfa90d9a3573e9b7fee2931b",
+              "exitCode": 0
+            }
+          ]
+        },
+        {
+          "area": "Diagnose, edit and retest",
+          "observed": "Edge checks failed on modal focus, then contrast. The run edited focus handling, calculated the color ratios and adjusted a color token. Dialog/protocol and workflow failures also appeared before later successful edge and main-suite runs.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_13",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-08/events.jsonl",
+              "eventLine": 24,
+              "eventSha256": "a0627a8fa32977ee30e8315617cb322df3aeb2627fd4afabbfd4a91606138a51",
+              "commandSha256": "251b888818f3e5ecc4ed2a15826b4a166b688054d1ff1a29148529a0acd6a809",
+              "exitCode": 1
+            },
+            {
+              "type": "event",
+              "eventId": "item_14",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-08/events.jsonl",
+              "eventLine": 26,
+              "eventSha256": "9cbf419f34f96b195bc2c8279270d888ace6923d6a2c33ba7a7da88679237f6a",
+              "commandSha256": "c04da5b9c2747a7d105a7fc54ba91950fb57f45e8482170463a9a3b7ebdadd7f",
+              "exitCode": 1
+            },
+            {
+              "type": "event",
+              "eventId": "item_17",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-08/events.jsonl",
+              "eventLine": 30,
+              "eventSha256": "49e01257bc843289f961f6fa5cd51cab7932094ff193eca3b60c8d555980f45d",
+              "commandSha256": "cb66b8a9a2401ac0854c730a192dd079a60bd43010a5d90ccaeb603e6d85e3c3",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_18",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-08/events.jsonl",
+              "eventLine": 32,
+              "eventSha256": "0e70ed35b9b6789936324ccd95e1db4aa02ccb0d01ac4b074d0dbe7e0361d009",
+              "commandSha256": "f4993dbf27981623384217225bf90e8dfafe731442c51c7309937a5339ee6258",
+              "exitCode": 1
+            },
+            {
+              "type": "event",
+              "eventId": "item_16",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-08/events.jsonl",
+              "eventLine": 33,
+              "eventSha256": "fef82df9623ab4b05be3a9add885ed847a6a1d7d9766d3baaf5580b36c89f330",
+              "commandSha256": "3438fb0258f4e1c95bcd714e0be6a2c8cfd3ee4dbf27b70b0f541b67858eed3f",
+              "exitCode": 1
+            },
+            {
+              "type": "event",
+              "eventId": "item_19",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-08/events.jsonl",
+              "eventLine": 35,
+              "eventSha256": "3d9826d034714d4e9096064acc1913d6be79979fa13171d243dc90f275dd0a08",
+              "commandSha256": "0c27d75720d2b0a358e0e411ae5b8d0d359495b06edbf33cfd181b010a38916a",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_20",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-08/events.jsonl",
+              "eventLine": 41,
+              "eventSha256": "73d2710d0a4dc5bd40148dabdbcd8d0a0f3fab8df729010f4072dfc82657f1d0",
+              "commandSha256": "973a1b490f98b59d1ff382cf0af078480576df7eae26892471af9d113ab39c93",
+              "exitCode": 0
+            }
+          ]
+        },
+        {
+          "area": "Handoff",
+          "observed": "The final documentation was updated from retained result files and reports Chrome-only coverage and storage limitations.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_21",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-08/events.jsonl",
+              "eventLine": 38,
+              "eventSha256": "7ada5101188d9c5ce2418cff6a6aa27efa23962cb20c91e14fafecb8f8518cf0",
+              "commandSha256": "3a9a98dac8e6282e9fe307035e472e5ed15ea990479f692bf544c8ad45dd9c2b",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_23",
+              "eventType": "agent_message",
+              "eventFile": "runs/run-08/events.jsonl",
+              "eventLine": 42,
+              "eventSha256": "9e9bc235b4f1e3e8639e6c7ac779355a26a09956f8197866e288d2197bec4ffd"
+            },
+            {
+              "type": "event",
+              "eventId": "item_24",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-08/events.jsonl",
+              "eventLine": 44,
+              "eventSha256": "1a0d6c456698076a63707e4905138f0076b1573e8288383a199d0427a3a98963",
+              "commandSha256": "cd40fd453e8faed3ad05c2d19add21df8535ddacf9c5d6af8ee8d140acdb7e81",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_25",
+              "eventType": "agent_message",
+              "eventFile": "runs/run-08/events.jsonl",
+              "eventLine": 45,
+              "eventSha256": "373eecb86a2f3b4ddb46b4c3fdbc52a2c183b63372f367888ff74e54af99a607"
+            },
+            {
+              "type": "artifact",
+              "path": "runs/run-08/artifact/verify.mjs",
+              "sha256": "e4ba41082082f7ef3d1f211cb9dbb255fd09d68130b99b90a0e67583c82da2ba",
+              "matchesRunManifest": true
+            },
+            {
+              "type": "artifact",
+              "path": "runs/run-08/artifact/verify-edge.mjs",
+              "sha256": "38fa5f6c1eec5e8ef46386aba307e6cdd90fcb3151191c85d1a5dd8cd673f64e",
+              "matchesRunManifest": true
+            },
+            {
+              "type": "artifact",
+              "path": "runs/run-08/artifact/README.md",
+              "sha256": "1a892c1da65c5726692078e9178876378e291efc1481587f1f6ee6435cde2ad9",
+              "matchesRunManifest": true
+            }
+          ]
+        }
+      ],
+      "limits": [
+        "The supplied process did not prevent initial focus and contrast defects.",
+        "Some checks overlapped in time and dialog errors occurred; the trace alone cannot assign every failure to product code versus test interactions.",
+        "The successful final self-tests remain separate from independent acceptance evaluation."
+      ],
+      "reviewBlinded": false
+    },
+    {
+      "runId": "run-09",
+      "task": "math",
+      "repeat": 2,
+      "condition": "fabius",
+      "summary": "The second Fabius math run exposed arithmetic scratch checks, executed its verifier and reread the results before documenting limits.",
+      "observations": [
+        {
+          "area": "Planning and decomposition",
+          "observed": "The public execution outline separated exact derivation, KKT certificates, implementation and boundary/face comparisons.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_2",
+              "eventType": "agent_message",
+              "eventFile": "runs/run-09/events.jsonl",
+              "eventLine": 5,
+              "eventSha256": "82d917de96429951568d5e03c61f23b02c6ef891c5274e59551fe675a5a2b01d"
+            },
+            {
+              "type": "event",
+              "eventId": "item_7",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-09/events.jsonl",
+              "eventLine": 14,
+              "eventSha256": "6942e4bdaaf9a695bff164a18daf4e0cba69f4cbf03113ad14f0c9037d41fac2",
+              "commandSha256": "93d0f3f5356ab8b06acd48edd7ce1c6dd4cadb511457848f82721d6d000b1e27",
+              "exitCode": 0
+            }
+          ]
+        },
+        {
+          "area": "Tools and verification",
+          "observed": "Two inline exact-arithmetic checks preceded the solver write. The candidate then created a verification helper, executed it and explicitly read its saved output.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_4",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-09/events.jsonl",
+              "eventLine": 9,
+              "eventSha256": "ca662b81556186da989b0619195aa4bab96c83f63c6eb91226654f597ce20b43",
+              "commandSha256": "596ba6d1a1abd33d7ac562fcdf530da0364e78c18ca9193aa7bd0453061af5ed",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_6",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-09/events.jsonl",
+              "eventLine": 12,
+              "eventSha256": "b4f60457f4067ec9475e9b15ee23f7996da578ae2e2388b016a5c5c618820315",
+              "commandSha256": "8bbedd274a39c7942f06c758f68edce0e7a03bc87713ce4d36a4d0b5000a0711",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_7",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-09/events.jsonl",
+              "eventLine": 14,
+              "eventSha256": "6942e4bdaaf9a695bff164a18daf4e0cba69f4cbf03113ad14f0c9037d41fac2",
+              "commandSha256": "93d0f3f5356ab8b06acd48edd7ce1c6dd4cadb511457848f82721d6d000b1e27",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_9",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-09/events.jsonl",
+              "eventLine": 17,
+              "eventSha256": "74e74e54bd0a1259c2b3a4d1f7b0e6e59cddc2f670291ed16f5d808f215b4095",
+              "commandSha256": "0c132f82b099e66a2b139c3935f7913c4888f45c40f5b930eabd65000c8fb973",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_10",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-09/events.jsonl",
+              "eventLine": 19,
+              "eventSha256": "0a6b939d361cb67a2cb3791f943fe5651d12cc172f5847909e4a1eb90bea1a4e",
+              "commandSha256": "55c374aed91789093c46a9356041b99728e2aca442a2f03e3d3b2338f17eb103",
+              "exitCode": 0
+            },
+            {
+              "type": "artifact",
+              "path": "runs/run-09/artifact/verify.py",
+              "sha256": "a19adf89e17f46faa720d120b7d8a97ac278e3af4258287bff7b9725140a09db",
+              "matchesRunManifest": true
+            },
+            {
+              "type": "artifact",
+              "path": "runs/run-09/artifact/verification-output.txt",
+              "sha256": "573effe1b6f410359d0c19b2208564b92d8dffdbc0cf78adf6f4d8dfe31577b8",
+              "matchesRunManifest": true
+            }
+          ]
+        },
+        {
+          "area": "Review and handoff",
+          "observed": "Later edits clarify proof wording and add reproducibility notes; source compilation and artifact-presence checks are recorded. No mathematical verifier failure appears in this run.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_12",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-09/events.jsonl",
+              "eventLine": 23,
+              "eventSha256": "90d630cac37a8d7a301eb71f3ce058dff8575b41fd635ea4cbd88c1af957dbe7",
+              "commandSha256": "aad6be5db1a34508cdd77bb159a71a7782002358e80c52111b8aebc1c9e5464a",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_14",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-09/events.jsonl",
+              "eventLine": 26,
+              "eventSha256": "ea443b5bcfa1454acfafe567e720b6c3df952b3b831f4acc8b689764b8f270e9",
+              "commandSha256": "0d9a747adf2edf6a55aec3246c9818b179a22556f1c6a5bb94345cf8c493162f",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_15",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-09/events.jsonl",
+              "eventLine": 28,
+              "eventSha256": "a95c0e07b9363aeb4654f34512c803f87e81175205ad5eb4ce4b5e5f41cb7c11",
+              "commandSha256": "94c8657b0d4672a39d692b480c6abcf897e1d867e5753840cde110af3c106fd7",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_16",
+              "eventType": "agent_message",
+              "eventFile": "runs/run-09/events.jsonl",
+              "eventLine": 29,
+              "eventSha256": "b276530757af503cd60f23a49b4921b2dadaff13f3dc0005888ef71f9afdc4f9"
+            },
+            {
+              "type": "artifact",
+              "path": "runs/run-09/artifact/verification.md",
+              "sha256": "b8062b7283ab8b4b100a5a58c0581beee0b9379d58c6721dbf5a6564365c5e10",
+              "matchesRunManifest": true
+            }
+          ]
+        }
+      ],
+      "limits": [
+        "A successful self-authored verifier is not an independent proof of the complete real interval.",
+        "This trace contains no failed mathematical check, so recovery from such a failure is unmeasured.",
+        "Scratch-work visibility and documentation volume are not scored as quality."
+      ],
+      "reviewBlinded": false
+    },
+    {
+      "runId": "run-11",
+      "task": "math",
+      "repeat": 2,
+      "condition": "baseline",
+      "summary": "The second baseline math run followed a stated derive–implement–verify sequence and recorded successful numerical and import checks.",
+      "observations": [
+        {
+          "area": "Planning and decomposition",
+          "observed": "The public outline identified regime derivation, KKT multipliers, implementation and comparison with feasible-face enumeration before code was written.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_2",
+              "eventType": "agent_message",
+              "eventFile": "runs/run-11/events.jsonl",
+              "eventLine": 5,
+              "eventSha256": "adb596a0265bc1ddbed810d9fdf84ca240cf6149f9e9615aa5905dbbcb1d851c"
+            },
+            {
+              "type": "event",
+              "eventId": "item_6",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-11/events.jsonl",
+              "eventLine": 12,
+              "eventSha256": "fee22a7da7ce6601c5989aab932df6639368e14655bcfcd561d36229cc21870b",
+              "commandSha256": "255c1fcc10536ad8444ff9f79679a5684f308760d0096da49a38d41b76abe0c5",
+              "exitCode": 0
+            }
+          ]
+        },
+        {
+          "area": "Tools and verification",
+          "observed": "The candidate wrote the solver and verification helper, executed the helper successfully and recorded the Python version. The helper includes local import and guarded module-execution checks.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_6",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-11/events.jsonl",
+              "eventLine": 12,
+              "eventSha256": "fee22a7da7ce6601c5989aab932df6639368e14655bcfcd561d36229cc21870b",
+              "commandSha256": "255c1fcc10536ad8444ff9f79679a5684f308760d0096da49a38d41b76abe0c5",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_7",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-11/events.jsonl",
+              "eventLine": 14,
+              "eventSha256": "8c49d9309bae9b33fa5fbcd504b5bf047c831636ea8c0c89f4dbe48b1de4da64",
+              "commandSha256": "dcafef37623056d40499751c6c68004c887e4ec37c14cb017b73913dfad49bea",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_9",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-11/events.jsonl",
+              "eventLine": 17,
+              "eventSha256": "408ca547c7d6d6e4e82d353980acee4001d15543bd8b669a7f48546753355f23",
+              "commandSha256": "adc795246d752f2ea97d8b0ecd86bd5500a35c9c96513cd179909b6c400cf6c2",
+              "exitCode": 0
+            },
+            {
+              "type": "artifact",
+              "path": "runs/run-11/artifact/verify.py",
+              "sha256": "a9c3743fa1a4fb93fee554fb0ac48c59af627cdebd6f2cd78606c8aa6557e6f9",
+              "matchesRunManifest": true
+            }
+          ]
+        },
+        {
+          "area": "Review and handoff",
+          "observed": "A final command wrote the verification record, checked expected files and cleaned candidate-created bytecode. No mathematical check failure or corrective solver edit is recorded.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_10",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-11/events.jsonl",
+              "eventLine": 19,
+              "eventSha256": "765194d52beea620fc31180236d9b0d7caadd01795668f81e99539b31cb6b2ed",
+              "commandSha256": "6e8087d379481f87abfe25780c4f61f2ffc038665180af93dde803182d572e99",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_11",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-11/events.jsonl",
+              "eventLine": 21,
+              "eventSha256": "db7163afde8324c4dc7037a805d6de4f85ef33edda3f3759f8efb1fed68551a6",
+              "commandSha256": "7e5f75548f8205f75643025fdad6aee49cdc4a4646cc0421a46bb5bf0f2356d4",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_12",
+              "eventType": "agent_message",
+              "eventFile": "runs/run-11/events.jsonl",
+              "eventLine": 22,
+              "eventSha256": "8222a777dd140ad5180fb50e91fddd9b4f25abdcc2f728b62d24186c5dc3c271"
+            },
+            {
+              "type": "artifact",
+              "path": "runs/run-11/artifact/verification.md",
+              "sha256": "8e1000d797b889a191fdd3e16933c2d65d5fa726dc8f0aa6c725ef6aeedbdbf5",
+              "matchesRunManifest": true
+            }
+          ]
+        }
+      ],
+      "limits": [
+        "The baseline already has native Codex process guidance.",
+        "The absence of a recorded failure does not prove that the first design was complete or optimal.",
+        "The numerical helper and accompanying proof require the separate independent acceptance review."
+      ],
+      "reviewBlinded": false
+    },
+    {
+      "runId": "run-07",
+      "task": "landing",
+      "repeat": 2,
+      "condition": "fabius",
+      "summary": "The Fabius landing run used DOM measurements to locate mobile overflow, constrained the artwork and retested before broadening coverage.",
+      "observations": [
+        {
+          "area": "Planning and decomposition",
+          "observed": "A public outline separated content/styling from keyboard, billing, FAQ and no-JavaScript verification before implementation.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_2",
+              "eventType": "agent_message",
+              "eventFile": "runs/run-07/events.jsonl",
+              "eventLine": 5,
+              "eventSha256": "d8cf67cb29da00dba3fff09aa012b80fd873ebe5b7d9a89babe36a95fe50ab49"
+            },
+            {
+              "type": "event",
+              "eventId": "item_5",
+              "eventType": "agent_message",
+              "eventFile": "runs/run-07/events.jsonl",
+              "eventLine": 10,
+              "eventSha256": "a5c739d67485b5fa77e8514c3c81742a3952f281698f3ecfab87b982134a1ac1"
+            },
+            {
+              "type": "event",
+              "eventId": "item_6",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-07/events.jsonl",
+              "eventLine": 12,
+              "eventSha256": "4a8f8715a01d72140e9c0e72d44fb7b794f91a92f3d9502c7a2cb4beafff7bb3",
+              "commandSha256": "0bcf39ca2e6141e6d96fe7d72b008679e50dd61206a1ec88936b422d72eb6736",
+              "exitCode": 0
+            }
+          ]
+        },
+        {
+          "area": "Reference and diagnostic tool use",
+          "observed": "The design reference was read. When the first 360px check failed, an inline browser probe collected element bounding boxes to locate overflow.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_4",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-07/events.jsonl",
+              "eventLine": 9,
+              "eventSha256": "478d558f76a983752c59090031ab0e53adf0f97e08986e0695b7029a76e4fb5a",
+              "commandSha256": "49e6f8e512ba8cff7be9b07658f60f98e22ad87b5787525ddee651941297a538",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_7",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-07/events.jsonl",
+              "eventLine": 14,
+              "eventSha256": "b432580f52ddd9e26df4c264d0c7ab1b34ad475ad08ef2c5c8d91283d1e5b25e",
+              "commandSha256": "aa5b0a33f6649f70dabaef6048c12639106ac8869935f36e06aa7c8dd0139ba3",
+              "exitCode": 1
+            },
+            {
+              "type": "event",
+              "eventId": "item_8",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-07/events.jsonl",
+              "eventLine": 16,
+              "eventSha256": "3f690ff230446b12a2b7a43c3e7b554b1f287c11f6437f6046f01d5a93abd0d0",
+              "commandSha256": "555be7f10d65e8cc6b7e2c25031c9d792851c6517ff0bc20aeff8bcf70d86db1",
+              "exitCode": 0
+            }
+          ]
+        },
+        {
+          "area": "Diagnose, edit and retest",
+          "observed": "A source edit clipped decorative orbit artwork after the overflow failure; the verifier then exited successfully. Subsequent header changes were followed by another expanded browser run.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_7",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-07/events.jsonl",
+              "eventLine": 14,
+              "eventSha256": "b432580f52ddd9e26df4c264d0c7ab1b34ad475ad08ef2c5c8d91283d1e5b25e",
+              "commandSha256": "aa5b0a33f6649f70dabaef6048c12639106ac8869935f36e06aa7c8dd0139ba3",
+              "exitCode": 1
+            },
+            {
+              "type": "event",
+              "eventId": "item_10",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-07/events.jsonl",
+              "eventLine": 19,
+              "eventSha256": "25a7179fe7525a9a3fd84523c9aefb5b299e665be6948694ab608465b14d5167",
+              "commandSha256": "e301df4ab80b64c30874ccfdbc24b917c21cf9111a6d1c7a01294f89defc9138",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_11",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-07/events.jsonl",
+              "eventLine": 21,
+              "eventSha256": "d933f1cdf3fde0504a89a999f18ee70d4e8e657174a48ed1b28d3ac847d1d4a7",
+              "commandSha256": "65439f1767ec5c06de8fe016613292a90fa94a45d7f0e00b11e21d4c381463e0",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_13",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-07/events.jsonl",
+              "eventLine": 24,
+              "eventSha256": "6a0c86abc99ae3c50ef172003d4c36ba8598fcd983b6dc7adcb49be4b3bbdfd3",
+              "commandSha256": "751849985df40fc187596f9f1d89db43840fd899fbbc9d00ffc0617f5c5b71b0",
+              "exitCode": 0
+            }
+          ]
+        },
+        {
+          "area": "Verification and handoff",
+          "observed": "The later checks add intermediate widths, nested hosting and token contrast calculations; screenshots, script and prototype/Chrome limits were retained.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_13",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-07/events.jsonl",
+              "eventLine": 24,
+              "eventSha256": "6a0c86abc99ae3c50ef172003d4c36ba8598fcd983b6dc7adcb49be4b3bbdfd3",
+              "commandSha256": "751849985df40fc187596f9f1d89db43840fd899fbbc9d00ffc0617f5c5b71b0",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_14",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-07/events.jsonl",
+              "eventLine": 26,
+              "eventSha256": "7ac0952b00b48f58f21c4b240f2e3d207a8be3857eaf138e641d55b83d6b4d06",
+              "commandSha256": "0cf08803e13d78f7ee8ac560731b45783e9b23bec73cfebe9fc1316091345b94",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_15",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-07/events.jsonl",
+              "eventLine": 28,
+              "eventSha256": "8ae427c0fa9979d4f15246858f6bad4588e1aef16dbf61bdfa24025f0d0b9e12",
+              "commandSha256": "2002232c34d9578e260340d31500f5399a6cd7aa10b26130d337689357d7ffc2",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_16",
+              "eventType": "agent_message",
+              "eventFile": "runs/run-07/events.jsonl",
+              "eventLine": 29,
+              "eventSha256": "cbe29111296af24f07084a847ed7ad2a9f81031030db886292bb24440ebf4db8"
+            },
+            {
+              "type": "artifact",
+              "path": "runs/run-07/artifact/verify.mjs",
+              "sha256": "160e27ad0f87edbf7470b3f4d7397463819dc19da4ea6dd7af86344cda2b9c80",
+              "matchesRunManifest": true
+            },
+            {
+              "type": "artifact",
+              "path": "runs/run-07/artifact/README.md",
+              "sha256": "cd772e7d2c6220852c6645b31d99151f12af5a32e99b496a97fb8b313c8a9bf8",
+              "matchesRunManifest": true
+            }
+          ]
+        }
+      ],
+      "limits": [
+        "The initial layout failed a required mobile overflow check despite the supplied design instructions.",
+        "A successful candidate-authored Chrome suite is not cross-engine or physical-device validation.",
+        "Reference access and successful correction are observed; no individual rule’s causal effect is established."
+      ],
+      "reviewBlinded": false
+    },
+    {
+      "runId": "run-01",
+      "task": "landing",
+      "repeat": 2,
+      "condition": "baseline",
+      "summary": "The baseline landing run executed its browser suite, revised readability and labels, then repeated verification and added targeted keyboard/HTML checks.",
+      "observations": [
+        {
+          "area": "Planning and decomposition",
+          "observed": "A public execution outline named visual construction, accessible controls, responsive layout and browser verification before the source write.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_2",
+              "eventType": "agent_message",
+              "eventFile": "runs/run-01/events.jsonl",
+              "eventLine": 5,
+              "eventSha256": "39352a486f2ff05d11fdec0ee4e9cc75fdbd65b8e2359a393515f2a70d72e6fb"
+            },
+            {
+              "type": "event",
+              "eventId": "item_4",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-01/events.jsonl",
+              "eventLine": 9,
+              "eventSha256": "60e3a6e0613ec0744f125d73855231ab9b93ee93f98f51ab970a48dbfecd1f3c",
+              "commandSha256": "c201acfe7b75c1c0598f20a32cc46c933970ad4936e8c0cc1cde6a5360b9b827",
+              "exitCode": 0
+            }
+          ]
+        },
+        {
+          "area": "Tools and verification",
+          "observed": "The candidate ran syntax validation and a browser verifier covering interactions, responsive states, no-JavaScript behavior and nested hosting.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_6",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-01/events.jsonl",
+              "eventLine": 12,
+              "eventSha256": "47161c84085cd3be0200bbcf1876c9fbd47e84192ddbf71544c4230091807c66",
+              "commandSha256": "20991a5320cdefb6b959b08d3b60bfb758471362861c425ead0037d899f57151",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_7",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-01/events.jsonl",
+              "eventLine": 14,
+              "eventSha256": "466971901e735b61046490456121931f3edd5fc28f8ea3711f581774e73f39b1",
+              "commandSha256": "cc4c0d8215994182bfcaa0d9f29c196bb4c5fb2b81d946ebf9e08abff4b4da6c",
+              "exitCode": 0
+            },
+            {
+              "type": "artifact",
+              "path": "runs/run-01/artifact/verify.mjs",
+              "sha256": "7a85126d93ec3e575da913710303a80f99b8f071b274bdcc529c3de3f7117a4b",
+              "matchesRunManifest": true
+            }
+          ]
+        },
+        {
+          "area": "Review, edit and retest",
+          "observed": "After the initial suite passed, a command changed supporting text styles and illustration labels, then reran the same verifier successfully. No substantive test failure was recorded.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_7",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-01/events.jsonl",
+              "eventLine": 14,
+              "eventSha256": "466971901e735b61046490456121931f3edd5fc28f8ea3711f581774e73f39b1",
+              "commandSha256": "cc4c0d8215994182bfcaa0d9f29c196bb4c5fb2b81d946ebf9e08abff4b4da6c",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_8",
+              "eventType": "agent_message",
+              "eventFile": "runs/run-01/events.jsonl",
+              "eventLine": 15,
+              "eventSha256": "c767ba1942f3b8070cc90b6bc7059134c2cc3d6d6054999f7c002dea91a50c44"
+            },
+            {
+              "type": "event",
+              "eventId": "item_9",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-01/events.jsonl",
+              "eventLine": 17,
+              "eventSha256": "80b6c0123283ce5a4e170bd9ed92aef8d26efd50275a091d2fb68386ecaeedbc",
+              "commandSha256": "8fd23866f70fcd2f0558a0a9dfa0989f0af0b7ce2686e72acd825b2dcc6f0b5a",
+              "exitCode": 0
+            }
+          ]
+        },
+        {
+          "area": "Targeted follow-up and handoff",
+          "observed": "Additional inline checks exercised actual keyboard focus, mobile alternate panels and HTML/ARIA references. The README records executed checks and Chromium-only limits.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_10",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-01/events.jsonl",
+              "eventLine": 19,
+              "eventSha256": "b2ecad6fc2a8bdd2cd6de24145725a933038fb531386c8628ce9a19b97317f58",
+              "commandSha256": "27369f087f57572eba03b52977e12c2fd3a7970d8846684ec5f4df6dd278cccb",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_11",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-01/events.jsonl",
+              "eventLine": 21,
+              "eventSha256": "360ff7ed28c17e8e5db37e500855bb24149b7ca93de0bc758ab0baa8cb932c53",
+              "commandSha256": "54e78208de22e433529c7e107d91d48e55adf47cfbfb93904765efb9adc5464e",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_12",
+              "eventType": "agent_message",
+              "eventFile": "runs/run-01/events.jsonl",
+              "eventLine": 22,
+              "eventSha256": "e97c8bfbfd824176d8f86056f4ef584b980190ea1bee889f41db16c228b913e0"
+            },
+            {
+              "type": "artifact",
+              "path": "runs/run-01/artifact/README.md",
+              "sha256": "393e514abc3cae35860a7b602af2aed6e4c3cd4278ef656962ab38a815f9f01c",
+              "matchesRunManifest": true
+            }
+          ]
+        }
+      ],
+      "limits": [
+        "No failed product test occurred in the trace, so recovery from a failure is not demonstrated here.",
+        "The self-authored verifier’s pass does not certify overall design or accessibility quality.",
+        "The native baseline already includes process guidance; this is not evidence of an instruction-free model."
+      ],
+      "reviewBlinded": false
+    },
+    {
+      "runId": "run-04",
+      "task": "app",
+      "repeat": 2,
+      "condition": "fabius",
+      "summary": "The Fabius app run expanded an initially passing suite, instrumented focus behavior and distinguished a wait-condition correction from a modal keyboard fix.",
+      "observations": [
+        {
+          "area": "Planning and decomposition",
+          "observed": "The public plan separates board implementation from persistence, imports, recovery, keyboard and responsive verification.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_2",
+              "eventType": "agent_message",
+              "eventFile": "runs/run-04/events.jsonl",
+              "eventLine": 5,
+              "eventSha256": "79b61493aad0deacb6294af0dcc1ef60e989d925929349c4643129db936ac0d4"
+            },
+            {
+              "type": "event",
+              "eventId": "item_5",
+              "eventType": "agent_message",
+              "eventFile": "runs/run-04/events.jsonl",
+              "eventLine": 10,
+              "eventSha256": "d2613dce5c9d391a14ff3331a8ccb918e8bd8d10c342713216e95a827f7b02c3"
+            },
+            {
+              "type": "event",
+              "eventId": "item_6",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-04/events.jsonl",
+              "eventLine": 12,
+              "eventSha256": "3e178b66383df6877722f09ffcae1d8cd2ace8999200a848ff2d94db7b123390",
+              "commandSha256": "9a6e838f34b40cff773a8b642ddb9493edd90bf47e42b07a1d5eafd687e19b54",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_7",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-04/events.jsonl",
+              "eventLine": 14,
+              "eventSha256": "97b1e2aef52f59f60b9e7f67153bd6b2b53a0124bea9ae6888aa83f3a4ffebfb",
+              "commandSha256": "779e3150f161e951d9671fd9b881856ff751eb257f468a4f84a35099bb1d37a5",
+              "exitCode": 0
+            }
+          ]
+        },
+        {
+          "area": "Reference and verification use",
+          "observed": "The pinned design reference was read. The first browser suite passed, after which the candidate expanded boundary, focus, nested-path and no-JavaScript checks.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_4",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-04/events.jsonl",
+              "eventLine": 9,
+              "eventSha256": "478d558f76a983752c59090031ab0e53adf0f97e08986e0695b7029a76e4fb5a",
+              "commandSha256": "49e6f8e512ba8cff7be9b07658f60f98e22ad87b5787525ddee651941297a538",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_9",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-04/events.jsonl",
+              "eventLine": 17,
+              "eventSha256": "e5bae6029daa23e99e6a599cf3bad1f5862950ebd903d4ddd35c47ddb7874043",
+              "commandSha256": "705b764f7fbb0c09ba9d78313802a95737e0a2bccae90269a7a51f24215f7bb0",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_10",
+              "eventType": "agent_message",
+              "eventFile": "runs/run-04/events.jsonl",
+              "eventLine": 18,
+              "eventSha256": "bc292881a3fb22c0a5f7eedf5b0a84e2f9c5320c519cb79ec9c423bd38021b1f"
+            },
+            {
+              "type": "event",
+              "eventId": "item_11",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-04/events.jsonl",
+              "eventLine": 20,
+              "eventSha256": "5eb1e76be278e301405e8ed4b000ce641b0c2d3eed1e718f07bbfe79d195f708",
+              "commandSha256": "c31c10a4c0ac73f5fc394b48811d7ca77b8a324e1fe2d2d87fc79a6147645b88",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_12",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-04/events.jsonl",
+              "eventLine": 22,
+              "eventSha256": "d18efe5243ad14669a36070c13d2a54b2bf306551d1df670f5b8afa53ed579e9",
+              "commandSha256": "241fb3583a9fa9e5e007a0a241fe7b8888a4ee60dc585946464bc409ac05de84",
+              "exitCode": 1
+            },
+            {
+              "type": "artifact",
+              "path": "runs/run-04/artifact/verify.mjs",
+              "sha256": "9f3961c8c1877d9851c11a83f657600eb92f17679c7b71298dfb99e3f9cd0a26",
+              "matchesRunManifest": true
+            },
+            {
+              "type": "artifact",
+              "path": "runs/run-04/artifact/verify-extra.mjs",
+              "sha256": "8699d16901c1d24e2036d20518cc69f1e9a2203392bdca893fd8733a35f1aee0",
+              "matchesRunManifest": true
+            }
+          ]
+        },
+        {
+          "area": "Diagnosis and test correction",
+          "observed": "After a focus-restoration assertion failed, a temporary helper recorded focus events. The test then replaced a fixed delay with a condition-based wait while retaining the same focus identity assertion.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_12",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-04/events.jsonl",
+              "eventLine": 22,
+              "eventSha256": "d18efe5243ad14669a36070c13d2a54b2bf306551d1df670f5b8afa53ed579e9",
+              "commandSha256": "241fb3583a9fa9e5e007a0a241fe7b8888a4ee60dc585946464bc409ac05de84",
+              "exitCode": 1
+            },
+            {
+              "type": "event",
+              "eventId": "item_13",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-04/events.jsonl",
+              "eventLine": 24,
+              "eventSha256": "2e7220bb7fd58132482b6cff0178779ccee6de38fa74f022e34bbf93ddcfde9e",
+              "commandSha256": "2a0ec5796e9d09f70b481814d579896998f2a5a7e047f2146dcac4862b94972c",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_14",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-04/events.jsonl",
+              "eventLine": 26,
+              "eventSha256": "08ed28b9a0b58ab2612387273e34e7015fdbf9e334bb4d98f7e465f5a55a64e6",
+              "commandSha256": "f60f8c90dc5b60f11823af50cfdf49d0b70209240b17b412f512748b639810ba",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_15",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-04/events.jsonl",
+              "eventLine": 28,
+              "eventSha256": "9948c85557d694d913a9cd89ded6a0e3cfa0551fbe346bc6778feaab0f5ca806",
+              "commandSha256": "8415f58343be4194728384b69930702468a3d47d34ac07f4536f26cdf2418fbc",
+              "exitCode": 1
+            }
+          ]
+        },
+        {
+          "area": "Product correction and retest",
+          "observed": "The expanded suite next failed at forward Tab wrapping. The candidate added explicit wrapping, reran the extra suite successfully and later reran the main suite.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_15",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-04/events.jsonl",
+              "eventLine": 28,
+              "eventSha256": "9948c85557d694d913a9cd89ded6a0e3cfa0551fbe346bc6778feaab0f5ca806",
+              "commandSha256": "8415f58343be4194728384b69930702468a3d47d34ac07f4536f26cdf2418fbc",
+              "exitCode": 1
+            },
+            {
+              "type": "event",
+              "eventId": "item_16",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-04/events.jsonl",
+              "eventLine": 31,
+              "eventSha256": "87cd7a38c5747e5197447834afba40a487e0233588dfa9ba7fe8f6e677c1e3cc",
+              "commandSha256": "bede85513f3a31424c0912a177c9501239c74935a7fa555decf3e231a7abe003",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_18",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-04/events.jsonl",
+              "eventLine": 33,
+              "eventSha256": "1a8e12a09ecc89eb5f5116c9c91e08fa8315bf0071aef65352dc818feb056a15",
+              "commandSha256": "4f13aece6b7d3eea9fcaaa90219a148ae9c8661684de4a5507e68895c5588547",
+              "exitCode": 0
+            }
+          ]
+        },
+        {
+          "area": "Handoff",
+          "observed": "The final record includes the retained scripts/results/captures and explicitly limits verification to Chrome and local browser storage.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_18",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-04/events.jsonl",
+              "eventLine": 33,
+              "eventSha256": "1a8e12a09ecc89eb5f5116c9c91e08fa8315bf0071aef65352dc818feb056a15",
+              "commandSha256": "4f13aece6b7d3eea9fcaaa90219a148ae9c8661684de4a5507e68895c5588547",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_19",
+              "eventType": "agent_message",
+              "eventFile": "runs/run-04/events.jsonl",
+              "eventLine": 34,
+              "eventSha256": "8910a5b6a6addd8a120c0e6dd7d66d9b8dddef208f728b3db1b45c1e3c32133b"
+            },
+            {
+              "type": "event",
+              "eventId": "item_20",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-04/events.jsonl",
+              "eventLine": 36,
+              "eventSha256": "36a38e9e5e7a52db7206c55e8d9afb93a966722c299de246222c2cf2d4366157",
+              "commandSha256": "3c3023f0bd17c27b3c47518d9460b9a9fd0d35814161e9f0d38db786df0b0663",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_21",
+              "eventType": "agent_message",
+              "eventFile": "runs/run-04/events.jsonl",
+              "eventLine": 37,
+              "eventSha256": "ba8bc76e7373b055365091d1d68f87d1c6307cf537e806151d9be39822ca6115"
+            },
+            {
+              "type": "artifact",
+              "path": "runs/run-04/artifact/README.md",
+              "sha256": "d114e0a6c10fcb4f619e30601614a3d00644072e79c8e725e3a283fab7dc303e",
+              "matchesRunManifest": true
+            }
+          ]
+        }
+      ],
+      "limits": [
+        "The first passing suite did not expose every later keyboard problem.",
+        "Test timing and product focus behavior required separate attention; a failed assertion alone does not identify the faulty layer.",
+        "Full orchestration and cross-engine candidate testing remain outside these trial conditions."
+      ],
+      "reviewBlinded": false
+    },
+    {
+      "runId": "run-10",
+      "task": "app",
+      "repeat": 2,
+      "condition": "baseline",
+      "summary": "The baseline app run expanded a passing suite, fixed modal Tab containment and finished with targeted responsive and stale-write checks.",
+      "observations": [
+        {
+          "area": "Planning and decomposition",
+          "observed": "The public outline separates board construction, storage recovery and cross-tab protection from browser workflow and responsive checks.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_2",
+              "eventType": "agent_message",
+              "eventFile": "runs/run-10/events.jsonl",
+              "eventLine": 5,
+              "eventSha256": "4e491aa715d0e1fdaa7a2edd51a0fb26e85ba9d6a7a3e59f13b6125befacfce4"
+            },
+            {
+              "type": "event",
+              "eventId": "item_4",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-10/events.jsonl",
+              "eventLine": 9,
+              "eventSha256": "db5ee27667c9dba5aab3f8881b14aa50eaa840650e2ae7489d65fd446cdb464f",
+              "commandSha256": "1364e72fd192539d1b61b0fc301f6376ed73a701345fb41fa90b010c51b23cb8",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_5",
+              "eventType": "agent_message",
+              "eventFile": "runs/run-10/events.jsonl",
+              "eventLine": 10,
+              "eventSha256": "93f49e2eed1ef418e0401499cbf5a40422e903a9e6b443643126c1f973097581"
+            },
+            {
+              "type": "event",
+              "eventId": "item_6",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-10/events.jsonl",
+              "eventLine": 12,
+              "eventSha256": "d34b7e17d6a77a7612f9b090e1df36ed7c7996ceec0267134f4197e6700d046c",
+              "commandSha256": "a0e80a3788ca128c0e83e3113b23038d4d9d554dcac4411e1184918cec7e527b",
+              "exitCode": 0
+            }
+          ]
+        },
+        {
+          "area": "Tool and verification use",
+          "observed": "The candidate used the supplied browser and ran its main suite twice. It then expanded validation, imported-text, storage-denial and nested-path checks.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_7",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-10/events.jsonl",
+              "eventLine": 14,
+              "eventSha256": "574215cb064567b7606456688056deefa5f651e4ea4f946bc29882a53e07c5d2",
+              "commandSha256": "2e9b5d7a5d519d9180c1556827397f6e85319df7b4c51698ab2b93cd0dcfa743",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_8",
+              "eventType": "agent_message",
+              "eventFile": "runs/run-10/events.jsonl",
+              "eventLine": 15,
+              "eventSha256": "caaf82eacc22731c91ff4cf75fa455d6327b5e3393f9ccb30e2d8e32da59af67"
+            },
+            {
+              "type": "event",
+              "eventId": "item_9",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-10/events.jsonl",
+              "eventLine": 17,
+              "eventSha256": "6f979425e852d46674337557bd140819504539f911641a02e1d3ed9803215544",
+              "commandSha256": "c4984b9269d07990d16c5b50f3db21d95f3ff3b0cc255ff43633a6128b842cd2",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_10",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-10/events.jsonl",
+              "eventLine": 19,
+              "eventSha256": "6e2a66500a8f23f99cbe98c70cee1e454a123ff6b16161e473a29f706025dfaf",
+              "commandSha256": "973a1b490f98b59d1ff382cf0af078480576df7eae26892471af9d113ab39c93",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_11",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-10/events.jsonl",
+              "eventLine": 21,
+              "eventSha256": "8599771b2886e0cbae3ed4fb9abc6d9824d7964195ccde2f742c50bfa6d673ba",
+              "commandSha256": "b4a9b4d1d30ca8875aa9a5fd24801fbf4ce4d2a9854731c7b57782a438392654",
+              "exitCode": 1
+            },
+            {
+              "type": "artifact",
+              "path": "runs/run-10/artifact/verify.mjs",
+              "sha256": "e747d283a13985c5228e0211fe74651b3329054331155103072d0d2f5d603f90",
+              "matchesRunManifest": true
+            },
+            {
+              "type": "artifact",
+              "path": "runs/run-10/artifact/verify-edge.mjs",
+              "sha256": "5e63f2be571cc6b47e2035babd7679f91ccddd48df6c8f06d7dec88ec803f49e",
+              "matchesRunManifest": true
+            }
+          ]
+        },
+        {
+          "area": "Diagnosis, correction and retest",
+          "observed": "The edge suite failed when Tab left the modal. The candidate added explicit keyboard wrapping and reran the unchanged edge helper successfully.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_11",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-10/events.jsonl",
+              "eventLine": 21,
+              "eventSha256": "8599771b2886e0cbae3ed4fb9abc6d9824d7964195ccde2f742c50bfa6d673ba",
+              "commandSha256": "b4a9b4d1d30ca8875aa9a5fd24801fbf4ce4d2a9854731c7b57782a438392654",
+              "exitCode": 1
+            },
+            {
+              "type": "event",
+              "eventId": "item_12",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-10/events.jsonl",
+              "eventLine": 23,
+              "eventSha256": "1de070a6ea259adc9ac356933a9135b53da5fbaf7237bcb234ebe90ef4075e42",
+              "commandSha256": "f63fb2ddac234ba1f2e7ca75864c324993aacc37efd5c37ec9e43d83371dd294",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_13",
+              "eventType": "agent_message",
+              "eventFile": "runs/run-10/events.jsonl",
+              "eventLine": 24,
+              "eventSha256": "22a17f4c6f629217f5a55e3b3679cac42fad150f60d08bba2c4f0a0a4ff8666e"
+            }
+          ]
+        },
+        {
+          "area": "Final verification coverage",
+          "observed": "After later edits, direct browser checks covered four viewport widths, reverse Tab wrapping, reduced-motion CSS and a stale-write guard. The trace shows no later full main-suite rerun.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_10",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-10/events.jsonl",
+              "eventLine": 19,
+              "eventSha256": "6e2a66500a8f23f99cbe98c70cee1e454a123ff6b16161e473a29f706025dfaf",
+              "commandSha256": "973a1b490f98b59d1ff382cf0af078480576df7eae26892471af9d113ab39c93",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_11",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-10/events.jsonl",
+              "eventLine": 21,
+              "eventSha256": "8599771b2886e0cbae3ed4fb9abc6d9824d7964195ccde2f742c50bfa6d673ba",
+              "commandSha256": "b4a9b4d1d30ca8875aa9a5fd24801fbf4ce4d2a9854731c7b57782a438392654",
+              "exitCode": 1
+            },
+            {
+              "type": "event",
+              "eventId": "item_12",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-10/events.jsonl",
+              "eventLine": 23,
+              "eventSha256": "1de070a6ea259adc9ac356933a9135b53da5fbaf7237bcb234ebe90ef4075e42",
+              "commandSha256": "f63fb2ddac234ba1f2e7ca75864c324993aacc37efd5c37ec9e43d83371dd294",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_14",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-10/events.jsonl",
+              "eventLine": 26,
+              "eventSha256": "6c9233aa1df635450a39fab78e824a01fd7a14e9bce03f3de50ca5b1d70d2bdb",
+              "commandSha256": "b3b8d35817292216282d6b0df086d8fd6a6bb8c9d0be84aa67e0347eaf9b5dd4",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_15",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-10/events.jsonl",
+              "eventLine": 28,
+              "eventSha256": "8ceec359905bc458a03ad6321337fa8b3ec72b94a6cfa83306a03168562d2b2b",
+              "commandSha256": "7c9c5dc377611b505443a150f879132ba922565d99b37774a5dc389395dd3a52",
+              "exitCode": 0
+            }
+          ]
+        },
+        {
+          "area": "Handoff",
+          "observed": "The final record lists source, retained verification helpers, result files and captures, and states Chromium-only verification and session-only undo.",
+          "evidence": [
+            {
+              "type": "event",
+              "eventId": "item_17",
+              "eventType": "command_execution",
+              "eventFile": "runs/run-10/events.jsonl",
+              "eventLine": 32,
+              "eventSha256": "6ca6ea82f316e5557dfeb5bad699c281208b34926102e05cbe1b013b9867e57c",
+              "commandSha256": "57fc73b13696502b14bbf1a9bd18b9b5a7eb60bc07447fce6dca5ee1c82cac8b",
+              "exitCode": 0
+            },
+            {
+              "type": "event",
+              "eventId": "item_18",
+              "eventType": "agent_message",
+              "eventFile": "runs/run-10/events.jsonl",
+              "eventLine": 33,
+              "eventSha256": "03687be4c96e6b89ecb47eadef4626bcb2d5b9c074f9641ca68c904bb92bf1dd"
+            },
+            {
+              "type": "artifact",
+              "path": "runs/run-10/artifact/README.md",
+              "sha256": "a23eada25bcbfc71d649edc2c799b855890d6cad8de8f0f5fbb65b837bcb4258",
+              "matchesRunManifest": true
+            },
+            {
+              "type": "artifact",
+              "path": "runs/run-10/artifact/verification-results.json",
+              "sha256": "acbd1c2bd0c91e201cd45200e2eddda6935c60fe7e66d52658b2463ca1f596e1",
+              "matchesRunManifest": true
+            },
+            {
+              "type": "artifact",
+              "path": "runs/run-10/artifact/edge-verification-results.json",
+              "sha256": "2684f623987601e019a718d60e8d80cae89babcd7a13e57e8c9f7549e229d3db",
+              "matchesRunManifest": true
+            }
+          ]
+        }
+      ],
+      "limits": [
+        "The initially passing main suite did not cover the modal Tab-containment failure found by the added edge suite.",
+        "The saved main-suite result predates later tag-preservation and keyboard changes. Later edge and targeted checks passed, but a full final main-suite rerun is not recorded.",
+        "Candidate-authored checks are process evidence, not an independent acceptance result. No cross-engine, delegation or external orchestration was exercised."
+      ],
+      "reviewBlinded": false
+    }
+  ],
+  "conditionFindings": [
+    {
+      "condition": "baseline",
+      "positives": [
+        "All reviewed baseline runs state an execution outline and actually run verification.",
+        "The landing baseline preserves its focus assertion while correcting keyboard input modality.",
+        "Both app baseline runs expand a passing initial suite and repair a subsequently exposed focus issue."
+      ],
+      "limits": [
+        "A passing first app suite omitted later edge cases.",
+        "The landing test initially used the wrong input modality; app dialog-protocol errors also appear.",
+        "The trace provides no basis for calling the baseline disorganized or unverified.",
+        "The second app baseline finishes with edge/targeted checks after later edits; a full final main-suite rerun is not recorded."
+      ],
+      "evidenceRunIds": [
+        "run-02",
+        "run-12",
+        "run-06",
+        "run-11",
+        "run-01",
+        "run-10"
+      ]
+    },
+    {
+      "condition": "fabius",
+      "positives": [
+        "All four reviewed UI runs actually read the pinned design reference before building.",
+        "Both reviewed math runs expose exact-arithmetic scratch checks and execute a separate candidate-authored verifier.",
+        "The UI traces show concrete source corrections followed by successful recorded retests."
+      ],
+      "limits": [
+        "Initial UI implementations still required fallback, focus, contrast or mobile-overflow corrections.",
+        "Extra references and visible scratch checks do not prove better reasoning or a causal improvement.",
+        "No collaboration/orchestration or broader domain selection was exercised under these trial constraints."
+      ],
+      "evidenceRunIds": [
+        "run-05",
+        "run-03",
+        "run-08",
+        "run-09",
+        "run-07",
+        "run-04"
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "observed": "Both conditions benefit from testing negative paths after the first happy-path pass.",
+      "implication": "Document coverage by requirement/failure mode, not by a self-test assertion total.",
+      "evidenceRunIds": [
+        "run-06",
+        "run-08"
+      ]
+    },
+    {
+      "observed": "A failing browser assertion can reflect a product defect, test input modality or a protocol problem.",
+      "implication": "Preserve the failing evidence, identify which layer changed, and rerun the unchanged requirement after the correction.",
+      "evidenceRunIds": [
+        "run-03",
+        "run-12",
+        "run-06",
+        "run-08"
+      ]
+    },
+    {
+      "observed": "Native Codex already plans, verifies and reports limitations in the baseline traces.",
+      "implication": "Describe Fabius as an added operating configuration; do not present the comparison as competent process versus no process.",
+      "evidenceRunIds": [
+        "run-02",
+        "run-12",
+        "run-06",
+        "run-11"
+      ]
+    },
+    {
+      "observed": "The final second-app baseline received targeted checks after product edits, while its saved main-suite result came from an earlier revision.",
+      "implication": "Tie verification evidence to the exact artifact revision and distinguish a targeted retest from a complete regression rerun.",
+      "evidenceRunIds": [
+        "run-10"
+      ]
+    }
+  ],
+  "completedRunCount": 12
+}

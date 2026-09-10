@@ -1,0 +1,59 @@
+{
+  "id": "run-11",
+  "task": "math",
+  "repeat": 2,
+  "arm": "baseline",
+  "model": "gpt-6-astra",
+  "effort": "high",
+  "status": "completed",
+  "elapsed_seconds": 262.152,
+  "usage": [
+    {
+      "input_tokens": 121766,
+      "cached_input_tokens": 98432,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 12959,
+      "reasoning_output_tokens": 3775
+    }
+  ],
+  "task_sha256": "cf9f4f3249d05d4dca212b0f2ec2b192002ce55088bb878ca5c00f83cb28e4b9",
+  "developer_sha256": "1b13c409affd97e26426bee2926a276f0ef19f47d5f8fe2063469c0de08697d6",
+  "public_instructions_sha256": "d1330572301807e92531bb6a2e0f373423b91e54ec0c46bff6ad674ff03b3ae5",
+  "prompt_input_sha256": "77c96971c7801a883e7cf4e993b30705165cc064d68e7e24f1df4b9cd882aaac",
+  "events_sha256": "7653ff6a23750861986ef0dadd445d46cb8b9ff31236b90725905515d83e6454",
+  "artifact": {
+    "entries": [
+      {
+        "path": "final.txt",
+        "recorded_sha256": "29f17f3a360953685e63aac63540754136dbc78b48366a246f2e1d6c0d9d9b05",
+        "public_sha256": "29f17f3a360953685e63aac63540754136dbc78b48366a246f2e1d6c0d9d9b05"
+      },
+      {
+        "path": "solution.md",
+        "recorded_sha256": "2d80ba7bc7550ce1f8499306b1ca71c2a1f8f6e0f69b51128a87c050d2310618",
+        "public_sha256": "2d80ba7bc7550ce1f8499306b1ca71c2a1f8f6e0f69b51128a87c050d2310618"
+      },
+      {
+        "path": "solution.py",
+        "recorded_sha256": "30c47b823a94223b83397c91767e6c3c7d784c452967a536cc63883c04bba819",
+        "public_sha256": "30c47b823a94223b83397c91767e6c3c7d784c452967a536cc63883c04bba819"
+      },
+      {
+        "path": "verification.md",
+        "recorded_sha256": "8e1000d797b889a191fdd3e16933c2d65d5fa726dc8f0aa6c725ef6aeedbdbf5",
+        "public_sha256": "8e1000d797b889a191fdd3e16933c2d65d5fa726dc8f0aa6c725ef6aeedbdbf5"
+      },
+      {
+        "path": "verify.py",
+        "recorded_sha256": "a9c3743fa1a4fb93fee554fb0ac48c59af627cdebd6f2cd78606c8aa6557e6f9",
+        "public_sha256": "a9c3743fa1a4fb93fee554fb0ac48c59af627cdebd6f2cd78606c8aa6557e6f9"
+      }
+    ],
+    "path_redactions": [],
+    "note": "Only private machine paths are normalized in public text files. The immutable originals were graded before this packaging; no product repair was applied.",
+    "zip_sha256": "eede285748ecc5188d0aad094897ac822e40f575325a47e965aa40d1f848aa83"
+  },
+  "contract_names": [],
+  "checks_met": 9,
+  "criteria": 9
+}
