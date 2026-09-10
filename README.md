@@ -8,9 +8,9 @@ The public site for **fabius — one set of rules above every model**.
 
 ## Content baseline
 
-Aligned with the **2.8.3** Fabius source. The page leads with “one set of rules above every model”, retaining the green palette, Barlow typography, system map and three capability outcomes. The previously removed skill-card grids, setup split and explainer video remain absent.
+Aligned with the **3.0.0** Fabius source. The page leads with “one set of rules above every model”, retaining the green palette, Barlow typography, system map and three capability outcomes. The previously removed skill-card grids, setup split and explainer video remain absent.
 
-Fabius supplies instructions and workflows. The host supplies the model, tools and permissions. Model marks illustrate families; they do not establish tested integration or a universal quality gain.
+Fabius supplies instructions, workflows and original local helpers for scheduling, retrieval, design and completion evidence. The host supplies the model, tools and permissions. Model marks illustrate families; they do not establish tested integration or a universal quality gain.
 
 | Public claim | Canonical Fabius source |
 | --- | --- |
@@ -37,7 +37,7 @@ python3 -m http.server 8799
 
 Serve from the repository root. Before publishing, check the actual page in a browser at phone, tablet and desktop widths, including WebKit. Exercise menu, keyboard tabs, copy buttons, FAQ parity, internal links, images, console and network failures. Inspect reduced motion and verify that the PDF bytes match the Fabius artifact manifest. Test production security headers as well; a plain local server does not supply them.
 
-The September 8 accuracy pass verified the changed content locally in Chromium and WebKit. It did not establish that this batch was deployed. Production status must be checked separately after publication.
+A local browser result does not establish deployment. Production status and PDF bytes must be checked separately after publication.
 
 ## Publication
 
