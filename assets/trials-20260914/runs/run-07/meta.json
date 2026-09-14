@@ -1,0 +1,18 @@
+{
+ "id": "run-07",
+ "task": "B",
+ "repeat": 2,
+ "arm": "baseline",
+ "model": "claude-sonnet-5",
+ "elapsed_seconds": 590.1,
+ "output_tokens": 46307,
+ "tool_calls": 22,
+ "answer_sha256": "3e904f70d6475ce502ace04fa8f99c9e119238e9c071554c10026088bddfc2a7",
+ "started": "2026-09-14T05:34:16.831Z",
+ "ended": "2026-09-14T05:44:06.884Z",
+ "index_html": true,
+ "index_bytes": 17299,
+ "work_files": [
+  "index.html"
+ ]
+}

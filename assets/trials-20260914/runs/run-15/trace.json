@@ -1,0 +1,16 @@
+[
+ {
+  "kind": "tool_use",
+  "name": "Skill",
+  "input": "{\"skill\": \"fabius:fabius-cohors\", \"args\": \"Design a scheduling assistant agent that reads calendar+inbox, sends email as the user, and must decide per-event whether to act/ask/handoff/ignore, with an escalation channel for when the user is unreachable for hours.\"}"
+ },
+ {
+  "kind": "tool_result",
+  "chars": 37,
+  "preview": "Launching skill: fabius:fabius-cohors"
+ },
+ {
+  "kind": "text",
+  "chars": 6863
+ }
+]

@@ -1,0 +1,1 @@
+Found the bug — a CSS cascade order issue. `.btn{display:inline-flex}` is defined later in the stylesheet than `.header-cta{display:none}`, and with equal specificity the later rule won, so the header CTA button never actually hid on narrow screens. Fixing with a more specific selector.

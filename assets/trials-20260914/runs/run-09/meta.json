@@ -1,0 +1,28 @@
+{
+ "id": "run-09",
+ "task": "C",
+ "repeat": 1,
+ "arm": "baseline",
+ "model": "claude-sonnet-5",
+ "elapsed_seconds": 45.3,
+ "output_tokens": 2425,
+ "tool_calls": 6,
+ "answer_sha256": "7d57e50e872bcc3b457435de4e4a43fa65f55d08820ee03ee829f91245109cfa",
+ "started": "2026-09-14T05:34:27.989Z",
+ "ended": "2026-09-14T05:35:13.323Z",
+ "diff_lines": 12,
+ "oracle": {
+  "cli_file": {
+   "stdout": "4",
+   "code": 0
+  },
+  "cli_args": {
+   "stdout": "4",
+   "code": 0
+  },
+  "test": {
+   "stdout": "ok",
+   "code": 0
+  }
+ }
+}

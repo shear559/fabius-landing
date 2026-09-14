@@ -1,0 +1,18 @@
+{
+ "id": "run-08",
+ "task": "B",
+ "repeat": 2,
+ "arm": "fabius",
+ "model": "claude-sonnet-5",
+ "elapsed_seconds": 985.0,
+ "output_tokens": 71174,
+ "tool_calls": 57,
+ "answer_sha256": "d9e2168c7d6c0719c01fb6a784165ce2b2a3c7f948f8743bfab2517fb29fd168",
+ "started": "2026-09-14T05:34:24.700Z",
+ "ended": "2026-09-14T05:50:49.735Z",
+ "index_html": true,
+ "index_bytes": 12958,
+ "work_files": [
+  "index.html"
+ ]
+}

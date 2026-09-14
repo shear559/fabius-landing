@@ -1,0 +1,1 @@
+Found and will fix two real bugs: the billing-toggle `:has()` selector is scoped to the wrong ancestor (radios live in a sibling `<fieldset>`, not inside `.plans-grid`), so yearly pricing never actually shows. Let me fix that and re-verify the FAQ click too.

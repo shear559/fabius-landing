@@ -8,7 +8,7 @@ The public site for **fabius — one set of rules above every model**.
 
 ## Content baseline
 
-Aligned with the **3.0.1** Fabius source. The page leads with “one set of rules above every model”, retaining the green palette, Barlow typography, system map and three capability outcomes. The previously removed skill-card grids, setup split and explainer video remain absent.
+Aligned with the **3.1.0** Fabius source (whitepaper `fabius-as-a-system.pdf`, 51 pages, SHA-256 `a002c8c8d94903d33b541bcaf1f7cca65eb0acf043e684d168167035484dabd9`). The page leads with “one set of rules above every model”, retaining the green palette, Barlow typography, system map and three capability outcomes. The previously removed skill-card grids, setup split and explainer video remain absent.
 
 Fabius supplies instructions, workflows and original local helpers for scheduling, retrieval, design and completion evidence. The host supplies the model, tools and permissions. Model marks illustrate families; they do not establish tested integration or a universal quality gain.
 
@@ -19,6 +19,7 @@ Fabius supplies instructions, workflows and original local helpers for schedulin
 | Twenty-two core rules, mathematical assumptions and heuristics | `RESEARCH.md`, `paper/proofs.json` |
 | Historical gains, regressions and missing artifacts | `BENCHMARKS.md`, `evals/verify-receipts.mjs` |
 | September 10 paired mathematics, page and app trials | `assets/trials-20260910/protocol.html`, `report.html`, `runs.json` |
+| September 14 behavior trials (sixteen runs, two blind judges) | `assets/trials-20260914/protocol.html`, `report.html`, `results.json`, `all-artifacts.zip` |
 | Local execution, provider processing and permission limits | `runtime/README.md`, `runtime/src/tools.mjs` |
 | Content hashes, signed releases and timestamp status | `PROVENANCE.md`, `provenance/verify.sh` |
 
@@ -32,7 +33,7 @@ The design uses the existing green tokens (`#76b900`, with darker text variants)
 
 ## Paired artifact trials
 
-The `#trials` section reads the published `assets/trials-20260910/results.json`. Its external `trial-lab.css` and `trial-lab.js` provide task tabs, both repeated pairs, a mobile condition switch, an actual-sample math plot, captured walkthroughs and inspectable checks. The report includes every generated source artifact and its recorded usage. The control retains native Codex instructions; the treatment adds the pinned Fabius 3.0.1 contracts and reference resources.
+The `#trials` section now leads with the September 14 behavior study: `assets/trials-20260914/results.json` (sixteen runs of one model on four briefs, two blind judges per run, every verdict and quote published), rendered by `assets/trials-20260914/trial-lab.css` and `trial-lab.js` with brief cards, a decisive-differences ribbon computed only from agreed verdicts, captured pricing pages, a proof timeline from each fix run's trace, answers with judge-quoted evidence highlighted, and a full rubric scorecard per run. The September 10 build study stays on the page in full behind the “Open the build study” control; it reads the published `assets/trials-20260910/results.json`. Its external `trial-lab.css` and `trial-lab.js` provide task tabs, both repeated pairs, a mobile condition switch, an actual-sample math plot, captured walkthroughs and inspectable checks. The report includes every generated source artifact and its recorded usage. The control retains native Codex instructions; the treatment adds the pinned Fabius 3.0.1 contracts and reference resources.
 
 A separate expandable view describes actual planning, tool use, verification and correction sequences from each trace. This process audit was requested after outcomes existed and is explicitly retrospective and unblinded. It has no score. Delegation and external services were unavailable in both conditions, so the study does not claim to measure the full orchestration surface.
 

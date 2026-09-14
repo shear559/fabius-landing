@@ -1,0 +1,56 @@
+[
+ {
+  "kind": "tool_use",
+  "name": "Read",
+  "input": "{\"file_path\": \"[fabius]/skills/fabius/SKILL.md\"}"
+ },
+ {
+  "kind": "tool_result",
+  "chars": 12038,
+  "preview": "1\t---\n2\tname: fabius\n3\tdescription: >\n4\t  Load at the start of any non-trivial task \u2014 the router that sets HOW to work before any\n5\t  specialist fires. fabius supplies one set of operating rules for different AI models\n6\t  (Claude \u00b7 GPT \u00b7 Gemini \u00b7 DeepSeek \u00b7 GLM \u00b7 Qwen \u00b7 Llama \u00b7 Mistral \u00b7 Kimi \u00b7 Grok), loaded\n7\t  through a compatible agent app. One stance, end to end: code, prose, agents, UI, data"
+ },
+ {
+  "kind": "tool_use",
+  "name": "Read",
+  "input": "{\"file_path\": \"[fabius]/skills/fabius-parcus/SKILL.md\"}"
+ },
+ {
+  "kind": "tool_result",
+  "chars": 5850,
+  "preview": "1\t---\n2\tname: fabius-parcus\n3\tdescription: >\n4\t  The always-on lean core of fabius \u2014 one stance, four trims: say less, build less, change less,\n5\t  assume less (terse output + a YAGNI code ladder + surgical, assumption-checked changes).\n6\t  ALWAYS-ON: it sits UNDERNEATH whatever task layer is active (building, refactoring, debugging,\n7\t  designing) \u2014 never instead of one, so it never competes for "
+ },
+ {
+  "kind": "tool_use",
+  "name": "Read",
+  "input": "{\"file_path\": \"[fabius]/skills/fabius-cohors/SKILL.md\"}"
+ },
+ {
+  "kind": "tool_result",
+  "chars": 12278,
+  "preview": "1\t---\n2\tname: fabius-cohors\n3\tdescription: >\n4\t  fabius's agent-engineering layer \u2014 how to DEFINE and ORCHESTRATE other agents: the definition\n5\t  schema, the permission model, the single-vs-multi-agent decision, and the five orchestration\n6\t  patterns (sequential / parallel / hierarchical / human-in-the-loop / swarm). Use when the user wants to\n7\t  build an agent, a subagent, a tool-using assista"
+ },
+ {
+  "kind": "tool_use",
+  "name": "Read",
+  "input": "{\"file_path\": \"[fabius]/skills/fabius-cohors/references/agent-patterns.md\"}"
+ },
+ {
+  "kind": "tool_result",
+  "chars": 45727,
+  "preview": "1\t# Fabius Cohors \u2014 schema & proven agent shapes\n2\t\n3\tLoaded on demand by `fabius-cohors`. The skill has the decision rules; this file has the copy-from schema, the recurring shapes, the least-privilege defaults, and the harness mechanics a production loop runs on.\n4\t\n5\t## Copy-from agent definition\n6\t\n7\t```yaml\n8\t---\n9\tdescription: one precise sentence \u2014 what it does AND when to dispatch it\n10\tmo"
+ },
+ {
+  "kind": "tool_use",
+  "name": "Read",
+  "input": "{\"file_path\": \"[fabius]/skills/fabius-cohors/references/local-agent-runtime.md\"}"
+ },
+ {
+  "kind": "tool_result",
+  "chars": 32063,
+  "preview": "1\t# The local agent runtime\n2\t\n3\tHow to build an agent that runs on the user's own machine \u2014 and why almost every hard\n4\tproblem in one is a permission problem wearing a different hat.\n5\t\n6\tA hosted agent's blast radius depends on its sandbox, credentials, and integrations. A\n7\tlocal process can inherit access to the user's repositories, credentials, and shell.\n8\tChoose boundaries from that actual"
+ },
+ {
+  "kind": "text",
+  "chars": 6374
+ }
+]

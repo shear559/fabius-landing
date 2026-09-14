@@ -1,0 +1,13 @@
+{
+ "id": "run-04",
+ "task": "A",
+ "repeat": 2,
+ "arm": "fabius",
+ "model": "claude-sonnet-5",
+ "elapsed_seconds": 131.7,
+ "output_tokens": 11223,
+ "tool_calls": 8,
+ "answer_sha256": "173ae6b697fd6f67db91847ea54b45a3bdef3a8db2e9cfc26118bb0a4f2d5540",
+ "started": "2026-09-14T05:33:58.194Z",
+ "ended": "2026-09-14T05:36:09.939Z"
+}

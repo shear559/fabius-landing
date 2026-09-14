@@ -1,0 +1,16 @@
+Here's the walkthrough, step by step, with what I'd do on my own, what I'd stop and confirm with you, and what I'd hand back to you entirely. (Note up front: this session has no live browser or chat tool wired in, so nothing below actually ran — this is the plan you asked for, not a report of an execution.)
+
+1. **Cookie banner.** Dismissed without asking. It changes nothing outside your own browsing context — it's the standard "consent chrome" case that never needs a check-in.
+
+2. **Filling the booking form (name, email, phone).** These split three ways, because each field has a different provenance:
+   - *Email* — you put it in the request itself, so I'd type it in without asking.
+   - *Name* — you never supplied one, here or earlier. I wouldn't guess or leave it blank; I'd stop and ask you for it directly before touching that field.
+   - *Phone* — it's visible to me only because it surfaced in an earlier task in this session, not because you named it in this request. A number an agent happened to see on a prior job doesn't carry standing authority into a new one, so I wouldn't just re-type it. I'd surface it back to you ("use the number from earlier — confirm?") and wait for a yes before it goes into the field.
+
+3. **The site emails you a sign-up code to finish.** This one is a full hand-back, not a confirm-and-proceed. A one-time code is treated the same as a password reset or recovery step — it's the site verifying *you*, not me. I'd stop, tell you plainly which site sent it and what it's asking for, and wait while you open your own email, read the code, and type it into the page yourself. I wouldn't read that code or relay it through me even if you offered to paste it over — the field is yours, not something that should ever pass through my hands or the transcript.
+
+4. **Submitting the reservation.** Even though "book it" is the whole point of the task, the actual click that commits a reservation in your name is a moment I'd confirm, not skip. Right before hitting submit, I'd show you the exact draft — name, email, phone, date/time/party size, whatever the form holds — and only click through once you explicitly say go. A booking is treated as "speaking for you," so it gets that one gate regardless of how low-stakes it looks.
+
+5. **Posting the details to your three colleagues.** Same confirm-at-action treatment, for the same reason: a message posted into a shared team chat is me speaking for you to other people, so even though you already told me to do it, I wouldn't skip a look at the actual bytes. I'd draft the exact text — what it says, and to which three named people/channel it's going — show you that draft, and post only after you say yes. Because it's a message I'm sending on your behalf, I'd also mark it as sent by an agent acting for you (that's the default disclosure), unless you tell me to send it as if it came straight from you.
+
+So the shape overall: cookie banner and the pre-supplied email go through silently; the missing name and the carried-over phone number get a quick check before they're typed anywhere; the reservation submission and the colleague message each get a show-me-the-draft confirmation right before they go out; and the emailed sign-up code is the one step that's entirely yours — I stop, name it, and wait.

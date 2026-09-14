@@ -1,0 +1,12 @@
+diff -ru [study]/fixtures/stats-cli/stats.js [study]/runs/run-09/work/stats.js
+--- [study]/fixtures/stats-cli/stats.js	2026-09-14 08:32:46
++++ [study]/runs/run-09/work/stats.js	2026-09-14 08:34:51
+@@ -8,7 +8,7 @@
+   if (fileIndex !== -1) {
+     const path = args[fileIndex + 1];
+     if (!path) throw new Error('--file needs a path');
+-    return fs.readFileSync(path, 'utf8').split('\n').map(Number);
++    return fs.readFileSync(path, 'utf8').split('\n').map(s => s.trim()).filter(Boolean).map(Number);
+   }
+   return args.map(Number);
+ }

@@ -1,0 +1,13 @@
+{
+ "id": "run-13",
+ "task": "D",
+ "repeat": 1,
+ "arm": "baseline",
+ "model": "claude-sonnet-5",
+ "elapsed_seconds": 65.9,
+ "output_tokens": 5013,
+ "tool_calls": 0,
+ "answer_sha256": "32403db47ad8a520150c291f766b54809a3b03dd0b73887bc0bcfb3623bcc19b",
+ "started": "2026-09-14T05:34:45.337Z",
+ "ended": "2026-09-14T05:35:51.205Z"
+}

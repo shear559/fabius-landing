@@ -1,0 +1,5 @@
+`node stats.js average --file data.txt` now prints `4`, matching `node stats.js average 2 4 6`. `sum` and `max` on the same file also check out (12 and 6). The existing test suite (`node stats.test.js`) still passes, and a CRLF-plus-blank-line file was verified separately to confirm the fix is robust.
+
+**Root cause**: in `stats.js`, `readNumbers` parsed file input with `fs.readFileSync(path, 'utf8').split('\n').map(Number)`. Because `data.txt` (like most text files) ends with a trailing newline, `split('\n')` produced a trailing empty string, and `Number("")` evaluates to `0` — not `NaN` — so a phantom fourth value silently entered the array. `average([2,4,6,0])` = 12/4 = 3 instead of 12/3 = 4. The `sum` and `max` commands happened to mask this (`sum` unaffected by an added zero, `max` unaffected either), which is why only `average` looked wrong.
+
+**Fix** (`stats.js`, `readNumbers`, file-path branch): trim each line and filter out empty ones before converting to numbers, so trailing/blank lines and CRLF endings no longer inject spurious zeros. No change to the command-line interface.
