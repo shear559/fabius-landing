@@ -15,7 +15,7 @@
   const countFormat = new Intl.NumberFormat('en-US');
   const decimalFormat = new Intl.NumberFormat('en-US', { maximumFractionDigits: 1 });
   const textCache = new Map();
-  let data, taskIndex = 0, repeatIndex = 0, frameIndex = 0, mobileArm = 'baseline', viewMode = 'live', device = 'desktop';
+  let data, taskIndex = 0, repeatIndex = 0, frameIndex = 0, mobileArm = 'baseline', viewMode = 'live', device = matchMedia('(max-width: 699px)').matches ? 'phone' : 'desktop';
   let frameIds = [], captureViews = [], pointViews = [], liveViews = [], timer = null, generation = 0, frameRequest = 0;
   let playbackButton, frameSlider, frameOutput, zoomInvoker, resizeObserver = null;
 
@@ -445,7 +445,10 @@
     for (let i = 0; i < 3; i += 1) { const dot = node('i'); dot.setAttribute('aria-hidden', 'true'); bar.append(dot); }
     bar.append(node('span', '', `${armNames[name]} · ${taskNames[task.id].toLowerCase()} · generated ${data.meta.date}`));
     const screen = node('div', 'trial-device-screen');
+    screen.dataset.loading = 'true';
+    screen.append(node('p', 'trial-device-loading', `Loading the generated ${task.id === 'app' ? 'app' : 'page'}…`));
     const frame = document.createElement('iframe');
+    frame.addEventListener('load', () => { screen.dataset.loading = 'false'; });
     frame.setAttribute('sandbox', 'allow-scripts allow-forms allow-modals allow-downloads');
     frame.setAttribute('referrerpolicy', 'no-referrer');
     frame.loading = 'lazy';
@@ -454,11 +457,11 @@
     screen.append(frame);
     shell.append(bar, screen);
     const foot = node('div', 'trial-device-foot');
-    const note = node('p', '', task.id === 'app' ? 'Sandboxed frame with its own in-memory storage; boards reset on reload.' : 'Sandboxed frame; scroll and click inside it.');
+    const note = node('p', '', task.id === 'app' ? 'Sandboxed frame with an in-memory storage stand-in for this preview: the app\u2019s own \u201csaved\u201d messages refer to it, and the board starts over on reload.' : 'Sandboxed frame; scroll and click inside it.');
     const actions = node('div', 'trial-device-actions');
     const reload = node('button', 'trial-button', 'Reload');
     reload.type = 'button';
-    reload.addEventListener('click', () => { frame.src = url; });
+    reload.addEventListener('click', () => { screen.dataset.loading = 'true'; frame.src = url; announce(`${armNames[name]} preview reloaded; its board starts over.`); });
     actions.append(reload);
     appendLink(actions, 'Open in a new tab', url, true);
     foot.append(note, actions);
