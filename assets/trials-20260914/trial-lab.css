@@ -29,6 +29,7 @@
 .trial2-source-links a,.trial2-link,.trial2-noscript a,.trial2-load-state a{
   color:var(--primary-ink);font-weight:600;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;
 }
+.trial2-source-links a,.trial2-artifacts a{display:inline-flex;align-items:center;min-height:var(--trial-control)}
 .trial2-source-links a:hover,.trial2-link:hover{color:var(--ink)}
 .trial2-load-state{padding:var(--trial-s5);border:var(--trial-line) solid var(--hairline-2);background:var(--surface);margin-block:var(--trial-s4)}
 .trial2-load-state strong{display:block;font-size:var(--trial-subtitle);line-height:1.2;margin-bottom:var(--trial-s2)}
@@ -154,7 +155,7 @@ details[open]>summary .trial2-caret{transform:rotate(90deg)}
 /* ── task C · proof timeline, diff, oracle ─────────────────── */
 .trial2-timeline{list-style:none;counter-reset:step;margin:var(--trial-s3) 0 0;padding:0;display:grid;gap:var(--trial-s1)}
 .trial2-timeline li{
-  display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:var(--trial-s2);align-items:baseline;
+  display:grid;grid-template-columns:auto auto minmax(0,1fr);column-gap:var(--trial-s2);align-items:baseline;
   font-family:var(--mono);font-size:var(--trial2-mono-small);line-height:1.5;color:var(--ink-2);
 }
 .trial2-timeline li::before{counter-increment:step;content:counter(step);color:var(--muted);font-variant-numeric:tabular-nums}
