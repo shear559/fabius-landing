@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fieldnote Board</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<noscript>
+  <div class="noscript-banner">Fieldnote Board needs JavaScript enabled to load your tasks. Please enable JavaScript and reload the page.</div>
+</noscript>
+
+<div id="app">
+  <header class="app-header">
+    <div class="app-header__title">
+      <h1>Fieldnote Board</h1>
+      <p class="app-header__subtitle">A local-first task board for a small project team.</p>
+    </div>
+    <div class="app-header__actions">
+      <button type="button" id="export-btn" data-testid="export" class="btn btn--ghost">Export JSON</button>
+      <label class="btn btn--ghost file-label" for="import-file">
+        Import JSON
+        <input type="file" id="import-file" data-testid="import-file" accept="application/json,.json" class="visually-hidden-file">
+      </label>
+      <button type="button" id="create-task-btn" data-testid="create-task" class="btn btn--primary">+ New task</button>
+    </div>
+  </header>
+
+  <div id="notice-region" aria-live="polite">
+    <div id="corrupt-notice" class="notice notice--danger" hidden>
+      <p><strong>We found a board that could not be read.</strong> Your previous data is still on disk untouched. You can download the original bytes for inspection, or reset to a fresh board.</p>
+      <div class="notice__actions">
+        <button type="button" id="download-corrupt-btn" class="btn btn--ghost btn--small">Download original bytes</button>
+        <button type="button" id="reset-corrupt-btn" class="btn btn--danger btn--small">Reset board</button>
+      </div>
+    </div>
+
+    <div id="conflict-notice" class="notice notice--warning" hidden>
+      <p><strong>This board changed in another tab.</strong> Reload to see the latest data before making further changes.</p>
+      <div class="notice__actions">
+        <button type="button" id="reload-conflict-btn" class="btn btn--primary btn--small">Reload board</button>
+      </div>
+    </div>
+
+    <div id="save-error-notice" class="notice notice--danger" hidden>
+      <p><strong>Your last change was not saved.</strong> <span id="save-error-detail"></span> Your edits remain in this session; try again or free up storage space.</p>
+    </div>
+
+    <div id="import-notice" class="notice notice--danger" hidden>
+      <p id="import-notice-message"></p>
+    </div>
+
+    <div id="undo-notice" class="notice notice--info" hidden>
+      <p><span id="undo-message">Task deleted.</span></p>
+      <div class="notice__actions">
+        <button type="button" id="undo-delete-btn" data-testid="undo-delete" class="btn btn--primary btn--small">Undo delete</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="toolbar" aria-label="Search and filter tasks">
+    <div class="toolbar__search">
+      <label for="search-input">Search tasks</label>
+      <input type="search" id="search-input" data-testid="search" placeholder="Search by title, project or tag" autocomplete="off">
+    </div>
+    <div class="toolbar__filters">
+      <div class="field-inline">
+        <label for="filter-status">Status</label>
+        <select id="filter-status" data-testid="filter-status">
+          <option value="all">All statuses</option>
+          <option value="todo">To do</option>
+          <option value="doing">Doing</option>
+          <option value="done">Done</option>
+        </select>
+      </div>
+      <div class="field-inline">
+        <label for="filter-project">Project</label>
+        <select id="filter-project" data-testid="filter-project">
+          <option value="all">All projects</option>
+        </select>
+      </div>
+      <div class="field-inline">
+        <label for="filter-priority">Priority</label>
+        <select id="filter-priority" data-testid="filter-priority">
+          <option value="all">All priorities</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <p id="result-count" class="result-count" role="status"></p>
+
+  <main id="board-main">
+    <div id="empty-state" class="state-panel" hidden>
+      <h2>No tasks yet</h2>
+      <p>Create your first task to start tracking work for your team.</p>
+      <button type="button" id="empty-create-btn" class="btn btn--primary">+ New task</button>
+    </div>
+
+    <div id="no-results-state" class="state-panel" hidden>
+      <h2>No matching tasks</h2>
+      <p>Try a different search term or clear your filters.</p>
+      <button type="button" id="clear-filters-btn" class="btn btn--ghost">Clear search and filters</button>
+    </div>
+
+    <ul id="task-list" class="task-list" aria-label="Tasks"></ul>
+  </main>
+</div>
+
+<dialog id="task-dialog" class="task-dialog" aria-labelledby="task-dialog-title">
+  <form data-testid="task-form" id="task-form" novalidate>
+    <h2 id="task-dialog-title">New task</h2>
+
+    <div class="form-field">
+      <label for="task-title">Title</label>
+      <input type="text" id="task-title" name="title" maxlength="120" required>
+      <p class="field-error" id="error-title" hidden></p>
+    </div>
+
+    <div class="form-field">
+      <label for="task-project">Project</label>
+      <input type="text" id="task-project" name="project" maxlength="80" required list="project-suggestions">
+      <datalist id="project-suggestions"></datalist>
+      <p class="field-error" id="error-project" hidden></p>
+    </div>
+
+    <div class="form-row">
+      <div class="form-field">
+        <label for="task-status">Status</label>
+        <select id="task-status" name="status">
+          <option value="todo">To do</option>
+          <option value="doing">Doing</option>
+          <option value="done">Done</option>
+        </select>
+      </div>
+
+      <div class="form-field">
+        <label for="task-priority">Priority</label>
+        <select id="task-priority" name="priority">
+          <option value="low">Low</option>
+          <option value="medium" selected>Medium</option>
+          <option value="high">High</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label for="task-dueDate">Due date</label>
+      <input type="date" id="task-dueDate" name="dueDate">
+      <p class="field-error" id="error-dueDate" hidden></p>
+    </div>
+
+    <div class="form-field">
+      <label for="task-tags">Tags</label>
+      <input type="text" id="task-tags" name="tags" placeholder="comma, separated, tags">
+      <p class="field-hint">Up to 8 tags, comma-separated. Duplicates are merged automatically.</p>
+      <p class="field-error" id="error-tags" hidden></p>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" id="cancel-task-btn" class="btn btn--ghost">Cancel</button>
+      <button type="submit" data-testid="save-task" class="btn btn--primary">Save task</button>
+    </div>
+  </form>
+</dialog>
+
+<script src="../preview-storage.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

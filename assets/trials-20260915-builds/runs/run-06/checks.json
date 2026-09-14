@@ -1,0 +1,6171 @@
+{
+ "schemaVersion": 1,
+ "runId": "run-06",
+ "kind": "app",
+ "startedAt": "2026-09-14T22:27:26.492Z",
+ "rubricSha256": "dce74ebefa667827386eafd630efb81f79f0cbe431c5ee815efc307829278cd5",
+ "runnerSha256": "64398b4fb7a042c1c59b41ce16000f583e6adbdee6aa04ed3d6a33c3b9a98b95",
+ "environment": {
+  "node": "v26.0.0",
+  "platform": "darwin",
+  "arch": "x64"
+ },
+ "results": [
+  {
+   "id": "A01",
+   "environment": "chromium-360",
+   "browser": "chromium",
+   "width": 360,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "seedBoard",
+     "pass": true,
+     "actual": {
+      "valid": true,
+      "count": 7,
+      "projects": [
+       "Ridgeline Trail Refresh",
+       "Community Garden Rebuild"
+      ],
+      "statuses": [
+       "todo",
+       "doing",
+       "done"
+      ]
+     }
+    },
+    {
+     "key": "seedRendered",
+     "pass": true,
+     "actual": {
+      "ids": [
+       "t-seed-a-ij3t4s",
+       "t-seed-b-2fr98k",
+       "t-seed-c-yifxms",
+       "t-seed-d-wlyxm7",
+       "t-seed-e-hls3p1",
+       "t-seed-f-ngqg5u",
+       "t-seed-g-rroyt4"
+      ]
+     }
+    },
+    {
+     "key": "localFictionFraming",
+     "pass": false,
+     "actual": null
+    }
+   ],
+   "screenshots": [
+    "chromium-360-A01-initial.png"
+   ],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "fail",
+   "durationMs": 942
+  },
+  {
+   "id": "A02",
+   "environment": "chromium-360",
+   "browser": "chromium",
+   "width": 360,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "created",
+     "pass": true,
+     "actual": {
+      "created": {
+       "id": "t-7898682c-d456-483c-9f3b-a2f3b2239125",
+       "title": "Untangle the methods",
+       "project": "Atlas",
+       "status": "doing",
+       "priority": "high",
+       "dueDate": "2028-02-29",
+       "tags": [
+        "methods",
+        "review"
+       ]
+      },
+      "valid": true,
+      "count": 7
+     }
+    },
+    {
+     "key": "createPersists",
+     "pass": true,
+     "actual": {
+      "schemaVersion": 1,
+      "tasks": [
+       {
+        "id": "oracle-a",
+        "title": "Sample literature review",
+        "project": "Atlas",
+        "status": "todo",
+        "priority": "high",
+        "dueDate": "2028-02-29",
+        "tags": [
+         "methods",
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-b",
+        "title": "Dataset audit",
+        "project": "Boreal",
+        "status": "doing",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "cleanup"
+        ]
+       },
+       {
+        "id": "oracle-c",
+        "title": "Draft methods note",
+        "project": "Atlas",
+        "status": "done",
+        "priority": "low",
+        "dueDate": "2028-12-31",
+        "tags": [
+         "Writing"
+        ]
+       },
+       {
+        "id": "oracle-d",
+        "title": "Field observations",
+        "project": "Boreal",
+        "status": "todo",
+        "priority": "low",
+        "dueDate": "",
+        "tags": [
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-e",
+        "title": "Review source links",
+        "project": "Atlas",
+        "status": "doing",
+        "priority": "high",
+        "dueDate": "2028-03-01",
+        "tags": [
+         "Sources"
+        ]
+       },
+       {
+        "id": "oracle-f",
+        "title": "Archive completed work",
+        "project": "Boreal",
+        "status": "done",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "archive"
+        ]
+       },
+       {
+        "id": "t-7898682c-d456-483c-9f3b-a2f3b2239125",
+        "title": "Untangle the methods",
+        "project": "Atlas",
+        "status": "doing",
+        "priority": "high",
+        "dueDate": "2028-02-29",
+        "tags": [
+         "methods",
+         "review"
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "key": "editPrefilled",
+     "pass": true,
+     "actual": "Untangle the methods"
+    },
+    {
+     "key": "editedOnlyTarget",
+     "pass": true,
+     "actual": {
+      "schemaVersion": 1,
+      "tasks": [
+       {
+        "id": "oracle-a",
+        "title": "Sample literature review",
+        "project": "Atlas",
+        "status": "todo",
+        "priority": "high",
+        "dueDate": "2028-02-29",
+        "tags": [
+         "methods",
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-b",
+        "title": "Dataset audit",
+        "project": "Boreal",
+        "status": "doing",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "cleanup"
+        ]
+       },
+       {
+        "id": "oracle-c",
+        "title": "Draft methods note",
+        "project": "Atlas",
+        "status": "done",
+        "priority": "low",
+        "dueDate": "2028-12-31",
+        "tags": [
+         "Writing"
+        ]
+       },
+       {
+        "id": "oracle-d",
+        "title": "Field observations",
+        "project": "Boreal",
+        "status": "todo",
+        "priority": "low",
+        "dueDate": "",
+        "tags": [
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-e",
+        "title": "Review source links",
+        "project": "Atlas",
+        "status": "doing",
+        "priority": "high",
+        "dueDate": "2028-03-01",
+        "tags": [
+         "Sources"
+        ]
+       },
+       {
+        "id": "oracle-f",
+        "title": "Archive completed work",
+        "project": "Boreal",
+        "status": "done",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "archive"
+        ]
+       },
+       {
+        "id": "t-7898682c-d456-483c-9f3b-a2f3b2239125",
+        "title": "Revised methods handoff",
+        "project": "Boreal",
+        "status": "done",
+        "priority": "low",
+        "dueDate": "2028-03-03",
+        "tags": [
+         "final",
+         "methods"
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "key": "editPersists",
+     "pass": true,
+     "actual": {
+      "schemaVersion": 1,
+      "tasks": [
+       {
+        "id": "oracle-a",
+        "title": "Sample literature review",
+        "project": "Atlas",
+        "status": "todo",
+        "priority": "high",
+        "dueDate": "2028-02-29",
+        "tags": [
+         "methods",
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-b",
+        "title": "Dataset audit",
+        "project": "Boreal",
+        "status": "doing",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "cleanup"
+        ]
+       },
+       {
+        "id": "oracle-c",
+        "title": "Draft methods note",
+        "project": "Atlas",
+        "status": "done",
+        "priority": "low",
+        "dueDate": "2028-12-31",
+        "tags": [
+         "Writing"
+        ]
+       },
+       {
+        "id": "oracle-d",
+        "title": "Field observations",
+        "project": "Boreal",
+        "status": "todo",
+        "priority": "low",
+        "dueDate": "",
+        "tags": [
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-e",
+        "title": "Review source links",
+        "project": "Atlas",
+        "status": "doing",
+        "priority": "high",
+        "dueDate": "2028-03-01",
+        "tags": [
+         "Sources"
+        ]
+       },
+       {
+        "id": "oracle-f",
+        "title": "Archive completed work",
+        "project": "Boreal",
+        "status": "done",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "archive"
+        ]
+       },
+       {
+        "id": "t-7898682c-d456-483c-9f3b-a2f3b2239125",
+        "title": "Revised methods handoff",
+        "project": "Boreal",
+        "status": "done",
+        "priority": "low",
+        "dueDate": "2028-03-03",
+        "tags": [
+         "final",
+         "methods"
+        ]
+       }
+      ]
+     }
+    }
+   ],
+   "screenshots": [
+    "chromium-360-A02-edited.png"
+   ],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1462
+  },
+  {
+   "id": "A03",
+   "environment": "chromium-360",
+   "browser": "chromium",
+   "width": 360,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "nativeSelect",
+     "pass": true,
+     "actual": "SELECT"
+    },
+    {
+     "key": "onlyStatusChanged",
+     "pass": true,
+     "actual": {
+      "schemaVersion": 1,
+      "tasks": [
+       {
+        "id": "oracle-a",
+        "title": "Sample literature review",
+        "project": "Atlas",
+        "status": "done",
+        "priority": "high",
+        "dueDate": "2028-02-29",
+        "tags": [
+         "methods",
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-b",
+        "title": "Dataset audit",
+        "project": "Boreal",
+        "status": "doing",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "cleanup"
+        ]
+       },
+       {
+        "id": "oracle-c",
+        "title": "Draft methods note",
+        "project": "Atlas",
+        "status": "done",
+        "priority": "low",
+        "dueDate": "2028-12-31",
+        "tags": [
+         "Writing"
+        ]
+       },
+       {
+        "id": "oracle-d",
+        "title": "Field observations",
+        "project": "Boreal",
+        "status": "todo",
+        "priority": "low",
+        "dueDate": "",
+        "tags": [
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-e",
+        "title": "Review source links",
+        "project": "Atlas",
+        "status": "doing",
+        "priority": "high",
+        "dueDate": "2028-03-01",
+        "tags": [
+         "Sources"
+        ]
+       },
+       {
+        "id": "oracle-f",
+        "title": "Archive completed work",
+        "project": "Boreal",
+        "status": "done",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "archive"
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "key": "statusPersists",
+     "pass": true,
+     "actual": {
+      "board": {
+       "schemaVersion": 1,
+       "tasks": [
+        {
+         "id": "oracle-a",
+         "title": "Sample literature review",
+         "project": "Atlas",
+         "status": "done",
+         "priority": "high",
+         "dueDate": "2028-02-29",
+         "tags": [
+          "methods",
+          "Research"
+         ]
+        },
+        {
+         "id": "oracle-b",
+         "title": "Dataset audit",
+         "project": "Boreal",
+         "status": "doing",
+         "priority": "medium",
+         "dueDate": "",
+         "tags": [
+          "cleanup"
+         ]
+        },
+        {
+         "id": "oracle-c",
+         "title": "Draft methods note",
+         "project": "Atlas",
+         "status": "done",
+         "priority": "low",
+         "dueDate": "2028-12-31",
+         "tags": [
+          "Writing"
+         ]
+        },
+        {
+         "id": "oracle-d",
+         "title": "Field observations",
+         "project": "Boreal",
+         "status": "todo",
+         "priority": "low",
+         "dueDate": "",
+         "tags": [
+          "Research"
+         ]
+        },
+        {
+         "id": "oracle-e",
+         "title": "Review source links",
+         "project": "Atlas",
+         "status": "doing",
+         "priority": "high",
+         "dueDate": "2028-03-01",
+         "tags": [
+          "Sources"
+         ]
+        },
+        {
+         "id": "oracle-f",
+         "title": "Archive completed work",
+         "project": "Boreal",
+         "status": "done",
+         "priority": "medium",
+         "dueDate": "",
+         "tags": [
+          "archive"
+         ]
+        }
+       ]
+      },
+      "select": "done"
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 932
+  },
+  {
+   "id": "A04",
+   "environment": "chromium-360",
+   "browser": "chromium",
+   "width": 360,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "deleted",
+     "pass": true,
+     "actual": {
+      "board": {
+       "schemaVersion": 1,
+       "tasks": [
+        {
+         "id": "oracle-a",
+         "title": "Sample literature review",
+         "project": "Atlas",
+         "status": "todo",
+         "priority": "high",
+         "dueDate": "2028-02-29",
+         "tags": [
+          "methods",
+          "Research"
+         ]
+        },
+        {
+         "id": "oracle-c",
+         "title": "Draft methods note",
+         "project": "Atlas",
+         "status": "done",
+         "priority": "low",
+         "dueDate": "2028-12-31",
+         "tags": [
+          "Writing"
+         ]
+        },
+        {
+         "id": "oracle-d",
+         "title": "Field observations",
+         "project": "Boreal",
+         "status": "todo",
+         "priority": "low",
+         "dueDate": "",
+         "tags": [
+          "Research"
+         ]
+        },
+        {
+         "id": "oracle-e",
+         "title": "Review source links",
+         "project": "Atlas",
+         "status": "doing",
+         "priority": "high",
+         "dueDate": "2028-03-01",
+         "tags": [
+          "Sources"
+         ]
+        },
+        {
+         "id": "oracle-f",
+         "title": "Archive completed work",
+         "project": "Boreal",
+         "status": "done",
+         "priority": "medium",
+         "dueDate": "",
+         "tags": [
+          "archive"
+         ]
+        }
+       ]
+      },
+      "visible": false,
+      "undo": true
+     }
+    },
+    {
+     "key": "exactRecordRestored",
+     "pass": true,
+     "actual": {
+      "schemaVersion": 1,
+      "tasks": [
+       {
+        "id": "oracle-a",
+        "title": "Sample literature review",
+        "project": "Atlas",
+        "status": "todo",
+        "priority": "high",
+        "dueDate": "2028-02-29",
+        "tags": [
+         "methods",
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-b",
+        "title": "Dataset audit",
+        "project": "Boreal",
+        "status": "doing",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "cleanup"
+        ]
+       },
+       {
+        "id": "oracle-c",
+        "title": "Draft methods note",
+        "project": "Atlas",
+        "status": "done",
+        "priority": "low",
+        "dueDate": "2028-12-31",
+        "tags": [
+         "Writing"
+        ]
+       },
+       {
+        "id": "oracle-d",
+        "title": "Field observations",
+        "project": "Boreal",
+        "status": "todo",
+        "priority": "low",
+        "dueDate": "",
+        "tags": [
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-e",
+        "title": "Review source links",
+        "project": "Atlas",
+        "status": "doing",
+        "priority": "high",
+        "dueDate": "2028-03-01",
+        "tags": [
+         "Sources"
+        ]
+       },
+       {
+        "id": "oracle-f",
+        "title": "Archive completed work",
+        "project": "Boreal",
+        "status": "done",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "archive"
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "key": "undoPersists",
+     "pass": true,
+     "actual": {
+      "schemaVersion": 1,
+      "tasks": [
+       {
+        "id": "oracle-a",
+        "title": "Sample literature review",
+        "project": "Atlas",
+        "status": "todo",
+        "priority": "high",
+        "dueDate": "2028-02-29",
+        "tags": [
+         "methods",
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-b",
+        "title": "Dataset audit",
+        "project": "Boreal",
+        "status": "doing",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "cleanup"
+        ]
+       },
+       {
+        "id": "oracle-c",
+        "title": "Draft methods note",
+        "project": "Atlas",
+        "status": "done",
+        "priority": "low",
+        "dueDate": "2028-12-31",
+        "tags": [
+         "Writing"
+        ]
+       },
+       {
+        "id": "oracle-d",
+        "title": "Field observations",
+        "project": "Boreal",
+        "status": "todo",
+        "priority": "low",
+        "dueDate": "",
+        "tags": [
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-e",
+        "title": "Review source links",
+        "project": "Atlas",
+        "status": "doing",
+        "priority": "high",
+        "dueDate": "2028-03-01",
+        "tags": [
+         "Sources"
+        ]
+       },
+       {
+        "id": "oracle-f",
+        "title": "Archive completed work",
+        "project": "Boreal",
+        "status": "done",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "archive"
+        ]
+       }
+      ]
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 958
+  },
+  {
+   "id": "A05",
+   "environment": "chromium-360",
+   "browser": "chromium",
+   "width": 360,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "search-LITERATURE",
+     "pass": true,
+     "actual": [
+      "oracle-a"
+     ]
+    },
+    {
+     "key": "search-bOrEaL",
+     "pass": true,
+     "actual": [
+      "oracle-b",
+      "oracle-d",
+      "oracle-f"
+     ]
+    },
+    {
+     "key": "search-rEsEaRcH",
+     "pass": true,
+     "actual": [
+      "oracle-a",
+      "oracle-d"
+     ]
+    },
+    {
+     "key": "filterIntersection",
+     "pass": true,
+     "actual": [
+      "oracle-e"
+     ]
+    },
+    {
+     "key": "visibleCount",
+     "pass": true,
+     "actual": [
+      "1 of 6 tasks shown"
+     ]
+    },
+    {
+     "key": "noResults",
+     "pass": true,
+     "actual": {
+      "ids": [],
+      "notice": {
+       "present": true,
+       "excerpt": "ct team. Export JSON Import JSON + New task Search tasks Status Project Priority 0 of 6 tasks shown No matching tasks Try a different search term or clear your filters. Clear search and filters "
+      }
+     }
+    }
+   ],
+   "screenshots": [
+    "chromium-360-A05-filtered.png"
+   ],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1600
+  },
+  {
+   "id": "A06",
+   "environment": "chromium-360",
+   "browser": "chromium",
+   "width": 360,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "blank-title",
+     "pass": true,
+     "actual": {
+      "constrained": false,
+      "feedback": {
+       "hasFeedback": true,
+       "native": [],
+       "notice": "",
+       "addedVisibleFeedback": [
+        "Title is required."
+       ]
+      },
+      "storedCount": 6
+     }
+    },
+    {
+     "key": "long-title",
+     "pass": true,
+     "actual": {
+      "constrained": true,
+      "feedback": {
+       "hasFeedback": false,
+       "native": [],
+       "notice": "",
+       "addedVisibleFeedback": []
+      },
+      "storedCount": 7
+     }
+    },
+    {
+     "key": "long-project",
+     "pass": true,
+     "actual": {
+      "constrained": true,
+      "feedback": {
+       "hasFeedback": false,
+       "native": [],
+       "notice": "",
+       "addedVisibleFeedback": []
+      },
+      "storedCount": 7
+     }
+    },
+    {
+     "key": "invalidCalendarDate",
+     "pass": true,
+     "actual": {
+      "type": "date",
+      "value": "",
+      "valid": true
+     },
+     "expected": "Native date input refuses impossible calendar date"
+    },
+    {
+     "key": "modalEscape",
+     "pass": true,
+     "actual": {
+      "visible": false,
+      "focused": true
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [
+    {
+     "type": "warning",
+     "text": "The specified value \"2028-02-30\" does not conform to the required format, \"yyyy-MM-dd\"."
+    }
+   ],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1837
+  },
+  {
+   "id": "A07",
+   "environment": "chromium-360",
+   "browser": "chromium",
+   "width": 360,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "fullExport",
+     "pass": true,
+     "actual": {
+      "filename": "fieldnote-board-export.json",
+      "count": 6,
+      "valid": true
+     }
+    },
+    {
+     "key": "importCancellation",
+     "pass": true,
+     "actual": {
+      "confirmed": true,
+      "dialogCount": 1,
+      "custom": false,
+      "before": "{\"schemaVersion\":1,\"tasks\":[{\"id\":\"oracle-a\",\"title\":\"Sample literature review\",\"project\":\"Atlas\",\"status\":\"todo\",\"priority\":\"high\",\"dueDate\":\"2028-02-29\",\"tags\":[\"methods\",\"Research\"]},{\"id\":\"oracle-b\",\"title\":\"Dataset audit\",\"project\":\"Boreal\",\"status\":\"doing\",\"priority\":\"medium\",\"dueDate\":\"\",\"tags\":[\"cleanup\"]},{\"id\":\"oracle-c\",\"title\":\"Draft methods note\",\"project\":\"Atlas\",\"status\":\"done\",\"priority\":\"low\",\"dueDate\":\"2028-12-31\",\"tags\":[\"Writing\"]},{\"id\":\"oracle-d\",\"title\":\"Field observations\",\"project\":\"Boreal\",\"status\":\"todo\",\"priority\":\"low\",\"dueDate\":\"\",\"tags\":[\"Research\"]},{\"id\":\"oracle-e\",\"title\":\"Review source links\",\"project\":\"Atlas\",\"status\":\"doing\",\"priority\":\"high\",\"dueDate\":\"2028-03-01\",\"tags\":[\"Sources\"]},{\"id\":\"oracle-f\",\"title\":\"Archive completed work\",\"project\":\"Boreal\",\"status\":\"done\",\"priority\":\"medium\",\"dueDate\":\"\",\"tags\":[\"archive\"]}]}",
+      "after": "{\"schemaVersion\":1,\"tasks\":[{\"id\":\"oracle-a\",\"title\":\"Sample literature review\",\"project\":\"Atlas\",\"status\":\"todo\",\"priority\":\"high\",\"dueDate\":\"2028-02-29\",\"tags\":[\"methods\",\"Research\"]},{\"id\":\"oracle-b\",\"title\":\"Dataset audit\",\"project\":\"Boreal\",\"status\":\"doing\",\"priority\":\"medium\",\"dueDate\":\"\",\"tags\":[\"cleanup\"]},{\"id\":\"oracle-c\",\"title\":\"Draft methods note\",\"project\":\"Atlas\",\"status\":\"done\",\"priority\":\"low\",\"dueDate\":\"2028-12-31\",\"tags\":[\"Writing\"]},{\"id\":\"oracle-d\",\"title\":\"Field observations\",\"project\":\"Boreal\",\"status\":\"todo\",\"priority\":\"low\",\"dueDate\":\"\",\"tags\":[\"Research\"]},{\"id\":\"oracle-e\",\"title\":\"Review source links\",\"project\":\"Atlas\",\"status\":\"doing\",\"priority\":\"high\",\"dueDate\":\"2028-03-01\",\"tags\":[\"Sources\"]},{\"id\":\"oracle-f\",\"title\":\"Archive completed work\",\"project\":\"Boreal\",\"status\":\"done\",\"priority\":\"medium\",\"dueDate\":\"\",\"tags\":[\"archive\"]}]}",
+      "alerts": []
+     }
+    },
+    {
+     "key": "confirmedReplace",
+     "pass": true,
+     "actual": {
+      "confirmed": true,
+      "dialogCount": 1,
+      "custom": false,
+      "before": "{\"schemaVersion\":1,\"tasks\":[{\"id\":\"oracle-a\",\"title\":\"Sample literature review\",\"project\":\"Atlas\",\"status\":\"todo\",\"priority\":\"high\",\"dueDate\":\"2028-02-29\",\"tags\":[\"methods\",\"Research\"]},{\"id\":\"oracle-b\",\"title\":\"Dataset audit\",\"project\":\"Boreal\",\"status\":\"doing\",\"priority\":\"medium\",\"dueDate\":\"\",\"tags\":[\"cleanup\"]},{\"id\":\"oracle-c\",\"title\":\"Draft methods note\",\"project\":\"Atlas\",\"status\":\"done\",\"priority\":\"low\",\"dueDate\":\"2028-12-31\",\"tags\":[\"Writing\"]},{\"id\":\"oracle-d\",\"title\":\"Field observations\",\"project\":\"Boreal\",\"status\":\"todo\",\"priority\":\"low\",\"dueDate\":\"\",\"tags\":[\"Research\"]},{\"id\":\"oracle-e\",\"title\":\"Review source links\",\"project\":\"Atlas\",\"status\":\"doing\",\"priority\":\"high\",\"dueDate\":\"2028-03-01\",\"tags\":[\"Sources\"]},{\"id\":\"oracle-f\",\"title\":\"Archive completed work\",\"project\":\"Boreal\",\"status\":\"done\",\"priority\":\"medium\",\"dueDate\":\"\",\"tags\":[\"archive\"]}]}",
+      "after": "{\"schemaVersion\":1,\"tasks\":[{\"id\":\"roundtrip-z\",\"title\":\"Restored research board\",\"project\":\"Atlas\",\"status\":\"todo\",\"priority\":\"high\",\"dueDate\":\"2028-02-29\",\"tags\":[\"methods\",\"Research\"]}]}",
+      "alerts": []
+     }
+    },
+    {
+     "key": "importPersists",
+     "pass": true,
+     "actual": {
+      "schemaVersion": 1,
+      "tasks": [
+       {
+        "id": "roundtrip-z",
+        "title": "Restored research board",
+        "project": "Atlas",
+        "status": "todo",
+        "priority": "high",
+        "dueDate": "2028-02-29",
+        "tags": [
+         "methods",
+         "Research"
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "key": "exportRoundtrip",
+     "pass": true,
+     "actual": {
+      "confirmed": true,
+      "dialogCount": 1,
+      "custom": false,
+      "before": "{\"schemaVersion\":1,\"tasks\":[{\"id\":\"roundtrip-z\",\"title\":\"Restored research board\",\"project\":\"Atlas\",\"status\":\"todo\",\"priority\":\"high\",\"dueDate\":\"2028-02-29\",\"tags\":[\"methods\",\"Research\"]}]}",
+      "after": "{\"schemaVersion\":1,\"tasks\":[{\"id\":\"oracle-a\",\"title\":\"Sample literature review\",\"project\":\"Atlas\",\"status\":\"todo\",\"priority\":\"high\",\"dueDate\":\"2028-02-29\",\"tags\":[\"methods\",\"Research\"]},{\"id\":\"oracle-b\",\"title\":\"Dataset audit\",\"project\":\"Boreal\",\"status\":\"doing\",\"priority\":\"medium\",\"dueDate\":\"\",\"tags\":[\"cleanup\"]},{\"id\":\"oracle-c\",\"title\":\"Draft methods note\",\"project\":\"Atlas\",\"status\":\"done\",\"priority\":\"low\",\"dueDate\":\"2028-12-31\",\"tags\":[\"Writing\"]},{\"id\":\"oracle-d\",\"title\":\"Field observations\",\"project\":\"Boreal\",\"status\":\"todo\",\"priority\":\"low\",\"dueDate\":\"\",\"tags\":[\"Research\"]},{\"id\":\"oracle-e\",\"title\":\"Review source links\",\"project\":\"Atlas\",\"status\":\"doing\",\"priority\":\"high\",\"dueDate\":\"2028-03-01\",\"tags\":[\"Sources\"]},{\"id\":\"oracle-f\",\"title\":\"Archive completed work\",\"project\":\"Boreal\",\"status\":\"done\",\"priority\":\"medium\",\"dueDate\":\"\",\"tags\":[\"archive\"]}]}",
+      "alerts": []
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [
+    {
+     "type": "confirm",
+     "message": "Replace the current board with 1 task(s) from \"board.json\"? This cannot be undone.",
+     "action": "dismiss"
+    },
+    {
+     "type": "confirm",
+     "message": "Replace the current board with 1 task(s) from \"board.json\"? This cannot be undone.",
+     "action": "accept"
+    },
+    {
+     "type": "confirm",
+     "message": "Replace the current board with 6 task(s) from \"board.json\"? This cannot be undone.",
+     "action": "accept"
+    }
+   ],
+   "status": "pass",
+   "durationMs": 1447
+  },
+  {
+   "id": "A08",
+   "environment": "chromium-360",
+   "browser": "chromium",
+   "width": 360,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "malformed",
+     "pass": true,
+     "actual": {
+      "unchanged": true,
+      "error": {
+       "hasFeedback": true,
+       "native": [],
+       "notice": " A local-first task board for a small project team. Export JSON Import JSON + New task That file is not valid JSON. Search tasks Status Project Priority 6 of 6 tasks shown ",
+       "addedVisibleFeedback": []
+      }
+     }
+    },
+    {
+     "key": "unsupported-schema",
+     "pass": true,
+     "actual": {
+      "unchanged": true,
+      "error": {
+       "hasFeedback": true,
+       "native": [],
+       "notice": "eldnote Board A local-first task board for a small project team. Export JSON Import JSON + New task Unsupported schema version. Only schemaVersion 1 is accepted. Search tasks Status Project Priority 6 of 6 tasks shown ",
+       "addedVisibleFeedback": []
+      }
+     }
+    },
+    {
+     "key": "unsupported-enum",
+     "pass": true,
+     "actual": {
+      "unchanged": true,
+      "error": {
+       "hasFeedback": true,
+       "native": [],
+       "notice": " Fieldnote Board A local-first task board for a small project team. Export JSON Import JSON + New task Task 6 is invalid (invalid status). No changes were made. Search tasks Status Project Priority 6 of 6 tasks shown ",
+       "addedVisibleFeedback": []
+      }
+     }
+    }
+   ],
+   "screenshots": [
+    "chromium-360-A08-import-error.png"
+   ],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1483
+  },
+  {
+   "id": "A09",
+   "environment": "chromium-360",
+   "browser": "chromium",
+   "width": 360,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "duplicate-ids",
+     "pass": true,
+     "actual": {
+      "unchanged": true,
+      "error": {
+       "hasFeedback": true,
+       "native": [],
+       "notice": " Fieldnote Board A local-first task board for a small project team. Export JSON Import JSON + New task Task 6 is invalid (duplicate id). No changes were made. Search tasks Status Project Priority 6 of 6 tasks shown ",
+       "addedVisibleFeedback": []
+      }
+     }
+    },
+    {
+     "key": "non-calendar-date",
+     "pass": true,
+     "actual": {
+      "unchanged": true,
+      "error": {
+       "hasFeedback": true,
+       "native": [],
+       "notice": " Fieldnote Board A local-first task board for a small project team. Export JSON Import JSON + New task Task 6 is invalid (invalid dueDate). No changes were made. Search tasks Status Project Priority 6 of 6 tasks shown ",
+       "addedVisibleFeedback": []
+      }
+     }
+    },
+    {
+     "key": "overlong-text",
+     "pass": true,
+     "actual": {
+      "unchanged": true,
+      "error": {
+       "hasFeedback": true,
+       "native": [],
+       "notice": " Fieldnote Board A local-first task board for a small project team. Export JSON Import JSON + New task Task 6 is invalid (invalid title). No changes were made. Search tasks Status Project Priority 6 of 6 tasks shown ",
+       "addedVisibleFeedback": []
+      }
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1420
+  },
+  {
+   "id": "A10",
+   "environment": "chromium-360",
+   "browser": "chromium",
+   "width": 360,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "oversized",
+     "pass": false,
+     "actual": {
+      "bytes": 1049446,
+      "unchanged": true,
+      "error": {
+       "hasFeedback": false,
+       "native": [],
+       "notice": "",
+       "addedVisibleFeedback": []
+      }
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "fail",
+   "durationMs": 1145
+  },
+  {
+   "id": "A11",
+   "environment": "chromium-360",
+   "browser": "chromium",
+   "width": 360,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "hostileText",
+     "pass": true,
+     "actual": {
+      "confirmed": true,
+      "executed": 0,
+      "injected": 0,
+      "literalVisible": true,
+      "stored": {
+       "schemaVersion": 1,
+       "tasks": [
+        {
+         "id": "xss-text",
+         "title": "<img src=x onerror=\"window.__fieldnoteXSS=1\">",
+         "project": "<svg onload=\"window.__fieldnoteXSS=2\">",
+         "status": "todo",
+         "priority": "high",
+         "dueDate": "2028-02-29",
+         "tags": [
+          "<b>literal</b>"
+         ]
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [
+    {
+     "type": "confirm",
+     "message": "Replace the current board with 1 task(s) from \"board.json\"? This cannot be undone.",
+     "action": "accept"
+    }
+   ],
+   "status": "pass",
+   "durationMs": 1124
+  },
+  {
+   "id": "A12",
+   "environment": "chromium-360",
+   "browser": "chromium",
+   "width": 360,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "corruptPreserved",
+     "pass": false,
+     "actual": {
+      "sameBytes": true,
+      "notice": {
+       "present": false,
+       "excerpt": ""
+      }
+     }
+    },
+    {
+     "key": "recoveryDownloadControl",
+     "pass": true,
+     "actual": true
+    },
+    {
+     "key": "originalBytesDownloaded",
+     "pass": true,
+     "actual": {
+      "filename": "fieldnote-board-corrupt-backup.txt",
+      "bytes": 37,
+      "sha256": "ec0caf91866ad0e64671d6ba065b399932f9e0dc1c0d18376203208b435c400c"
+     }
+    },
+    {
+     "key": "resetControl",
+     "pass": true,
+     "actual": true
+    },
+    {
+     "key": "resetRequiresConfirmation",
+     "pass": true,
+     "actual": {
+      "dialogCount": 1,
+      "custom": false,
+      "stored": "{\"schemaVersion\":1,\"tasks\":[BROKEN\n\u00e9"
+     }
+    },
+    {
+     "key": "confirmedResetWorks",
+     "pass": true,
+     "actual": {
+      "stored": "{\"schemaVersion\":1,\"tasks\":[{\"id\":\"t-seed-a-vn42hs\",\"title\":\"Draft trailhead signage copy\",\"project\":\"Ridgeline Trail Refresh\",\"status\":\"todo\",\"priority\":\"high\",\"dueDate\":\"2026-09-17\",\"tags\":[\"copy\",\"signage\"]},{\"id\":\"t-seed-b-4d1o3b\",\"title\":\"Survey creek crossing damage\",\"project\":\"Ridgeline Trail Refresh\",\"status\":\"doing\",\"priority\":\"high\",\"dueDate\":\"2026-09-15\",\"tags\":[\"field\",\"survey\"]},{\"id\":\"t-seed-c-wlv4zp\",\"title\":\"Order replacement waymarkers\",\"project\":\"Ridgeline Trail Refresh\",\"status\":\"todo\",\"priority\":\"medium\",\"dueDate\":\"2026-09-24\",\"tags\":[\"procurement\"]},{\"id\":\"t-seed-d-js0ydg\",\"title\":\"Compile volunteer hours for Q3\",\"project\":\"Community Garden Rebuild\",\"status\":\"done\",\"priority\":\"low\",\"dueDate\":\"2026-09-12\",\"tags\":[\"admin\",\"reporting\"]},{\"id\":\"t-seed-e-3owb1f\",\"title\":\"Repair raised bed irrigation\",\"project\":\"Community Garden Rebuild\",\"status\":\"doing\",\"priority\":\"medium\",\"dueDate\":\"2026-09-19\",\"tags\":[\"field\"]},{\"id\":\"t-seed-f-iwnv5b\",\"title\":\"Plan spring planting schedule\",\"project\":\"Community Garden Rebuild\",\"status\":\"todo\",\"priority\":\"low\",\"dueDate\":\"\",\"tags\":[\"planning\"]},{\"id\":\"t-seed-g-eohr43\",\"title\":\"Publish weekly fieldnote digest\",\"project\":\"Community Garden Rebuild\",\"status\":\"done\",\"priority\":\"medium\",\"dueDate\":\"2026-09-07\",\"tags\":[\"comms\"]}]}",
+      "valid": true
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [
+    {
+     "type": "confirm",
+     "message": "Reset the board? The unreadable data will remain replaced by a fresh sample board. Download a backup first if you need it.",
+     "action": "dismiss"
+    },
+    {
+     "type": "confirm",
+     "message": "Reset the board? The unreadable data will remain replaced by a fresh sample board. Download a backup first if you need it.",
+     "action": "accept"
+    }
+   ],
+   "status": "fail",
+   "durationMs": 1405
+  },
+  {
+   "id": "A13",
+   "environment": "chromium-360",
+   "browser": "chromium",
+   "width": 360,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "writeFailure",
+     "pass": true,
+     "actual": {
+      "storedUnchanged": true,
+      "notice": {
+       "present": true,
+       "excerpt": "-first task board for a small project team. Export JSON Import JSON + New task Your last change was not saved. Oracle simulated quota exhaustion Your edits remain in this session; try again or free up storage space. Search tasks Status Project Priority 6 of 6 tasks sho"
+      },
+      "recoverable": true
+     }
+    }
+   ],
+   "screenshots": [
+    "chromium-360-A13-unsaved.png"
+   ],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1154
+  },
+  {
+   "id": "A14",
+   "environment": "chromium-360",
+   "browser": "chromium",
+   "width": 360,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "crossTabNotice",
+     "pass": true,
+     "actual": {
+      "present": true,
+      "excerpt": "first task board for a small project team. Export JSON Import JSON + New task This board changed in another tab. Reload to see the latest data before making further changes. Reload board Search tasks Status Project Priority 6 of 6 tasks shown "
+     }
+    },
+    {
+     "key": "newerWorkPreserved",
+     "pass": true,
+     "actual": {
+      "board": {
+       "schemaVersion": 1,
+       "tasks": [
+        {
+         "id": "oracle-a",
+         "title": "Newer work from another tab",
+         "project": "Atlas",
+         "status": "todo",
+         "priority": "high",
+         "dueDate": "2028-02-29",
+         "tags": [
+          "methods",
+          "Research"
+         ]
+        },
+        {
+         "id": "oracle-b",
+         "title": "Dataset audit",
+         "project": "Boreal",
+         "status": "doing",
+         "priority": "medium",
+         "dueDate": "",
+         "tags": [
+          "cleanup"
+         ]
+        },
+        {
+         "id": "oracle-c",
+         "title": "Draft methods note",
+         "project": "Atlas",
+         "status": "done",
+         "priority": "low",
+         "dueDate": "2028-12-31",
+         "tags": [
+          "Writing"
+         ]
+        },
+        {
+         "id": "oracle-d",
+         "title": "Field observations",
+         "project": "Boreal",
+         "status": "todo",
+         "priority": "low",
+         "dueDate": "",
+         "tags": [
+          "Research"
+         ]
+        },
+        {
+         "id": "oracle-e",
+         "title": "Review source links",
+         "project": "Atlas",
+         "status": "doing",
+         "priority": "high",
+         "dueDate": "2028-03-01",
+         "tags": [
+          "Sources"
+         ]
+        },
+        {
+         "id": "oracle-f",
+         "title": "Archive completed work",
+         "project": "Boreal",
+         "status": "done",
+         "priority": "medium",
+         "dueDate": "",
+         "tags": [
+          "archive"
+         ]
+        },
+        {
+         "id": "second-tab-new",
+         "title": "Preserve newly added work",
+         "project": "Boreal",
+         "status": "doing",
+         "priority": "medium",
+         "dueDate": "",
+         "tags": [
+          "cleanup"
+         ]
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1372
+  },
+  {
+   "id": "A15",
+   "environment": "chromium-360",
+   "browser": "chromium",
+   "width": 360,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "loadedLocalResources",
+     "pass": true,
+     "actual": []
+    },
+    {
+     "key": "rendering",
+     "pass": true,
+     "actual": {
+      "width": 360,
+      "scrollWidth": 360,
+      "contentLength": 950,
+      "unnamed": [],
+      "brokenImages": [],
+      "visibleControls": 25
+     }
+    },
+    {
+     "key": "formRendering",
+     "pass": true,
+     "actual": {
+      "width": 360,
+      "scrollWidth": 360,
+      "contentLength": 1123,
+      "unnamed": [],
+      "brokenImages": [],
+      "visibleControls": 33
+     }
+    }
+   ],
+   "screenshots": [
+    "chromium-360-A15-initial.png",
+    "chromium-360-A15-form.png"
+   ],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1037
+  },
+  {
+   "id": "A16",
+   "environment": "chromium-360-no-js",
+   "browser": "chromium",
+   "width": 360,
+   "noJS": true,
+   "observations": [
+    {
+     "key": "noJSNotice",
+     "pass": true,
+     "actual": {
+      "present": true,
+      "excerpt": " Fieldnote Board needs JavaScript enabled to load your tasks. Please enable JavaScript and reload the page. Fieldnote Board A local-first task board for a small project team. Export JSON Import JSON + New task Search tasks Status Project Priority"
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 726
+  },
+  {
+   "id": "A16",
+   "environment": "chromium-360-reduced-motion",
+   "browser": "chromium",
+   "width": 360,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "reducedMotion",
+     "pass": true,
+     "actual": []
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 745
+  },
+  {
+   "id": "A01",
+   "environment": "chromium-1440",
+   "browser": "chromium",
+   "width": 1440,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "seedBoard",
+     "pass": true,
+     "actual": {
+      "valid": true,
+      "count": 7,
+      "projects": [
+       "Ridgeline Trail Refresh",
+       "Community Garden Rebuild"
+      ],
+      "statuses": [
+       "todo",
+       "doing",
+       "done"
+      ]
+     }
+    },
+    {
+     "key": "seedRendered",
+     "pass": true,
+     "actual": {
+      "ids": [
+       "t-seed-a-06jns4",
+       "t-seed-b-rmwa8m",
+       "t-seed-c-dftrw9",
+       "t-seed-d-tgivly",
+       "t-seed-e-7jq34x",
+       "t-seed-f-nztjqp",
+       "t-seed-g-yy1htd"
+      ]
+     }
+    },
+    {
+     "key": "localFictionFraming",
+     "pass": false,
+     "actual": null
+    }
+   ],
+   "screenshots": [
+    "chromium-1440-A01-initial.png"
+   ],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "fail",
+   "durationMs": 871
+  },
+  {
+   "id": "A02",
+   "environment": "chromium-1440",
+   "browser": "chromium",
+   "width": 1440,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "created",
+     "pass": true,
+     "actual": {
+      "created": {
+       "id": "t-de967e18-aab9-4931-911a-6858ecbf7335",
+       "title": "Untangle the methods",
+       "project": "Atlas",
+       "status": "doing",
+       "priority": "high",
+       "dueDate": "2028-02-29",
+       "tags": [
+        "methods",
+        "review"
+       ]
+      },
+      "valid": true,
+      "count": 7
+     }
+    },
+    {
+     "key": "createPersists",
+     "pass": true,
+     "actual": {
+      "schemaVersion": 1,
+      "tasks": [
+       {
+        "id": "oracle-a",
+        "title": "Sample literature review",
+        "project": "Atlas",
+        "status": "todo",
+        "priority": "high",
+        "dueDate": "2028-02-29",
+        "tags": [
+         "methods",
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-b",
+        "title": "Dataset audit",
+        "project": "Boreal",
+        "status": "doing",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "cleanup"
+        ]
+       },
+       {
+        "id": "oracle-c",
+        "title": "Draft methods note",
+        "project": "Atlas",
+        "status": "done",
+        "priority": "low",
+        "dueDate": "2028-12-31",
+        "tags": [
+         "Writing"
+        ]
+       },
+       {
+        "id": "oracle-d",
+        "title": "Field observations",
+        "project": "Boreal",
+        "status": "todo",
+        "priority": "low",
+        "dueDate": "",
+        "tags": [
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-e",
+        "title": "Review source links",
+        "project": "Atlas",
+        "status": "doing",
+        "priority": "high",
+        "dueDate": "2028-03-01",
+        "tags": [
+         "Sources"
+        ]
+       },
+       {
+        "id": "oracle-f",
+        "title": "Archive completed work",
+        "project": "Boreal",
+        "status": "done",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "archive"
+        ]
+       },
+       {
+        "id": "t-de967e18-aab9-4931-911a-6858ecbf7335",
+        "title": "Untangle the methods",
+        "project": "Atlas",
+        "status": "doing",
+        "priority": "high",
+        "dueDate": "2028-02-29",
+        "tags": [
+         "methods",
+         "review"
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "key": "editPrefilled",
+     "pass": true,
+     "actual": "Untangle the methods"
+    },
+    {
+     "key": "editedOnlyTarget",
+     "pass": true,
+     "actual": {
+      "schemaVersion": 1,
+      "tasks": [
+       {
+        "id": "oracle-a",
+        "title": "Sample literature review",
+        "project": "Atlas",
+        "status": "todo",
+        "priority": "high",
+        "dueDate": "2028-02-29",
+        "tags": [
+         "methods",
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-b",
+        "title": "Dataset audit",
+        "project": "Boreal",
+        "status": "doing",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "cleanup"
+        ]
+       },
+       {
+        "id": "oracle-c",
+        "title": "Draft methods note",
+        "project": "Atlas",
+        "status": "done",
+        "priority": "low",
+        "dueDate": "2028-12-31",
+        "tags": [
+         "Writing"
+        ]
+       },
+       {
+        "id": "oracle-d",
+        "title": "Field observations",
+        "project": "Boreal",
+        "status": "todo",
+        "priority": "low",
+        "dueDate": "",
+        "tags": [
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-e",
+        "title": "Review source links",
+        "project": "Atlas",
+        "status": "doing",
+        "priority": "high",
+        "dueDate": "2028-03-01",
+        "tags": [
+         "Sources"
+        ]
+       },
+       {
+        "id": "oracle-f",
+        "title": "Archive completed work",
+        "project": "Boreal",
+        "status": "done",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "archive"
+        ]
+       },
+       {
+        "id": "t-de967e18-aab9-4931-911a-6858ecbf7335",
+        "title": "Revised methods handoff",
+        "project": "Boreal",
+        "status": "done",
+        "priority": "low",
+        "dueDate": "2028-03-03",
+        "tags": [
+         "final",
+         "methods"
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "key": "editPersists",
+     "pass": true,
+     "actual": {
+      "schemaVersion": 1,
+      "tasks": [
+       {
+        "id": "oracle-a",
+        "title": "Sample literature review",
+        "project": "Atlas",
+        "status": "todo",
+        "priority": "high",
+        "dueDate": "2028-02-29",
+        "tags": [
+         "methods",
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-b",
+        "title": "Dataset audit",
+        "project": "Boreal",
+        "status": "doing",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "cleanup"
+        ]
+       },
+       {
+        "id": "oracle-c",
+        "title": "Draft methods note",
+        "project": "Atlas",
+        "status": "done",
+        "priority": "low",
+        "dueDate": "2028-12-31",
+        "tags": [
+         "Writing"
+        ]
+       },
+       {
+        "id": "oracle-d",
+        "title": "Field observations",
+        "project": "Boreal",
+        "status": "todo",
+        "priority": "low",
+        "dueDate": "",
+        "tags": [
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-e",
+        "title": "Review source links",
+        "project": "Atlas",
+        "status": "doing",
+        "priority": "high",
+        "dueDate": "2028-03-01",
+        "tags": [
+         "Sources"
+        ]
+       },
+       {
+        "id": "oracle-f",
+        "title": "Archive completed work",
+        "project": "Boreal",
+        "status": "done",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "archive"
+        ]
+       },
+       {
+        "id": "t-de967e18-aab9-4931-911a-6858ecbf7335",
+        "title": "Revised methods handoff",
+        "project": "Boreal",
+        "status": "done",
+        "priority": "low",
+        "dueDate": "2028-03-03",
+        "tags": [
+         "final",
+         "methods"
+        ]
+       }
+      ]
+     }
+    }
+   ],
+   "screenshots": [
+    "chromium-1440-A02-edited.png"
+   ],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1462
+  },
+  {
+   "id": "A03",
+   "environment": "chromium-1440",
+   "browser": "chromium",
+   "width": 1440,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "nativeSelect",
+     "pass": true,
+     "actual": "SELECT"
+    },
+    {
+     "key": "onlyStatusChanged",
+     "pass": true,
+     "actual": {
+      "schemaVersion": 1,
+      "tasks": [
+       {
+        "id": "oracle-a",
+        "title": "Sample literature review",
+        "project": "Atlas",
+        "status": "done",
+        "priority": "high",
+        "dueDate": "2028-02-29",
+        "tags": [
+         "methods",
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-b",
+        "title": "Dataset audit",
+        "project": "Boreal",
+        "status": "doing",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "cleanup"
+        ]
+       },
+       {
+        "id": "oracle-c",
+        "title": "Draft methods note",
+        "project": "Atlas",
+        "status": "done",
+        "priority": "low",
+        "dueDate": "2028-12-31",
+        "tags": [
+         "Writing"
+        ]
+       },
+       {
+        "id": "oracle-d",
+        "title": "Field observations",
+        "project": "Boreal",
+        "status": "todo",
+        "priority": "low",
+        "dueDate": "",
+        "tags": [
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-e",
+        "title": "Review source links",
+        "project": "Atlas",
+        "status": "doing",
+        "priority": "high",
+        "dueDate": "2028-03-01",
+        "tags": [
+         "Sources"
+        ]
+       },
+       {
+        "id": "oracle-f",
+        "title": "Archive completed work",
+        "project": "Boreal",
+        "status": "done",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "archive"
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "key": "statusPersists",
+     "pass": true,
+     "actual": {
+      "board": {
+       "schemaVersion": 1,
+       "tasks": [
+        {
+         "id": "oracle-a",
+         "title": "Sample literature review",
+         "project": "Atlas",
+         "status": "done",
+         "priority": "high",
+         "dueDate": "2028-02-29",
+         "tags": [
+          "methods",
+          "Research"
+         ]
+        },
+        {
+         "id": "oracle-b",
+         "title": "Dataset audit",
+         "project": "Boreal",
+         "status": "doing",
+         "priority": "medium",
+         "dueDate": "",
+         "tags": [
+          "cleanup"
+         ]
+        },
+        {
+         "id": "oracle-c",
+         "title": "Draft methods note",
+         "project": "Atlas",
+         "status": "done",
+         "priority": "low",
+         "dueDate": "2028-12-31",
+         "tags": [
+          "Writing"
+         ]
+        },
+        {
+         "id": "oracle-d",
+         "title": "Field observations",
+         "project": "Boreal",
+         "status": "todo",
+         "priority": "low",
+         "dueDate": "",
+         "tags": [
+          "Research"
+         ]
+        },
+        {
+         "id": "oracle-e",
+         "title": "Review source links",
+         "project": "Atlas",
+         "status": "doing",
+         "priority": "high",
+         "dueDate": "2028-03-01",
+         "tags": [
+          "Sources"
+         ]
+        },
+        {
+         "id": "oracle-f",
+         "title": "Archive completed work",
+         "project": "Boreal",
+         "status": "done",
+         "priority": "medium",
+         "dueDate": "",
+         "tags": [
+          "archive"
+         ]
+        }
+       ]
+      },
+      "select": "done"
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 950
+  },
+  {
+   "id": "A04",
+   "environment": "chromium-1440",
+   "browser": "chromium",
+   "width": 1440,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "deleted",
+     "pass": true,
+     "actual": {
+      "board": {
+       "schemaVersion": 1,
+       "tasks": [
+        {
+         "id": "oracle-a",
+         "title": "Sample literature review",
+         "project": "Atlas",
+         "status": "todo",
+         "priority": "high",
+         "dueDate": "2028-02-29",
+         "tags": [
+          "methods",
+          "Research"
+         ]
+        },
+        {
+         "id": "oracle-c",
+         "title": "Draft methods note",
+         "project": "Atlas",
+         "status": "done",
+         "priority": "low",
+         "dueDate": "2028-12-31",
+         "tags": [
+          "Writing"
+         ]
+        },
+        {
+         "id": "oracle-d",
+         "title": "Field observations",
+         "project": "Boreal",
+         "status": "todo",
+         "priority": "low",
+         "dueDate": "",
+         "tags": [
+          "Research"
+         ]
+        },
+        {
+         "id": "oracle-e",
+         "title": "Review source links",
+         "project": "Atlas",
+         "status": "doing",
+         "priority": "high",
+         "dueDate": "2028-03-01",
+         "tags": [
+          "Sources"
+         ]
+        },
+        {
+         "id": "oracle-f",
+         "title": "Archive completed work",
+         "project": "Boreal",
+         "status": "done",
+         "priority": "medium",
+         "dueDate": "",
+         "tags": [
+          "archive"
+         ]
+        }
+       ]
+      },
+      "visible": false,
+      "undo": true
+     }
+    },
+    {
+     "key": "exactRecordRestored",
+     "pass": true,
+     "actual": {
+      "schemaVersion": 1,
+      "tasks": [
+       {
+        "id": "oracle-a",
+        "title": "Sample literature review",
+        "project": "Atlas",
+        "status": "todo",
+        "priority": "high",
+        "dueDate": "2028-02-29",
+        "tags": [
+         "methods",
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-b",
+        "title": "Dataset audit",
+        "project": "Boreal",
+        "status": "doing",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "cleanup"
+        ]
+       },
+       {
+        "id": "oracle-c",
+        "title": "Draft methods note",
+        "project": "Atlas",
+        "status": "done",
+        "priority": "low",
+        "dueDate": "2028-12-31",
+        "tags": [
+         "Writing"
+        ]
+       },
+       {
+        "id": "oracle-d",
+        "title": "Field observations",
+        "project": "Boreal",
+        "status": "todo",
+        "priority": "low",
+        "dueDate": "",
+        "tags": [
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-e",
+        "title": "Review source links",
+        "project": "Atlas",
+        "status": "doing",
+        "priority": "high",
+        "dueDate": "2028-03-01",
+        "tags": [
+         "Sources"
+        ]
+       },
+       {
+        "id": "oracle-f",
+        "title": "Archive completed work",
+        "project": "Boreal",
+        "status": "done",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "archive"
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "key": "undoPersists",
+     "pass": true,
+     "actual": {
+      "schemaVersion": 1,
+      "tasks": [
+       {
+        "id": "oracle-a",
+        "title": "Sample literature review",
+        "project": "Atlas",
+        "status": "todo",
+        "priority": "high",
+        "dueDate": "2028-02-29",
+        "tags": [
+         "methods",
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-b",
+        "title": "Dataset audit",
+        "project": "Boreal",
+        "status": "doing",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "cleanup"
+        ]
+       },
+       {
+        "id": "oracle-c",
+        "title": "Draft methods note",
+        "project": "Atlas",
+        "status": "done",
+        "priority": "low",
+        "dueDate": "2028-12-31",
+        "tags": [
+         "Writing"
+        ]
+       },
+       {
+        "id": "oracle-d",
+        "title": "Field observations",
+        "project": "Boreal",
+        "status": "todo",
+        "priority": "low",
+        "dueDate": "",
+        "tags": [
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-e",
+        "title": "Review source links",
+        "project": "Atlas",
+        "status": "doing",
+        "priority": "high",
+        "dueDate": "2028-03-01",
+        "tags": [
+         "Sources"
+        ]
+       },
+       {
+        "id": "oracle-f",
+        "title": "Archive completed work",
+        "project": "Boreal",
+        "status": "done",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "archive"
+        ]
+       }
+      ]
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 972
+  },
+  {
+   "id": "A05",
+   "environment": "chromium-1440",
+   "browser": "chromium",
+   "width": 1440,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "search-LITERATURE",
+     "pass": true,
+     "actual": [
+      "oracle-a"
+     ]
+    },
+    {
+     "key": "search-bOrEaL",
+     "pass": true,
+     "actual": [
+      "oracle-b",
+      "oracle-d",
+      "oracle-f"
+     ]
+    },
+    {
+     "key": "search-rEsEaRcH",
+     "pass": true,
+     "actual": [
+      "oracle-a",
+      "oracle-d"
+     ]
+    },
+    {
+     "key": "filterIntersection",
+     "pass": true,
+     "actual": [
+      "oracle-e"
+     ]
+    },
+    {
+     "key": "visibleCount",
+     "pass": true,
+     "actual": [
+      "1 of 6 tasks shown"
+     ]
+    },
+    {
+     "key": "noResults",
+     "pass": true,
+     "actual": {
+      "ids": [],
+      "notice": {
+       "present": true,
+       "excerpt": "ct team. Export JSON Import JSON + New task Search tasks Status Project Priority 0 of 6 tasks shown No matching tasks Try a different search term or clear your filters. Clear search and filters "
+      }
+     }
+    }
+   ],
+   "screenshots": [
+    "chromium-1440-A05-filtered.png"
+   ],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1662
+  },
+  {
+   "id": "A06",
+   "environment": "chromium-1440",
+   "browser": "chromium",
+   "width": 1440,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "blank-title",
+     "pass": true,
+     "actual": {
+      "constrained": false,
+      "feedback": {
+       "hasFeedback": true,
+       "native": [],
+       "notice": "",
+       "addedVisibleFeedback": [
+        "Title is required."
+       ]
+      },
+      "storedCount": 6
+     }
+    },
+    {
+     "key": "long-title",
+     "pass": true,
+     "actual": {
+      "constrained": true,
+      "feedback": {
+       "hasFeedback": false,
+       "native": [],
+       "notice": "",
+       "addedVisibleFeedback": []
+      },
+      "storedCount": 7
+     }
+    },
+    {
+     "key": "long-project",
+     "pass": true,
+     "actual": {
+      "constrained": true,
+      "feedback": {
+       "hasFeedback": false,
+       "native": [],
+       "notice": "",
+       "addedVisibleFeedback": []
+      },
+      "storedCount": 7
+     }
+    },
+    {
+     "key": "invalidCalendarDate",
+     "pass": true,
+     "actual": {
+      "type": "date",
+      "value": "",
+      "valid": true
+     },
+     "expected": "Native date input refuses impossible calendar date"
+    },
+    {
+     "key": "modalEscape",
+     "pass": true,
+     "actual": {
+      "visible": false,
+      "focused": true
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [
+    {
+     "type": "warning",
+     "text": "The specified value \"2028-02-30\" does not conform to the required format, \"yyyy-MM-dd\"."
+    }
+   ],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1842
+  },
+  {
+   "id": "A07",
+   "environment": "chromium-1440",
+   "browser": "chromium",
+   "width": 1440,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "fullExport",
+     "pass": true,
+     "actual": {
+      "filename": "fieldnote-board-export.json",
+      "count": 6,
+      "valid": true
+     }
+    },
+    {
+     "key": "importCancellation",
+     "pass": true,
+     "actual": {
+      "confirmed": true,
+      "dialogCount": 1,
+      "custom": false,
+      "before": "{\"schemaVersion\":1,\"tasks\":[{\"id\":\"oracle-a\",\"title\":\"Sample literature review\",\"project\":\"Atlas\",\"status\":\"todo\",\"priority\":\"high\",\"dueDate\":\"2028-02-29\",\"tags\":[\"methods\",\"Research\"]},{\"id\":\"oracle-b\",\"title\":\"Dataset audit\",\"project\":\"Boreal\",\"status\":\"doing\",\"priority\":\"medium\",\"dueDate\":\"\",\"tags\":[\"cleanup\"]},{\"id\":\"oracle-c\",\"title\":\"Draft methods note\",\"project\":\"Atlas\",\"status\":\"done\",\"priority\":\"low\",\"dueDate\":\"2028-12-31\",\"tags\":[\"Writing\"]},{\"id\":\"oracle-d\",\"title\":\"Field observations\",\"project\":\"Boreal\",\"status\":\"todo\",\"priority\":\"low\",\"dueDate\":\"\",\"tags\":[\"Research\"]},{\"id\":\"oracle-e\",\"title\":\"Review source links\",\"project\":\"Atlas\",\"status\":\"doing\",\"priority\":\"high\",\"dueDate\":\"2028-03-01\",\"tags\":[\"Sources\"]},{\"id\":\"oracle-f\",\"title\":\"Archive completed work\",\"project\":\"Boreal\",\"status\":\"done\",\"priority\":\"medium\",\"dueDate\":\"\",\"tags\":[\"archive\"]}]}",
+      "after": "{\"schemaVersion\":1,\"tasks\":[{\"id\":\"oracle-a\",\"title\":\"Sample literature review\",\"project\":\"Atlas\",\"status\":\"todo\",\"priority\":\"high\",\"dueDate\":\"2028-02-29\",\"tags\":[\"methods\",\"Research\"]},{\"id\":\"oracle-b\",\"title\":\"Dataset audit\",\"project\":\"Boreal\",\"status\":\"doing\",\"priority\":\"medium\",\"dueDate\":\"\",\"tags\":[\"cleanup\"]},{\"id\":\"oracle-c\",\"title\":\"Draft methods note\",\"project\":\"Atlas\",\"status\":\"done\",\"priority\":\"low\",\"dueDate\":\"2028-12-31\",\"tags\":[\"Writing\"]},{\"id\":\"oracle-d\",\"title\":\"Field observations\",\"project\":\"Boreal\",\"status\":\"todo\",\"priority\":\"low\",\"dueDate\":\"\",\"tags\":[\"Research\"]},{\"id\":\"oracle-e\",\"title\":\"Review source links\",\"project\":\"Atlas\",\"status\":\"doing\",\"priority\":\"high\",\"dueDate\":\"2028-03-01\",\"tags\":[\"Sources\"]},{\"id\":\"oracle-f\",\"title\":\"Archive completed work\",\"project\":\"Boreal\",\"status\":\"done\",\"priority\":\"medium\",\"dueDate\":\"\",\"tags\":[\"archive\"]}]}",
+      "alerts": []
+     }
+    },
+    {
+     "key": "confirmedReplace",
+     "pass": true,
+     "actual": {
+      "confirmed": true,
+      "dialogCount": 1,
+      "custom": false,
+      "before": "{\"schemaVersion\":1,\"tasks\":[{\"id\":\"oracle-a\",\"title\":\"Sample literature review\",\"project\":\"Atlas\",\"status\":\"todo\",\"priority\":\"high\",\"dueDate\":\"2028-02-29\",\"tags\":[\"methods\",\"Research\"]},{\"id\":\"oracle-b\",\"title\":\"Dataset audit\",\"project\":\"Boreal\",\"status\":\"doing\",\"priority\":\"medium\",\"dueDate\":\"\",\"tags\":[\"cleanup\"]},{\"id\":\"oracle-c\",\"title\":\"Draft methods note\",\"project\":\"Atlas\",\"status\":\"done\",\"priority\":\"low\",\"dueDate\":\"2028-12-31\",\"tags\":[\"Writing\"]},{\"id\":\"oracle-d\",\"title\":\"Field observations\",\"project\":\"Boreal\",\"status\":\"todo\",\"priority\":\"low\",\"dueDate\":\"\",\"tags\":[\"Research\"]},{\"id\":\"oracle-e\",\"title\":\"Review source links\",\"project\":\"Atlas\",\"status\":\"doing\",\"priority\":\"high\",\"dueDate\":\"2028-03-01\",\"tags\":[\"Sources\"]},{\"id\":\"oracle-f\",\"title\":\"Archive completed work\",\"project\":\"Boreal\",\"status\":\"done\",\"priority\":\"medium\",\"dueDate\":\"\",\"tags\":[\"archive\"]}]}",
+      "after": "{\"schemaVersion\":1,\"tasks\":[{\"id\":\"roundtrip-z\",\"title\":\"Restored research board\",\"project\":\"Atlas\",\"status\":\"todo\",\"priority\":\"high\",\"dueDate\":\"2028-02-29\",\"tags\":[\"methods\",\"Research\"]}]}",
+      "alerts": []
+     }
+    },
+    {
+     "key": "importPersists",
+     "pass": true,
+     "actual": {
+      "schemaVersion": 1,
+      "tasks": [
+       {
+        "id": "roundtrip-z",
+        "title": "Restored research board",
+        "project": "Atlas",
+        "status": "todo",
+        "priority": "high",
+        "dueDate": "2028-02-29",
+        "tags": [
+         "methods",
+         "Research"
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "key": "exportRoundtrip",
+     "pass": true,
+     "actual": {
+      "confirmed": true,
+      "dialogCount": 1,
+      "custom": false,
+      "before": "{\"schemaVersion\":1,\"tasks\":[{\"id\":\"roundtrip-z\",\"title\":\"Restored research board\",\"project\":\"Atlas\",\"status\":\"todo\",\"priority\":\"high\",\"dueDate\":\"2028-02-29\",\"tags\":[\"methods\",\"Research\"]}]}",
+      "after": "{\"schemaVersion\":1,\"tasks\":[{\"id\":\"oracle-a\",\"title\":\"Sample literature review\",\"project\":\"Atlas\",\"status\":\"todo\",\"priority\":\"high\",\"dueDate\":\"2028-02-29\",\"tags\":[\"methods\",\"Research\"]},{\"id\":\"oracle-b\",\"title\":\"Dataset audit\",\"project\":\"Boreal\",\"status\":\"doing\",\"priority\":\"medium\",\"dueDate\":\"\",\"tags\":[\"cleanup\"]},{\"id\":\"oracle-c\",\"title\":\"Draft methods note\",\"project\":\"Atlas\",\"status\":\"done\",\"priority\":\"low\",\"dueDate\":\"2028-12-31\",\"tags\":[\"Writing\"]},{\"id\":\"oracle-d\",\"title\":\"Field observations\",\"project\":\"Boreal\",\"status\":\"todo\",\"priority\":\"low\",\"dueDate\":\"\",\"tags\":[\"Research\"]},{\"id\":\"oracle-e\",\"title\":\"Review source links\",\"project\":\"Atlas\",\"status\":\"doing\",\"priority\":\"high\",\"dueDate\":\"2028-03-01\",\"tags\":[\"Sources\"]},{\"id\":\"oracle-f\",\"title\":\"Archive completed work\",\"project\":\"Boreal\",\"status\":\"done\",\"priority\":\"medium\",\"dueDate\":\"\",\"tags\":[\"archive\"]}]}",
+      "alerts": []
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [
+    {
+     "type": "confirm",
+     "message": "Replace the current board with 1 task(s) from \"board.json\"? This cannot be undone.",
+     "action": "dismiss"
+    },
+    {
+     "type": "confirm",
+     "message": "Replace the current board with 1 task(s) from \"board.json\"? This cannot be undone.",
+     "action": "accept"
+    },
+    {
+     "type": "confirm",
+     "message": "Replace the current board with 6 task(s) from \"board.json\"? This cannot be undone.",
+     "action": "accept"
+    }
+   ],
+   "status": "pass",
+   "durationMs": 1432
+  },
+  {
+   "id": "A08",
+   "environment": "chromium-1440",
+   "browser": "chromium",
+   "width": 1440,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "malformed",
+     "pass": true,
+     "actual": {
+      "unchanged": true,
+      "error": {
+       "hasFeedback": true,
+       "native": [],
+       "notice": " A local-first task board for a small project team. Export JSON Import JSON + New task That file is not valid JSON. Search tasks Status Project Priority 6 of 6 tasks shown ",
+       "addedVisibleFeedback": []
+      }
+     }
+    },
+    {
+     "key": "unsupported-schema",
+     "pass": true,
+     "actual": {
+      "unchanged": true,
+      "error": {
+       "hasFeedback": true,
+       "native": [],
+       "notice": "eldnote Board A local-first task board for a small project team. Export JSON Import JSON + New task Unsupported schema version. Only schemaVersion 1 is accepted. Search tasks Status Project Priority 6 of 6 tasks shown ",
+       "addedVisibleFeedback": []
+      }
+     }
+    },
+    {
+     "key": "unsupported-enum",
+     "pass": true,
+     "actual": {
+      "unchanged": true,
+      "error": {
+       "hasFeedback": true,
+       "native": [],
+       "notice": " Fieldnote Board A local-first task board for a small project team. Export JSON Import JSON + New task Task 6 is invalid (invalid status). No changes were made. Search tasks Status Project Priority 6 of 6 tasks shown ",
+       "addedVisibleFeedback": []
+      }
+     }
+    }
+   ],
+   "screenshots": [
+    "chromium-1440-A08-import-error.png"
+   ],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1426
+  },
+  {
+   "id": "A09",
+   "environment": "chromium-1440",
+   "browser": "chromium",
+   "width": 1440,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "duplicate-ids",
+     "pass": true,
+     "actual": {
+      "unchanged": true,
+      "error": {
+       "hasFeedback": true,
+       "native": [],
+       "notice": " Fieldnote Board A local-first task board for a small project team. Export JSON Import JSON + New task Task 6 is invalid (duplicate id). No changes were made. Search tasks Status Project Priority 6 of 6 tasks shown ",
+       "addedVisibleFeedback": []
+      }
+     }
+    },
+    {
+     "key": "non-calendar-date",
+     "pass": true,
+     "actual": {
+      "unchanged": true,
+      "error": {
+       "hasFeedback": true,
+       "native": [],
+       "notice": " Fieldnote Board A local-first task board for a small project team. Export JSON Import JSON + New task Task 6 is invalid (invalid dueDate). No changes were made. Search tasks Status Project Priority 6 of 6 tasks shown ",
+       "addedVisibleFeedback": []
+      }
+     }
+    },
+    {
+     "key": "overlong-text",
+     "pass": true,
+     "actual": {
+      "unchanged": true,
+      "error": {
+       "hasFeedback": true,
+       "native": [],
+       "notice": " Fieldnote Board A local-first task board for a small project team. Export JSON Import JSON + New task Task 6 is invalid (invalid title). No changes were made. Search tasks Status Project Priority 6 of 6 tasks shown ",
+       "addedVisibleFeedback": []
+      }
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1358
+  },
+  {
+   "id": "A10",
+   "environment": "chromium-1440",
+   "browser": "chromium",
+   "width": 1440,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "oversized",
+     "pass": false,
+     "actual": {
+      "bytes": 1049446,
+      "unchanged": true,
+      "error": {
+       "hasFeedback": false,
+       "native": [],
+       "notice": "",
+       "addedVisibleFeedback": []
+      }
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "fail",
+   "durationMs": 1122
+  },
+  {
+   "id": "A11",
+   "environment": "chromium-1440",
+   "browser": "chromium",
+   "width": 1440,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "hostileText",
+     "pass": true,
+     "actual": {
+      "confirmed": true,
+      "executed": 0,
+      "injected": 0,
+      "literalVisible": true,
+      "stored": {
+       "schemaVersion": 1,
+       "tasks": [
+        {
+         "id": "xss-text",
+         "title": "<img src=x onerror=\"window.__fieldnoteXSS=1\">",
+         "project": "<svg onload=\"window.__fieldnoteXSS=2\">",
+         "status": "todo",
+         "priority": "high",
+         "dueDate": "2028-02-29",
+         "tags": [
+          "<b>literal</b>"
+         ]
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [
+    {
+     "type": "confirm",
+     "message": "Replace the current board with 1 task(s) from \"board.json\"? This cannot be undone.",
+     "action": "accept"
+    }
+   ],
+   "status": "pass",
+   "durationMs": 1148
+  },
+  {
+   "id": "A12",
+   "environment": "chromium-1440",
+   "browser": "chromium",
+   "width": 1440,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "corruptPreserved",
+     "pass": false,
+     "actual": {
+      "sameBytes": true,
+      "notice": {
+       "present": false,
+       "excerpt": ""
+      }
+     }
+    },
+    {
+     "key": "recoveryDownloadControl",
+     "pass": true,
+     "actual": true
+    },
+    {
+     "key": "originalBytesDownloaded",
+     "pass": true,
+     "actual": {
+      "filename": "fieldnote-board-corrupt-backup.txt",
+      "bytes": 37,
+      "sha256": "ec0caf91866ad0e64671d6ba065b399932f9e0dc1c0d18376203208b435c400c"
+     }
+    },
+    {
+     "key": "resetControl",
+     "pass": true,
+     "actual": true
+    },
+    {
+     "key": "resetRequiresConfirmation",
+     "pass": true,
+     "actual": {
+      "dialogCount": 1,
+      "custom": false,
+      "stored": "{\"schemaVersion\":1,\"tasks\":[BROKEN\n\u00e9"
+     }
+    },
+    {
+     "key": "confirmedResetWorks",
+     "pass": true,
+     "actual": {
+      "stored": "{\"schemaVersion\":1,\"tasks\":[{\"id\":\"t-seed-a-n8cmvh\",\"title\":\"Draft trailhead signage copy\",\"project\":\"Ridgeline Trail Refresh\",\"status\":\"todo\",\"priority\":\"high\",\"dueDate\":\"2026-09-17\",\"tags\":[\"copy\",\"signage\"]},{\"id\":\"t-seed-b-14t6iq\",\"title\":\"Survey creek crossing damage\",\"project\":\"Ridgeline Trail Refresh\",\"status\":\"doing\",\"priority\":\"high\",\"dueDate\":\"2026-09-15\",\"tags\":[\"field\",\"survey\"]},{\"id\":\"t-seed-c-yu40zn\",\"title\":\"Order replacement waymarkers\",\"project\":\"Ridgeline Trail Refresh\",\"status\":\"todo\",\"priority\":\"medium\",\"dueDate\":\"2026-09-24\",\"tags\":[\"procurement\"]},{\"id\":\"t-seed-d-01k49j\",\"title\":\"Compile volunteer hours for Q3\",\"project\":\"Community Garden Rebuild\",\"status\":\"done\",\"priority\":\"low\",\"dueDate\":\"2026-09-12\",\"tags\":[\"admin\",\"reporting\"]},{\"id\":\"t-seed-e-a6iqax\",\"title\":\"Repair raised bed irrigation\",\"project\":\"Community Garden Rebuild\",\"status\":\"doing\",\"priority\":\"medium\",\"dueDate\":\"2026-09-19\",\"tags\":[\"field\"]},{\"id\":\"t-seed-f-lla9tf\",\"title\":\"Plan spring planting schedule\",\"project\":\"Community Garden Rebuild\",\"status\":\"todo\",\"priority\":\"low\",\"dueDate\":\"\",\"tags\":[\"planning\"]},{\"id\":\"t-seed-g-lab9an\",\"title\":\"Publish weekly fieldnote digest\",\"project\":\"Community Garden Rebuild\",\"status\":\"done\",\"priority\":\"medium\",\"dueDate\":\"2026-09-07\",\"tags\":[\"comms\"]}]}",
+      "valid": true
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [
+    {
+     "type": "confirm",
+     "message": "Reset the board? The unreadable data will remain replaced by a fresh sample board. Download a backup first if you need it.",
+     "action": "dismiss"
+    },
+    {
+     "type": "confirm",
+     "message": "Reset the board? The unreadable data will remain replaced by a fresh sample board. Download a backup first if you need it.",
+     "action": "accept"
+    }
+   ],
+   "status": "fail",
+   "durationMs": 1419
+  },
+  {
+   "id": "A13",
+   "environment": "chromium-1440",
+   "browser": "chromium",
+   "width": 1440,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "writeFailure",
+     "pass": true,
+     "actual": {
+      "storedUnchanged": true,
+      "notice": {
+       "present": true,
+       "excerpt": "-first task board for a small project team. Export JSON Import JSON + New task Your last change was not saved. Oracle simulated quota exhaustion Your edits remain in this session; try again or free up storage space. Search tasks Status Project Priority 6 of 6 tasks sho"
+      },
+      "recoverable": true
+     }
+    }
+   ],
+   "screenshots": [
+    "chromium-1440-A13-unsaved.png"
+   ],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1142
+  },
+  {
+   "id": "A14",
+   "environment": "chromium-1440",
+   "browser": "chromium",
+   "width": 1440,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "crossTabNotice",
+     "pass": true,
+     "actual": {
+      "present": true,
+      "excerpt": "first task board for a small project team. Export JSON Import JSON + New task This board changed in another tab. Reload to see the latest data before making further changes. Reload board Search tasks Status Project Priority 6 of 6 tasks shown "
+     }
+    },
+    {
+     "key": "newerWorkPreserved",
+     "pass": true,
+     "actual": {
+      "board": {
+       "schemaVersion": 1,
+       "tasks": [
+        {
+         "id": "oracle-a",
+         "title": "Newer work from another tab",
+         "project": "Atlas",
+         "status": "todo",
+         "priority": "high",
+         "dueDate": "2028-02-29",
+         "tags": [
+          "methods",
+          "Research"
+         ]
+        },
+        {
+         "id": "oracle-b",
+         "title": "Dataset audit",
+         "project": "Boreal",
+         "status": "doing",
+         "priority": "medium",
+         "dueDate": "",
+         "tags": [
+          "cleanup"
+         ]
+        },
+        {
+         "id": "oracle-c",
+         "title": "Draft methods note",
+         "project": "Atlas",
+         "status": "done",
+         "priority": "low",
+         "dueDate": "2028-12-31",
+         "tags": [
+          "Writing"
+         ]
+        },
+        {
+         "id": "oracle-d",
+         "title": "Field observations",
+         "project": "Boreal",
+         "status": "todo",
+         "priority": "low",
+         "dueDate": "",
+         "tags": [
+          "Research"
+         ]
+        },
+        {
+         "id": "oracle-e",
+         "title": "Review source links",
+         "project": "Atlas",
+         "status": "doing",
+         "priority": "high",
+         "dueDate": "2028-03-01",
+         "tags": [
+          "Sources"
+         ]
+        },
+        {
+         "id": "oracle-f",
+         "title": "Archive completed work",
+         "project": "Boreal",
+         "status": "done",
+         "priority": "medium",
+         "dueDate": "",
+         "tags": [
+          "archive"
+         ]
+        },
+        {
+         "id": "second-tab-new",
+         "title": "Preserve newly added work",
+         "project": "Boreal",
+         "status": "doing",
+         "priority": "medium",
+         "dueDate": "",
+         "tags": [
+          "cleanup"
+         ]
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1369
+  },
+  {
+   "id": "A15",
+   "environment": "chromium-1440",
+   "browser": "chromium",
+   "width": 1440,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "loadedLocalResources",
+     "pass": true,
+     "actual": []
+    },
+    {
+     "key": "rendering",
+     "pass": true,
+     "actual": {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "contentLength": 950,
+      "unnamed": [],
+      "brokenImages": [],
+      "visibleControls": 25
+     }
+    },
+    {
+     "key": "formRendering",
+     "pass": true,
+     "actual": {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "contentLength": 1123,
+      "unnamed": [],
+      "brokenImages": [],
+      "visibleControls": 33
+     }
+    }
+   ],
+   "screenshots": [
+    "chromium-1440-A15-initial.png",
+    "chromium-1440-A15-form.png"
+   ],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1028
+  },
+  {
+   "id": "A16",
+   "environment": "chromium-1440-no-js",
+   "browser": "chromium",
+   "width": 1440,
+   "noJS": true,
+   "observations": [
+    {
+     "key": "noJSNotice",
+     "pass": true,
+     "actual": {
+      "present": true,
+      "excerpt": " Fieldnote Board needs JavaScript enabled to load your tasks. Please enable JavaScript and reload the page. Fieldnote Board A local-first task board for a small project team. Export JSON Import JSON + New task Search tasks Status Project Priority"
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 728
+  },
+  {
+   "id": "A16",
+   "environment": "chromium-1440-reduced-motion",
+   "browser": "chromium",
+   "width": 1440,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "reducedMotion",
+     "pass": true,
+     "actual": []
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 733
+  },
+  {
+   "id": "A01",
+   "environment": "webkit-360",
+   "browser": "webkit",
+   "width": 360,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "seedBoard",
+     "pass": true,
+     "actual": {
+      "valid": true,
+      "count": 7,
+      "projects": [
+       "Ridgeline Trail Refresh",
+       "Community Garden Rebuild"
+      ],
+      "statuses": [
+       "todo",
+       "doing",
+       "done"
+      ]
+     }
+    },
+    {
+     "key": "seedRendered",
+     "pass": true,
+     "actual": {
+      "ids": [
+       "t-seed-a-r60a70",
+       "t-seed-b-yhf1zv",
+       "t-seed-c-4pcvqz",
+       "t-seed-d-0f8zsa",
+       "t-seed-e-wlczhs",
+       "t-seed-f-ck9c6k",
+       "t-seed-g-oaxefk"
+      ]
+     }
+    },
+    {
+     "key": "localFictionFraming",
+     "pass": false,
+     "actual": null
+    }
+   ],
+   "screenshots": [
+    "webkit-360-A01-initial.png"
+   ],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "fail",
+   "durationMs": 1515
+  },
+  {
+   "id": "A02",
+   "environment": "webkit-360",
+   "browser": "webkit",
+   "width": 360,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "created",
+     "pass": true,
+     "actual": {
+      "created": {
+       "id": "t-eacbcb88-163d-41d5-b029-78f235485920",
+       "title": "Untangle the methods",
+       "project": "Atlas",
+       "status": "doing",
+       "priority": "high",
+       "dueDate": "2028-02-29",
+       "tags": [
+        "methods",
+        "review"
+       ]
+      },
+      "valid": true,
+      "count": 7
+     }
+    },
+    {
+     "key": "createPersists",
+     "pass": true,
+     "actual": {
+      "schemaVersion": 1,
+      "tasks": [
+       {
+        "id": "oracle-a",
+        "title": "Sample literature review",
+        "project": "Atlas",
+        "status": "todo",
+        "priority": "high",
+        "dueDate": "2028-02-29",
+        "tags": [
+         "methods",
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-b",
+        "title": "Dataset audit",
+        "project": "Boreal",
+        "status": "doing",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "cleanup"
+        ]
+       },
+       {
+        "id": "oracle-c",
+        "title": "Draft methods note",
+        "project": "Atlas",
+        "status": "done",
+        "priority": "low",
+        "dueDate": "2028-12-31",
+        "tags": [
+         "Writing"
+        ]
+       },
+       {
+        "id": "oracle-d",
+        "title": "Field observations",
+        "project": "Boreal",
+        "status": "todo",
+        "priority": "low",
+        "dueDate": "",
+        "tags": [
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-e",
+        "title": "Review source links",
+        "project": "Atlas",
+        "status": "doing",
+        "priority": "high",
+        "dueDate": "2028-03-01",
+        "tags": [
+         "Sources"
+        ]
+       },
+       {
+        "id": "oracle-f",
+        "title": "Archive completed work",
+        "project": "Boreal",
+        "status": "done",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "archive"
+        ]
+       },
+       {
+        "id": "t-eacbcb88-163d-41d5-b029-78f235485920",
+        "title": "Untangle the methods",
+        "project": "Atlas",
+        "status": "doing",
+        "priority": "high",
+        "dueDate": "2028-02-29",
+        "tags": [
+         "methods",
+         "review"
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "key": "editPrefilled",
+     "pass": true,
+     "actual": "Untangle the methods"
+    },
+    {
+     "key": "editedOnlyTarget",
+     "pass": true,
+     "actual": {
+      "schemaVersion": 1,
+      "tasks": [
+       {
+        "id": "oracle-a",
+        "title": "Sample literature review",
+        "project": "Atlas",
+        "status": "todo",
+        "priority": "high",
+        "dueDate": "2028-02-29",
+        "tags": [
+         "methods",
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-b",
+        "title": "Dataset audit",
+        "project": "Boreal",
+        "status": "doing",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "cleanup"
+        ]
+       },
+       {
+        "id": "oracle-c",
+        "title": "Draft methods note",
+        "project": "Atlas",
+        "status": "done",
+        "priority": "low",
+        "dueDate": "2028-12-31",
+        "tags": [
+         "Writing"
+        ]
+       },
+       {
+        "id": "oracle-d",
+        "title": "Field observations",
+        "project": "Boreal",
+        "status": "todo",
+        "priority": "low",
+        "dueDate": "",
+        "tags": [
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-e",
+        "title": "Review source links",
+        "project": "Atlas",
+        "status": "doing",
+        "priority": "high",
+        "dueDate": "2028-03-01",
+        "tags": [
+         "Sources"
+        ]
+       },
+       {
+        "id": "oracle-f",
+        "title": "Archive completed work",
+        "project": "Boreal",
+        "status": "done",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "archive"
+        ]
+       },
+       {
+        "id": "t-eacbcb88-163d-41d5-b029-78f235485920",
+        "title": "Revised methods handoff",
+        "project": "Boreal",
+        "status": "done",
+        "priority": "low",
+        "dueDate": "2028-03-03",
+        "tags": [
+         "final",
+         "methods"
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "key": "editPersists",
+     "pass": true,
+     "actual": {
+      "schemaVersion": 1,
+      "tasks": [
+       {
+        "id": "oracle-a",
+        "title": "Sample literature review",
+        "project": "Atlas",
+        "status": "todo",
+        "priority": "high",
+        "dueDate": "2028-02-29",
+        "tags": [
+         "methods",
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-b",
+        "title": "Dataset audit",
+        "project": "Boreal",
+        "status": "doing",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "cleanup"
+        ]
+       },
+       {
+        "id": "oracle-c",
+        "title": "Draft methods note",
+        "project": "Atlas",
+        "status": "done",
+        "priority": "low",
+        "dueDate": "2028-12-31",
+        "tags": [
+         "Writing"
+        ]
+       },
+       {
+        "id": "oracle-d",
+        "title": "Field observations",
+        "project": "Boreal",
+        "status": "todo",
+        "priority": "low",
+        "dueDate": "",
+        "tags": [
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-e",
+        "title": "Review source links",
+        "project": "Atlas",
+        "status": "doing",
+        "priority": "high",
+        "dueDate": "2028-03-01",
+        "tags": [
+         "Sources"
+        ]
+       },
+       {
+        "id": "oracle-f",
+        "title": "Archive completed work",
+        "project": "Boreal",
+        "status": "done",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "archive"
+        ]
+       },
+       {
+        "id": "t-eacbcb88-163d-41d5-b029-78f235485920",
+        "title": "Revised methods handoff",
+        "project": "Boreal",
+        "status": "done",
+        "priority": "low",
+        "dueDate": "2028-03-03",
+        "tags": [
+         "final",
+         "methods"
+        ]
+       }
+      ]
+     }
+    }
+   ],
+   "screenshots": [
+    "webkit-360-A02-edited.png"
+   ],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1921
+  },
+  {
+   "id": "A03",
+   "environment": "webkit-360",
+   "browser": "webkit",
+   "width": 360,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "nativeSelect",
+     "pass": true,
+     "actual": "SELECT"
+    },
+    {
+     "key": "onlyStatusChanged",
+     "pass": true,
+     "actual": {
+      "schemaVersion": 1,
+      "tasks": [
+       {
+        "id": "oracle-a",
+        "title": "Sample literature review",
+        "project": "Atlas",
+        "status": "done",
+        "priority": "high",
+        "dueDate": "2028-02-29",
+        "tags": [
+         "methods",
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-b",
+        "title": "Dataset audit",
+        "project": "Boreal",
+        "status": "doing",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "cleanup"
+        ]
+       },
+       {
+        "id": "oracle-c",
+        "title": "Draft methods note",
+        "project": "Atlas",
+        "status": "done",
+        "priority": "low",
+        "dueDate": "2028-12-31",
+        "tags": [
+         "Writing"
+        ]
+       },
+       {
+        "id": "oracle-d",
+        "title": "Field observations",
+        "project": "Boreal",
+        "status": "todo",
+        "priority": "low",
+        "dueDate": "",
+        "tags": [
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-e",
+        "title": "Review source links",
+        "project": "Atlas",
+        "status": "doing",
+        "priority": "high",
+        "dueDate": "2028-03-01",
+        "tags": [
+         "Sources"
+        ]
+       },
+       {
+        "id": "oracle-f",
+        "title": "Archive completed work",
+        "project": "Boreal",
+        "status": "done",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "archive"
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "key": "statusPersists",
+     "pass": true,
+     "actual": {
+      "board": {
+       "schemaVersion": 1,
+       "tasks": [
+        {
+         "id": "oracle-a",
+         "title": "Sample literature review",
+         "project": "Atlas",
+         "status": "done",
+         "priority": "high",
+         "dueDate": "2028-02-29",
+         "tags": [
+          "methods",
+          "Research"
+         ]
+        },
+        {
+         "id": "oracle-b",
+         "title": "Dataset audit",
+         "project": "Boreal",
+         "status": "doing",
+         "priority": "medium",
+         "dueDate": "",
+         "tags": [
+          "cleanup"
+         ]
+        },
+        {
+         "id": "oracle-c",
+         "title": "Draft methods note",
+         "project": "Atlas",
+         "status": "done",
+         "priority": "low",
+         "dueDate": "2028-12-31",
+         "tags": [
+          "Writing"
+         ]
+        },
+        {
+         "id": "oracle-d",
+         "title": "Field observations",
+         "project": "Boreal",
+         "status": "todo",
+         "priority": "low",
+         "dueDate": "",
+         "tags": [
+          "Research"
+         ]
+        },
+        {
+         "id": "oracle-e",
+         "title": "Review source links",
+         "project": "Atlas",
+         "status": "doing",
+         "priority": "high",
+         "dueDate": "2028-03-01",
+         "tags": [
+          "Sources"
+         ]
+        },
+        {
+         "id": "oracle-f",
+         "title": "Archive completed work",
+         "project": "Boreal",
+         "status": "done",
+         "priority": "medium",
+         "dueDate": "",
+         "tags": [
+          "archive"
+         ]
+        }
+       ]
+      },
+      "select": "done"
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1215
+  },
+  {
+   "id": "A04",
+   "environment": "webkit-360",
+   "browser": "webkit",
+   "width": 360,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "deleted",
+     "pass": true,
+     "actual": {
+      "board": {
+       "schemaVersion": 1,
+       "tasks": [
+        {
+         "id": "oracle-a",
+         "title": "Sample literature review",
+         "project": "Atlas",
+         "status": "todo",
+         "priority": "high",
+         "dueDate": "2028-02-29",
+         "tags": [
+          "methods",
+          "Research"
+         ]
+        },
+        {
+         "id": "oracle-c",
+         "title": "Draft methods note",
+         "project": "Atlas",
+         "status": "done",
+         "priority": "low",
+         "dueDate": "2028-12-31",
+         "tags": [
+          "Writing"
+         ]
+        },
+        {
+         "id": "oracle-d",
+         "title": "Field observations",
+         "project": "Boreal",
+         "status": "todo",
+         "priority": "low",
+         "dueDate": "",
+         "tags": [
+          "Research"
+         ]
+        },
+        {
+         "id": "oracle-e",
+         "title": "Review source links",
+         "project": "Atlas",
+         "status": "doing",
+         "priority": "high",
+         "dueDate": "2028-03-01",
+         "tags": [
+          "Sources"
+         ]
+        },
+        {
+         "id": "oracle-f",
+         "title": "Archive completed work",
+         "project": "Boreal",
+         "status": "done",
+         "priority": "medium",
+         "dueDate": "",
+         "tags": [
+          "archive"
+         ]
+        }
+       ]
+      },
+      "visible": false,
+      "undo": true
+     }
+    },
+    {
+     "key": "exactRecordRestored",
+     "pass": true,
+     "actual": {
+      "schemaVersion": 1,
+      "tasks": [
+       {
+        "id": "oracle-a",
+        "title": "Sample literature review",
+        "project": "Atlas",
+        "status": "todo",
+        "priority": "high",
+        "dueDate": "2028-02-29",
+        "tags": [
+         "methods",
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-b",
+        "title": "Dataset audit",
+        "project": "Boreal",
+        "status": "doing",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "cleanup"
+        ]
+       },
+       {
+        "id": "oracle-c",
+        "title": "Draft methods note",
+        "project": "Atlas",
+        "status": "done",
+        "priority": "low",
+        "dueDate": "2028-12-31",
+        "tags": [
+         "Writing"
+        ]
+       },
+       {
+        "id": "oracle-d",
+        "title": "Field observations",
+        "project": "Boreal",
+        "status": "todo",
+        "priority": "low",
+        "dueDate": "",
+        "tags": [
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-e",
+        "title": "Review source links",
+        "project": "Atlas",
+        "status": "doing",
+        "priority": "high",
+        "dueDate": "2028-03-01",
+        "tags": [
+         "Sources"
+        ]
+       },
+       {
+        "id": "oracle-f",
+        "title": "Archive completed work",
+        "project": "Boreal",
+        "status": "done",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "archive"
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "key": "undoPersists",
+     "pass": true,
+     "actual": {
+      "schemaVersion": 1,
+      "tasks": [
+       {
+        "id": "oracle-a",
+        "title": "Sample literature review",
+        "project": "Atlas",
+        "status": "todo",
+        "priority": "high",
+        "dueDate": "2028-02-29",
+        "tags": [
+         "methods",
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-b",
+        "title": "Dataset audit",
+        "project": "Boreal",
+        "status": "doing",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "cleanup"
+        ]
+       },
+       {
+        "id": "oracle-c",
+        "title": "Draft methods note",
+        "project": "Atlas",
+        "status": "done",
+        "priority": "low",
+        "dueDate": "2028-12-31",
+        "tags": [
+         "Writing"
+        ]
+       },
+       {
+        "id": "oracle-d",
+        "title": "Field observations",
+        "project": "Boreal",
+        "status": "todo",
+        "priority": "low",
+        "dueDate": "",
+        "tags": [
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-e",
+        "title": "Review source links",
+        "project": "Atlas",
+        "status": "doing",
+        "priority": "high",
+        "dueDate": "2028-03-01",
+        "tags": [
+         "Sources"
+        ]
+       },
+       {
+        "id": "oracle-f",
+        "title": "Archive completed work",
+        "project": "Boreal",
+        "status": "done",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "archive"
+        ]
+       }
+      ]
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1241
+  },
+  {
+   "id": "A05",
+   "environment": "webkit-360",
+   "browser": "webkit",
+   "width": 360,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "search-LITERATURE",
+     "pass": true,
+     "actual": [
+      "oracle-a"
+     ]
+    },
+    {
+     "key": "search-bOrEaL",
+     "pass": true,
+     "actual": [
+      "oracle-b",
+      "oracle-d",
+      "oracle-f"
+     ]
+    },
+    {
+     "key": "search-rEsEaRcH",
+     "pass": true,
+     "actual": [
+      "oracle-a",
+      "oracle-d"
+     ]
+    },
+    {
+     "key": "filterIntersection",
+     "pass": true,
+     "actual": [
+      "oracle-e"
+     ]
+    },
+    {
+     "key": "visibleCount",
+     "pass": true,
+     "actual": [
+      "1 of 6 tasks shown"
+     ]
+    },
+    {
+     "key": "noResults",
+     "pass": true,
+     "actual": {
+      "ids": [],
+      "notice": {
+       "present": true,
+       "excerpt": "ct team. Export JSON Import JSON + New task Search tasks Status Project Priority 0 of 6 tasks shown No matching tasks Try a different search term or clear your filters. Clear search and filters "
+      }
+     }
+    }
+   ],
+   "screenshots": [
+    "webkit-360-A05-filtered.png"
+   ],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1925
+  },
+  {
+   "id": "A06",
+   "environment": "webkit-360",
+   "browser": "webkit",
+   "width": 360,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "blank-title",
+     "pass": true,
+     "actual": {
+      "constrained": false,
+      "feedback": {
+       "hasFeedback": true,
+       "native": [],
+       "notice": "",
+       "addedVisibleFeedback": [
+        "Title is required."
+       ]
+      },
+      "storedCount": 6
+     }
+    },
+    {
+     "key": "long-title",
+     "pass": true,
+     "actual": {
+      "constrained": true,
+      "feedback": {
+       "hasFeedback": false,
+       "native": [],
+       "notice": "",
+       "addedVisibleFeedback": []
+      },
+      "storedCount": 7
+     }
+    },
+    {
+     "key": "long-project",
+     "pass": true,
+     "actual": {
+      "constrained": true,
+      "feedback": {
+       "hasFeedback": false,
+       "native": [],
+       "notice": "",
+       "addedVisibleFeedback": []
+      },
+      "storedCount": 7
+     }
+    },
+    {
+     "key": "invalidCalendarDate",
+     "pass": true,
+     "actual": {
+      "type": "date",
+      "value": "",
+      "valid": true
+     },
+     "expected": "Native date input refuses impossible calendar date"
+    },
+    {
+     "key": "modalEscape",
+     "pass": false,
+     "actual": {
+      "visible": false,
+      "focused": false
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "fail",
+   "durationMs": 2492
+  },
+  {
+   "id": "A07",
+   "environment": "webkit-360",
+   "browser": "webkit",
+   "width": 360,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "fullExport",
+     "pass": true,
+     "actual": {
+      "filename": "fieldnote-board-export.json",
+      "count": 6,
+      "valid": true
+     }
+    },
+    {
+     "key": "importCancellation",
+     "pass": true,
+     "actual": {
+      "confirmed": true,
+      "dialogCount": 1,
+      "custom": false,
+      "before": "{\"schemaVersion\":1,\"tasks\":[{\"id\":\"oracle-a\",\"title\":\"Sample literature review\",\"project\":\"Atlas\",\"status\":\"todo\",\"priority\":\"high\",\"dueDate\":\"2028-02-29\",\"tags\":[\"methods\",\"Research\"]},{\"id\":\"oracle-b\",\"title\":\"Dataset audit\",\"project\":\"Boreal\",\"status\":\"doing\",\"priority\":\"medium\",\"dueDate\":\"\",\"tags\":[\"cleanup\"]},{\"id\":\"oracle-c\",\"title\":\"Draft methods note\",\"project\":\"Atlas\",\"status\":\"done\",\"priority\":\"low\",\"dueDate\":\"2028-12-31\",\"tags\":[\"Writing\"]},{\"id\":\"oracle-d\",\"title\":\"Field observations\",\"project\":\"Boreal\",\"status\":\"todo\",\"priority\":\"low\",\"dueDate\":\"\",\"tags\":[\"Research\"]},{\"id\":\"oracle-e\",\"title\":\"Review source links\",\"project\":\"Atlas\",\"status\":\"doing\",\"priority\":\"high\",\"dueDate\":\"2028-03-01\",\"tags\":[\"Sources\"]},{\"id\":\"oracle-f\",\"title\":\"Archive completed work\",\"project\":\"Boreal\",\"status\":\"done\",\"priority\":\"medium\",\"dueDate\":\"\",\"tags\":[\"archive\"]}]}",
+      "after": "{\"schemaVersion\":1,\"tasks\":[{\"id\":\"oracle-a\",\"title\":\"Sample literature review\",\"project\":\"Atlas\",\"status\":\"todo\",\"priority\":\"high\",\"dueDate\":\"2028-02-29\",\"tags\":[\"methods\",\"Research\"]},{\"id\":\"oracle-b\",\"title\":\"Dataset audit\",\"project\":\"Boreal\",\"status\":\"doing\",\"priority\":\"medium\",\"dueDate\":\"\",\"tags\":[\"cleanup\"]},{\"id\":\"oracle-c\",\"title\":\"Draft methods note\",\"project\":\"Atlas\",\"status\":\"done\",\"priority\":\"low\",\"dueDate\":\"2028-12-31\",\"tags\":[\"Writing\"]},{\"id\":\"oracle-d\",\"title\":\"Field observations\",\"project\":\"Boreal\",\"status\":\"todo\",\"priority\":\"low\",\"dueDate\":\"\",\"tags\":[\"Research\"]},{\"id\":\"oracle-e\",\"title\":\"Review source links\",\"project\":\"Atlas\",\"status\":\"doing\",\"priority\":\"high\",\"dueDate\":\"2028-03-01\",\"tags\":[\"Sources\"]},{\"id\":\"oracle-f\",\"title\":\"Archive completed work\",\"project\":\"Boreal\",\"status\":\"done\",\"priority\":\"medium\",\"dueDate\":\"\",\"tags\":[\"archive\"]}]}",
+      "alerts": []
+     }
+    },
+    {
+     "key": "confirmedReplace",
+     "pass": true,
+     "actual": {
+      "confirmed": true,
+      "dialogCount": 1,
+      "custom": false,
+      "before": "{\"schemaVersion\":1,\"tasks\":[{\"id\":\"oracle-a\",\"title\":\"Sample literature review\",\"project\":\"Atlas\",\"status\":\"todo\",\"priority\":\"high\",\"dueDate\":\"2028-02-29\",\"tags\":[\"methods\",\"Research\"]},{\"id\":\"oracle-b\",\"title\":\"Dataset audit\",\"project\":\"Boreal\",\"status\":\"doing\",\"priority\":\"medium\",\"dueDate\":\"\",\"tags\":[\"cleanup\"]},{\"id\":\"oracle-c\",\"title\":\"Draft methods note\",\"project\":\"Atlas\",\"status\":\"done\",\"priority\":\"low\",\"dueDate\":\"2028-12-31\",\"tags\":[\"Writing\"]},{\"id\":\"oracle-d\",\"title\":\"Field observations\",\"project\":\"Boreal\",\"status\":\"todo\",\"priority\":\"low\",\"dueDate\":\"\",\"tags\":[\"Research\"]},{\"id\":\"oracle-e\",\"title\":\"Review source links\",\"project\":\"Atlas\",\"status\":\"doing\",\"priority\":\"high\",\"dueDate\":\"2028-03-01\",\"tags\":[\"Sources\"]},{\"id\":\"oracle-f\",\"title\":\"Archive completed work\",\"project\":\"Boreal\",\"status\":\"done\",\"priority\":\"medium\",\"dueDate\":\"\",\"tags\":[\"archive\"]}]}",
+      "after": "{\"schemaVersion\":1,\"tasks\":[{\"id\":\"roundtrip-z\",\"title\":\"Restored research board\",\"project\":\"Atlas\",\"status\":\"todo\",\"priority\":\"high\",\"dueDate\":\"2028-02-29\",\"tags\":[\"methods\",\"Research\"]}]}",
+      "alerts": []
+     }
+    },
+    {
+     "key": "importPersists",
+     "pass": true,
+     "actual": {
+      "schemaVersion": 1,
+      "tasks": [
+       {
+        "id": "roundtrip-z",
+        "title": "Restored research board",
+        "project": "Atlas",
+        "status": "todo",
+        "priority": "high",
+        "dueDate": "2028-02-29",
+        "tags": [
+         "methods",
+         "Research"
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "key": "exportRoundtrip",
+     "pass": true,
+     "actual": {
+      "confirmed": true,
+      "dialogCount": 1,
+      "custom": false,
+      "before": "{\"schemaVersion\":1,\"tasks\":[{\"id\":\"roundtrip-z\",\"title\":\"Restored research board\",\"project\":\"Atlas\",\"status\":\"todo\",\"priority\":\"high\",\"dueDate\":\"2028-02-29\",\"tags\":[\"methods\",\"Research\"]}]}",
+      "after": "{\"schemaVersion\":1,\"tasks\":[{\"id\":\"oracle-a\",\"title\":\"Sample literature review\",\"project\":\"Atlas\",\"status\":\"todo\",\"priority\":\"high\",\"dueDate\":\"2028-02-29\",\"tags\":[\"methods\",\"Research\"]},{\"id\":\"oracle-b\",\"title\":\"Dataset audit\",\"project\":\"Boreal\",\"status\":\"doing\",\"priority\":\"medium\",\"dueDate\":\"\",\"tags\":[\"cleanup\"]},{\"id\":\"oracle-c\",\"title\":\"Draft methods note\",\"project\":\"Atlas\",\"status\":\"done\",\"priority\":\"low\",\"dueDate\":\"2028-12-31\",\"tags\":[\"Writing\"]},{\"id\":\"oracle-d\",\"title\":\"Field observations\",\"project\":\"Boreal\",\"status\":\"todo\",\"priority\":\"low\",\"dueDate\":\"\",\"tags\":[\"Research\"]},{\"id\":\"oracle-e\",\"title\":\"Review source links\",\"project\":\"Atlas\",\"status\":\"doing\",\"priority\":\"high\",\"dueDate\":\"2028-03-01\",\"tags\":[\"Sources\"]},{\"id\":\"oracle-f\",\"title\":\"Archive completed work\",\"project\":\"Boreal\",\"status\":\"done\",\"priority\":\"medium\",\"dueDate\":\"\",\"tags\":[\"archive\"]}]}",
+      "alerts": []
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [
+    {
+     "type": "confirm",
+     "message": "Replace the current board with 1 task(s) from \"board.json\"? This cannot be undone.",
+     "action": "dismiss"
+    },
+    {
+     "type": "confirm",
+     "message": "Replace the current board with 1 task(s) from \"board.json\"? This cannot be undone.",
+     "action": "accept"
+    },
+    {
+     "type": "confirm",
+     "message": "Replace the current board with 6 task(s) from \"board.json\"? This cannot be undone.",
+     "action": "accept"
+    }
+   ],
+   "status": "pass",
+   "durationMs": 1808
+  },
+  {
+   "id": "A08",
+   "environment": "webkit-360",
+   "browser": "webkit",
+   "width": 360,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "malformed",
+     "pass": true,
+     "actual": {
+      "unchanged": true,
+      "error": {
+       "hasFeedback": true,
+       "native": [],
+       "notice": " A local-first task board for a small project team. Export JSON Import JSON + New task That file is not valid JSON. Search tasks Status Project Priority 6 of 6 tasks shown ",
+       "addedVisibleFeedback": []
+      }
+     }
+    },
+    {
+     "key": "unsupported-schema",
+     "pass": true,
+     "actual": {
+      "unchanged": true,
+      "error": {
+       "hasFeedback": true,
+       "native": [],
+       "notice": "eldnote Board A local-first task board for a small project team. Export JSON Import JSON + New task Unsupported schema version. Only schemaVersion 1 is accepted. Search tasks Status Project Priority 6 of 6 tasks shown ",
+       "addedVisibleFeedback": []
+      }
+     }
+    },
+    {
+     "key": "unsupported-enum",
+     "pass": true,
+     "actual": {
+      "unchanged": true,
+      "error": {
+       "hasFeedback": true,
+       "native": [],
+       "notice": " Fieldnote Board A local-first task board for a small project team. Export JSON Import JSON + New task Task 6 is invalid (invalid status). No changes were made. Search tasks Status Project Priority 6 of 6 tasks shown ",
+       "addedVisibleFeedback": []
+      }
+     }
+    }
+   ],
+   "screenshots": [
+    "webkit-360-A08-import-error.png"
+   ],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1971
+  },
+  {
+   "id": "A09",
+   "environment": "webkit-360",
+   "browser": "webkit",
+   "width": 360,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "duplicate-ids",
+     "pass": true,
+     "actual": {
+      "unchanged": true,
+      "error": {
+       "hasFeedback": true,
+       "native": [],
+       "notice": " Fieldnote Board A local-first task board for a small project team. Export JSON Import JSON + New task Task 6 is invalid (duplicate id). No changes were made. Search tasks Status Project Priority 6 of 6 tasks shown ",
+       "addedVisibleFeedback": []
+      }
+     }
+    },
+    {
+     "key": "non-calendar-date",
+     "pass": true,
+     "actual": {
+      "unchanged": true,
+      "error": {
+       "hasFeedback": true,
+       "native": [],
+       "notice": " Fieldnote Board A local-first task board for a small project team. Export JSON Import JSON + New task Task 6 is invalid (invalid dueDate). No changes were made. Search tasks Status Project Priority 6 of 6 tasks shown ",
+       "addedVisibleFeedback": []
+      }
+     }
+    },
+    {
+     "key": "overlong-text",
+     "pass": true,
+     "actual": {
+      "unchanged": true,
+      "error": {
+       "hasFeedback": true,
+       "native": [],
+       "notice": " Fieldnote Board A local-first task board for a small project team. Export JSON Import JSON + New task Task 6 is invalid (invalid title). No changes were made. Search tasks Status Project Priority 6 of 6 tasks shown ",
+       "addedVisibleFeedback": []
+      }
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1745
+  },
+  {
+   "id": "A10",
+   "environment": "webkit-360",
+   "browser": "webkit",
+   "width": 360,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "oversized",
+     "pass": false,
+     "actual": {
+      "bytes": 1049446,
+      "unchanged": true,
+      "error": {
+       "hasFeedback": false,
+       "native": [],
+       "notice": "",
+       "addedVisibleFeedback": []
+      }
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "fail",
+   "durationMs": 1350
+  },
+  {
+   "id": "A11",
+   "environment": "webkit-360",
+   "browser": "webkit",
+   "width": 360,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "hostileText",
+     "pass": true,
+     "actual": {
+      "confirmed": true,
+      "executed": 0,
+      "injected": 0,
+      "literalVisible": true,
+      "stored": {
+       "schemaVersion": 1,
+       "tasks": [
+        {
+         "id": "xss-text",
+         "title": "<img src=x onerror=\"window.__fieldnoteXSS=1\">",
+         "project": "<svg onload=\"window.__fieldnoteXSS=2\">",
+         "status": "todo",
+         "priority": "high",
+         "dueDate": "2028-02-29",
+         "tags": [
+          "<b>literal</b>"
+         ]
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [
+    {
+     "type": "confirm",
+     "message": "Replace the current board with 1 task(s) from \"board.json\"? This cannot be undone.",
+     "action": "accept"
+    }
+   ],
+   "status": "pass",
+   "durationMs": 1423
+  },
+  {
+   "id": "A12",
+   "environment": "webkit-360",
+   "browser": "webkit",
+   "width": 360,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "corruptPreserved",
+     "pass": false,
+     "actual": {
+      "sameBytes": true,
+      "notice": {
+       "present": false,
+       "excerpt": ""
+      }
+     }
+    },
+    {
+     "key": "recoveryDownloadControl",
+     "pass": true,
+     "actual": true
+    },
+    {
+     "key": "originalBytesDownloaded",
+     "pass": true,
+     "actual": {
+      "filename": "fieldnote-board-corrupt-backup.txt",
+      "bytes": 37,
+      "sha256": "ec0caf91866ad0e64671d6ba065b399932f9e0dc1c0d18376203208b435c400c"
+     }
+    },
+    {
+     "key": "resetControl",
+     "pass": true,
+     "actual": true
+    },
+    {
+     "key": "resetRequiresConfirmation",
+     "pass": true,
+     "actual": {
+      "dialogCount": 1,
+      "custom": false,
+      "stored": "{\"schemaVersion\":1,\"tasks\":[BROKEN\n\u00e9"
+     }
+    },
+    {
+     "key": "confirmedResetWorks",
+     "pass": true,
+     "actual": {
+      "stored": "{\"schemaVersion\":1,\"tasks\":[{\"id\":\"t-seed-a-stlqsz\",\"title\":\"Draft trailhead signage copy\",\"project\":\"Ridgeline Trail Refresh\",\"status\":\"todo\",\"priority\":\"high\",\"dueDate\":\"2026-09-17\",\"tags\":[\"copy\",\"signage\"]},{\"id\":\"t-seed-b-3qeva6\",\"title\":\"Survey creek crossing damage\",\"project\":\"Ridgeline Trail Refresh\",\"status\":\"doing\",\"priority\":\"high\",\"dueDate\":\"2026-09-15\",\"tags\":[\"field\",\"survey\"]},{\"id\":\"t-seed-c-sgxi3q\",\"title\":\"Order replacement waymarkers\",\"project\":\"Ridgeline Trail Refresh\",\"status\":\"todo\",\"priority\":\"medium\",\"dueDate\":\"2026-09-24\",\"tags\":[\"procurement\"]},{\"id\":\"t-seed-d-kx3hfl\",\"title\":\"Compile volunteer hours for Q3\",\"project\":\"Community Garden Rebuild\",\"status\":\"done\",\"priority\":\"low\",\"dueDate\":\"2026-09-12\",\"tags\":[\"admin\",\"reporting\"]},{\"id\":\"t-seed-e-08ynyj\",\"title\":\"Repair raised bed irrigation\",\"project\":\"Community Garden Rebuild\",\"status\":\"doing\",\"priority\":\"medium\",\"dueDate\":\"2026-09-19\",\"tags\":[\"field\"]},{\"id\":\"t-seed-f-et748h\",\"title\":\"Plan spring planting schedule\",\"project\":\"Community Garden Rebuild\",\"status\":\"todo\",\"priority\":\"low\",\"dueDate\":\"\",\"tags\":[\"planning\"]},{\"id\":\"t-seed-g-2gfjdd\",\"title\":\"Publish weekly fieldnote digest\",\"project\":\"Community Garden Rebuild\",\"status\":\"done\",\"priority\":\"medium\",\"dueDate\":\"2026-09-07\",\"tags\":[\"comms\"]}]}",
+      "valid": true
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [
+    {
+     "type": "confirm",
+     "message": "Reset the board? The unreadable data will remain replaced by a fresh sample board. Download a backup first if you need it.",
+     "action": "dismiss"
+    },
+    {
+     "type": "confirm",
+     "message": "Reset the board? The unreadable data will remain replaced by a fresh sample board. Download a backup first if you need it.",
+     "action": "accept"
+    }
+   ],
+   "status": "fail",
+   "durationMs": 1671
+  },
+  {
+   "id": "A13",
+   "environment": "webkit-360",
+   "browser": "webkit",
+   "width": 360,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "writeFailure",
+     "pass": true,
+     "actual": {
+      "storedUnchanged": true,
+      "notice": {
+       "present": true,
+       "excerpt": "-first task board for a small project team. Export JSON Import JSON + New task Your last change was not saved. Oracle simulated quota exhaustion Your edits remain in this session; try again or free up storage space. Search tasks Status Project Priority 6 of 6 tasks sho"
+      },
+      "recoverable": true
+     }
+    }
+   ],
+   "screenshots": [
+    "webkit-360-A13-unsaved.png"
+   ],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1346
+  },
+  {
+   "id": "A14",
+   "environment": "webkit-360",
+   "browser": "webkit",
+   "width": 360,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "crossTabNotice",
+     "pass": true,
+     "actual": {
+      "present": true,
+      "excerpt": "first task board for a small project team. Export JSON Import JSON + New task This board changed in another tab. Reload to see the latest data before making further changes. Reload board Search tasks Status Project Priority 6 of 6 tasks shown "
+     }
+    },
+    {
+     "key": "newerWorkPreserved",
+     "pass": true,
+     "actual": {
+      "board": {
+       "schemaVersion": 1,
+       "tasks": [
+        {
+         "id": "oracle-a",
+         "title": "Newer work from another tab",
+         "project": "Atlas",
+         "status": "todo",
+         "priority": "high",
+         "dueDate": "2028-02-29",
+         "tags": [
+          "methods",
+          "Research"
+         ]
+        },
+        {
+         "id": "oracle-b",
+         "title": "Dataset audit",
+         "project": "Boreal",
+         "status": "doing",
+         "priority": "medium",
+         "dueDate": "",
+         "tags": [
+          "cleanup"
+         ]
+        },
+        {
+         "id": "oracle-c",
+         "title": "Draft methods note",
+         "project": "Atlas",
+         "status": "done",
+         "priority": "low",
+         "dueDate": "2028-12-31",
+         "tags": [
+          "Writing"
+         ]
+        },
+        {
+         "id": "oracle-d",
+         "title": "Field observations",
+         "project": "Boreal",
+         "status": "todo",
+         "priority": "low",
+         "dueDate": "",
+         "tags": [
+          "Research"
+         ]
+        },
+        {
+         "id": "oracle-e",
+         "title": "Review source links",
+         "project": "Atlas",
+         "status": "doing",
+         "priority": "high",
+         "dueDate": "2028-03-01",
+         "tags": [
+          "Sources"
+         ]
+        },
+        {
+         "id": "oracle-f",
+         "title": "Archive completed work",
+         "project": "Boreal",
+         "status": "done",
+         "priority": "medium",
+         "dueDate": "",
+         "tags": [
+          "archive"
+         ]
+        },
+        {
+         "id": "second-tab-new",
+         "title": "Preserve newly added work",
+         "project": "Boreal",
+         "status": "doing",
+         "priority": "medium",
+         "dueDate": "",
+         "tags": [
+          "cleanup"
+         ]
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1939
+  },
+  {
+   "id": "A15",
+   "environment": "webkit-360",
+   "browser": "webkit",
+   "width": 360,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "loadedLocalResources",
+     "pass": true,
+     "actual": []
+    },
+    {
+     "key": "rendering",
+     "pass": true,
+     "actual": {
+      "width": 360,
+      "scrollWidth": 360,
+      "contentLength": 761,
+      "unnamed": [],
+      "brokenImages": [],
+      "visibleControls": 25
+     }
+    },
+    {
+     "key": "formRendering",
+     "pass": true,
+     "actual": {
+      "width": 360,
+      "scrollWidth": 360,
+      "contentLength": 901,
+      "unnamed": [],
+      "brokenImages": [],
+      "visibleControls": 33
+     }
+    }
+   ],
+   "screenshots": [
+    "webkit-360-A15-initial.png",
+    "webkit-360-A15-form.png"
+   ],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1164
+  },
+  {
+   "id": "A16",
+   "environment": "webkit-360-no-js",
+   "browser": "webkit",
+   "width": 360,
+   "noJS": true,
+   "observations": [
+    {
+     "key": "noJSNotice",
+     "pass": true,
+     "actual": {
+      "present": true,
+      "excerpt": " Fieldnote Board needs JavaScript enabled to load your tasks. Please enable JavaScript and reload the page. Fieldnote Board A local-first task board for a small project team. Export JSON Import JSON + New task Search tasks Status Project Priority"
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1016
+  },
+  {
+   "id": "A16",
+   "environment": "webkit-360-reduced-motion",
+   "browser": "webkit",
+   "width": 360,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "reducedMotion",
+     "pass": true,
+     "actual": []
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1025
+  },
+  {
+   "id": "A01",
+   "environment": "webkit-1440",
+   "browser": "webkit",
+   "width": 1440,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "seedBoard",
+     "pass": true,
+     "actual": {
+      "valid": true,
+      "count": 7,
+      "projects": [
+       "Ridgeline Trail Refresh",
+       "Community Garden Rebuild"
+      ],
+      "statuses": [
+       "todo",
+       "doing",
+       "done"
+      ]
+     }
+    },
+    {
+     "key": "seedRendered",
+     "pass": true,
+     "actual": {
+      "ids": [
+       "t-seed-a-edxkae",
+       "t-seed-b-i01rll",
+       "t-seed-c-5zaw44",
+       "t-seed-d-zr68qn",
+       "t-seed-e-tb8frc",
+       "t-seed-f-ztix2z",
+       "t-seed-g-pqum4m"
+      ]
+     }
+    },
+    {
+     "key": "localFictionFraming",
+     "pass": false,
+     "actual": null
+    }
+   ],
+   "screenshots": [
+    "webkit-1440-A01-initial.png"
+   ],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "fail",
+   "durationMs": 1129
+  },
+  {
+   "id": "A02",
+   "environment": "webkit-1440",
+   "browser": "webkit",
+   "width": 1440,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "created",
+     "pass": true,
+     "actual": {
+      "created": {
+       "id": "t-730d85fe-2467-44f1-a0d2-015aba7b63f6",
+       "title": "Untangle the methods",
+       "project": "Atlas",
+       "status": "doing",
+       "priority": "high",
+       "dueDate": "2028-02-29",
+       "tags": [
+        "methods",
+        "review"
+       ]
+      },
+      "valid": true,
+      "count": 7
+     }
+    },
+    {
+     "key": "createPersists",
+     "pass": true,
+     "actual": {
+      "schemaVersion": 1,
+      "tasks": [
+       {
+        "id": "oracle-a",
+        "title": "Sample literature review",
+        "project": "Atlas",
+        "status": "todo",
+        "priority": "high",
+        "dueDate": "2028-02-29",
+        "tags": [
+         "methods",
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-b",
+        "title": "Dataset audit",
+        "project": "Boreal",
+        "status": "doing",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "cleanup"
+        ]
+       },
+       {
+        "id": "oracle-c",
+        "title": "Draft methods note",
+        "project": "Atlas",
+        "status": "done",
+        "priority": "low",
+        "dueDate": "2028-12-31",
+        "tags": [
+         "Writing"
+        ]
+       },
+       {
+        "id": "oracle-d",
+        "title": "Field observations",
+        "project": "Boreal",
+        "status": "todo",
+        "priority": "low",
+        "dueDate": "",
+        "tags": [
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-e",
+        "title": "Review source links",
+        "project": "Atlas",
+        "status": "doing",
+        "priority": "high",
+        "dueDate": "2028-03-01",
+        "tags": [
+         "Sources"
+        ]
+       },
+       {
+        "id": "oracle-f",
+        "title": "Archive completed work",
+        "project": "Boreal",
+        "status": "done",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "archive"
+        ]
+       },
+       {
+        "id": "t-730d85fe-2467-44f1-a0d2-015aba7b63f6",
+        "title": "Untangle the methods",
+        "project": "Atlas",
+        "status": "doing",
+        "priority": "high",
+        "dueDate": "2028-02-29",
+        "tags": [
+         "methods",
+         "review"
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "key": "editPrefilled",
+     "pass": true,
+     "actual": "Untangle the methods"
+    },
+    {
+     "key": "editedOnlyTarget",
+     "pass": true,
+     "actual": {
+      "schemaVersion": 1,
+      "tasks": [
+       {
+        "id": "oracle-a",
+        "title": "Sample literature review",
+        "project": "Atlas",
+        "status": "todo",
+        "priority": "high",
+        "dueDate": "2028-02-29",
+        "tags": [
+         "methods",
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-b",
+        "title": "Dataset audit",
+        "project": "Boreal",
+        "status": "doing",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "cleanup"
+        ]
+       },
+       {
+        "id": "oracle-c",
+        "title": "Draft methods note",
+        "project": "Atlas",
+        "status": "done",
+        "priority": "low",
+        "dueDate": "2028-12-31",
+        "tags": [
+         "Writing"
+        ]
+       },
+       {
+        "id": "oracle-d",
+        "title": "Field observations",
+        "project": "Boreal",
+        "status": "todo",
+        "priority": "low",
+        "dueDate": "",
+        "tags": [
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-e",
+        "title": "Review source links",
+        "project": "Atlas",
+        "status": "doing",
+        "priority": "high",
+        "dueDate": "2028-03-01",
+        "tags": [
+         "Sources"
+        ]
+       },
+       {
+        "id": "oracle-f",
+        "title": "Archive completed work",
+        "project": "Boreal",
+        "status": "done",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "archive"
+        ]
+       },
+       {
+        "id": "t-730d85fe-2467-44f1-a0d2-015aba7b63f6",
+        "title": "Revised methods handoff",
+        "project": "Boreal",
+        "status": "done",
+        "priority": "low",
+        "dueDate": "2028-03-03",
+        "tags": [
+         "final",
+         "methods"
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "key": "editPersists",
+     "pass": true,
+     "actual": {
+      "schemaVersion": 1,
+      "tasks": [
+       {
+        "id": "oracle-a",
+        "title": "Sample literature review",
+        "project": "Atlas",
+        "status": "todo",
+        "priority": "high",
+        "dueDate": "2028-02-29",
+        "tags": [
+         "methods",
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-b",
+        "title": "Dataset audit",
+        "project": "Boreal",
+        "status": "doing",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "cleanup"
+        ]
+       },
+       {
+        "id": "oracle-c",
+        "title": "Draft methods note",
+        "project": "Atlas",
+        "status": "done",
+        "priority": "low",
+        "dueDate": "2028-12-31",
+        "tags": [
+         "Writing"
+        ]
+       },
+       {
+        "id": "oracle-d",
+        "title": "Field observations",
+        "project": "Boreal",
+        "status": "todo",
+        "priority": "low",
+        "dueDate": "",
+        "tags": [
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-e",
+        "title": "Review source links",
+        "project": "Atlas",
+        "status": "doing",
+        "priority": "high",
+        "dueDate": "2028-03-01",
+        "tags": [
+         "Sources"
+        ]
+       },
+       {
+        "id": "oracle-f",
+        "title": "Archive completed work",
+        "project": "Boreal",
+        "status": "done",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "archive"
+        ]
+       },
+       {
+        "id": "t-730d85fe-2467-44f1-a0d2-015aba7b63f6",
+        "title": "Revised methods handoff",
+        "project": "Boreal",
+        "status": "done",
+        "priority": "low",
+        "dueDate": "2028-03-03",
+        "tags": [
+         "final",
+         "methods"
+        ]
+       }
+      ]
+     }
+    }
+   ],
+   "screenshots": [
+    "webkit-1440-A02-edited.png"
+   ],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1752
+  },
+  {
+   "id": "A03",
+   "environment": "webkit-1440",
+   "browser": "webkit",
+   "width": 1440,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "nativeSelect",
+     "pass": true,
+     "actual": "SELECT"
+    },
+    {
+     "key": "onlyStatusChanged",
+     "pass": true,
+     "actual": {
+      "schemaVersion": 1,
+      "tasks": [
+       {
+        "id": "oracle-a",
+        "title": "Sample literature review",
+        "project": "Atlas",
+        "status": "done",
+        "priority": "high",
+        "dueDate": "2028-02-29",
+        "tags": [
+         "methods",
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-b",
+        "title": "Dataset audit",
+        "project": "Boreal",
+        "status": "doing",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "cleanup"
+        ]
+       },
+       {
+        "id": "oracle-c",
+        "title": "Draft methods note",
+        "project": "Atlas",
+        "status": "done",
+        "priority": "low",
+        "dueDate": "2028-12-31",
+        "tags": [
+         "Writing"
+        ]
+       },
+       {
+        "id": "oracle-d",
+        "title": "Field observations",
+        "project": "Boreal",
+        "status": "todo",
+        "priority": "low",
+        "dueDate": "",
+        "tags": [
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-e",
+        "title": "Review source links",
+        "project": "Atlas",
+        "status": "doing",
+        "priority": "high",
+        "dueDate": "2028-03-01",
+        "tags": [
+         "Sources"
+        ]
+       },
+       {
+        "id": "oracle-f",
+        "title": "Archive completed work",
+        "project": "Boreal",
+        "status": "done",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "archive"
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "key": "statusPersists",
+     "pass": true,
+     "actual": {
+      "board": {
+       "schemaVersion": 1,
+       "tasks": [
+        {
+         "id": "oracle-a",
+         "title": "Sample literature review",
+         "project": "Atlas",
+         "status": "done",
+         "priority": "high",
+         "dueDate": "2028-02-29",
+         "tags": [
+          "methods",
+          "Research"
+         ]
+        },
+        {
+         "id": "oracle-b",
+         "title": "Dataset audit",
+         "project": "Boreal",
+         "status": "doing",
+         "priority": "medium",
+         "dueDate": "",
+         "tags": [
+          "cleanup"
+         ]
+        },
+        {
+         "id": "oracle-c",
+         "title": "Draft methods note",
+         "project": "Atlas",
+         "status": "done",
+         "priority": "low",
+         "dueDate": "2028-12-31",
+         "tags": [
+          "Writing"
+         ]
+        },
+        {
+         "id": "oracle-d",
+         "title": "Field observations",
+         "project": "Boreal",
+         "status": "todo",
+         "priority": "low",
+         "dueDate": "",
+         "tags": [
+          "Research"
+         ]
+        },
+        {
+         "id": "oracle-e",
+         "title": "Review source links",
+         "project": "Atlas",
+         "status": "doing",
+         "priority": "high",
+         "dueDate": "2028-03-01",
+         "tags": [
+          "Sources"
+         ]
+        },
+        {
+         "id": "oracle-f",
+         "title": "Archive completed work",
+         "project": "Boreal",
+         "status": "done",
+         "priority": "medium",
+         "dueDate": "",
+         "tags": [
+          "archive"
+         ]
+        }
+       ]
+      },
+      "select": "done"
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1239
+  },
+  {
+   "id": "A04",
+   "environment": "webkit-1440",
+   "browser": "webkit",
+   "width": 1440,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "deleted",
+     "pass": true,
+     "actual": {
+      "board": {
+       "schemaVersion": 1,
+       "tasks": [
+        {
+         "id": "oracle-a",
+         "title": "Sample literature review",
+         "project": "Atlas",
+         "status": "todo",
+         "priority": "high",
+         "dueDate": "2028-02-29",
+         "tags": [
+          "methods",
+          "Research"
+         ]
+        },
+        {
+         "id": "oracle-c",
+         "title": "Draft methods note",
+         "project": "Atlas",
+         "status": "done",
+         "priority": "low",
+         "dueDate": "2028-12-31",
+         "tags": [
+          "Writing"
+         ]
+        },
+        {
+         "id": "oracle-d",
+         "title": "Field observations",
+         "project": "Boreal",
+         "status": "todo",
+         "priority": "low",
+         "dueDate": "",
+         "tags": [
+          "Research"
+         ]
+        },
+        {
+         "id": "oracle-e",
+         "title": "Review source links",
+         "project": "Atlas",
+         "status": "doing",
+         "priority": "high",
+         "dueDate": "2028-03-01",
+         "tags": [
+          "Sources"
+         ]
+        },
+        {
+         "id": "oracle-f",
+         "title": "Archive completed work",
+         "project": "Boreal",
+         "status": "done",
+         "priority": "medium",
+         "dueDate": "",
+         "tags": [
+          "archive"
+         ]
+        }
+       ]
+      },
+      "visible": false,
+      "undo": true
+     }
+    },
+    {
+     "key": "exactRecordRestored",
+     "pass": true,
+     "actual": {
+      "schemaVersion": 1,
+      "tasks": [
+       {
+        "id": "oracle-a",
+        "title": "Sample literature review",
+        "project": "Atlas",
+        "status": "todo",
+        "priority": "high",
+        "dueDate": "2028-02-29",
+        "tags": [
+         "methods",
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-b",
+        "title": "Dataset audit",
+        "project": "Boreal",
+        "status": "doing",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "cleanup"
+        ]
+       },
+       {
+        "id": "oracle-c",
+        "title": "Draft methods note",
+        "project": "Atlas",
+        "status": "done",
+        "priority": "low",
+        "dueDate": "2028-12-31",
+        "tags": [
+         "Writing"
+        ]
+       },
+       {
+        "id": "oracle-d",
+        "title": "Field observations",
+        "project": "Boreal",
+        "status": "todo",
+        "priority": "low",
+        "dueDate": "",
+        "tags": [
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-e",
+        "title": "Review source links",
+        "project": "Atlas",
+        "status": "doing",
+        "priority": "high",
+        "dueDate": "2028-03-01",
+        "tags": [
+         "Sources"
+        ]
+       },
+       {
+        "id": "oracle-f",
+        "title": "Archive completed work",
+        "project": "Boreal",
+        "status": "done",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "archive"
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "key": "undoPersists",
+     "pass": true,
+     "actual": {
+      "schemaVersion": 1,
+      "tasks": [
+       {
+        "id": "oracle-a",
+        "title": "Sample literature review",
+        "project": "Atlas",
+        "status": "todo",
+        "priority": "high",
+        "dueDate": "2028-02-29",
+        "tags": [
+         "methods",
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-b",
+        "title": "Dataset audit",
+        "project": "Boreal",
+        "status": "doing",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "cleanup"
+        ]
+       },
+       {
+        "id": "oracle-c",
+        "title": "Draft methods note",
+        "project": "Atlas",
+        "status": "done",
+        "priority": "low",
+        "dueDate": "2028-12-31",
+        "tags": [
+         "Writing"
+        ]
+       },
+       {
+        "id": "oracle-d",
+        "title": "Field observations",
+        "project": "Boreal",
+        "status": "todo",
+        "priority": "low",
+        "dueDate": "",
+        "tags": [
+         "Research"
+        ]
+       },
+       {
+        "id": "oracle-e",
+        "title": "Review source links",
+        "project": "Atlas",
+        "status": "doing",
+        "priority": "high",
+        "dueDate": "2028-03-01",
+        "tags": [
+         "Sources"
+        ]
+       },
+       {
+        "id": "oracle-f",
+        "title": "Archive completed work",
+        "project": "Boreal",
+        "status": "done",
+        "priority": "medium",
+        "dueDate": "",
+        "tags": [
+         "archive"
+        ]
+       }
+      ]
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1230
+  },
+  {
+   "id": "A05",
+   "environment": "webkit-1440",
+   "browser": "webkit",
+   "width": 1440,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "search-LITERATURE",
+     "pass": true,
+     "actual": [
+      "oracle-a"
+     ]
+    },
+    {
+     "key": "search-bOrEaL",
+     "pass": true,
+     "actual": [
+      "oracle-b",
+      "oracle-d",
+      "oracle-f"
+     ]
+    },
+    {
+     "key": "search-rEsEaRcH",
+     "pass": true,
+     "actual": [
+      "oracle-a",
+      "oracle-d"
+     ]
+    },
+    {
+     "key": "filterIntersection",
+     "pass": true,
+     "actual": [
+      "oracle-e"
+     ]
+    },
+    {
+     "key": "visibleCount",
+     "pass": true,
+     "actual": [
+      "1 of 6 tasks shown"
+     ]
+    },
+    {
+     "key": "noResults",
+     "pass": true,
+     "actual": {
+      "ids": [],
+      "notice": {
+       "present": true,
+       "excerpt": "ct team. Export JSON Import JSON + New task Search tasks Status Project Priority 0 of 6 tasks shown No matching tasks Try a different search term or clear your filters. Clear search and filters "
+      }
+     }
+    }
+   ],
+   "screenshots": [
+    "webkit-1440-A05-filtered.png"
+   ],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1916
+  },
+  {
+   "id": "A06",
+   "environment": "webkit-1440",
+   "browser": "webkit",
+   "width": 1440,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "blank-title",
+     "pass": true,
+     "actual": {
+      "constrained": false,
+      "feedback": {
+       "hasFeedback": true,
+       "native": [],
+       "notice": "",
+       "addedVisibleFeedback": [
+        "Title is required."
+       ]
+      },
+      "storedCount": 6
+     }
+    },
+    {
+     "key": "long-title",
+     "pass": true,
+     "actual": {
+      "constrained": true,
+      "feedback": {
+       "hasFeedback": false,
+       "native": [],
+       "notice": "",
+       "addedVisibleFeedback": []
+      },
+      "storedCount": 7
+     }
+    },
+    {
+     "key": "long-project",
+     "pass": true,
+     "actual": {
+      "constrained": true,
+      "feedback": {
+       "hasFeedback": false,
+       "native": [],
+       "notice": "",
+       "addedVisibleFeedback": []
+      },
+      "storedCount": 7
+     }
+    },
+    {
+     "key": "invalidCalendarDate",
+     "pass": true,
+     "actual": {
+      "type": "date",
+      "value": "",
+      "valid": true
+     },
+     "expected": "Native date input refuses impossible calendar date"
+    },
+    {
+     "key": "modalEscape",
+     "pass": false,
+     "actual": {
+      "visible": false,
+      "focused": false
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "fail",
+   "durationMs": 2439
+  },
+  {
+   "id": "A07",
+   "environment": "webkit-1440",
+   "browser": "webkit",
+   "width": 1440,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "fullExport",
+     "pass": true,
+     "actual": {
+      "filename": "fieldnote-board-export.json",
+      "count": 6,
+      "valid": true
+     }
+    },
+    {
+     "key": "importCancellation",
+     "pass": true,
+     "actual": {
+      "confirmed": true,
+      "dialogCount": 1,
+      "custom": false,
+      "before": "{\"schemaVersion\":1,\"tasks\":[{\"id\":\"oracle-a\",\"title\":\"Sample literature review\",\"project\":\"Atlas\",\"status\":\"todo\",\"priority\":\"high\",\"dueDate\":\"2028-02-29\",\"tags\":[\"methods\",\"Research\"]},{\"id\":\"oracle-b\",\"title\":\"Dataset audit\",\"project\":\"Boreal\",\"status\":\"doing\",\"priority\":\"medium\",\"dueDate\":\"\",\"tags\":[\"cleanup\"]},{\"id\":\"oracle-c\",\"title\":\"Draft methods note\",\"project\":\"Atlas\",\"status\":\"done\",\"priority\":\"low\",\"dueDate\":\"2028-12-31\",\"tags\":[\"Writing\"]},{\"id\":\"oracle-d\",\"title\":\"Field observations\",\"project\":\"Boreal\",\"status\":\"todo\",\"priority\":\"low\",\"dueDate\":\"\",\"tags\":[\"Research\"]},{\"id\":\"oracle-e\",\"title\":\"Review source links\",\"project\":\"Atlas\",\"status\":\"doing\",\"priority\":\"high\",\"dueDate\":\"2028-03-01\",\"tags\":[\"Sources\"]},{\"id\":\"oracle-f\",\"title\":\"Archive completed work\",\"project\":\"Boreal\",\"status\":\"done\",\"priority\":\"medium\",\"dueDate\":\"\",\"tags\":[\"archive\"]}]}",
+      "after": "{\"schemaVersion\":1,\"tasks\":[{\"id\":\"oracle-a\",\"title\":\"Sample literature review\",\"project\":\"Atlas\",\"status\":\"todo\",\"priority\":\"high\",\"dueDate\":\"2028-02-29\",\"tags\":[\"methods\",\"Research\"]},{\"id\":\"oracle-b\",\"title\":\"Dataset audit\",\"project\":\"Boreal\",\"status\":\"doing\",\"priority\":\"medium\",\"dueDate\":\"\",\"tags\":[\"cleanup\"]},{\"id\":\"oracle-c\",\"title\":\"Draft methods note\",\"project\":\"Atlas\",\"status\":\"done\",\"priority\":\"low\",\"dueDate\":\"2028-12-31\",\"tags\":[\"Writing\"]},{\"id\":\"oracle-d\",\"title\":\"Field observations\",\"project\":\"Boreal\",\"status\":\"todo\",\"priority\":\"low\",\"dueDate\":\"\",\"tags\":[\"Research\"]},{\"id\":\"oracle-e\",\"title\":\"Review source links\",\"project\":\"Atlas\",\"status\":\"doing\",\"priority\":\"high\",\"dueDate\":\"2028-03-01\",\"tags\":[\"Sources\"]},{\"id\":\"oracle-f\",\"title\":\"Archive completed work\",\"project\":\"Boreal\",\"status\":\"done\",\"priority\":\"medium\",\"dueDate\":\"\",\"tags\":[\"archive\"]}]}",
+      "alerts": []
+     }
+    },
+    {
+     "key": "confirmedReplace",
+     "pass": true,
+     "actual": {
+      "confirmed": true,
+      "dialogCount": 1,
+      "custom": false,
+      "before": "{\"schemaVersion\":1,\"tasks\":[{\"id\":\"oracle-a\",\"title\":\"Sample literature review\",\"project\":\"Atlas\",\"status\":\"todo\",\"priority\":\"high\",\"dueDate\":\"2028-02-29\",\"tags\":[\"methods\",\"Research\"]},{\"id\":\"oracle-b\",\"title\":\"Dataset audit\",\"project\":\"Boreal\",\"status\":\"doing\",\"priority\":\"medium\",\"dueDate\":\"\",\"tags\":[\"cleanup\"]},{\"id\":\"oracle-c\",\"title\":\"Draft methods note\",\"project\":\"Atlas\",\"status\":\"done\",\"priority\":\"low\",\"dueDate\":\"2028-12-31\",\"tags\":[\"Writing\"]},{\"id\":\"oracle-d\",\"title\":\"Field observations\",\"project\":\"Boreal\",\"status\":\"todo\",\"priority\":\"low\",\"dueDate\":\"\",\"tags\":[\"Research\"]},{\"id\":\"oracle-e\",\"title\":\"Review source links\",\"project\":\"Atlas\",\"status\":\"doing\",\"priority\":\"high\",\"dueDate\":\"2028-03-01\",\"tags\":[\"Sources\"]},{\"id\":\"oracle-f\",\"title\":\"Archive completed work\",\"project\":\"Boreal\",\"status\":\"done\",\"priority\":\"medium\",\"dueDate\":\"\",\"tags\":[\"archive\"]}]}",
+      "after": "{\"schemaVersion\":1,\"tasks\":[{\"id\":\"roundtrip-z\",\"title\":\"Restored research board\",\"project\":\"Atlas\",\"status\":\"todo\",\"priority\":\"high\",\"dueDate\":\"2028-02-29\",\"tags\":[\"methods\",\"Research\"]}]}",
+      "alerts": []
+     }
+    },
+    {
+     "key": "importPersists",
+     "pass": true,
+     "actual": {
+      "schemaVersion": 1,
+      "tasks": [
+       {
+        "id": "roundtrip-z",
+        "title": "Restored research board",
+        "project": "Atlas",
+        "status": "todo",
+        "priority": "high",
+        "dueDate": "2028-02-29",
+        "tags": [
+         "methods",
+         "Research"
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "key": "exportRoundtrip",
+     "pass": true,
+     "actual": {
+      "confirmed": true,
+      "dialogCount": 1,
+      "custom": false,
+      "before": "{\"schemaVersion\":1,\"tasks\":[{\"id\":\"roundtrip-z\",\"title\":\"Restored research board\",\"project\":\"Atlas\",\"status\":\"todo\",\"priority\":\"high\",\"dueDate\":\"2028-02-29\",\"tags\":[\"methods\",\"Research\"]}]}",
+      "after": "{\"schemaVersion\":1,\"tasks\":[{\"id\":\"oracle-a\",\"title\":\"Sample literature review\",\"project\":\"Atlas\",\"status\":\"todo\",\"priority\":\"high\",\"dueDate\":\"2028-02-29\",\"tags\":[\"methods\",\"Research\"]},{\"id\":\"oracle-b\",\"title\":\"Dataset audit\",\"project\":\"Boreal\",\"status\":\"doing\",\"priority\":\"medium\",\"dueDate\":\"\",\"tags\":[\"cleanup\"]},{\"id\":\"oracle-c\",\"title\":\"Draft methods note\",\"project\":\"Atlas\",\"status\":\"done\",\"priority\":\"low\",\"dueDate\":\"2028-12-31\",\"tags\":[\"Writing\"]},{\"id\":\"oracle-d\",\"title\":\"Field observations\",\"project\":\"Boreal\",\"status\":\"todo\",\"priority\":\"low\",\"dueDate\":\"\",\"tags\":[\"Research\"]},{\"id\":\"oracle-e\",\"title\":\"Review source links\",\"project\":\"Atlas\",\"status\":\"doing\",\"priority\":\"high\",\"dueDate\":\"2028-03-01\",\"tags\":[\"Sources\"]},{\"id\":\"oracle-f\",\"title\":\"Archive completed work\",\"project\":\"Boreal\",\"status\":\"done\",\"priority\":\"medium\",\"dueDate\":\"\",\"tags\":[\"archive\"]}]}",
+      "alerts": []
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [
+    {
+     "type": "confirm",
+     "message": "Replace the current board with 1 task(s) from \"board.json\"? This cannot be undone.",
+     "action": "dismiss"
+    },
+    {
+     "type": "confirm",
+     "message": "Replace the current board with 1 task(s) from \"board.json\"? This cannot be undone.",
+     "action": "accept"
+    },
+    {
+     "type": "confirm",
+     "message": "Replace the current board with 6 task(s) from \"board.json\"? This cannot be undone.",
+     "action": "accept"
+    }
+   ],
+   "status": "pass",
+   "durationMs": 1707
+  },
+  {
+   "id": "A08",
+   "environment": "webkit-1440",
+   "browser": "webkit",
+   "width": 1440,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "malformed",
+     "pass": true,
+     "actual": {
+      "unchanged": true,
+      "error": {
+       "hasFeedback": true,
+       "native": [],
+       "notice": " A local-first task board for a small project team. Export JSON Import JSON + New task That file is not valid JSON. Search tasks Status Project Priority 6 of 6 tasks shown ",
+       "addedVisibleFeedback": []
+      }
+     }
+    },
+    {
+     "key": "unsupported-schema",
+     "pass": true,
+     "actual": {
+      "unchanged": true,
+      "error": {
+       "hasFeedback": true,
+       "native": [],
+       "notice": "eldnote Board A local-first task board for a small project team. Export JSON Import JSON + New task Unsupported schema version. Only schemaVersion 1 is accepted. Search tasks Status Project Priority 6 of 6 tasks shown ",
+       "addedVisibleFeedback": []
+      }
+     }
+    },
+    {
+     "key": "unsupported-enum",
+     "pass": true,
+     "actual": {
+      "unchanged": true,
+      "error": {
+       "hasFeedback": true,
+       "native": [],
+       "notice": " Fieldnote Board A local-first task board for a small project team. Export JSON Import JSON + New task Task 6 is invalid (invalid status). No changes were made. Search tasks Status Project Priority 6 of 6 tasks shown ",
+       "addedVisibleFeedback": []
+      }
+     }
+    }
+   ],
+   "screenshots": [
+    "webkit-1440-A08-import-error.png"
+   ],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1707
+  },
+  {
+   "id": "A09",
+   "environment": "webkit-1440",
+   "browser": "webkit",
+   "width": 1440,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "duplicate-ids",
+     "pass": true,
+     "actual": {
+      "unchanged": true,
+      "error": {
+       "hasFeedback": true,
+       "native": [],
+       "notice": " Fieldnote Board A local-first task board for a small project team. Export JSON Import JSON + New task Task 6 is invalid (duplicate id). No changes were made. Search tasks Status Project Priority 6 of 6 tasks shown ",
+       "addedVisibleFeedback": []
+      }
+     }
+    },
+    {
+     "key": "non-calendar-date",
+     "pass": true,
+     "actual": {
+      "unchanged": true,
+      "error": {
+       "hasFeedback": true,
+       "native": [],
+       "notice": " Fieldnote Board A local-first task board for a small project team. Export JSON Import JSON + New task Task 6 is invalid (invalid dueDate). No changes were made. Search tasks Status Project Priority 6 of 6 tasks shown ",
+       "addedVisibleFeedback": []
+      }
+     }
+    },
+    {
+     "key": "overlong-text",
+     "pass": true,
+     "actual": {
+      "unchanged": true,
+      "error": {
+       "hasFeedback": true,
+       "native": [],
+       "notice": " Fieldnote Board A local-first task board for a small project team. Export JSON Import JSON + New task Task 6 is invalid (invalid title). No changes were made. Search tasks Status Project Priority 6 of 6 tasks shown ",
+       "addedVisibleFeedback": []
+      }
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1669
+  },
+  {
+   "id": "A10",
+   "environment": "webkit-1440",
+   "browser": "webkit",
+   "width": 1440,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "oversized",
+     "pass": false,
+     "actual": {
+      "bytes": 1049446,
+      "unchanged": true,
+      "error": {
+       "hasFeedback": false,
+       "native": [],
+       "notice": "",
+       "addedVisibleFeedback": []
+      }
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "fail",
+   "durationMs": 1330
+  },
+  {
+   "id": "A11",
+   "environment": "webkit-1440",
+   "browser": "webkit",
+   "width": 1440,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "hostileText",
+     "pass": true,
+     "actual": {
+      "confirmed": true,
+      "executed": 0,
+      "injected": 0,
+      "literalVisible": true,
+      "stored": {
+       "schemaVersion": 1,
+       "tasks": [
+        {
+         "id": "xss-text",
+         "title": "<img src=x onerror=\"window.__fieldnoteXSS=1\">",
+         "project": "<svg onload=\"window.__fieldnoteXSS=2\">",
+         "status": "todo",
+         "priority": "high",
+         "dueDate": "2028-02-29",
+         "tags": [
+          "<b>literal</b>"
+         ]
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [
+    {
+     "type": "confirm",
+     "message": "Replace the current board with 1 task(s) from \"board.json\"? This cannot be undone.",
+     "action": "accept"
+    }
+   ],
+   "status": "pass",
+   "durationMs": 1408
+  },
+  {
+   "id": "A12",
+   "environment": "webkit-1440",
+   "browser": "webkit",
+   "width": 1440,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "corruptPreserved",
+     "pass": false,
+     "actual": {
+      "sameBytes": true,
+      "notice": {
+       "present": false,
+       "excerpt": ""
+      }
+     }
+    },
+    {
+     "key": "recoveryDownloadControl",
+     "pass": true,
+     "actual": true
+    },
+    {
+     "key": "originalBytesDownloaded",
+     "pass": true,
+     "actual": {
+      "filename": "fieldnote-board-corrupt-backup.txt",
+      "bytes": 37,
+      "sha256": "ec0caf91866ad0e64671d6ba065b399932f9e0dc1c0d18376203208b435c400c"
+     }
+    },
+    {
+     "key": "resetControl",
+     "pass": true,
+     "actual": true
+    },
+    {
+     "key": "resetRequiresConfirmation",
+     "pass": true,
+     "actual": {
+      "dialogCount": 1,
+      "custom": false,
+      "stored": "{\"schemaVersion\":1,\"tasks\":[BROKEN\n\u00e9"
+     }
+    },
+    {
+     "key": "confirmedResetWorks",
+     "pass": true,
+     "actual": {
+      "stored": "{\"schemaVersion\":1,\"tasks\":[{\"id\":\"t-seed-a-hbiy9t\",\"title\":\"Draft trailhead signage copy\",\"project\":\"Ridgeline Trail Refresh\",\"status\":\"todo\",\"priority\":\"high\",\"dueDate\":\"2026-09-17\",\"tags\":[\"copy\",\"signage\"]},{\"id\":\"t-seed-b-md1cum\",\"title\":\"Survey creek crossing damage\",\"project\":\"Ridgeline Trail Refresh\",\"status\":\"doing\",\"priority\":\"high\",\"dueDate\":\"2026-09-15\",\"tags\":[\"field\",\"survey\"]},{\"id\":\"t-seed-c-ey7t8i\",\"title\":\"Order replacement waymarkers\",\"project\":\"Ridgeline Trail Refresh\",\"status\":\"todo\",\"priority\":\"medium\",\"dueDate\":\"2026-09-24\",\"tags\":[\"procurement\"]},{\"id\":\"t-seed-d-70nm3f\",\"title\":\"Compile volunteer hours for Q3\",\"project\":\"Community Garden Rebuild\",\"status\":\"done\",\"priority\":\"low\",\"dueDate\":\"2026-09-12\",\"tags\":[\"admin\",\"reporting\"]},{\"id\":\"t-seed-e-d50ljk\",\"title\":\"Repair raised bed irrigation\",\"project\":\"Community Garden Rebuild\",\"status\":\"doing\",\"priority\":\"medium\",\"dueDate\":\"2026-09-19\",\"tags\":[\"field\"]},{\"id\":\"t-seed-f-32b18f\",\"title\":\"Plan spring planting schedule\",\"project\":\"Community Garden Rebuild\",\"status\":\"todo\",\"priority\":\"low\",\"dueDate\":\"\",\"tags\":[\"planning\"]},{\"id\":\"t-seed-g-0tads8\",\"title\":\"Publish weekly fieldnote digest\",\"project\":\"Community Garden Rebuild\",\"status\":\"done\",\"priority\":\"medium\",\"dueDate\":\"2026-09-07\",\"tags\":[\"comms\"]}]}",
+      "valid": true
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [
+    {
+     "type": "confirm",
+     "message": "Reset the board? The unreadable data will remain replaced by a fresh sample board. Download a backup first if you need it.",
+     "action": "dismiss"
+    },
+    {
+     "type": "confirm",
+     "message": "Reset the board? The unreadable data will remain replaced by a fresh sample board. Download a backup first if you need it.",
+     "action": "accept"
+    }
+   ],
+   "status": "fail",
+   "durationMs": 1635
+  },
+  {
+   "id": "A13",
+   "environment": "webkit-1440",
+   "browser": "webkit",
+   "width": 1440,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "writeFailure",
+     "pass": true,
+     "actual": {
+      "storedUnchanged": true,
+      "notice": {
+       "present": true,
+       "excerpt": "-first task board for a small project team. Export JSON Import JSON + New task Your last change was not saved. Oracle simulated quota exhaustion Your edits remain in this session; try again or free up storage space. Search tasks Status Project Priority 6 of 6 tasks sho"
+      },
+      "recoverable": true
+     }
+    }
+   ],
+   "screenshots": [
+    "webkit-1440-A13-unsaved.png"
+   ],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1352
+  },
+  {
+   "id": "A14",
+   "environment": "webkit-1440",
+   "browser": "webkit",
+   "width": 1440,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "crossTabNotice",
+     "pass": true,
+     "actual": {
+      "present": true,
+      "excerpt": "first task board for a small project team. Export JSON Import JSON + New task This board changed in another tab. Reload to see the latest data before making further changes. Reload board Search tasks Status Project Priority 6 of 6 tasks shown "
+     }
+    },
+    {
+     "key": "newerWorkPreserved",
+     "pass": true,
+     "actual": {
+      "board": {
+       "schemaVersion": 1,
+       "tasks": [
+        {
+         "id": "oracle-a",
+         "title": "Newer work from another tab",
+         "project": "Atlas",
+         "status": "todo",
+         "priority": "high",
+         "dueDate": "2028-02-29",
+         "tags": [
+          "methods",
+          "Research"
+         ]
+        },
+        {
+         "id": "oracle-b",
+         "title": "Dataset audit",
+         "project": "Boreal",
+         "status": "doing",
+         "priority": "medium",
+         "dueDate": "",
+         "tags": [
+          "cleanup"
+         ]
+        },
+        {
+         "id": "oracle-c",
+         "title": "Draft methods note",
+         "project": "Atlas",
+         "status": "done",
+         "priority": "low",
+         "dueDate": "2028-12-31",
+         "tags": [
+          "Writing"
+         ]
+        },
+        {
+         "id": "oracle-d",
+         "title": "Field observations",
+         "project": "Boreal",
+         "status": "todo",
+         "priority": "low",
+         "dueDate": "",
+         "tags": [
+          "Research"
+         ]
+        },
+        {
+         "id": "oracle-e",
+         "title": "Review source links",
+         "project": "Atlas",
+         "status": "doing",
+         "priority": "high",
+         "dueDate": "2028-03-01",
+         "tags": [
+          "Sources"
+         ]
+        },
+        {
+         "id": "oracle-f",
+         "title": "Archive completed work",
+         "project": "Boreal",
+         "status": "done",
+         "priority": "medium",
+         "dueDate": "",
+         "tags": [
+          "archive"
+         ]
+        },
+        {
+         "id": "second-tab-new",
+         "title": "Preserve newly added work",
+         "project": "Boreal",
+         "status": "doing",
+         "priority": "medium",
+         "dueDate": "",
+         "tags": [
+          "cleanup"
+         ]
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1860
+  },
+  {
+   "id": "A15",
+   "environment": "webkit-1440",
+   "browser": "webkit",
+   "width": 1440,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "loadedLocalResources",
+     "pass": true,
+     "actual": []
+    },
+    {
+     "key": "rendering",
+     "pass": true,
+     "actual": {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "contentLength": 761,
+      "unnamed": [],
+      "brokenImages": [],
+      "visibleControls": 25
+     }
+    },
+    {
+     "key": "formRendering",
+     "pass": true,
+     "actual": {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "contentLength": 901,
+      "unnamed": [],
+      "brokenImages": [],
+      "visibleControls": 33
+     }
+    }
+   ],
+   "screenshots": [
+    "webkit-1440-A15-initial.png",
+    "webkit-1440-A15-form.png"
+   ],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 1173
+  },
+  {
+   "id": "A16",
+   "environment": "webkit-1440-no-js",
+   "browser": "webkit",
+   "width": 1440,
+   "noJS": true,
+   "observations": [
+    {
+     "key": "noJSNotice",
+     "pass": true,
+     "actual": {
+      "present": true,
+      "excerpt": " Fieldnote Board needs JavaScript enabled to load your tasks. Please enable JavaScript and reload the page. Fieldnote Board A local-first task board for a small project team. Export JSON Import JSON + New task Search tasks Status Project Priority"
+     }
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 996
+  },
+  {
+   "id": "A16",
+   "environment": "webkit-1440-reduced-motion",
+   "browser": "webkit",
+   "width": 1440,
+   "noJS": false,
+   "observations": [
+    {
+     "key": "reducedMotion",
+     "pass": true,
+     "actual": []
+    }
+   ],
+   "screenshots": [],
+   "manualReview": [],
+   "console": [],
+   "network": [],
+   "dialogs": [],
+   "status": "pass",
+   "durationMs": 991
+  }
+ ],
+ "infrastructureErrors": [],
+ "finishedAt": "2026-09-14T22:29:01.103Z",
+ "summary": {
+  "passed": 54,
+  "failed": 14,
+  "scenarioExecutions": 68,
+  "infrastructureErrors": 0,
+  "byCheck": {
+   "A01": {
+    "passed": 0,
+    "executed": 4
+   },
+   "A02": {
+    "passed": 4,
+    "executed": 4
+   },
+   "A03": {
+    "passed": 4,
+    "executed": 4
+   },
+   "A04": {
+    "passed": 4,
+    "executed": 4
+   },
+   "A05": {
+    "passed": 4,
+    "executed": 4
+   },
+   "A06": {
+    "passed": 2,
+    "executed": 4
+   },
+   "A07": {
+    "passed": 4,
+    "executed": 4
+   },
+   "A08": {
+    "passed": 4,
+    "executed": 4
+   },
+   "A09": {
+    "passed": 4,
+    "executed": 4
+   },
+   "A10": {
+    "passed": 0,
+    "executed": 4
+   },
+   "A11": {
+    "passed": 4,
+    "executed": 4
+   },
+   "A12": {
+    "passed": 0,
+    "executed": 4
+   },
+   "A13": {
+    "passed": 4,
+    "executed": 4
+   },
+   "A14": {
+    "passed": 4,
+    "executed": 4
+   },
+   "A15": {
+    "passed": 4,
+    "executed": 4
+   },
+   "A16": {
+    "passed": 8,
+    "executed": 8
+   }
+  }
+ }
+}

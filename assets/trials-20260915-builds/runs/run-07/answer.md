@@ -1,0 +1,7 @@
+Built **Fieldnote Board** — vanilla `index.html`/`styles.css`/`app.js`, no build step, no network, no backend.
+
+Covers the full contract: seeded local board with schema validation, create/edit/delete with undo, status changes, combined search+filters with a no-results state, JSON export/import (atomic, size-capped, XSS-safe rendering via `textContent`), startup-corruption recovery (preserves raw bytes, offers download + confirmed reset), cross-tab conflict detection that blocks destructive edits until reload, save-failure handling that never falsely claims persistence, a focus-trapped/Escape-closing modal, reduced-motion support, and a `<noscript>` message.
+
+Verified with a throwaway Playwright script (removed after use) driving the real HTML over `file://`, including from a nested path — all 32 checks passed, and mobile (360px)/desktop (1440px) screenshots looked clean. One real bug caught and fixed in the process: `[hidden]` was being overridden by unconditional `display: flex/grid` rules on the modal/banners/task list, which would've made "hidden" elements still intercept clicks.
+
+README.md documents run instructions, data/error-handling design, checks executed, and known limitations (session-only undo, block-and-reload conflict strategy, no drag-and-drop).

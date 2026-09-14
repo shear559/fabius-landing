@@ -1,0 +1,345 @@
+{
+ "schemaVersion": 1,
+ "runId": "run-08",
+ "kind": "app",
+ "startedAt": "2026-09-14T22:30:40.420Z",
+ "helperSha256": "2448fa17cc9a54989a8ae7134baa2bfda9ee4cca000603582a3ce873d3c54f4a",
+ "source": {
+  "files": [
+   {
+    "file": "app.js",
+    "bytes": 26178,
+    "sha256": "24bfba3aa21f9dd82bd0e311642517ea7df03118f358c467e0fb67259b197c55"
+   },
+   {
+    "file": "BRIEF.md",
+    "bytes": 4518,
+    "sha256": "7116b83075469f773ce51f72f708041e221d97b2b055d75cb309f0ff39239d1d"
+   },
+   {
+    "file": "index.html",
+    "bytes": 4763,
+    "sha256": "c47b238d6fb84ac05ce59cb62c7212fe2d48fe6127966de23b102e94af504720"
+   },
+   {
+    "file": "README.md",
+    "bytes": 4793,
+    "sha256": "4620c91aec9a77e0434626e98ab482ffd36c7b0eb1a050b3072a08d745b72927"
+   },
+   {
+    "file": "styles.css",
+    "bytes": 6796,
+    "sha256": "d63538bdbdf580ce59eadcafa5e166a80277b09513f8781f9707bfa84ab857f4"
+   }
+  ],
+  "treeSha256": "d289300478e56bdf4047028705a81e08c82da62f5c3d9e20cecae5c10f38c03d"
+ },
+ "policy": {
+  "presentation": "Composed walkthrough from captured states; not a recording of model generation.",
+  "browser": "Google Chrome",
+  "desktopViewport": {
+   "width": 1440,
+   "height": 960
+  },
+  "mobileViewport": {
+   "width": 360,
+   "height": 800
+  },
+  "deviceScaleFactor": 1,
+  "fullPage": false,
+  "reducedMotion": "reduce",
+  "screenshotAnimations": "disabled",
+  "freshContexts": true,
+  "externalRequests": "blocked",
+  "candidateEdits": false,
+  "scoresProvided": false
+ },
+ "snapshots": [
+  {
+   "id": "initial",
+   "label": "Desktop first visit \u2014 untouched initial output",
+   "file": "initial.png",
+   "actionSucceeded": true,
+   "observed": {
+    "httpStatus": 200,
+    "freshStorage": true,
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Fieldnote Board\n+ New task\nExport JSON\nImport JSON\nSearch\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nRiverside Trail Survey\nWetland Monitoring\nPriority\nAll priorities\nLow\nMedium\nHigh\n\nShowing 8 of 8 tasks\n\nTO DO\nMap wetland transect boundaries\nWetland Monitoring\nHigh priority\nDue 2026-09-22\nsurvey\ngps\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nCalibrate soil moisture sensors\nWetland Monitoring\nMedium priority\nDue 2026-09-25\nequipment\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nRepair washed-out footbridge marker\nRiverside Trail Survey\nHigh priority\nDue 2026-09-16\nmaintenance\nurgent\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nPlan invasive species survey route\nRiverside Trail Survey\nMedium priority\nDue 2026-10-01\nplanning\nsurvey\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nDOING\nLog heron nesting sightings\nWetland Monitoring\nMedium priority\nwildlife\nlog\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nInterview trail volunteers\nRiverside Trail Survey\nLow priority\nDue 2026-09-18\noutreach\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nDONE\nSubmit Q3 access report\nRiverside Trail Survey\nMedium priority\nDue 2026-09-01\nreport\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nArchive August field photos\nWetland Monitoring\nLow priority\narchive\nphotos\nStatus\nTo do\nDoing\nDone\nEdit\nDelete",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T22:30:42.129Z",
+   "actionStartedAt": "2026-09-14T22:30:41.363Z",
+   "sha256": "61bbe7fe1f9d34e31bac9213d70a50b78315bb0c169a38bccdaaff57060df772",
+   "bytes": 124379
+  },
+  {
+   "id": "new-task-form",
+   "label": "New task form opened",
+   "file": "new-task-form.png",
+   "actionSucceeded": true,
+   "observed": {
+    "visible": true,
+    "fields": [
+     {
+      "name": "title",
+      "type": "text",
+      "value": ""
+     },
+     {
+      "name": "project",
+      "type": "text",
+      "value": ""
+     },
+     {
+      "name": "status",
+      "type": "select-one",
+      "value": "todo"
+     },
+     {
+      "name": "priority",
+      "type": "select-one",
+      "value": "medium"
+     },
+     {
+      "name": "dueDate",
+      "type": "date",
+      "value": ""
+     },
+     {
+      "name": "tags",
+      "type": "text",
+      "value": ""
+     }
+    ],
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Fieldnote Board\n+ New task\nExport JSON\nImport JSON\nSearch\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nRiverside Trail Survey\nWetland Monitoring\nPriority\nAll priorities\nLow\nMedium\nHigh\n\nShowing 8 of 8 tasks\n\nTO DO\nMap wetland transect boundaries\nWetland Monitoring\nHigh priority\nDue 2026-09-22\nsurvey\ngps\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nCalibrate soil moisture sensors\nWetland Monitoring\nMedium priority\nDue 2026-09-25\nequipment\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nRepair washed-out footbridge marker\nRiverside Trail Survey\nHigh priority\nDue 2026-09-16\nmaintenance\nurgent\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nPlan invasive species survey route\nRiverside Trail Survey\nMedium priority\nDue 2026-10-01\nplanning\nsurvey\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nDOING\nLog heron nesting sightings\nWetland Monitoring\nMedium priority\nwildlife\nlog\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nInterview trail volunteers\nRiverside Trail Survey\nLow priority\nDue 2026-09-18\noutreach\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nDONE\nSubmit Q3 access report\nRiverside Trail Survey\nMedium priority\nDue 2026-09-01\nreport\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nArchive August field photos\nWetland Monitoring\nLow priority\narchive\nphotos\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nNew task\nTitle\nProject\nStatus\nTo do\nDoing\nDone\nPriority\nLow\nMedium\nHigh\nDue date\nTags (comma-separated, up to 8)\n\nCancel\nSave task",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T22:30:42.571Z",
+   "actionStartedAt": "2026-09-14T22:30:42.247Z",
+   "sha256": "d36b360e1eeb06dedf04b9373a92512c9be05077036d57ba7f2327b166f36b1a",
+   "bytes": 128667
+  },
+  {
+   "id": "after-create",
+   "label": "Review launch evidence created and present in saved board",
+   "file": "after-create.png",
+   "actionSucceeded": true,
+   "observed": {
+    "requested": {
+     "title": "Review launch evidence",
+     "project": "Research",
+     "status": "doing",
+     "priority": "high",
+     "dueDate": "2026-09-20",
+     "tags": "evidence,launch"
+    },
+    "storageError": null,
+    "matchingRecords": [
+     {
+      "id": "7037f88d-6a6e-46ae-95d7-1649c5948ab4",
+      "title": "Review launch evidence",
+      "project": "Research",
+      "status": "doing",
+      "priority": "high",
+      "dueDate": "2026-09-20",
+      "tags": [
+       "evidence",
+       "launch"
+      ]
+     }
+    ],
+    "rendered": true,
+    "visibleCards": [
+     {
+      "id": "seed-1",
+      "text": "Map wetland transect boundaries\nWetland Monitoring\nHigh priority\nDue 2026-09-22\nsurvey\ngps\nStatus\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "seed-2",
+      "text": "Calibrate soil moisture sensors\nWetland Monitoring\nMedium priority\nDue 2026-09-25\nequipment\nStatus\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "seed-5",
+      "text": "Repair washed-out footbridge marker\nRiverside Trail Survey\nHigh priority\nDue 2026-09-16\nmaintenance\nurgent\nStatus\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "seed-8",
+      "text": "Plan invasive species survey route\nRiverside Trail Survey\nMedium priority\nDue 2026-10-01\nplanning\nsurvey\nStatus\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "seed-3",
+      "text": "Log heron nesting sightings\nWetland Monitoring\nMedium priority\nwildlife\nlog\nStatus\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "seed-4",
+      "text": "Interview trail volunteers\nRiverside Trail Survey\nLow priority\nDue 2026-09-18\noutreach\nStatus\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "7037f88d-6a6e-46ae-95d7-1649c5948ab4",
+      "text": "Review launch evidence\nResearch\nHigh priority\nDue 2026-09-20\nevidence\nlaunch\nStatus\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "seed-6",
+      "text": "Submit Q3 access report\nRiverside Trail Survey\nMedium priority\nDue 2026-09-01\nreport\nStatus\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "seed-7",
+      "text": "Archive August field photos\nWetland Monitoring\nLow priority\narchive\nphotos\nStatus\nTo do\nDoing\nDone\nEdit\nDelete"
+     }
+    ],
+    "beforeStorageSha256": "32aefc3a4689468ba0abb3b5f46b3b475ab3b4d060ff6caaa99868a9e640626a",
+    "afterStorageSha256": "8caffcf60a9f8cfbc4fca48787c77ef4e3bbf6d95866ad945837c7bfbe9e89ff",
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Fieldnote Board\n+ New task\nExport JSON\nImport JSON\nSearch\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nResearch\nRiverside Trail Survey\nWetland Monitoring\nPriority\nAll priorities\nLow\nMedium\nHigh\n\nShowing 9 of 9 tasks\n\nTO DO\nMap wetland transect boundaries\nWetland Monitoring\nHigh priority\nDue 2026-09-22\nsurvey\ngps\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nCalibrate soil moisture sensors\nWetland Monitoring\nMedium priority\nDue 2026-09-25\nequipment\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nRepair washed-out footbridge marker\nRiverside Trail Survey\nHigh priority\nDue 2026-09-16\nmaintenance\nurgent\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nPlan invasive species survey route\nRiverside Trail Survey\nMedium priority\nDue 2026-10-01\nplanning\nsurvey\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nDOING\nLog heron nesting sightings\nWetland Monitoring\nMedium priority\nwildlife\nlog\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nInterview trail volunteers\nRiverside Trail Survey\nLow priority\nDue 2026-09-18\noutreach\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nReview launch evidence\nResearch\nHigh priority\nDue 2026-09-20\nevidence\nlaunch\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nDONE\nSubmit Q3 access report\nRiverside Trail Survey\nMedium priority\nDue 2026-09-01\nreport\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nArchive August field photos\nWetland Monitoring\nLow priority\narchive\nphotos\nStatus\nTo do\nDoing\nDone\nEdit\nDelete",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T22:30:43.107Z",
+   "actionStartedAt": "2026-09-14T22:30:42.653Z",
+   "sha256": "986e0ede469338a7f27995f61f95c8ec24e5f7d7ae1212c6378d10e6f5830847",
+   "bytes": 130790
+  },
+  {
+   "id": "search",
+   "label": "Search for Review launch evidence; matching task shown",
+   "file": "search.png",
+   "actionSucceeded": true,
+   "observed": {
+    "search": "Review launch evidence",
+    "visibleCards": [
+     {
+      "id": "7037f88d-6a6e-46ae-95d7-1649c5948ab4",
+      "text": "Review launch evidence\nResearch\nHigh priority\nDue 2026-09-20\nevidence\nlaunch\nStatus\nTo do\nDoing\nDone\nEdit\nDelete"
+     }
+    ],
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Fieldnote Board\n+ New task\nExport JSON\nImport JSON\nSearch\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nResearch\nRiverside Trail Survey\nWetland Monitoring\nPriority\nAll priorities\nLow\nMedium\nHigh\n\nShowing 1 of 9 tasks\n\nTO DO\n\nNo matches in this column.\n\nDOING\nReview launch evidence\nResearch\nHigh priority\nDue 2026-09-20\nevidence\nlaunch\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nDONE\n\nNo matches in this column.",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T22:30:43.561Z",
+   "actionStartedAt": "2026-09-14T22:30:43.178Z",
+   "sha256": "c490d2fb0921cfba255c13f936ee5374632c3443b0eec0abb7ca483331db01cd",
+   "bytes": 52215
+  },
+  {
+   "id": "import-error",
+   "label": "Malformed JSON selected; visible error and saved board unchanged",
+   "file": "import-error.png",
+   "actionSucceeded": true,
+   "observed": {
+    "formDismissed": false,
+    "confirmation": {
+     "clicked": false
+    },
+    "dialogs": [],
+    "newVisibleFeedback": [
+     "Import failed: the file is not valid JSON."
+    ],
+    "nativeError": false,
+    "storageUnchanged": true,
+    "beforeStorageSha256": "8caffcf60a9f8cfbc4fca48787c77ef4e3bbf6d95866ad945837c7bfbe9e89ff",
+    "afterStorageSha256": "8caffcf60a9f8cfbc4fca48787c77ef4e3bbf6d95866ad945837c7bfbe9e89ff",
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Fieldnote Board\n+ New task\nExport JSON\nImport JSON\n\nImport failed: the file is not valid JSON.\n\nDismiss\nSearch\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nResearch\nRiverside Trail Survey\nWetland Monitoring\nPriority\nAll priorities\nLow\nMedium\nHigh\n\nShowing 9 of 9 tasks\n\nTO DO\nMap wetland transect boundaries\nWetland Monitoring\nHigh priority\nDue 2026-09-22\nsurvey\ngps\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nCalibrate soil moisture sensors\nWetland Monitoring\nMedium priority\nDue 2026-09-25\nequipment\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nRepair washed-out footbridge marker\nRiverside Trail Survey\nHigh priority\nDue 2026-09-16\nmaintenance\nurgent\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nPlan invasive species survey route\nRiverside Trail Survey\nMedium priority\nDue 2026-10-01\nplanning\nsurvey\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nDOING\nLog heron nesting sightings\nWetland Monitoring\nMedium priority\nwildlife\nlog\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nInterview trail volunteers\nRiverside Trail Survey\nLow priority\nDue 2026-09-18\noutreach\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nReview launch evidence\nResearch\nHigh priority\nDue 2026-09-20\nevidence\nlaunch\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nDONE\nSubmit Q3 access report\nRiverside Trail Survey\nMedium priority\nDue 2026-09-01\nreport\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nArchive August field photos\nWetland Monitoring\nLow priority\narchive\nphotos\nStatus\nTo do\nDoing\nDone\nEdit\nDelete",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T22:30:44.025Z",
+   "actionStartedAt": "2026-09-14T22:30:43.618Z",
+   "sha256": "7527f85dd9bb96ec9a4ca6ff5ba830bbdf782c7def77cd78f5a73ce86f330b7f",
+   "bytes": 137800
+  }
+ ],
+ "mobilefile": "mobile-initial.png",
+ "mobile": {
+  "id": "mobile-initial",
+  "label": "Mobile first visit \u2014 separate fresh context",
+  "file": "mobile-initial.png",
+  "sha256": "b05571b39ae914fc59e004d4051676206bbc0cf53cf9a0ca15082ee9f6ffe1ae",
+  "bytes": 47724,
+  "actionSucceeded": true,
+  "observed": {
+   "httpStatus": 200,
+   "freshStorage": true,
+   "render": {
+    "path": "/nested/benchmark/",
+    "viewport": {
+     "width": 360,
+     "height": 800
+    },
+    "scroll": {
+     "x": 0,
+     "y": 0
+    },
+    "documentWidth": 360,
+    "visibleText": "Fieldnote Board\n+ New task\nExport JSON\nImport JSON\nSearch\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nRiverside Trail Survey\nWetland Monitoring\nPriority\nAll priorities\nLow\nMedium\nHigh\n\nShowing 8 of 8 tasks\n\nTO DO\nMap wetland transect boundaries\nWetland Monitoring\nHigh priority\nDue 2026-09-22\nsurvey\ngps\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nCalibrate soil moisture sensors\nWetland Monitoring\nMedium priority\nDue 2026-09-25\nequipment\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nRepair washed-out footbridge marker\nRiverside Trail Survey\nHigh priority\nDue 2026-09-16\nmaintenance\nurgent\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nPlan invasive species survey route\nRiverside Trail Survey\nMedium priority\nDue 2026-10-01\nplanning\nsurvey\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nDOING\nLog heron nesting sightings\nWetland Monitoring\nMedium priority\nwildlife\nlog\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nInterview trail volunteers\nRiverside Trail Survey\nLow priority\nDue 2026-09-18\noutreach\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nDONE\nSubmit Q3 access report\nRiverside Trail Survey\nMedium priority\nDue 2026-09-01\nreport\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nArchive August field photos\nWetland Monitoring\nLow priority\narchive\nphotos\nStatus\nTo do\nDoing\nDone\nEdit\nDelete",
+    "brokenVisibleImages": []
+   }
+  }
+ },
+ "missingStates": [],
+ "captureFailures": [],
+ "actionErrors": [],
+ "infrastructureErrors": [],
+ "console": [],
+ "network": [],
+ "dialogs": [],
+ "browserVersion": "152.0.7977.83",
+ "sourceAfterTreeSha256": "d289300478e56bdf4047028705a81e08c82da62f5c3d9e20cecae5c10f38c03d",
+ "sourceUnchanged": true,
+ "finishedAt": "2026-09-14T22:30:45.420Z"
+}

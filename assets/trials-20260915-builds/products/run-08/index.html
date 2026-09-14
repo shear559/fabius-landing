@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fieldnote Board</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body class="no-js">
+<noscript>
+  <div class="noscript-banner">
+    Fieldnote Board needs JavaScript to run. Please enable JavaScript and reload this page.
+  </div>
+</noscript>
+
+<div id="app">
+  <header class="topbar">
+    <h1>Fieldnote Board</h1>
+    <div class="topbar-actions">
+      <button type="button" id="createTaskBtn" data-testid="create-task">+ New task</button>
+      <button type="button" id="exportBtn" data-testid="export">Export JSON</button>
+      <label class="file-btn" for="importFile">
+        Import JSON
+        <input type="file" id="importFile" data-testid="import-file" accept="application/json,.json">
+      </label>
+    </div>
+  </header>
+
+  <div id="banners" aria-live="polite"></div>
+
+  <section class="controls" aria-label="Search and filters">
+    <div class="field inline">
+      <label for="search">Search</label>
+      <input type="search" id="search" data-testid="search" placeholder="Title, project or tag">
+    </div>
+    <div class="field inline">
+      <label for="filterStatus">Status</label>
+      <select id="filterStatus" data-testid="filter-status">
+        <option value="all">All statuses</option>
+        <option value="todo">To do</option>
+        <option value="doing">Doing</option>
+        <option value="done">Done</option>
+      </select>
+    </div>
+    <div class="field inline">
+      <label for="filterProject">Project</label>
+      <select id="filterProject" data-testid="filter-project">
+        <option value="all">All projects</option>
+      </select>
+    </div>
+    <div class="field inline">
+      <label for="filterPriority">Priority</label>
+      <select id="filterPriority" data-testid="filter-priority">
+        <option value="all">All priorities</option>
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+    </div>
+    <p id="taskCount" class="task-count" aria-live="polite"></p>
+  </section>
+
+  <main id="board" class="board">
+    <div class="column" data-status="todo">
+      <h2>To do</h2>
+      <div class="card-list" id="list-todo"></div>
+    </div>
+    <div class="column" data-status="doing">
+      <h2>Doing</h2>
+      <div class="card-list" id="list-doing"></div>
+    </div>
+    <div class="column" data-status="done">
+      <h2>Done</h2>
+      <div class="card-list" id="list-done"></div>
+    </div>
+  </main>
+
+  <p id="noResults" class="no-results" hidden>No tasks match your search and filters.</p>
+</div>
+
+<dialog id="taskDialog" aria-labelledby="dialogTitle">
+  <form id="taskForm" data-testid="task-form" novalidate>
+    <h2 id="dialogTitle">New task</h2>
+
+    <div class="field">
+      <label for="f-title">Title</label>
+      <input id="f-title" name="title" type="text" maxlength="200" autocomplete="off">
+      <span class="error" id="err-title" role="alert"></span>
+    </div>
+
+    <div class="field">
+      <label for="f-project">Project</label>
+      <input id="f-project" name="project" type="text" maxlength="160" autocomplete="off">
+      <span class="error" id="err-project" role="alert"></span>
+    </div>
+
+    <div class="field-row">
+      <div class="field">
+        <label for="f-status">Status</label>
+        <select id="f-status" name="status">
+          <option value="todo">To do</option>
+          <option value="doing">Doing</option>
+          <option value="done">Done</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="f-priority">Priority</label>
+        <select id="f-priority" name="priority">
+          <option value="low">Low</option>
+          <option value="medium" selected>Medium</option>
+          <option value="high">High</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="f-dueDate">Due date</label>
+      <input id="f-dueDate" name="dueDate" type="date">
+      <span class="error" id="err-dueDate" role="alert"></span>
+    </div>
+
+    <div class="field">
+      <label for="f-tags">Tags <span class="hint">(comma-separated, up to 8)</span></label>
+      <input id="f-tags" name="tags" type="text" autocomplete="off" placeholder="survey, urgent">
+      <span class="error" id="err-tags" role="alert"></span>
+    </div>
+
+    <p class="error" id="err-form" role="alert" aria-live="assertive"></p>
+
+    <div class="dialog-actions">
+      <button type="button" id="cancelTaskBtn">Cancel</button>
+      <button type="submit" data-testid="save-task">Save task</button>
+    </div>
+  </form>
+</dialog>
+
+<script src="./app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fieldnote Board</title>
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+<noscript>
+  <div class="noscript-banner">
+    Fieldnote Board needs JavaScript enabled to run in your browser. Please enable JavaScript and reload this page.
+  </div>
+</noscript>
+
+<div id="recovery-view" class="recovery-view" hidden>
+  <div class="recovery-card">
+    <h1>Fieldnote Board</h1>
+    <h2>We found a problem with your saved board</h2>
+    <p>
+      The data stored in this browser under the key <code>fieldnote-board:v1</code> could not be read as a
+      valid Fieldnote Board file. Nothing has been changed, deleted or overwritten.
+    </p>
+    <div class="recovery-actions">
+      <button type="button" id="download-corrupt-btn" class="btn">Download original data</button>
+      <button type="button" id="reset-board-btn" class="btn btn-danger">Reset board</button>
+    </div>
+    <p class="recovery-hint">
+      Resetting permanently replaces the unreadable data with a fresh sample board. Download a copy first
+      if you want to keep the original bytes.
+    </p>
+  </div>
+</div>
+
+<div id="app-shell" class="app-shell">
+  <header class="app-header">
+    <div class="brand">
+      <h1>Fieldnote Board</h1>
+      <p class="tagline">Local-first task tracking for a small project team.</p>
+    </div>
+    <div class="header-actions">
+      <button type="button" id="create-task-btn" data-testid="create-task" class="btn btn-primary">+ New task</button>
+      <button type="button" id="export-btn" data-testid="export" class="btn">Export JSON</button>
+      <input type="file" id="import-file" data-testid="import-file" class="sr-only-file" accept="application/json,.json" />
+      <label for="import-file" class="btn file-label">Import JSON</label>
+    </div>
+  </header>
+
+  <div id="alerts" class="alerts" aria-live="assertive"></div>
+
+  <section class="toolbar" aria-label="Search and filters">
+    <div class="field search-field">
+      <label for="search-input">Search</label>
+      <input type="search" id="search-input" data-testid="search" placeholder="Search title, project, tags…" />
+    </div>
+    <div class="field">
+      <label for="filter-status">Status</label>
+      <select id="filter-status" data-testid="filter-status">
+        <option value="all">All statuses</option>
+        <option value="todo">To do</option>
+        <option value="doing">Doing</option>
+        <option value="done">Done</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="filter-project">Project</label>
+      <select id="filter-project" data-testid="filter-project">
+        <option value="all">All projects</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="filter-priority">Priority</label>
+      <select id="filter-priority" data-testid="filter-priority">
+        <option value="all">All priorities</option>
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+    </div>
+    <p class="counts" id="counts" role="status"></p>
+  </section>
+
+  <main class="board" id="board" aria-label="Task board"></main>
+
+  <div id="toast-region" class="toast-region" aria-live="polite"></div>
+  <div id="undo-region" class="undo-region" aria-live="polite"></div>
+</div>
+
+<div id="modal-overlay" class="modal-overlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" id="task-modal">
+    <form id="task-form" data-testid="task-form" novalidate>
+      <div class="modal-header">
+        <h2 id="modal-title">New task</h2>
+        <button type="button" id="modal-close" class="icon-btn" aria-label="Close dialog">×</button>
+      </div>
+      <div class="modal-body">
+        <p id="modal-conflict-note" class="conflict-note" hidden>
+          Another tab changed this board. Reload before saving.
+        </p>
+        <div class="form-row">
+          <label for="field-title">Title</label>
+          <input type="text" id="field-title" name="title" maxlength="120" required aria-describedby="err-title" />
+          <p class="field-error" id="err-title" role="alert"></p>
+        </div>
+        <div class="form-row">
+          <label for="field-project">Project</label>
+          <input type="text" id="field-project" name="project" maxlength="80" required aria-describedby="err-project" />
+          <p class="field-error" id="err-project" role="alert"></p>
+        </div>
+        <div class="form-row form-row-inline">
+          <div>
+            <label for="field-status">Status</label>
+            <select id="field-status" name="status">
+              <option value="todo">To do</option>
+              <option value="doing">Doing</option>
+              <option value="done">Done</option>
+            </select>
+          </div>
+          <div>
+            <label for="field-priority">Priority</label>
+            <select id="field-priority" name="priority">
+              <option value="low">Low</option>
+              <option value="medium" selected>Medium</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="field-dueDate">Due date <span class="hint">(YYYY-MM-DD, optional)</span></label>
+          <input type="text" inputmode="numeric" placeholder="YYYY-MM-DD" id="field-dueDate" name="dueDate" aria-describedby="err-dueDate" />
+          <p class="field-error" id="err-dueDate" role="alert"></p>
+        </div>
+        <div class="form-row">
+          <label for="field-tags">Tags <span class="hint">(comma-separated, up to 8)</span></label>
+          <input type="text" id="field-tags" name="tags" aria-describedby="err-tags" />
+          <p class="field-error" id="err-tags" role="alert"></p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="modal-cancel" class="btn">Cancel</button>
+        <button type="submit" id="save-task-btn" data-testid="save-task" class="btn btn-primary">Save task</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="../preview-storage.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>

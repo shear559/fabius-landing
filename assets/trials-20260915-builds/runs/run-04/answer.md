@@ -1,0 +1,5 @@
+Delivered `index.html`, `styles.css`, `app.js`, and `README.md` in this directory — a complete, fictional Lattice landing page in vanilla HTML/CSS/JS, no build step or network calls, working from any static path via relative URLs.
+
+All required interactions are implemented and verified live in Chromium (Playwright, 31/31 checks passing): mobile menu toggle with synced `aria-expanded`, Escape-to-close-and-refocus, and link-close behavior; accessible feature tabs with arrow-key movement and distinct panel content; billing toggle with exact monthly↔yearly restoration ($12/$29 ↔ $108/$264); four native `<details>` FAQs with the specified answers; the hero CTA linking to `#workflow`; and full content/nav/price discoverability with JavaScript disabled. I also caught and fixed a real CSS specificity bug during verification (the header CTA button wasn't actually hiding on mobile) and re-verified after the fix, plus confirmed relative asset loading from a nested URL path.
+
+README.md documents the design decisions, exactly what was checked, and known gaps (no axe/screen-reader audit, Chromium-only testing, contrast checked by eye/screenshot rather than a scanner).

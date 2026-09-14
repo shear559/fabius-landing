@@ -1,0 +1,7 @@
+All four deliverables are in place, BRIEF.md untouched.
+
+**Solution summary**: substituting `z=1-x-y` reduces the problem to a strictly convex QP (Hessian positive-definite, verified via leading minors 2/7/40) over a fixed convex pentagon in `(x,y)`. Since `t` only ever shifts the coefficient of `x`, the unconstrained critical point sweeps monotonically along a fixed line as `t` grows, so the constrained optimum sweeps once through the pentagon: edge `x=0` → interior → edge `y=0` → vertex `(1/2,0)` → edge `2y+z=1/2` → vertex `(3/5,1/10)`. That gives exactly six regimes tiling `[-2,4]` at breakpoints `t = -3/2, -1, -1/2, 0, 9/5`, each with a closed-form optimizer and KKT multiplier formulas whose sign conditions pin down the exact validity range — proven, not just observed, and shown to match exactly at every junction (points, values, and derivatives via the envelope theorem `v'(t) = -2x(t)`).
+
+- `solution.md` — full derivation, convexity/sufficiency argument, all six regimes with exact multipliers, the piecewise value function, and an explicit argument for why no vertex/edge/parameter range was missed.
+- `solution.py` — stdlib-only, silent on import, `solve(t)` returns exact piecewise closed-form `x,y,z,value` as floats.
+- `verification.md` (+ `verify.py`) — checked feasibility/self-consistency on 136 points, cross-validated against an independent multi-start SciPy SLSQP oracle on 26 points (max coordinate diff ~1e-8, max value diff ~3e-13), and confirmed continuity across every breakpoint from both sides. All checks passed.

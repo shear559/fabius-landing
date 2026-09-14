@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lattice — a local-first research notebook (fictional demo)</title>
+<meta name="description" content="Lattice is a fictional local-first research notebook concept for independent researchers. This page is a design and interaction demo, not a real product.">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div class="fiction-banner" role="note">
+  Fictional product demonstration — Lattice does not exist. Built for design &amp; interaction testing only.
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="28" height="28">
+          <circle cx="8" cy="8" r="3" fill="currentColor"></circle>
+          <circle cx="24" cy="8" r="3" fill="currentColor"></circle>
+          <circle cx="16" cy="20" r="3" fill="currentColor"></circle>
+          <circle cx="8" cy="26" r="2" fill="currentColor" opacity="0.55"></circle>
+          <circle cx="24" cy="26" r="2" fill="currentColor" opacity="0.55"></circle>
+          <path d="M8 8L16 20M24 8L16 20M8 26L16 20M24 26L16 20" stroke="currentColor" stroke-width="1.6" fill="none"></path>
+        </svg>
+      </span>
+      <span class="brand-name">Lattice</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#workflow">Workflow</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-primary btn-small desktop-only" href="#pricing">Get Lattice</a>
+      <button
+        type="button"
+        class="menu-toggle"
+        data-testid="menu-toggle"
+        aria-expanded="false"
+        aria-controls="mobile-nav">
+        <span class="menu-toggle-icon" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+        <span class="visually-hidden">Menu</span>
+      </button>
+    </div>
+  </div>
+
+  <nav
+    class="mobile-nav"
+    id="mobile-nav"
+    data-testid="mobile-nav"
+    aria-label="Mobile">
+    <ul>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#workflow">Workflow</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a class="btn btn-primary btn-small mobile-cta" href="#pricing">Get Lattice</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top" aria-labelledby="hero-heading">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Local-first research notebook</p>
+        <h1 id="hero-heading">Think in threads. Keep every note on your own device.</h1>
+        <p class="hero-lede">
+          Lattice is a concept notebook for independent researchers: capture notes offline, link them to
+          their sources, and export everything as plain Markdown whenever you like. No account required to
+          read your own work.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-large" href="#workflow">Explore the workflow</a>
+          <a class="btn btn-ghost btn-large" href="#features">See the features</a>
+        </div>
+        <p class="hero-fine-print">Fictional product demo — facts are supplied for this benchmark, not verified claims.</p>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <div class="app-window">
+          <div class="app-titlebar">
+            <span class="dot dot-a"></span><span class="dot dot-b"></span><span class="dot dot-c"></span>
+            <span class="app-titlebar-label">Lattice — Migration Patterns notebook</span>
+          </div>
+          <div class="app-body">
+            <div class="app-sidebar">
+              <div class="sidebar-heading">Notes</div>
+              <div class="sidebar-item sidebar-item-active">
+                <span class="sidebar-dot"></span>Coastal displacement, 1890&ndash;1910
+              </div>
+              <div class="sidebar-item"><span class="sidebar-dot"></span>Rail expansion timeline</div>
+              <div class="sidebar-item"><span class="sidebar-dot"></span>Interview notes — J. Alden</div>
+              <div class="sidebar-item"><span class="sidebar-dot"></span>Census cross-reference</div>
+              <div class="sidebar-heading sidebar-heading-spaced">Project template</div>
+              <div class="sidebar-item sidebar-item-muted">Fieldwork &rarr; Draft &rarr; Export</div>
+            </div>
+            <div class="app-main">
+              <div class="app-note-title-row">
+                <div class="app-note-title">Coastal displacement, 1890&ndash;1910</div>
+                <div class="app-chip">Markdown ready</div>
+              </div>
+              <div class="app-note-line app-note-line-100"></div>
+              <div class="app-note-line app-note-line-90"></div>
+              <div class="app-note-line app-note-line-70"></div>
+              <div class="app-source-chip">
+                <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M6 10L10 6M7 4h4a2 2 0 0 1 2 2v0a2 2 0 0 1-2 2h-1M9 12H5a2 2 0 0 1-2-2v0a2 2 0 0 1 2-2h1" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
+                Source: Harbor Registry, Vol. 4
+              </div>
+              <div class="app-note-line app-note-line-95"></div>
+              <div class="app-note-line app-note-line-60"></div>
+              <div class="app-search-row">
+                <svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><circle cx="7" cy="7" r="4.2" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M10.2 10.2L13 13" stroke="currentColor" stroke-width="1.3"/></svg>
+                Local full-text search &middot; 128 notes indexed on this device
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="features" aria-labelledby="features-heading">
+    <div class="section-inner">
+      <p class="eyebrow">Features</p>
+      <h2 id="features-heading">Three habits, one notebook</h2>
+      <p class="section-lede">Everything below runs against notes stored on your own device.</p>
+
+      <div class="tabs" data-tabs>
+        <div class="tablist" role="tablist" aria-label="Feature exploration">
+          <button
+            type="button"
+            role="tab"
+            id="tab-capture"
+            data-testid="feature-capture"
+            class="tab is-selected"
+            aria-selected="true"
+            aria-controls="panel-capture"
+            tabindex="0">Capture</button>
+          <button
+            type="button"
+            role="tab"
+            id="tab-connect"
+            data-testid="feature-connect"
+            class="tab"
+            aria-selected="false"
+            aria-controls="panel-connect"
+            tabindex="-1">Connect</button>
+          <button
+            type="button"
+            role="tab"
+            id="tab-export"
+            data-testid="feature-export"
+            class="tab"
+            aria-selected="false"
+            aria-controls="panel-export"
+            tabindex="-1">Export</button>
+        </div>
+
+        <div
+          class="tabpanel"
+          id="panel-capture"
+          data-testid="panel-capture"
+          role="tabpanel"
+          aria-labelledby="tab-capture"
+          tabindex="0">
+          <h3>Capture without leaving the page</h3>
+          <p>
+            Start a note anywhere in a project and Lattice saves it straight to your device — no sync
+            step, no upload, no waiting on a network connection. Notes are plain text under the hood, so
+            they stay readable even years from now.
+          </p>
+          <ul class="feature-list">
+            <li>Notes are stored locally on your device.</li>
+            <li>Quick-capture keeps your cursor in the note, not in a dialog box.</li>
+            <li>Every note belongs to a project, so nothing floats untitled for long.</li>
+          </ul>
+        </div>
+
+        <div
+          class="tabpanel"
+          id="panel-connect"
+          data-testid="panel-connect"
+          role="tabpanel"
+          aria-labelledby="tab-connect"
+          tabindex="0"
+          hidden>
+          <h3>Keep sources next to the claim</h3>
+          <p>
+            Attach a source link to any note as you write it, so the citation travels with the idea
+            instead of living in a separate tab you'll lose track of. Reusable project templates give new
+            research threads the same source-tracking structure from the first note.
+          </p>
+          <ul class="feature-list">
+            <li>Source links sit alongside each note, not in a separate bibliography file.</li>
+            <li>Reusable project templates carry your section structure into new notebooks.</li>
+            <li>Cross-links between notes stay intact when you rename a project.</li>
+          </ul>
+        </div>
+
+        <div
+          class="tabpanel"
+          id="panel-export"
+          data-testid="panel-export"
+          role="tabpanel"
+          aria-labelledby="tab-export"
+          tabindex="0"
+          hidden>
+          <h3>Leave whenever you want</h3>
+          <p>
+            Export any note or an entire project as plain Markdown files. There's no proprietary format to
+            get stuck in, and an optional local full-text search helps you find old notes before you
+            decide what to export.
+          </p>
+          <ul class="feature-list">
+            <li>Markdown export for a single note or a whole project.</li>
+            <li>Optional local full-text search runs entirely on your device.</li>
+            <li>Exported files are yours to back up however you choose.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="workflow" id="workflow" aria-labelledby="workflow-heading">
+    <div class="section-inner">
+      <p class="eyebrow">Workflow</p>
+      <h2 id="workflow-heading">A three-step rhythm</h2>
+      <p class="section-lede">The same loop for a weekend project or a years-long research thread.</p>
+
+      <ol class="steps">
+        <li class="step">
+          <span class="step-number" aria-hidden="true">01</span>
+          <h3>Capture</h3>
+          <p>Jot a note the moment you find something worth keeping, right on the device you're using.</p>
+        </li>
+        <li class="step">
+          <span class="step-number" aria-hidden="true">02</span>
+          <h3>Connect</h3>
+          <p>Link the note to its source and drop it into a reusable project template alongside related notes.</p>
+        </li>
+        <li class="step">
+          <span class="step-number" aria-hidden="true">03</span>
+          <h3>Export</h3>
+          <p>When you're ready to write, publish, or archive, export the project as Markdown files you control.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="pricing" id="pricing" aria-labelledby="pricing-heading">
+    <div class="section-inner">
+      <p class="eyebrow">Pricing</p>
+      <h2 id="pricing-heading">Two plans, no surprises</h2>
+      <p class="section-lede">Fictional prices for this demo. Switch billing period to see both.</p>
+
+      <div class="billing-toggle" role="group" aria-label="Billing period">
+        <button
+          type="button"
+          class="billing-btn is-active"
+          data-testid="billing-monthly"
+          aria-pressed="true">
+          Monthly
+        </button>
+        <button
+          type="button"
+          class="billing-btn"
+          data-testid="billing-yearly"
+          aria-pressed="false">
+          Yearly <span class="billing-badge">save ~25%</span>
+        </button>
+      </div>
+
+      <div class="plans">
+        <article class="plan-card">
+          <h3>Solo</h3>
+          <p class="plan-tagline">For one researcher, one archive.</p>
+          <p class="plan-price">
+            <span class="plan-price-value" data-testid="price-solo" data-monthly="$12" data-yearly="$108">$12</span>
+            <span class="plan-price-period" data-testid="period-solo">/ month</span>
+          </p>
+          <ul class="plan-features">
+            <li>Unlimited local notes and projects</li>
+            <li>Markdown export, single notes or full projects</li>
+            <li>Source links on every note</li>
+            <li>Optional local full-text search</li>
+          </ul>
+          <a class="btn btn-secondary btn-block" href="#faq">Read the FAQ first</a>
+        </article>
+
+        <article class="plan-card plan-card-featured">
+          <p class="plan-featured-badge">Most chosen for teams of one</p>
+          <h3>Studio</h3>
+          <p class="plan-tagline">For running several research threads at once.</p>
+          <p class="plan-price">
+            <span class="plan-price-value" data-testid="price-studio" data-monthly="$29" data-yearly="$264">$29</span>
+            <span class="plan-price-period" data-testid="period-studio">/ month</span>
+          </p>
+          <ul class="plan-features">
+            <li>Everything in Solo</li>
+            <li>Reusable project templates library</li>
+            <li>Multiple notebook workspaces on one device</li>
+            <li>Priority place in the (fictional) feature queue</li>
+          </ul>
+          <a class="btn btn-primary btn-block" href="#faq">Read the FAQ first</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq" aria-labelledby="faq-heading">
+    <div class="section-inner section-inner-narrow">
+      <p class="eyebrow">FAQ</p>
+      <h2 id="faq-heading">Before you ask</h2>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary data-testid="faq-0">Where does Lattice store my notes?</summary>
+          <p>On your own device. Notes are kept in local storage rather than on a remote server.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-testid="faq-1">Can I get my notes out in a plain format?</summary>
+          <p>Yes. Any note or project can be exported as Markdown files whenever you choose.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-testid="faq-2">How do backups work?</summary>
+          <p>Backups happen by exporting your files yourself. Lattice does not promise automatic cloud backup.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-testid="faq-3">What happens to my work if I cancel?</summary>
+          <p>Cancellation has no effect on files you've already exported — they stay yours, on your device.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="section-inner footer-inner">
+    <div class="footer-brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="22" height="22">
+          <circle cx="8" cy="8" r="3" fill="currentColor"></circle>
+          <circle cx="24" cy="8" r="3" fill="currentColor"></circle>
+          <circle cx="16" cy="20" r="3" fill="currentColor"></circle>
+          <path d="M8 8L16 20M24 8L16 20" stroke="currentColor" stroke-width="1.6" fill="none"></path>
+        </svg>
+      </span>
+      <span>Lattice</span>
+    </div>
+    <p class="footer-note">
+      This is a fictional product demonstration built for design and interaction testing. Lattice is not a
+      real company or product, and nothing on this page is an actual business claim.
+    </p>
+    <nav aria-label="Footer">
+      <ul class="footer-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#workflow">Workflow</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+<script src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+{
+ "schemaVersion": 1,
+ "runId": "run-01",
+ "kind": "landing",
+ "startedAt": "2026-09-14T21:43:19.322Z",
+ "helperSha256": "2448fa17cc9a54989a8ae7134baa2bfda9ee4cca000603582a3ce873d3c54f4a",
+ "source": {
+  "files": [
+   {
+    "file": "app.js",
+    "bytes": 4694,
+    "sha256": "fb27440676df4541897db5d9eb3c291b1050768cf49181c0fd7b8f73b9809880"
+   },
+   {
+    "file": "BRIEF.md",
+    "bytes": 3335,
+    "sha256": "4b1927c9ff7421b0b8b1b8f914c1c425f31806e9ab7473b682bedad620b3f80c"
+   },
+   {
+    "file": "index.html",
+    "bytes": 16103,
+    "sha256": "41e6fe3e4ae78e4229734fcee015df31dba7dbcd5ab6c4417b47f8b4507040a6"
+   },
+   {
+    "file": "README.md",
+    "bytes": 6120,
+    "sha256": "c92b0e9abf51ad50671fe5677324fc8a4b3706db2be3efad825929170923b9a9"
+   },
+   {
+    "file": "styles.css",
+    "bytes": 19474,
+    "sha256": "bfad3488aac30963f4a6c6dd21049936066ae8ff7d87f34ad0c2500ee0581c8a"
+   }
+  ],
+  "treeSha256": "e3b7269ba7caa8b5bc1d65a5b9b1476b3c18fcffa014825d76f50e13d97359bf"
+ },
+ "policy": {
+  "presentation": "Composed walkthrough from captured states; not a recording of model generation.",
+  "browser": "Google Chrome",
+  "desktopViewport": {
+   "width": 1440,
+   "height": 960
+  },
+  "mobileViewport": {
+   "width": 360,
+   "height": 800
+  },
+  "deviceScaleFactor": 1,
+  "fullPage": false,
+  "reducedMotion": "reduce",
+  "screenshotAnimations": "disabled",
+  "freshContexts": true,
+  "externalRequests": "blocked",
+  "candidateEdits": false,
+  "scoresProvided": false
+ },
+ "snapshots": [
+  {
+   "id": "initial",
+   "label": "Desktop first visit \u2014 untouched initial output",
+   "file": "initial.png",
+   "actionSucceeded": true,
+   "observed": {
+    "httpStatus": 200,
+    "freshStorage": true,
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Skip to main content\nFictional product demonstration \u2014 Lattice does not exist. Built for design & interaction testing only.\nLattice\nFeatures\nWorkflow\nPricing\nFAQ\nGet Lattice\n\nLOCAL-FIRST RESEARCH NOTEBOOK\n\nThink in threads. Keep every note on your own device.\n\nLattice is a concept notebook for independent researchers: capture notes offline, link them to their sources, and export everything as plain Markdown whenever you like. No account required to read your own work.\n\nExplore the workflow\nSee the features\n\nFictional product demo \u2014 facts are supplied for this benchmark, not verified claims.\n\nLattice \u2014 Migration Patterns notebook\nNOTES\nCoastal displacement, 1890\u20131910\nRail expansion timeline\nInterview notes \u2014 J. Alden\nCensus cross-reference\nPROJECT TEMPLATE\nFieldwork \u2192 Draft \u2192 Export\nCoastal displacement, 1890\u20131910\nMarkdown ready\nSource: Harbor Registry, Vol. 4\nLocal full-text search \u00b7 128 notes indexed on this device\n\nFEATURES\n\nThree habits, one notebook\n\nEverything below runs against notes stored on your own device.\n\nCapture\nConnect\nExport\nCapture without leaving the page\n\nStart a note anywhere in a project and Lattice saves it straight to your device \u2014 no sync step, no upload, no waiting on a network connection. Notes are plain text under the hood, so they stay readable even years from now.\n\nNotes are stored locally on your device.\nQuick-capture keeps your cursor in the note, not in a dialog box.\nEvery note belongs to a project, so nothing floats untitled for long.\n\nWORKFLOW\n\nA three-step rhythm\n\nThe same loop for a weekend project or a years-long research thread.\n\n01\nCapture\n\nJot a note the moment you find something worth keeping, right on the device you're using.\n\n02\nConnect\n\nLink the note to its source and drop it into a reusable project template alongside related notes.\n\n03\nExport\n\nWhen you're ready to write, publish, or archive, export the project as Markdown files you control.\n\nPRICING\n\nTwo plans, no surprises\n\nFictional prices for this demo. Switch billing period to see both.\n\nMonthly\nYearly\nsave ~25%\nSolo\n\nFor one researcher, one archive.\n\n$12\n/ month\n\nUnlimited local notes and projects\nMarkdown export, single notes or full projects\nSource links on every note\nOptional local full-text search\nRead the FAQ first\n\nMOST CHOSEN FOR TEAMS OF ONE\n\nStudio\n\nFor running several research threads at once.\n\n$29\n/ month\n\nEverything in Solo\nReusable project templates library\nMultiple notebook workspaces on one device\nPriority place in the (fictional) feature queu",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T21:43:22.700Z",
+   "actionStartedAt": "2026-09-14T21:43:21.898Z",
+   "sha256": "9fc9f5433551c03924a248c90303f8d774f40d6824cce0b505169ad42c9b6b9d",
+   "bytes": 155873
+  },
+  {
+   "id": "feature-connect",
+   "label": "Connect feature selected; its panel is visible",
+   "file": "feature-connect.png",
+   "actionSucceeded": true,
+   "observed": {
+    "selected": "true",
+    "panelVisible": true,
+    "panelText": "Keep sources next to the claim\n\nAttach a source link to any note as you write it, so the citation travels with the idea instead of living in a separate tab you'll lose track of. Reusable project templates give new research threads the same source-tracking structure from the first note.\n\nSource links sit alongside each note, not in a separate bibliography file.\nReusable project templates carry your section structure into new notebooks.\nCross-links between notes stay intact when you rename a project.",
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 794
+     },
+     "documentWidth": 1440,
+     "visibleText": "Skip to main content\nFictional product demonstration \u2014 Lattice does not exist. Built for design & interaction testing only.\nLattice\nFeatures\nWorkflow\nPricing\nFAQ\nGet Lattice\n\nLOCAL-FIRST RESEARCH NOTEBOOK\n\nThink in threads. Keep every note on your own device.\n\nLattice is a concept notebook for independent researchers: capture notes offline, link them to their sources, and export everything as plain Markdown whenever you like. No account required to read your own work.\n\nExplore the workflow\nSee the features\n\nFictional product demo \u2014 facts are supplied for this benchmark, not verified claims.\n\nLattice \u2014 Migration Patterns notebook\nNOTES\nCoastal displacement, 1890\u20131910\nRail expansion timeline\nInterview notes \u2014 J. Alden\nCensus cross-reference\nPROJECT TEMPLATE\nFieldwork \u2192 Draft \u2192 Export\nCoastal displacement, 1890\u20131910\nMarkdown ready\nSource: Harbor Registry, Vol. 4\nLocal full-text search \u00b7 128 notes indexed on this device\n\nFEATURES\n\nThree habits, one notebook\n\nEverything below runs against notes stored on your own device.\n\nCapture\nConnect\nExport\nKeep sources next to the claim\n\nAttach a source link to any note as you write it, so the citation travels with the idea instead of living in a separate tab you'll lose track of. Reusable project templates give new research threads the same source-tracking structure from the first note.\n\nSource links sit alongside each note, not in a separate bibliography file.\nReusable project templates carry your section structure into new notebooks.\nCross-links between notes stay intact when you rename a project.\n\nWORKFLOW\n\nA three-step rhythm\n\nThe same loop for a weekend project or a years-long research thread.\n\n01\nCapture\n\nJot a note the moment you find something worth keeping, right on the device you're using.\n\n02\nConnect\n\nLink the note to its source and drop it into a reusable project template alongside related notes.\n\n03\nExport\n\nWhen you're ready to write, publish, or archive, export the project as Markdown files you control.\n\nPRICING\n\nTwo plans, no surprises\n\nFictional prices for this demo. Switch billing period to see both.\n\nMonthly\nYearly\nsave ~25%\nSolo\n\nFor one researcher, one archive.\n\n$12\n/ month\n\nUnlimited local notes and projects\nMarkdown export, single notes or full projects\nSource links on every note\nOptional local full-text search\nRead the FAQ first\n\nMOST CHOSEN FOR TEAMS OF ONE\n\nStudio\n\nFor running several research threads at once.\n\n$29\n/ month\n\nEverything in Solo\nReusable project templates library\nMultiple notebook wo",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T21:43:24.607Z",
+   "actionStartedAt": "2026-09-14T21:43:24.246Z",
+   "sha256": "5d2a3a4f5a51fc36994649b884aa59616844d67128c4dcb0ad3a03ba4731aef9",
+   "bytes": 121087
+  },
+  {
+   "id": "billing-yearly",
+   "label": "Yearly billing selected; displayed prices are 108 and 264",
+   "file": "billing-yearly.png",
+   "actionSucceeded": true,
+   "observed": {
+    "solo": "$108",
+    "studio": "$264",
+    "amounts": [
+     108,
+     264
+    ],
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 1962
+     },
+     "documentWidth": 1440,
+     "visibleText": "Skip to main content\nFictional product demonstration \u2014 Lattice does not exist. Built for design & interaction testing only.\nLattice\nFeatures\nWorkflow\nPricing\nFAQ\nGet Lattice\n\nLOCAL-FIRST RESEARCH NOTEBOOK\n\nThink in threads. Keep every note on your own device.\n\nLattice is a concept notebook for independent researchers: capture notes offline, link them to their sources, and export everything as plain Markdown whenever you like. No account required to read your own work.\n\nExplore the workflow\nSee the features\n\nFictional product demo \u2014 facts are supplied for this benchmark, not verified claims.\n\nLattice \u2014 Migration Patterns notebook\nNOTES\nCoastal displacement, 1890\u20131910\nRail expansion timeline\nInterview notes \u2014 J. Alden\nCensus cross-reference\nPROJECT TEMPLATE\nFieldwork \u2192 Draft \u2192 Export\nCoastal displacement, 1890\u20131910\nMarkdown ready\nSource: Harbor Registry, Vol. 4\nLocal full-text search \u00b7 128 notes indexed on this device\n\nFEATURES\n\nThree habits, one notebook\n\nEverything below runs against notes stored on your own device.\n\nCapture\nConnect\nExport\nKeep sources next to the claim\n\nAttach a source link to any note as you write it, so the citation travels with the idea instead of living in a separate tab you'll lose track of. Reusable project templates give new research threads the same source-tracking structure from the first note.\n\nSource links sit alongside each note, not in a separate bibliography file.\nReusable project templates carry your section structure into new notebooks.\nCross-links between notes stay intact when you rename a project.\n\nWORKFLOW\n\nA three-step rhythm\n\nThe same loop for a weekend project or a years-long research thread.\n\n01\nCapture\n\nJot a note the moment you find something worth keeping, right on the device you're using.\n\n02\nConnect\n\nLink the note to its source and drop it into a reusable project template alongside related notes.\n\n03\nExport\n\nWhen you're ready to write, publish, or archive, export the project as Markdown files you control.\n\nPRICING\n\nTwo plans, no surprises\n\nFictional prices for this demo. Switch billing period to see both.\n\nMonthly\nYearly\nsave ~25%\nSolo\n\nFor one researcher, one archive.\n\n$108\n/ year\n\nUnlimited local notes and projects\nMarkdown export, single notes or full projects\nSource links on every note\nOptional local full-text search\nRead the FAQ first\n\nMOST CHOSEN FOR TEAMS OF ONE\n\nStudio\n\nFor running several research threads at once.\n\n$264\n/ year\n\nEverything in Solo\nReusable project templates library\nMultiple notebook wo",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T21:43:28.556Z",
+   "actionStartedAt": "2026-09-14T21:43:28.154Z",
+   "sha256": "254cd3ed233841c01535f5fd85719d0456699a247d3bc62396e790ac4db55ad9",
+   "bytes": 107506
+  },
+  {
+   "id": "workflow",
+   "label": "Workflow section in the viewport",
+   "file": "workflow.png",
+   "actionSucceeded": true,
+   "observed": {
+    "visible": true,
+    "text": "WORKFLOW\n\nA three-step rhythm\n\nThe same loop for a weekend project or a years-long research thread.\n\n01\nCapture\n\nJot a note the moment you find something worth keeping, right on the device you're using.\n\n02\nConnect\n\nLink the note to its source and drop it into a reusable project template alongside related notes.\n\n03\nExport\n\nWhen you're ready to write, publish, or archive, export the project as Markdown files you control.",
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 1233
+     },
+     "documentWidth": 1440,
+     "visibleText": "Skip to main content\nFictional product demonstration \u2014 Lattice does not exist. Built for design & interaction testing only.\nLattice\nFeatures\nWorkflow\nPricing\nFAQ\nGet Lattice\n\nLOCAL-FIRST RESEARCH NOTEBOOK\n\nThink in threads. Keep every note on your own device.\n\nLattice is a concept notebook for independent researchers: capture notes offline, link them to their sources, and export everything as plain Markdown whenever you like. No account required to read your own work.\n\nExplore the workflow\nSee the features\n\nFictional product demo \u2014 facts are supplied for this benchmark, not verified claims.\n\nLattice \u2014 Migration Patterns notebook\nNOTES\nCoastal displacement, 1890\u20131910\nRail expansion timeline\nInterview notes \u2014 J. Alden\nCensus cross-reference\nPROJECT TEMPLATE\nFieldwork \u2192 Draft \u2192 Export\nCoastal displacement, 1890\u20131910\nMarkdown ready\nSource: Harbor Registry, Vol. 4\nLocal full-text search \u00b7 128 notes indexed on this device\n\nFEATURES\n\nThree habits, one notebook\n\nEverything below runs against notes stored on your own device.\n\nCapture\nConnect\nExport\nKeep sources next to the claim\n\nAttach a source link to any note as you write it, so the citation travels with the idea instead of living in a separate tab you'll lose track of. Reusable project templates give new research threads the same source-tracking structure from the first note.\n\nSource links sit alongside each note, not in a separate bibliography file.\nReusable project templates carry your section structure into new notebooks.\nCross-links between notes stay intact when you rename a project.\n\nWORKFLOW\n\nA three-step rhythm\n\nThe same loop for a weekend project or a years-long research thread.\n\n01\nCapture\n\nJot a note the moment you find something worth keeping, right on the device you're using.\n\n02\nConnect\n\nLink the note to its source and drop it into a reusable project template alongside related notes.\n\n03\nExport\n\nWhen you're ready to write, publish, or archive, export the project as Markdown files you control.\n\nPRICING\n\nTwo plans, no surprises\n\nFictional prices for this demo. Switch billing period to see both.\n\nMonthly\nYearly\nsave ~25%\nSolo\n\nFor one researcher, one archive.\n\n$108\n/ year\n\nUnlimited local notes and projects\nMarkdown export, single notes or full projects\nSource links on every note\nOptional local full-text search\nRead the FAQ first\n\nMOST CHOSEN FOR TEAMS OF ONE\n\nStudio\n\nFor running several research threads at once.\n\n$264\n/ year\n\nEverything in Solo\nReusable project templates library\nMultiple notebook wo",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T21:43:29.005Z",
+   "actionStartedAt": "2026-09-14T21:43:28.812Z",
+   "sha256": "21770886b709c1157eb1b46ac743ba6706c5c0f41855e4f3aff30d26a68f4aa8",
+   "bytes": 90018
+  },
+  {
+   "id": "faq",
+   "label": "First FAQ opened; actual answer shown",
+   "file": "faq.png",
+   "actionSucceeded": true,
+   "observed": {
+    "tag": "SUMMARY",
+    "parent": "DETAILS",
+    "open": true,
+    "text": "Where does Lattice store my notes?\n\nOn your own device. Notes are kept in local storage rather than on a remote server.",
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 2409
+     },
+     "documentWidth": 1440,
+     "visibleText": "Skip to main content\nFictional product demonstration \u2014 Lattice does not exist. Built for design & interaction testing only.\nLattice\nFeatures\nWorkflow\nPricing\nFAQ\nGet Lattice\n\nLOCAL-FIRST RESEARCH NOTEBOOK\n\nThink in threads. Keep every note on your own device.\n\nLattice is a concept notebook for independent researchers: capture notes offline, link them to their sources, and export everything as plain Markdown whenever you like. No account required to read your own work.\n\nExplore the workflow\nSee the features\n\nFictional product demo \u2014 facts are supplied for this benchmark, not verified claims.\n\nLattice \u2014 Migration Patterns notebook\nNOTES\nCoastal displacement, 1890\u20131910\nRail expansion timeline\nInterview notes \u2014 J. Alden\nCensus cross-reference\nPROJECT TEMPLATE\nFieldwork \u2192 Draft \u2192 Export\nCoastal displacement, 1890\u20131910\nMarkdown ready\nSource: Harbor Registry, Vol. 4\nLocal full-text search \u00b7 128 notes indexed on this device\n\nFEATURES\n\nThree habits, one notebook\n\nEverything below runs against notes stored on your own device.\n\nCapture\nConnect\nExport\nKeep sources next to the claim\n\nAttach a source link to any note as you write it, so the citation travels with the idea instead of living in a separate tab you'll lose track of. Reusable project templates give new research threads the same source-tracking structure from the first note.\n\nSource links sit alongside each note, not in a separate bibliography file.\nReusable project templates carry your section structure into new notebooks.\nCross-links between notes stay intact when you rename a project.\n\nWORKFLOW\n\nA three-step rhythm\n\nThe same loop for a weekend project or a years-long research thread.\n\n01\nCapture\n\nJot a note the moment you find something worth keeping, right on the device you're using.\n\n02\nConnect\n\nLink the note to its source and drop it into a reusable project template alongside related notes.\n\n03\nExport\n\nWhen you're ready to write, publish, or archive, export the project as Markdown files you control.\n\nPRICING\n\nTwo plans, no surprises\n\nFictional prices for this demo. Switch billing period to see both.\n\nMonthly\nYearly\nsave ~25%\nSolo\n\nFor one researcher, one archive.\n\n$108\n/ year\n\nUnlimited local notes and projects\nMarkdown export, single notes or full projects\nSource links on every note\nOptional local full-text search\nRead the FAQ first\n\nMOST CHOSEN FOR TEAMS OF ONE\n\nStudio\n\nFor running several research threads at once.\n\n$264\n/ year\n\nEverything in Solo\nReusable project templates library\nMultiple notebook wo",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T21:43:29.393Z",
+   "actionStartedAt": "2026-09-14T21:43:29.162Z",
+   "sha256": "dfad1d01b711526fe1573aa385c6c60018b02c9410753df270c25280f6a1a883",
+   "bytes": 67498
+  }
+ ],
+ "mobilefile": "mobile-initial.png",
+ "mobile": {
+  "id": "mobile-initial",
+  "label": "Mobile first visit \u2014 separate fresh context",
+  "file": "mobile-initial.png",
+  "sha256": "d7251cbcf32d5af61586cd8e95b44aa319bdad3315979728c24ea1d638ccddf7",
+  "bytes": 60804,
+  "actionSucceeded": true,
+  "observed": {
+   "httpStatus": 200,
+   "freshStorage": true,
+   "render": {
+    "path": "/nested/benchmark/",
+    "viewport": {
+     "width": 360,
+     "height": 800
+    },
+    "scroll": {
+     "x": 0,
+     "y": 0
+    },
+    "documentWidth": 360,
+    "visibleText": "Skip to main content\nFictional product demonstration \u2014 Lattice does not exist. Built for design & interaction testing only.\nLattice\nMenu\n\nLOCAL-FIRST RESEARCH NOTEBOOK\n\nThink in threads. Keep every note on your own device.\n\nLattice is a concept notebook for independent researchers: capture notes offline, link them to their sources, and export everything as plain Markdown whenever you like. No account required to read your own work.\n\nExplore the workflow\nSee the features\n\nFictional product demo \u2014 facts are supplied for this benchmark, not verified claims.\n\nLattice \u2014 Migration Patterns notebook\nNOTES\nCoastal displacement, 1890\u20131910\nRail expansion timeline\nInterview notes \u2014 J. Alden\nCensus cross-reference\nPROJECT TEMPLATE\nFieldwork \u2192 Draft \u2192 Export\nCoastal displacement, 1890\u20131910\nMarkdown ready\nSource: Harbor Registry, Vol. 4\nLocal full-text search \u00b7 128 notes indexed on this device\n\nFEATURES\n\nThree habits, one notebook\n\nEverything below runs against notes stored on your own device.\n\nCapture\nConnect\nExport\nCapture without leaving the page\n\nStart a note anywhere in a project and Lattice saves it straight to your device \u2014 no sync step, no upload, no waiting on a network connection. Notes are plain text under the hood, so they stay readable even years from now.\n\nNotes are stored locally on your device.\nQuick-capture keeps your cursor in the note, not in a dialog box.\nEvery note belongs to a project, so nothing floats untitled for long.\n\nWORKFLOW\n\nA three-step rhythm\n\nThe same loop for a weekend project or a years-long research thread.\n\n01\nCapture\n\nJot a note the moment you find something worth keeping, right on the device you're using.\n\n02\nConnect\n\nLink the note to its source and drop it into a reusable project template alongside related notes.\n\n03\nExport\n\nWhen you're ready to write, publish, or archive, export the project as Markdown files you control.\n\nPRICING\n\nTwo plans, no surprises\n\nFictional prices for this demo. Switch billing period to see both.\n\nMonthly\nYearly\nsave ~25%\nSolo\n\nFor one researcher, one archive.\n\n$12\n/ month\n\nUnlimited local notes and projects\nMarkdown export, single notes or full projects\nSource links on every note\nOptional local full-text search\nRead the FAQ first\n\nMOST CHOSEN FOR TEAMS OF ONE\n\nStudio\n\nFor running several research threads at once.\n\n$29\n/ month\n\nEverything in Solo\nReusable project templates library\nMultiple notebook workspaces on one device\nPriority place in the (fictional) feature queue\nRead the FAQ first\n\nFAQ\n\nBefore you",
+    "brokenVisibleImages": []
+   }
+  }
+ },
+ "missingStates": [],
+ "captureFailures": [],
+ "actionErrors": [],
+ "infrastructureErrors": [],
+ "console": [],
+ "network": [],
+ "dialogs": [],
+ "browserVersion": "152.0.7977.83",
+ "sourceAfterTreeSha256": "e3b7269ba7caa8b5bc1d65a5b9b1476b3c18fcffa014825d76f50e13d97359bf",
+ "sourceUnchanged": true,
+ "finishedAt": "2026-09-14T21:43:32.358Z"
+}

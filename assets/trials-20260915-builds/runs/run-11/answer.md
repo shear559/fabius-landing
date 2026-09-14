@@ -1,0 +1,7 @@
+BRIEF.md is untouched (1791 bytes, original size). All four deliverables are in place:
+
+- **`solution.py`** — stdlib-only `solve(t)`, silent on import, raises on out-of-range input, returns exact piecewise closed-form `x,y,z,value` plus KKT multipliers/active set.
+- **`solution.md`** — full derivation: strict convexity proof (Hessian PD, constant in t) ⇒ unique global minimizer; reduction to a 2D QP over a fixed pentagon; the unconstrained minimizer's line trajectory projected onto the pentagon giving 6 exact regions (breakpoints at t = −3/2, −1, −1/2, 0, 9/5); explicit KKT multipliers with sign convention for every region; a geometric completeness argument (the 6 regions trace a contiguous, non-skipping walk around the polygon's boundary cycle, matching its actual vertex/edge adjacency); and proof of C¹ continuity of the value function via the envelope theorem.
+- **`verification.md`** + **`verify.py`** — records the 7 checks actually executed (feasibility/value consistency on 6001 points, continuity across all breakpoints, KKT multiplier non-negativity, exact analytic stationarity via gradient/active-set span, envelope-theorem finite-difference cross-check, and agreement with an independent scipy SLSQP solve at breakpoints, near-breakpoints, and 80 random points — max discrepancy ~1e-9), with actual output logged and limitations stated.
+
+All checks passed when run. The formulas were independently verified two algebraic ways (direct KKT solve and complete-the-square) plus numerically, so there's strong convergent evidence of correctness.

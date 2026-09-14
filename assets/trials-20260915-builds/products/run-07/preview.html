@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fieldnote Board</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<noscript>
+  <div class="noscript-banner">
+    Fieldnote Board needs JavaScript to run. Please enable JavaScript in your browser to use this app.
+  </div>
+</noscript>
+
+<div id="app">
+  <header class="app-header">
+    <div class="app-heading">
+      <h1>Fieldnote Board</h1>
+      <p class="app-subtitle">A local-first task board for small field teams. Everything stays in this browser.</p>
+    </div>
+    <button type="button" class="btn btn-primary" data-testid="create-task" id="createTaskBtn">+ New task</button>
+  </header>
+
+  <div id="storageBanner" class="banner banner-danger" hidden role="alert">
+    <p id="storageBannerText"></p>
+    <div class="banner-actions">
+      <button type="button" class="btn" id="downloadCorruptBtn">Download original data</button>
+      <button type="button" class="btn btn-danger" id="resetBoardBtn">Reset board</button>
+    </div>
+  </div>
+
+  <div id="conflictBanner" class="banner banner-warning" hidden role="alert">
+    <p>This board changed in another tab. Reload to see the latest data before making edits.</p>
+    <div class="banner-actions">
+      <button type="button" class="btn" id="reloadBoardBtn">Reload board</button>
+    </div>
+  </div>
+
+  <div id="saveErrorBanner" class="banner banner-danger" hidden role="alert">
+    <p id="saveErrorText"></p>
+  </div>
+
+  <div id="importBanner" class="banner" hidden role="status">
+    <p id="importBannerText"></p>
+  </div>
+
+  <section class="toolbar" aria-label="Search and filters">
+    <div class="field field-search">
+      <label for="searchInput">Search</label>
+      <input type="search" id="searchInput" data-testid="search" placeholder="Search title, project, tags…" autocomplete="off">
+    </div>
+    <div class="field">
+      <label for="filterStatus">Status</label>
+      <select id="filterStatus" data-testid="filter-status">
+        <option value="all">All statuses</option>
+        <option value="todo">To do</option>
+        <option value="doing">Doing</option>
+        <option value="done">Done</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="filterProject">Project</label>
+      <select id="filterProject" data-testid="filter-project">
+        <option value="all">All projects</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="filterPriority">Priority</label>
+      <select id="filterPriority" data-testid="filter-priority">
+        <option value="all">All priorities</option>
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+    </div>
+    <div class="field field-io">
+      <span class="field-io-label">Board file</span>
+      <div class="field-io-controls">
+        <button type="button" class="btn" id="exportBtn" data-testid="export">Export JSON</button>
+        <label class="btn btn-file" for="importFile">Import JSON</label>
+        <input type="file" id="importFile" data-testid="import-file" accept="application/json,.json" class="visually-hidden-file">
+      </div>
+    </div>
+  </section>
+
+  <p id="resultsCount" class="results-count" aria-live="polite"></p>
+
+  <main id="taskList" class="task-list" aria-label="Tasks"></main>
+
+  <div id="emptyState" class="empty-state" hidden></div>
+
+  <div id="undoBar" class="undo-bar" hidden role="status">
+    <span id="undoText"></span>
+    <button type="button" class="btn" id="undoBtn" data-testid="undo-delete">Undo</button>
+  </div>
+</div>
+
+<div id="modalOverlay" class="modal-overlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <h2 id="modalTitle">New task</h2>
+    <form id="taskForm" data-testid="task-form" novalidate>
+      <div class="form-row">
+        <label for="titleInput">Title</label>
+        <input type="text" id="titleInput" name="title" maxlength="120" required>
+        <p class="field-error" id="titleError" role="alert"></p>
+      </div>
+      <div class="form-row">
+        <label for="projectInput">Project</label>
+        <input type="text" id="projectInput" name="project" maxlength="80" required list="projectSuggestions">
+        <datalist id="projectSuggestions"></datalist>
+        <p class="field-error" id="projectError" role="alert"></p>
+      </div>
+      <div class="form-row form-row-inline">
+        <div>
+          <label for="statusInput">Status</label>
+          <select id="statusInput" name="status">
+            <option value="todo">To do</option>
+            <option value="doing">Doing</option>
+            <option value="done">Done</option>
+          </select>
+        </div>
+        <div>
+          <label for="priorityInput">Priority</label>
+          <select id="priorityInput" name="priority">
+            <option value="low">Low</option>
+            <option value="medium" selected>Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <label for="dueDateInput">Due date</label>
+        <input type="date" id="dueDateInput" name="dueDate">
+        <p class="field-error" id="dueDateError" role="alert"></p>
+      </div>
+      <div class="form-row">
+        <label for="tagsInput">Tags <span class="hint">(comma-separated, up to 8)</span></label>
+        <input type="text" id="tagsInput" name="tags" maxlength="300">
+        <p class="field-error" id="tagsError" role="alert"></p>
+      </div>
+      <div class="form-actions">
+        <button type="button" class="btn" id="cancelFormBtn">Cancel</button>
+        <button type="submit" class="btn btn-primary" data-testid="save-task">Save task</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="../preview-storage.js"></script>
+<script src="./app.js" defer></script>
+</body>
+</html>

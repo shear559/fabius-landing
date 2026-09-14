@@ -1,0 +1,341 @@
+{
+ "schemaVersion": 1,
+ "runId": "run-06",
+ "kind": "app",
+ "startedAt": "2026-09-14T22:29:01.740Z",
+ "helperSha256": "2448fa17cc9a54989a8ae7134baa2bfda9ee4cca000603582a3ce873d3c54f4a",
+ "source": {
+  "files": [
+   {
+    "file": "app.js",
+    "bytes": 27895,
+    "sha256": "05b2bfbcf61f4dea2c7a4b3582122a3fd4e351616d98f87b09ee712a50cab657"
+   },
+   {
+    "file": "BRIEF.md",
+    "bytes": 4518,
+    "sha256": "7116b83075469f773ce51f72f708041e221d97b2b055d75cb309f0ff39239d1d"
+   },
+   {
+    "file": "index.html",
+    "bytes": 7046,
+    "sha256": "b4cb261dd2669d518a75cfbc36a19c5d20988d2e49da8da81ef786bee87ab7ca"
+   },
+   {
+    "file": "README.md",
+    "bytes": 4054,
+    "sha256": "8baf2ac789a39b0c7db8e12b5bbe9bd5e50f850bb216a05a52ab625c10265b0d"
+   },
+   {
+    "file": "styles.css",
+    "bytes": 9965,
+    "sha256": "fd851108128f2864f5e667f2a0ef3d7631bfb7abad05cd53905f84b114dfb000"
+   }
+  ],
+  "treeSha256": "0cdb7d6d91210dbc14566966f3c7ccce58e21b6497af9031d28a3598e5530963"
+ },
+ "policy": {
+  "presentation": "Composed walkthrough from captured states; not a recording of model generation.",
+  "browser": "Google Chrome",
+  "desktopViewport": {
+   "width": 1440,
+   "height": 960
+  },
+  "mobileViewport": {
+   "width": 360,
+   "height": 800
+  },
+  "deviceScaleFactor": 1,
+  "fullPage": false,
+  "reducedMotion": "reduce",
+  "screenshotAnimations": "disabled",
+  "freshContexts": true,
+  "externalRequests": "blocked",
+  "candidateEdits": false,
+  "scoresProvided": false
+ },
+ "snapshots": [
+  {
+   "id": "initial",
+   "label": "Desktop first visit \u2014 untouched initial output",
+   "file": "initial.png",
+   "actionSucceeded": true,
+   "observed": {
+    "httpStatus": 200,
+    "freshStorage": true,
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Fieldnote Board\n\nA local-first task board for a small project team.\n\nExport JSON\nImport JSON\n+ New task\nSearch tasks\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nCommunity Garden Rebuild\nRidgeline Trail Refresh\nPriority\nAll priorities\nLow\nMedium\nHigh\n\n7 of 7 tasks shown\n\nDraft trailhead signage copy\nHigh\n\nRidgeline Trail Refresh\nDue 2026-09-17\n\ncopy\nsignage\nStatus for Draft trailhead signage copy\nTo do\nDoing\nDone\nEdit\nDelete\nSurvey creek crossing damage\nHigh\n\nRidgeline Trail Refresh\nDue 2026-09-15\n\nfield\nsurvey\nStatus for Survey creek crossing damage\nTo do\nDoing\nDone\nEdit\nDelete\nOrder replacement waymarkers\nMedium\n\nRidgeline Trail Refresh\nDue 2026-09-24\n\nprocurement\nStatus for Order replacement waymarkers\nTo do\nDoing\nDone\nEdit\nDelete\nCompile volunteer hours for Q3\nLow\n\nCommunity Garden Rebuild\nDue 2026-09-12\n\nadmin\nreporting\nStatus for Compile volunteer hours for Q3\nTo do\nDoing\nDone\nEdit\nDelete\nRepair raised bed irrigation\nMedium\n\nCommunity Garden Rebuild\nDue 2026-09-19\n\nfield\nStatus for Repair raised bed irrigation\nTo do\nDoing\nDone\nEdit\nDelete\nPlan spring planting schedule\nLow\n\nCommunity Garden Rebuild\nNo due date\n\nplanning\nStatus for Plan spring planting schedule\nTo do\nDoing\nDone\nEdit\nDelete\nPublish weekly fieldnote digest\nMedium\n\nCommunity Garden Rebuild\nDue 2026-09-07\n\ncomms\nStatus for Publish weekly fieldnote digest\nTo do\nDoing\nDone\nEdit\nDelete",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T22:29:03.468Z",
+   "actionStartedAt": "2026-09-14T22:29:02.738Z",
+   "sha256": "7571de7c88b39a0d96aef974f7724c03fd30fe582b9d9965eeab01445f05383e",
+   "bytes": 123921
+  },
+  {
+   "id": "new-task-form",
+   "label": "New task form opened",
+   "file": "new-task-form.png",
+   "actionSucceeded": true,
+   "observed": {
+    "visible": true,
+    "fields": [
+     {
+      "name": "title",
+      "type": "text",
+      "value": ""
+     },
+     {
+      "name": "project",
+      "type": "text",
+      "value": ""
+     },
+     {
+      "name": "status",
+      "type": "select-one",
+      "value": "todo"
+     },
+     {
+      "name": "priority",
+      "type": "select-one",
+      "value": "medium"
+     },
+     {
+      "name": "dueDate",
+      "type": "date",
+      "value": ""
+     },
+     {
+      "name": "tags",
+      "type": "text",
+      "value": ""
+     }
+    ],
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Fieldnote Board\n\nA local-first task board for a small project team.\n\nExport JSON\nImport JSON\n+ New task\nSearch tasks\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nCommunity Garden Rebuild\nRidgeline Trail Refresh\nPriority\nAll priorities\nLow\nMedium\nHigh\n\n7 of 7 tasks shown\n\nDraft trailhead signage copy\nHigh\n\nRidgeline Trail Refresh\nDue 2026-09-17\n\ncopy\nsignage\nStatus for Draft trailhead signage copy\nTo do\nDoing\nDone\nEdit\nDelete\nSurvey creek crossing damage\nHigh\n\nRidgeline Trail Refresh\nDue 2026-09-15\n\nfield\nsurvey\nStatus for Survey creek crossing damage\nTo do\nDoing\nDone\nEdit\nDelete\nOrder replacement waymarkers\nMedium\n\nRidgeline Trail Refresh\nDue 2026-09-24\n\nprocurement\nStatus for Order replacement waymarkers\nTo do\nDoing\nDone\nEdit\nDelete\nCompile volunteer hours for Q3\nLow\n\nCommunity Garden Rebuild\nDue 2026-09-12\n\nadmin\nreporting\nStatus for Compile volunteer hours for Q3\nTo do\nDoing\nDone\nEdit\nDelete\nRepair raised bed irrigation\nMedium\n\nCommunity Garden Rebuild\nDue 2026-09-19\n\nfield\nStatus for Repair raised bed irrigation\nTo do\nDoing\nDone\nEdit\nDelete\nPlan spring planting schedule\nLow\n\nCommunity Garden Rebuild\nNo due date\n\nplanning\nStatus for Plan spring planting schedule\nTo do\nDoing\nDone\nEdit\nDelete\nPublish weekly fieldnote digest\nMedium\n\nCommunity Garden Rebuild\nDue 2026-09-07\n\ncomms\nStatus for Publish weekly fieldnote digest\nTo do\nDoing\nDone\nEdit\nDelete\nNew task\nTitle\nProject\nStatus\nTo do\nDoing\nDone\nPriority\nLow\nMedium\nHigh\nDue date\nTags\n\nUp to 8 tags, comma-separated. Duplicates are merged automatically.\n\nCancel\nSave task",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T22:29:03.918Z",
+   "actionStartedAt": "2026-09-14T22:29:03.577Z",
+   "sha256": "796fb8bd518711d3629fe404cb89216986a483658ccb6793b923393fe6354d06",
+   "bytes": 122029
+  },
+  {
+   "id": "after-create",
+   "label": "Review launch evidence created and present in saved board",
+   "file": "after-create.png",
+   "actionSucceeded": true,
+   "observed": {
+    "requested": {
+     "title": "Review launch evidence",
+     "project": "Research",
+     "status": "doing",
+     "priority": "high",
+     "dueDate": "2026-09-20",
+     "tags": "evidence,launch"
+    },
+    "storageError": null,
+    "matchingRecords": [
+     {
+      "id": "t-31031917-1d03-4925-a537-a8a4ec7e36e3",
+      "title": "Review launch evidence",
+      "project": "Research",
+      "status": "doing",
+      "priority": "high",
+      "dueDate": "2026-09-20",
+      "tags": [
+       "evidence",
+       "launch"
+      ]
+     }
+    ],
+    "rendered": true,
+    "visibleCards": [
+     {
+      "id": "t-seed-a-7fqo5b",
+      "text": "Draft trailhead signage copy\nHigh\n\nRidgeline Trail Refresh\nDue 2026-09-17\n\ncopy\nsignage\nStatus for Draft trailhead signage copy\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "t-seed-b-l0765b",
+      "text": "Survey creek crossing damage\nHigh\n\nRidgeline Trail Refresh\nDue 2026-09-15\n\nfield\nsurvey\nStatus for Survey creek crossing damage\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "t-seed-c-jfvu17",
+      "text": "Order replacement waymarkers\nMedium\n\nRidgeline Trail Refresh\nDue 2026-09-24\n\nprocurement\nStatus for Order replacement waymarkers\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "t-seed-d-4ybdjd",
+      "text": "Compile volunteer hours for Q3\nLow\n\nCommunity Garden Rebuild\nDue 2026-09-12\n\nadmin\nreporting\nStatus for Compile volunteer hours for Q3\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "t-seed-e-jbiv5h",
+      "text": "Repair raised bed irrigation\nMedium\n\nCommunity Garden Rebuild\nDue 2026-09-19\n\nfield\nStatus for Repair raised bed irrigation\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "t-seed-f-2ywam6",
+      "text": "Plan spring planting schedule\nLow\n\nCommunity Garden Rebuild\nNo due date\n\nplanning\nStatus for Plan spring planting schedule\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "t-seed-g-6t3qpa",
+      "text": "Publish weekly fieldnote digest\nMedium\n\nCommunity Garden Rebuild\nDue 2026-09-07\n\ncomms\nStatus for Publish weekly fieldnote digest\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "t-31031917-1d03-4925-a537-a8a4ec7e36e3",
+      "text": "Review launch evidence\nHigh\n\nResearch\nDue 2026-09-20\n\nevidence\nlaunch\nStatus for Review launch evidence\nTo do\nDoing\nDone\nEdit\nDelete"
+     }
+    ],
+    "beforeStorageSha256": "eba8074f7ef195a2c73aaaa331400b6e8d300cc607d4ba4e4e4a767764c725f0",
+    "afterStorageSha256": "08b9a144e1148a1ba05cd565aee92f317e13e2be6101766a1df891fe3e7c0b87",
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Fieldnote Board\n\nA local-first task board for a small project team.\n\nExport JSON\nImport JSON\n+ New task\nSearch tasks\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nCommunity Garden Rebuild\nResearch\nRidgeline Trail Refresh\nPriority\nAll priorities\nLow\nMedium\nHigh\n\n8 of 8 tasks shown\n\nDraft trailhead signage copy\nHigh\n\nRidgeline Trail Refresh\nDue 2026-09-17\n\ncopy\nsignage\nStatus for Draft trailhead signage copy\nTo do\nDoing\nDone\nEdit\nDelete\nSurvey creek crossing damage\nHigh\n\nRidgeline Trail Refresh\nDue 2026-09-15\n\nfield\nsurvey\nStatus for Survey creek crossing damage\nTo do\nDoing\nDone\nEdit\nDelete\nOrder replacement waymarkers\nMedium\n\nRidgeline Trail Refresh\nDue 2026-09-24\n\nprocurement\nStatus for Order replacement waymarkers\nTo do\nDoing\nDone\nEdit\nDelete\nCompile volunteer hours for Q3\nLow\n\nCommunity Garden Rebuild\nDue 2026-09-12\n\nadmin\nreporting\nStatus for Compile volunteer hours for Q3\nTo do\nDoing\nDone\nEdit\nDelete\nRepair raised bed irrigation\nMedium\n\nCommunity Garden Rebuild\nDue 2026-09-19\n\nfield\nStatus for Repair raised bed irrigation\nTo do\nDoing\nDone\nEdit\nDelete\nPlan spring planting schedule\nLow\n\nCommunity Garden Rebuild\nNo due date\n\nplanning\nStatus for Plan spring planting schedule\nTo do\nDoing\nDone\nEdit\nDelete\nPublish weekly fieldnote digest\nMedium\n\nCommunity Garden Rebuild\nDue 2026-09-07\n\ncomms\nStatus for Publish weekly fieldnote digest\nTo do\nDoing\nDone\nEdit\nDelete\nReview launch evidence\nHigh\n\nResearch\nDue 2026-09-20\n\nevidence\nlaunch\nStatus for Review launch evidence\nTo do\nDoing\nDone\nEdit\nDelete",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T22:29:04.517Z",
+   "actionStartedAt": "2026-09-14T22:29:04.051Z",
+   "sha256": "fccd972d4e0120bdaa5dea3222cf0c72fc956bb83c294797c669274e7db3267e",
+   "bytes": 135036
+  },
+  {
+   "id": "search",
+   "label": "Search for Review launch evidence; matching task shown",
+   "file": "search.png",
+   "actionSucceeded": true,
+   "observed": {
+    "search": "Review launch evidence",
+    "visibleCards": [
+     {
+      "id": "t-31031917-1d03-4925-a537-a8a4ec7e36e3",
+      "text": "Review launch evidence\nHigh\n\nResearch\nDue 2026-09-20\n\nevidence\nlaunch\nStatus for Review launch evidence\nTo do\nDoing\nDone\nEdit\nDelete"
+     }
+    ],
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Fieldnote Board\n\nA local-first task board for a small project team.\n\nExport JSON\nImport JSON\n+ New task\nSearch tasks\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nCommunity Garden Rebuild\nResearch\nRidgeline Trail Refresh\nPriority\nAll priorities\nLow\nMedium\nHigh\n\n1 of 8 tasks shown\n\nReview launch evidence\nHigh\n\nResearch\nDue 2026-09-20\n\nevidence\nlaunch\nStatus for Review launch evidence\nTo do\nDoing\nDone\nEdit\nDelete",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T22:29:04.977Z",
+   "actionStartedAt": "2026-09-14T22:29:04.596Z",
+   "sha256": "a3eb8c0338dd3d2bf696febd921f43a83073a5c03930c36b033082abb1b625f7",
+   "bytes": 48910
+  },
+  {
+   "id": "import-error",
+   "label": "Malformed JSON selected; visible error and saved board unchanged",
+   "file": "import-error.png",
+   "actionSucceeded": true,
+   "observed": {
+    "formDismissed": false,
+    "confirmation": {
+     "clicked": false
+    },
+    "dialogs": [],
+    "newVisibleFeedback": [
+     "That file is not valid JSON."
+    ],
+    "nativeError": false,
+    "storageUnchanged": true,
+    "beforeStorageSha256": "08b9a144e1148a1ba05cd565aee92f317e13e2be6101766a1df891fe3e7c0b87",
+    "afterStorageSha256": "08b9a144e1148a1ba05cd565aee92f317e13e2be6101766a1df891fe3e7c0b87",
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 18
+     },
+     "documentWidth": 1440,
+     "visibleText": "Fieldnote Board\n\nA local-first task board for a small project team.\n\nExport JSON\nImport JSON\n+ New task\n\nThat file is not valid JSON.\n\nSearch tasks\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nCommunity Garden Rebuild\nResearch\nRidgeline Trail Refresh\nPriority\nAll priorities\nLow\nMedium\nHigh\n\n8 of 8 tasks shown\n\nDraft trailhead signage copy\nHigh\n\nRidgeline Trail Refresh\nDue 2026-09-17\n\ncopy\nsignage\nStatus for Draft trailhead signage copy\nTo do\nDoing\nDone\nEdit\nDelete\nSurvey creek crossing damage\nHigh\n\nRidgeline Trail Refresh\nDue 2026-09-15\n\nfield\nsurvey\nStatus for Survey creek crossing damage\nTo do\nDoing\nDone\nEdit\nDelete\nOrder replacement waymarkers\nMedium\n\nRidgeline Trail Refresh\nDue 2026-09-24\n\nprocurement\nStatus for Order replacement waymarkers\nTo do\nDoing\nDone\nEdit\nDelete\nCompile volunteer hours for Q3\nLow\n\nCommunity Garden Rebuild\nDue 2026-09-12\n\nadmin\nreporting\nStatus for Compile volunteer hours for Q3\nTo do\nDoing\nDone\nEdit\nDelete\nRepair raised bed irrigation\nMedium\n\nCommunity Garden Rebuild\nDue 2026-09-19\n\nfield\nStatus for Repair raised bed irrigation\nTo do\nDoing\nDone\nEdit\nDelete\nPlan spring planting schedule\nLow\n\nCommunity Garden Rebuild\nNo due date\n\nplanning\nStatus for Plan spring planting schedule\nTo do\nDoing\nDone\nEdit\nDelete\nPublish weekly fieldnote digest\nMedium\n\nCommunity Garden Rebuild\nDue 2026-09-07\n\ncomms\nStatus for Publish weekly fieldnote digest\nTo do\nDoing\nDone\nEdit\nDelete\nReview launch evidence\nHigh\n\nResearch\nDue 2026-09-20\n\nevidence\nlaunch\nStatus for Review launch evidence\nTo do\nDoing\nDone\nEdit\nDelete",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T22:29:05.461Z",
+   "actionStartedAt": "2026-09-14T22:29:05.050Z",
+   "sha256": "188df72de0916a370038d0d9d8c44c2674a65ebafdf14ce47f95889ad9b30bbe",
+   "bytes": 135024
+  }
+ ],
+ "mobilefile": "mobile-initial.png",
+ "mobile": {
+  "id": "mobile-initial",
+  "label": "Mobile first visit \u2014 separate fresh context",
+  "file": "mobile-initial.png",
+  "sha256": "ce53cea0dc8307e14bfa2f0a49b245e1d7c23c11a4c8742a94768ec01c2c5f14",
+  "bytes": 44646,
+  "actionSucceeded": true,
+  "observed": {
+   "httpStatus": 200,
+   "freshStorage": true,
+   "render": {
+    "path": "/nested/benchmark/",
+    "viewport": {
+     "width": 360,
+     "height": 800
+    },
+    "scroll": {
+     "x": 0,
+     "y": 0
+    },
+    "documentWidth": 360,
+    "visibleText": "Fieldnote Board\n\nA local-first task board for a small project team.\n\nExport JSON\nImport JSON\n+ New task\nSearch tasks\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nCommunity Garden Rebuild\nRidgeline Trail Refresh\nPriority\nAll priorities\nLow\nMedium\nHigh\n\n7 of 7 tasks shown\n\nDraft trailhead signage copy\nHigh\n\nRidgeline Trail Refresh\nDue 2026-09-17\n\ncopy\nsignage\nStatus for Draft trailhead signage copy\nTo do\nDoing\nDone\nEdit\nDelete\nSurvey creek crossing damage\nHigh\n\nRidgeline Trail Refresh\nDue 2026-09-15\n\nfield\nsurvey\nStatus for Survey creek crossing damage\nTo do\nDoing\nDone\nEdit\nDelete\nOrder replacement waymarkers\nMedium\n\nRidgeline Trail Refresh\nDue 2026-09-24\n\nprocurement\nStatus for Order replacement waymarkers\nTo do\nDoing\nDone\nEdit\nDelete\nCompile volunteer hours for Q3\nLow\n\nCommunity Garden Rebuild\nDue 2026-09-12\n\nadmin\nreporting\nStatus for Compile volunteer hours for Q3\nTo do\nDoing\nDone\nEdit\nDelete\nRepair raised bed irrigation\nMedium\n\nCommunity Garden Rebuild\nDue 2026-09-19\n\nfield\nStatus for Repair raised bed irrigation\nTo do\nDoing\nDone\nEdit\nDelete\nPlan spring planting schedule\nLow\n\nCommunity Garden Rebuild\nNo due date\n\nplanning\nStatus for Plan spring planting schedule\nTo do\nDoing\nDone\nEdit\nDelete\nPublish weekly fieldnote digest\nMedium\n\nCommunity Garden Rebuild\nDue 2026-09-07\n\ncomms\nStatus for Publish weekly fieldnote digest\nTo do\nDoing\nDone\nEdit\nDelete",
+    "brokenVisibleImages": []
+   }
+  }
+ },
+ "missingStates": [],
+ "captureFailures": [],
+ "actionErrors": [],
+ "infrastructureErrors": [],
+ "console": [],
+ "network": [],
+ "dialogs": [],
+ "browserVersion": "152.0.7977.83",
+ "sourceAfterTreeSha256": "0cdb7d6d91210dbc14566966f3c7ccce58e21b6497af9031d28a3598e5530963",
+ "sourceUnchanged": true,
+ "finishedAt": "2026-09-14T22:29:06.923Z"
+}

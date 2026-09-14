@@ -1,0 +1,341 @@
+{
+ "schemaVersion": 1,
+ "runId": "run-07",
+ "kind": "app",
+ "startedAt": "2026-09-14T21:51:46.128Z",
+ "helperSha256": "2448fa17cc9a54989a8ae7134baa2bfda9ee4cca000603582a3ce873d3c54f4a",
+ "source": {
+  "files": [
+   {
+    "file": "app.js",
+    "bytes": 25802,
+    "sha256": "f03d3aaa2f601224f8188e586daf896ad34d344ac925f0661f5f6a54a57bd0bd"
+   },
+   {
+    "file": "BRIEF.md",
+    "bytes": 4518,
+    "sha256": "7116b83075469f773ce51f72f708041e221d97b2b055d75cb309f0ff39239d1d"
+   },
+   {
+    "file": "index.html",
+    "bytes": 5941,
+    "sha256": "eba95f6107f3437af5cbbcd032f41f1e5564a0087f3902ed81d9ea1e6912ed0a"
+   },
+   {
+    "file": "README.md",
+    "bytes": 6503,
+    "sha256": "a61d70044e5ac11df791ad44f5a14f835acf288882a01c5c09fde3d69f111dee"
+   },
+   {
+    "file": "styles.css",
+    "bytes": 8939,
+    "sha256": "02d467d47e33a064ec9c057359927f8dfb8fa53d658586b0355b42dca15da8aa"
+   }
+  ],
+  "treeSha256": "ca835c61fb76f242a02b9de755653a3b05538fe96f718807db3b4ff234fd2af1"
+ },
+ "policy": {
+  "presentation": "Composed walkthrough from captured states; not a recording of model generation.",
+  "browser": "Google Chrome",
+  "desktopViewport": {
+   "width": 1440,
+   "height": 960
+  },
+  "mobileViewport": {
+   "width": 360,
+   "height": 800
+  },
+  "deviceScaleFactor": 1,
+  "fullPage": false,
+  "reducedMotion": "reduce",
+  "screenshotAnimations": "disabled",
+  "freshContexts": true,
+  "externalRequests": "blocked",
+  "candidateEdits": false,
+  "scoresProvided": false
+ },
+ "snapshots": [
+  {
+   "id": "initial",
+   "label": "Desktop first visit \u2014 untouched initial output",
+   "file": "initial.png",
+   "actionSucceeded": true,
+   "observed": {
+    "httpStatus": 200,
+    "freshStorage": true,
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 2457,
+     "visibleText": "Fieldnote Board\n\nA local-first task board for small field teams. Everything stays in this browser.\n\n+ New task\nSearch\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nHarvest Almanac\nRiverside Trailhead\nPriority\nAll priorities\nLow\nMedium\nHigh\nBoard file\nExport JSON\nImport JSON\n\n7 of 7 tasks shown\n\nCalibrate soil moisture sensors\n\nRiverside Trailhead\n\nHIGH\nDue 2026-09-20\nsensors\nfieldwork\nStatus for Calibrate soil moisture sensors\nTo do\nDoing\nDone\nEdit\nDelete\nDraft trail erosion report\n\nRiverside Trailhead\n\nMEDIUM\nDue 2026-09-25\nreport\nStatus for Draft trail erosion report\nTo do\nDoing\nDone\nEdit\nDelete\nPhotograph wildflower bloom\n\nRiverside Trailhead\n\nLOW\nNo due date\nphotos\nbotany\nStatus for Photograph wildflower bloom\nTo do\nDoing\nDone\nEdit\nDelete\nOrder replacement rain gauges\n\nRiverside Trailhead\n\nLOW\nNo due date\nequipment\nStatus for Order replacement rain gauges\nTo do\nDoing\nDone\nEdit\nDelete\nInterview local beekeepers\n\nHarvest Almanac\n\nMEDIUM\nDue 2026-09-30\ninterviews\nStatus for Interview local beekeepers\nTo do\nDoing\nDone\nEdit\nDelete\nCompile rainfall archive\n\nHarvest Almanac\n\nHIGH\nDue 2026-09-18\ndata\narchive\nStatus for Compile rainfall archive\nTo do\nDoing\nDone\nEdit\nDelete\nPublish September almanac issue\n\nHarvest Almanac\n\nHIGH\nDue 2026-09-10\npublishing\nStatus for Publish September almanac issue\nTo do\nDoing\nDone\nEdit\nDelete",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T21:51:47.900Z",
+   "actionStartedAt": "2026-09-14T21:51:47.123Z",
+   "sha256": "17351d6866ac5234da5c27f42fc7cc449c1bc9b427ee51d89f474df990334131",
+   "bytes": 121045
+  },
+  {
+   "id": "new-task-form",
+   "label": "New task form opened",
+   "file": "new-task-form.png",
+   "actionSucceeded": true,
+   "observed": {
+    "visible": true,
+    "fields": [
+     {
+      "name": "title",
+      "type": "text",
+      "value": ""
+     },
+     {
+      "name": "project",
+      "type": "text",
+      "value": ""
+     },
+     {
+      "name": "status",
+      "type": "select-one",
+      "value": "todo"
+     },
+     {
+      "name": "priority",
+      "type": "select-one",
+      "value": "medium"
+     },
+     {
+      "name": "dueDate",
+      "type": "date",
+      "value": ""
+     },
+     {
+      "name": "tags",
+      "type": "text",
+      "value": ""
+     }
+    ],
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 2457,
+     "visibleText": "Fieldnote Board\n\nA local-first task board for small field teams. Everything stays in this browser.\n\n+ New task\nSearch\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nHarvest Almanac\nRiverside Trailhead\nPriority\nAll priorities\nLow\nMedium\nHigh\nBoard file\nExport JSON\nImport JSON\n\n7 of 7 tasks shown\n\nCalibrate soil moisture sensors\n\nRiverside Trailhead\n\nHIGH\nDue 2026-09-20\nsensors\nfieldwork\nStatus for Calibrate soil moisture sensors\nTo do\nDoing\nDone\nEdit\nDelete\nDraft trail erosion report\n\nRiverside Trailhead\n\nMEDIUM\nDue 2026-09-25\nreport\nStatus for Draft trail erosion report\nTo do\nDoing\nDone\nEdit\nDelete\nPhotograph wildflower bloom\n\nRiverside Trailhead\n\nLOW\nNo due date\nphotos\nbotany\nStatus for Photograph wildflower bloom\nTo do\nDoing\nDone\nEdit\nDelete\nOrder replacement rain gauges\n\nRiverside Trailhead\n\nLOW\nNo due date\nequipment\nStatus for Order replacement rain gauges\nTo do\nDoing\nDone\nEdit\nDelete\nInterview local beekeepers\n\nHarvest Almanac\n\nMEDIUM\nDue 2026-09-30\ninterviews\nStatus for Interview local beekeepers\nTo do\nDoing\nDone\nEdit\nDelete\nCompile rainfall archive\n\nHarvest Almanac\n\nHIGH\nDue 2026-09-18\ndata\narchive\nStatus for Compile rainfall archive\nTo do\nDoing\nDone\nEdit\nDelete\nPublish September almanac issue\n\nHarvest Almanac\n\nHIGH\nDue 2026-09-10\npublishing\nStatus for Publish September almanac issue\nTo do\nDoing\nDone\nEdit\nDelete\nNew task\nTitle\n\nProject\n\nStatus\nTo do\nDoing\nDone\nPriority\nLow\nMedium\nHigh\nDue date\n\nTags (comma-separated, up to 8)\n\nCancel\nSave task",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T21:51:48.320Z",
+   "actionStartedAt": "2026-09-14T21:51:47.983Z",
+   "sha256": "4f4493a51900aed610b60c0a372bd1f506cfea39f29894ad7f90c69a41303c05",
+   "bytes": 125901
+  },
+  {
+   "id": "after-create",
+   "label": "Review launch evidence created and present in saved board",
+   "file": "after-create.png",
+   "actionSucceeded": true,
+   "observed": {
+    "requested": {
+     "title": "Review launch evidence",
+     "project": "Research",
+     "status": "doing",
+     "priority": "high",
+     "dueDate": "2026-09-20",
+     "tags": "evidence,launch"
+    },
+    "storageError": null,
+    "matchingRecords": [
+     {
+      "id": "de38f5d9-7b80-4f59-922f-4178c7415b88",
+      "title": "Review launch evidence",
+      "project": "Research",
+      "status": "doing",
+      "priority": "high",
+      "dueDate": "2026-09-20",
+      "tags": [
+       "evidence",
+       "launch"
+      ]
+     }
+    ],
+    "rendered": true,
+    "visibleCards": [
+     {
+      "id": "seed-1",
+      "text": "Calibrate soil moisture sensors\n\nRiverside Trailhead\n\nHIGH\nDue 2026-09-20\nsensors\nfieldwork\nStatus for Calibrate soil moisture sensors\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "seed-2",
+      "text": "Draft trail erosion report\n\nRiverside Trailhead\n\nMEDIUM\nDue 2026-09-25\nreport\nStatus for Draft trail erosion report\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "seed-3",
+      "text": "Photograph wildflower bloom\n\nRiverside Trailhead\n\nLOW\nNo due date\nphotos\nbotany\nStatus for Photograph wildflower bloom\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "seed-4",
+      "text": "Order replacement rain gauges\n\nRiverside Trailhead\n\nLOW\nNo due date\nequipment\nStatus for Order replacement rain gauges\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "seed-5",
+      "text": "Interview local beekeepers\n\nHarvest Almanac\n\nMEDIUM\nDue 2026-09-30\ninterviews\nStatus for Interview local beekeepers\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "seed-6",
+      "text": "Compile rainfall archive\n\nHarvest Almanac\n\nHIGH\nDue 2026-09-18\ndata\narchive\nStatus for Compile rainfall archive\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "seed-7",
+      "text": "Publish September almanac issue\n\nHarvest Almanac\n\nHIGH\nDue 2026-09-10\npublishing\nStatus for Publish September almanac issue\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "de38f5d9-7b80-4f59-922f-4178c7415b88",
+      "text": "Review launch evidence\n\nResearch\n\nHIGH\nDue 2026-09-20\nevidence\nlaunch\nStatus for Review launch evidence\nTo do\nDoing\nDone\nEdit\nDelete"
+     }
+    ],
+    "beforeStorageSha256": "46ea997e653a4a04e435d7370cc7fc4e70d2613468f0a7feecadf533347f697d",
+    "afterStorageSha256": "3e83b22a0ee5f182b593e7fa567598a50f5dcc1aebce2d9aeb777f92b6057494",
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 2457,
+     "visibleText": "Fieldnote Board\n\nA local-first task board for small field teams. Everything stays in this browser.\n\n+ New task\nSearch\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nHarvest Almanac\nResearch\nRiverside Trailhead\nPriority\nAll priorities\nLow\nMedium\nHigh\nBoard file\nExport JSON\nImport JSON\n\n8 of 8 tasks shown\n\nCalibrate soil moisture sensors\n\nRiverside Trailhead\n\nHIGH\nDue 2026-09-20\nsensors\nfieldwork\nStatus for Calibrate soil moisture sensors\nTo do\nDoing\nDone\nEdit\nDelete\nDraft trail erosion report\n\nRiverside Trailhead\n\nMEDIUM\nDue 2026-09-25\nreport\nStatus for Draft trail erosion report\nTo do\nDoing\nDone\nEdit\nDelete\nPhotograph wildflower bloom\n\nRiverside Trailhead\n\nLOW\nNo due date\nphotos\nbotany\nStatus for Photograph wildflower bloom\nTo do\nDoing\nDone\nEdit\nDelete\nOrder replacement rain gauges\n\nRiverside Trailhead\n\nLOW\nNo due date\nequipment\nStatus for Order replacement rain gauges\nTo do\nDoing\nDone\nEdit\nDelete\nInterview local beekeepers\n\nHarvest Almanac\n\nMEDIUM\nDue 2026-09-30\ninterviews\nStatus for Interview local beekeepers\nTo do\nDoing\nDone\nEdit\nDelete\nCompile rainfall archive\n\nHarvest Almanac\n\nHIGH\nDue 2026-09-18\ndata\narchive\nStatus for Compile rainfall archive\nTo do\nDoing\nDone\nEdit\nDelete\nPublish September almanac issue\n\nHarvest Almanac\n\nHIGH\nDue 2026-09-10\npublishing\nStatus for Publish September almanac issue\nTo do\nDoing\nDone\nEdit\nDelete\nReview launch evidence\n\nResearch\n\nHIGH\nDue 2026-09-20\nevidence\nlaunch\nStatus for Review launch evidence\nTo do\nDoing\nDone\nEdit\nDelete",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T21:51:48.890Z",
+   "actionStartedAt": "2026-09-14T21:51:48.434Z",
+   "sha256": "90ca25ef1f28b135c8f8790169387095d098f96feb925f80d1f4f163d6fe9d3b",
+   "bytes": 130505
+  },
+  {
+   "id": "search",
+   "label": "Search for Review launch evidence; matching task shown",
+   "file": "search.png",
+   "actionSucceeded": true,
+   "observed": {
+    "search": "Review launch evidence",
+    "visibleCards": [
+     {
+      "id": "de38f5d9-7b80-4f59-922f-4178c7415b88",
+      "text": "Review launch evidence\n\nResearch\n\nHIGH\nDue 2026-09-20\nevidence\nlaunch\nStatus for Review launch evidence\nTo do\nDoing\nDone\nEdit\nDelete"
+     }
+    ],
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 2457,
+     "visibleText": "Fieldnote Board\n\nA local-first task board for small field teams. Everything stays in this browser.\n\n+ New task\nSearch\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nHarvest Almanac\nResearch\nRiverside Trailhead\nPriority\nAll priorities\nLow\nMedium\nHigh\nBoard file\nExport JSON\nImport JSON\n\n1 of 8 tasks shown\n\nReview launch evidence\n\nResearch\n\nHIGH\nDue 2026-09-20\nevidence\nlaunch\nStatus for Review launch evidence\nTo do\nDoing\nDone\nEdit\nDelete",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T21:51:49.354Z",
+   "actionStartedAt": "2026-09-14T21:51:48.974Z",
+   "sha256": "4759aedf8d67ebe76558c2def834e4f6708ca244b57cebbc10336aaaf364988c",
+   "bytes": 52957
+  },
+  {
+   "id": "import-error",
+   "label": "Malformed JSON selected; visible error and saved board unchanged",
+   "file": "import-error.png",
+   "actionSucceeded": true,
+   "observed": {
+    "formDismissed": false,
+    "confirmation": {
+     "clicked": false
+    },
+    "dialogs": [],
+    "newVisibleFeedback": [
+     "Import failed: file is not valid JSON."
+    ],
+    "nativeError": false,
+    "storageUnchanged": true,
+    "beforeStorageSha256": "3e83b22a0ee5f182b593e7fa567598a50f5dcc1aebce2d9aeb777f92b6057494",
+    "afterStorageSha256": "3e83b22a0ee5f182b593e7fa567598a50f5dcc1aebce2d9aeb777f92b6057494",
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 2457,
+     "visibleText": "Fieldnote Board\n\nA local-first task board for small field teams. Everything stays in this browser.\n\n+ New task\n\nImport failed: file is not valid JSON.\n\nSearch\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nHarvest Almanac\nResearch\nRiverside Trailhead\nPriority\nAll priorities\nLow\nMedium\nHigh\nBoard file\nExport JSON\nImport JSON\n\n8 of 8 tasks shown\n\nCalibrate soil moisture sensors\n\nRiverside Trailhead\n\nHIGH\nDue 2026-09-20\nsensors\nfieldwork\nStatus for Calibrate soil moisture sensors\nTo do\nDoing\nDone\nEdit\nDelete\nDraft trail erosion report\n\nRiverside Trailhead\n\nMEDIUM\nDue 2026-09-25\nreport\nStatus for Draft trail erosion report\nTo do\nDoing\nDone\nEdit\nDelete\nPhotograph wildflower bloom\n\nRiverside Trailhead\n\nLOW\nNo due date\nphotos\nbotany\nStatus for Photograph wildflower bloom\nTo do\nDoing\nDone\nEdit\nDelete\nOrder replacement rain gauges\n\nRiverside Trailhead\n\nLOW\nNo due date\nequipment\nStatus for Order replacement rain gauges\nTo do\nDoing\nDone\nEdit\nDelete\nInterview local beekeepers\n\nHarvest Almanac\n\nMEDIUM\nDue 2026-09-30\ninterviews\nStatus for Interview local beekeepers\nTo do\nDoing\nDone\nEdit\nDelete\nCompile rainfall archive\n\nHarvest Almanac\n\nHIGH\nDue 2026-09-18\ndata\narchive\nStatus for Compile rainfall archive\nTo do\nDoing\nDone\nEdit\nDelete\nPublish September almanac issue\n\nHarvest Almanac\n\nHIGH\nDue 2026-09-10\npublishing\nStatus for Publish September almanac issue\nTo do\nDoing\nDone\nEdit\nDelete\nReview launch evidence\n\nResearch\n\nHIGH\nDue 2026-09-20\nevidence\nlaunch\nStatus for Review launch evidence\nTo do\nDoing\nDone\nEdit\nDelete",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T21:51:49.826Z",
+   "actionStartedAt": "2026-09-14T21:51:49.420Z",
+   "sha256": "a6a5584bd9144dd6839b570d8393c8ee4fa7ac4faca1eae17162bc5dfe0e8052",
+   "bytes": 135873
+  }
+ ],
+ "mobilefile": "mobile-initial.png",
+ "mobile": {
+  "id": "mobile-initial",
+  "label": "Mobile first visit \u2014 separate fresh context",
+  "file": "mobile-initial.png",
+  "sha256": "324376b2f080ad79768a1b42e3fc0a5458a2e982de90f707b96cace968d9f15e",
+  "bytes": 48758,
+  "actionSucceeded": true,
+  "observed": {
+   "httpStatus": 200,
+   "freshStorage": true,
+   "render": {
+    "path": "/nested/benchmark/",
+    "viewport": {
+     "width": 393,
+     "height": 874
+    },
+    "scroll": {
+     "x": 0,
+     "y": 0
+    },
+    "documentWidth": 393,
+    "visibleText": "Fieldnote Board\n\nA local-first task board for small field teams. Everything stays in this browser.\n\n+ New task\nSearch\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nHarvest Almanac\nRiverside Trailhead\nPriority\nAll priorities\nLow\nMedium\nHigh\nBoard file\nExport JSON\nImport JSON\n\n7 of 7 tasks shown\n\nCalibrate soil moisture sensors\n\nRiverside Trailhead\n\nHIGH\nDue 2026-09-20\nsensors\nfieldwork\nStatus for Calibrate soil moisture sensors\nTo do\nDoing\nDone\nEdit\nDelete\nDraft trail erosion report\n\nRiverside Trailhead\n\nMEDIUM\nDue 2026-09-25\nreport\nStatus for Draft trail erosion report\nTo do\nDoing\nDone\nEdit\nDelete\nPhotograph wildflower bloom\n\nRiverside Trailhead\n\nLOW\nNo due date\nphotos\nbotany\nStatus for Photograph wildflower bloom\nTo do\nDoing\nDone\nEdit\nDelete\nOrder replacement rain gauges\n\nRiverside Trailhead\n\nLOW\nNo due date\nequipment\nStatus for Order replacement rain gauges\nTo do\nDoing\nDone\nEdit\nDelete\nInterview local beekeepers\n\nHarvest Almanac\n\nMEDIUM\nDue 2026-09-30\ninterviews\nStatus for Interview local beekeepers\nTo do\nDoing\nDone\nEdit\nDelete\nCompile rainfall archive\n\nHarvest Almanac\n\nHIGH\nDue 2026-09-18\ndata\narchive\nStatus for Compile rainfall archive\nTo do\nDoing\nDone\nEdit\nDelete\nPublish September almanac issue\n\nHarvest Almanac\n\nHIGH\nDue 2026-09-10\npublishing\nStatus for Publish September almanac issue\nTo do\nDoing\nDone\nEdit\nDelete",
+    "brokenVisibleImages": []
+   }
+  }
+ },
+ "missingStates": [],
+ "captureFailures": [],
+ "actionErrors": [],
+ "infrastructureErrors": [],
+ "console": [],
+ "network": [],
+ "dialogs": [],
+ "browserVersion": "152.0.7977.83",
+ "sourceAfterTreeSha256": "ca835c61fb76f242a02b9de755653a3b05538fe96f718807db3b4ff234fd2af1",
+ "sourceUnchanged": true,
+ "finishedAt": "2026-09-14T21:51:51.348Z"
+}

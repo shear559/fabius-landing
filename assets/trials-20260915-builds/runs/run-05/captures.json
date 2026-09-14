@@ -1,0 +1,345 @@
+{
+ "schemaVersion": 1,
+ "runId": "run-05",
+ "kind": "app",
+ "startedAt": "2026-09-14T21:47:38.810Z",
+ "helperSha256": "2448fa17cc9a54989a8ae7134baa2bfda9ee4cca000603582a3ce873d3c54f4a",
+ "source": {
+  "files": [
+   {
+    "file": "app.js",
+    "bytes": 32882,
+    "sha256": "f84d90b3d7d0e0b745d3804fe3ca68a4ee8b93d745de8b3ad849a6842cb3ab50"
+   },
+   {
+    "file": "BRIEF.md",
+    "bytes": 4518,
+    "sha256": "7116b83075469f773ce51f72f708041e221d97b2b055d75cb309f0ff39239d1d"
+   },
+   {
+    "file": "index.html",
+    "bytes": 6275,
+    "sha256": "42473c0c2a9ff25cc6d289db097600286e7d992809ac7a45a380969eb72971e7"
+   },
+   {
+    "file": "README.md",
+    "bytes": 7603,
+    "sha256": "23edfe1386d531a1ee29d93104e4c2d43b64afd79f2e57c34178377b9c95ff11"
+   },
+   {
+    "file": "styles.css",
+    "bytes": 10969,
+    "sha256": "30f096c6b3f707e21c21b0ffa48e17dd3d5c749b913f1824378ad7eb7f7ffbb4"
+   }
+  ],
+  "treeSha256": "de54bb3ab85177724abdaddbc12506718059d3c32d4448fa6238de681bf876d4"
+ },
+ "policy": {
+  "presentation": "Composed walkthrough from captured states; not a recording of model generation.",
+  "browser": "Google Chrome",
+  "desktopViewport": {
+   "width": 1440,
+   "height": 960
+  },
+  "mobileViewport": {
+   "width": 360,
+   "height": 800
+  },
+  "deviceScaleFactor": 1,
+  "fullPage": false,
+  "reducedMotion": "reduce",
+  "screenshotAnimations": "disabled",
+  "freshContexts": true,
+  "externalRequests": "blocked",
+  "candidateEdits": false,
+  "scoresProvided": false
+ },
+ "snapshots": [
+  {
+   "id": "initial",
+   "label": "Desktop first visit \u2014 untouched initial output",
+   "file": "initial.png",
+   "actionSucceeded": true,
+   "observed": {
+    "httpStatus": 200,
+    "freshStorage": true,
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Fieldnote Board\n\nLocal-first task tracking for a small project team.\n\n+ New task\nExport JSON\nImport JSON\nSEARCH\nSTATUS\nAll statuses\nTo do\nDoing\nDone\nPROJECT\nAll projects\nHarborview Renovation\nRiverside Sensor Deploy\nPRIORITY\nAll priorities\nLow\nMedium\nHigh\n\nShowing 8 of 8 tasks\n\nTo do\n3\nSurvey east wing foundation\nHIGH\n\nHarborview Renovation\n\nDue Sep 18, 2026\n\nsite-visit\nstructural\nStatus for Survey east wing foundation\nTo do\nDoing\nDone\nEdit\nDelete\nOrder replacement joists\nMEDIUM\n\nHarborview Renovation\n\nNo due date\n\nmaterials\nStatus for Order replacement joists\nTo do\nDoing\nDone\nEdit\nDelete\nCalibrate soil moisture sensors\nMEDIUM\n\nRiverside Sensor Deploy\n\nNo due date\n\nsensors\ncalibration\nStatus for Calibrate soil moisture sensors\nTo do\nDoing\nDone\nEdit\nDelete\nDoing\n3\nClient walkthrough prep\nMEDIUM\n\nHarborview Renovation\n\nDue Sep 16, 2026\n\nclient\nreview\nStatus for Client walkthrough prep\nTo do\nDoing\nDone\nEdit\nDelete\nPermit renewal filing\nHIGH\n\nHarborview Renovation\n\nDue Sep 13, 2026 (overdue)\n\npermit\nblocked\nStatus for Permit renewal filing\nTo do\nDoing\nDone\nEdit\nDelete\nDeploy gateway nodes to site B\nHIGH\n\nRiverside Sensor Deploy\n\nDue Sep 20, 2026\n\nsensors\nsite-visit\nStatus for Deploy gateway nodes to site B\nTo do\nDoing\nDone\nEdit\nDelete\nDone\n2\nFinish electrical rough-in\nMEDIUM\n\nHarborview Renovation\n\nDue Sep 5, 2026\n\nelectrical\nStatus for Finish electrical rough-in\nTo do\nDoing\nDone\nEdit\nDelete\nDraft Q3 sensor coverage report\nLOW\n\nRiverside Sensor Deploy\n\nDue Aug 31, 2026\n\nreview\nStatus for Draft Q3 sensor coverage report\nTo do\nDoing\nDone\nEdit\nDelete",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T21:47:40.599Z",
+   "actionStartedAt": "2026-09-14T21:47:39.842Z",
+   "sha256": "7b14de00b3745d0ca7dc5fd071cef0d398f37cda00c2f6f93494cd5e04962863",
+   "bytes": 115363
+  },
+  {
+   "id": "new-task-form",
+   "label": "New task form opened",
+   "file": "new-task-form.png",
+   "actionSucceeded": true,
+   "observed": {
+    "visible": true,
+    "fields": [
+     {
+      "name": "title",
+      "type": "text",
+      "value": ""
+     },
+     {
+      "name": "project",
+      "type": "text",
+      "value": ""
+     },
+     {
+      "name": "status",
+      "type": "select-one",
+      "value": "todo"
+     },
+     {
+      "name": "priority",
+      "type": "select-one",
+      "value": "medium"
+     },
+     {
+      "name": "dueDate",
+      "type": "text",
+      "value": ""
+     },
+     {
+      "name": "tags",
+      "type": "text",
+      "value": ""
+     }
+    ],
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Fieldnote Board\n\nLocal-first task tracking for a small project team.\n\n+ New task\nExport JSON\nImport JSON\nSEARCH\nSTATUS\nAll statuses\nTo do\nDoing\nDone\nPROJECT\nAll projects\nHarborview Renovation\nRiverside Sensor Deploy\nPRIORITY\nAll priorities\nLow\nMedium\nHigh\n\nShowing 8 of 8 tasks\n\nTo do\n3\nSurvey east wing foundation\nHIGH\n\nHarborview Renovation\n\nDue Sep 18, 2026\n\nsite-visit\nstructural\nStatus for Survey east wing foundation\nTo do\nDoing\nDone\nEdit\nDelete\nOrder replacement joists\nMEDIUM\n\nHarborview Renovation\n\nNo due date\n\nmaterials\nStatus for Order replacement joists\nTo do\nDoing\nDone\nEdit\nDelete\nCalibrate soil moisture sensors\nMEDIUM\n\nRiverside Sensor Deploy\n\nNo due date\n\nsensors\ncalibration\nStatus for Calibrate soil moisture sensors\nTo do\nDoing\nDone\nEdit\nDelete\nDoing\n3\nClient walkthrough prep\nMEDIUM\n\nHarborview Renovation\n\nDue Sep 16, 2026\n\nclient\nreview\nStatus for Client walkthrough prep\nTo do\nDoing\nDone\nEdit\nDelete\nPermit renewal filing\nHIGH\n\nHarborview Renovation\n\nDue Sep 13, 2026 (overdue)\n\npermit\nblocked\nStatus for Permit renewal filing\nTo do\nDoing\nDone\nEdit\nDelete\nDeploy gateway nodes to site B\nHIGH\n\nRiverside Sensor Deploy\n\nDue Sep 20, 2026\n\nsensors\nsite-visit\nStatus for Deploy gateway nodes to site B\nTo do\nDoing\nDone\nEdit\nDelete\nDone\n2\nFinish electrical rough-in\nMEDIUM\n\nHarborview Renovation\n\nDue Sep 5, 2026\n\nelectrical\nStatus for Finish electrical rough-in\nTo do\nDoing\nDone\nEdit\nDelete\nDraft Q3 sensor coverage report\nLOW\n\nRiverside Sensor Deploy\n\nDue Aug 31, 2026\n\nreview\nStatus for Draft Q3 sensor coverage report\nTo do\nDoing\nDone\nEdit\nDelete\nNew task\n\u00d7\nTitle\n\nProject\n\nStatus\nTo do\nDoing\nDone\nPriority\nLow\nMedium\nHigh\nDue date (YYYY-MM-DD, optional)\n\nTags (comma-separated, up to 8)\n\nCancel\nSave task",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T21:47:41.077Z",
+   "actionStartedAt": "2026-09-14T21:47:40.707Z",
+   "sha256": "08500748bc229afb5f709a385f2a86fd2f2b9548d67ffef6258b29ba1f5f9ea9",
+   "bytes": 119981
+  },
+  {
+   "id": "after-create",
+   "label": "Review launch evidence created and present in saved board",
+   "file": "after-create.png",
+   "actionSucceeded": true,
+   "observed": {
+    "requested": {
+     "title": "Review launch evidence",
+     "project": "Research",
+     "status": "doing",
+     "priority": "high",
+     "dueDate": "2026-09-20",
+     "tags": "evidence,launch"
+    },
+    "storageError": null,
+    "matchingRecords": [
+     {
+      "id": "339e1aa1-508c-4dc2-976e-00b48a18433e",
+      "title": "Review launch evidence",
+      "project": "Research",
+      "status": "doing",
+      "priority": "high",
+      "dueDate": "2026-09-20",
+      "tags": [
+       "evidence",
+       "launch"
+      ]
+     }
+    ],
+    "rendered": true,
+    "visibleCards": [
+     {
+      "id": "aba52b38-4b0b-4168-9535-7965703f369c",
+      "text": "Survey east wing foundation\nHIGH\n\nHarborview Renovation\n\nDue Sep 18, 2026\n\nsite-visit\nstructural\nStatus for Survey east wing foundation\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "3c6ec60e-6c5b-422e-a2ad-c09f3d5a6480",
+      "text": "Order replacement joists\nMEDIUM\n\nHarborview Renovation\n\nNo due date\n\nmaterials\nStatus for Order replacement joists\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "0480e793-f6ae-48c5-bccf-f42e43d4562b",
+      "text": "Calibrate soil moisture sensors\nMEDIUM\n\nRiverside Sensor Deploy\n\nNo due date\n\nsensors\ncalibration\nStatus for Calibrate soil moisture sensors\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "7de6d3e9-af06-4b6a-a837-d018f4abd937",
+      "text": "Client walkthrough prep\nMEDIUM\n\nHarborview Renovation\n\nDue Sep 16, 2026\n\nclient\nreview\nStatus for Client walkthrough prep\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "33b74843-954c-48e1-87fd-a57bf149416c",
+      "text": "Permit renewal filing\nHIGH\n\nHarborview Renovation\n\nDue Sep 13, 2026 (overdue)\n\npermit\nblocked\nStatus for Permit renewal filing\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "7efe083d-583d-4077-b60c-fab77801919e",
+      "text": "Deploy gateway nodes to site B\nHIGH\n\nRiverside Sensor Deploy\n\nDue Sep 20, 2026\n\nsensors\nsite-visit\nStatus for Deploy gateway nodes to site B\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "339e1aa1-508c-4dc2-976e-00b48a18433e",
+      "text": "Review launch evidence\nHIGH\n\nResearch\n\nDue Sep 20, 2026\n\nevidence\nlaunch\nStatus for Review launch evidence\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "2d8a6783-9ff5-46c8-97fc-3a261b8dd99a",
+      "text": "Finish electrical rough-in\nMEDIUM\n\nHarborview Renovation\n\nDue Sep 5, 2026\n\nelectrical\nStatus for Finish electrical rough-in\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "42dae737-240a-4c52-a240-21383f7c37e2",
+      "text": "Draft Q3 sensor coverage report\nLOW\n\nRiverside Sensor Deploy\n\nDue Aug 31, 2026\n\nreview\nStatus for Draft Q3 sensor coverage report\nTo do\nDoing\nDone\nEdit\nDelete"
+     }
+    ],
+    "beforeStorageSha256": "fb3646553182e0c4597a5fff3b4ecd2225ff863b2cce854504eaf3f2be417f19",
+    "afterStorageSha256": "f65cd22e63e78fbd23a875935d51f9a05e265721ecd3785b1987b2527ddccde4",
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Fieldnote Board\n\nLocal-first task tracking for a small project team.\n\n+ New task\nExport JSON\nImport JSON\nSEARCH\nSTATUS\nAll statuses\nTo do\nDoing\nDone\nPROJECT\nAll projects\nHarborview Renovation\nResearch\nRiverside Sensor Deploy\nPRIORITY\nAll priorities\nLow\nMedium\nHigh\n\nShowing 9 of 9 tasks\n\nTo do\n3\nSurvey east wing foundation\nHIGH\n\nHarborview Renovation\n\nDue Sep 18, 2026\n\nsite-visit\nstructural\nStatus for Survey east wing foundation\nTo do\nDoing\nDone\nEdit\nDelete\nOrder replacement joists\nMEDIUM\n\nHarborview Renovation\n\nNo due date\n\nmaterials\nStatus for Order replacement joists\nTo do\nDoing\nDone\nEdit\nDelete\nCalibrate soil moisture sensors\nMEDIUM\n\nRiverside Sensor Deploy\n\nNo due date\n\nsensors\ncalibration\nStatus for Calibrate soil moisture sensors\nTo do\nDoing\nDone\nEdit\nDelete\nDoing\n4\nClient walkthrough prep\nMEDIUM\n\nHarborview Renovation\n\nDue Sep 16, 2026\n\nclient\nreview\nStatus for Client walkthrough prep\nTo do\nDoing\nDone\nEdit\nDelete\nPermit renewal filing\nHIGH\n\nHarborview Renovation\n\nDue Sep 13, 2026 (overdue)\n\npermit\nblocked\nStatus for Permit renewal filing\nTo do\nDoing\nDone\nEdit\nDelete\nDeploy gateway nodes to site B\nHIGH\n\nRiverside Sensor Deploy\n\nDue Sep 20, 2026\n\nsensors\nsite-visit\nStatus for Deploy gateway nodes to site B\nTo do\nDoing\nDone\nEdit\nDelete\nReview launch evidence\nHIGH\n\nResearch\n\nDue Sep 20, 2026\n\nevidence\nlaunch\nStatus for Review launch evidence\nTo do\nDoing\nDone\nEdit\nDelete\nDone\n2\nFinish electrical rough-in\nMEDIUM\n\nHarborview Renovation\n\nDue Sep 5, 2026\n\nelectrical\nStatus for Finish electrical rough-in\nTo do\nDoing\nDone\nEdit\nDelete\nDraft Q3 sensor coverage report\nLOW\n\nRiverside Sensor Deploy\n\nDue Aug 31, 2026\n\nreview\nStatus for Draft Q3 sensor coverage report\nTo do\nDoing\nDone\nEdit\nDelete\nTask created.",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T21:47:41.628Z",
+   "actionStartedAt": "2026-09-14T21:47:41.158Z",
+   "sha256": "302aba3406bdd0ce74d152c94a4d2b46654e871dca4f5f36ee686fe743e39256",
+   "bytes": 128293
+  },
+  {
+   "id": "search",
+   "label": "Search for Review launch evidence; matching task shown",
+   "file": "search.png",
+   "actionSucceeded": true,
+   "observed": {
+    "search": "Review launch evidence",
+    "visibleCards": [
+     {
+      "id": "339e1aa1-508c-4dc2-976e-00b48a18433e",
+      "text": "Review launch evidence\nHIGH\n\nResearch\n\nDue Sep 20, 2026\n\nevidence\nlaunch\nStatus for Review launch evidence\nTo do\nDoing\nDone\nEdit\nDelete"
+     }
+    ],
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Fieldnote Board\n\nLocal-first task tracking for a small project team.\n\n+ New task\nExport JSON\nImport JSON\nSEARCH\nSTATUS\nAll statuses\nTo do\nDoing\nDone\nPROJECT\nAll projects\nHarborview Renovation\nResearch\nRiverside Sensor Deploy\nPRIORITY\nAll priorities\nLow\nMedium\nHigh\n\nShowing 1 of 9 tasks\n\nTo do\n0\n\nNo matching tasks.\n\nDoing\n1\nReview launch evidence\nHIGH\n\nResearch\n\nDue Sep 20, 2026\n\nevidence\nlaunch\nStatus for Review launch evidence\nTo do\nDoing\nDone\nEdit\nDelete\nDone\n0\n\nNo matching tasks.\n\nTask created.",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T21:47:42.094Z",
+   "actionStartedAt": "2026-09-14T21:47:41.704Z",
+   "sha256": "19912c970156f771fd6c8f106e94cf6ed489601e7643fd8a22a07cbfa7f77f82",
+   "bytes": 57761
+  },
+  {
+   "id": "import-error",
+   "label": "Malformed JSON selected; visible error and saved board unchanged",
+   "file": "import-error.png",
+   "actionSucceeded": true,
+   "observed": {
+    "formDismissed": false,
+    "confirmation": {
+     "clicked": false
+    },
+    "dialogs": [],
+    "newVisibleFeedback": [
+     "Import failed: the file is not valid JSON."
+    ],
+    "nativeError": false,
+    "storageUnchanged": true,
+    "beforeStorageSha256": "f65cd22e63e78fbd23a875935d51f9a05e265721ecd3785b1987b2527ddccde4",
+    "afterStorageSha256": "f65cd22e63e78fbd23a875935d51f9a05e265721ecd3785b1987b2527ddccde4",
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Fieldnote Board\n\nLocal-first task tracking for a small project team.\n\n+ New task\nExport JSON\nImport JSON\n\nImport failed: the file is not valid JSON.\n\nDismiss\nSEARCH\nSTATUS\nAll statuses\nTo do\nDoing\nDone\nPROJECT\nAll projects\nHarborview Renovation\nResearch\nRiverside Sensor Deploy\nPRIORITY\nAll priorities\nLow\nMedium\nHigh\n\nShowing 9 of 9 tasks\n\nTo do\n3\nSurvey east wing foundation\nHIGH\n\nHarborview Renovation\n\nDue Sep 18, 2026\n\nsite-visit\nstructural\nStatus for Survey east wing foundation\nTo do\nDoing\nDone\nEdit\nDelete\nOrder replacement joists\nMEDIUM\n\nHarborview Renovation\n\nNo due date\n\nmaterials\nStatus for Order replacement joists\nTo do\nDoing\nDone\nEdit\nDelete\nCalibrate soil moisture sensors\nMEDIUM\n\nRiverside Sensor Deploy\n\nNo due date\n\nsensors\ncalibration\nStatus for Calibrate soil moisture sensors\nTo do\nDoing\nDone\nEdit\nDelete\nDoing\n4\nClient walkthrough prep\nMEDIUM\n\nHarborview Renovation\n\nDue Sep 16, 2026\n\nclient\nreview\nStatus for Client walkthrough prep\nTo do\nDoing\nDone\nEdit\nDelete\nPermit renewal filing\nHIGH\n\nHarborview Renovation\n\nDue Sep 13, 2026 (overdue)\n\npermit\nblocked\nStatus for Permit renewal filing\nTo do\nDoing\nDone\nEdit\nDelete\nDeploy gateway nodes to site B\nHIGH\n\nRiverside Sensor Deploy\n\nDue Sep 20, 2026\n\nsensors\nsite-visit\nStatus for Deploy gateway nodes to site B\nTo do\nDoing\nDone\nEdit\nDelete\nReview launch evidence\nHIGH\n\nResearch\n\nDue Sep 20, 2026\n\nevidence\nlaunch\nStatus for Review launch evidence\nTo do\nDoing\nDone\nEdit\nDelete\nDone\n2\nFinish electrical rough-in\nMEDIUM\n\nHarborview Renovation\n\nDue Sep 5, 2026\n\nelectrical\nStatus for Finish electrical rough-in\nTo do\nDoing\nDone\nEdit\nDelete\nDraft Q3 sensor coverage report\nLOW\n\nRiverside Sensor Deploy\n\nDue Aug 31, 2026\n\nreview\nStatus for Draft Q3 sensor coverage report\nTo do\nDoing\nDone\nEdit\nDelete\nTask created.",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T21:47:42.570Z",
+   "actionStartedAt": "2026-09-14T21:47:42.155Z",
+   "sha256": "a46fd47a84834af19e90f936c074bd1cf172829e9465a920edfa503266325292",
+   "bytes": 130117
+  }
+ ],
+ "mobilefile": "mobile-initial.png",
+ "mobile": {
+  "id": "mobile-initial",
+  "label": "Mobile first visit \u2014 separate fresh context",
+  "file": "mobile-initial.png",
+  "sha256": "b662fe90e3de54f29dadd825c9b0ac78f2f3dff428d593ed055c6aedcec93079",
+  "bytes": 48529,
+  "actionSucceeded": true,
+  "observed": {
+   "httpStatus": 200,
+   "freshStorage": true,
+   "render": {
+    "path": "/nested/benchmark/",
+    "viewport": {
+     "width": 360,
+     "height": 800
+    },
+    "scroll": {
+     "x": 0,
+     "y": 0
+    },
+    "documentWidth": 360,
+    "visibleText": "Fieldnote Board\n\nLocal-first task tracking for a small project team.\n\n+ New task\nExport JSON\nImport JSON\nSEARCH\nSTATUS\nAll statuses\nTo do\nDoing\nDone\nPROJECT\nAll projects\nHarborview Renovation\nRiverside Sensor Deploy\nPRIORITY\nAll priorities\nLow\nMedium\nHigh\n\nShowing 8 of 8 tasks\n\nTo do\n3\nSurvey east wing foundation\nHIGH\n\nHarborview Renovation\n\nDue Sep 18, 2026\n\nsite-visit\nstructural\nStatus for Survey east wing foundation\nTo do\nDoing\nDone\nEdit\nDelete\nOrder replacement joists\nMEDIUM\n\nHarborview Renovation\n\nNo due date\n\nmaterials\nStatus for Order replacement joists\nTo do\nDoing\nDone\nEdit\nDelete\nCalibrate soil moisture sensors\nMEDIUM\n\nRiverside Sensor Deploy\n\nNo due date\n\nsensors\ncalibration\nStatus for Calibrate soil moisture sensors\nTo do\nDoing\nDone\nEdit\nDelete\nDoing\n3\nClient walkthrough prep\nMEDIUM\n\nHarborview Renovation\n\nDue Sep 16, 2026\n\nclient\nreview\nStatus for Client walkthrough prep\nTo do\nDoing\nDone\nEdit\nDelete\nPermit renewal filing\nHIGH\n\nHarborview Renovation\n\nDue Sep 13, 2026 (overdue)\n\npermit\nblocked\nStatus for Permit renewal filing\nTo do\nDoing\nDone\nEdit\nDelete\nDeploy gateway nodes to site B\nHIGH\n\nRiverside Sensor Deploy\n\nDue Sep 20, 2026\n\nsensors\nsite-visit\nStatus for Deploy gateway nodes to site B\nTo do\nDoing\nDone\nEdit\nDelete\nDone\n2\nFinish electrical rough-in\nMEDIUM\n\nHarborview Renovation\n\nDue Sep 5, 2026\n\nelectrical\nStatus for Finish electrical rough-in\nTo do\nDoing\nDone\nEdit\nDelete\nDraft Q3 sensor coverage report\nLOW\n\nRiverside Sensor Deploy\n\nDue Aug 31, 2026\n\nreview\nStatus for Draft Q3 sensor coverage report\nTo do\nDoing\nDone\nEdit\nDelete",
+    "brokenVisibleImages": []
+   }
+  }
+ },
+ "missingStates": [],
+ "captureFailures": [],
+ "actionErrors": [],
+ "infrastructureErrors": [],
+ "console": [],
+ "network": [],
+ "dialogs": [],
+ "browserVersion": "152.0.7977.83",
+ "sourceAfterTreeSha256": "de54bb3ab85177724abdaddbc12506718059d3c32d4448fa6238de681bf876d4",
+ "sourceUnchanged": true,
+ "finishedAt": "2026-09-14T21:47:44.062Z"
+}
