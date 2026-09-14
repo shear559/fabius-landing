@@ -124,8 +124,6 @@
     appendLink(sources, 'Full report', meta.reportUrl);
     appendLink(sources, 'Download all artifacts', meta.artifactsUrl);
     find('protocol').hidden = false;
-    find('limit-note').textContent = isText(meta.limitations) ? meta.limitations : '';
-    renderScoreboard();
     const tabs = find('tabs');
     tabs.replaceChildren();
     data.tasks.forEach((task, index) => {
@@ -144,39 +142,6 @@
       tabs.append(button);
     });
     selectTask(0);
-  }
-  function renderScoreboard() {
-    const board = find('scoreboard');
-    if (!board) return;
-    board.replaceChildren();
-    const head = node('div', 'trial-scoreboard-head');
-    head.append(node('h3', '', 'Checks met, every recorded run'), node('p', '', 'Each task ran twice per condition. A tie is a tie; nothing is averaged into a lift.'));
-    board.append(head);
-    for (const task of data.tasks) {
-      const row = node('div', 'trial-score-row');
-      const name = node('p', 'trial-score-task', taskNames[task.id]);
-      name.append(node('small', '', task.title));
-      row.append(name);
-      for (const run of task.runs) {
-        const pair = node('div', 'trial-score-pair');
-        pair.append(node('span', '', `Run ${run.repeat}`));
-        const values = Object.keys(armNames).map(key => run[key] ? run[key].passed : null);
-        const tie = values[0] !== null && values[0] === values[1];
-        Object.keys(armNames).forEach((key, position) => {
-          const arm = run[key];
-          const cell = node('p', 'trial-score-arm');
-          cell.dataset.arm = key;
-          if (!arm) { cell.append(node('span', '', `${armNames[key]}: no published result`)); pair.append(cell); return; }
-          cell.append(node('b', '', `${countFormat.format(arm.passed)}/${countFormat.format(arm.total)}`), node('span', '', armNames[key]));
-          if (tie && position === 1) cell.append(node('span', 'trial-score-tie', 'tie'));
-          else if (!tie && values[0] !== null && values[1] !== null && values[position] === Math.max(values[0], values[1])) cell.append(node('span', 'trial-score-lead', 'more checks met'));
-          pair.append(cell);
-        });
-        row.append(pair);
-      }
-      board.append(row);
-    }
-    board.hidden = false;
   }
   function selectTask(index, focus = false) {
     stopPlayback();
@@ -250,18 +215,9 @@
       if (viewMode === 'recorded') { renderPlayback(panel, switcher); showFrame(frameIndex); }
       else { fitLiveFrames(); watchLiveFrames(comparison); }
     }
-    const lessons = node('div', 'trial-lessons');
-    lessons.append(node('h4', '', 'What these runs reveal'));
-    if (task.lessons?.length) {
-      const list = node('ul');
-      for (const lesson of task.lessons) list.append(node('li', '', lesson));
-      lessons.append(list);
-    } else lessons.append(node('p', '', 'The interpretation has not been published yet. Inspect the individual checks and source artifacts.'));
-    panel.append(lessons);
   }
   function renderViewControls(panel, task) {
     const box = node('div', 'trial-view-controls');
-    const left = node('div');
     const modeRow = node('div', 'trial-switch-row');
     modeRow.append(node('span', 'trial-switch-label', 'Show'));
     const modes = node('div', 'trial-switch');
@@ -280,7 +236,7 @@
       modes.append(button);
     }
     modeRow.append(modes);
-    left.append(modeRow);
+    box.append(modeRow);
     if (viewMode === 'live') {
       const deviceRow = node('div', 'trial-switch-row');
       deviceRow.append(node('span', 'trial-switch-label', 'Frame'));
@@ -301,19 +257,7 @@
         frames.append(button);
       }
       deviceRow.append(frames);
-      left.append(deviceRow);
-      if (isText(data.meta.previewNote) && data.meta.previewNote) left.append(node('p', 'trial-preview-note', data.meta.previewNote));
-    } else {
-      left.append(node('p', 'trial-preview-note', 'Composed walkthrough from actual captured states. Both sides advance together. These transitions are not a recording of model generation.'));
-    }
-    box.append(left);
-    if (viewMode === 'live' && task.tryIt?.length) {
-      const tryIt = node('div', 'trial-try');
-      tryIt.append(node('h4', '', 'Try what the checks exercised'));
-      const list = node('ol');
-      for (const step of task.tryIt) list.append(node('li', '', step));
-      tryIt.append(list);
-      box.append(tryIt);
+      box.append(deviceRow);
     }
     panel.append(box);
   }
@@ -369,23 +313,8 @@
       metrics.append(pair);
     }
     article.append(metrics);
-    if (isText(arm.note) && arm.note) article.append(node('p', 'trial-arm-note', arm.note));
     if (task.id === 'math') renderSolution(article, name, arm);
     renderChecks(article, arm, task);
-    if (arm.review?.length) renderReview(article, arm);
-    if (arm.process?.length) {
-      const process = node('details', 'trial-process');
-      process.append(node('summary', '', 'Planning, tools and verification'));
-      process.append(node('p', 'trial-arm-note', 'Observed actions from the run trace. This retrospective review is descriptive, not a process score; delegation was unavailable in this study.'));
-      const list = node('ul', 'trial-process-list');
-      for (const observation of arm.process) {
-        const item = node('li');
-        item.append(node('strong', '', observation.label), node('p', '', observation.detail));
-        list.append(item);
-      }
-      process.append(list);
-      article.append(process);
-    }
     const links = node('div', 'trial-artifact-links');
     appendLink(links, 'Source ZIP', arm.artifactUrl);
     appendLink(links, 'Proof / check record', arm.proofUrl);
@@ -395,38 +324,23 @@
   }
   function renderChecks(article, arm, task) {
     const failures = arm.checks.filter(check => !check.passed);
-    article.append(node('h5', 'trial-block-head', task.id === 'math' ? 'Proof and numeric criteria' : 'Every recorded check'));
-    article.append(node('p', 'trial-block-note', failures.length ? `${countFormat.format(failures.length)} of ${countFormat.format(arm.total)} checks missed; the misses come first.` : `All ${countFormat.format(arm.total)} recorded checks met. Open a row for the recorded detail.`));
+    const details = node('details', 'trial-checks');
+    details.append(node('summary', '', failures.length ? `${countFormat.format(failures.length)} of ${countFormat.format(arm.total)} checks missed · see every check` : `Every check met · ${countFormat.format(arm.total)} of ${countFormat.format(arm.total)}`));
     const list = node('ul', 'trial-score');
     for (const check of [...failures, ...arm.checks.filter(item => item.passed)]) {
       const item = node('li');
-      const details = node('details');
+      const row = node('details');
       const summary = node('summary');
       const chip = node('span', 'trial-chip', check.passed ? 'MET' : 'MISSED');
       chip.dataset.state = check.passed ? 'met' : 'missed';
       summary.append(chip, node('span', '', check.label));
-      details.append(summary, node('p', 'trial-score-detail', check.detail || 'No further detail was recorded for this check.'));
-      item.append(details);
+      row.append(summary, node('p', 'trial-score-detail', check.detail || 'No further detail was recorded for this check.'));
+      item.append(row);
       list.append(item);
     }
     if (!arm.checks.length) list.append(node('li', '', 'No checks were recorded.'));
-    article.append(list);
-  }
-  function renderReview(article, arm) {
-    article.append(node('h5', 'trial-block-head', 'Blind design review'));
-    article.append(node('p', 'trial-block-note', isText(arm.reviewMethod) && arm.reviewMethod ? arm.reviewMethod : 'A qualitative review of the captured pixels, blind to condition. No numerical aesthetic score.'));
-    const list = node('ul', 'trial-review');
-    for (const item of arm.review) {
-      const li = node('li');
-      const head = node('p', 'trial-review-head');
-      const chip = node('span', 'trial-chip', (reviewKinds[item.kind] || item.kind).toUpperCase());
-      chip.dataset.state = reviewKinds[item.kind] || 'tradeoff';
-      head.append(chip, document.createTextNode(item.area));
-      li.append(head, node('p', '', item.observation));
-      if (item.implication) li.append(node('p', 'trial-review-implication', item.implication));
-      list.append(li);
-    }
-    article.append(list);
+    details.append(list);
+    article.append(details);
   }
 
   /* ── live previews in sandboxed frames ────────────────────── */
@@ -443,7 +357,7 @@
     shell.dataset.device = device;
     const bar = node('div', 'trial-device-bar');
     for (let i = 0; i < 3; i += 1) { const dot = node('i'); dot.setAttribute('aria-hidden', 'true'); bar.append(dot); }
-    bar.append(node('span', '', `${armNames[name]} · ${taskNames[task.id].toLowerCase()} · generated ${data.meta.date}`));
+    bar.append(node('span', '', `${armNames[name]} · ${taskNames[task.id].toLowerCase()}`));
     const screen = node('div', 'trial-device-screen');
     screen.dataset.loading = 'true';
     screen.append(node('p', 'trial-device-loading', `Loading the generated ${task.id === 'app' ? 'app' : 'page'}…`));
@@ -457,7 +371,7 @@
     screen.append(frame);
     shell.append(bar, screen);
     const foot = node('div', 'trial-device-foot');
-    const note = node('p', '', task.id === 'app' ? 'Sandboxed frame with an in-memory storage stand-in for this preview: the app\u2019s own \u201csaved\u201d messages refer to it, and the board starts over on reload.' : 'Sandboxed frame; scroll and click inside it.');
+    const note = node('p', '', task.id === 'app' ? 'Isolated sandbox \u00b7 in-memory storage for this preview' : 'Isolated sandbox \u00b7 click and scroll inside');
     const actions = node('div', 'trial-device-actions');
     const reload = node('button', 'trial-button', 'Reload');
     reload.type = 'button';
@@ -581,7 +495,7 @@
     frameSlider.addEventListener('input', () => { stopPlayback(); showFrame(Number(frameSlider.value)); });
     frameOutput = node('output', 'trial-frame-output');
     controls.append(playbackButton, frameSlider, frameOutput);
-    playback.append(controls, node('p', 'trial-playback-note', 'Every state is a real capture of the generated product after a predefined action, in a fresh browser context. Enlarge any state to inspect it.'));
+    playback.append(controls, node('p', 'trial-playback-note', 'Real captures of both products after the same actions.'));
     panel.insertBefore(playback, before);
   }
   function openZoom(name, snapshot, invoker) {
@@ -629,7 +543,6 @@
       math.append(table);
     } else math.append(mrow([...firstHalf(), ...secondHalf()]));
     left.append(math);
-    left.append(node('p', '', task.question));
     const right = node('div', 'trial-statement-row');
     right.append(node('h4', '', 'Subject to'));
     const constraints = node('div', 'trial-statement-constraints');
@@ -641,8 +554,6 @@
     ];
     for (const parts of rows) { const m = mathNode('math'); m.append(mrow(parts)); constraints.append(m); }
     right.append(constraints);
-    if (isText(task.feasibleSet) && task.feasibleSet) right.append(node('p', '', task.feasibleSet));
-    if (isText(task.transitionsNote) && task.transitionsNote) right.append(node('p', '', task.transitionsNote));
     box.append(left, right);
     panel.append(box);
   }
@@ -657,7 +568,7 @@
     const times = [...new Set(all.map(point => point.t))].sort((a, b) => a - b);
     const box = node('div', 'trial-math');
     const header = node('div', 'trial-math-header');
-    header.append(node('h4', '', 'Optimal value f(t) from each submitted solver, with the six regimes'));
+    header.append(node('h4', '', 'Optimal value f(t), six regimes'));
     const legend = node('div', 'trial-chart-legend');
     for (const label of Object.values(armNames)) {
       const item = node('span');
@@ -779,7 +690,7 @@
     playbackButton.disabled = times.length < 2 || reducedMotion.matches;
     playbackButton.setAttribute('aria-pressed', 'false');
     playbackButton.setAttribute('aria-describedby', 'trial-sweep-note');
-    const sweepNote = node('p', 'trial-playback-note', 'Parameter sweep through recorded samples only, at 100 ms per sample. It stops at the end. Reduced motion keeps the manual slider available. This is a visualization, not an execution recording.');
+    const sweepNote = node('p', 'trial-playback-note', 'Recorded samples only; the sweep stops at the end.');
     sweepNote.id = 'trial-sweep-note';
     playbackButton.addEventListener('click', () => {
       if (timer) { stopPlayback(); return; }
@@ -797,7 +708,7 @@
       }, 100);
     });
     sweepControls.append(playbackButton, sweepNote);
-    box.append(scrub, sweepControls, node('p', 'trial-chart-caption', 'One parametric problem. Points come from the submitted candidates; they are not independent benchmark questions. Lines connect samples and do not establish a proof between them. Identical values overlap, which is what a correctness tie looks like.'));
+    box.append(scrub, sweepControls, node('p', 'trial-chart-caption', 'Lines connect the submitted solvers\u2019 recorded samples; identical values overlap.'));
     panel.append(box);
     function update(index) {
       const t = times[index];
@@ -983,8 +894,6 @@
       stopPlayback();
       find('explorer').hidden = true;
       find('protocol').hidden = true;
-      const board = find('scoreboard');
-      if (board) board.hidden = true;
       find('status').replaceChildren(node('strong', '', 'The measured results are not available right now.'), node('p', '', 'No scores or example products have been substituted. Retry to load the published experiment.'));
       find('retry').hidden = false;
     } finally {
