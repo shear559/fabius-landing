@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fieldnote Board</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<noscript>
+  <div class="noscript-notice">
+    Fieldnote Board needs JavaScript to run. Please enable JavaScript in your browser settings and reload this page.
+  </div>
+</noscript>
+
+<div id="app" class="app" hidden>
+
+  <header class="topbar">
+    <div class="topbar__title">
+      <h1>Fieldnote Board</h1>
+      <p class="topbar__subtitle">A local-first board for a small project team. Nothing leaves this browser.</p>
+    </div>
+    <div class="topbar__actions">
+      <button type="button" id="export-btn" data-testid="export" class="btn btn--ghost">Export JSON</button>
+      <label class="btn btn--ghost file-label" for="import-file">
+        Import JSON
+        <input type="file" id="import-file" data-testid="import-file" accept="application/json,.json" class="file-input">
+      </label>
+      <button type="button" id="create-task-btn" data-testid="create-task" class="btn btn--primary">+ New task</button>
+    </div>
+  </header>
+
+  <div id="banner-region" class="banner-region"></div>
+
+  <section class="toolbar" aria-label="Search and filters">
+    <div class="field field--search">
+      <label for="search-input">Search</label>
+      <input type="search" id="search-input" data-testid="search" placeholder="Search title, project or tag&hellip;" autocomplete="off">
+    </div>
+    <div class="field">
+      <label for="filter-status">Status</label>
+      <select id="filter-status" data-testid="filter-status">
+        <option value="all">All statuses</option>
+        <option value="todo">To do</option>
+        <option value="doing">Doing</option>
+        <option value="done">Done</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="filter-project">Project</label>
+      <select id="filter-project" data-testid="filter-project">
+        <option value="all">All projects</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="filter-priority">Priority</label>
+      <select id="filter-priority" data-testid="filter-priority">
+        <option value="all">All priorities</option>
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+    </div>
+    <button type="button" id="clear-filters-btn" class="btn btn--text">Clear filters</button>
+  </section>
+
+  <p id="result-count" class="result-count" role="status" aria-live="polite"></p>
+
+  <main id="board" class="board">
+    <section class="column" data-status="todo" aria-labelledby="col-todo-heading">
+      <h2 id="col-todo-heading" class="column__heading">To do <span class="column__count" data-count-for="todo">0</span></h2>
+      <div class="card-list" data-list-for="todo"></div>
+    </section>
+    <section class="column" data-status="doing" aria-labelledby="col-doing-heading">
+      <h2 id="col-doing-heading" class="column__heading">Doing <span class="column__count" data-count-for="doing">0</span></h2>
+      <div class="card-list" data-list-for="doing"></div>
+    </section>
+    <section class="column" data-status="done" aria-labelledby="col-done-heading">
+      <h2 id="col-done-heading" class="column__heading">Done <span class="column__count" data-count-for="done">0</span></h2>
+      <div class="card-list" data-list-for="done"></div>
+    </section>
+  </main>
+
+  <p id="empty-state" class="empty-state" hidden>No tasks match your search and filters.</p>
+
+  <div id="toast-region" class="toast-region" role="status" aria-live="polite"></div>
+
+  <dialog id="task-dialog" class="task-dialog" aria-labelledby="task-dialog-title">
+    <form id="task-form" data-testid="task-form" novalidate>
+      <h2 id="task-dialog-title">New task</h2>
+      <input type="hidden" name="id">
+
+      <div class="form-row">
+        <label for="field-title">Title <span class="req">*</span></label>
+        <input type="text" id="field-title" name="title" maxlength="120" required aria-describedby="err-title">
+        <p class="field-error" id="err-title" role="alert"></p>
+      </div>
+
+      <div class="form-row">
+        <label for="field-project">Project <span class="req">*</span></label>
+        <input type="text" id="field-project" name="project" maxlength="80" required aria-describedby="err-project" list="project-suggestions">
+        <datalist id="project-suggestions"></datalist>
+        <p class="field-error" id="err-project" role="alert"></p>
+      </div>
+
+      <div class="form-row form-row--split">
+        <div>
+          <label for="field-status">Status</label>
+          <select id="field-status" name="status">
+            <option value="todo">To do</option>
+            <option value="doing">Doing</option>
+            <option value="done">Done</option>
+          </select>
+        </div>
+        <div>
+          <label for="field-priority">Priority</label>
+          <select id="field-priority" name="priority">
+            <option value="low">Low</option>
+            <option value="medium" selected>Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label for="field-dueDate">Due date</label>
+        <input type="date" id="field-dueDate" name="dueDate" aria-describedby="err-dueDate">
+        <p class="field-error" id="err-dueDate" role="alert"></p>
+      </div>
+
+      <div class="form-row">
+        <label for="field-tags">Tags <span class="hint">(comma-separated, up to 8)</span></label>
+        <input type="text" id="field-tags" name="tags" maxlength="400" aria-describedby="err-tags" placeholder="e.g. backend, urgent">
+        <p class="field-error" id="err-tags" role="alert"></p>
+      </div>
+
+      <p class="field-error" id="err-form" role="alert"></p>
+
+      <div class="form-actions">
+        <button type="button" id="cancel-task-btn" class="btn btn--text">Cancel</button>
+        <button type="submit" data-testid="save-task" class="btn btn--primary">Save task</button>
+      </div>
+    </form>
+  </dialog>
+
+</div>
+
+<script src="../preview-storage.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

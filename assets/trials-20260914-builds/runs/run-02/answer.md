@@ -1,0 +1,15 @@
+Everything is delivered cleanly, with no stray processes or files outside the assigned directory.
+
+## Summary
+
+Built the Lattice landing page inside `[study]/runs/run-02/work/`: `index.html`, `styles.css`, `app.js`, `README.md` (vanilla, no build step, no remote fonts/libraries/network calls, relative asset URLs).
+
+Design: a paper/ink visual system (near-white canvas, near-black ink, one rust-terracotta accent for emphasis/focus/active-state) with a system serif for display type and system sans for body — no remote fonts needed. Original inline-SVG hero illustration depicts the product's own concept: small note cards connected to a larger accent-outlined focused note. Sections alternate canvas/white for rhythm; spacing snaps to an 8px base unit.
+
+All required interactions/test seams are implemented and were verified with headless Chromium (Playwright) served over HTTP from a nested path (`/nested/path/index.html`, confirming relative URLs work off-root): mobile nav toggle with synced `aria-expanded`, Escape-to-close-with-focus-return, and close-on-link-select; tri-state feature tabs with real ARIA tab semantics, roving tabindex, and arrow-key navigation, distinct panel content; billing toggle swapping fixed fictional monthly/yearly strings (exact round-trip back to $12/$29); four native `<details>` FAQs; primary CTA to `#workflow`. A separate JS-disabled browser context confirmed nav links, prices, and all three feature panels stay present/readable without JavaScript (markup ships open by default; `app.js` then collapses/hides on load).
+
+During design review against the project's own generated-UI catalogue I found and fixed three real issues: a missing `ol` reset was causing duplicate "1./2./3." numbering next to the step badges, the "Studio" pricing card used an accent border on a rounded box (a flagged anti-pattern) — replaced with a background-tint highlight — and three of five section "eyebrow" labels were purely decorative kickers that just restated the heading — removed, keeping only the two that carry real information (the fictional-demo framing and the fictional-pricing disclaimer). Also added a footer-specific focus-ring color override after checking contrast math showed the default accent focus ring would fall under 3:1 against the dark footer background.
+
+Note on process: I initially wrote verification scripts and a temp static-server root outside the assigned working directory (in the shared scratchpad root) before catching this — those stray files and the server process have been removed/killed, and verification was redone entirely inside the assigned directory under a `.verify/` subfolder that was deleted before finishing. Only `BRIEF.md` (untouched), `index.html`, `styles.css`, `app.js`, and `README.md` remain.
+
+Known limitations (stated in the README): single light theme only; no automated accessibility scanner was available, so contrast was checked by manual relative-luminance calculation against WCAG 2.2 AA rather than tool-verified; no real screen-reader or physical-device testing.

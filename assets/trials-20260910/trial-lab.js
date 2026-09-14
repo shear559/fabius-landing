@@ -65,6 +65,7 @@
     const meta = input.meta;
     for (const field of ['model', 'effort', 'version', 'date']) if (!isText(meta[field]) || !meta[field]) throw Error('Incomplete experiment metadata.');
     if (!Number.isInteger(meta.repeatCount) || meta.repeatCount < 1 || meta.repeatCount > 10 || !finite(meta.runCapSeconds) || meta.runCapSeconds <= 0) throw Error('Invalid run protocol.');
+    if (meta.capLabel !== undefined && !isText(meta.capLabel, 120)) throw Error('Invalid cap label.');
     if (meta.previewNote !== undefined && !isText(meta.previewNote, 1200)) throw Error('Invalid preview note.');
     if (new Set(input.tasks.map(task => task.id)).size !== 3) throw Error('Duplicate task data.');
     for (const task of input.tasks) {
@@ -88,7 +89,7 @@
           if (arm.review !== undefined && (!Array.isArray(arm.review) || arm.review.length > 12 || arm.review.some(item => !isText(item.area, 120) || !isText(item.kind, 40) || !isText(item.observation, 2000) || !isText(item.implication, 2000)))) throw Error('Invalid design review.');
           if (arm.reviewMethod !== undefined && !isText(arm.reviewMethod, 400)) throw Error('Invalid review method.');
           if (arm.scenarios !== undefined && (!arm.scenarios || !Number.isInteger(arm.scenarios.passed) || !Number.isInteger(arm.scenarios.executed) || arm.scenarios.passed < 0 || arm.scenarios.passed > arm.scenarios.executed)) throw Error('Invalid scenario counts.');
-          for (const field of ['seconds', 'tokens']) if (arm[field] !== null && (!finite(arm[field]) || arm[field] < 0)) throw Error('Invalid measured usage.');
+          for (const field of ['seconds', 'tokens', 'toolCalls']) if (arm[field] !== null && arm[field] !== undefined && (!finite(arm[field]) || arm[field] < 0)) throw Error('Invalid measured usage.');
           for (const field of ['artifactUrl', 'proofUrl', 'productUrl', 'previewUrl', 'solutionUrl', 'codeUrl', 'verificationUrl']) if (arm[field] !== undefined && !safeURL(arm[field])) throw Error('Invalid artifact link.');
           for (const field of ['previewUrl', 'solutionUrl', 'codeUrl', 'verificationUrl']) if (arm[field] !== undefined && !sameOriginURL(arm[field])) throw Error('Preview files must be same-origin.');
           if (!Array.isArray(arm.snapshots) || arm.snapshots.length > 50 || arm.snapshots.some(snapshot => !isText(snapshot.id) || !isText(snapshot.label) || !safeURL(snapshot.url))) throw Error('Invalid capture data.');
@@ -117,7 +118,7 @@
   /* ── protocol line, scoreboard, task tabs ─────────────────── */
   function renderProtocol() {
     const meta = data.meta;
-    find('method').textContent = `${meta.model} · ${meta.effort} reasoning · Fabius ${meta.version} · ${meta.repeatCount} run pairs per task · ${decimalFormat.format(meta.runCapSeconds)} s cap per generation · ${meta.date}`;
+    find('method').textContent = `${meta.model} · ${meta.effort} reasoning · Fabius ${meta.version} · ${meta.repeatCount} run pairs per task · ${isText(meta.capLabel) && meta.capLabel ? meta.capLabel : decimalFormat.format(meta.runCapSeconds) + ' s cap per generation'} · ${meta.date}`;
     const sources = find('source-links');
     sources.replaceChildren();
     appendLink(sources, 'Read the protocol', meta.protocolUrl);

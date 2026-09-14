@@ -1,0 +1,364 @@
+{
+ "schemaVersion": 1,
+ "runId": "run-06",
+ "kind": "app",
+ "startedAt": "2026-09-14T19:48:36.897Z",
+ "helperSha256": "2448fa17cc9a54989a8ae7134baa2bfda9ee4cca000603582a3ce873d3c54f4a",
+ "source": {
+  "files": [
+   {
+    "file": "app.js",
+    "bytes": 31463,
+    "sha256": "c7c4dfb704114b4f4f43f3ac5c1190a145e5f0ebac2fd54ed48efc8b5dcc527e"
+   },
+   {
+    "file": "BRIEF.md",
+    "bytes": 4518,
+    "sha256": "7116b83075469f773ce51f72f708041e221d97b2b055d75cb309f0ff39239d1d"
+   },
+   {
+    "file": "index.html",
+    "bytes": 5398,
+    "sha256": "004337a2e4f03260bb3a2969ae8146577ae19bc12d090d12796a5111a34e6499"
+   },
+   {
+    "file": "README.md",
+    "bytes": 6405,
+    "sha256": "0590c58bfda39750d8af75715758b6e4664152740fdbd1d46ad37d8bd23c0147"
+   },
+   {
+    "file": "styles.css",
+    "bytes": 10588,
+    "sha256": "b242b9561e730015206cf4005a73a549ef494bd0e60eb65e49fb75d71d92c26d"
+   }
+  ],
+  "treeSha256": "186914c2405670217cfc6bb7f2ac37ab44109ebbaebc6fff6bfe20d2c06d8c61"
+ },
+ "policy": {
+  "presentation": "Composed walkthrough from captured states; not a recording of model generation.",
+  "browser": "Google Chrome",
+  "desktopViewport": {
+   "width": 1440,
+   "height": 960
+  },
+  "mobileViewport": {
+   "width": 360,
+   "height": 800
+  },
+  "deviceScaleFactor": 1,
+  "fullPage": false,
+  "reducedMotion": "reduce",
+  "screenshotAnimations": "disabled",
+  "freshContexts": true,
+  "externalRequests": "blocked",
+  "candidateEdits": false,
+  "scoresProvided": false
+ },
+ "snapshots": [
+  {
+   "id": "initial",
+   "label": "Desktop first visit \u2014 untouched initial output",
+   "file": "initial.png",
+   "actionSucceeded": true,
+   "observed": {
+    "httpStatus": 200,
+    "freshStorage": true,
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Fieldnote Board\n\nA local-first task board for a small field team. Everything here stays in this browser.\n\nNew task\nSearch tasks by title, project or tag\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nRiverbank Survey\nTrailhead Signage Refresh\nPriority\nAll priorities\nLow\nMedium\nHigh\nClear filters\n7 of 7 tasks\nExport JSON\nImport JSON\nTo do\n3\nWalk the north boundary fence line\n\nRiverbank Survey\n\nEdit\nDelete\nHigh\nDue 2026-09-16\nTo do\nDoing\nDone\nfence\nsite-visit\nLog water samples from stations 1-3\n\nRiverbank Survey\n\nEdit\nDelete\nMedium\nDue 2026-09-19\nTo do\nDoing\nDone\nwater\nsamples\nOrder replacement trail markers\n\nTrailhead Signage Refresh\n\nEdit\nDelete\nLow\nDue 2026-09-24\nTo do\nDoing\nDone\nsupplies\nDoing\n2\nPhotograph erosion at bend 4\n\nRiverbank Survey\n\nEdit\nDelete\nHigh\nOverdue 2026-09-13\nTo do\nDoing\nDone\nerosion\nphoto\nRepaint the east trailhead kiosk map\n\nTrailhead Signage Refresh\n\nEdit\nDelete\nMedium\nDue 2026-09-17\nTo do\nDoing\nDone\npaint\nkiosk\nDone\n2\nDraft survey summary for the county\n\nRiverbank Survey\n\nEdit\nDelete\nMedium\nTo do\nDoing\nDone\nreport\nConfirm accessible route signage wording\n\nTrailhead Signage Refresh\n\nEdit\nDelete\nHigh\nTo do\nDoing\nDone\naccessibility\ncopy",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T19:48:40.659Z",
+   "actionStartedAt": "2026-09-14T19:48:39.893Z",
+   "sha256": "1a7ce3b1a2a78f917cc4f267bbd226462c5fc0de886fe2ad36448568a782af6f",
+   "bytes": 122164
+  },
+  {
+   "id": "new-task-form",
+   "label": "New task form opened",
+   "file": "new-task-form.png",
+   "actionSucceeded": true,
+   "observed": {
+    "visible": true,
+    "fields": [
+     {
+      "name": "id",
+      "type": "hidden",
+      "value": ""
+     },
+     {
+      "name": "title",
+      "type": "text",
+      "value": ""
+     },
+     {
+      "name": "project",
+      "type": "text",
+      "value": ""
+     },
+     {
+      "name": "status",
+      "type": "select-one",
+      "value": "todo"
+     },
+     {
+      "name": "priority",
+      "type": "select-one",
+      "value": "medium"
+     },
+     {
+      "name": "dueDate",
+      "type": "text",
+      "value": ""
+     },
+     {
+      "name": "tags",
+      "type": "text",
+      "value": ""
+     }
+    ],
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Fieldnote Board\n\nA local-first task board for a small field team. Everything here stays in this browser.\n\nNew task\nSearch tasks by title, project or tag\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nRiverbank Survey\nTrailhead Signage Refresh\nPriority\nAll priorities\nLow\nMedium\nHigh\nClear filters\n7 of 7 tasks\nExport JSON\nImport JSON\nTo do\n3\nWalk the north boundary fence line\n\nRiverbank Survey\n\nEdit\nDelete\nHigh\nDue 2026-09-16\nTo do\nDoing\nDone\nfence\nsite-visit\nLog water samples from stations 1-3\n\nRiverbank Survey\n\nEdit\nDelete\nMedium\nDue 2026-09-19\nTo do\nDoing\nDone\nwater\nsamples\nOrder replacement trail markers\n\nTrailhead Signage Refresh\n\nEdit\nDelete\nLow\nDue 2026-09-24\nTo do\nDoing\nDone\nsupplies\nDoing\n2\nPhotograph erosion at bend 4\n\nRiverbank Survey\n\nEdit\nDelete\nHigh\nOverdue 2026-09-13\nTo do\nDoing\nDone\nerosion\nphoto\nRepaint the east trailhead kiosk map\n\nTrailhead Signage Refresh\n\nEdit\nDelete\nMedium\nDue 2026-09-17\nTo do\nDoing\nDone\npaint\nkiosk\nDone\n2\nDraft survey summary for the county\n\nRiverbank Survey\n\nEdit\nDelete\nMedium\nTo do\nDoing\nDone\nreport\nConfirm accessible route signage wording\n\nTrailhead Signage Refresh\n\nEdit\nDelete\nHigh\nTo do\nDoing\nDone\naccessibility\ncopy\nNew task\n\u2715\nTitle *\nProject *\nStatus\nTo do\nDoing\nDone\nPriority\nLow\nMedium\nHigh\nDue date\nTags\nCancel\nSave task",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T19:48:42.906Z",
+   "actionStartedAt": "2026-09-14T19:48:42.470Z",
+   "sha256": "628e09ee8be2cb2a72ba02355c20c4fe3367e2cfa4482be43fd92f3d092bd3a0",
+   "bytes": 124988
+  },
+  {
+   "id": "after-create",
+   "label": "Review launch evidence created and present in saved board",
+   "file": "after-create.png",
+   "actionSucceeded": true,
+   "observed": {
+    "requested": {
+     "title": "Review launch evidence",
+     "project": "Research",
+     "status": "doing",
+     "priority": "high",
+     "dueDate": "2026-09-20",
+     "tags": "evidence,launch"
+    },
+    "storageError": null,
+    "matchingRecords": [
+     {
+      "id": "108256ee-5735-4bba-969c-7cdab157a5bd",
+      "title": "Review launch evidence",
+      "project": "Research",
+      "status": "doing",
+      "priority": "high",
+      "dueDate": "2026-09-20",
+      "tags": [
+       "evidence",
+       "launch"
+      ]
+     }
+    ],
+    "rendered": true,
+    "visibleCards": [
+     {
+      "id": "3170007b-2762-4677-9ce4-7e7e3ddbc6c2",
+      "text": "Walk the north boundary fence line\n\nRiverbank Survey\n\nEdit\nDelete\nHigh\nDue 2026-09-16\nTo do\nDoing\nDone\nfence\nsite-visit"
+     },
+     {
+      "id": "989a1c57-9fd7-4cea-a44e-64f731877268",
+      "text": "Log water samples from stations 1-3\n\nRiverbank Survey\n\nEdit\nDelete\nMedium\nDue 2026-09-19\nTo do\nDoing\nDone\nwater\nsamples"
+     },
+     {
+      "id": "7f12d1b5-4f63-4c99-bb98-abdf8fe8998e",
+      "text": "Order replacement trail markers\n\nTrailhead Signage Refresh\n\nEdit\nDelete\nLow\nDue 2026-09-24\nTo do\nDoing\nDone\nsupplies"
+     },
+     {
+      "id": "9159c9b5-e50a-45d9-8bcb-ef68b70efe00",
+      "text": "Photograph erosion at bend 4\n\nRiverbank Survey\n\nEdit\nDelete\nHigh\nOverdue 2026-09-13\nTo do\nDoing\nDone\nerosion\nphoto"
+     },
+     {
+      "id": "f7707915-c6f6-47e8-8650-94941dcef3d6",
+      "text": "Repaint the east trailhead kiosk map\n\nTrailhead Signage Refresh\n\nEdit\nDelete\nMedium\nDue 2026-09-17\nTo do\nDoing\nDone\npaint\nkiosk"
+     },
+     {
+      "id": "108256ee-5735-4bba-969c-7cdab157a5bd",
+      "text": "Review launch evidence\n\nResearch\n\nEdit\nDelete\nHigh\nDue 2026-09-20\nTo do\nDoing\nDone\nevidence\nlaunch"
+     },
+     {
+      "id": "8ce2e396-2f5b-4245-af31-436664fd7411",
+      "text": "Draft survey summary for the county\n\nRiverbank Survey\n\nEdit\nDelete\nMedium\nTo do\nDoing\nDone\nreport"
+     },
+     {
+      "id": "81c77b81-720f-4c61-a4f4-0c4d8086cca6",
+      "text": "Confirm accessible route signage wording\n\nTrailhead Signage Refresh\n\nEdit\nDelete\nHigh\nTo do\nDoing\nDone\naccessibility\ncopy"
+     }
+    ],
+    "beforeStorageSha256": "0f3cb81d821d8cde84a2701393aee5c5bc99a9b553d09ec28590fdc19379468d",
+    "afterStorageSha256": "ac11407d15537d4c542b44953da2543f9e858de3c7e38f94d91967b55fb407cd",
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Fieldnote Board\n\nA local-first task board for a small field team. Everything here stays in this browser.\n\nNew task\nSearch tasks by title, project or tag\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nResearch\nRiverbank Survey\nTrailhead Signage Refresh\nPriority\nAll priorities\nLow\nMedium\nHigh\nClear filters\n8 of 8 tasks\nExport JSON\nImport JSON\nTo do\n3\nWalk the north boundary fence line\n\nRiverbank Survey\n\nEdit\nDelete\nHigh\nDue 2026-09-16\nTo do\nDoing\nDone\nfence\nsite-visit\nLog water samples from stations 1-3\n\nRiverbank Survey\n\nEdit\nDelete\nMedium\nDue 2026-09-19\nTo do\nDoing\nDone\nwater\nsamples\nOrder replacement trail markers\n\nTrailhead Signage Refresh\n\nEdit\nDelete\nLow\nDue 2026-09-24\nTo do\nDoing\nDone\nsupplies\nDoing\n3\nPhotograph erosion at bend 4\n\nRiverbank Survey\n\nEdit\nDelete\nHigh\nOverdue 2026-09-13\nTo do\nDoing\nDone\nerosion\nphoto\nRepaint the east trailhead kiosk map\n\nTrailhead Signage Refresh\n\nEdit\nDelete\nMedium\nDue 2026-09-17\nTo do\nDoing\nDone\npaint\nkiosk\nReview launch evidence\n\nResearch\n\nEdit\nDelete\nHigh\nDue 2026-09-20\nTo do\nDoing\nDone\nevidence\nlaunch\nDone\n2\nDraft survey summary for the county\n\nRiverbank Survey\n\nEdit\nDelete\nMedium\nTo do\nDoing\nDone\nreport\nConfirm accessible route signage wording\n\nTrailhead Signage Refresh\n\nEdit\nDelete\nHigh\nTo do\nDoing\nDone\naccessibility\ncopy",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T19:48:46.237Z",
+   "actionStartedAt": "2026-09-14T19:48:45.244Z",
+   "sha256": "e82671d83f988aa4899467dc86cb628507f570742508bbc26b5f1f33637e012e",
+   "bytes": 133558
+  },
+  {
+   "id": "search",
+   "label": "Search for Review launch evidence; matching task shown",
+   "file": "search.png",
+   "actionSucceeded": true,
+   "observed": {
+    "search": "Review launch evidence",
+    "visibleCards": [
+     {
+      "id": "108256ee-5735-4bba-969c-7cdab157a5bd",
+      "text": "Review launch evidence\n\nResearch\n\nEdit\nDelete\nHigh\nDue 2026-09-20\nTo do\nDoing\nDone\nevidence\nlaunch"
+     }
+    ],
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Fieldnote Board\n\nA local-first task board for a small field team. Everything here stays in this browser.\n\nNew task\nSearch tasks by title, project or tag\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nResearch\nRiverbank Survey\nTrailhead Signage Refresh\nPriority\nAll priorities\nLow\nMedium\nHigh\nClear filters\n1 of 8 tasks\nExport JSON\nImport JSON\nTo do\n0\n\nNothing here.\n\nDoing\n1\nReview launch evidence\n\nResearch\n\nEdit\nDelete\nHigh\nDue 2026-09-20\nTo do\nDoing\nDone\nevidence\nlaunch\nDone\n0\n\nNothing here.",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T19:48:46.906Z",
+   "actionStartedAt": "2026-09-14T19:48:46.512Z",
+   "sha256": "2386f7681ffc1e250f1da1c12932cd70110aefe1c53487882f1186fd763283d5",
+   "bytes": 56285
+  },
+  {
+   "id": "import-error",
+   "label": "Malformed JSON rejected in a browser alert; saved board unchanged",
+   "file": "import-error.png",
+   "actionSucceeded": true,
+   "observed": {
+    "formDismissed": false,
+    "confirmation": {
+     "clicked": false
+    },
+    "dialogs": [
+     {
+      "viewport": {
+       "width": 1440,
+       "height": 960
+      },
+      "type": "alert",
+      "message": "Import failed: the file is not valid JSON.",
+      "action": "accept"
+     }
+    ],
+    "newVisibleFeedback": [],
+    "nativeError": true,
+    "storageUnchanged": true,
+    "beforeStorageSha256": "ac11407d15537d4c542b44953da2543f9e858de3c7e38f94d91967b55fb407cd",
+    "afterStorageSha256": "ac11407d15537d4c542b44953da2543f9e858de3c7e38f94d91967b55fb407cd",
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Fieldnote Board\n\nA local-first task board for a small field team. Everything here stays in this browser.\n\nNew task\nSearch tasks by title, project or tag\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nResearch\nRiverbank Survey\nTrailhead Signage Refresh\nPriority\nAll priorities\nLow\nMedium\nHigh\nClear filters\n8 of 8 tasks\nExport JSON\nImport JSON\nTo do\n3\nWalk the north boundary fence line\n\nRiverbank Survey\n\nEdit\nDelete\nHigh\nDue 2026-09-16\nTo do\nDoing\nDone\nfence\nsite-visit\nLog water samples from stations 1-3\n\nRiverbank Survey\n\nEdit\nDelete\nMedium\nDue 2026-09-19\nTo do\nDoing\nDone\nwater\nsamples\nOrder replacement trail markers\n\nTrailhead Signage Refresh\n\nEdit\nDelete\nLow\nDue 2026-09-24\nTo do\nDoing\nDone\nsupplies\nDoing\n3\nPhotograph erosion at bend 4\n\nRiverbank Survey\n\nEdit\nDelete\nHigh\nOverdue 2026-09-13\nTo do\nDoing\nDone\nerosion\nphoto\nRepaint the east trailhead kiosk map\n\nTrailhead Signage Refresh\n\nEdit\nDelete\nMedium\nDue 2026-09-17\nTo do\nDoing\nDone\npaint\nkiosk\nReview launch evidence\n\nResearch\n\nEdit\nDelete\nHigh\nDue 2026-09-20\nTo do\nDoing\nDone\nevidence\nlaunch\nDone\n2\nDraft survey summary for the county\n\nRiverbank Survey\n\nEdit\nDelete\nMedium\nTo do\nDoing\nDone\nreport\nConfirm accessible route signage wording\n\nTrailhead Signage Refresh\n\nEdit\nDelete\nHigh\nTo do\nDoing\nDone\naccessibility\ncopy",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T19:48:47.720Z",
+   "actionStartedAt": "2026-09-14T19:48:47.058Z",
+   "sha256": "50315f829b6fc3e250fb5c389a70cc73f5af63aa9be7e5c5755e71cb56d218b7",
+   "bytes": 134449
+  }
+ ],
+ "mobilefile": "mobile-initial.png",
+ "mobile": {
+  "id": "mobile-initial",
+  "label": "Mobile first visit \u2014 separate fresh context",
+  "file": "mobile-initial.png",
+  "sha256": "d673131cb2fd77008ed21ce363d189f6d0d4c6e7f7f63ce197fbb48563711d23",
+  "bytes": 42127,
+  "actionSucceeded": true,
+  "observed": {
+   "httpStatus": 200,
+   "freshStorage": true,
+   "render": {
+    "path": "/nested/benchmark/",
+    "viewport": {
+     "width": 360,
+     "height": 800
+    },
+    "scroll": {
+     "x": 0,
+     "y": 0
+    },
+    "documentWidth": 360,
+    "visibleText": "Fieldnote Board\n\nA local-first task board for a small field team. Everything here stays in this browser.\n\nNew task\nSearch tasks by title, project or tag\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nRiverbank Survey\nTrailhead Signage Refresh\nPriority\nAll priorities\nLow\nMedium\nHigh\nClear filters\n7 of 7 tasks\nExport JSON\nImport JSON\nTo do\n3\nWalk the north boundary fence line\n\nRiverbank Survey\n\nEdit\nDelete\nHigh\nDue 2026-09-16\nTo do\nDoing\nDone\nfence\nsite-visit\nLog water samples from stations 1-3\n\nRiverbank Survey\n\nEdit\nDelete\nMedium\nDue 2026-09-19\nTo do\nDoing\nDone\nwater\nsamples\nOrder replacement trail markers\n\nTrailhead Signage Refresh\n\nEdit\nDelete\nLow\nDue 2026-09-24\nTo do\nDoing\nDone\nsupplies\nDoing\n2\nPhotograph erosion at bend 4\n\nRiverbank Survey\n\nEdit\nDelete\nHigh\nOverdue 2026-09-13\nTo do\nDoing\nDone\nerosion\nphoto\nRepaint the east trailhead kiosk map\n\nTrailhead Signage Refresh\n\nEdit\nDelete\nMedium\nDue 2026-09-17\nTo do\nDoing\nDone\npaint\nkiosk\nDone\n2\nDraft survey summary for the county\n\nRiverbank Survey\n\nEdit\nDelete\nMedium\nTo do\nDoing\nDone\nreport\nConfirm accessible route signage wording\n\nTrailhead Signage Refresh\n\nEdit\nDelete\nHigh\nTo do\nDoing\nDone\naccessibility\ncopy",
+    "brokenVisibleImages": []
+   }
+  }
+ },
+ "missingStates": [],
+ "captureFailures": [],
+ "actionErrors": [],
+ "infrastructureErrors": [],
+ "console": [],
+ "network": [],
+ "dialogs": [
+  {
+   "viewport": {
+    "width": 1440,
+    "height": 960
+   },
+   "type": "alert",
+   "message": "Import failed: the file is not valid JSON.",
+   "action": "accept"
+  }
+ ],
+ "browserVersion": "152.0.7977.83",
+ "sourceAfterTreeSha256": "186914c2405670217cfc6bb7f2ac37ab44109ebbaebc6fff6bfe20d2c06d8c61",
+ "sourceUnchanged": true,
+ "finishedAt": "2026-09-14T19:48:50.761Z"
+}

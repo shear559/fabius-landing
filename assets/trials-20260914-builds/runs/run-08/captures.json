@@ -1,0 +1,350 @@
+{
+ "schemaVersion": 1,
+ "runId": "run-08",
+ "kind": "app",
+ "startedAt": "2026-09-14T19:50:48.924Z",
+ "helperSha256": "2448fa17cc9a54989a8ae7134baa2bfda9ee4cca000603582a3ce873d3c54f4a",
+ "source": {
+  "files": [
+   {
+    "file": "app.js",
+    "bytes": 32866,
+    "sha256": "5ca170c83414a5df2ac093fd64a30f7e3f7641daad46a65cddd1428ac003ce6f"
+   },
+   {
+    "file": "BRIEF.md",
+    "bytes": 4518,
+    "sha256": "7116b83075469f773ce51f72f708041e221d97b2b055d75cb309f0ff39239d1d"
+   },
+   {
+    "file": "index.html",
+    "bytes": 6226,
+    "sha256": "04c3da896770dd4e4a1a22d0599785cd2c005f68d06f24236435f8861733cefb"
+   },
+   {
+    "file": "README.md",
+    "bytes": 6564,
+    "sha256": "0adefb96d2feefef6a864efe0bc9bd8fb15181e49ecd50cbad05089cb518f927"
+   },
+   {
+    "file": "styles.css",
+    "bytes": 10048,
+    "sha256": "337c38d3a250ad61919f686c310622add18d344584b018352b935f70eb4768ac"
+   }
+  ],
+  "treeSha256": "07a624ae3464564689b0361c2ce4d3b49d62eac497c2732d016d31c4821eac04"
+ },
+ "policy": {
+  "presentation": "Composed walkthrough from captured states; not a recording of model generation.",
+  "browser": "Google Chrome",
+  "desktopViewport": {
+   "width": 1440,
+   "height": 960
+  },
+  "mobileViewport": {
+   "width": 360,
+   "height": 800
+  },
+  "deviceScaleFactor": 1,
+  "fullPage": false,
+  "reducedMotion": "reduce",
+  "screenshotAnimations": "disabled",
+  "freshContexts": true,
+  "externalRequests": "blocked",
+  "candidateEdits": false,
+  "scoresProvided": false
+ },
+ "snapshots": [
+  {
+   "id": "initial",
+   "label": "Desktop first visit \u2014 untouched initial output",
+   "file": "initial.png",
+   "actionSucceeded": true,
+   "observed": {
+    "httpStatus": 200,
+    "freshStorage": true,
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Fieldnote Board\n\nA local-first board for a small project team. Nothing leaves this browser.\n\nExport JSON\nImport JSON\n+ New task\nSEARCH\nSTATUS\nAll statuses\nTo do\nDoing\nDone\nPROJECT\nAll projects\nCanyon Trail Access Study\nRiverside Wetland Survey\nPRIORITY\nAll priorities\nLow\nMedium\nHigh\nClear filters\n\nShowing 8 of 8 tasks.\n\nTo do\n3\n\nCalibrate water-quality sensors\n\nRiverside Wetland Survey\nHigh priority\nDue 2026-09-18\nequipment\ncalibration\nTo do\nDoing\nDone\nEdit\nDelete\n\nRecruit volunteer counters for bird survey\n\nRiverside Wetland Survey\nMedium priority\nvolunteers\nTo do\nDoing\nDone\nEdit\nDelete\n\nPhotograph invasive species patches\n\nRiverside Wetland Survey\nLow priority\nphotography\necology\nTo do\nDoing\nDone\nEdit\nDelete\nDoing\n3\n\nMap existing trail erosion points\n\nCanyon Trail Access Study\nHigh priority\nDue 2026-09-16\nfieldwork\nmapping\nTo do\nDoing\nDone\nEdit\nDelete\n\nDraft interview questions for trail users\n\nCanyon Trail Access Study\nMedium priority\ninterviews\nTo do\nDoing\nDone\nEdit\nDelete\n\nReview Q3 budget for field gear\n\nCanyon Trail Access Study\nMedium priority\nDue 2026-09-30\nbudget\nTo do\nDoing\nDone\nEdit\nDelete\nDone\n2\n\nDigitize week 1 field notes\n\nRiverside Wetland Survey\nLow priority\ndata-entry\nTo do\nDoing\nDone\nEdit\nDelete\n\nSubmit access permit renewal\n\nCanyon Trail Access Study\nHigh priority\nDue 2026-09-05\npermits\nadmin\nTo do\nDoing\nDone\nEdit\nDelete",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T19:50:52.993Z",
+   "actionStartedAt": "2026-09-14T19:50:52.213Z",
+   "sha256": "e035f1a22bf98a7c214a9822a7b8cfaadb264a5f430c5ea384550d4a6a4264e3",
+   "bytes": 138968
+  },
+  {
+   "id": "new-task-form",
+   "label": "New task form opened",
+   "file": "new-task-form.png",
+   "actionSucceeded": true,
+   "observed": {
+    "visible": true,
+    "fields": [
+     {
+      "name": "id",
+      "type": "hidden",
+      "value": ""
+     },
+     {
+      "name": "title",
+      "type": "text",
+      "value": ""
+     },
+     {
+      "name": "project",
+      "type": "text",
+      "value": ""
+     },
+     {
+      "name": "status",
+      "type": "select-one",
+      "value": "todo"
+     },
+     {
+      "name": "priority",
+      "type": "select-one",
+      "value": "medium"
+     },
+     {
+      "name": "dueDate",
+      "type": "date",
+      "value": ""
+     },
+     {
+      "name": "tags",
+      "type": "text",
+      "value": ""
+     }
+    ],
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Fieldnote Board\n\nA local-first board for a small project team. Nothing leaves this browser.\n\nExport JSON\nImport JSON\n+ New task\nSEARCH\nSTATUS\nAll statuses\nTo do\nDoing\nDone\nPROJECT\nAll projects\nCanyon Trail Access Study\nRiverside Wetland Survey\nPRIORITY\nAll priorities\nLow\nMedium\nHigh\nClear filters\n\nShowing 8 of 8 tasks.\n\nTo do\n3\n\nCalibrate water-quality sensors\n\nRiverside Wetland Survey\nHigh priority\nDue 2026-09-18\nequipment\ncalibration\nTo do\nDoing\nDone\nEdit\nDelete\n\nRecruit volunteer counters for bird survey\n\nRiverside Wetland Survey\nMedium priority\nvolunteers\nTo do\nDoing\nDone\nEdit\nDelete\n\nPhotograph invasive species patches\n\nRiverside Wetland Survey\nLow priority\nphotography\necology\nTo do\nDoing\nDone\nEdit\nDelete\nDoing\n3\n\nMap existing trail erosion points\n\nCanyon Trail Access Study\nHigh priority\nDue 2026-09-16\nfieldwork\nmapping\nTo do\nDoing\nDone\nEdit\nDelete\n\nDraft interview questions for trail users\n\nCanyon Trail Access Study\nMedium priority\ninterviews\nTo do\nDoing\nDone\nEdit\nDelete\n\nReview Q3 budget for field gear\n\nCanyon Trail Access Study\nMedium priority\nDue 2026-09-30\nbudget\nTo do\nDoing\nDone\nEdit\nDelete\nDone\n2\n\nDigitize week 1 field notes\n\nRiverside Wetland Survey\nLow priority\ndata-entry\nTo do\nDoing\nDone\nEdit\nDelete\n\nSubmit access permit renewal\n\nCanyon Trail Access Study\nHigh priority\nDue 2026-09-05\npermits\nadmin\nTo do\nDoing\nDone\nEdit\nDelete\nNew task\nTitle *\nProject *\nStatus\nTo do\nDoing\nDone\nPriority\nLow\nMedium\nHigh\nDue date\nTags (comma-separated, up to 8)\nCancel\nSave task",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T19:50:53.665Z",
+   "actionStartedAt": "2026-09-14T19:50:53.274Z",
+   "sha256": "5eb77d944e3e5bc8e88d4713fb189ba9c27e702d09c5090f6951404cf8d34cc3",
+   "bytes": 139917
+  },
+  {
+   "id": "after-create",
+   "label": "Review launch evidence created and present in saved board",
+   "file": "after-create.png",
+   "actionSucceeded": true,
+   "observed": {
+    "requested": {
+     "title": "Review launch evidence",
+     "project": "Research",
+     "status": "doing",
+     "priority": "high",
+     "dueDate": "2026-09-20",
+     "tags": "evidence,launch"
+    },
+    "storageError": null,
+    "matchingRecords": [
+     {
+      "id": "54a0c956-040e-4259-8fbc-2fc2f04b3975",
+      "title": "Review launch evidence",
+      "project": "Research",
+      "status": "doing",
+      "priority": "high",
+      "dueDate": "2026-09-20",
+      "tags": [
+       "evidence",
+       "launch"
+      ]
+     }
+    ],
+    "rendered": true,
+    "visibleCards": [
+     {
+      "id": "bfb0b30d-27e5-43c5-9064-da7c1d1922be",
+      "text": "Calibrate water-quality sensors\n\nRiverside Wetland Survey\nHigh priority\nDue 2026-09-18\nequipment\ncalibration\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "2d8d5c80-f2d9-4dab-8335-05cb56366547",
+      "text": "Recruit volunteer counters for bird survey\n\nRiverside Wetland Survey\nMedium priority\nvolunteers\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "fff47d87-13f8-45c3-888f-5a7163e08544",
+      "text": "Photograph invasive species patches\n\nRiverside Wetland Survey\nLow priority\nphotography\necology\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "67f972e2-d185-495e-99f3-ee443afa7d99",
+      "text": "Map existing trail erosion points\n\nCanyon Trail Access Study\nHigh priority\nDue 2026-09-16\nfieldwork\nmapping\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "1e6e32d3-f640-42f5-a599-28b676272e68",
+      "text": "Draft interview questions for trail users\n\nCanyon Trail Access Study\nMedium priority\ninterviews\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "914a77fa-9262-4fb7-b359-3fca95b4d0a5",
+      "text": "Review Q3 budget for field gear\n\nCanyon Trail Access Study\nMedium priority\nDue 2026-09-30\nbudget\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "54a0c956-040e-4259-8fbc-2fc2f04b3975",
+      "text": "Review launch evidence\n\nResearch\nHigh priority\nDue 2026-09-20\nevidence\nlaunch\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "4b228a10-d003-4962-823a-cb85a9f70161",
+      "text": "Digitize week 1 field notes\n\nRiverside Wetland Survey\nLow priority\ndata-entry\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "268f0005-2e77-4d18-a908-b9592f228bff",
+      "text": "Submit access permit renewal\n\nCanyon Trail Access Study\nHigh priority\nDue 2026-09-05\npermits\nadmin\nTo do\nDoing\nDone\nEdit\nDelete"
+     }
+    ],
+    "beforeStorageSha256": "489ede0bf2470edf205e914a71c25d7f7dc855acec0d5d934b1d4a9b21b43246",
+    "afterStorageSha256": "afaa2da49b5181cc1b4b4025191d7d2bd4fdb9b7e0998f382a7ef89fa372455a",
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 256
+     },
+     "documentWidth": 1440,
+     "visibleText": "Fieldnote Board\n\nA local-first board for a small project team. Nothing leaves this browser.\n\nExport JSON\nImport JSON\n+ New task\nSEARCH\nSTATUS\nAll statuses\nTo do\nDoing\nDone\nPROJECT\nAll projects\nCanyon Trail Access Study\nResearch\nRiverside Wetland Survey\nPRIORITY\nAll priorities\nLow\nMedium\nHigh\nClear filters\n\nShowing 9 of 9 tasks.\n\nTo do\n3\n\nCalibrate water-quality sensors\n\nRiverside Wetland Survey\nHigh priority\nDue 2026-09-18\nequipment\ncalibration\nTo do\nDoing\nDone\nEdit\nDelete\n\nRecruit volunteer counters for bird survey\n\nRiverside Wetland Survey\nMedium priority\nvolunteers\nTo do\nDoing\nDone\nEdit\nDelete\n\nPhotograph invasive species patches\n\nRiverside Wetland Survey\nLow priority\nphotography\necology\nTo do\nDoing\nDone\nEdit\nDelete\nDoing\n4\n\nMap existing trail erosion points\n\nCanyon Trail Access Study\nHigh priority\nDue 2026-09-16\nfieldwork\nmapping\nTo do\nDoing\nDone\nEdit\nDelete\n\nDraft interview questions for trail users\n\nCanyon Trail Access Study\nMedium priority\ninterviews\nTo do\nDoing\nDone\nEdit\nDelete\n\nReview Q3 budget for field gear\n\nCanyon Trail Access Study\nMedium priority\nDue 2026-09-30\nbudget\nTo do\nDoing\nDone\nEdit\nDelete\n\nReview launch evidence\n\nResearch\nHigh priority\nDue 2026-09-20\nevidence\nlaunch\nTo do\nDoing\nDone\nEdit\nDelete\nDone\n2\n\nDigitize week 1 field notes\n\nRiverside Wetland Survey\nLow priority\ndata-entry\nTo do\nDoing\nDone\nEdit\nDelete\n\nSubmit access permit renewal\n\nCanyon Trail Access Study\nHigh priority\nDue 2026-09-05\npermits\nadmin\nTo do\nDoing\nDone\nEdit\nDelete",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T19:50:54.887Z",
+   "actionStartedAt": "2026-09-14T19:50:54.238Z",
+   "sha256": "5db920d4598033fe37388bd7a07a065a1b414570e9bf10d5b5510c9c5d5b39e9",
+   "bytes": 129973
+  },
+  {
+   "id": "search",
+   "label": "Search for Review launch evidence; matching task shown",
+   "file": "search.png",
+   "actionSucceeded": true,
+   "observed": {
+    "search": "Review launch evidence",
+    "visibleCards": [
+     {
+      "id": "54a0c956-040e-4259-8fbc-2fc2f04b3975",
+      "text": "Review launch evidence\n\nResearch\nHigh priority\nDue 2026-09-20\nevidence\nlaunch\nTo do\nDoing\nDone\nEdit\nDelete"
+     }
+    ],
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Fieldnote Board\n\nA local-first board for a small project team. Nothing leaves this browser.\n\nExport JSON\nImport JSON\n+ New task\nSEARCH\nSTATUS\nAll statuses\nTo do\nDoing\nDone\nPROJECT\nAll projects\nCanyon Trail Access Study\nResearch\nRiverside Wetland Survey\nPRIORITY\nAll priorities\nLow\nMedium\nHigh\nClear filters\n\nShowing 1 of 9 tasks.\n\nTo do\n0\n\nNo matching tasks.\n\nDoing\n1\n\nReview launch evidence\n\nResearch\nHigh priority\nDue 2026-09-20\nevidence\nlaunch\nTo do\nDoing\nDone\nEdit\nDelete\nDone\n0\n\nNo matching tasks.",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T19:50:55.484Z",
+   "actionStartedAt": "2026-09-14T19:50:55.091Z",
+   "sha256": "303d89e9261a1f56c3de96c2134cc20052a7a29bbc6c6103576fda3843c58072",
+   "bytes": 61978
+  },
+  {
+   "id": "import-error",
+   "label": "Malformed JSON selected; visible error and saved board unchanged",
+   "file": "import-error.png",
+   "actionSucceeded": true,
+   "observed": {
+    "formDismissed": false,
+    "confirmation": {
+     "clicked": false
+    },
+    "dialogs": [],
+    "newVisibleFeedback": [
+     "Import failed: The data is not valid JSON."
+    ],
+    "nativeError": false,
+    "storageUnchanged": true,
+    "beforeStorageSha256": "afaa2da49b5181cc1b4b4025191d7d2bd4fdb9b7e0998f382a7ef89fa372455a",
+    "afterStorageSha256": "afaa2da49b5181cc1b4b4025191d7d2bd4fdb9b7e0998f382a7ef89fa372455a",
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Fieldnote Board\n\nA local-first board for a small project team. Nothing leaves this browser.\n\nExport JSON\nImport JSON\n+ New task\nSEARCH\nSTATUS\nAll statuses\nTo do\nDoing\nDone\nPROJECT\nAll projects\nCanyon Trail Access Study\nResearch\nRiverside Wetland Survey\nPRIORITY\nAll priorities\nLow\nMedium\nHigh\nClear filters\n\nShowing 9 of 9 tasks.\n\nTo do\n3\n\nCalibrate water-quality sensors\n\nRiverside Wetland Survey\nHigh priority\nDue 2026-09-18\nequipment\ncalibration\nTo do\nDoing\nDone\nEdit\nDelete\n\nRecruit volunteer counters for bird survey\n\nRiverside Wetland Survey\nMedium priority\nvolunteers\nTo do\nDoing\nDone\nEdit\nDelete\n\nPhotograph invasive species patches\n\nRiverside Wetland Survey\nLow priority\nphotography\necology\nTo do\nDoing\nDone\nEdit\nDelete\nDoing\n4\n\nMap existing trail erosion points\n\nCanyon Trail Access Study\nHigh priority\nDue 2026-09-16\nfieldwork\nmapping\nTo do\nDoing\nDone\nEdit\nDelete\n\nDraft interview questions for trail users\n\nCanyon Trail Access Study\nMedium priority\ninterviews\nTo do\nDoing\nDone\nEdit\nDelete\n\nReview Q3 budget for field gear\n\nCanyon Trail Access Study\nMedium priority\nDue 2026-09-30\nbudget\nTo do\nDoing\nDone\nEdit\nDelete\n\nReview launch evidence\n\nResearch\nHigh priority\nDue 2026-09-20\nevidence\nlaunch\nTo do\nDoing\nDone\nEdit\nDelete\nDone\n2\n\nDigitize week 1 field notes\n\nRiverside Wetland Survey\nLow priority\ndata-entry\nTo do\nDoing\nDone\nEdit\nDelete\n\nSubmit access permit renewal\n\nCanyon Trail Access Study\nHigh priority\nDue 2026-09-05\npermits\nadmin\nTo do\nDoing\nDone\nEdit\nDelete\nImport failed: The data is not valid JSON.\n\u2715",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T19:50:56.269Z",
+   "actionStartedAt": "2026-09-14T19:50:55.814Z",
+   "sha256": "9d0547f92151d332d2776f2ecd0999127305c266aeb9eba14d933f7fd4985e0d",
+   "bytes": 145008
+  }
+ ],
+ "mobilefile": "mobile-initial.png",
+ "mobile": {
+  "id": "mobile-initial",
+  "label": "Mobile first visit \u2014 separate fresh context",
+  "file": "mobile-initial.png",
+  "sha256": "53af9da2ffef487911da11bfe2d5c67901edad1817d940bebe4ba3ffaa0ad3e1",
+  "bytes": 38747,
+  "actionSucceeded": true,
+  "observed": {
+   "httpStatus": 200,
+   "freshStorage": true,
+   "render": {
+    "path": "/nested/benchmark/",
+    "viewport": {
+     "width": 360,
+     "height": 800
+    },
+    "scroll": {
+     "x": 0,
+     "y": 0
+    },
+    "documentWidth": 360,
+    "visibleText": "Fieldnote Board\n\nA local-first board for a small project team. Nothing leaves this browser.\n\nExport JSON\nImport JSON\n+ New task\nSEARCH\nSTATUS\nAll statuses\nTo do\nDoing\nDone\nPROJECT\nAll projects\nCanyon Trail Access Study\nRiverside Wetland Survey\nPRIORITY\nAll priorities\nLow\nMedium\nHigh\nClear filters\n\nShowing 8 of 8 tasks.\n\nTo do\n3\n\nCalibrate water-quality sensors\n\nRiverside Wetland Survey\nHigh priority\nDue 2026-09-18\nequipment\ncalibration\nTo do\nDoing\nDone\nEdit\nDelete\n\nRecruit volunteer counters for bird survey\n\nRiverside Wetland Survey\nMedium priority\nvolunteers\nTo do\nDoing\nDone\nEdit\nDelete\n\nPhotograph invasive species patches\n\nRiverside Wetland Survey\nLow priority\nphotography\necology\nTo do\nDoing\nDone\nEdit\nDelete\nDoing\n3\n\nMap existing trail erosion points\n\nCanyon Trail Access Study\nHigh priority\nDue 2026-09-16\nfieldwork\nmapping\nTo do\nDoing\nDone\nEdit\nDelete\n\nDraft interview questions for trail users\n\nCanyon Trail Access Study\nMedium priority\ninterviews\nTo do\nDoing\nDone\nEdit\nDelete\n\nReview Q3 budget for field gear\n\nCanyon Trail Access Study\nMedium priority\nDue 2026-09-30\nbudget\nTo do\nDoing\nDone\nEdit\nDelete\nDone\n2\n\nDigitize week 1 field notes\n\nRiverside Wetland Survey\nLow priority\ndata-entry\nTo do\nDoing\nDone\nEdit\nDelete\n\nSubmit access permit renewal\n\nCanyon Trail Access Study\nHigh priority\nDue 2026-09-05\npermits\nadmin\nTo do\nDoing\nDone\nEdit\nDelete",
+    "brokenVisibleImages": []
+   }
+  }
+ },
+ "missingStates": [],
+ "captureFailures": [],
+ "actionErrors": [],
+ "infrastructureErrors": [],
+ "console": [],
+ "network": [],
+ "dialogs": [],
+ "browserVersion": "152.0.7977.83",
+ "sourceAfterTreeSha256": "07a624ae3464564689b0361c2ce4d3b49d62eac497c2732d016d31c4821eac04",
+ "sourceUnchanged": true,
+ "finishedAt": "2026-09-14T19:50:58.753Z"
+}

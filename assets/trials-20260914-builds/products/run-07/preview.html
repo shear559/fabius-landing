@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fieldnote Board</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<noscript>
+  <div class="noscript-banner">
+    <strong>Fieldnote Board needs JavaScript.</strong>
+    This app stores and renders your tasks entirely in your browser using JavaScript. Please enable
+    JavaScript to use it &mdash; no data is sent anywhere.
+  </div>
+</noscript>
+
+<div id="app">
+
+  <a href="#board-region" class="skip-link">Skip to task board</a>
+
+  <header class="topbar">
+    <div class="topbar-brand">
+      <h1>Fieldnote Board</h1>
+      <p class="subtitle">Local-first task tracking for a small project team</p>
+    </div>
+    <button type="button" id="create-task-btn" data-testid="create-task" class="btn btn-primary">
+      <span aria-hidden="true">+</span> New task
+    </button>
+  </header>
+
+  <div id="notice-region" class="notice-region" aria-live="polite" aria-atomic="true"></div>
+
+  <div id="recovery-panel" class="recovery-panel" hidden aria-live="polite">
+    <h2>Storage recovery needed</h2>
+    <p id="recovery-message"></p>
+    <div class="recovery-actions">
+      <button type="button" id="download-corrupt-btn" data-testid="download-corrupt" class="btn">Download original data</button>
+      <button type="button" id="reset-storage-btn" data-testid="reset-storage" class="btn btn-danger">Reset board and start fresh</button>
+    </div>
+  </div>
+
+  <div id="board-region" tabindex="-1" hidden>
+    <section class="toolbar" aria-label="Search and filters">
+      <div class="field search-field">
+        <label for="search-input">Search</label>
+        <input type="search" id="search-input" data-testid="search" placeholder="Search title, project, tags&hellip;" autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="filter-status">Status</label>
+        <select id="filter-status" data-testid="filter-status"></select>
+      </div>
+      <div class="field">
+        <label for="filter-project">Project</label>
+        <select id="filter-project" data-testid="filter-project"></select>
+      </div>
+      <div class="field">
+        <label for="filter-priority">Priority</label>
+        <select id="filter-priority" data-testid="filter-priority"></select>
+      </div>
+      <div class="toolbar-actions">
+        <button type="button" id="export-btn" data-testid="export" class="btn">Export JSON</button>
+        <span class="file-btn-wrap">
+          <button type="button" id="import-btn" class="btn">Import JSON</button>
+          <input type="file" id="import-file" data-testid="import-file" accept="application/json,.json" class="visually-hidden" tabindex="-1" aria-hidden="true">
+        </span>
+      </div>
+    </section>
+
+    <div id="count-bar" class="count-bar" aria-live="polite"></div>
+
+    <main id="main-board" class="board" aria-label="Tasks" tabindex="-1"></main>
+
+    <div id="empty-state" class="empty-state" hidden></div>
+  </div>
+
+</div>
+
+<div id="toast-region" class="toast-region" aria-live="assertive" aria-atomic="true"></div>
+
+<div id="modal-overlay" class="modal-overlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="form-title">
+    <div class="modal-head">
+      <h2 id="form-title">New task</h2>
+      <button type="button" id="modal-close-btn" class="icon-btn" aria-label="Close dialog">&times;</button>
+    </div>
+    <form id="task-form" data-testid="task-form" novalidate>
+      <input type="hidden" id="task-id" name="id">
+
+      <div class="form-row">
+        <label for="task-title">Title</label>
+        <input type="text" id="task-title" name="title" maxlength="140" aria-describedby="error-title">
+        <p class="field-error" id="error-title" role="alert"></p>
+      </div>
+
+      <div class="form-row">
+        <label for="task-project">Project</label>
+        <input type="text" id="task-project" name="project" maxlength="100" aria-describedby="error-project">
+        <p class="field-error" id="error-project" role="alert"></p>
+      </div>
+
+      <div class="form-row-group">
+        <div class="form-row">
+          <label for="task-status">Status</label>
+          <select id="task-status" name="status">
+            <option value="todo">To do</option>
+            <option value="doing">Doing</option>
+            <option value="done">Done</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="task-priority">Priority</label>
+          <select id="task-priority" name="priority">
+            <option value="low">Low</option>
+            <option value="medium" selected>Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label for="task-due">Due date</label>
+        <input type="date" id="task-due" name="dueDate" aria-describedby="error-due">
+        <p class="field-error" id="error-due" role="alert"></p>
+      </div>
+
+      <div class="form-row">
+        <label for="task-tags">Tags <span class="hint">(comma-separated, up to 8)</span></label>
+        <input type="text" id="task-tags" name="tags" maxlength="400" aria-describedby="error-tags">
+        <p class="field-error" id="error-tags" role="alert"></p>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" id="cancel-form-btn" class="btn">Cancel</button>
+        <button type="submit" data-testid="save-task" class="btn btn-primary">Save task</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="../preview-storage.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

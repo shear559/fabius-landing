@@ -1,0 +1,244 @@
+{
+ "schemaVersion": 1,
+ "runId": "run-01",
+ "kind": "landing",
+ "startedAt": "2026-09-14T19:39:30.486Z",
+ "helperSha256": "2448fa17cc9a54989a8ae7134baa2bfda9ee4cca000603582a3ce873d3c54f4a",
+ "source": {
+  "files": [
+   {
+    "file": "app.js",
+    "bytes": 5794,
+    "sha256": "05b21bc1781b31d8e55cce3e2be4f37def1ab17f4ff64a6ca85682f316097d4e"
+   },
+   {
+    "file": "BRIEF.md",
+    "bytes": 3335,
+    "sha256": "4b1927c9ff7421b0b8b1b8f914c1c425f31806e9ab7473b682bedad620b3f80c"
+   },
+   {
+    "file": "index.html",
+    "bytes": 15711,
+    "sha256": "8c5e1c68e7aeb096a4f12e7bc6672b116b7f7e550eaac73b0fac0c77ce3d5444"
+   },
+   {
+    "file": "README.md",
+    "bytes": 8113,
+    "sha256": "0b68e4696a9c7eaeb966fc7045b8eb06009c9918a36967e7f1eec4b3bfc5c0ba"
+   },
+   {
+    "file": "styles.css",
+    "bytes": 14911,
+    "sha256": "16eeda9a4351d9e164321f375f1311839eaf9142405a8e0a14281b98e94a280b"
+   }
+  ],
+  "treeSha256": "d8da63d58aed620ea59316625b785879de3b72aa4af0132283ba6e6a522a6ff7"
+ },
+ "policy": {
+  "presentation": "Composed walkthrough from captured states; not a recording of model generation.",
+  "browser": "Google Chrome",
+  "desktopViewport": {
+   "width": 1440,
+   "height": 960
+  },
+  "mobileViewport": {
+   "width": 360,
+   "height": 800
+  },
+  "deviceScaleFactor": 1,
+  "fullPage": false,
+  "reducedMotion": "reduce",
+  "screenshotAnimations": "disabled",
+  "freshContexts": true,
+  "externalRequests": "blocked",
+  "candidateEdits": false,
+  "scoresProvided": false
+ },
+ "snapshots": [
+  {
+   "id": "initial",
+   "label": "Desktop first visit \u2014 untouched initial output",
+   "file": "initial.png",
+   "actionSucceeded": true,
+   "observed": {
+    "httpStatus": 200,
+    "freshStorage": true,
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Skip to main content\n\nFictional product demonstration. Lattice is not a real, purchasable product. Every claim, price and screen on this page is sample content built to show a design, not a verified business.\n\nLattice\nFeatures\nWorkflow\nPricing\nFAQ\nExplore the workflow\n\nFICTIONAL DEMO \u00b7 LOCAL-FIRST NOTEBOOK\n\nResearch notes that stay on your machine, linked to where they came from.\n\nLattice is a sample concept for independent researchers: capture notes on your own device, keep every source attached, and export to plain Markdown whenever you like \u2014 no server required to read your own work.\n\nExplore the workflow\nSee pricing\n\nIllustrative concept only \u2014 no account, download or purchase happens on this page.\n\nStored on this device\nOne notebook, three everyday moves\n\nSwitch between the tabs to see how capturing, connecting and exporting fit together. Each tab holds different content.\n\nCapture\nConnect\nExport\nCapture without losing your place\n\nNew notes open in a plain text editor that lives entirely on your device. Headings, lists and code blocks are written in Markdown as you type, so a note looks the same whether you view it in Lattice or in a plain text editor later.\n\nNotes save to local files, not to a remote inbox.\nReusable project templates give a new note a starting structure \u2014 headings for a claim, evidence and open questions.\nNothing here requires a network connection to work.\nA three-step workflow\n\nThe same shape for a short literature scan or a long-running project.\n\n1\nStart from a template\n\nPick a project template \u2014 literature review, methods log, or a blank notebook \u2014 so every new project starts with the same headings you already trust.\n\n2\nCapture and attach sources\n\nWrite notes as you read, attaching the source link to each claim so the evidence trail stays visible next to the note, not in a separate file.\n\n3\nExport what you need\n\nWhen it's time to write up, draft, or move on, export the notes you need to Markdown and take them into any editor, manuscript tool, or archive.\n\nTwo plans\n\nFictional prices for this demonstration only \u2014 nothing here can be purchased.\n\nMonthly\nYearly\nSolo\n\nFor one researcher working across one or many personal projects.\n\n$12/mo\n\nUnlimited local notebooks\nSource links on every note\nMarkdown export, anytime\nReusable project templates\nOptional local full-text search\nSee the workflow\n\nMOST EXPLORED IN THIS DEMO\n\nStudio\n\nFor a small group of independent researchers who share templates.\n\n$29/mo\n\nEverything in Solo\nShared project ",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T19:39:33.367Z",
+   "actionStartedAt": "2026-09-14T19:39:32.376Z",
+   "sha256": "241da5ceb206a1b3206ee4c6d7d8d426a14e77ab40776122cc7be71effa9cf79",
+   "bytes": 121085
+  },
+  {
+   "id": "feature-connect",
+   "label": "Connect feature selected; its panel is visible",
+   "file": "feature-connect.png",
+   "actionSucceeded": true,
+   "observed": {
+    "selected": "true",
+    "panelVisible": true,
+    "panelText": "Keep the source next to the claim\n\nEvery note can carry one or more source links \u2014 a paper, a page, a dataset \u2014 shown alongside the text instead of buried in a separate bibliography file.\n\nSource links display next to the note they support, not in a detached reference list.\nLinked notes form a small map of how ideas connect within one project.\nAn optional local full-text search looks across notes and their attached links on your device.",
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 975
+     },
+     "documentWidth": 1440,
+     "visibleText": "Skip to main content\n\nFictional product demonstration. Lattice is not a real, purchasable product. Every claim, price and screen on this page is sample content built to show a design, not a verified business.\n\nLattice\nFeatures\nWorkflow\nPricing\nFAQ\nExplore the workflow\n\nFICTIONAL DEMO \u00b7 LOCAL-FIRST NOTEBOOK\n\nResearch notes that stay on your machine, linked to where they came from.\n\nLattice is a sample concept for independent researchers: capture notes on your own device, keep every source attached, and export to plain Markdown whenever you like \u2014 no server required to read your own work.\n\nExplore the workflow\nSee pricing\n\nIllustrative concept only \u2014 no account, download or purchase happens on this page.\n\nStored on this device\nOne notebook, three everyday moves\n\nSwitch between the tabs to see how capturing, connecting and exporting fit together. Each tab holds different content.\n\nCapture\nConnect\nExport\nKeep the source next to the claim\n\nEvery note can carry one or more source links \u2014 a paper, a page, a dataset \u2014 shown alongside the text instead of buried in a separate bibliography file.\n\nSource links display next to the note they support, not in a detached reference list.\nLinked notes form a small map of how ideas connect within one project.\nAn optional local full-text search looks across notes and their attached links on your device.\nA three-step workflow\n\nThe same shape for a short literature scan or a long-running project.\n\n1\nStart from a template\n\nPick a project template \u2014 literature review, methods log, or a blank notebook \u2014 so every new project starts with the same headings you already trust.\n\n2\nCapture and attach sources\n\nWrite notes as you read, attaching the source link to each claim so the evidence trail stays visible next to the note, not in a separate file.\n\n3\nExport what you need\n\nWhen it's time to write up, draft, or move on, export the notes you need to Markdown and take them into any editor, manuscript tool, or archive.\n\nTwo plans\n\nFictional prices for this demonstration only \u2014 nothing here can be purchased.\n\nMonthly\nYearly\nSolo\n\nFor one researcher working across one or many personal projects.\n\n$12/mo\n\nUnlimited local notebooks\nSource links on every note\nMarkdown export, anytime\nReusable project templates\nOptional local full-text search\nSee the workflow\n\nMOST EXPLORED IN THIS DEMO\n\nStudio\n\nFor a small group of independent researchers who share templates.\n\n$29/mo\n\nEverything in Solo\nShared project templates\nPer-project source maps\nPriority tem",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T19:39:34.238Z",
+   "actionStartedAt": "2026-09-14T19:39:33.871Z",
+   "sha256": "1620854be8dd7d9d44e27c47395095c8f76b262a6dafdd0547e5220f35bdef6b",
+   "bytes": 103893
+  },
+  {
+   "id": "billing-yearly",
+   "label": "Yearly billing selected; displayed prices are 108 and 264",
+   "file": "billing-yearly.png",
+   "actionSucceeded": true,
+   "observed": {
+    "solo": "$108/yr",
+    "studio": "$264/yr",
+    "amounts": [
+     108,
+     264
+    ],
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 2256
+     },
+     "documentWidth": 1440,
+     "visibleText": "Skip to main content\n\nFictional product demonstration. Lattice is not a real, purchasable product. Every claim, price and screen on this page is sample content built to show a design, not a verified business.\n\nLattice\nFeatures\nWorkflow\nPricing\nFAQ\nExplore the workflow\n\nFICTIONAL DEMO \u00b7 LOCAL-FIRST NOTEBOOK\n\nResearch notes that stay on your machine, linked to where they came from.\n\nLattice is a sample concept for independent researchers: capture notes on your own device, keep every source attached, and export to plain Markdown whenever you like \u2014 no server required to read your own work.\n\nExplore the workflow\nSee pricing\n\nIllustrative concept only \u2014 no account, download or purchase happens on this page.\n\nStored on this device\nOne notebook, three everyday moves\n\nSwitch between the tabs to see how capturing, connecting and exporting fit together. Each tab holds different content.\n\nCapture\nConnect\nExport\nKeep the source next to the claim\n\nEvery note can carry one or more source links \u2014 a paper, a page, a dataset \u2014 shown alongside the text instead of buried in a separate bibliography file.\n\nSource links display next to the note they support, not in a detached reference list.\nLinked notes form a small map of how ideas connect within one project.\nAn optional local full-text search looks across notes and their attached links on your device.\nA three-step workflow\n\nThe same shape for a short literature scan or a long-running project.\n\n1\nStart from a template\n\nPick a project template \u2014 literature review, methods log, or a blank notebook \u2014 so every new project starts with the same headings you already trust.\n\n2\nCapture and attach sources\n\nWrite notes as you read, attaching the source link to each claim so the evidence trail stays visible next to the note, not in a separate file.\n\n3\nExport what you need\n\nWhen it's time to write up, draft, or move on, export the notes you need to Markdown and take them into any editor, manuscript tool, or archive.\n\nTwo plans\n\nFictional prices for this demonstration only \u2014 nothing here can be purchased.\n\nMonthly\nYearly\nSolo\n\nFor one researcher working across one or many personal projects.\n\n$108/yr\n\nUnlimited local notebooks\nSource links on every note\nMarkdown export, anytime\nReusable project templates\nOptional local full-text search\nSee the workflow\n\nMOST EXPLORED IN THIS DEMO\n\nStudio\n\nFor a small group of independent researchers who share templates.\n\n$264/yr\n\nEverything in Solo\nShared project templates\nPer-project source maps\nPriority t",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T19:39:35.606Z",
+   "actionStartedAt": "2026-09-14T19:39:35.201Z",
+   "sha256": "56bbc0c8812940ce49e1e6ca4d6736574000beaac5b53a4b1e2efa6996aac186",
+   "bytes": 104231
+  },
+  {
+   "id": "workflow",
+   "label": "Workflow section in the viewport",
+   "file": "workflow.png",
+   "actionSucceeded": true,
+   "observed": {
+    "visible": true,
+    "text": "A three-step workflow\n\nThe same shape for a short literature scan or a long-running project.\n\n1\nStart from a template\n\nPick a project template \u2014 literature review, methods log, or a blank notebook \u2014 so every new project starts with the same headings you already trust.\n\n2\nCapture and attach sources\n\nWrite notes as you read, attaching the source link to each claim so the evidence trail stays visible next to the note, not in a separate file.\n\n3\nExport what you need\n\nWhen it's time to write up, draft, or move on, export the notes you need to Markdown and take them into any editor, manuscript tool, or archive.",
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 1469
+     },
+     "documentWidth": 1440,
+     "visibleText": "Skip to main content\n\nFictional product demonstration. Lattice is not a real, purchasable product. Every claim, price and screen on this page is sample content built to show a design, not a verified business.\n\nLattice\nFeatures\nWorkflow\nPricing\nFAQ\nExplore the workflow\n\nFICTIONAL DEMO \u00b7 LOCAL-FIRST NOTEBOOK\n\nResearch notes that stay on your machine, linked to where they came from.\n\nLattice is a sample concept for independent researchers: capture notes on your own device, keep every source attached, and export to plain Markdown whenever you like \u2014 no server required to read your own work.\n\nExplore the workflow\nSee pricing\n\nIllustrative concept only \u2014 no account, download or purchase happens on this page.\n\nStored on this device\nOne notebook, three everyday moves\n\nSwitch between the tabs to see how capturing, connecting and exporting fit together. Each tab holds different content.\n\nCapture\nConnect\nExport\nKeep the source next to the claim\n\nEvery note can carry one or more source links \u2014 a paper, a page, a dataset \u2014 shown alongside the text instead of buried in a separate bibliography file.\n\nSource links display next to the note they support, not in a detached reference list.\nLinked notes form a small map of how ideas connect within one project.\nAn optional local full-text search looks across notes and their attached links on your device.\nA three-step workflow\n\nThe same shape for a short literature scan or a long-running project.\n\n1\nStart from a template\n\nPick a project template \u2014 literature review, methods log, or a blank notebook \u2014 so every new project starts with the same headings you already trust.\n\n2\nCapture and attach sources\n\nWrite notes as you read, attaching the source link to each claim so the evidence trail stays visible next to the note, not in a separate file.\n\n3\nExport what you need\n\nWhen it's time to write up, draft, or move on, export the notes you need to Markdown and take them into any editor, manuscript tool, or archive.\n\nTwo plans\n\nFictional prices for this demonstration only \u2014 nothing here can be purchased.\n\nMonthly\nYearly\nSolo\n\nFor one researcher working across one or many personal projects.\n\n$108/yr\n\nUnlimited local notebooks\nSource links on every note\nMarkdown export, anytime\nReusable project templates\nOptional local full-text search\nSee the workflow\n\nMOST EXPLORED IN THIS DEMO\n\nStudio\n\nFor a small group of independent researchers who share templates.\n\n$264/yr\n\nEverything in Solo\nShared project templates\nPer-project source maps\nPriority t",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T19:39:36.796Z",
+   "actionStartedAt": "2026-09-14T19:39:36.591Z",
+   "sha256": "b577adb8b95299d181177ff4bfd7e0dd14684e686863add1c492b4bc37ea4747",
+   "bytes": 95187
+  },
+  {
+   "id": "faq",
+   "label": "First FAQ opened; actual answer shown",
+   "file": "faq.png",
+   "actionSucceeded": true,
+   "observed": {
+    "tag": "SUMMARY",
+    "parent": "DETAILS",
+    "open": true,
+    "text": "Where are my notes actually stored?\n\nOn your own device. Notes are kept as local files, not on a remote server operated by Lattice.",
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 2832
+     },
+     "documentWidth": 1440,
+     "visibleText": "Skip to main content\n\nFictional product demonstration. Lattice is not a real, purchasable product. Every claim, price and screen on this page is sample content built to show a design, not a verified business.\n\nLattice\nFeatures\nWorkflow\nPricing\nFAQ\nExplore the workflow\n\nFICTIONAL DEMO \u00b7 LOCAL-FIRST NOTEBOOK\n\nResearch notes that stay on your machine, linked to where they came from.\n\nLattice is a sample concept for independent researchers: capture notes on your own device, keep every source attached, and export to plain Markdown whenever you like \u2014 no server required to read your own work.\n\nExplore the workflow\nSee pricing\n\nIllustrative concept only \u2014 no account, download or purchase happens on this page.\n\nStored on this device\nOne notebook, three everyday moves\n\nSwitch between the tabs to see how capturing, connecting and exporting fit together. Each tab holds different content.\n\nCapture\nConnect\nExport\nKeep the source next to the claim\n\nEvery note can carry one or more source links \u2014 a paper, a page, a dataset \u2014 shown alongside the text instead of buried in a separate bibliography file.\n\nSource links display next to the note they support, not in a detached reference list.\nLinked notes form a small map of how ideas connect within one project.\nAn optional local full-text search looks across notes and their attached links on your device.\nA three-step workflow\n\nThe same shape for a short literature scan or a long-running project.\n\n1\nStart from a template\n\nPick a project template \u2014 literature review, methods log, or a blank notebook \u2014 so every new project starts with the same headings you already trust.\n\n2\nCapture and attach sources\n\nWrite notes as you read, attaching the source link to each claim so the evidence trail stays visible next to the note, not in a separate file.\n\n3\nExport what you need\n\nWhen it's time to write up, draft, or move on, export the notes you need to Markdown and take them into any editor, manuscript tool, or archive.\n\nTwo plans\n\nFictional prices for this demonstration only \u2014 nothing here can be purchased.\n\nMonthly\nYearly\nSolo\n\nFor one researcher working across one or many personal projects.\n\n$108/yr\n\nUnlimited local notebooks\nSource links on every note\nMarkdown export, anytime\nReusable project templates\nOptional local full-text search\nSee the workflow\n\nMOST EXPLORED IN THIS DEMO\n\nStudio\n\nFor a small group of independent researchers who share templates.\n\n$264/yr\n\nEverything in Solo\nShared project templates\nPer-project source maps\nPriority t",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T19:39:37.113Z",
+   "actionStartedAt": "2026-09-14T19:39:36.874Z",
+   "sha256": "0a7d6be3f1a756159872acc98a591e690bf36f8d5a771cbdfd870fe8481ed02b",
+   "bytes": 74690
+  }
+ ],
+ "mobilefile": "mobile-initial.png",
+ "mobile": {
+  "id": "mobile-initial",
+  "label": "Mobile first visit \u2014 separate fresh context",
+  "file": "mobile-initial.png",
+  "sha256": "04894f4da9d84623afa1349171fc80c7cf579a1229ed958a80fd10e8e3a84654",
+  "bytes": 65029,
+  "actionSucceeded": true,
+  "observed": {
+   "httpStatus": 200,
+   "freshStorage": true,
+   "render": {
+    "path": "/nested/benchmark/",
+    "viewport": {
+     "width": 360,
+     "height": 800
+    },
+    "scroll": {
+     "x": 0,
+     "y": 0
+    },
+    "documentWidth": 360,
+    "visibleText": "Skip to main content\n\nFictional product demonstration. Lattice is not a real, purchasable product. Every claim, price and screen on this page is sample content built to show a design, not a verified business.\n\nLattice\nMenu\n\nFICTIONAL DEMO \u00b7 LOCAL-FIRST NOTEBOOK\n\nResearch notes that stay on your machine, linked to where they came from.\n\nLattice is a sample concept for independent researchers: capture notes on your own device, keep every source attached, and export to plain Markdown whenever you like \u2014 no server required to read your own work.\n\nExplore the workflow\nSee pricing\n\nIllustrative concept only \u2014 no account, download or purchase happens on this page.\n\nStored on this device\nOne notebook, three everyday moves\n\nSwitch between the tabs to see how capturing, connecting and exporting fit together. Each tab holds different content.\n\nCapture\nConnect\nExport\nCapture without losing your place\n\nNew notes open in a plain text editor that lives entirely on your device. Headings, lists and code blocks are written in Markdown as you type, so a note looks the same whether you view it in Lattice or in a plain text editor later.\n\nNotes save to local files, not to a remote inbox.\nReusable project templates give a new note a starting structure \u2014 headings for a claim, evidence and open questions.\nNothing here requires a network connection to work.\nA three-step workflow\n\nThe same shape for a short literature scan or a long-running project.\n\n1\nStart from a template\n\nPick a project template \u2014 literature review, methods log, or a blank notebook \u2014 so every new project starts with the same headings you already trust.\n\n2\nCapture and attach sources\n\nWrite notes as you read, attaching the source link to each claim so the evidence trail stays visible next to the note, not in a separate file.\n\n3\nExport what you need\n\nWhen it's time to write up, draft, or move on, export the notes you need to Markdown and take them into any editor, manuscript tool, or archive.\n\nTwo plans\n\nFictional prices for this demonstration only \u2014 nothing here can be purchased.\n\nMonthly\nYearly\nSolo\n\nFor one researcher working across one or many personal projects.\n\n$12/mo\n\nUnlimited local notebooks\nSource links on every note\nMarkdown export, anytime\nReusable project templates\nOptional local full-text search\nSee the workflow\n\nMOST EXPLORED IN THIS DEMO\n\nStudio\n\nFor a small group of independent researchers who share templates.\n\n$29/mo\n\nEverything in Solo\nShared project templates\nPer-project source maps\nPriority tem",
+    "brokenVisibleImages": []
+   }
+  }
+ },
+ "missingStates": [],
+ "captureFailures": [],
+ "actionErrors": [],
+ "infrastructureErrors": [],
+ "console": [],
+ "network": [],
+ "dialogs": [],
+ "browserVersion": "152.0.7977.83",
+ "sourceAfterTreeSha256": "d8da63d58aed620ea59316625b785879de3b72aa4af0132283ba6e6a522a6ff7",
+ "sourceUnchanged": true,
+ "finishedAt": "2026-09-14T19:39:39.912Z"
+}

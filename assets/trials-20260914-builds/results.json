@@ -1,0 +1,5116 @@
+{
+ "meta": {
+  "model": "claude-sonnet-5",
+  "effort": "default",
+  "version": "3.1.0",
+  "fabiusCommit": "f197d6c7285d1a9361b1a4c5279bd0f6ead4bdd0",
+  "date": "2026-09-14",
+  "repeatCount": 2,
+  "runCapSeconds": 900,
+  "capLabel": "about fifteen minutes asked, no hard cap",
+  "protocolUrl": "/assets/trials-20260914-builds/protocol.html",
+  "reportUrl": "/assets/trials-20260914-builds/report.html",
+  "artifactsUrl": "/assets/trials-20260914-builds/all-artifacts.zip",
+  "previewNote": "Live previews load the unmodified generated files in a sandboxed frame with an opaque origin: they cannot reach this site, the network or your storage. Each preview frame gets its own in-memory storage stand-in, so boards reset on reload. The source ZIP holds the exact bytes.",
+  "limitations": "Two fresh runs per condition on one model, from the same brief and the same tools; the treatment reads the pinned 3.1.0 contracts first. Checks describe these artifacts; they do not establish a general improvement or predict another model."
+ },
+ "contracts": {
+  "ui": [
+   {
+    "path": "skills/fabius/SKILL.md",
+    "sha256": "7fda280d63ee493f2c1d4d592ec63cd2eb2bb2bb725108438729c30619ec9fff",
+    "exists": true
+   },
+   {
+    "path": "skills/fabius-parcus/SKILL.md",
+    "sha256": "5c741a46c2deab3c797430871eb0892f66f05bcf5fc7d8c3054b35f97d281c5f",
+    "exists": true
+   },
+   {
+    "path": "skills/fabius-disciplina/SKILL.md",
+    "sha256": "80a3c60f9a2a35d5b538a848e6f4455ea7df32aaea3b3ca386a40fdd4e7f6fb0",
+    "exists": true
+   },
+   {
+    "path": "skills/fabius-decor/SKILL.md",
+    "sha256": "f8532a5a37ba1cfbf9be76d06cb2619e7a79c2eae852f7df8e886ed7bf5e6728",
+    "exists": true
+   },
+   {
+    "path": "skills/fabius-decor/references/visual-system-template.md",
+    "sha256": "8a87ede85de364bddaef1e5b2f7f8c96181a428e2698fb0cf0b8ea26d7bdeffd",
+    "exists": true
+   },
+   {
+    "path": "skills/fabius-decor/references/design-critique.md",
+    "sha256": "f6e3ba63e87cd98ab610bf87269c21c9a791d5499681d4dfeb35b9b8a84daf84",
+    "exists": true
+   }
+  ],
+  "math": [
+   {
+    "path": "skills/fabius/SKILL.md",
+    "sha256": "7fda280d63ee493f2c1d4d592ec63cd2eb2bb2bb725108438729c30619ec9fff",
+    "exists": true
+   },
+   {
+    "path": "skills/fabius-parcus/SKILL.md",
+    "sha256": "5c741a46c2deab3c797430871eb0892f66f05bcf5fc7d8c3054b35f97d281c5f",
+    "exists": true
+   },
+   {
+    "path": "skills/fabius-disciplina/SKILL.md",
+    "sha256": "80a3c60f9a2a35d5b538a848e6f4455ea7df32aaea3b3ca386a40fdd4e7f6fb0",
+    "exists": true
+   },
+   {
+    "path": "skills/fabius-scientia/SKILL.md",
+    "sha256": "7d76d993f5e007cb30c05a43f47a177b383c13a072f82f18152a4cee118429f9",
+    "exists": true
+   },
+   {
+    "path": "skills/fabius-disciplina/references/codebase-and-proof.md",
+    "sha256": "6ee840bae39110fd24cabb5dcc6b7b29e9b55d5ebe853c8a816e51ec56e80703",
+    "exists": true
+   }
+  ]
+ },
+ "tasks": [
+  {
+   "id": "math",
+   "title": "Constrained mathematics",
+   "summary": "One parametric optimization problem, six regimes, a complete proof and executable formulas.",
+   "question": "Minimize x² + 2y² + 3z² + xy − yz + (2 − 2t)x + 5y + z, for every t ∈ [−2, 4].",
+   "feasibleSet": "x + y + z = 1; x, y, z ≥ 0; x ≤ 3/5; 2y + z ≥ 1/2. The plot shows each submitted solver’s sampled objective value.",
+   "transitions": [
+    -1.5,
+    -1,
+    -0.5,
+    0,
+    1.8
+   ],
+   "runs": [
+    {
+     "repeat": 1,
+     "baseline": {
+      "passed": 9,
+      "total": 9,
+      "seconds": 791.9,
+      "tokens": 69190,
+      "toolCalls": 24,
+      "checks": [
+       {
+        "id": "numeric",
+        "label": "Numerical optimizer and feasibility",
+        "passed": true,
+        "detail": "1233 of 1233 parameter probes passed for this one problem. This does not replace a proof."
+       },
+       {
+        "id": "global_existence_uniqueness",
+        "label": "Global existence uniqueness",
+        "passed": true,
+        "detail": "Both blind judges: pass. judge-1: “§1.2: \"$M$ is symmetric positive-definite ... so $g_t$ is **strictly convex** ... The feasible pentagon $P$ is compact and convex and non-empty. Hence ... a minimizer exists ... it is **unique** (strict convexity: if $u\\neq v$ both minimized ... contradiction)\"” Compactness/nonemptiness of the pentagon plus det M=8>0, tr M=10>0 on the reduced (equality-eliminated) problem, with strict convexity explicitly linked to uniqueness by the midpoint argument. judge-2: “§1.2: \"M is symmetric positive-definite (both eigenvalues positive), so g_t is strictly convex ... it is unique (strict convexity: if u≠v both minimized g_t on convex P, the midpoint would give a strictly smaller value, contradiction)\"” Nonempty compact convex pentagon plus a correct reduced quadratic form M=[[4,4],[4,6]] (det 8>0, tr 10>0, i.e. Hessian [[8,8],[8,12]]) is explicitly linked to existence and to uniqueness by a midpoint argument."
+       },
+       {
+        "id": "complete_piecewise_optimizer",
+        "label": "Complete piecewise optimizer",
+        "passed": true,
+        "detail": "Both blind judges: pass. judge-1: “§5: \"$[-2,-\\tfrac32]\\cup[-\\tfrac32,-1]\\cup[-1,-\\tfrac12]\\cup[-\\tfrac12,0]\\cup[0,\\tfrac95]\\cup[\\tfrac95,4]=[-2,4]$\"; §4 Region 4: \"vertex $V_2=(1/2,0)$ ... $(x,y,z)=(1/2,0,1/2)$\"” All six exact optimizer formulas appear in §4 and the §8 table, the five transitions are exactly -3/2,-1,-1/2,0,9/5, closed intervals tile the domain with no gap, and the fixed vertex (1/2,0,1/2) holds on the whole nonzero-length interval [-1/2,0]. judge-2: “§8 table rows: \"[-2,-3/2] ... (0, 1/4, 3/4)\" ... \"[-1/2,0] | y≥0, 2y+z≥1/2 | (1/2, 0, 1/2)\" ... \"[9/5,4] ... (3/5, 1/10, 3/10)\"” All six exact optimizer formulas match the reference, the five transitions -3/2,-1,-1/2,0,9/5 tile [-2,4] with no gap (§5), and the fixed vertex (1/2,0,1/2) is held over the full interval [-1/2,0]."
+       },
+       {
+        "id": "exact_value_function",
+        "label": "Exact value function",
+        "passed": true,
+        "detail": "Both blind judges: pass. judge-1: “§6: \"$V(t)=\\min f_t=\\begin{cases}\\dfrac{29}{8}, ... -\\dfrac34t^2-\\dfrac94t+\\dfrac{31}{16}, ... -\\dfrac14t^2-\\dfrac54t+\\dfrac{39}{16}, ... \\dfrac52-t, ... -\\dfrac1{18}t^2-t+\\dfrac52, ... \\dfrac{67}{25}-\\dfrac65t\\end{cases}$\"” Symbolic exact minimum value stated per regime in §4 (\"**Value:** $f_t=...$\") and collected in §6; all six agree with the reference table. judge-2: “§6: \"V(t)=min f_t = 29/8 ... -3/4 t^2-9/4 t+31/16 ... -1/4 t^2-5/4 t+39/16 ... 5/2-t ... -1/18 t^2-t+5/2 ... 67/25-6/5 t\"” A symbolic six-piece value function is stated per regime (also in the §8 table) and agrees exactly with the reference on every interval, not merely as numbers from code."
+       },
+       {
+        "id": "primal_feasibility",
+        "label": "Primal feasibility",
+        "passed": true,
+        "detail": "Both blind judges: pass. judge-1: “§4 R1: \"($h_2,h_3,h_4,h_5$ at this point equal $\\tfrac14,\\tfrac35,\\tfrac34,\\tfrac34>0$)\"; §3: \"$\\mu_3=0$ throughout (verified: $z^\\star(t)\\in[0.3,0.75]>0$ for all $t$)\"” Each region gives the interval inequalities that keep every $h_i\\ge0$ (R2 \"Feasibility of all five $h_i\\ge0$ ... reduces ... to precisely $-3/2\\le t\\le-1$\", R3 $h_5$, R5 $h_2,h_3$), $x+y+z=1$ holds by the $z=1-x-y$ substitution, and $z\\ge0$ is retained as $h_4$ and excluded explicitly in §5 rather than dropped. judge-2: “§4 R1: \"(h_2,h_3,h_4,h_5 at this point equal 1/4,3/5,3/4,3/4>0)\"; §3: \"μ_3=0 throughout (verified: z*(t)∈[0.3,0.75]>0 for all t∈[-2,4], so z≥0 is never active)\"” x+y+z=1 holds by construction from z=1-x-y, each region names which of h1–h5 are active and argues the rest are strictly positive over its interval, and z>0 is demonstrated rather than the z≥0 constraint being dropped (§5 also proves the edge z=0 is never optimal)."
+       },
+       {
+        "id": "dual_stationarity_certificate",
+        "label": "Dual stationarity certificate",
+        "passed": true,
+        "detail": "Both blind judges: pass. judge-1: “§3: \"$\\nabla f_t = \\nu(1,1,1)+\\mu_1(1,0,0)+\\mu_2(0,1,0)+\\mu_3(0,0,1)+\\mu_4(-1,0,0)+\\mu_5(0,2,1)$\"; \"$\\lambda_i \\ge 0$ is the *explicit sign convention* used throughout\"” Sign convention and both reduced and full three-variable stationarity systems are defined, and every region supplies its stationarity equation plus all multipliers including $\\nu$ (e.g. R6 $\\nu=-3/10$, $\\lambda_3=2t-18/5$, $\\lambda_5=3$), which I verified reproduces the reference up to the opposite $\\nu$ sign convention; unlisted multipliers are declared zero globally. judge-2: “§3: \"∇g_t(x,y)=Σ_{i=1}^5 λ_i ∇h_i(x,y), λ_i≥0, λ_i h_i(x,y)=0\" and \"∇f_t = ν(1,1,1)+μ_1(1,0,0)+μ_2(0,1,0)+μ_3(0,0,1)+μ_4(-1,0,0)+μ_5(0,2,1)\"” An explicit sign convention plus per-region multipliers (λ1=-2t-3; none; λ2=2t+2; λ2=-2t, λ5=2t+1; λ5=1+10t/9; λ3=2t-18/5, λ5=3) and equality multipliers ν with globally specified zeros; with ∇g_t given in §2 the stationarity identity checks immediately in every region (I verified all six, including the 3-variable form at t-regime 6)."
+       },
+       {
+        "id": "dual_feasibility_complementarity",
+        "label": "Dual feasibility complementarity",
+        "passed": true,
+        "detail": "Both blind judges: pass. judge-1: “§4 R4: \"$\\lambda_2=-2t$, $\\lambda_5=2t+1$. Both $\\ge0$ exactly for $t\\in[-\\tfrac12,0]$ (the two sign conditions bound the interval from *both* sides — a genuine vertex range, not a half-open one)\"” Each region states the exact $t$-range on which its multipliers are nonnegative, complementarity is imposed as $\\lambda_i h_i=0$ with nonzero multipliers only on active constraints, both two-active-constraint vertices are handled, and §6 (\"Zero multipliers at the breakpoints\") shows boundary points need no strict positivity. judge-2: “§4 R4: \"Solving the 2×2 multiplier system gives λ_2=-2t, λ_5=2t+1. Both ≥0 exactly for t∈[-1/2,0] (the two sign conditions bound the interval from both sides — a genuine vertex range, not a half-open one).\"” Sign conditions are derived as the defining inequalities of each full closed interval, complementarity is stated as λ_i h_i=0 with inactive multipliers set to zero, both vertex cases are solved with two simultaneous active constraints, and §6 explicitly allows zero multipliers at breakpoints."
+       },
+       {
+        "id": "closed_transition_analysis",
+        "label": "Closed transition analysis",
+        "passed": true,
+        "detail": "Both blind judges: pass. judge-1: “§6: \"$V'(-3/2)=0$ on both sides, $V'(-1)=-3/4$ ... $V'(-1/2)=-1$ ... $V'(0)=-1$ ... $V'(9/5)=-6/5$ on both sides\"; \"by the envelope theorem $V'(t)=-2x^\\star(t)$, and $x^\\star(t)$ ... is itself continuous\"” §4 gives the exact cause of each endpoint (a multiplier crossing zero, or another constraint's value hitting zero), §6 lists equal one-sided values and derivatives at all five transitions plus the envelope identity giving $C^1$, and §4 R4 justifies the nonzero-length fixed-vertex interval from two-sided multiplier sign conditions. judge-2: “§6: \"V'(-3/2)=0 on both sides, V'(-1)=-3/4 ..., V'(-1/2)=-1 ..., V'(0)=-1 ..., V'(9/5)=-6/5 on both sides ... by the envelope theorem V'(t)=-2x*(t), and x*(t) ... is itself continuous across every breakpoint ... So V is C^1 on all of [-2,4]\"” Each regime's endpoints are explained as either a multiplier crossing zero or a constraint value hitting zero (§4), coordinates and values match at all five breakpoints (§5–§6), matching one-sided derivatives plus V'=-2x* give C1, zero multipliers at transitions are addressed, and the nonzero-length vertex interval [-1/2,0] is justified by its two-sided sign conditions."
+       },
+       {
+        "id": "global_all_real_sufficiency",
+        "label": "Global all real sufficiency",
+        "passed": true,
+        "detail": "Both blind judges: pass. judge-1: “§1.2: \"the **KKT conditions are both necessary and sufficient** for global optimality (strictly convex objective, convex feasible region defined by affine constraints ⇒ Slater's condition holds trivially and KKT ⇔ global optimum)\"” Convex KKT sufficiency is invoked explicitly and applied in §5 (\"whenever a face's multiplier signs are all $\\ge0$ and its point is primal-feasible, that point **is** the unique global minimizer for that $t$\") over a covering of the whole domain, with the numerical SLSQP run flagged as corroboration only. judge-2: “§1.2/§5: \"the KKT conditions are both necessary and sufficient for global optimality\" ... \"whenever a face's multiplier signs are all ≥0 and its point is primal-feasible, that point is the unique global minimizer for that t ... Since the six ranges cover [-2,4] with no gap, every t in the domain is accounted for\"” Global optimality for every real t in the domain rests on convex KKT sufficiency (affine constraints, strictly convex objective) applied to the exhaustive tiling, with the scipy run explicitly labelled corroboration only (§7), not the proof."
+       }
+      ],
+      "snapshots": [],
+      "artifactUrl": "/assets/trials-20260914-builds/runs/run-09/source.zip",
+      "proofUrl": "/assets/trials-20260914-builds/runs/run-09/checks.html",
+      "status": "Completed",
+      "files": {
+       "solution.md": {
+        "bytes": 18843,
+        "sha256": "d999b552591cc3115f5055f929c3b2b35c39c011f07984962b6730862eedadac"
+       },
+       "solution.py": {
+        "bytes": 3239,
+        "sha256": "5221124b588aeae3a133cef76f8c02586f835dbac8a4e68fd465be6a1d143615"
+       },
+       "verification.md": {
+        "bytes": 8345,
+        "sha256": "cde5ba8bf3a537e1d30b607887e4434ccc8d81ee517df055310f1b0a63364e6f"
+       },
+       "verify.py": {
+        "bytes": 7164,
+        "sha256": "0b26832f284787e304ebb0515da16ccceae9145c8fac897613bf580e1bceceaf"
+       }
+      },
+      "curve": [
+       {
+        "t": -2.0,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.9523809524,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.9047619048,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.8571428571,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.8095238095,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.7619047619,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.7142857143,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.6666666667,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.619047619,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.5714285714,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.5238095238,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.4761904762,
+        "x": 0.017857142850000063,
+        "y": 0.2380952381,
+        "z": 0.7440476190499999,
+        "value": 3.624574829932313
+       },
+       {
+        "t": -1.4285714286,
+        "x": 0.053571428549999967,
+        "y": 0.21428571429999999,
+        "z": 0.73214285715,
+        "value": 3.621173469390816
+       },
+       {
+        "t": -1.380952381,
+        "x": 0.08928571425000009,
+        "y": 0.19047619049999998,
+        "z": 0.7202380952499999,
+        "value": 3.614370748307823
+       },
+       {
+        "t": -1.3333333333,
+        "x": 0.125000000025,
+        "y": 0.16666666664999996,
+        "z": 0.708333333325,
+        "value": 3.604166666658333
+       },
+       {
+        "t": -1.2857142857,
+        "x": 0.16071428572500013,
+        "y": 0.14285714284999995,
+        "z": 0.6964285714249999,
+        "value": 3.590561224485204
+       },
+       {
+        "t": -1.2380952381,
+        "x": 0.19642857142499992,
+        "y": 0.11904761905000005,
+        "z": 0.684523809525,
+        "value": 3.5735544217705777
+       },
+       {
+        "t": -1.1904761905,
+        "x": 0.23214285712499994,
+        "y": 0.09523809525000004,
+        "z": 0.672619047625,
+        "value": 3.553146258514456
+       },
+       {
+        "t": -1.1428571429,
+        "x": 0.26785714282499995,
+        "y": 0.07142857145000003,
+        "z": 0.660714285725,
+        "value": 3.529336734716837
+       },
+       {
+        "t": -1.0952380952,
+        "x": 0.30357142859999997,
+        "y": 0.04761904760000002,
+        "z": 0.6488095238,
+        "value": 3.5021258503170065
+       },
+       {
+        "t": -1.0476190476,
+        "x": 0.3392857143,
+        "y": 0.02380952380000001,
+        "z": 0.6369047619,
+        "value": 3.471513605429252
+       },
+       {
+        "t": -1.0,
+        "x": 0.375,
+        "y": 0.0,
+        "z": 0.625,
+        "value": 3.4375
+       },
+       {
+        "t": -0.9523809524,
+        "x": 0.3869047619,
+        "y": 0.0,
+        "z": 0.6130952381,
+        "value": 3.401218820876417
+       },
+       {
+        "t": -0.9047619048,
+        "x": 0.3988095238,
+        "y": 0.0,
+        "z": 0.6011904762,
+        "value": 3.363803854905669
+       },
+       {
+        "t": -0.8571428571,
+        "x": 0.410714285725,
+        "y": 0.0,
+        "z": 0.589285714275,
+        "value": 3.3252551020056123
+       },
+       {
+        "t": -0.8095238095,
+        "x": 0.422619047625,
+        "y": 0.0,
+        "z": 0.577380952375,
+        "value": 3.2855725623381518
+       },
+       {
+        "t": -0.7619047619,
+        "x": 0.434523809525,
+        "y": 0.0,
+        "z": 0.565476190475,
+        "value": 3.2447562358235262
+       },
+       {
+        "t": -0.7142857143,
+        "x": 0.44642857142500003,
+        "y": 0.0,
+        "z": 0.553571428575,
+        "value": 3.202806122461735
+       },
+       {
+        "t": -0.6666666667,
+        "x": 0.45833333332500004,
+        "y": 0.0,
+        "z": 0.541666666675,
+        "value": 3.1597222222527774
+       },
+       {
+        "t": -0.619047619,
+        "x": 0.47023809525,
+        "y": 0.0,
+        "z": 0.52976190475,
+        "value": 3.1155045351026076
+       },
+       {
+        "t": -0.5714285714,
+        "x": 0.48214285715,
+        "y": 0.0,
+        "z": 0.5178571428500001,
+        "value": 3.070153061196939
+       },
+       {
+        "t": -0.5238095238,
+        "x": 0.49404761905,
+        "y": 0.0,
+        "z": 0.50595238095,
+        "value": 3.0236678004441044
+       },
+       {
+        "t": -0.4761904762,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.9761904762
+       },
+       {
+        "t": -0.4285714286,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.9285714285999997
+       },
+       {
+        "t": -0.380952381,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.880952381
+       },
+       {
+        "t": -0.3333333333,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.8333333332999997
+       },
+       {
+        "t": -0.2857142857,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.7857142857
+       },
+       {
+        "t": -0.2380952381,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.7380952381
+       },
+       {
+        "t": -0.1904761905,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.6904761905
+       },
+       {
+        "t": -0.1428571429,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.6428571429
+       },
+       {
+        "t": -0.0952380952,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.5952380952
+       },
+       {
+        "t": -0.0476190476,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.5476190476
+       },
+       {
+        "t": 0.0,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.5
+       },
+       {
+        "t": 0.0476190476,
+        "x": 0.5026455026444444,
+        "y": 0.0026455026444444445,
+        "z": 0.4947089947111111,
+        "value": 2.452254976083648
+       },
+       {
+        "t": 0.0952380952,
+        "x": 0.5052910052888889,
+        "y": 0.005291005288888889,
+        "z": 0.4894179894222222,
+        "value": 2.404257999534593
+       },
+       {
+        "t": 0.1428571429,
+        "x": 0.5079365079388889,
+        "y": 0.00793650793888889,
+        "z": 0.4841269841222222,
+        "value": 2.356009070251247
+       },
+       {
+        "t": 0.1904761905,
+        "x": 0.5105820105833333,
+        "y": 0.010582010583333334,
+        "z": 0.47883597883333334,
+        "value": 2.307508188436256
+       },
+       {
+        "t": 0.2380952381,
+        "x": 0.5132275132277778,
+        "y": 0.013227513227777777,
+        "z": 0.4735449735444444,
+        "value": 2.2587553539885614
+       },
+       {
+        "t": 0.2857142857,
+        "x": 0.5158730158722222,
+        "y": 0.015873015872222222,
+        "z": 0.46825396825555554,
+        "value": 2.209750566908163
+       },
+       {
+        "t": 0.3333333333,
+        "x": 0.5185185185166666,
+        "y": 0.018518518516666665,
+        "z": 0.4629629629666667,
+        "value": 2.160493827195062
+       },
+       {
+        "t": 0.380952381,
+        "x": 0.5211640211666667,
+        "y": 0.021164021166666668,
+        "z": 0.45767195766666663,
+        "value": 2.110985134745024
+       },
+       {
+        "t": 0.4285714286,
+        "x": 0.5238095238111111,
+        "y": 0.02380952381111111,
+        "z": 0.45238095237777776,
+        "value": 2.061224489765986
+       },
+       {
+        "t": 0.4761904762,
+        "x": 0.5264550264555555,
+        "y": 0.026455026455555555,
+        "z": 0.44708994708888894,
+        "value": 2.0112118921542455
+       },
+       {
+        "t": 0.5238095238,
+        "x": 0.5291005291,
+        "y": 0.0291005291,
+        "z": 0.44179894179999996,
+        "value": 1.9609473419098005
+       },
+       {
+        "t": 0.5714285714,
+        "x": 0.5317460317444445,
+        "y": 0.031746031744444445,
+        "z": 0.4365079365111111,
+        "value": 1.910430839032653
+       },
+       {
+        "t": 0.619047619,
+        "x": 0.5343915343888889,
+        "y": 0.034391534388888895,
+        "z": 0.43121693122222227,
+        "value": 1.8596623835228019
+       },
+       {
+        "t": 0.6666666667,
+        "x": 0.5370370370388888,
+        "y": 0.03703703703888889,
+        "z": 0.4259259259222223,
+        "value": 1.8086419752728395
+       },
+       {
+        "t": 0.7142857143,
+        "x": 0.5396825396833334,
+        "y": 0.03968253968333333,
+        "z": 0.4206349206333333,
+        "value": 1.757369614497052
+       },
+       {
+        "t": 0.7619047619,
+        "x": 0.5423280423277778,
+        "y": 0.04232804232777778,
+        "z": 0.4153439153444445,
+        "value": 1.7058453010885612
+       },
+       {
+        "t": 0.8095238095,
+        "x": 0.5449735449722222,
+        "y": 0.044973544972222224,
+        "z": 0.4100529100555556,
+        "value": 1.6540690350473672
+       },
+       {
+        "t": 0.8571428571,
+        "x": 0.5476190476166667,
+        "y": 0.04761904761666667,
+        "z": 0.4047619047666666,
+        "value": 1.6020408163734694
+       },
+       {
+        "t": 0.9047619048,
+        "x": 0.5502645502666667,
+        "y": 0.050264550266666666,
+        "z": 0.3994708994666667,
+        "value": 1.5497606449568155
+       },
+       {
+        "t": 0.9523809524,
+        "x": 0.5529100529111111,
+        "y": 0.05291005291111111,
+        "z": 0.3941798941777778,
+        "value": 1.4972285210169818
+       },
+       {
+        "t": 1.0,
+        "x": 0.5555555555555556,
+        "y": 0.05555555555555555,
+        "z": 0.38888888888888884,
+        "value": 1.4444444444444444
+       },
+       {
+        "t": 1.0476190476,
+        "x": 0.5582010582,
+        "y": 0.0582010582,
+        "z": 0.3835978836,
+        "value": 1.3914084152392039
+       },
+       {
+        "t": 1.0952380952,
+        "x": 0.5608465608444444,
+        "y": 0.060846560844444446,
+        "z": 0.37830687831111115,
+        "value": 1.3381204334012597
+       },
+       {
+        "t": 1.1428571429,
+        "x": 0.5634920634944445,
+        "y": 0.06349206349444445,
+        "z": 0.37301587301111105,
+        "value": 1.2845804988179137
+       },
+       {
+        "t": 1.1904761905,
+        "x": 0.5661375661388889,
+        "y": 0.0661375661388889,
+        "z": 0.36772486772222224,
+        "value": 1.2307886117140339
+       },
+       {
+        "t": 1.2380952381,
+        "x": 0.5687830687833333,
+        "y": 0.06878306878333335,
+        "z": 0.36243386243333336,
+        "value": 1.1767447719774502
+       },
+       {
+        "t": 1.2857142857,
+        "x": 0.5714285714277778,
+        "y": 0.07142857142777777,
+        "z": 0.35714285714444444,
+        "value": 1.1224489796081634
+       },
+       {
+        "t": 1.3333333333,
+        "x": 0.5740740740722222,
+        "y": 0.07407407407222222,
+        "z": 0.35185185185555556,
+        "value": 1.067901234606173
+       },
+       {
+        "t": 1.380952381,
+        "x": 0.5767195767222222,
+        "y": 0.07671957672222222,
+        "z": 0.3465608465555556,
+        "value": 1.0131015368561354
+       },
+       {
+        "t": 1.4285714286,
+        "x": 0.5793650793666667,
+        "y": 0.07936507936666666,
+        "z": 0.34126984126666665,
+        "value": 0.9580498865882088
+       },
+       {
+        "t": 1.4761904762,
+        "x": 0.5820105820111111,
+        "y": 0.08201058201111111,
+        "z": 0.3359788359777778,
+        "value": 0.9027462836875788
+       },
+       {
+        "t": 1.5238095238,
+        "x": 0.5846560846555555,
+        "y": 0.08465608465555556,
+        "z": 0.3306878306888889,
+        "value": 0.8471907281542455
+       },
+       {
+        "t": 1.5714285714,
+        "x": 0.5873015873,
+        "y": 0.0873015873,
+        "z": 0.3253968254,
+        "value": 0.7913832199882085
+       },
+       {
+        "t": 1.619047619,
+        "x": 0.5899470899444444,
+        "y": 0.08994708994444445,
+        "z": 0.3201058201111111,
+        "value": 0.7353237591894682
+       },
+       {
+        "t": 1.6666666667,
+        "x": 0.5925925925944444,
+        "y": 0.09259259259444445,
+        "z": 0.3148148148111111,
+        "value": 0.6790123456395061
+       },
+       {
+        "t": 1.7142857143,
+        "x": 0.5952380952388889,
+        "y": 0.09523809523888889,
+        "z": 0.3095238095222222,
+        "value": 0.6224489795748298
+       },
+       {
+        "t": 1.7619047619,
+        "x": 0.5978835978833333,
+        "y": 0.09788359788333333,
+        "z": 0.3042328042333333,
+        "value": 0.5656336608774504
+       },
+       {
+        "t": 1.8095238095,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": 0.5085714286000004
+       },
+       {
+        "t": 1.8571428571,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": 0.4514285714800004
+       },
+       {
+        "t": 1.9047619048,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": 0.39428571424000025
+       },
+       {
+        "t": 1.9523809524,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": 0.33714285712000036
+       },
+       {
+        "t": 2.0,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": 0.28000000000000025
+       },
+       {
+        "t": 2.0476190476,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": 0.22285714288000014
+       },
+       {
+        "t": 2.0952380952,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": 0.16571428576000025
+       },
+       {
+        "t": 2.1428571429,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": 0.10857142852000012
+       },
+       {
+        "t": 2.1904761905,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": 0.051428571400000234
+       },
+       {
+        "t": 2.2380952381,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.005714285719999879
+       },
+       {
+        "t": 2.2857142857,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.06285714283999999
+       },
+       {
+        "t": 2.3333333333,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.11999999995999988
+       },
+       {
+        "t": 2.380952381,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.1771428572
+       },
+       {
+        "t": 2.4285714286,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.2342857143199999
+       },
+       {
+        "t": 2.4761904762,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.29142857144
+       },
+       {
+        "t": 2.5238095238,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.34857142855999945
+       },
+       {
+        "t": 2.5714285714,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.40571428567999956
+       },
+       {
+        "t": 2.619047619,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.46285714279999945
+       },
+       {
+        "t": 2.6666666667,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.5200000000399994
+       },
+       {
+        "t": 2.7142857143,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.5771428571599995
+       },
+       {
+        "t": 2.7619047619,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.6342857142799996
+       },
+       {
+        "t": 2.8095238095,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.6914285713999997
+       },
+       {
+        "t": 2.8571428571,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.7485714285199998
+       },
+       {
+        "t": 2.9047619048,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.8057142857599995
+       },
+       {
+        "t": 2.9523809524,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.8628571428799996
+       },
+       {
+        "t": 3.0,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.9199999999999997
+       },
+       {
+        "t": 3.0476190476,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.9771428571199998
+       },
+       {
+        "t": 3.0952380952,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -1.03428571424
+       },
+       {
+        "t": 3.1428571429,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -1.0914285714799996
+       },
+       {
+        "t": 3.1904761905,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -1.1485714285999997
+       },
+       {
+        "t": 3.2380952381,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -1.2057142857199998
+       },
+       {
+        "t": 3.2857142857,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -1.26285714284
+       },
+       {
+        "t": 3.3333333333,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -1.31999999996
+       },
+       {
+        "t": 3.380952381,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -1.3771428571999997
+       },
+       {
+        "t": 3.4285714286,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -1.4342857143199998
+       },
+       {
+        "t": 3.4761904762,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -1.49142857144
+       },
+       {
+        "t": 3.5238095238,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -1.5485714285599996
+       },
+       {
+        "t": 3.5714285714,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -1.6057142856799993
+       },
+       {
+        "t": 3.619047619,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -1.6628571427999994
+       },
+       {
+        "t": 3.6666666667,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -1.7200000000399995
+       },
+       {
+        "t": 3.7142857143,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -1.7771428571599996
+       },
+       {
+        "t": 3.7619047619,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -1.8342857142799998
+       },
+       {
+        "t": 3.8095238095,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -1.8914285713999994
+       },
+       {
+        "t": 3.8571428571,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -1.9485714285199995
+       },
+       {
+        "t": 3.9047619048,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -2.00571428576
+       },
+       {
+        "t": 3.9523809524,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -2.0628571428799996
+       },
+       {
+        "t": 4.0,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -2.119999999999999
+       }
+      ],
+      "solutionUrl": "/assets/trials-20260914-builds/products/run-09/solution.md",
+      "codeUrl": "/assets/trials-20260914-builds/products/run-09/solution.py",
+      "verificationUrl": "/assets/trials-20260914-builds/products/run-09/verification.md"
+     },
+     "fabius": {
+      "passed": 9,
+      "total": 9,
+      "seconds": 859.6,
+      "tokens": 83398,
+      "toolCalls": 25,
+      "checks": [
+       {
+        "id": "numeric",
+        "label": "Numerical optimizer and feasibility",
+        "passed": true,
+        "detail": "1233 of 1233 parameter probes passed for this one problem. This does not replace a proof."
+       },
+       {
+        "id": "global_existence_uniqueness",
+        "label": "Global existence uniqueness",
+        "passed": true,
+        "detail": "Both blind judges: pass. judge-1: “§2: \"`tr H = 20 > 0`, `det H = 96-64 = 32 > 0` ⇒ both eigenvalues positive ... So `g_t` is **strictly convex** ... A strictly convex function on a nonempty compact convex set has a **unique** global minimizer.\"” Correct reduced Hessian [[8,8],[8,12]] with positive definiteness, plus nonempty compactness of K, explicitly linked to uniqueness for every real t. judge-2: “§2: \"`tr H = 20 > 0`, `det H = 96-64 = 32 > 0` ⇒ both eigenvalues positive ... So `g_t` is **strictly convex** ... A strictly convex function on a nonempty compact convex set has a **unique** global minimizer.\"” Correct positive-definite reduced Hessian plus nonempty compact polygon, with strict convexity explicitly linked to uniqueness for every real t."
+       },
+       {
+        "id": "complete_piecewise_optimizer",
+        "label": "Complete piecewise optimizer",
+        "passed": true,
+        "detail": "Both blind judges: pass. judge-1: “§7 table rows: \"`[-2, -3/2]`|`0`|`1/4`|`3/4`\" … \"`[-1/2, 0]`|`1/2`|`0`|`1/2`\" … \"`[9/5, 4]`|`3/5`|`1/10`|`3/10`\"” All six closed-interval formulas match the reference exactly ((9+6t)/8=9/8+3t/4, (9+t)/18=1/2+t/18, etc.) with the five transitions -3/2,-1,-1/2,0,9/5 and the fixed vertex held over the whole interval [-1/2,0]. judge-2: “§7 table: \"`[-2, -3/2]` | `0` | `1/4` | `3/4` ... `[-1/2, 0]` | `1/2` | `0` | `1/2` ... `[9/5, 4]` | `3/5` | `1/10` | `3/10`\"” All six exact optimizer rows match the reference (e.g. (9+6t)/8 = 9/8+3t/4, (9+t)/18 = 1/2+t/18), the five transitions -3/2,-1,-1/2,0,9/5 tile [-2,4] with no gap, and the fixed vertex (1/2,0,1/2) holds on the full interval [-1/2,0]."
+       },
+       {
+        "id": "exact_value_function",
+        "label": "Exact value function",
+        "passed": true,
+        "detail": "Both blind judges: pass. judge-1: “§7: \"Optimal value function φ(t) = f_t(x*(t),y*(t),z*(t))\" | `29/8` | `-3t²/4 - 9t/4 + 31/16` | `-t²/4 - 5t/4 + 39/16` | `5/2 - t` | `-t²/18 - t + 5/2` | `67/25 - 6t/5`” Symbolic value function stated for every regime as the explicit evaluation of f_t at the optimizer; all six expressions agree with the reference table. judge-2: “§7: \"Optimal value function φ(t) = f_t(x*(t),y*(t),z*(t))\" — \"`29/8`; `-3t²/4 - 9t/4 + 31/16`; `-t²/4 - 5t/4 + 39/16`; `5/2 - t`; `-t²/18 - t + 5/2`; `67/25 - 6t/5`\"” Symbolic exact value formula given on every one of the six regimes, explicitly defined as the objective evaluated at the optimizer, and each matches the reference exactly."
+       },
+       {
+        "id": "primal_feasibility",
+        "label": "Primal feasibility",
+        "passed": true,
+        "detail": "Both blind judges: pass. judge-1: “§6: \"find the exact `t`-range where (a) the point stays within the face's geometric extent and (b) all multipliers are `≥0`\"; §7: \"All six formulas satisfy `x+y+z=1` identically in `t` (verified symbolically)\"” Per-regime interval inequalities confine each optimizer to a face of K (§6.1 \"all 5 inequalities strict\" on (-3/2,-1); §6.3 \"0≤x≤1/2\"; §6.5 \"1/2≤x≤3/5\"), and z>=0 is retained as x+y<=1 and tested as edge V4V5 rather than dropped. judge-2: “§7: \"All six formulas satisfy `x+y+z=1` identically in `t` (verified symbolically), and all lie in the box `[0,3/5]×[0,1]×[0,1]`.\"” Sum-to-one plus the box covers x≥0, x≤3/5, y≥0, z≥0, and the slanted constraint is covered per-interval by §6's rule of finding \"the exact `t`-range where (a) the point stays within the face's geometric extent\" (§6.1 \"all 5 inequalities strict\", §6.3 \"Need 0≤x≤1/2\", §6.5 \"Need 1/2≤x≤3/5\"); z≥0 is kept as constraint x+y≤1 and analysed via λ3 on edge V4V5, not dropped."
+       },
+       {
+        "id": "dual_stationarity_certificate",
+        "label": "Dual stationarity certificate",
+        "passed": true,
+        "detail": "Both blind judges: pass. judge-1: “§5: \"L = f_t + ν(x+y+z-1) + λ1(-x)+λ2(-y)+λ3(-z)+λ4(x-3/5)+λ5(1/2-2y-z)\" with \"2x+y+(2-2t) + ν - λ1 + λ4 = 0 (∂x)\"” Explicit sign convention, Lagrangian, the three stationarity equations, and a complete six-row table of ν and λ1..λ5 that reproduces every reference multiplier (ν=-21/4, λ1=-2t-3; ν=11t/6-3, λ5=10t/9+1; ν=3/10, λ4=2t-18/5, λ5=3). judge-2: “§5: \"L = f_t + ν(x+y+z-1) + λ1(-x)+λ2(-y)+λ3(-z)+λ4(x-3/5)+λ5(1/2-2y-z)\" with \"2x+y+(2-2t) + ν - λ1 + λ4 = 0 (∂x)\"” Explicit sign convention, Lagrangian and all three stationarity equations, plus the §7 table giving ν and all five λ's per interval (ν=-21/4, t-15/4, 3t/2-13/4, 2t-3, 11t/6-3, 3/10), all matching the reference."
+       },
+       {
+        "id": "dual_feasibility_complementarity",
+        "label": "Dual feasibility complementarity",
+        "passed": true,
+        "detail": "Both blind judges: pass. judge-1: “§7: \"every listed multiplier is `≥0` throughout its stated range, with equality exactly at the row's outer endpoint … `λ2=0` at `t=-1` and again at `t=0`, `λ5=0` at `t=-1/2`, `λ4=0` at `t=9/5`\"” Signs verified over each full interval, zeros at boundaries explicitly allowed rather than requiring strict positivity, and §6.4/§6.6 derive the two simultaneously active constraints at vertices V2 and V3 with their paired multipliers λ2=-2t, λ5=2t+1 and λ4=2t-18/5, λ5=3. judge-2: “§7: \"every listed multiplier is `≥0` throughout its stated range, with equality exactly at the row's outer endpoint that borders the next/previous piece\"; §6.4: \"solving stationarity with `λ2,λ5` free gives `λ2=-2t, λ5=2t+1`, same range.\"” Signs are established over each full closed interval, complementary slackness is stated in §5 and matched to the active-set column of §7, simultaneous activity at the vertices V2 and V3 is derived, and boundary zeros are explicitly allowed rather than requiring strict positivity."
+       },
+       {
+        "id": "closed_transition_analysis",
+        "label": "Closed transition analysis",
+        "passed": true,
+        "detail": "Both blind judges: pass. judge-1: “§6.4: \"Need `∇g_t·d1 = 1+2t ≥ 0 ⟺ t≥-1/2` and `∇g_t·d2 = -2t ≥ 0 ⟺ t≤0`. Combined: `t ∈ [-1/2,0]`.\"; §8: \"`φ'(t) = ∂f_t/∂t|_{opt} = -2x*(t)`\" and \"So `φ` is globally `C¹` on `[-2,4]`\"” Each regime's endpoints are explained by a multiplier sign or face extent, the optimizer is shown identical on both sides at all five transitions, one-sided derivatives are listed and matched, and the nonzero-length fixed-vertex interval is justified by the normal-cone/directional-derivative computation at V2. judge-2: “§8: \"`φ'(t) = ∂f_t/∂t|_{opt} = -2x*(t)` ... the one-sided derivatives of adjacent pieces agree at all five interior breakpoints ... So `φ` is globally `C¹` on `[-2,4]`\"; §6.4: \"Combined: `t ∈ [-1/2,0]`.\"” Each regime's start/end is derived from an exact multiplier sign or face-extent condition (λ1=-3-2t≥0 ⟺ t≤-3/2; λ2=2t+2≥0 ⟺ t≥-1; x=(9+t)/18∈[1/2,3/5] ⟺ t∈[0,9/5]; λ4=2t-18/5≥0 ⟺ t≥9/5), optimizer values are shown to coincide at all five transitions, C1 is established via matching one-sided derivatives and V'=-2x* with continuous x*, and the nonzero-length fixed-vertex interval is justified by the two directional-derivative/multiplier conditions in §6.4."
+       },
+       {
+        "id": "global_all_real_sufficiency",
+        "label": "Global all real sufficiency",
+        "passed": true,
+        "detail": "Both blind judges: pass. judge-1: “§2: \"**Slater's condition holds**, so for this convex problem KKT is not only necessary but **sufficient** for global optimality. Every stationary point exhibited below that also satisfies primal feasibility, dual feasibility (`λ≥0`) and complementary slackness is therefore *the* global optimum\"” Global optimality rests on convex KKT sufficiency with Slater, applied to every t, and §6.7 rules out the four remaining faces for every real t by exact directional-derivative and multiplier-contradiction arguments, with numerics explicitly demoted to a cross-check. judge-2: “§2: \"**Slater's condition holds**, so for this convex problem KKT is not only necessary but **sufficient** for global optimality. Every stationary point exhibited below that also satisfies primal feasibility, dual feasibility (`λ≥0`) and complementary slackness is therefore *the* global optimum\"” Convex KKT sufficiency is invoked explicitly and applied to every regime, and §6.7 proves the four remaining faces fail KKT for every real t (e.g. edge V4V5: \"`t≤-9/5` and `t≥3/2` cannot both hold\"), so optimality is proved analytically rather than by numerical spot checks."
+       }
+      ],
+      "snapshots": [],
+      "artifactUrl": "/assets/trials-20260914-builds/runs/run-10/source.zip",
+      "proofUrl": "/assets/trials-20260914-builds/runs/run-10/checks.html",
+      "status": "Completed",
+      "files": {
+       "solution.md": {
+        "bytes": 16298,
+        "sha256": "5df4d3483acb6b4b969996e9173c18d23723b94fa33a28279be850a823ca4e37"
+       },
+       "solution.py": {
+        "bytes": 4246,
+        "sha256": "08333faabf4b5885a511a75d15a4b84056b509293bf1742de8857a969f398180"
+       },
+       "symbolic_checks.py": {
+        "bytes": 6590,
+        "sha256": "048aa61831489244969009997c432ff4e1c283d6f5ee53d7cfcf4a605f60e3c3"
+       },
+       "verification.md": {
+        "bytes": 6428,
+        "sha256": "fba9edd119b3aca0de3973bd273767a407e2b604115776c0c3b307e38e667746"
+       },
+       "verify.py": {
+        "bytes": 9117,
+        "sha256": "9c7487f4c51b598447e3e5de8e10dbe98cb856a7a169b01e3628c7976c1a623b"
+       }
+      },
+      "curve": [
+       {
+        "t": -2.0,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.9523809524,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.9047619048,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.8571428571,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.8095238095,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.7619047619,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.7142857143,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.6666666667,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.619047619,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.5714285714,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.5238095238,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.4761904762,
+        "x": 0.017857142850000007,
+        "y": 0.2380952381,
+        "z": 0.74404761905,
+        "value": 3.624574829932313
+       },
+       {
+        "t": -1.4285714286,
+        "x": 0.05357142855000002,
+        "y": 0.21428571429999999,
+        "z": 0.7321428571499999,
+        "value": 3.6211734693908157
+       },
+       {
+        "t": -1.380952381,
+        "x": 0.08928571425000004,
+        "y": 0.19047619049999998,
+        "z": 0.72023809525,
+        "value": 3.6143707483078233
+       },
+       {
+        "t": -1.3333333333,
+        "x": 0.12500000002500006,
+        "y": 0.16666666664999996,
+        "z": 0.7083333333249999,
+        "value": 3.604166666658333
+       },
+       {
+        "t": -1.2857142857,
+        "x": 0.16071428572500007,
+        "y": 0.14285714284999995,
+        "z": 0.696428571425,
+        "value": 3.5905612244852048
+       },
+       {
+        "t": -1.2380952381,
+        "x": 0.19642857142499992,
+        "y": 0.11904761905000005,
+        "z": 0.684523809525,
+        "value": 3.5735544217705777
+       },
+       {
+        "t": -1.1904761905,
+        "x": 0.23214285712499994,
+        "y": 0.09523809525000004,
+        "z": 0.672619047625,
+        "value": 3.553146258514456
+       },
+       {
+        "t": -1.1428571429,
+        "x": 0.26785714282499995,
+        "y": 0.07142857145000003,
+        "z": 0.660714285725,
+        "value": 3.529336734716837
+       },
+       {
+        "t": -1.0952380952,
+        "x": 0.30357142859999997,
+        "y": 0.04761904760000002,
+        "z": 0.6488095238,
+        "value": 3.5021258503170065
+       },
+       {
+        "t": -1.0476190476,
+        "x": 0.3392857143,
+        "y": 0.02380952380000001,
+        "z": 0.6369047619,
+        "value": 3.471513605429252
+       },
+       {
+        "t": -1.0,
+        "x": 0.375,
+        "y": 0.0,
+        "z": 0.625,
+        "value": 3.4375
+       },
+       {
+        "t": -0.9523809524,
+        "x": 0.3869047619,
+        "y": 0.0,
+        "z": 0.6130952381,
+        "value": 3.401218820876417
+       },
+       {
+        "t": -0.9047619048,
+        "x": 0.3988095238,
+        "y": 0.0,
+        "z": 0.6011904762,
+        "value": 3.363803854905669
+       },
+       {
+        "t": -0.8571428571,
+        "x": 0.410714285725,
+        "y": 0.0,
+        "z": 0.589285714275,
+        "value": 3.3252551020056123
+       },
+       {
+        "t": -0.8095238095,
+        "x": 0.422619047625,
+        "y": 0.0,
+        "z": 0.577380952375,
+        "value": 3.2855725623381518
+       },
+       {
+        "t": -0.7619047619,
+        "x": 0.434523809525,
+        "y": 0.0,
+        "z": 0.565476190475,
+        "value": 3.2447562358235262
+       },
+       {
+        "t": -0.7142857143,
+        "x": 0.44642857142500003,
+        "y": 0.0,
+        "z": 0.553571428575,
+        "value": 3.202806122461735
+       },
+       {
+        "t": -0.6666666667,
+        "x": 0.45833333332500004,
+        "y": 0.0,
+        "z": 0.541666666675,
+        "value": 3.1597222222527774
+       },
+       {
+        "t": -0.619047619,
+        "x": 0.47023809525,
+        "y": 0.0,
+        "z": 0.52976190475,
+        "value": 3.1155045351026076
+       },
+       {
+        "t": -0.5714285714,
+        "x": 0.48214285715,
+        "y": 0.0,
+        "z": 0.5178571428500001,
+        "value": 3.070153061196939
+       },
+       {
+        "t": -0.5238095238,
+        "x": 0.49404761905,
+        "y": 0.0,
+        "z": 0.50595238095,
+        "value": 3.0236678004441044
+       },
+       {
+        "t": -0.4761904762,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.9761904762
+       },
+       {
+        "t": -0.4285714286,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.9285714285999997
+       },
+       {
+        "t": -0.380952381,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.880952381
+       },
+       {
+        "t": -0.3333333333,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.8333333332999997
+       },
+       {
+        "t": -0.2857142857,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.7857142857
+       },
+       {
+        "t": -0.2380952381,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.7380952381
+       },
+       {
+        "t": -0.1904761905,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.6904761905
+       },
+       {
+        "t": -0.1428571429,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.6428571429
+       },
+       {
+        "t": -0.0952380952,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.5952380952
+       },
+       {
+        "t": -0.0476190476,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.5476190476
+       },
+       {
+        "t": 0.0,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.5
+       },
+       {
+        "t": 0.0476190476,
+        "x": 0.5026455026444444,
+        "y": 0.0026455026444444445,
+        "z": 0.4947089947111111,
+        "value": 2.452254976083648
+       },
+       {
+        "t": 0.0952380952,
+        "x": 0.5052910052888889,
+        "y": 0.005291005288888889,
+        "z": 0.4894179894222222,
+        "value": 2.404257999534593
+       },
+       {
+        "t": 0.1428571429,
+        "x": 0.5079365079388889,
+        "y": 0.00793650793888889,
+        "z": 0.4841269841222222,
+        "value": 2.356009070251247
+       },
+       {
+        "t": 0.1904761905,
+        "x": 0.5105820105833333,
+        "y": 0.010582010583333334,
+        "z": 0.47883597883333334,
+        "value": 2.307508188436256
+       },
+       {
+        "t": 0.2380952381,
+        "x": 0.5132275132277778,
+        "y": 0.013227513227777777,
+        "z": 0.47354497354444447,
+        "value": 2.258755353988562
+       },
+       {
+        "t": 0.2857142857,
+        "x": 0.5158730158722222,
+        "y": 0.015873015872222222,
+        "z": 0.46825396825555554,
+        "value": 2.209750566908163
+       },
+       {
+        "t": 0.3333333333,
+        "x": 0.5185185185166666,
+        "y": 0.018518518516666665,
+        "z": 0.46296296296666667,
+        "value": 2.1604938271950616
+       },
+       {
+        "t": 0.380952381,
+        "x": 0.5211640211666667,
+        "y": 0.021164021166666668,
+        "z": 0.4576719576666667,
+        "value": 2.110985134745024
+       },
+       {
+        "t": 0.4285714286,
+        "x": 0.5238095238111111,
+        "y": 0.02380952381111111,
+        "z": 0.45238095237777776,
+        "value": 2.061224489765986
+       },
+       {
+        "t": 0.4761904762,
+        "x": 0.5264550264555555,
+        "y": 0.026455026455555555,
+        "z": 0.4470899470888889,
+        "value": 2.0112118921542455
+       },
+       {
+        "t": 0.5238095238,
+        "x": 0.5291005291,
+        "y": 0.0291005291,
+        "z": 0.4417989418,
+        "value": 1.960947341909801
+       },
+       {
+        "t": 0.5714285714,
+        "x": 0.5317460317444445,
+        "y": 0.031746031744444445,
+        "z": 0.4365079365111111,
+        "value": 1.910430839032653
+       },
+       {
+        "t": 0.619047619,
+        "x": 0.5343915343888889,
+        "y": 0.034391534388888895,
+        "z": 0.4312169312222222,
+        "value": 1.8596623835228014
+       },
+       {
+        "t": 0.6666666667,
+        "x": 0.5370370370388888,
+        "y": 0.03703703703888889,
+        "z": 0.4259259259222222,
+        "value": 1.8086419752728395
+       },
+       {
+        "t": 0.7142857143,
+        "x": 0.5396825396833334,
+        "y": 0.03968253968333333,
+        "z": 0.42063492063333335,
+        "value": 1.757369614497052
+       },
+       {
+        "t": 0.7619047619,
+        "x": 0.5423280423277778,
+        "y": 0.04232804232777778,
+        "z": 0.4153439153444444,
+        "value": 1.7058453010885612
+       },
+       {
+        "t": 0.8095238095,
+        "x": 0.5449735449722222,
+        "y": 0.044973544972222224,
+        "z": 0.41005291005555555,
+        "value": 1.654069035047367
+       },
+       {
+        "t": 0.8571428571,
+        "x": 0.5476190476166667,
+        "y": 0.04761904761666667,
+        "z": 0.4047619047666667,
+        "value": 1.6020408163734694
+       },
+       {
+        "t": 0.9047619048,
+        "x": 0.5502645502666667,
+        "y": 0.050264550266666666,
+        "z": 0.3994708994666667,
+        "value": 1.5497606449568155
+       },
+       {
+        "t": 0.9523809524,
+        "x": 0.5529100529111111,
+        "y": 0.05291005291111111,
+        "z": 0.39417989417777777,
+        "value": 1.4972285210169818
+       },
+       {
+        "t": 1.0,
+        "x": 0.5555555555555556,
+        "y": 0.05555555555555555,
+        "z": 0.3888888888888889,
+        "value": 1.4444444444444446
+       },
+       {
+        "t": 1.0476190476,
+        "x": 0.5582010582,
+        "y": 0.0582010582,
+        "z": 0.3835978836,
+        "value": 1.3914084152392039
+       },
+       {
+        "t": 1.0952380952,
+        "x": 0.5608465608444444,
+        "y": 0.060846560844444446,
+        "z": 0.3783068783111111,
+        "value": 1.3381204334012593
+       },
+       {
+        "t": 1.1428571429,
+        "x": 0.5634920634944445,
+        "y": 0.06349206349444445,
+        "z": 0.3730158730111111,
+        "value": 1.284580498817914
+       },
+       {
+        "t": 1.1904761905,
+        "x": 0.5661375661388889,
+        "y": 0.0661375661388889,
+        "z": 0.36772486772222224,
+        "value": 1.2307886117140339
+       },
+       {
+        "t": 1.2380952381,
+        "x": 0.5687830687833333,
+        "y": 0.06878306878333335,
+        "z": 0.3624338624333333,
+        "value": 1.17674477197745
+       },
+       {
+        "t": 1.2857142857,
+        "x": 0.5714285714277778,
+        "y": 0.07142857142777777,
+        "z": 0.35714285714444444,
+        "value": 1.1224489796081634
+       },
+       {
+        "t": 1.3333333333,
+        "x": 0.5740740740722222,
+        "y": 0.07407407407222222,
+        "z": 0.35185185185555556,
+        "value": 1.067901234606173
+       },
+       {
+        "t": 1.380952381,
+        "x": 0.5767195767222222,
+        "y": 0.07671957672222222,
+        "z": 0.3465608465555556,
+        "value": 1.0131015368561354
+       },
+       {
+        "t": 1.4285714286,
+        "x": 0.5793650793666667,
+        "y": 0.07936507936666666,
+        "z": 0.34126984126666665,
+        "value": 0.9580498865882088
+       },
+       {
+        "t": 1.4761904762,
+        "x": 0.5820105820111111,
+        "y": 0.08201058201111111,
+        "z": 0.3359788359777778,
+        "value": 0.9027462836875788
+       },
+       {
+        "t": 1.5238095238,
+        "x": 0.5846560846555555,
+        "y": 0.08465608465555556,
+        "z": 0.3306878306888889,
+        "value": 0.8471907281542455
+       },
+       {
+        "t": 1.5714285714,
+        "x": 0.5873015873,
+        "y": 0.0873015873,
+        "z": 0.3253968254,
+        "value": 0.7913832199882085
+       },
+       {
+        "t": 1.619047619,
+        "x": 0.5899470899444444,
+        "y": 0.08994708994444445,
+        "z": 0.3201058201111111,
+        "value": 0.7353237591894682
+       },
+       {
+        "t": 1.6666666667,
+        "x": 0.5925925925944444,
+        "y": 0.09259259259444445,
+        "z": 0.3148148148111111,
+        "value": 0.6790123456395061
+       },
+       {
+        "t": 1.7142857143,
+        "x": 0.5952380952388889,
+        "y": 0.09523809523888889,
+        "z": 0.3095238095222222,
+        "value": 0.6224489795748298
+       },
+       {
+        "t": 1.7619047619,
+        "x": 0.5978835978833333,
+        "y": 0.09788359788333333,
+        "z": 0.3042328042333333,
+        "value": 0.5656336608774504
+       },
+       {
+        "t": 1.8095238095,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": 0.5085714286
+       },
+       {
+        "t": 1.8571428571,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": 0.4514285714800001
+       },
+       {
+        "t": 1.9047619048,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": 0.39428571424
+       },
+       {
+        "t": 1.9523809524,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": 0.3371428571200001
+       },
+       {
+        "t": 2.0,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": 0.27999999999999997
+       },
+       {
+        "t": 2.0476190476,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": 0.22285714287999986
+       },
+       {
+        "t": 2.0952380952,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": 0.16571428575999997
+       },
+       {
+        "t": 2.1428571429,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": 0.10857142851999985
+       },
+       {
+        "t": 2.1904761905,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": 0.051428571399999956
+       },
+       {
+        "t": 2.2380952381,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.005714285720000156
+       },
+       {
+        "t": 2.2857142857,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.06285714284000027
+       },
+       {
+        "t": 2.3333333333,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.11999999996000016
+       },
+       {
+        "t": 2.380952381,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.17714285720000028
+       },
+       {
+        "t": 2.4285714286,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.23428571432000017
+       },
+       {
+        "t": 2.4761904762,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.2914285714400003
+       },
+       {
+        "t": 2.5238095238,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.34857142855999973
+       },
+       {
+        "t": 2.5714285714,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.40571428567999984
+       },
+       {
+        "t": 2.619047619,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.46285714279999973
+       },
+       {
+        "t": 2.6666666667,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.5200000000399996
+       },
+       {
+        "t": 2.7142857143,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.5771428571599997
+       },
+       {
+        "t": 2.7619047619,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.6342857142799998
+       },
+       {
+        "t": 2.8095238095,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.6914285713999999
+       },
+       {
+        "t": 2.8571428571,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.74857142852
+       },
+       {
+        "t": 2.9047619048,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.8057142857599997
+       },
+       {
+        "t": 2.9523809524,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.8628571428799998
+       },
+       {
+        "t": 3.0,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.9199999999999999
+       },
+       {
+        "t": 3.0476190476,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.97714285712
+       },
+       {
+        "t": 3.0952380952,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -1.0342857142400002
+       },
+       {
+        "t": 3.1428571429,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -1.0914285714799998
+       },
+       {
+        "t": 3.1904761905,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -1.1485714286
+       },
+       {
+        "t": 3.2380952381,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -1.2057142857199998
+       },
+       {
+        "t": 3.2857142857,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -1.2628571428400004
+       },
+       {
+        "t": 3.3333333333,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -1.31999999996
+       },
+       {
+        "t": 3.380952381,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -1.3771428571999997
+       },
+       {
+        "t": 3.4285714286,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -1.4342857143200003
+       },
+       {
+        "t": 3.4761904762,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -1.49142857144
+       },
+       {
+        "t": 3.5238095238,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -1.5485714285599996
+       },
+       {
+        "t": 3.5714285714,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -1.6057142856799993
+       },
+       {
+        "t": 3.619047619,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -1.6628571427999999
+       },
+       {
+        "t": 3.6666666667,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -1.7200000000399995
+       },
+       {
+        "t": 3.7142857143,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -1.77714285716
+       },
+       {
+        "t": 3.7619047619,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -1.8342857142799998
+       },
+       {
+        "t": 3.8095238095,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -1.8914285713999994
+       },
+       {
+        "t": 3.8571428571,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -1.94857142852
+       },
+       {
+        "t": 3.9047619048,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -2.00571428576
+       },
+       {
+        "t": 3.9523809524,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -2.0628571428800004
+       },
+       {
+        "t": 4.0,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -2.12
+       }
+      ],
+      "solutionUrl": "/assets/trials-20260914-builds/products/run-10/solution.md",
+      "codeUrl": "/assets/trials-20260914-builds/products/run-10/solution.py",
+      "verificationUrl": "/assets/trials-20260914-builds/products/run-10/verification.md"
+     }
+    },
+    {
+     "repeat": 2,
+     "baseline": {
+      "passed": 9,
+      "total": 9,
+      "seconds": 750.5,
+      "tokens": 63421,
+      "toolCalls": 24,
+      "checks": [
+       {
+        "id": "numeric",
+        "label": "Numerical optimizer and feasibility",
+        "passed": true,
+        "detail": "1233 of 1233 parameter probes passed for this one problem. This does not replace a proof."
+       },
+       {
+        "id": "global_existence_uniqueness",
+        "label": "Global existence uniqueness",
+        "passed": true,
+        "detail": "Both blind judges: pass. judge-1: “§1: \"leading principal minors are $2,\\ 7,\\ 40$, all positive ... $M$ is **positive definite**\"; \"By Weierstrass a minimizer ... **exists**\"; \"strict convexity of $f_t$ makes that global minimizer **unique**\"” Nonempty compact polytope plus Sylvester-positive full Hessian (and reduced H with det 32 in §2), explicitly linked to uniqueness. judge-2: “§1: \"leading principal minors are 2, 7, 40, all positive... M is positive definite\"; \"compact polytope, and it is nonempty\"; \"strict convexity of f_t makes that global minimizer unique.\"” Explicit Weierstrass existence on a nonempty compact feasible set plus a correct positive-definite full Hessian (independently re-confirmed by the reduced H with det 32), with strict convexity linked directly to uniqueness."
+       },
+       {
+        "id": "complete_piecewise_optimizer",
+        "label": "Complete piecewise optimizer",
+        "passed": true,
+        "detail": "Both blind judges: pass. judge-1: “§5: \"$(0,\\tfrac14,\\tfrac34)$ $-2\\le t\\le-\\tfrac32$ ... $\\left(\\tfrac12,\\ 0,\\ \\tfrac12\\right)$ $-\\tfrac12\\le t\\le0$ ... $\\left(\\tfrac35,\\ \\tfrac1{10},\\ \\tfrac3{10}\\right)$ $\\tfrac95\\le t\\le4$\"” All six optimizer formulas match the reference exactly, on closed intervals with transitions -3/2,-1,-1/2,0,9/5 and the fixed vertex on the whole [-1/2,0]. judge-2: “§5: \"(0, 1/4, 3/4) −2≤t≤−3/2 … (3t/4+9/8, −t/2−1/2, 3/8−t/4) … ((2t+5)/8, 0, (3−2t)/8) … (1/2, 0, 1/2) −1/2≤t≤0 … ((t+9)/18, t/18, (9−2t)/18) … (3/5, 1/10, 3/10)\"” All six optimizer formulas match the reference exactly, with the five transitions −3/2,−1,−1/2,0,9/5 and the fixed vertex (1/2,0,1/2) held over the full nondegenerate interval [−1/2,0]; §4 states the ranges \"tile [−2,4] with no gap and no overlap\"."
+       },
+       {
+        "id": "exact_value_function",
+        "label": "Exact value function",
+        "passed": true,
+        "detail": "Both blind judges: pass. judge-1: “§4: \"$V(t)=\\begin{cases}\\tfrac{29}8 ... -\\tfrac34t^2-\\tfrac94t+\\tfrac{31}{16} ... -\\tfrac14t^2-\\tfrac54t+\\tfrac{39}{16} ... \\tfrac52-t ... -\\tfrac1{18}t^2-t+\\tfrac52 ... \\tfrac{67}{25}-\\tfrac65t\\end{cases}$\"” Symbolic value function stated as $V(t)=f_t(x^*,y^*,z^*)$ evaluated piece by piece; every branch agrees with the reference table. judge-2: “§4: \"Optimal value function V(t)=f_t(x*,y*,z*), piece by piece: 29/8 … −3t²/4−9t/4+31/16 … −t²/4−5t/4+39/16 … 5/2−t … −t²/18−t+5/2 … 67/25−6t/5\"” A symbolic value function is given on every regime, evaluated from the optimizer, and each of the six expressions agrees exactly with the reference table."
+       },
+       {
+        "id": "primal_feasibility",
+        "label": "Primal feasibility",
+        "passed": true,
+        "detail": "Both blind judges: pass. judge-1: “§2: \"$c_3: x+y\\le1\\ (\\Leftrightarrow z\\ge0)$\"; §3: \"**Constraint $z\\ge0$ is never tight anywhere on $[-2,4]$** ... $z$ ranges only over $[0.3,0.75]$; $\\lambda_3\\equiv0$ throughout\"” z=1-x-y makes the sum-to-one identity automatic, all five inequalities are carried as c1–c5 with per-case face-range checks (e.g. \"need $x\\in[0,\\tfrac12]$\", edge range $t\\in[0,9/5]$), and z's constraint is kept and shown slack rather than dropped. judge-2: “§2: \"When is v*(t) itself feasible (all 5 of c₁,…,c₅≥0)? … c₁≥0⟺t≥−3/2, c₂≥0⟺t≤−1, c₃≥0⟺t≤3/2, c₄≥0⟺t≤−7/10, c₅≥0⟺t≤−9/10\"; §3: \"z ranges only over [0.3,0.75]\"” The equality is satisfied identically by the substitution z=1−x−y, each edge/vertex case carries its explicit membership interval (e.g. edge E12 \"need x∈[0,1/2]… at t=−1, x=3/8; at t=−1/2, x=1/2\"), and z≥0 is kept as constraint c₃ in the enumeration rather than dropped."
+       },
+       {
+        "id": "dual_stationarity_certificate",
+        "label": "Dual stationarity certificate",
+        "passed": true,
+        "detail": "Both blind judges: pass. judge-1: “§1: \"$L=f_t-\\nu(x+y+z-1)-\\lambda_1x-\\lambda_2y-\\lambda_3z-\\lambda_4(\\tfrac35-x)-\\lambda_5(2y+z-\\tfrac12)$\"; §4 table gives e.g. \"$\\lambda_2=-2t,\\ \\lambda_5=2t+1;\\ \\nu=3-2t$\"” Explicit sign convention, the three stationarity equations, and a complete per-interval table of all inequality multipliers plus the equality multiplier ν (negated relative to the reference, consistently with its stated convention); λ3=0 declared globally. judge-2: “§1: \"L=f_t−ν(x+y+z−1)−λ₁x−λ₂y−λ₃z−λ₄(3/5−x)−λ₅(2y+z−1/2)\", with \"2x+y+(2−2t)=ν+λ₁−λ₄\"; §4 table: \"λ₂=−2t, λ₅=2t+1; ν=3−2t\"” A signed Lagrangian, the three stationarity equations, and a complete per-interval table of ν and all λ's (with λ₃=0 declared globally) are given; the ν values are the reference's with the opposite, internally consistent equality-multiplier sign, and every λ matches."
+       },
+       {
+        "id": "dual_feasibility_complementarity",
+        "label": "Dual feasibility complementarity",
+        "passed": true,
+        "detail": "Both blind judges: pass. judge-1: “§3: \"$\\lambda_5=2t+1,\\ \\lambda_2=-2t$. Need both $\\ge0$: $t\\ge-\\tfrac12$ and $t\\le0$\"; §4: \"the multiplier of the constraint that is about to switch ... equals exactly $0$ there\"” Each interval is defined by the multiplier sign conditions, complementarity holds by construction (\"inactive ones get $\\lambda_i=0$\") with the slackness conditions stated in §1, vertices with two simultaneous actives are solved explicitly, and zero multipliers at endpoints are accepted rather than treated as failures. judge-2: “§3: \"∇g_t(1/2,0)=(−2t−1, 1)=λ₂(0,1)+λ₅(−1,1)⇒λ₅=2t+1, λ₂=−2t. Need both ≥0: t≥−1/2 and t≤0.\"; §4: \"At each breakpoint the multiplier … equals exactly 0 there\"” Each case's validity window is derived from nonnegativity of its multipliers, complementarity is enforced by construction (\"inactive ones get λᵢ=0\"), the two simultaneously active constraints at each vertex are handled explicitly, and zero multipliers at interval endpoints are accepted rather than requiring strict positivity."
+       },
+       {
+        "id": "closed_transition_analysis",
+        "label": "Closed transition analysis",
+        "passed": true,
+        "detail": "Both blind judges: pass. judge-1: “§3: \"$\\lambda_5=2t+1,\\ \\lambda_2=-2t$. Need both $\\ge0$ ... **Valid for $t\\in[-\\tfrac12,0]$.**\"; §4: table of \"$V(t)$ (both sides)\" and \"$V'(t)$ (both sides)\" at all five breakpoints” Every regime endpoint is derived from a multiplier sign or edge-range condition, the optimizer is checked to agree at all five transitions, the V/V' table plus V'(t)=-2x*(t) gives C1, and the nonzero-length fixed-vertex window is justified by the normal-cone multiplier pair. judge-2: “§4: \"at t=−1 both give (3/8,0,5/8), at t=−1/2 both give (1/2,0,1/2), at t=0 both give (1/2,0,1/2), at t=9/5 both give (3/5,1/10,3/10)\"; table of \"V'(t) (both sides)\": 0, −3/4, −1, −1, −6/5; \"so V is C¹ on all of [−2,4]\"” Each regime's start/end is justified by the multiplier crossing zero or the edge-range condition, both neighbouring optimizer and value formulas are shown to agree at all five transitions with matching one-sided derivatives (cross-checked by V'(t)=−2x*(t)), and the fixed-vertex interval's nonzero length follows from λ₂=−2t≥0 and λ₅=2t+1≥0."
+       },
+       {
+        "id": "global_all_real_sufficiency",
+        "label": "Global all real sufficiency",
+        "passed": true,
+        "detail": "Both blind judges: pass. judge-1: “§1: \"for a convex objective with affine constraints, a feasible point satisfying the KKT conditions below is automatically a **global** minimizer, and strict convexity ... makes that global minimizer **unique**\"” Convex KKT sufficiency is invoked for every t and combined with the exhaustive 11-candidate enumeration over a proved non-degenerate pentagon (\"5 proved impossible for any $t$\"), so optimality is proved rather than spot-checked numerically. judge-2: “§1: \"for a convex objective with affine constraints, a feasible point satisfying the KKT conditions below is automatically a global minimizer, and strict convexity of f_t makes that global minimizer unique.\"” Convex KKT sufficiency is invoked explicitly and applied to a case list argued exhaustive (\"11 candidates checked, 6 realized, 5 proved impossible for any t\" via a no-three-lines-concurrent nondegeneracy check), so global optimality is established for every real t in the domain rather than by numerical spot checks."
+       }
+      ],
+      "snapshots": [],
+      "artifactUrl": "/assets/trials-20260914-builds/runs/run-11/source.zip",
+      "proofUrl": "/assets/trials-20260914-builds/runs/run-11/checks.html",
+      "status": "Completed",
+      "files": {
+       "solution.md": {
+        "bytes": 16983,
+        "sha256": "88ea97825ac7145e0e2e7b13c5fb8ac7ed2d34fb507a9a60a788503582682473"
+       },
+       "solution.py": {
+        "bytes": 2978,
+        "sha256": "8eadbc145a1f4656ff0c45a573c910e375774a2252cb5cdf9ec9dd1cca0636cd"
+       },
+       "verification.md": {
+        "bytes": 6539,
+        "sha256": "3c2e9807e43075db7efb53b6094516f0f4dd11a22c24b0eb1822d70e469ecd69"
+       },
+       "verify.py": {
+        "bytes": 4562,
+        "sha256": "1497c263985288a0199f814b38409e3ffcea0a07c17e5b32aab6f63334fe9c93"
+       }
+      },
+      "curve": [
+       {
+        "t": -2.0,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.9523809524,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.9047619048,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.8571428571,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.8095238095,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.7619047619,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.7142857143,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.6666666667,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.619047619,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.5714285714,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.5238095238,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.4761904762,
+        "x": 0.017857142850000063,
+        "y": 0.2380952381,
+        "z": 0.74404761905,
+        "value": 3.624574829932314
+       },
+       {
+        "t": -1.4285714286,
+        "x": 0.053571428549999967,
+        "y": 0.21428571429999999,
+        "z": 0.7321428571499999,
+        "value": 3.6211734693908153
+       },
+       {
+        "t": -1.380952381,
+        "x": 0.08928571425000009,
+        "y": 0.19047619049999998,
+        "z": 0.72023809525,
+        "value": 3.614370748307824
+       },
+       {
+        "t": -1.3333333333,
+        "x": 0.125000000025,
+        "y": 0.16666666664999996,
+        "z": 0.7083333333249999,
+        "value": 3.6041666666583323
+       },
+       {
+        "t": -1.2857142857,
+        "x": 0.16071428572500013,
+        "y": 0.14285714284999995,
+        "z": 0.696428571425,
+        "value": 3.5905612244852048
+       },
+       {
+        "t": -1.2380952381,
+        "x": 0.19642857142499992,
+        "y": 0.11904761905000005,
+        "z": 0.684523809525,
+        "value": 3.5735544217705777
+       },
+       {
+        "t": -1.1904761905,
+        "x": 0.23214285712499994,
+        "y": 0.09523809525000004,
+        "z": 0.672619047625,
+        "value": 3.553146258514456
+       },
+       {
+        "t": -1.1428571429,
+        "x": 0.26785714282499995,
+        "y": 0.07142857145000003,
+        "z": 0.660714285725,
+        "value": 3.529336734716837
+       },
+       {
+        "t": -1.0952380952,
+        "x": 0.30357142859999997,
+        "y": 0.04761904760000002,
+        "z": 0.6488095238,
+        "value": 3.5021258503170065
+       },
+       {
+        "t": -1.0476190476,
+        "x": 0.3392857143,
+        "y": 0.02380952380000001,
+        "z": 0.6369047619,
+        "value": 3.471513605429252
+       },
+       {
+        "t": -1.0,
+        "x": 0.375,
+        "y": 0.0,
+        "z": 0.625,
+        "value": 3.4375
+       },
+       {
+        "t": -0.9523809524,
+        "x": 0.3869047619,
+        "y": 0.0,
+        "z": 0.6130952381,
+        "value": 3.401218820876417
+       },
+       {
+        "t": -0.9047619048,
+        "x": 0.3988095238,
+        "y": 0.0,
+        "z": 0.6011904762,
+        "value": 3.363803854905669
+       },
+       {
+        "t": -0.8571428571,
+        "x": 0.410714285725,
+        "y": 0.0,
+        "z": 0.589285714275,
+        "value": 3.3252551020056123
+       },
+       {
+        "t": -0.8095238095,
+        "x": 0.422619047625,
+        "y": 0.0,
+        "z": 0.577380952375,
+        "value": 3.2855725623381518
+       },
+       {
+        "t": -0.7619047619,
+        "x": 0.434523809525,
+        "y": 0.0,
+        "z": 0.565476190475,
+        "value": 3.2447562358235262
+       },
+       {
+        "t": -0.7142857143,
+        "x": 0.44642857142500003,
+        "y": 0.0,
+        "z": 0.553571428575,
+        "value": 3.202806122461735
+       },
+       {
+        "t": -0.6666666667,
+        "x": 0.45833333332500004,
+        "y": 0.0,
+        "z": 0.541666666675,
+        "value": 3.1597222222527774
+       },
+       {
+        "t": -0.619047619,
+        "x": 0.47023809525,
+        "y": 0.0,
+        "z": 0.52976190475,
+        "value": 3.1155045351026076
+       },
+       {
+        "t": -0.5714285714,
+        "x": 0.48214285715,
+        "y": 0.0,
+        "z": 0.5178571428500001,
+        "value": 3.070153061196939
+       },
+       {
+        "t": -0.5238095238,
+        "x": 0.49404761905,
+        "y": 0.0,
+        "z": 0.50595238095,
+        "value": 3.0236678004441044
+       },
+       {
+        "t": -0.4761904762,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.9761904762
+       },
+       {
+        "t": -0.4285714286,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.9285714285999997
+       },
+       {
+        "t": -0.380952381,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.880952381
+       },
+       {
+        "t": -0.3333333333,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.8333333332999997
+       },
+       {
+        "t": -0.2857142857,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.7857142857
+       },
+       {
+        "t": -0.2380952381,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.7380952381
+       },
+       {
+        "t": -0.1904761905,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.6904761905
+       },
+       {
+        "t": -0.1428571429,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.6428571429
+       },
+       {
+        "t": -0.0952380952,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.5952380952
+       },
+       {
+        "t": -0.0476190476,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.5476190476
+       },
+       {
+        "t": 0.0,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.5
+       },
+       {
+        "t": 0.0476190476,
+        "x": 0.5026455026444444,
+        "y": 0.0026455026444444445,
+        "z": 0.4947089947111112,
+        "value": 2.4522549760836485
+       },
+       {
+        "t": 0.0952380952,
+        "x": 0.5052910052888888,
+        "y": 0.005291005288888889,
+        "z": 0.4894179894222222,
+        "value": 2.4042579995345927
+       },
+       {
+        "t": 0.1428571429,
+        "x": 0.5079365079388889,
+        "y": 0.00793650793888889,
+        "z": 0.48412698412222227,
+        "value": 2.3560090702512477
+       },
+       {
+        "t": 0.1904761905,
+        "x": 0.5105820105833333,
+        "y": 0.010582010583333334,
+        "z": 0.47883597883333334,
+        "value": 2.307508188436256
+       },
+       {
+        "t": 0.2380952381,
+        "x": 0.5132275132277777,
+        "y": 0.013227513227777777,
+        "z": 0.47354497354444447,
+        "value": 2.2587553539885614
+       },
+       {
+        "t": 0.2857142857,
+        "x": 0.5158730158722222,
+        "y": 0.015873015872222222,
+        "z": 0.46825396825555554,
+        "value": 2.209750566908163
+       },
+       {
+        "t": 0.3333333333,
+        "x": 0.5185185185166667,
+        "y": 0.018518518516666665,
+        "z": 0.4629629629666667,
+        "value": 2.1604938271950624
+       },
+       {
+        "t": 0.380952381,
+        "x": 0.5211640211666667,
+        "y": 0.021164021166666668,
+        "z": 0.45767195766666663,
+        "value": 2.110985134745024
+       },
+       {
+        "t": 0.4285714286,
+        "x": 0.5238095238111111,
+        "y": 0.02380952381111111,
+        "z": 0.4523809523777778,
+        "value": 2.0612244897659866
+       },
+       {
+        "t": 0.4761904762,
+        "x": 0.5264550264555555,
+        "y": 0.026455026455555555,
+        "z": 0.4470899470888889,
+        "value": 2.0112118921542455
+       },
+       {
+        "t": 0.5238095238,
+        "x": 0.5291005291,
+        "y": 0.0291005291,
+        "z": 0.4417989418,
+        "value": 1.960947341909801
+       },
+       {
+        "t": 0.5714285714,
+        "x": 0.5317460317444445,
+        "y": 0.031746031744444445,
+        "z": 0.4365079365111111,
+        "value": 1.910430839032653
+       },
+       {
+        "t": 0.619047619,
+        "x": 0.5343915343888889,
+        "y": 0.034391534388888895,
+        "z": 0.43121693122222227,
+        "value": 1.8596623835228019
+       },
+       {
+        "t": 0.6666666667,
+        "x": 0.5370370370388888,
+        "y": 0.03703703703888889,
+        "z": 0.4259259259222222,
+        "value": 1.8086419752728395
+       },
+       {
+        "t": 0.7142857143,
+        "x": 0.5396825396833334,
+        "y": 0.03968253968333333,
+        "z": 0.42063492063333335,
+        "value": 1.757369614497052
+       },
+       {
+        "t": 0.7619047619,
+        "x": 0.5423280423277778,
+        "y": 0.04232804232777778,
+        "z": 0.4153439153444445,
+        "value": 1.7058453010885612
+       },
+       {
+        "t": 0.8095238095,
+        "x": 0.5449735449722222,
+        "y": 0.044973544972222224,
+        "z": 0.41005291005555555,
+        "value": 1.654069035047367
+       },
+       {
+        "t": 0.8571428571,
+        "x": 0.5476190476166667,
+        "y": 0.04761904761666667,
+        "z": 0.4047619047666667,
+        "value": 1.6020408163734694
+       },
+       {
+        "t": 0.9047619048,
+        "x": 0.5502645502666668,
+        "y": 0.050264550266666666,
+        "z": 0.3994708994666667,
+        "value": 1.5497606449568155
+       },
+       {
+        "t": 0.9523809524,
+        "x": 0.5529100529111112,
+        "y": 0.05291005291111111,
+        "z": 0.39417989417777777,
+        "value": 1.4972285210169818
+       },
+       {
+        "t": 1.0,
+        "x": 0.5555555555555556,
+        "y": 0.05555555555555555,
+        "z": 0.3888888888888889,
+        "value": 1.4444444444444446
+       },
+       {
+        "t": 1.0476190476,
+        "x": 0.5582010582,
+        "y": 0.0582010582,
+        "z": 0.3835978836,
+        "value": 1.3914084152392039
+       },
+       {
+        "t": 1.0952380952,
+        "x": 0.5608465608444444,
+        "y": 0.060846560844444446,
+        "z": 0.3783068783111111,
+        "value": 1.3381204334012593
+       },
+       {
+        "t": 1.1428571429,
+        "x": 0.5634920634944445,
+        "y": 0.06349206349444445,
+        "z": 0.3730158730111111,
+        "value": 1.284580498817914
+       },
+       {
+        "t": 1.1904761905,
+        "x": 0.5661375661388889,
+        "y": 0.0661375661388889,
+        "z": 0.36772486772222224,
+        "value": 1.2307886117140339
+       },
+       {
+        "t": 1.2380952381,
+        "x": 0.5687830687833333,
+        "y": 0.06878306878333335,
+        "z": 0.3624338624333333,
+        "value": 1.17674477197745
+       },
+       {
+        "t": 1.2857142857,
+        "x": 0.5714285714277777,
+        "y": 0.07142857142777777,
+        "z": 0.35714285714444444,
+        "value": 1.1224489796081634
+       },
+       {
+        "t": 1.3333333333,
+        "x": 0.5740740740722222,
+        "y": 0.07407407407222222,
+        "z": 0.35185185185555556,
+        "value": 1.067901234606173
+       },
+       {
+        "t": 1.380952381,
+        "x": 0.5767195767222222,
+        "y": 0.07671957672222222,
+        "z": 0.3465608465555555,
+        "value": 1.013101536856135
+       },
+       {
+        "t": 1.4285714286,
+        "x": 0.5793650793666667,
+        "y": 0.07936507936666666,
+        "z": 0.3412698412666667,
+        "value": 0.9580498865882088
+       },
+       {
+        "t": 1.4761904762,
+        "x": 0.5820105820111111,
+        "y": 0.08201058201111111,
+        "z": 0.3359788359777778,
+        "value": 0.9027462836875788
+       },
+       {
+        "t": 1.5238095238,
+        "x": 0.5846560846555556,
+        "y": 0.08465608465555556,
+        "z": 0.3306878306888889,
+        "value": 0.8471907281542455
+       },
+       {
+        "t": 1.5714285714,
+        "x": 0.5873015873,
+        "y": 0.0873015873,
+        "z": 0.3253968254,
+        "value": 0.7913832199882085
+       },
+       {
+        "t": 1.619047619,
+        "x": 0.5899470899444444,
+        "y": 0.08994708994444445,
+        "z": 0.3201058201111111,
+        "value": 0.7353237591894682
+       },
+       {
+        "t": 1.6666666667,
+        "x": 0.5925925925944444,
+        "y": 0.09259259259444445,
+        "z": 0.31481481481111107,
+        "value": 0.6790123456395059
+       },
+       {
+        "t": 1.7142857143,
+        "x": 0.5952380952388889,
+        "y": 0.09523809523888889,
+        "z": 0.30952380952222225,
+        "value": 0.6224489795748299
+       },
+       {
+        "t": 1.7619047619,
+        "x": 0.5978835978833333,
+        "y": 0.09788359788333333,
+        "z": 0.3042328042333333,
+        "value": 0.5656336608774504
+       },
+       {
+        "t": 1.8095238095,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": 0.5085714286
+       },
+       {
+        "t": 1.8571428571,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": 0.4514285714800001
+       },
+       {
+        "t": 1.9047619048,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": 0.39428571424
+       },
+       {
+        "t": 1.9523809524,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": 0.3371428571200001
+       },
+       {
+        "t": 2.0,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": 0.27999999999999997
+       },
+       {
+        "t": 2.0476190476,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": 0.22285714287999986
+       },
+       {
+        "t": 2.0952380952,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": 0.16571428575999997
+       },
+       {
+        "t": 2.1428571429,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": 0.10857142851999985
+       },
+       {
+        "t": 2.1904761905,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": 0.051428571399999956
+       },
+       {
+        "t": 2.2380952381,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.005714285720000156
+       },
+       {
+        "t": 2.2857142857,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.06285714284000027
+       },
+       {
+        "t": 2.3333333333,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.11999999996000016
+       },
+       {
+        "t": 2.380952381,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.17714285720000028
+       },
+       {
+        "t": 2.4285714286,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.23428571432000017
+       },
+       {
+        "t": 2.4761904762,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.2914285714400003
+       },
+       {
+        "t": 2.5238095238,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.34857142855999973
+       },
+       {
+        "t": 2.5714285714,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.40571428567999984
+       },
+       {
+        "t": 2.619047619,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.46285714279999973
+       },
+       {
+        "t": 2.6666666667,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.5200000000399996
+       },
+       {
+        "t": 2.7142857143,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.5771428571599997
+       },
+       {
+        "t": 2.7619047619,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.6342857142799998
+       },
+       {
+        "t": 2.8095238095,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.6914285713999999
+       },
+       {
+        "t": 2.8571428571,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.74857142852
+       },
+       {
+        "t": 2.9047619048,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.8057142857599997
+       },
+       {
+        "t": 2.9523809524,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.8628571428799998
+       },
+       {
+        "t": 3.0,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.9199999999999999
+       },
+       {
+        "t": 3.0476190476,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -0.97714285712
+       },
+       {
+        "t": 3.0952380952,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -1.0342857142400002
+       },
+       {
+        "t": 3.1428571429,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -1.0914285714799998
+       },
+       {
+        "t": 3.1904761905,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -1.1485714286
+       },
+       {
+        "t": 3.2380952381,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -1.2057142857199998
+       },
+       {
+        "t": 3.2857142857,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -1.2628571428400004
+       },
+       {
+        "t": 3.3333333333,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -1.31999999996
+       },
+       {
+        "t": 3.380952381,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -1.3771428571999997
+       },
+       {
+        "t": 3.4285714286,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -1.4342857143200003
+       },
+       {
+        "t": 3.4761904762,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -1.49142857144
+       },
+       {
+        "t": 3.5238095238,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -1.5485714285599996
+       },
+       {
+        "t": 3.5714285714,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -1.6057142856799993
+       },
+       {
+        "t": 3.619047619,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -1.6628571427999999
+       },
+       {
+        "t": 3.6666666667,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -1.7200000000399995
+       },
+       {
+        "t": 3.7142857143,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -1.77714285716
+       },
+       {
+        "t": 3.7619047619,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -1.8342857142799998
+       },
+       {
+        "t": 3.8095238095,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -1.8914285713999994
+       },
+       {
+        "t": 3.8571428571,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -1.94857142852
+       },
+       {
+        "t": 3.9047619048,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -2.00571428576
+       },
+       {
+        "t": 3.9523809524,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -2.0628571428800004
+       },
+       {
+        "t": 4.0,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3,
+        "value": -2.12
+       }
+      ],
+      "solutionUrl": "/assets/trials-20260914-builds/products/run-11/solution.md",
+      "codeUrl": "/assets/trials-20260914-builds/products/run-11/solution.py",
+      "verificationUrl": "/assets/trials-20260914-builds/products/run-11/verification.md"
+     },
+     "fabius": {
+      "passed": 9,
+      "total": 9,
+      "seconds": 627.5,
+      "tokens": 58265,
+      "toolCalls": 27,
+      "checks": [
+       {
+        "id": "numeric",
+        "label": "Numerical optimizer and feasibility",
+        "passed": true,
+        "detail": "1233 of 1233 parameter probes passed for this one problem. This does not replace a proof."
+       },
+       {
+        "id": "global_existence_uniqueness",
+        "label": "Global existence uniqueness",
+        "passed": true,
+        "detail": "Both blind judges: pass. judge-1: “§2: \"M is symmetric with trace 10 > 0 and det = 24−16 = 8 > 0, so both eigenvalues are positive... A strictly convex function on a nonempty compact convex set attains a unique global minimum.\"” Positive-definiteness of the reduced quadratic form is proved by trace/determinant and explicitly linked to compactness of the pentagon and uniqueness of the minimizer; the parenthetical eigenvalue values (10±2√17 instead of 5±√17) are an off-by-a-factor label slip that does not affect the correct trace/det argument or conclusion. judge-2: “§2 (lines 44-46): \"a closed bounded convex polygon ... A strictly convex function on a nonempty compact convex set attains a **unique** global minimum. So for every t a unique minimizer exists\"” Gives the reduced quadratic form M=[[4,4],[4,6]] with trace 10>0 and det 8>0 (positive definite), asserts nonempty compactness, and explicitly links strict convexity to uniqueness; the mislabelled eigenvalues 10±2√17 are those of the Hessian 2M and do not affect the conclusion."
+       },
+       {
+        "id": "complete_piecewise_optimizer",
+        "label": "Complete piecewise optimizer",
+        "passed": true,
+        "detail": "Both blind judges: pass. judge-1: “§8 table: \"[−2, −3/2] | 0 | 1/4 | 3/4 ... [−1/2, 0] | 1/2 | 0 | 1/2 ... [9/5, 4] | 3/5 | 1/10 | 3/10\"” All six optimizer rows match the reference exactly with the five transitions −3/2,−1,−1/2,0,9/5 on closed intervals tiling [−2,4] (§6: \"Regimes 1–6 already tile [−2,4] exactly and contiguously\"), including the fixed vertex (1/2,0,1/2) on the full interval [−1/2,0]. judge-2: “§8 table (lines 202-207): \"| [−2, −3/2] | 0 | 1/4 | 3/4 ... | [−1/2, 0] | 1/2 | 0 | 1/2 | 5/2−t ... | [9/5, 4] | 3/5 | 1/10 | 3/10 |\"” All six exact optimizer formulas match the reference, the five transitions −3/2,−1,−1/2,0,9/5 are the stated closed-interval endpoints tiling [−2,4] with no gap, and the fixed vertex (1/2,0,1/2) is held over the whole interval [−1/2,0]."
+       },
+       {
+        "id": "exact_value_function",
+        "label": "Exact value function",
+        "passed": true,
+        "detail": "Both blind judges: pass. judge-1: “§7: \"F(t) = 29/8 on [−2,−3/2] = −3t²/4 − 9t/4 + 31/16 on [−3/2,−1] = −t²/4 − 5t/4 + 39/16 on [−1,−1/2] = 5/2 − t on [−1/2,0] = −t²/18 − t + 5/2 on [0,9/5] = 67/25 − 6t/5 on [9/5,4]\"” A symbolic closed form is given on every regime, each derived from the restricted objective in §5 (e.g. \"18x² + (−18−2t)x + 7, minimized at x=(9+t)/18\"), and all six expressions agree with the reference. judge-2: “§7 (lines 178-183): \"F(t) = 29/8 on [−2,−3/2] = −3t²/4 − 9t/4 + 31/16 on [−3/2,−1] = −t²/4 − 5t/4 + 39/16 ... = −t²/18 − t + 5/2 ... = 67/25 − 6t/5\"” Symbolic value function stated on every one of the six regimes and each formula agrees exactly with the reference table, with per-regime values also derived at the point of derivation in §5."
+       },
+       {
+        "id": "primal_feasibility",
+        "label": "Primal feasibility",
+        "passed": true,
+        "detail": "Both blind judges: pass. judge-1: “§4: \"feasible in P exactly when t ∈ [−3/2,−1] (direct check of all five inequalities against x°,y°...)\"; §5 R3: \"Combined with the edge's own extent (x ∈ [0,1/2] forces t ≤ −1/2)\"; §1 keeps \"c3: 1−x−y ≥ 0 (this is z ≥ 0)\".” Sum-to-one is enforced structurally by z=1−x−y, z≥0 is retained as c3 in the reduced constraint list and in the polygon/vertex table rather than dropped, and each regime's point is confined to a named face of P whose exact extent is stated in §3 (edge A y∈[0,1], edge B x∈[0,1/2], edge E x∈[1/2,3/5], vertices V2,V3), with R2 getting an explicit five-inequality check. judge-2: “§4 (lines 81-83): \"feasible in P exactly when t ∈ [−3/2,−1] (direct check of all five inequalities against x°,y°; e.g. x°≥0 ⇔ t≥−3/2, y°≥0 ⇔ t≤−1, and the remaining three constraints are slack\"” c3 (z≥0) is carried explicitly throughout (§1 line 30, §3 edge C, §6 edge-C/vertex rulings) rather than dropped; the sum-to-one holds by the substitution z=1−x−y, and each other regime's point is pinned to a named face of P with its stated extent (edge B x∈[0,1/2], edge E x∈[1/2,3/5], vertices V2 and V3 of P)."
+       },
+       {
+        "id": "dual_stationarity_certificate",
+        "label": "Dual stationarity certificate",
+        "passed": true,
+        "detail": "Both blind judges: pass. judge-1: “§2: \"∇g_t(x,y) = λ1∇c1 + λ2∇c2 + λ3∇c3 + λ4∇c4 + λ5∇c5, λi ≥ 0, λi·ci(x,y) = 0\"; §5 R4: \"Solving ∇g_t(1/2,0) = λ2(0,1)+λ5(−1,1): λ5 = 1+2t, λ2 = 1−λ5 = −2t.\"” A reduced-coordinate sign convention is defined with the constraint gradients listed in §1, every regime's stationarity equation is solved explicitly, and the resulting multipliers (−3−2t, 2t+2, −2t/2t+1, (10t+9)/9, 2t−18/5 and 3) match the reference; the equality multiplier is explicitly noted as eliminated but recoverable (\"equivalent to carrying a free-sign Lagrange multiplier μ for the equality and eliminating it algebraically; nothing is lost\"), which the rubric accepts. judge-2: “§2 (lines 50-52): \"∇g_t(x,y) = λ1∇c1 + λ2∇c2 + λ3∇c3 + λ4∇c4 + λ5∇c5, λi ≥ 0, λi·ci(x,y) = 0 (i=1,…,5).\"” Sign convention is defined, constraint gradients are listed (§1 line 34), the stationarity solve is shown per regime (e.g. \"Solving ∇g_t(1/2,0) = λ2(0,1)+λ5(−1,1)\", §5 line 118), all multipliers are correct against the reference, unlisted ones are zero, and the eliminated equality multiplier is explicitly named and recoverable (\"carrying a free-sign Lagrange multiplier μ for the equality and eliminating it algebraically; nothing is lost\", §1)."
+       },
+       {
+        "id": "dual_feasibility_complementarity",
+        "label": "Dual feasibility complementarity",
+        "passed": true,
+        "detail": "Both blind judges: pass. judge-1: “§8: \"Each multiplier is ≥ 0 throughout its stated range and equals 0 exactly at the range's boundary where the corresponding constraint transitions between active and inactive\"; §5 R4: \"λ2 ≥ 0 ⟺ t ≤ 0; λ5 ≥ 0 ⟺ t ≥ −1/2. Valid exactly on [−1/2,0].\"” Each multiplier's nonnegativity is tied to the full closed interval, complementarity is imposed as λi·ci=0 with all inactive multipliers zero (R2: \"No active constraints, all λi = 0\"), simultaneous active pairs at vertices V2 and V3 are handled correctly, and vanishing multipliers at interval endpoints are explicitly allowed rather than requiring strict positivity. judge-2: “§8 (lines 209-211): \"Each multiplier is ≥ 0 throughout its stated range and equals 0 exactly at the range's boundary where the corresponding constraint transitions between active and inactive\"” Nonnegativity is verified over each full closed interval (λ1=−3−2t≥0 ⟺ t≤−3/2, λ2=−2t and λ5=1+2t both ≥0 ⟺ −1/2≤t≤0, λ4=2t−18/5≥0 ⟺ t≥9/5), the two simultaneously-active vertex cases are solved explicitly, and zero multipliers at interval boundaries are accepted rather than requiring strict positivity."
+       },
+       {
+        "id": "closed_transition_analysis",
+        "label": "Closed transition analysis",
+        "passed": true,
+        "detail": "Both blind judges: pass. judge-1: “§7: \"F′(t) = ∂f_t/∂t |_{optimum} = −2x*(t) ... one checks directly that this formula gives the *same* one-sided derivative from both sides at every breakpoint (because x*(t) itself is continuous there)\"” Each regime's endpoints are justified by the vanishing multiplier or the face extent (λ1=−3−2t at −3/2, y°=0 at −1, x=1/2 at −1/2, λ2=−2t at 0, x=3/5 at 9/5), optimizer and value formulas are checked to agree at all five transitions, C¹ is established via V′=−2x* plus the six matching derivative formulas, and the nonzero-length fixed-vertex interval is justified by the two-multiplier sign window λ2=−2t≥0, λ5=1+2t≥0. judge-2: “§7 (lines 188-192): \"F′(t) = ∂f_t/∂t |_{optimum} = −2x*(t) ... F′ is −2·0=0 on R1, −3t/2−9/4 on R2, −t/2−5/4 on R3, −1 on R4 ... −t/9−1 on R5, −6/5 on R6 — and these six formulas agree pairwise\"” Each regime's endpoints are derived from its own multiplier sign condition and face extent (§5), optimizer and value agreement is checked at all five transitions (§7 lines 167-171, 185), C¹ follows from matching one-sided derivatives plus V′=−2x* with x* continuous, and the nonzero-length fixed-vertex interval is justified by λ2=−2t≥0 and λ5=1+2t≥0 holding exactly on [−1/2,0]."
+       },
+       {
+        "id": "global_all_real_sufficiency",
+        "label": "Global all real sufficiency",
+        "passed": true,
+        "detail": "Both blind judges: pass. judge-1: “§2: \"KKT, which for a convex problem with affine constraints is both **necessary and sufficient** for global optimality\"; §6: \"exhibiting one valid-sign KKT point for **every** t in the interval already proves completeness\"” Global optimality for all real t in the domain rests on convex KKT sufficiency with affine constraints (no CQ gap), reinforced by an exhaustive exact case analysis of all 11 candidate KKT locations showing the other five never satisfy the sign conditions, so it does not lean on numerical spot checks. judge-2: “§2 (lines 46-48): \"KKT, which for a convex problem with affine constraints is both **necessary and sufficient** for global optimality (no constraint-qualification subtlety arises because every constraint is affine)\"” Convex KKT sufficiency is invoked explicitly and applied for every t via §6 (\"exhibiting one valid-sign KKT point for **every** t in the interval already proves completeness\"), reinforced by an exhaustive exact ruling-out of all 11 candidate KKT locations rather than numerical spot checks."
+       }
+      ],
+      "snapshots": [],
+      "artifactUrl": "/assets/trials-20260914-builds/runs/run-12/source.zip",
+      "proofUrl": "/assets/trials-20260914-builds/runs/run-12/checks.html",
+      "status": "Completed",
+      "files": {
+       "solution.md": {
+        "bytes": 11918,
+        "sha256": "d2312b9c108d23dea52c2ad033072d075f38b1cb46ced998b9e971f7e91dc5fc"
+       },
+       "solution.py": {
+        "bytes": 2542,
+        "sha256": "89c4efdb1528752894e13e195f958202a43fff3850ab48a17b574da2b90f8142"
+       },
+       "verification.md": {
+        "bytes": 6350,
+        "sha256": "ac2e95c8d125e66b506930544cb89dc52175fe8e8a65c71b0206e825854c55d0"
+       },
+       "verify_numeric.py": {
+        "bytes": 2897,
+        "sha256": "fdc7cc9aee445dddbd49566d5d6276233a67803f4dd976375da83a08c4ce2002"
+       },
+       "verify_sym.py": {
+        "bytes": 717,
+        "sha256": "3895a8e9826a096e35f5e1ecf195a90ef40594c2f423f34df360120cb7e37327"
+       },
+       "verify_sym2.py": {
+        "bytes": 2898,
+        "sha256": "b30e8d22e2fa6d3039fcaca34b663cb7250655f2f72af7d809978a4d79410e4b"
+       },
+       "verify_sym3.py": {
+        "bytes": 1733,
+        "sha256": "2bc79e04765b9206f47df037277cbbd47a51dd37d74e3ff9fa3df95c2d66771a"
+       }
+      },
+      "curve": [
+       {
+        "t": -2.0,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.9523809524,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.9047619048,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.8571428571,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.8095238095,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.7619047619,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.7142857143,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.6666666667,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.619047619,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.5714285714,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.5238095238,
+        "x": 0.0,
+        "y": 0.25,
+        "z": 0.75,
+        "value": 3.625
+       },
+       {
+        "t": -1.4761904762,
+        "x": 0.017857142850000063,
+        "y": 0.2380952381,
+        "z": 0.7440476190499999,
+        "value": 3.624574829932313
+       },
+       {
+        "t": -1.4285714286,
+        "x": 0.053571428549999967,
+        "y": 0.21428571429999999,
+        "z": 0.73214285715,
+        "value": 3.621173469390816
+       },
+       {
+        "t": -1.380952381,
+        "x": 0.08928571425000009,
+        "y": 0.19047619049999998,
+        "z": 0.7202380952499999,
+        "value": 3.614370748307823
+       },
+       {
+        "t": -1.3333333333,
+        "x": 0.125000000025,
+        "y": 0.16666666664999996,
+        "z": 0.708333333325,
+        "value": 3.604166666658333
+       },
+       {
+        "t": -1.2857142857,
+        "x": 0.16071428572500013,
+        "y": 0.14285714284999995,
+        "z": 0.6964285714249999,
+        "value": 3.590561224485204
+       },
+       {
+        "t": -1.2380952381,
+        "x": 0.19642857142499992,
+        "y": 0.11904761905000005,
+        "z": 0.684523809525,
+        "value": 3.5735544217705777
+       },
+       {
+        "t": -1.1904761905,
+        "x": 0.23214285712499994,
+        "y": 0.09523809525000004,
+        "z": 0.672619047625,
+        "value": 3.553146258514456
+       },
+       {
+        "t": -1.1428571429,
+        "x": 0.26785714282499995,
+        "y": 0.07142857145000003,
+        "z": 0.660714285725,
+        "value": 3.529336734716837
+       },
+       {
+        "t": -1.0952380952,
+        "x": 0.30357142859999997,
+        "y": 0.04761904760000002,
+        "z": 0.6488095238,
+        "value": 3.5021258503170065
+       },
+       {
+        "t": -1.0476190476,
+        "x": 0.3392857143,
+        "y": 0.02380952380000001,
+        "z": 0.6369047619,
+        "value": 3.471513605429252
+       },
+       {
+        "t": -1.0,
+        "x": 0.375,
+        "y": -0.0,
+        "z": 0.625,
+        "value": 3.4375
+       },
+       {
+        "t": -0.9523809524,
+        "x": 0.3869047619,
+        "y": 0.0,
+        "z": 0.6130952381,
+        "value": 3.401218820876417
+       },
+       {
+        "t": -0.9047619048,
+        "x": 0.3988095238,
+        "y": 0.0,
+        "z": 0.6011904762,
+        "value": 3.363803854905669
+       },
+       {
+        "t": -0.8571428571,
+        "x": 0.410714285725,
+        "y": 0.0,
+        "z": 0.589285714275,
+        "value": 3.3252551020056123
+       },
+       {
+        "t": -0.8095238095,
+        "x": 0.422619047625,
+        "y": 0.0,
+        "z": 0.577380952375,
+        "value": 3.2855725623381518
+       },
+       {
+        "t": -0.7619047619,
+        "x": 0.434523809525,
+        "y": 0.0,
+        "z": 0.565476190475,
+        "value": 3.2447562358235262
+       },
+       {
+        "t": -0.7142857143,
+        "x": 0.44642857142500003,
+        "y": 0.0,
+        "z": 0.553571428575,
+        "value": 3.202806122461735
+       },
+       {
+        "t": -0.6666666667,
+        "x": 0.45833333332500004,
+        "y": 0.0,
+        "z": 0.541666666675,
+        "value": 3.1597222222527774
+       },
+       {
+        "t": -0.619047619,
+        "x": 0.47023809525,
+        "y": 0.0,
+        "z": 0.52976190475,
+        "value": 3.1155045351026076
+       },
+       {
+        "t": -0.5714285714,
+        "x": 0.48214285715,
+        "y": 0.0,
+        "z": 0.5178571428500001,
+        "value": 3.070153061196939
+       },
+       {
+        "t": -0.5238095238,
+        "x": 0.49404761905,
+        "y": 0.0,
+        "z": 0.50595238095,
+        "value": 3.0236678004441044
+       },
+       {
+        "t": -0.4761904762,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.9761904762
+       },
+       {
+        "t": -0.4285714286,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.9285714285999997
+       },
+       {
+        "t": -0.380952381,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.880952381
+       },
+       {
+        "t": -0.3333333333,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.8333333332999997
+       },
+       {
+        "t": -0.2857142857,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.7857142857
+       },
+       {
+        "t": -0.2380952381,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.7380952381
+       },
+       {
+        "t": -0.1904761905,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.6904761905
+       },
+       {
+        "t": -0.1428571429,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.6428571429
+       },
+       {
+        "t": -0.0952380952,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.5952380952
+       },
+       {
+        "t": -0.0476190476,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.5476190476
+       },
+       {
+        "t": 0.0,
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.5,
+        "value": 2.5
+       },
+       {
+        "t": 0.0476190476,
+        "x": 0.5026455026444444,
+        "y": 0.0026455026444444445,
+        "z": 0.4947089947111111,
+        "value": 2.452254976083648
+       },
+       {
+        "t": 0.0952380952,
+        "x": 0.5052910052888888,
+        "y": 0.005291005288888889,
+        "z": 0.4894179894222223,
+        "value": 2.404257999534593
+       },
+       {
+        "t": 0.1428571429,
+        "x": 0.5079365079388889,
+        "y": 0.00793650793888889,
+        "z": 0.4841269841222222,
+        "value": 2.356009070251247
+       },
+       {
+        "t": 0.1904761905,
+        "x": 0.5105820105833333,
+        "y": 0.010582010583333334,
+        "z": 0.47883597883333334,
+        "value": 2.307508188436256
+       },
+       {
+        "t": 0.2380952381,
+        "x": 0.5132275132277777,
+        "y": 0.013227513227777777,
+        "z": 0.4735449735444445,
+        "value": 2.2587553539885614
+       },
+       {
+        "t": 0.2857142857,
+        "x": 0.5158730158722222,
+        "y": 0.015873015872222222,
+        "z": 0.46825396825555554,
+        "value": 2.209750566908163
+       },
+       {
+        "t": 0.3333333333,
+        "x": 0.5185185185166667,
+        "y": 0.018518518516666665,
+        "z": 0.4629629629666666,
+        "value": 2.1604938271950616
+       },
+       {
+        "t": 0.380952381,
+        "x": 0.5211640211666667,
+        "y": 0.021164021166666668,
+        "z": 0.45767195766666663,
+        "value": 2.110985134745024
+       },
+       {
+        "t": 0.4285714286,
+        "x": 0.5238095238111111,
+        "y": 0.02380952381111111,
+        "z": 0.45238095237777776,
+        "value": 2.061224489765986
+       },
+       {
+        "t": 0.4761904762,
+        "x": 0.5264550264555555,
+        "y": 0.026455026455555555,
+        "z": 0.44708994708888894,
+        "value": 2.0112118921542455
+       },
+       {
+        "t": 0.5238095238,
+        "x": 0.5291005291,
+        "y": 0.0291005291,
+        "z": 0.44179894179999996,
+        "value": 1.9609473419098005
+       },
+       {
+        "t": 0.5714285714,
+        "x": 0.5317460317444445,
+        "y": 0.031746031744444445,
+        "z": 0.4365079365111111,
+        "value": 1.910430839032653
+       },
+       {
+        "t": 0.619047619,
+        "x": 0.5343915343888889,
+        "y": 0.034391534388888895,
+        "z": 0.43121693122222227,
+        "value": 1.8596623835228019
+       },
+       {
+        "t": 0.6666666667,
+        "x": 0.5370370370388888,
+        "y": 0.03703703703888889,
+        "z": 0.4259259259222223,
+        "value": 1.8086419752728395
+       },
+       {
+        "t": 0.7142857143,
+        "x": 0.5396825396833334,
+        "y": 0.03968253968333333,
+        "z": 0.4206349206333333,
+        "value": 1.757369614497052
+       },
+       {
+        "t": 0.7619047619,
+        "x": 0.5423280423277778,
+        "y": 0.04232804232777778,
+        "z": 0.4153439153444445,
+        "value": 1.7058453010885612
+       },
+       {
+        "t": 0.8095238095,
+        "x": 0.5449735449722222,
+        "y": 0.044973544972222224,
+        "z": 0.4100529100555556,
+        "value": 1.6540690350473672
+       },
+       {
+        "t": 0.8571428571,
+        "x": 0.5476190476166667,
+        "y": 0.04761904761666667,
+        "z": 0.4047619047666666,
+        "value": 1.6020408163734694
+       },
+       {
+        "t": 0.9047619048,
+        "x": 0.5502645502666668,
+        "y": 0.050264550266666666,
+        "z": 0.3994708994666666,
+        "value": 1.549760644956815
+       },
+       {
+        "t": 0.9523809524,
+        "x": 0.5529100529111112,
+        "y": 0.05291005291111111,
+        "z": 0.3941798941777777,
+        "value": 1.4972285210169816
+       },
+       {
+        "t": 1.0,
+        "x": 0.5555555555555556,
+        "y": 0.05555555555555555,
+        "z": 0.38888888888888884,
+        "value": 1.4444444444444444
+       },
+       {
+        "t": 1.0476190476,
+        "x": 0.5582010582,
+        "y": 0.0582010582,
+        "z": 0.3835978836,
+        "value": 1.3914084152392039
+       },
+       {
+        "t": 1.0952380952,
+        "x": 0.5608465608444444,
+        "y": 0.060846560844444446,
+        "z": 0.37830687831111115,
+        "value": 1.3381204334012597
+       },
+       {
+        "t": 1.1428571429,
+        "x": 0.5634920634944445,
+        "y": 0.06349206349444445,
+        "z": 0.37301587301111105,
+        "value": 1.2845804988179137
+       },
+       {
+        "t": 1.1904761905,
+        "x": 0.5661375661388889,
+        "y": 0.0661375661388889,
+        "z": 0.36772486772222224,
+        "value": 1.2307886117140339
+       },
+       {
+        "t": 1.2380952381,
+        "x": 0.5687830687833333,
+        "y": 0.06878306878333335,
+        "z": 0.36243386243333336,
+        "value": 1.1767447719774502
+       },
+       {
+        "t": 1.2857142857,
+        "x": 0.5714285714277777,
+        "y": 0.07142857142777777,
+        "z": 0.35714285714444455,
+        "value": 1.1224489796081636
+       },
+       {
+        "t": 1.3333333333,
+        "x": 0.5740740740722222,
+        "y": 0.07407407407222222,
+        "z": 0.35185185185555556,
+        "value": 1.067901234606173
+       },
+       {
+        "t": 1.380952381,
+        "x": 0.5767195767222222,
+        "y": 0.07671957672222222,
+        "z": 0.3465608465555556,
+        "value": 1.0131015368561354
+       },
+       {
+        "t": 1.4285714286,
+        "x": 0.5793650793666667,
+        "y": 0.07936507936666666,
+        "z": 0.34126984126666665,
+        "value": 0.9580498865882088
+       },
+       {
+        "t": 1.4761904762,
+        "x": 0.5820105820111111,
+        "y": 0.08201058201111111,
+        "z": 0.3359788359777778,
+        "value": 0.9027462836875788
+       },
+       {
+        "t": 1.5238095238,
+        "x": 0.5846560846555556,
+        "y": 0.08465608465555556,
+        "z": 0.3306878306888888,
+        "value": 0.8471907281542452
+       },
+       {
+        "t": 1.5714285714,
+        "x": 0.5873015873,
+        "y": 0.0873015873,
+        "z": 0.3253968254,
+        "value": 0.7913832199882085
+       },
+       {
+        "t": 1.619047619,
+        "x": 0.5899470899444444,
+        "y": 0.08994708994444445,
+        "z": 0.3201058201111111,
+        "value": 0.7353237591894682
+       },
+       {
+        "t": 1.6666666667,
+        "x": 0.5925925925944444,
+        "y": 0.09259259259444445,
+        "z": 0.3148148148111111,
+        "value": 0.6790123456395061
+       },
+       {
+        "t": 1.7142857143,
+        "x": 0.5952380952388889,
+        "y": 0.09523809523888889,
+        "z": 0.3095238095222222,
+        "value": 0.6224489795748298
+       },
+       {
+        "t": 1.7619047619,
+        "x": 0.5978835978833333,
+        "y": 0.09788359788333333,
+        "z": 0.3042328042333333,
+        "value": 0.5656336608774504
+       },
+       {
+        "t": 1.8095238095,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": 0.5085714286000004
+       },
+       {
+        "t": 1.8571428571,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": 0.4514285714800004
+       },
+       {
+        "t": 1.9047619048,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": 0.39428571424000025
+       },
+       {
+        "t": 1.9523809524,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": 0.33714285712000036
+       },
+       {
+        "t": 2.0,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": 0.28000000000000025
+       },
+       {
+        "t": 2.0476190476,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": 0.22285714288000014
+       },
+       {
+        "t": 2.0952380952,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": 0.16571428576000025
+       },
+       {
+        "t": 2.1428571429,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": 0.10857142852000012
+       },
+       {
+        "t": 2.1904761905,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": 0.051428571400000234
+       },
+       {
+        "t": 2.2380952381,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.005714285719999879
+       },
+       {
+        "t": 2.2857142857,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.06285714283999999
+       },
+       {
+        "t": 2.3333333333,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.11999999995999988
+       },
+       {
+        "t": 2.380952381,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.1771428572
+       },
+       {
+        "t": 2.4285714286,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.2342857143199999
+       },
+       {
+        "t": 2.4761904762,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.29142857144
+       },
+       {
+        "t": 2.5238095238,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.34857142855999945
+       },
+       {
+        "t": 2.5714285714,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.40571428567999956
+       },
+       {
+        "t": 2.619047619,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.46285714279999945
+       },
+       {
+        "t": 2.6666666667,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.5200000000399994
+       },
+       {
+        "t": 2.7142857143,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.5771428571599995
+       },
+       {
+        "t": 2.7619047619,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.6342857142799996
+       },
+       {
+        "t": 2.8095238095,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.6914285713999997
+       },
+       {
+        "t": 2.8571428571,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.7485714285199998
+       },
+       {
+        "t": 2.9047619048,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.8057142857599995
+       },
+       {
+        "t": 2.9523809524,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.8628571428799996
+       },
+       {
+        "t": 3.0,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.9199999999999997
+       },
+       {
+        "t": 3.0476190476,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -0.9771428571199998
+       },
+       {
+        "t": 3.0952380952,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -1.03428571424
+       },
+       {
+        "t": 3.1428571429,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -1.0914285714799996
+       },
+       {
+        "t": 3.1904761905,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -1.1485714285999997
+       },
+       {
+        "t": 3.2380952381,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -1.2057142857199998
+       },
+       {
+        "t": 3.2857142857,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -1.26285714284
+       },
+       {
+        "t": 3.3333333333,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -1.31999999996
+       },
+       {
+        "t": 3.380952381,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -1.3771428571999997
+       },
+       {
+        "t": 3.4285714286,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -1.4342857143199998
+       },
+       {
+        "t": 3.4761904762,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -1.49142857144
+       },
+       {
+        "t": 3.5238095238,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -1.5485714285599996
+       },
+       {
+        "t": 3.5714285714,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -1.6057142856799993
+       },
+       {
+        "t": 3.619047619,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -1.6628571427999994
+       },
+       {
+        "t": 3.6666666667,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -1.7200000000399995
+       },
+       {
+        "t": 3.7142857143,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -1.7771428571599996
+       },
+       {
+        "t": 3.7619047619,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -1.8342857142799998
+       },
+       {
+        "t": 3.8095238095,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -1.8914285713999994
+       },
+       {
+        "t": 3.8571428571,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -1.9485714285199995
+       },
+       {
+        "t": 3.9047619048,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -2.00571428576
+       },
+       {
+        "t": 3.9523809524,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -2.0628571428799996
+       },
+       {
+        "t": 4.0,
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.30000000000000004,
+        "value": -2.119999999999999
+       }
+      ],
+      "solutionUrl": "/assets/trials-20260914-builds/products/run-12/solution.md",
+      "codeUrl": "/assets/trials-20260914-builds/products/run-12/solution.py",
+      "verificationUrl": "/assets/trials-20260914-builds/products/run-12/verification.md"
+     }
+    }
+   ]
+  },
+  {
+   "id": "landing",
+   "title": "A complete landing page",
+   "summary": "Lattice: a fictional research notebook, with feature tabs, billing controls, mobile navigation and keyboard behavior.",
+   "runs": [
+    {
+     "repeat": 1,
+     "baseline": {
+      "passed": 7,
+      "total": 7,
+      "seconds": 561.3,
+      "tokens": 46085,
+      "toolCalls": 26,
+      "checks": [
+       {
+        "id": "L01",
+        "label": "Useful factual content and valid navigation",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "L02",
+        "label": "Mobile navigation lifecycle",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "L03",
+        "label": "Feature tab state and keyboard",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "L04",
+        "label": "Billing round trip",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "L05",
+        "label": "Native FAQ interactions and supplied answers",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "L06",
+        "label": "No-JavaScript fallback",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "L07",
+        "label": "Responsive rendering, keyboard names and reduced motion",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       }
+      ],
+      "snapshots": [
+       {
+        "id": "initial",
+        "label": "Desktop first visit — untouched initial output",
+        "url": "/assets/trials-20260914-builds/runs/run-01/initial.webp"
+       },
+       {
+        "id": "feature-connect",
+        "label": "Connect feature selected; its panel is visible",
+        "url": "/assets/trials-20260914-builds/runs/run-01/feature-connect.webp"
+       },
+       {
+        "id": "billing-yearly",
+        "label": "Yearly billing selected; displayed prices are 108 and 264",
+        "url": "/assets/trials-20260914-builds/runs/run-01/billing-yearly.webp"
+       },
+       {
+        "id": "workflow",
+        "label": "Workflow section in the viewport",
+        "url": "/assets/trials-20260914-builds/runs/run-01/workflow.webp"
+       },
+       {
+        "id": "faq",
+        "label": "First FAQ opened; actual answer shown",
+        "url": "/assets/trials-20260914-builds/runs/run-01/faq.webp"
+       }
+      ],
+      "artifactUrl": "/assets/trials-20260914-builds/runs/run-01/source.zip",
+      "proofUrl": "/assets/trials-20260914-builds/runs/run-01/checks.html",
+      "status": "Completed",
+      "files": {
+       "README.md": {
+        "bytes": 8113,
+        "sha256": "0b68e4696a9c7eaeb966fc7045b8eb06009c9918a36967e7f1eec4b3bfc5c0ba"
+       },
+       "app.js": {
+        "bytes": 5794,
+        "sha256": "05b21bc1781b31d8e55cce3e2be4f37def1ab17f4ff64a6ca85682f316097d4e"
+       },
+       "index.html": {
+        "bytes": 15711,
+        "sha256": "8c5e1c68e7aeb096a4f12e7bc6672b116b7f7e550eaac73b0fac0c77ce3d5444"
+       },
+       "styles.css": {
+        "bytes": 14911,
+        "sha256": "16eeda9a4351d9e164321f375f1311839eaf9142405a8e0a14281b98e94a280b"
+       }
+      },
+      "scenarios": {
+       "passed": 28,
+       "executed": 28
+      },
+      "productUrl": "/assets/trials-20260914-builds/products/run-01/index.html",
+      "previewUrl": "/assets/trials-20260914-builds/products/run-01/preview.html"
+     },
+     "fabius": {
+      "passed": 7,
+      "total": 7,
+      "seconds": 686.3,
+      "tokens": 58346,
+      "toolCalls": 38,
+      "checks": [
+       {
+        "id": "L01",
+        "label": "Useful factual content and valid navigation",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "L02",
+        "label": "Mobile navigation lifecycle",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "L03",
+        "label": "Feature tab state and keyboard",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "L04",
+        "label": "Billing round trip",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "L05",
+        "label": "Native FAQ interactions and supplied answers",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "L06",
+        "label": "No-JavaScript fallback",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "L07",
+        "label": "Responsive rendering, keyboard names and reduced motion",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       }
+      ],
+      "snapshots": [
+       {
+        "id": "initial",
+        "label": "Desktop first visit — untouched initial output",
+        "url": "/assets/trials-20260914-builds/runs/run-02/initial.webp"
+       },
+       {
+        "id": "feature-connect",
+        "label": "Connect feature selected; its panel is visible",
+        "url": "/assets/trials-20260914-builds/runs/run-02/feature-connect.webp"
+       },
+       {
+        "id": "billing-yearly",
+        "label": "Yearly billing selected; displayed prices are 108 and 264",
+        "url": "/assets/trials-20260914-builds/runs/run-02/billing-yearly.webp"
+       },
+       {
+        "id": "workflow",
+        "label": "Workflow section in the viewport",
+        "url": "/assets/trials-20260914-builds/runs/run-02/workflow.webp"
+       },
+       {
+        "id": "faq",
+        "label": "First FAQ opened; actual answer shown",
+        "url": "/assets/trials-20260914-builds/runs/run-02/faq.webp"
+       }
+      ],
+      "artifactUrl": "/assets/trials-20260914-builds/runs/run-02/source.zip",
+      "proofUrl": "/assets/trials-20260914-builds/runs/run-02/checks.html",
+      "status": "Completed",
+      "files": {
+       "README.md": {
+        "bytes": 6465,
+        "sha256": "13056cdf120db5e882435bd5f531c1b043f54dcc91dc11e996cddaeb9e2a8c7e"
+       },
+       "app.js": {
+        "bytes": 5484,
+        "sha256": "1cc4ca13039ac6d4cd9eee199328fa9dc5919bb2b8e0ea934ea1d817fffa69e4"
+       },
+       "index.html": {
+        "bytes": 16054,
+        "sha256": "152368be28349b085ec915752918ca8e3da584d465abf3b29c226f2df29a106b"
+       },
+       "styles.css": {
+        "bytes": 12908,
+        "sha256": "20a8dbd0d20d9e02088115d2bb30e41041a9e7fd80cd91b2c36d7928bace2fa8"
+       }
+      },
+      "scenarios": {
+       "passed": 28,
+       "executed": 28
+      },
+      "productUrl": "/assets/trials-20260914-builds/products/run-02/index.html",
+      "previewUrl": "/assets/trials-20260914-builds/products/run-02/preview.html"
+     }
+    },
+    {
+     "repeat": 2,
+     "baseline": {
+      "passed": 7,
+      "total": 7,
+      "seconds": 478.0,
+      "tokens": 42093,
+      "toolCalls": 14,
+      "checks": [
+       {
+        "id": "L01",
+        "label": "Useful factual content and valid navigation",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "L02",
+        "label": "Mobile navigation lifecycle",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "L03",
+        "label": "Feature tab state and keyboard",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "L04",
+        "label": "Billing round trip",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "L05",
+        "label": "Native FAQ interactions and supplied answers",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "L06",
+        "label": "No-JavaScript fallback",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "L07",
+        "label": "Responsive rendering, keyboard names and reduced motion",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       }
+      ],
+      "snapshots": [
+       {
+        "id": "initial",
+        "label": "Desktop first visit — untouched initial output",
+        "url": "/assets/trials-20260914-builds/runs/run-03/initial.webp"
+       },
+       {
+        "id": "feature-connect",
+        "label": "Connect feature selected; its panel is visible",
+        "url": "/assets/trials-20260914-builds/runs/run-03/feature-connect.webp"
+       },
+       {
+        "id": "billing-yearly",
+        "label": "Yearly billing selected; displayed prices are 108 and 264",
+        "url": "/assets/trials-20260914-builds/runs/run-03/billing-yearly.webp"
+       },
+       {
+        "id": "workflow",
+        "label": "Workflow section in the viewport",
+        "url": "/assets/trials-20260914-builds/runs/run-03/workflow.webp"
+       },
+       {
+        "id": "faq",
+        "label": "First FAQ opened; actual answer shown",
+        "url": "/assets/trials-20260914-builds/runs/run-03/faq.webp"
+       }
+      ],
+      "artifactUrl": "/assets/trials-20260914-builds/runs/run-03/source.zip",
+      "proofUrl": "/assets/trials-20260914-builds/runs/run-03/checks.html",
+      "status": "Completed",
+      "files": {
+       "README.md": {
+        "bytes": 8288,
+        "sha256": "a85f0975de6d180172674dae254dcea4d41cbe28a88aee3c8295268573730c63"
+       },
+       "app.js": {
+        "bytes": 6049,
+        "sha256": "fa6ef3b052b3d47f1f9d1e316ee447f1c9b98c4286e9d8dda9bbf1d3da196b3b"
+       },
+       "index.html": {
+        "bytes": 16555,
+        "sha256": "edd9ff8c104fd8371bafa4eda75989023497a0079ff3bc44e0976387795fdec1"
+       },
+       "styles.css": {
+        "bytes": 12045,
+        "sha256": "1ece3ae7d22e597f9ed9cddc059e3cb4c814dbc208875c33ebaa06569bb965f4"
+       }
+      },
+      "scenarios": {
+       "passed": 28,
+       "executed": 28
+      },
+      "productUrl": "/assets/trials-20260914-builds/products/run-03/index.html",
+      "previewUrl": "/assets/trials-20260914-builds/products/run-03/preview.html"
+     },
+     "fabius": {
+      "passed": 7,
+      "total": 7,
+      "seconds": 620.5,
+      "tokens": 50266,
+      "toolCalls": 25,
+      "checks": [
+       {
+        "id": "L01",
+        "label": "Useful factual content and valid navigation",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "L02",
+        "label": "Mobile navigation lifecycle",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "L03",
+        "label": "Feature tab state and keyboard",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "L04",
+        "label": "Billing round trip",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "L05",
+        "label": "Native FAQ interactions and supplied answers",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "L06",
+        "label": "No-JavaScript fallback",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "L07",
+        "label": "Responsive rendering, keyboard names and reduced motion",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       }
+      ],
+      "snapshots": [
+       {
+        "id": "initial",
+        "label": "Desktop first visit — untouched initial output",
+        "url": "/assets/trials-20260914-builds/runs/run-04/initial.webp"
+       },
+       {
+        "id": "feature-connect",
+        "label": "Connect feature selected; its panel is visible",
+        "url": "/assets/trials-20260914-builds/runs/run-04/feature-connect.webp"
+       },
+       {
+        "id": "billing-yearly",
+        "label": "Yearly billing selected; displayed prices are 108 and 264",
+        "url": "/assets/trials-20260914-builds/runs/run-04/billing-yearly.webp"
+       },
+       {
+        "id": "workflow",
+        "label": "Workflow section in the viewport",
+        "url": "/assets/trials-20260914-builds/runs/run-04/workflow.webp"
+       },
+       {
+        "id": "faq",
+        "label": "First FAQ opened; actual answer shown",
+        "url": "/assets/trials-20260914-builds/runs/run-04/faq.webp"
+       }
+      ],
+      "artifactUrl": "/assets/trials-20260914-builds/runs/run-04/source.zip",
+      "proofUrl": "/assets/trials-20260914-builds/runs/run-04/checks.html",
+      "status": "Completed",
+      "files": {
+       "README.md": {
+        "bytes": 8430,
+        "sha256": "d06cd238695e276d2cef2a28024593bc703f057b980a24048e986b021157ad78"
+       },
+       "app.js": {
+        "bytes": 5435,
+        "sha256": "5f855c27d97e88e3dcf7d08d820766c368587f9babd14e0d71494296a224b92d"
+       },
+       "index.html": {
+        "bytes": 16054,
+        "sha256": "0d1b45593fab5a3d03d605b5c9e722efce259ef8cacd024b9b128edb5817fd5d"
+       },
+       "styles.css": {
+        "bytes": 15631,
+        "sha256": "7a84f34454b47d5788e4d03270266cacf18c9d39ba423b94248548a14a0a59b3"
+       }
+      },
+      "scenarios": {
+       "passed": 28,
+       "executed": 28
+      },
+      "productUrl": "/assets/trials-20260914-builds/products/run-04/index.html",
+      "previewUrl": "/assets/trials-20260914-builds/products/run-04/preview.html"
+     }
+    }
+   ]
+  },
+  {
+   "id": "app",
+   "title": "A working task app",
+   "summary": "Fieldnote Board: editing, combined filters, persistent storage, import/export, recovery and cross-tab conflicts.",
+   "runs": [
+    {
+     "repeat": 1,
+     "baseline": {
+      "passed": 13,
+      "total": 16,
+      "seconds": 505.3,
+      "tokens": 50831,
+      "toolCalls": 16,
+      "checks": [
+       {
+        "id": "A01",
+        "label": "Empty-storage initialization",
+        "passed": false,
+        "detail": "0/4 browser scenario executions passed. Failed observations: chromium-360: localFictionFraming; chromium-1440: localFictionFraming; webkit-360: localFictionFraming; webkit-1440: localFictionFraming."
+       },
+       {
+        "id": "A02",
+        "label": "Create/edit and persistence",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A03",
+        "label": "Status update preserves other records",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A04",
+        "label": "Delete and exact undo",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A05",
+        "label": "Combined search and filters",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A06",
+        "label": "Form validation and modal keyboard lifecycle",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A07",
+        "label": "Full export and confirmed import round trip",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A08",
+        "label": "Reject malformed/unsupported import atomically",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A09",
+        "label": "Reject duplicate IDs and invalid date atomically",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A10",
+        "label": "Import size boundary",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A11",
+        "label": "Imported hostile text remains text",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A12",
+        "label": "Corrupt storage recovery",
+        "passed": false,
+        "detail": "0/4 browser scenario executions passed. Failed observations: chromium-360: corruptPreserved; chromium-1440: corruptPreserved; webkit-360: corruptPreserved; webkit-1440: corruptPreserved."
+       },
+       {
+        "id": "A13",
+        "label": "Storage write failure keeps work recoverable",
+        "passed": false,
+        "detail": "0/4 browser scenario executions passed. Failed observations: chromium-360: writeFailure; chromium-1440: writeFailure; webkit-360: writeFailure; webkit-1440: writeFailure."
+       },
+       {
+        "id": "A14",
+        "label": "Cross-tab stale-write protection",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A15",
+        "label": "Responsive rendering and accessible controls",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A16",
+        "label": "No-JavaScript notice and reduced motion",
+        "passed": true,
+        "detail": "8/8 browser scenario executions passed."
+       }
+      ],
+      "snapshots": [
+       {
+        "id": "initial",
+        "label": "Desktop first visit — untouched initial output",
+        "url": "/assets/trials-20260914-builds/runs/run-05/initial.webp"
+       },
+       {
+        "id": "new-task-form",
+        "label": "New task form opened",
+        "url": "/assets/trials-20260914-builds/runs/run-05/new-task-form.webp"
+       },
+       {
+        "id": "after-create",
+        "label": "Review launch evidence created and present in saved board",
+        "url": "/assets/trials-20260914-builds/runs/run-05/after-create.webp"
+       },
+       {
+        "id": "search",
+        "label": "Search for Review launch evidence; matching task shown",
+        "url": "/assets/trials-20260914-builds/runs/run-05/search.webp"
+       },
+       {
+        "id": "import-error",
+        "label": "Malformed JSON selected; visible error and saved board unchanged",
+        "url": "/assets/trials-20260914-builds/runs/run-05/import-error.webp"
+       }
+      ],
+      "artifactUrl": "/assets/trials-20260914-builds/runs/run-05/source.zip",
+      "proofUrl": "/assets/trials-20260914-builds/runs/run-05/checks.html",
+      "status": "Completed",
+      "files": {
+       "README.md": {
+        "bytes": 5146,
+        "sha256": "a574e9a7c6c6e9f0cb0b653eaa68f7c5b675d32d739206a9bb15950d1ff37760"
+       },
+       "app.js": {
+        "bytes": 34109,
+        "sha256": "06f65206852b7f5b4e20c1c7e31aff44a880f0dc6e2c5b49143f54656b48710c"
+       },
+       "index.html": {
+        "bytes": 5741,
+        "sha256": "2cc7279ccfc1fb1889d5edf455fb8791bbd8b3d462a6be7500379bb6a0e1e2a3"
+       },
+       "styles.css": {
+        "bytes": 9289,
+        "sha256": "11077f51815f489c0414d24cd46b2e09b34550ef9f87a87c56b3c694a013dc46"
+       }
+      },
+      "scenarios": {
+       "passed": 56,
+       "executed": 68
+      },
+      "productUrl": "/assets/trials-20260914-builds/products/run-05/index.html",
+      "previewUrl": "/assets/trials-20260914-builds/products/run-05/preview.html"
+     },
+     "fabius": {
+      "passed": 13,
+      "total": 16,
+      "seconds": 860.4,
+      "tokens": 75522,
+      "toolCalls": 34,
+      "checks": [
+       {
+        "id": "A01",
+        "label": "Empty-storage initialization",
+        "passed": false,
+        "detail": "0/4 browser scenario executions passed. Failed observations: chromium-360: localFictionFraming; chromium-1440: localFictionFraming; webkit-360: localFictionFraming; webkit-1440: localFictionFraming."
+       },
+       {
+        "id": "A02",
+        "label": "Create/edit and persistence",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A03",
+        "label": "Status update preserves other records",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A04",
+        "label": "Delete and exact undo",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A05",
+        "label": "Combined search and filters",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A06",
+        "label": "Form validation and modal keyboard lifecycle",
+        "passed": false,
+        "detail": "2/4 browser scenario executions passed. Failed observations: webkit-360: modalEscape; webkit-1440: modalEscape."
+       },
+       {
+        "id": "A07",
+        "label": "Full export and confirmed import round trip",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A08",
+        "label": "Reject malformed/unsupported import atomically",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A09",
+        "label": "Reject duplicate IDs and invalid date atomically",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A10",
+        "label": "Import size boundary",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A11",
+        "label": "Imported hostile text remains text",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A12",
+        "label": "Corrupt storage recovery",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A13",
+        "label": "Storage write failure keeps work recoverable",
+        "passed": false,
+        "detail": "0/4 browser scenario executions passed. Failed observations: chromium-360: writeFailure; chromium-1440: writeFailure; webkit-360: writeFailure; webkit-1440: writeFailure."
+       },
+       {
+        "id": "A14",
+        "label": "Cross-tab stale-write protection",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A15",
+        "label": "Responsive rendering and accessible controls",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A16",
+        "label": "No-JavaScript notice and reduced motion",
+        "passed": true,
+        "detail": "8/8 browser scenario executions passed."
+       }
+      ],
+      "snapshots": [
+       {
+        "id": "initial",
+        "label": "Desktop first visit — untouched initial output",
+        "url": "/assets/trials-20260914-builds/runs/run-06/initial.webp"
+       },
+       {
+        "id": "new-task-form",
+        "label": "New task form opened",
+        "url": "/assets/trials-20260914-builds/runs/run-06/new-task-form.webp"
+       },
+       {
+        "id": "after-create",
+        "label": "Review launch evidence created and present in saved board",
+        "url": "/assets/trials-20260914-builds/runs/run-06/after-create.webp"
+       },
+       {
+        "id": "search",
+        "label": "Search for Review launch evidence; matching task shown",
+        "url": "/assets/trials-20260914-builds/runs/run-06/search.webp"
+       },
+       {
+        "id": "import-error",
+        "label": "Malformed JSON rejected in a browser alert; saved board unchanged",
+        "url": "/assets/trials-20260914-builds/runs/run-06/import-error.webp"
+       }
+      ],
+      "artifactUrl": "/assets/trials-20260914-builds/runs/run-06/source.zip",
+      "proofUrl": "/assets/trials-20260914-builds/runs/run-06/checks.html",
+      "status": "Completed",
+      "files": {
+       "README.md": {
+        "bytes": 6405,
+        "sha256": "0590c58bfda39750d8af75715758b6e4664152740fdbd1d46ad37d8bd23c0147"
+       },
+       "app.js": {
+        "bytes": 31463,
+        "sha256": "c7c4dfb704114b4f4f43f3ac5c1190a145e5f0ebac2fd54ed48efc8b5dcc527e"
+       },
+       "index.html": {
+        "bytes": 5398,
+        "sha256": "004337a2e4f03260bb3a2969ae8146577ae19bc12d090d12796a5111a34e6499"
+       },
+       "styles.css": {
+        "bytes": 10588,
+        "sha256": "b242b9561e730015206cf4005a73a549ef494bd0e60eb65e49fb75d71d92c26d"
+       }
+      },
+      "scenarios": {
+       "passed": 58,
+       "executed": 68
+      },
+      "productUrl": "/assets/trials-20260914-builds/products/run-06/index.html",
+      "previewUrl": "/assets/trials-20260914-builds/products/run-06/preview.html"
+     }
+    },
+    {
+     "repeat": 2,
+     "baseline": {
+      "passed": 13,
+      "total": 16,
+      "seconds": 770.8,
+      "tokens": 73209,
+      "toolCalls": 27,
+      "checks": [
+       {
+        "id": "A01",
+        "label": "Empty-storage initialization",
+        "passed": false,
+        "detail": "0/4 browser scenario executions passed. Failed observations: chromium-360: localFictionFraming; chromium-1440: localFictionFraming; webkit-360: localFictionFraming; webkit-1440: localFictionFraming."
+       },
+       {
+        "id": "A02",
+        "label": "Create/edit and persistence",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A03",
+        "label": "Status update preserves other records",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A04",
+        "label": "Delete and exact undo",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A05",
+        "label": "Combined search and filters",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A06",
+        "label": "Form validation and modal keyboard lifecycle",
+        "passed": false,
+        "detail": "2/4 browser scenario executions passed. Failed observations: webkit-360: modalEscape; webkit-1440: modalEscape."
+       },
+       {
+        "id": "A07",
+        "label": "Full export and confirmed import round trip",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A08",
+        "label": "Reject malformed/unsupported import atomically",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A09",
+        "label": "Reject duplicate IDs and invalid date atomically",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A10",
+        "label": "Import size boundary",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A11",
+        "label": "Imported hostile text remains text",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A12",
+        "label": "Corrupt storage recovery",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A13",
+        "label": "Storage write failure keeps work recoverable",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A14",
+        "label": "Cross-tab stale-write protection",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A15",
+        "label": "Responsive rendering and accessible controls",
+        "passed": false,
+        "detail": "0/4 browser scenario executions passed. Failed observations: chromium-360: rendering, formRendering; chromium-1440: rendering, formRendering; webkit-360: rendering, formRendering; webkit-1440: rendering, formRendering."
+       },
+       {
+        "id": "A16",
+        "label": "No-JavaScript notice and reduced motion",
+        "passed": true,
+        "detail": "8/8 browser scenario executions passed."
+       }
+      ],
+      "snapshots": [
+       {
+        "id": "initial",
+        "label": "Desktop first visit — untouched initial output",
+        "url": "/assets/trials-20260914-builds/runs/run-07/initial.webp"
+       },
+       {
+        "id": "new-task-form",
+        "label": "New task form opened",
+        "url": "/assets/trials-20260914-builds/runs/run-07/new-task-form.webp"
+       },
+       {
+        "id": "after-create",
+        "label": "Review launch evidence created and present in saved board",
+        "url": "/assets/trials-20260914-builds/runs/run-07/after-create.webp"
+       },
+       {
+        "id": "search",
+        "label": "Search for Review launch evidence; matching task shown",
+        "url": "/assets/trials-20260914-builds/runs/run-07/search.webp"
+       },
+       {
+        "id": "import-error",
+        "label": "Malformed JSON selected; visible error and saved board unchanged",
+        "url": "/assets/trials-20260914-builds/runs/run-07/import-error.webp"
+       }
+      ],
+      "artifactUrl": "/assets/trials-20260914-builds/runs/run-07/source.zip",
+      "proofUrl": "/assets/trials-20260914-builds/runs/run-07/checks.html",
+      "status": "Completed",
+      "files": {
+       "README.md": {
+        "bytes": 7589,
+        "sha256": "81400fc3c879a0acec4a52b00db8c473a031d3f68d45f95950148447f1a86a2f"
+       },
+       "app.js": {
+        "bytes": 36323,
+        "sha256": "0ace8ed1cedb7aa93b6bdd48bfd740b95fa2f8bdd32026b63241dd1f900a845a"
+       },
+       "index.html": {
+        "bytes": 5633,
+        "sha256": "d952e92acb12e4de1b443c4cbfc5892f4880ac6b0da4159eb740fb4c4becb969"
+       },
+       "styles.css": {
+        "bytes": 12979,
+        "sha256": "c2d79adebe7546d2d543f8982cc024188d15d0c794ca3878718be7c5f45ee834"
+       }
+      },
+      "scenarios": {
+       "passed": 58,
+       "executed": 68
+      },
+      "productUrl": "/assets/trials-20260914-builds/products/run-07/index.html",
+      "previewUrl": "/assets/trials-20260914-builds/products/run-07/preview.html"
+     },
+     "fabius": {
+      "passed": 13,
+      "total": 16,
+      "seconds": 939.8,
+      "tokens": 80843,
+      "toolCalls": 37,
+      "checks": [
+       {
+        "id": "A01",
+        "label": "Empty-storage initialization",
+        "passed": false,
+        "detail": "0/4 browser scenario executions passed. Failed observations: chromium-360: localFictionFraming; chromium-1440: localFictionFraming; webkit-360: localFictionFraming; webkit-1440: localFictionFraming."
+       },
+       {
+        "id": "A02",
+        "label": "Create/edit and persistence",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A03",
+        "label": "Status update preserves other records",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A04",
+        "label": "Delete and exact undo",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A05",
+        "label": "Combined search and filters",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A06",
+        "label": "Form validation and modal keyboard lifecycle",
+        "passed": false,
+        "detail": "2/4 browser scenario executions passed. Failed observations: webkit-360: modalEscape; webkit-1440: modalEscape."
+       },
+       {
+        "id": "A07",
+        "label": "Full export and confirmed import round trip",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A08",
+        "label": "Reject malformed/unsupported import atomically",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A09",
+        "label": "Reject duplicate IDs and invalid date atomically",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A10",
+        "label": "Import size boundary",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A11",
+        "label": "Imported hostile text remains text",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A12",
+        "label": "Corrupt storage recovery",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A13",
+        "label": "Storage write failure keeps work recoverable",
+        "passed": false,
+        "detail": "0/4 browser scenario executions passed. Failed observations: chromium-360: writeFailure; chromium-1440: writeFailure; webkit-360: writeFailure; webkit-1440: writeFailure."
+       },
+       {
+        "id": "A14",
+        "label": "Cross-tab stale-write protection",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A15",
+        "label": "Responsive rendering and accessible controls",
+        "passed": true,
+        "detail": "4/4 browser scenario executions passed."
+       },
+       {
+        "id": "A16",
+        "label": "No-JavaScript notice and reduced motion",
+        "passed": true,
+        "detail": "8/8 browser scenario executions passed."
+       }
+      ],
+      "snapshots": [
+       {
+        "id": "initial",
+        "label": "Desktop first visit — untouched initial output",
+        "url": "/assets/trials-20260914-builds/runs/run-08/initial.webp"
+       },
+       {
+        "id": "new-task-form",
+        "label": "New task form opened",
+        "url": "/assets/trials-20260914-builds/runs/run-08/new-task-form.webp"
+       },
+       {
+        "id": "after-create",
+        "label": "Review launch evidence created and present in saved board",
+        "url": "/assets/trials-20260914-builds/runs/run-08/after-create.webp"
+       },
+       {
+        "id": "search",
+        "label": "Search for Review launch evidence; matching task shown",
+        "url": "/assets/trials-20260914-builds/runs/run-08/search.webp"
+       },
+       {
+        "id": "import-error",
+        "label": "Malformed JSON selected; visible error and saved board unchanged",
+        "url": "/assets/trials-20260914-builds/runs/run-08/import-error.webp"
+       }
+      ],
+      "artifactUrl": "/assets/trials-20260914-builds/runs/run-08/source.zip",
+      "proofUrl": "/assets/trials-20260914-builds/runs/run-08/checks.html",
+      "status": "Completed",
+      "files": {
+       "README.md": {
+        "bytes": 6564,
+        "sha256": "0adefb96d2feefef6a864efe0bc9bd8fb15181e49ecd50cbad05089cb518f927"
+       },
+       "app.js": {
+        "bytes": 32866,
+        "sha256": "5ca170c83414a5df2ac093fd64a30f7e3f7641daad46a65cddd1428ac003ce6f"
+       },
+       "index.html": {
+        "bytes": 6226,
+        "sha256": "04c3da896770dd4e4a1a22d0599785cd2c005f68d06f24236435f8861733cefb"
+       },
+       "styles.css": {
+        "bytes": 10048,
+        "sha256": "337c38d3a250ad61919f686c310622add18d344584b018352b935f70eb4768ac"
+       }
+      },
+      "scenarios": {
+       "passed": 58,
+       "executed": 68
+      },
+      "productUrl": "/assets/trials-20260914-builds/products/run-08/index.html",
+      "previewUrl": "/assets/trials-20260914-builds/products/run-08/preview.html"
+     }
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lattice — a local-first research notebook (fictional demo)</title>
+<meta name="description" content="Lattice is a fictional local-first research notebook concept. Notes stay on your device, export to Markdown any time, and link to sources as you write. This page is a design demonstration, not a real product.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div class="demo-banner" role="note">
+  Fictional product demonstration for evaluation purposes — Lattice is not a real, purchasable product. No data is collected, no purchases occur, and no claims below describe an existing customer base.
+</div>
+
+<header class="site-header" id="top">
+  <div class="header-inner">
+    <a class="logo" href="#top" aria-label="Lattice home">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="28" height="28" focusable="false">
+          <rect x="2" y="2" width="12" height="12" rx="2" fill="currentColor" opacity="0.9"/>
+          <rect x="18" y="2" width="12" height="12" rx="2" fill="currentColor" opacity="0.55"/>
+          <rect x="2" y="18" width="12" height="12" rx="2" fill="currentColor" opacity="0.55"/>
+          <rect x="18" y="18" width="12" height="12" rx="2" fill="currentColor" opacity="0.9"/>
+        </svg>
+      </span>
+      <span class="logo-text">Lattice</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#workflow">Workflow</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+
+    <a class="btn btn-primary desktop-cta" href="#workflow">Explore the workflow</a>
+
+    <button type="button" class="menu-toggle" data-testid="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+      <span class="menu-toggle-bars" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </span>
+    </button>
+  </div>
+
+  <nav class="mobile-nav" id="mobile-nav" data-testid="mobile-nav" aria-label="Primary mobile">
+    <ul>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#workflow">Workflow</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a class="btn btn-primary" href="#workflow">Explore the workflow</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Local-first research notebook · fictional concept</p>
+        <h1>Your research stays on your machine, in your words, with your sources.</h1>
+        <p class="hero-lede">
+          Lattice is a fictional local-first notebook for independent researchers. Notes are stored on your
+          device, every note can carry a source link, and everything you write exports cleanly to Markdown —
+          no server required to keep working.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-lg" href="#workflow">Explore the workflow</a>
+          <a class="btn btn-ghost btn-lg" href="#pricing">See pricing</a>
+        </div>
+        <p class="hero-note">Illustrative concept only — screens shown are mockups, not a working application.</p>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 640 460" width="100%" height="100%" focusable="false" role="img" aria-hidden="true">
+          <defs>
+            <linearGradient id="windowShadow" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#0f2a24" stop-opacity="0.12"/>
+              <stop offset="1" stop-color="#0f2a24" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+
+          <rect x="18" y="26" width="604" height="410" rx="18" fill="#0f2a24" opacity="0.06"/>
+          <rect x="8" y="14" width="604" height="410" rx="18" fill="#fbf9f4" stroke="#d9d2c2" stroke-width="1.5"/>
+
+          <rect x="8" y="14" width="604" height="44" rx="18" fill="#f1ecdf"/>
+          <circle cx="32" cy="36" r="5" fill="#e2b45a"/>
+          <circle cx="50" cy="36" r="5" fill="#7fae9c"/>
+          <circle cx="68" cy="36" r="5" fill="#c98a7a"/>
+          <text x="310" y="41" text-anchor="middle" font-family="Georgia, 'Iowan Old Style', serif" font-size="14" fill="#5b5546">Lattice — Field Notes</text>
+
+          <rect x="8" y="58" width="150" height="366" fill="#f4efe3"/>
+          <text x="26" y="86" font-family="system-ui, sans-serif" font-size="11" letter-spacing="1.5" fill="#8a8371">PROJECTS</text>
+          <rect x="20" y="100" width="126" height="34" rx="8" fill="#1f6f5c" opacity="0.14"/>
+          <rect x="30" y="110" width="70" height="8" rx="4" fill="#1f6f5c"/>
+          <rect x="30" y="122" width="46" height="6" rx="3" fill="#1f6f5c" opacity="0.6"/>
+          <rect x="20" y="144" width="126" height="30" rx="8" fill="transparent"/>
+          <rect x="30" y="152" width="90" height="7" rx="3.5" fill="#a49b86"/>
+          <rect x="20" y="182" width="126" height="30" rx="8" fill="transparent"/>
+          <rect x="30" y="190" width="76" height="7" rx="3.5" fill="#a49b86"/>
+          <rect x="20" y="220" width="126" height="30" rx="8" fill="transparent"/>
+          <rect x="30" y="228" width="100" height="7" rx="3.5" fill="#a49b86"/>
+
+          <rect x="22" y="380" width="122" height="30" rx="8" fill="#efe6cf"/>
+          <text x="34" y="399" font-family="system-ui, sans-serif" font-size="10.5" fill="#7a6a3f">+ New project</text>
+
+          <rect x="182" y="82" width="410" height="16" rx="4" fill="#2b2a26"/>
+          <rect x="182" y="82" width="230" height="16" rx="4" fill="#2b2a26" opacity="0.001"/>
+          <text x="182" y="95" font-family="Georgia, 'Iowan Old Style', serif" font-size="17" fill="#20221f">Migration patterns in coastal soil samples</text>
+
+          <text x="182" y="122" font-family="system-ui, sans-serif" font-size="12" fill="#4a4638">Template: Literature review</text>
+
+          <rect x="182" y="142" width="404" height="7" rx="3.5" fill="#c9c2ae"/>
+          <rect x="182" y="158" width="360" height="7" rx="3.5" fill="#c9c2ae"/>
+          <rect x="182" y="174" width="380" height="7" rx="3.5" fill="#c9c2ae"/>
+
+          <rect x="182" y="196" width="150" height="20" rx="10" fill="#1f6f5c" opacity="0.12"/>
+          <circle cx="196" cy="206" r="4" fill="#1f6f5c"/>
+          <text x="208" y="210" font-family="system-ui, sans-serif" font-size="10.5" fill="#1f6f5c">Source · site survey, p.14</text>
+
+          <rect x="182" y="230" width="404" height="7" rx="3.5" fill="#c9c2ae"/>
+          <rect x="182" y="246" width="320" height="7" rx="3.5" fill="#c9c2ae"/>
+
+          <rect x="182" y="270" width="404" height="7" rx="3.5" fill="#e4ddc8"/>
+          <rect x="182" y="286" width="260" height="7" rx="3.5" fill="#e4ddc8"/>
+
+          <rect x="182" y="380" width="404" height="34" rx="10" fill="#f1ecdf" stroke="#e0d9c6"/>
+          <circle cx="204" cy="397" r="6" fill="none" stroke="#8a8371" stroke-width="2"/>
+          <line x1="209" y1="402" x2="214" y2="407" stroke="#8a8371" stroke-width="2" stroke-linecap="round"/>
+          <text x="226" y="401" font-family="system-ui, sans-serif" font-size="11" fill="#8a8371">Search this notebook, on this device</text>
+
+          <rect x="500" y="380" width="86" height="34" rx="10" fill="#1f6f5c"/>
+          <text x="543" y="401" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#fbf9f4">Export .md</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="features" aria-labelledby="features-heading">
+    <div class="section-inner">
+      <h2 id="features-heading">Everything happens next to your notes</h2>
+      <p class="section-lede">Three ways Lattice keeps research self-contained, explained in the fictional demo below.</p>
+
+      <div class="tabs">
+        <div class="tablist" role="tablist" aria-label="Feature areas">
+          <button type="button" role="tab" id="tab-capture" data-testid="feature-capture" aria-selected="true" aria-controls="panel-capture" tabindex="0">
+            Capture
+          </button>
+          <button type="button" role="tab" id="tab-connect" data-testid="feature-connect" aria-selected="false" aria-controls="panel-connect" tabindex="-1">
+            Connect
+          </button>
+          <button type="button" role="tab" id="tab-export" data-testid="feature-export" aria-selected="false" aria-controls="panel-export" tabindex="-1">
+            Export
+          </button>
+        </div>
+
+        <div class="panels">
+          <section class="panel" id="panel-capture" data-testid="panel-capture" role="tabpanel" aria-labelledby="tab-capture" tabindex="0">
+            <h3>Capture on the device you're using</h3>
+            <p>
+              New notes are written straight to local storage on the device in front of you — there is no
+              save-to-server step and no sign-in wall between you and a blank page. Start a note, keep typing,
+              and Lattice keeps it where you made it.
+            </p>
+            <ul>
+              <li>Notes live on your device; nothing is required to leave it to keep working.</li>
+              <li>Start from a reusable project template (literature review, interview log, lab notebook) instead of a blank page.</li>
+              <li>Templates stay editable per project, so structure can adapt as the research does.</li>
+            </ul>
+          </section>
+
+          <section class="panel" id="panel-connect" data-testid="panel-connect" role="tabpanel" aria-labelledby="tab-connect" tabindex="0">
+            <h3>Keep every claim next to its source</h3>
+            <p>
+              Each note can carry a source link alongside the text it supports, so the citation travels with
+              the idea instead of living in a separate reference manager you have to keep in sync by hand.
+            </p>
+            <ul>
+              <li>Attach a source link directly to the paragraph it backs up.</li>
+              <li>Source links stay visible in the note, not hidden in a footnote panel.</li>
+              <li>Move between a claim and its source without leaving the page you're writing.</li>
+            </ul>
+          </section>
+
+          <section class="panel" id="panel-export" data-testid="panel-export" role="tabpanel" aria-labelledby="tab-export" tabindex="0">
+            <h3>Leave whenever you want, with everything intact</h3>
+            <p>
+              Any note or project can be exported to plain Markdown, and an optional local full-text search
+              helps you find the right note first — searched entirely on-device, over notes already stored there.
+            </p>
+            <ul>
+              <li>Markdown export preserves headings, links, and source references as plain text.</li>
+              <li>Optional local full-text search runs over notes stored on the device — no note ever leaves it to be indexed.</li>
+              <li>Exported files are ordinary files: yours to move, back up, or open elsewhere.</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="workflow" id="workflow" aria-labelledby="workflow-heading">
+    <div class="section-inner">
+      <h2 id="workflow-heading">A three-step workflow</h2>
+      <p class="section-lede">How a single research thread moves through Lattice, from first note to finished export.</p>
+
+      <ol class="workflow-steps">
+        <li>
+          <span class="step-index" aria-hidden="true">01</span>
+          <h3>Capture the note</h3>
+          <p>Open a project — or start one from a template — and write. The note saves to this device as you go.</p>
+        </li>
+        <li>
+          <span class="step-index" aria-hidden="true">02</span>
+          <h3>Connect the source</h3>
+          <p>Drop a source link next to the sentence it supports, so the citation and the claim stay together.</p>
+        </li>
+        <li>
+          <span class="step-index" aria-hidden="true">03</span>
+          <h3>Export or search</h3>
+          <p>Export the project to Markdown when it's ready, or use local full-text search to find it again first.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="pricing" id="pricing" aria-labelledby="pricing-heading">
+    <div class="section-inner">
+      <h2 id="pricing-heading">Two fictional plans</h2>
+      <p class="section-lede">Prices below are supplied fictional figures for this demonstration, not claims about a real product. No checkout occurs on this page.</p>
+
+      <div class="billing-toggle" role="group" aria-label="Billing period">
+        <button type="button" class="billing-btn is-active" data-testid="billing-monthly" aria-pressed="true">Monthly</button>
+        <button type="button" class="billing-btn" data-testid="billing-yearly" aria-pressed="false">Yearly</button>
+      </div>
+
+      <div class="pricing-grid">
+        <article class="plan-card">
+          <h3>Solo</h3>
+          <p class="plan-desc">For one researcher, one device at a time.</p>
+          <p class="plan-price">
+            <span class="price-amount" data-testid="price-solo">$12</span>
+            <span class="price-period" data-testid="price-solo-period">/ month</span>
+          </p>
+          <ul class="plan-features">
+            <li>Unlimited local notes</li>
+            <li>Markdown export</li>
+            <li>Source links on every note</li>
+            <li>One project template library</li>
+          </ul>
+        </article>
+
+        <article class="plan-card plan-card-highlight">
+          <h3>Studio</h3>
+          <p class="plan-desc">For a small research team sharing templates.</p>
+          <p class="plan-price">
+            <span class="price-amount" data-testid="price-studio">$29</span>
+            <span class="price-period" data-testid="price-studio-period">/ month</span>
+          </p>
+          <ul class="plan-features">
+            <li>Everything in Solo</li>
+            <li>Shared project templates</li>
+            <li>Optional local full-text search</li>
+            <li>Priority Markdown export queue</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq" aria-labelledby="faq-heading">
+    <div class="section-inner">
+      <h2 id="faq-heading">Frequently asked questions</h2>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary data-testid="faq-0">Where does Lattice store my notes?</summary>
+          <p>On the device you're using. In this fictional concept, notes are kept in local device storage rather than on a remote server.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary data-testid="faq-1">Can I get my notes out in a plain format?</summary>
+          <p>Yes — notes and projects can be exported to Markdown, a plain-text format you can open, edit, or move anywhere.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary data-testid="faq-2">How do backups work?</summary>
+          <p>By exporting your files yourself. This fictional concept does not promise automatic cloud backup — exporting to Markdown is the backup step.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary data-testid="faq-3">What happens to my files if I cancel?</summary>
+          <p>Nothing — cancellation has no effect on files you've already exported. Anything already saved to Markdown on your device stays exactly as it was.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="section-inner footer-inner">
+    <p class="footer-brand">Lattice — fictional product demonstration.</p>
+    <p class="footer-note">
+      Built for evaluation purposes only. No customers, reviews, or usage figures are real; nothing on this
+      page describes an existing product, and no purchase can be made here.
+    </p>
+    <nav aria-label="Footer">
+      <ul class="footer-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#workflow">Workflow</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

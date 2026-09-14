@@ -1,0 +1,341 @@
+{
+ "schemaVersion": 1,
+ "runId": "run-05",
+ "kind": "app",
+ "startedAt": "2026-09-14T19:42:18.877Z",
+ "helperSha256": "2448fa17cc9a54989a8ae7134baa2bfda9ee4cca000603582a3ce873d3c54f4a",
+ "source": {
+  "files": [
+   {
+    "file": "app.js",
+    "bytes": 34109,
+    "sha256": "06f65206852b7f5b4e20c1c7e31aff44a880f0dc6e2c5b49143f54656b48710c"
+   },
+   {
+    "file": "BRIEF.md",
+    "bytes": 4518,
+    "sha256": "7116b83075469f773ce51f72f708041e221d97b2b055d75cb309f0ff39239d1d"
+   },
+   {
+    "file": "index.html",
+    "bytes": 5741,
+    "sha256": "2cc7279ccfc1fb1889d5edf455fb8791bbd8b3d462a6be7500379bb6a0e1e2a3"
+   },
+   {
+    "file": "README.md",
+    "bytes": 5146,
+    "sha256": "a574e9a7c6c6e9f0cb0b653eaa68f7c5b675d32d739206a9bb15950d1ff37760"
+   },
+   {
+    "file": "styles.css",
+    "bytes": 9289,
+    "sha256": "11077f51815f489c0414d24cd46b2e09b34550ef9f87a87c56b3c694a013dc46"
+   }
+  ],
+  "treeSha256": "f45ad439a2e2517f158a2834b5588c9a74b66a6e8784c687d3a3480bdb6f7741"
+ },
+ "policy": {
+  "presentation": "Composed walkthrough from captured states; not a recording of model generation.",
+  "browser": "Google Chrome",
+  "desktopViewport": {
+   "width": 1440,
+   "height": 960
+  },
+  "mobileViewport": {
+   "width": 360,
+   "height": 800
+  },
+  "deviceScaleFactor": 1,
+  "fullPage": false,
+  "reducedMotion": "reduce",
+  "screenshotAnimations": "disabled",
+  "freshContexts": true,
+  "externalRequests": "blocked",
+  "candidateEdits": false,
+  "scoresProvided": false
+ },
+ "snapshots": [
+  {
+   "id": "initial",
+   "label": "Desktop first visit \u2014 untouched initial output",
+   "file": "initial.png",
+   "actionSucceeded": true,
+   "observed": {
+    "httpStatus": 200,
+    "freshStorage": true,
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Skip to main content\nFieldnote Board\n\nLocal-first task tracking for a small field team. Everything here stays on this device.\n\n+\nNew task\nExport JSON\nImport JSON\nSearch tasks\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nCommunity Outreach\nRiverbank Survey\nPriority\nAll priorities\nLow\nMedium\nHigh\n\nShowing 7 of 7 tasks\n\nTo do\n3\nDraft interview guide for river-site survey\n\u270e\n\ud83d\uddd1\nRiverbank Survey\nHigh priority\nDue 2026-09-18\n#fieldwork\n#interviews\nStatus for \"Draft interview guide for river-site survey\"\nTo do\nDoing\nDone\nCalibrate water-quality sensors\n\u270e\n\ud83d\uddd1\nRiverbank Survey\nMedium priority\n#equipment\nStatus for \"Calibrate water-quality sensors\"\nTo do\nDoing\nDone\nSummarize interim findings for stakeholders\n\u270e\n\ud83d\uddd1\nCommunity Outreach\nLow priority\n#reporting\nStatus for \"Summarize interim findings for stakeholders\"\nTo do\nDoing\nDone\nDoing\n2\nDigitize week 1 fieldnotes\n\u270e\n\ud83d\uddd1\nRiverbank Survey\nMedium priority\nDue 2026-09-16\n#notes\nStatus for \"Digitize week 1 fieldnotes\"\nTo do\nDoing\nDone\nSchedule outreach meeting with village council\n\u270e\n\ud83d\uddd1\nCommunity Outreach\nHigh priority\nDue 2026-09-20\n#outreach\n#scheduling\nStatus for \"Schedule outreach meeting with village council\"\nTo do\nDoing\nDone\nDone\n2\nOrder replacement sample bottles\n\u270e\n\ud83d\uddd1\nRiverbank Survey\nLow priority\nDue 2026-09-05\n#equipment\n#supplies\nStatus for \"Order replacement sample bottles\"\nTo do\nDoing\nDone\nSend consent forms to participants\n\u270e\n\ud83d\uddd1\nCommunity Outreach\nHigh priority\nDue 2026-09-10\n#admin\n#outreach\nStatus for \"Send consent forms to participants\"\nTo do\nDoing\nDone",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T19:42:21.545Z",
+   "actionStartedAt": "2026-09-14T19:42:20.783Z",
+   "sha256": "722b3c4548b86b12a4b8dbe7b02e091cf73a693a527b10a34d990db2cbe7d6d2",
+   "bytes": 140025
+  },
+  {
+   "id": "new-task-form",
+   "label": "New task form opened",
+   "file": "new-task-form.png",
+   "actionSucceeded": true,
+   "observed": {
+    "visible": true,
+    "fields": [
+     {
+      "name": "title",
+      "type": "text",
+      "value": ""
+     },
+     {
+      "name": "project",
+      "type": "text",
+      "value": ""
+     },
+     {
+      "name": "status",
+      "type": "select-one",
+      "value": "todo"
+     },
+     {
+      "name": "priority",
+      "type": "select-one",
+      "value": "medium"
+     },
+     {
+      "name": "dueDate",
+      "type": "date",
+      "value": ""
+     },
+     {
+      "name": "tags",
+      "type": "text",
+      "value": ""
+     }
+    ],
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Skip to main content\nFieldnote Board\n\nLocal-first task tracking for a small field team. Everything here stays on this device.\n\n+\nNew task\nExport JSON\nImport JSON\nSearch tasks\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nCommunity Outreach\nRiverbank Survey\nPriority\nAll priorities\nLow\nMedium\nHigh\n\nShowing 7 of 7 tasks\n\nTo do\n3\nDraft interview guide for river-site survey\n\u270e\n\ud83d\uddd1\nRiverbank Survey\nHigh priority\nDue 2026-09-18\n#fieldwork\n#interviews\nStatus for \"Draft interview guide for river-site survey\"\nTo do\nDoing\nDone\nCalibrate water-quality sensors\n\u270e\n\ud83d\uddd1\nRiverbank Survey\nMedium priority\n#equipment\nStatus for \"Calibrate water-quality sensors\"\nTo do\nDoing\nDone\nSummarize interim findings for stakeholders\n\u270e\n\ud83d\uddd1\nCommunity Outreach\nLow priority\n#reporting\nStatus for \"Summarize interim findings for stakeholders\"\nTo do\nDoing\nDone\nDoing\n2\nDigitize week 1 fieldnotes\n\u270e\n\ud83d\uddd1\nRiverbank Survey\nMedium priority\nDue 2026-09-16\n#notes\nStatus for \"Digitize week 1 fieldnotes\"\nTo do\nDoing\nDone\nSchedule outreach meeting with village council\n\u270e\n\ud83d\uddd1\nCommunity Outreach\nHigh priority\nDue 2026-09-20\n#outreach\n#scheduling\nStatus for \"Schedule outreach meeting with village council\"\nTo do\nDoing\nDone\nDone\n2\nOrder replacement sample bottles\n\u270e\n\ud83d\uddd1\nRiverbank Survey\nLow priority\nDue 2026-09-05\n#equipment\n#supplies\nStatus for \"Order replacement sample bottles\"\nTo do\nDoing\nDone\nSend consent forms to participants\n\u270e\n\ud83d\uddd1\nCommunity Outreach\nHigh priority\nDue 2026-09-10\n#admin\n#outreach\nStatus for \"Send consent forms to participants\"\nTo do\nDoing\nDone\nNew task\n\u2715\nTitle\nProject\nStatus\nTo do\nDoing\nDone\nPriority\nLow\nMedium\nHigh\nDue date (optional)\nTags (comma-separated, up to 8)\nCancel\nSave task",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T19:42:23.711Z",
+   "actionStartedAt": "2026-09-14T19:42:23.328Z",
+   "sha256": "f9c3707bcc719ef3bfbf5e34ad3f6bbe1b93bf7adaf9db1dc92d527f8c3707b3",
+   "bytes": 136081
+  },
+  {
+   "id": "after-create",
+   "label": "Review launch evidence created and present in saved board",
+   "file": "after-create.png",
+   "actionSucceeded": true,
+   "observed": {
+    "requested": {
+     "title": "Review launch evidence",
+     "project": "Research",
+     "status": "doing",
+     "priority": "high",
+     "dueDate": "2026-09-20",
+     "tags": "evidence,launch"
+    },
+    "storageError": null,
+    "matchingRecords": [
+     {
+      "id": "e2e030a3-8e34-4bdb-a10d-91d100f5c222",
+      "title": "Review launch evidence",
+      "project": "Research",
+      "status": "doing",
+      "priority": "high",
+      "dueDate": "2026-09-20",
+      "tags": [
+       "evidence",
+       "launch"
+      ]
+     }
+    ],
+    "rendered": true,
+    "visibleCards": [
+     {
+      "id": "3242212a-60d9-47b9-8b58-b122c9d438e6",
+      "text": "Draft interview guide for river-site survey\n\u270e\n\ud83d\uddd1\nRiverbank Survey\nHigh priority\nDue 2026-09-18\n#fieldwork\n#interviews\nStatus for \"Draft interview guide for river-site survey\"\nTo do\nDoing\nDone"
+     },
+     {
+      "id": "f5e81605-23e6-428b-9531-269c995eb9ea",
+      "text": "Calibrate water-quality sensors\n\u270e\n\ud83d\uddd1\nRiverbank Survey\nMedium priority\n#equipment\nStatus for \"Calibrate water-quality sensors\"\nTo do\nDoing\nDone"
+     },
+     {
+      "id": "888739bc-1252-4c2f-b1ad-4d8118f547f4",
+      "text": "Summarize interim findings for stakeholders\n\u270e\n\ud83d\uddd1\nCommunity Outreach\nLow priority\n#reporting\nStatus for \"Summarize interim findings for stakeholders\"\nTo do\nDoing\nDone"
+     },
+     {
+      "id": "ceb1c653-f47a-4c92-9695-4908620abf70",
+      "text": "Digitize week 1 fieldnotes\n\u270e\n\ud83d\uddd1\nRiverbank Survey\nMedium priority\nDue 2026-09-16\n#notes\nStatus for \"Digitize week 1 fieldnotes\"\nTo do\nDoing\nDone"
+     },
+     {
+      "id": "0ed24eee-691f-4443-92e1-5b42e2a1fbfb",
+      "text": "Schedule outreach meeting with village council\n\u270e\n\ud83d\uddd1\nCommunity Outreach\nHigh priority\nDue 2026-09-20\n#outreach\n#scheduling\nStatus for \"Schedule outreach meeting with village council\"\nTo do\nDoing\nDone"
+     },
+     {
+      "id": "e2e030a3-8e34-4bdb-a10d-91d100f5c222",
+      "text": "Review launch evidence\n\u270e\n\ud83d\uddd1\nResearch\nHigh priority\nDue 2026-09-20\n#evidence\n#launch\nStatus for \"Review launch evidence\"\nTo do\nDoing\nDone"
+     },
+     {
+      "id": "9ef9ca85-304e-45b2-babf-d389a969bcb0",
+      "text": "Order replacement sample bottles\n\u270e\n\ud83d\uddd1\nRiverbank Survey\nLow priority\nDue 2026-09-05\n#equipment\n#supplies\nStatus for \"Order replacement sample bottles\"\nTo do\nDoing\nDone"
+     },
+     {
+      "id": "077a8f5f-4f68-4ad6-a54b-2a136ea03f9b",
+      "text": "Send consent forms to participants\n\u270e\n\ud83d\uddd1\nCommunity Outreach\nHigh priority\nDue 2026-09-10\n#admin\n#outreach\nStatus for \"Send consent forms to participants\"\nTo do\nDoing\nDone"
+     }
+    ],
+    "beforeStorageSha256": "2c7aa1418dac12517beb0637689d07813da9d61d0fa404083a70265c1ab10a39",
+    "afterStorageSha256": "a9bca0b9dc854937e970088593546dd12455c1336c039b1b7e9abbada0dd757f",
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Skip to main content\nFieldnote Board\n\nLocal-first task tracking for a small field team. Everything here stays on this device.\n\n+\nNew task\nExport JSON\nImport JSON\nSearch tasks\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nCommunity Outreach\nResearch\nRiverbank Survey\nPriority\nAll priorities\nLow\nMedium\nHigh\n\nShowing 8 of 8 tasks\n\nTo do\n3\nDraft interview guide for river-site survey\n\u270e\n\ud83d\uddd1\nRiverbank Survey\nHigh priority\nDue 2026-09-18\n#fieldwork\n#interviews\nStatus for \"Draft interview guide for river-site survey\"\nTo do\nDoing\nDone\nCalibrate water-quality sensors\n\u270e\n\ud83d\uddd1\nRiverbank Survey\nMedium priority\n#equipment\nStatus for \"Calibrate water-quality sensors\"\nTo do\nDoing\nDone\nSummarize interim findings for stakeholders\n\u270e\n\ud83d\uddd1\nCommunity Outreach\nLow priority\n#reporting\nStatus for \"Summarize interim findings for stakeholders\"\nTo do\nDoing\nDone\nDoing\n3\nDigitize week 1 fieldnotes\n\u270e\n\ud83d\uddd1\nRiverbank Survey\nMedium priority\nDue 2026-09-16\n#notes\nStatus for \"Digitize week 1 fieldnotes\"\nTo do\nDoing\nDone\nSchedule outreach meeting with village council\n\u270e\n\ud83d\uddd1\nCommunity Outreach\nHigh priority\nDue 2026-09-20\n#outreach\n#scheduling\nStatus for \"Schedule outreach meeting with village council\"\nTo do\nDoing\nDone\nReview launch evidence\n\u270e\n\ud83d\uddd1\nResearch\nHigh priority\nDue 2026-09-20\n#evidence\n#launch\nStatus for \"Review launch evidence\"\nTo do\nDoing\nDone\nDone\n2\nOrder replacement sample bottles\n\u270e\n\ud83d\uddd1\nRiverbank Survey\nLow priority\nDue 2026-09-05\n#equipment\n#supplies\nStatus for \"Order replacement sample bottles\"\nTo do\nDoing\nDone\nSend consent forms to participants\n\u270e\n\ud83d\uddd1\nCommunity Outreach\nHigh priority\nDue 2026-09-10\n#admin\n#outreach\nStatus for \"Send consent forms to participants\"\nTo do\nDoing\nDone",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T19:42:25.019Z",
+   "actionStartedAt": "2026-09-14T19:42:24.341Z",
+   "sha256": "8ac25fcf774a056ac3e3d100c8678ba685a5ca2d16adcf70d0ff85af5b97b108",
+   "bytes": 152783
+  },
+  {
+   "id": "search",
+   "label": "Search for Review launch evidence; matching task shown",
+   "file": "search.png",
+   "actionSucceeded": true,
+   "observed": {
+    "search": "Review launch evidence",
+    "visibleCards": [
+     {
+      "id": "e2e030a3-8e34-4bdb-a10d-91d100f5c222",
+      "text": "Review launch evidence\n\u270e\n\ud83d\uddd1\nResearch\nHigh priority\nDue 2026-09-20\n#evidence\n#launch\nStatus for \"Review launch evidence\"\nTo do\nDoing\nDone"
+     }
+    ],
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Skip to main content\nFieldnote Board\n\nLocal-first task tracking for a small field team. Everything here stays on this device.\n\n+\nNew task\nExport JSON\nImport JSON\nSearch tasks\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nCommunity Outreach\nResearch\nRiverbank Survey\nPriority\nAll priorities\nLow\nMedium\nHigh\n\nShowing 1 of 8 tasks\n\nTo do\n0\n\nNo matching tasks.\n\nDoing\n1\nReview launch evidence\n\u270e\n\ud83d\uddd1\nResearch\nHigh priority\nDue 2026-09-20\n#evidence\n#launch\nStatus for \"Review launch evidence\"\nTo do\nDoing\nDone\nDone\n0\n\nNo matching tasks.",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T19:42:25.841Z",
+   "actionStartedAt": "2026-09-14T19:42:25.436Z",
+   "sha256": "b88612330cf3503218de6606f4029cfadc93ac17090e06be8be58df894c5660b",
+   "bytes": 62132
+  },
+  {
+   "id": "import-error",
+   "label": "Malformed JSON selected; visible error and saved board unchanged",
+   "file": "import-error.png",
+   "actionSucceeded": true,
+   "observed": {
+    "formDismissed": false,
+    "confirmation": {
+     "clicked": false
+    },
+    "dialogs": [],
+    "newVisibleFeedback": [
+     "Import failed: The data is not valid JSON."
+    ],
+    "nativeError": false,
+    "storageUnchanged": true,
+    "beforeStorageSha256": "a9bca0b9dc854937e970088593546dd12455c1336c039b1b7e9abbada0dd757f",
+    "afterStorageSha256": "a9bca0b9dc854937e970088593546dd12455c1336c039b1b7e9abbada0dd757f",
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Skip to main content\nFieldnote Board\n\nLocal-first task tracking for a small field team. Everything here stays on this device.\n\n+\nNew task\nExport JSON\nImport JSON\n\nImport failed: The data is not valid JSON.\n\nDismiss\nSearch tasks\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nCommunity Outreach\nResearch\nRiverbank Survey\nPriority\nAll priorities\nLow\nMedium\nHigh\n\nShowing 8 of 8 tasks\n\nTo do\n3\nDraft interview guide for river-site survey\n\u270e\n\ud83d\uddd1\nRiverbank Survey\nHigh priority\nDue 2026-09-18\n#fieldwork\n#interviews\nStatus for \"Draft interview guide for river-site survey\"\nTo do\nDoing\nDone\nCalibrate water-quality sensors\n\u270e\n\ud83d\uddd1\nRiverbank Survey\nMedium priority\n#equipment\nStatus for \"Calibrate water-quality sensors\"\nTo do\nDoing\nDone\nSummarize interim findings for stakeholders\n\u270e\n\ud83d\uddd1\nCommunity Outreach\nLow priority\n#reporting\nStatus for \"Summarize interim findings for stakeholders\"\nTo do\nDoing\nDone\nDoing\n3\nDigitize week 1 fieldnotes\n\u270e\n\ud83d\uddd1\nRiverbank Survey\nMedium priority\nDue 2026-09-16\n#notes\nStatus for \"Digitize week 1 fieldnotes\"\nTo do\nDoing\nDone\nSchedule outreach meeting with village council\n\u270e\n\ud83d\uddd1\nCommunity Outreach\nHigh priority\nDue 2026-09-20\n#outreach\n#scheduling\nStatus for \"Schedule outreach meeting with village council\"\nTo do\nDoing\nDone\nReview launch evidence\n\u270e\n\ud83d\uddd1\nResearch\nHigh priority\nDue 2026-09-20\n#evidence\n#launch\nStatus for \"Review launch evidence\"\nTo do\nDoing\nDone\nDone\n2\nOrder replacement sample bottles\n\u270e\n\ud83d\uddd1\nRiverbank Survey\nLow priority\nDue 2026-09-05\n#equipment\n#supplies\nStatus for \"Order replacement sample bottles\"\nTo do\nDoing\nDone\nSend consent forms to participants\n\u270e\n\ud83d\uddd1\nCommunity Outreach\nHigh priority\nDue 2026-09-10\n#admin\n#outreach\nStatus for \"Send consent forms to participants\"\nTo do\nDoing\nDone",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T19:42:26.395Z",
+   "actionStartedAt": "2026-09-14T19:42:25.915Z",
+   "sha256": "ac4b55b6d684744b751333233422c0316e6bb2b4f4d8f63825a9833d83bb410a",
+   "bytes": 159784
+  }
+ ],
+ "mobilefile": "mobile-initial.png",
+ "mobile": {
+  "id": "mobile-initial",
+  "label": "Mobile first visit \u2014 separate fresh context",
+  "file": "mobile-initial.png",
+  "sha256": "c9c120acd10fe8c2c5f8890e1beb4419ab3a17ec80b70824263fc259958d0386",
+  "bytes": 55478,
+  "actionSucceeded": true,
+  "observed": {
+   "httpStatus": 200,
+   "freshStorage": true,
+   "render": {
+    "path": "/nested/benchmark/",
+    "viewport": {
+     "width": 360,
+     "height": 800
+    },
+    "scroll": {
+     "x": 0,
+     "y": 0
+    },
+    "documentWidth": 360,
+    "visibleText": "Skip to main content\nFieldnote Board\n\nLocal-first task tracking for a small field team. Everything here stays on this device.\n\n+\nNew task\nExport JSON\nImport JSON\nSearch tasks\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nCommunity Outreach\nRiverbank Survey\nPriority\nAll priorities\nLow\nMedium\nHigh\n\nShowing 7 of 7 tasks\n\nTo do\n3\nDraft interview guide for river-site survey\n\u270e\n\ud83d\uddd1\nRiverbank Survey\nHigh priority\nDue 2026-09-18\n#fieldwork\n#interviews\nStatus for \"Draft interview guide for river-site survey\"\nTo do\nDoing\nDone\nCalibrate water-quality sensors\n\u270e\n\ud83d\uddd1\nRiverbank Survey\nMedium priority\n#equipment\nStatus for \"Calibrate water-quality sensors\"\nTo do\nDoing\nDone\nSummarize interim findings for stakeholders\n\u270e\n\ud83d\uddd1\nCommunity Outreach\nLow priority\n#reporting\nStatus for \"Summarize interim findings for stakeholders\"\nTo do\nDoing\nDone\nDoing\n2\nDigitize week 1 fieldnotes\n\u270e\n\ud83d\uddd1\nRiverbank Survey\nMedium priority\nDue 2026-09-16\n#notes\nStatus for \"Digitize week 1 fieldnotes\"\nTo do\nDoing\nDone\nSchedule outreach meeting with village council\n\u270e\n\ud83d\uddd1\nCommunity Outreach\nHigh priority\nDue 2026-09-20\n#outreach\n#scheduling\nStatus for \"Schedule outreach meeting with village council\"\nTo do\nDoing\nDone\nDone\n2\nOrder replacement sample bottles\n\u270e\n\ud83d\uddd1\nRiverbank Survey\nLow priority\nDue 2026-09-05\n#equipment\n#supplies\nStatus for \"Order replacement sample bottles\"\nTo do\nDoing\nDone\nSend consent forms to participants\n\u270e\n\ud83d\uddd1\nCommunity Outreach\nHigh priority\nDue 2026-09-10\n#admin\n#outreach\nStatus for \"Send consent forms to participants\"\nTo do\nDoing\nDone",
+    "brokenVisibleImages": []
+   }
+  }
+ },
+ "missingStates": [],
+ "captureFailures": [],
+ "actionErrors": [],
+ "infrastructureErrors": [],
+ "console": [],
+ "network": [],
+ "dialogs": [],
+ "browserVersion": "152.0.7977.83",
+ "sourceAfterTreeSha256": "f45ad439a2e2517f158a2834b5588c9a74b66a6e8784c687d3a3480bdb6f7741",
+ "sourceUnchanged": true,
+ "finishedAt": "2026-09-14T19:42:30.193Z"
+}

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lattice — a local-first research notebook (fictional demo)</title>
+<meta name="description" content="Lattice is a fictional local-first research notebook for independent researchers. This page is a design and interaction demonstration, not a real product.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div class="demo-banner" role="note">
+  <p><strong>Fictional product demonstration.</strong> Lattice is not a real, purchasable product. Every claim, price and screen on this page is sample content built to show a design, not a verified business.</p>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="28" height="28">
+          <rect x="2" y="2" width="12" height="12" rx="3" class="mark-a"></rect>
+          <rect x="18" y="2" width="12" height="12" rx="3" class="mark-b"></rect>
+          <rect x="2" y="18" width="12" height="12" rx="3" class="mark-b"></rect>
+          <rect x="18" y="18" width="12" height="12" rx="3" class="mark-a"></rect>
+          <line x1="14" y1="8" x2="18" y2="8" class="mark-line"></line>
+          <line x1="8" y1="14" x2="8" y2="18" class="mark-line"></line>
+          <line x1="24" y1="14" x2="24" y2="18" class="mark-line"></line>
+          <line x1="14" y1="24" x2="18" y2="24" class="mark-line"></line>
+        </svg>
+      </span>
+      <span class="brand-name">Lattice</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#workflow">Workflow</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-primary btn-small header-cta" href="#workflow">Explore the workflow</a>
+      <button type="button" class="menu-toggle" data-testid="menu-toggle" aria-expanded="false" aria-controls="mobile-nav">
+        <span class="menu-toggle-box" aria-hidden="true">
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </span>
+        <span class="visually-hidden">Menu</span>
+      </button>
+    </div>
+  </div>
+
+  <nav class="mobile-nav" id="mobile-nav" data-testid="mobile-nav" aria-label="Primary">
+    <ul>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#workflow">Workflow</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Fictional demo · local-first notebook</p>
+        <h1>Research notes that stay on your machine, linked to where they came from.</h1>
+        <p class="hero-lede">Lattice is a sample concept for independent researchers: capture notes on your own device, keep every source attached, and export to plain Markdown whenever you like &mdash; no server required to read your own work.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#workflow">Explore the workflow</a>
+          <a class="btn btn-ghost" href="#pricing">See pricing</a>
+        </div>
+        <p class="hero-note">Illustrative concept only &mdash; no account, download or purchase happens on this page.</p>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 560 420" role="img" aria-label="Illustration of the Lattice note-taking interface, showing a project sidebar, an open note with a linked source, and connected reference nodes">
+          <defs>
+            <linearGradient id="panelGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="var(--surface-1)"/>
+              <stop offset="1" stop-color="var(--surface-2)"/>
+            </linearGradient>
+          </defs>
+
+          <rect x="1" y="1" width="558" height="418" rx="0" class="art-bg"></rect>
+
+          <g transform="translate(40,40)">
+            <rect x="0" y="0" width="420" height="300" rx="14" class="window-shell"></rect>
+            <rect x="0" y="0" width="420" height="34" rx="14" class="window-bar"></rect>
+            <circle cx="18" cy="17" r="5" class="dot dot-a"></circle>
+            <circle cx="36" cy="17" r="5" class="dot dot-b"></circle>
+            <circle cx="54" cy="17" r="5" class="dot dot-c"></circle>
+            <rect x="150" y="11" width="140" height="12" rx="6" class="window-search"></rect>
+
+            <rect x="0" y="34" width="120" height="266" class="sidebar"></rect>
+            <rect x="14" y="52" width="92" height="8" rx="4" class="side-line side-title"></rect>
+            <rect x="14" y="72" width="92" height="20" rx="6" class="side-item side-item-active"></rect>
+            <rect x="14" y="100" width="92" height="20" rx="6" class="side-item"></rect>
+            <rect x="14" y="128" width="92" height="20" rx="6" class="side-item"></rect>
+            <rect x="14" y="156" width="92" height="20" rx="6" class="side-item"></rect>
+            <rect x="14" y="196" width="70" height="8" rx="4" class="side-line side-title"></rect>
+            <rect x="14" y="216" width="92" height="20" rx="6" class="side-item"></rect>
+
+            <rect x="140" y="52" width="240" height="16" rx="4" class="note-title"></rect>
+            <rect x="140" y="80" width="260" height="8" rx="4" class="note-line"></rect>
+            <rect x="140" y="96" width="240" height="8" rx="4" class="note-line"></rect>
+            <rect x="140" y="112" width="252" height="8" rx="4" class="note-line"></rect>
+            <rect x="140" y="128" width="180" height="8" rx="4" class="note-line"></rect>
+
+            <rect x="140" y="156" width="240" height="34" rx="8" class="source-chip"></rect>
+            <path d="M152 173 a5 5 0 0 1 5 -5 h6 M175 173 a5 5 0 0 0 -5 -5 h-6" class="chip-link"></path>
+            <rect x="188" y="169" width="140" height="8" rx="4" class="chip-text"></rect>
+
+            <rect x="140" y="204" width="160" height="8" rx="4" class="note-line"></rect>
+            <rect x="140" y="220" width="230" height="8" rx="4" class="note-line"></rect>
+            <rect x="140" y="236" width="200" height="8" rx="4" class="note-line"></rect>
+          </g>
+
+          <g transform="translate(452,120)" class="graph-float">
+            <circle cx="30" cy="10" r="9" class="node node-a"></circle>
+            <circle cx="6" cy="60" r="7" class="node node-b"></circle>
+            <circle cx="52" cy="72" r="7" class="node node-b"></circle>
+            <line x1="30" y1="10" x2="6" y2="60" class="edge"></line>
+            <line x1="30" y1="10" x2="52" y2="72" class="edge"></line>
+            <line x1="6" y1="60" x2="52" y2="72" class="edge"></line>
+          </g>
+
+          <g transform="translate(64,362)">
+            <rect x="0" y="0" width="150" height="30" rx="15" class="badge"></rect>
+            <text x="75" y="20" text-anchor="middle" class="badge-text">Stored on this device</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="section-inner">
+      <h2>One notebook, three everyday moves</h2>
+      <p class="section-lede">Switch between the tabs to see how capturing, connecting and exporting fit together. Each tab holds different content.</p>
+
+      <div class="tabs">
+        <div class="tablist" role="tablist" aria-label="Feature areas">
+          <button type="button" role="tab" id="tab-capture" data-testid="feature-capture" aria-selected="true" aria-controls="panel-capture" tabindex="0">Capture</button>
+          <button type="button" role="tab" id="tab-connect" data-testid="feature-connect" aria-selected="false" aria-controls="panel-connect" tabindex="-1">Connect</button>
+          <button type="button" role="tab" id="tab-export" data-testid="feature-export" aria-selected="false" aria-controls="panel-export" tabindex="-1">Export</button>
+        </div>
+
+        <div class="panels">
+          <div role="tabpanel" id="panel-capture" data-testid="panel-capture" aria-labelledby="tab-capture" tabindex="0">
+            <h3>Capture without losing your place</h3>
+            <p>New notes open in a plain text editor that lives entirely on your device. Headings, lists and code blocks are written in Markdown as you type, so a note looks the same whether you view it in Lattice or in a plain text editor later.</p>
+            <ul class="feature-points">
+              <li>Notes save to local files, not to a remote inbox.</li>
+              <li>Reusable project templates give a new note a starting structure &mdash; headings for a claim, evidence and open questions.</li>
+              <li>Nothing here requires a network connection to work.</li>
+            </ul>
+          </div>
+
+          <div role="tabpanel" id="panel-connect" data-testid="panel-connect" aria-labelledby="tab-connect" tabindex="0">
+            <h3>Keep the source next to the claim</h3>
+            <p>Every note can carry one or more source links &mdash; a paper, a page, a dataset &mdash; shown alongside the text instead of buried in a separate bibliography file.</p>
+            <ul class="feature-points">
+              <li>Source links display next to the note they support, not in a detached reference list.</li>
+              <li>Linked notes form a small map of how ideas connect within one project.</li>
+              <li>An optional local full-text search looks across notes and their attached links on your device.</li>
+            </ul>
+          </div>
+
+          <div role="tabpanel" id="panel-export" data-testid="panel-export" aria-labelledby="tab-export" tabindex="0">
+            <h3>Leave whenever you want</h3>
+            <p>A notebook is a folder of Markdown files on disk. Export turns any note, or an entire project, into plain <code>.md</code> files you can open, move, or hand to another tool.</p>
+            <ul class="feature-points">
+              <li>Markdown export keeps headings, lists and source links intact as readable text.</li>
+              <li>Exported files are the backup: copy them anywhere you keep files today.</li>
+              <li>There is no lock-in format &mdash; what you exported stays yours to open with anything that reads Markdown.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="workflow" id="workflow">
+    <div class="section-inner">
+      <h2>A three-step workflow</h2>
+      <p class="section-lede">The same shape for a short literature scan or a long-running project.</p>
+
+      <ol class="steps">
+        <li class="step">
+          <span class="step-number" aria-hidden="true">1</span>
+          <h3>Start from a template</h3>
+          <p>Pick a project template &mdash; literature review, methods log, or a blank notebook &mdash; so every new project starts with the same headings you already trust.</p>
+        </li>
+        <li class="step">
+          <span class="step-number" aria-hidden="true">2</span>
+          <h3>Capture and attach sources</h3>
+          <p>Write notes as you read, attaching the source link to each claim so the evidence trail stays visible next to the note, not in a separate file.</p>
+        </li>
+        <li class="step">
+          <span class="step-number" aria-hidden="true">3</span>
+          <h3>Export what you need</h3>
+          <p>When it's time to write up, draft, or move on, export the notes you need to Markdown and take them into any editor, manuscript tool, or archive.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="pricing" id="pricing">
+    <div class="section-inner">
+      <h2>Two plans</h2>
+      <p class="section-lede">Fictional prices for this demonstration only &mdash; nothing here can be purchased.</p>
+
+      <div class="billing-toggle" role="group" aria-label="Billing period">
+        <button type="button" class="billing-btn is-active" data-testid="billing-monthly" aria-pressed="true">Monthly</button>
+        <button type="button" class="billing-btn" data-testid="billing-yearly" aria-pressed="false">Yearly</button>
+      </div>
+
+      <div class="plans">
+        <article class="plan">
+          <h3>Solo</h3>
+          <p class="plan-desc">For one researcher working across one or many personal projects.</p>
+          <p class="plan-price" aria-live="polite"><span data-testid="price-solo">$12/mo</span></p>
+          <ul class="plan-features">
+            <li>Unlimited local notebooks</li>
+            <li>Source links on every note</li>
+            <li>Markdown export, anytime</li>
+            <li>Reusable project templates</li>
+            <li>Optional local full-text search</li>
+          </ul>
+          <a class="btn btn-outline" href="#workflow">See the workflow</a>
+        </article>
+
+        <article class="plan plan-featured">
+          <p class="plan-flag">Most explored in this demo</p>
+          <h3>Studio</h3>
+          <p class="plan-desc">For a small group of independent researchers who share templates.</p>
+          <p class="plan-price" aria-live="polite"><span data-testid="price-studio">$29/mo</span></p>
+          <ul class="plan-features">
+            <li>Everything in Solo</li>
+            <li>Shared project templates</li>
+            <li>Per-project source maps</li>
+            <li>Priority template updates</li>
+            <li>Multiple device profiles</li>
+          </ul>
+          <a class="btn btn-primary" href="#workflow">See the workflow</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="section-inner">
+      <h2>Frequently asked questions</h2>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary data-testid="faq-0">Where are my notes actually stored?</summary>
+          <div class="faq-answer"><p>On your own device. Notes are kept as local files, not on a remote server operated by Lattice.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary data-testid="faq-1">Can I get my notes out in a plain format?</summary>
+          <div class="faq-answer"><p>Yes. Any note or project can be exported to Markdown, a plain-text format you can open in other editors.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary data-testid="faq-2">How do backups work?</summary>
+          <div class="faq-answer"><p>Backups are files you export yourself and store wherever you keep files today. Lattice does not promise an automatic cloud backup.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary data-testid="faq-3">What happens to my notes if I cancel?</summary>
+          <div class="faq-answer"><p>Cancelling has no effect on files you have already exported &mdash; those Markdown files remain yours on whatever device or drive you saved them to.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="section-inner footer-inner">
+    <p class="footer-brand">Lattice &mdash; fictional demo</p>
+    <p class="footer-note">This page demonstrates a design and a set of interactions for a made-up product. It is not a real company, app, or offer, and no purchase, account, or data collection happens here.</p>
+  </div>
+</footer>
+
+<script src="app.js" defer></script>
+</body>
+</html>

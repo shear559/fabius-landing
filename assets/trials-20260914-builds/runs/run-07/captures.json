@@ -1,0 +1,350 @@
+{
+ "schemaVersion": 1,
+ "runId": "run-07",
+ "kind": "app",
+ "startedAt": "2026-09-14T19:46:17.046Z",
+ "helperSha256": "2448fa17cc9a54989a8ae7134baa2bfda9ee4cca000603582a3ce873d3c54f4a",
+ "source": {
+  "files": [
+   {
+    "file": "app.js",
+    "bytes": 36323,
+    "sha256": "0ace8ed1cedb7aa93b6bdd48bfd740b95fa2f8bdd32026b63241dd1f900a845a"
+   },
+   {
+    "file": "BRIEF.md",
+    "bytes": 4518,
+    "sha256": "7116b83075469f773ce51f72f708041e221d97b2b055d75cb309f0ff39239d1d"
+   },
+   {
+    "file": "index.html",
+    "bytes": 5633,
+    "sha256": "d952e92acb12e4de1b443c4cbfc5892f4880ac6b0da4159eb740fb4c4becb969"
+   },
+   {
+    "file": "README.md",
+    "bytes": 7589,
+    "sha256": "81400fc3c879a0acec4a52b00db8c473a031d3f68d45f95950148447f1a86a2f"
+   },
+   {
+    "file": "styles.css",
+    "bytes": 12979,
+    "sha256": "c2d79adebe7546d2d543f8982cc024188d15d0c794ca3878718be7c5f45ee834"
+   }
+  ],
+  "treeSha256": "00311805b255470a6bfae73d29ee67a026300b547d9abbf256353f4e7169c68b"
+ },
+ "policy": {
+  "presentation": "Composed walkthrough from captured states; not a recording of model generation.",
+  "browser": "Google Chrome",
+  "desktopViewport": {
+   "width": 1440,
+   "height": 960
+  },
+  "mobileViewport": {
+   "width": 360,
+   "height": 800
+  },
+  "deviceScaleFactor": 1,
+  "fullPage": false,
+  "reducedMotion": "reduce",
+  "screenshotAnimations": "disabled",
+  "freshContexts": true,
+  "externalRequests": "blocked",
+  "candidateEdits": false,
+  "scoresProvided": false
+ },
+ "snapshots": [
+  {
+   "id": "initial",
+   "label": "Desktop first visit \u2014 untouched initial output",
+   "file": "initial.png",
+   "actionSucceeded": true,
+   "observed": {
+    "httpStatus": 200,
+    "freshStorage": true,
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Skip to task board\nFieldnote Board\n\nLocal-first task tracking for a small project team\n\n+\nNew task\nSearch\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nFieldnote Board\nHarvest Ledger\nOrchard Kiosk\nPriority\nAll priorities\nLow\nMedium\nHigh\nExport JSON\nImport JSON\nShowing all 8 tasks.\nDesign onboarding flow wireframes\nHIGH\n\nOrchard Kiosk\n\nDue Sep 20, 2026\n\ndesign\nonboarding\nStatus for Design onboarding flow wireframes\nTo do\nDoing\nDone\nEdit\nDelete\nWire up offline sync queue\nHIGH\n\nOrchard Kiosk\n\nDue Sep 25, 2026\n\nsync\noffline\nStatus for Wire up offline sync queue\nTo do\nDoing\nDone\nEdit\nDelete\nFix crash on tag import\nMEDIUM\n\nFieldnote Board\n\nDue Sep 16, 2026\n\nbug\nimport\nStatus for Fix crash on tag import\nTo do\nDoing\nDone\nEdit\nDelete\nWrite release notes for v1.2\nLOW\n\nFieldnote Board\n\ndocs\nStatus for Write release notes for v1.2\nTo do\nDoing\nDone\nEdit\nDelete\nSpike: migrate task store to IndexedDB\nMEDIUM\n\nFieldnote Board\n\nDue Oct 1, 2026\n\nresearch\nstorage\nStatus for Spike: migrate task store to IndexedDB\nTo do\nDoing\nDone\nEdit\nDelete\nSynthesize user interview notes\nMEDIUM\n\nOrchard Kiosk\n\nDue Sep 10, 2026\n\nresearch\nux\nStatus for Synthesize user interview notes\nTo do\nDoing\nDone\nEdit\nDelete\nSet up staging environment\nLOW\n\nHarvest Ledger\n\nDue Sep 5, 2026\n\nops\nStatus for Set up staging environment\nTo do\nDoing\nDone\nEdit\nDelete\nAccessibility audit pass\nHIGH\n\nFieldnote Board\n\nDue Sep 18, 2026\n\na11y\nreview\nStatus for Accessibility audit pass\nTo do\nDoing\nDone\nEdit\nDelete",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T19:46:19.200Z",
+   "actionStartedAt": "2026-09-14T19:46:18.420Z",
+   "sha256": "d9c502e2068fd2737580bd686c018a18d47854d63c47fade9a5e7dbf54e879f9",
+   "bytes": 126694
+  },
+  {
+   "id": "new-task-form",
+   "label": "New task form opened",
+   "file": "new-task-form.png",
+   "actionSucceeded": true,
+   "observed": {
+    "visible": true,
+    "fields": [
+     {
+      "name": "id",
+      "type": "hidden",
+      "value": ""
+     },
+     {
+      "name": "title",
+      "type": "text",
+      "value": ""
+     },
+     {
+      "name": "project",
+      "type": "text",
+      "value": ""
+     },
+     {
+      "name": "status",
+      "type": "select-one",
+      "value": "todo"
+     },
+     {
+      "name": "priority",
+      "type": "select-one",
+      "value": "medium"
+     },
+     {
+      "name": "dueDate",
+      "type": "date",
+      "value": ""
+     },
+     {
+      "name": "tags",
+      "type": "text",
+      "value": ""
+     }
+    ],
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Skip to task board\nFieldnote Board\n\nLocal-first task tracking for a small project team\n\n+\nNew task\nSearch\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nFieldnote Board\nHarvest Ledger\nOrchard Kiosk\nPriority\nAll priorities\nLow\nMedium\nHigh\nExport JSON\nImport JSON\nShowing all 8 tasks.\nDesign onboarding flow wireframes\nHIGH\n\nOrchard Kiosk\n\nDue Sep 20, 2026\n\ndesign\nonboarding\nStatus for Design onboarding flow wireframes\nTo do\nDoing\nDone\nEdit\nDelete\nWire up offline sync queue\nHIGH\n\nOrchard Kiosk\n\nDue Sep 25, 2026\n\nsync\noffline\nStatus for Wire up offline sync queue\nTo do\nDoing\nDone\nEdit\nDelete\nFix crash on tag import\nMEDIUM\n\nFieldnote Board\n\nDue Sep 16, 2026\n\nbug\nimport\nStatus for Fix crash on tag import\nTo do\nDoing\nDone\nEdit\nDelete\nWrite release notes for v1.2\nLOW\n\nFieldnote Board\n\ndocs\nStatus for Write release notes for v1.2\nTo do\nDoing\nDone\nEdit\nDelete\nSpike: migrate task store to IndexedDB\nMEDIUM\n\nFieldnote Board\n\nDue Oct 1, 2026\n\nresearch\nstorage\nStatus for Spike: migrate task store to IndexedDB\nTo do\nDoing\nDone\nEdit\nDelete\nSynthesize user interview notes\nMEDIUM\n\nOrchard Kiosk\n\nDue Sep 10, 2026\n\nresearch\nux\nStatus for Synthesize user interview notes\nTo do\nDoing\nDone\nEdit\nDelete\nSet up staging environment\nLOW\n\nHarvest Ledger\n\nDue Sep 5, 2026\n\nops\nStatus for Set up staging environment\nTo do\nDoing\nDone\nEdit\nDelete\nAccessibility audit pass\nHIGH\n\nFieldnote Board\n\nDue Sep 18, 2026\n\na11y\nreview\nStatus for Accessibility audit pass\nTo do\nDoing\nDone\nEdit\nDelete\nNew task\n\u00d7\nTitle\nProject\nStatus\nTo do\nDoing\nDone\nPriority\nLow\nMedium\nHigh\nDue date\nTags (comma-separated, up to 8)\nCancel\nSave task",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T19:46:19.943Z",
+   "actionStartedAt": "2026-09-14T19:46:19.573Z",
+   "sha256": "dac7a41c2aff9dcae12d549aa092a115f148f16c8b854e242b6e799f7ea1c41b",
+   "bytes": 116221
+  },
+  {
+   "id": "after-create",
+   "label": "Review launch evidence created and present in saved board",
+   "file": "after-create.png",
+   "actionSucceeded": true,
+   "observed": {
+    "requested": {
+     "title": "Review launch evidence",
+     "project": "Research",
+     "status": "doing",
+     "priority": "high",
+     "dueDate": "2026-09-20",
+     "tags": "evidence,launch"
+    },
+    "storageError": null,
+    "matchingRecords": [
+     {
+      "id": "t_mu1nlhr3_trtiivw",
+      "title": "Review launch evidence",
+      "project": "Research",
+      "status": "doing",
+      "priority": "high",
+      "dueDate": "2026-09-20",
+      "tags": [
+       "evidence",
+       "launch"
+      ]
+     }
+    ],
+    "rendered": true,
+    "visibleCards": [
+     {
+      "id": "seed-1",
+      "text": "Design onboarding flow wireframes\nHIGH\n\nOrchard Kiosk\n\nDue Sep 20, 2026\n\ndesign\nonboarding\nStatus for Design onboarding flow wireframes\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "seed-2",
+      "text": "Wire up offline sync queue\nHIGH\n\nOrchard Kiosk\n\nDue Sep 25, 2026\n\nsync\noffline\nStatus for Wire up offline sync queue\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "seed-3",
+      "text": "Fix crash on tag import\nMEDIUM\n\nFieldnote Board\n\nDue Sep 16, 2026\n\nbug\nimport\nStatus for Fix crash on tag import\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "seed-4",
+      "text": "Write release notes for v1.2\nLOW\n\nFieldnote Board\n\ndocs\nStatus for Write release notes for v1.2\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "seed-5",
+      "text": "Spike: migrate task store to IndexedDB\nMEDIUM\n\nFieldnote Board\n\nDue Oct 1, 2026\n\nresearch\nstorage\nStatus for Spike: migrate task store to IndexedDB\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "seed-6",
+      "text": "Synthesize user interview notes\nMEDIUM\n\nOrchard Kiosk\n\nDue Sep 10, 2026\n\nresearch\nux\nStatus for Synthesize user interview notes\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "seed-7",
+      "text": "Set up staging environment\nLOW\n\nHarvest Ledger\n\nDue Sep 5, 2026\n\nops\nStatus for Set up staging environment\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "seed-8",
+      "text": "Accessibility audit pass\nHIGH\n\nFieldnote Board\n\nDue Sep 18, 2026\n\na11y\nreview\nStatus for Accessibility audit pass\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "t_mu1nlhr3_trtiivw",
+      "text": "Review launch evidence\nHIGH\n\nResearch\n\nDue Sep 20, 2026\n\nevidence\nlaunch\nStatus for Review launch evidence\nTo do\nDoing\nDone\nEdit\nDelete"
+     }
+    ],
+    "beforeStorageSha256": "f8da59fba96437a4063c3025550f6c84195c480c8c299d2d34a352891428ab95",
+    "afterStorageSha256": "ce3ed8e8412ffabfd1a3b9b50b35dc2f85608c629a7e961eddb6ec52b64db3da",
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 49
+     },
+     "documentWidth": 1440,
+     "visibleText": "Skip to task board\nFieldnote Board\n\nLocal-first task tracking for a small project team\n\n+\nNew task\nSearch\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nFieldnote Board\nHarvest Ledger\nOrchard Kiosk\nResearch\nPriority\nAll priorities\nLow\nMedium\nHigh\nExport JSON\nImport JSON\nShowing all 9 tasks.\nDesign onboarding flow wireframes\nHIGH\n\nOrchard Kiosk\n\nDue Sep 20, 2026\n\ndesign\nonboarding\nStatus for Design onboarding flow wireframes\nTo do\nDoing\nDone\nEdit\nDelete\nWire up offline sync queue\nHIGH\n\nOrchard Kiosk\n\nDue Sep 25, 2026\n\nsync\noffline\nStatus for Wire up offline sync queue\nTo do\nDoing\nDone\nEdit\nDelete\nFix crash on tag import\nMEDIUM\n\nFieldnote Board\n\nDue Sep 16, 2026\n\nbug\nimport\nStatus for Fix crash on tag import\nTo do\nDoing\nDone\nEdit\nDelete\nWrite release notes for v1.2\nLOW\n\nFieldnote Board\n\ndocs\nStatus for Write release notes for v1.2\nTo do\nDoing\nDone\nEdit\nDelete\nSpike: migrate task store to IndexedDB\nMEDIUM\n\nFieldnote Board\n\nDue Oct 1, 2026\n\nresearch\nstorage\nStatus for Spike: migrate task store to IndexedDB\nTo do\nDoing\nDone\nEdit\nDelete\nSynthesize user interview notes\nMEDIUM\n\nOrchard Kiosk\n\nDue Sep 10, 2026\n\nresearch\nux\nStatus for Synthesize user interview notes\nTo do\nDoing\nDone\nEdit\nDelete\nSet up staging environment\nLOW\n\nHarvest Ledger\n\nDue Sep 5, 2026\n\nops\nStatus for Set up staging environment\nTo do\nDoing\nDone\nEdit\nDelete\nAccessibility audit pass\nHIGH\n\nFieldnote Board\n\nDue Sep 18, 2026\n\na11y\nreview\nStatus for Accessibility audit pass\nTo do\nDoing\nDone\nEdit\nDelete\nReview launch evidence\nHIGH\n\nResearch\n\nDue Sep 20, 2026\n\nevidence\nlaunch\nStatus for Review launch evidence\nTo do\nDoing\nDone\nEdit\nDelete\nTask created.",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T19:46:20.708Z",
+   "actionStartedAt": "2026-09-14T19:46:20.159Z",
+   "sha256": "93f03a71610eb1a30abe199f2cc2490e3813a969c84c8578960d7a2c4cefbaea",
+   "bytes": 140183
+  },
+  {
+   "id": "search",
+   "label": "Search for Review launch evidence; matching task shown",
+   "file": "search.png",
+   "actionSucceeded": true,
+   "observed": {
+    "search": "Review launch evidence",
+    "visibleCards": [
+     {
+      "id": "t_mu1nlhr3_trtiivw",
+      "text": "Review launch evidence\nHIGH\n\nResearch\n\nDue Sep 20, 2026\n\nevidence\nlaunch\nStatus for Review launch evidence\nTo do\nDoing\nDone\nEdit\nDelete"
+     }
+    ],
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Skip to task board\nFieldnote Board\n\nLocal-first task tracking for a small project team\n\n+\nNew task\nSearch\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nFieldnote Board\nHarvest Ledger\nOrchard Kiosk\nResearch\nPriority\nAll priorities\nLow\nMedium\nHigh\nExport JSON\nImport JSON\nShowing 1 of 9 tasks.\nReview launch evidence\nHIGH\n\nResearch\n\nDue Sep 20, 2026\n\nevidence\nlaunch\nStatus for Review launch evidence\nTo do\nDoing\nDone\nEdit\nDelete\nTask created.",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T19:46:21.280Z",
+   "actionStartedAt": "2026-09-14T19:46:20.886Z",
+   "sha256": "833298cadbd55f8bc56e9a7101de0d73590c76738e2e150131d597858da4e412",
+   "bytes": 50808
+  },
+  {
+   "id": "import-error",
+   "label": "Malformed JSON selected; visible error and saved board unchanged",
+   "file": "import-error.png",
+   "actionSucceeded": true,
+   "observed": {
+    "formDismissed": false,
+    "confirmation": {
+     "clicked": false
+    },
+    "dialogs": [],
+    "newVisibleFeedback": [
+     "Import failed: the file is not valid JSON."
+    ],
+    "nativeError": false,
+    "storageUnchanged": true,
+    "beforeStorageSha256": "ce3ed8e8412ffabfd1a3b9b50b35dc2f85608c629a7e961eddb6ec52b64db3da",
+    "afterStorageSha256": "ce3ed8e8412ffabfd1a3b9b50b35dc2f85608c629a7e961eddb6ec52b64db3da",
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Skip to task board\nFieldnote Board\n\nLocal-first task tracking for a small project team\n\n+\nNew task\nSearch\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nFieldnote Board\nHarvest Ledger\nOrchard Kiosk\nResearch\nPriority\nAll priorities\nLow\nMedium\nHigh\nExport JSON\nImport JSON\nShowing all 9 tasks.\nDesign onboarding flow wireframes\nHIGH\n\nOrchard Kiosk\n\nDue Sep 20, 2026\n\ndesign\nonboarding\nStatus for Design onboarding flow wireframes\nTo do\nDoing\nDone\nEdit\nDelete\nWire up offline sync queue\nHIGH\n\nOrchard Kiosk\n\nDue Sep 25, 2026\n\nsync\noffline\nStatus for Wire up offline sync queue\nTo do\nDoing\nDone\nEdit\nDelete\nFix crash on tag import\nMEDIUM\n\nFieldnote Board\n\nDue Sep 16, 2026\n\nbug\nimport\nStatus for Fix crash on tag import\nTo do\nDoing\nDone\nEdit\nDelete\nWrite release notes for v1.2\nLOW\n\nFieldnote Board\n\ndocs\nStatus for Write release notes for v1.2\nTo do\nDoing\nDone\nEdit\nDelete\nSpike: migrate task store to IndexedDB\nMEDIUM\n\nFieldnote Board\n\nDue Oct 1, 2026\n\nresearch\nstorage\nStatus for Spike: migrate task store to IndexedDB\nTo do\nDoing\nDone\nEdit\nDelete\nSynthesize user interview notes\nMEDIUM\n\nOrchard Kiosk\n\nDue Sep 10, 2026\n\nresearch\nux\nStatus for Synthesize user interview notes\nTo do\nDoing\nDone\nEdit\nDelete\nSet up staging environment\nLOW\n\nHarvest Ledger\n\nDue Sep 5, 2026\n\nops\nStatus for Set up staging environment\nTo do\nDoing\nDone\nEdit\nDelete\nAccessibility audit pass\nHIGH\n\nFieldnote Board\n\nDue Sep 18, 2026\n\na11y\nreview\nStatus for Accessibility audit pass\nTo do\nDoing\nDone\nEdit\nDelete\nReview launch evidence\nHIGH\n\nResearch\n\nDue Sep 20, 2026\n\nevidence\nlaunch\nStatus for Review launch evidence\nTo do\nDoing\nDone\nEdit\nDelete\nImport failed: the file is not valid JSON.",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-14T19:46:21.858Z",
+   "actionStartedAt": "2026-09-14T19:46:21.442Z",
+   "sha256": "d6541c8c3f55c7f8e0752a357e0cc8275e02a2c4dca56d72382841be9d62fb91",
+   "bytes": 140779
+  }
+ ],
+ "mobilefile": "mobile-initial.png",
+ "mobile": {
+  "id": "mobile-initial",
+  "label": "Mobile first visit \u2014 separate fresh context",
+  "file": "mobile-initial.png",
+  "sha256": "1bdcfc2e0a4dbfd00d9526e4058d9ef8e69b5632169f389bdc5708bb74b4f3e4",
+  "bytes": 41542,
+  "actionSucceeded": true,
+  "observed": {
+   "httpStatus": 200,
+   "freshStorage": true,
+   "render": {
+    "path": "/nested/benchmark/",
+    "viewport": {
+     "width": 360,
+     "height": 800
+    },
+    "scroll": {
+     "x": 0,
+     "y": 0
+    },
+    "documentWidth": 360,
+    "visibleText": "Skip to task board\nFieldnote Board\n\nLocal-first task tracking for a small project team\n\n+\nNew task\nSearch\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nFieldnote Board\nHarvest Ledger\nOrchard Kiosk\nPriority\nAll priorities\nLow\nMedium\nHigh\nExport JSON\nImport JSON\nShowing all 8 tasks.\nDesign onboarding flow wireframes\nHIGH\n\nOrchard Kiosk\n\nDue Sep 20, 2026\n\ndesign\nonboarding\nStatus for Design onboarding flow wireframes\nTo do\nDoing\nDone\nEdit\nDelete\nWire up offline sync queue\nHIGH\n\nOrchard Kiosk\n\nDue Sep 25, 2026\n\nsync\noffline\nStatus for Wire up offline sync queue\nTo do\nDoing\nDone\nEdit\nDelete\nFix crash on tag import\nMEDIUM\n\nFieldnote Board\n\nDue Sep 16, 2026\n\nbug\nimport\nStatus for Fix crash on tag import\nTo do\nDoing\nDone\nEdit\nDelete\nWrite release notes for v1.2\nLOW\n\nFieldnote Board\n\ndocs\nStatus for Write release notes for v1.2\nTo do\nDoing\nDone\nEdit\nDelete\nSpike: migrate task store to IndexedDB\nMEDIUM\n\nFieldnote Board\n\nDue Oct 1, 2026\n\nresearch\nstorage\nStatus for Spike: migrate task store to IndexedDB\nTo do\nDoing\nDone\nEdit\nDelete\nSynthesize user interview notes\nMEDIUM\n\nOrchard Kiosk\n\nDue Sep 10, 2026\n\nresearch\nux\nStatus for Synthesize user interview notes\nTo do\nDoing\nDone\nEdit\nDelete\nSet up staging environment\nLOW\n\nHarvest Ledger\n\nDue Sep 5, 2026\n\nops\nStatus for Set up staging environment\nTo do\nDoing\nDone\nEdit\nDelete\nAccessibility audit pass\nHIGH\n\nFieldnote Board\n\nDue Sep 18, 2026\n\na11y\nreview\nStatus for Accessibility audit pass\nTo do\nDoing\nDone\nEdit\nDelete",
+    "brokenVisibleImages": []
+   }
+  }
+ },
+ "missingStates": [],
+ "captureFailures": [],
+ "actionErrors": [],
+ "infrastructureErrors": [],
+ "console": [],
+ "network": [],
+ "dialogs": [],
+ "browserVersion": "152.0.7977.83",
+ "sourceAfterTreeSha256": "00311805b255470a6bfae73d29ee67a026300b547d9abbf256353f4e7169c68b",
+ "sourceUnchanged": true,
+ "finishedAt": "2026-09-14T19:46:23.709Z"
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fieldnote Board</title>
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+<noscript>
+  <div class="noscript-notice">
+    Fieldnote Board needs JavaScript to run. Please enable JavaScript in your browser settings and reload this page.
+  </div>
+</noscript>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<div id="app" class="app" hidden>
+
+  <header class="app-header">
+    <div class="brand">
+      <h1>Fieldnote Board</h1>
+      <p class="tagline">Local-first task tracking for a small field team. Everything here stays on this device.</p>
+    </div>
+    <div class="header-actions">
+      <button type="button" id="create-task-btn" data-testid="create-task" class="btn btn-primary">
+        <span aria-hidden="true">+</span> New task
+      </button>
+      <button type="button" id="export-btn" data-testid="export" class="btn btn-secondary">Export JSON</button>
+      <label class="btn btn-secondary file-label" for="import-file-input">
+        Import JSON
+        <input type="file" id="import-file-input" data-testid="import-file" accept="application/json,.json" class="file-input" />
+      </label>
+    </div>
+  </header>
+
+  <div id="banners" class="banners"></div>
+
+  <main id="main-content" class="app-main">
+
+    <section class="toolbar" aria-label="Search and filter tasks">
+      <div class="field search-field">
+        <label for="search-input">Search tasks</label>
+        <input type="search" id="search-input" data-testid="search" placeholder="Search title, project or tags…" autocomplete="off" />
+      </div>
+      <div class="field">
+        <label for="filter-status">Status</label>
+        <select id="filter-status" data-testid="filter-status">
+          <option value="all">All statuses</option>
+          <option value="todo">To do</option>
+          <option value="doing">Doing</option>
+          <option value="done">Done</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="filter-project">Project</label>
+        <select id="filter-project" data-testid="filter-project">
+          <option value="all">All projects</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="filter-priority">Priority</label>
+        <select id="filter-priority" data-testid="filter-priority">
+          <option value="all">All priorities</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+      </div>
+      <p class="result-count" id="result-count" role="status" aria-live="polite"></p>
+    </section>
+
+    <section id="board" class="board" aria-label="Task columns">
+      <!-- columns rendered by app.js -->
+    </section>
+
+  </main>
+
+  <div id="modal-root"></div>
+</div>
+
+<template id="task-form-template">
+  <div class="modal-overlay" data-modal-overlay>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="task-form-heading">
+      <div class="modal-header">
+        <h2 id="task-form-heading">New task</h2>
+        <button type="button" class="icon-btn" data-action="close-modal" aria-label="Close form">✕</button>
+      </div>
+      <form data-testid="task-form" novalidate>
+        <p class="form-error" data-form-error hidden></p>
+
+        <div class="field">
+          <label for="field-title">Title</label>
+          <input id="field-title" name="title" type="text" maxlength="120" required aria-describedby="error-title" />
+          <p class="error-text" id="error-title" data-error-for="title"></p>
+        </div>
+
+        <div class="field">
+          <label for="field-project">Project</label>
+          <input id="field-project" name="project" type="text" maxlength="80" required aria-describedby="error-project" />
+          <p class="error-text" id="error-project" data-error-for="project"></p>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="field-status">Status</label>
+            <select id="field-status" name="status">
+              <option value="todo">To do</option>
+              <option value="doing">Doing</option>
+              <option value="done">Done</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="field-priority">Priority</label>
+            <select id="field-priority" name="priority">
+              <option value="low">Low</option>
+              <option value="medium" selected>Medium</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="field-dueDate">Due date <span class="optional">(optional)</span></label>
+          <input id="field-dueDate" name="dueDate" type="date" aria-describedby="error-dueDate" />
+          <p class="error-text" id="error-dueDate" data-error-for="dueDate"></p>
+        </div>
+
+        <div class="field">
+          <label for="field-tags">Tags <span class="optional">(comma-separated, up to 8)</span></label>
+          <input id="field-tags" name="tags" type="text" placeholder="e.g. fieldwork, urgent" aria-describedby="error-tags" />
+          <p class="error-text" id="error-tags" data-error-for="tags"></p>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary" data-action="close-modal">Cancel</button>
+          <button type="submit" class="btn btn-primary" data-testid="save-task">Save task</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</template>
+
+<script src="./app.js"></script>
+</body>
+</html>

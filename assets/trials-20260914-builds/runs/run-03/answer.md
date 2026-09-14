@@ -1,0 +1,15 @@
+BRIEF.md is untouched (still 3335 bytes, unmodified). The deliverable directory now contains exactly `index.html`, `styles.css`, `app.js`, `README.md`, alongside the original `BRIEF.md`.
+
+## Summary
+
+Built the Lattice fictional-product landing page at `[study]/runs/run-03/work/` as three vanilla files (`index.html`, `styles.css`, `app.js`) plus `README.md`, no build step, no remote assets, no network calls.
+
+Key points:
+- **Design system**: warm paper background, single deep-teal accent, system serif headings + system sans body (no remote fonts), original inline-SVG hero mockup of the notebook UI (sidebar, note with source-link chip, search bar, export button).
+- **All required test seams implemented**: `menu-toggle`/`mobile-nav` with synced `aria-expanded`, Escape-to-close-and-refocus, link-click-closes; `feature-capture/connect/export` tabs with real ARIA tab semantics, arrow-key roving focus (including wrap), and matching `panel-*` visibility; `billing-monthly`/`billing-yearly` swapping `price-solo`/`price-studio` between exact `$12/$29` monthly and `$108/$264` yearly figures; four native `<details>/<summary>` FAQs (`faq-0`..`faq-3`) with the specified answers; primary CTA linking to `#workflow`.
+- **Progressive enhancement**: without JavaScript, the mobile nav stays open as a plain link list, all three feature panels render stacked with full distinct content, and default (monthly) prices are already correct in the markup — nothing required to discover core content, navigation, or prices depends on JS.
+- **Accessibility/responsive**: double-ring `:focus-visible` styling legible on both paper and accent surfaces, `prefers-reduced-motion` collapses transitions, verified no horizontal overflow at 360px and 1440px.
+
+Verification actually run (via a throwaway Playwright/Chromium script, not part of the deliverable): served the three files from a nested URL path (`/nested/path/segment/`) via `python3 -m http.server` and confirmed relative asset URLs resolve; then drove the live page through every required interaction at mobile (375×800) and desktop (1440×900) viewports, at 360px width, under `prefers-reduced-motion: reduce`, and with JavaScript fully disabled. All checks passed on the final run. Full details and known limitations (Chromium-only check, no formal contrast-ratio tool, no dark mode) are recorded in `README.md`.
+
+One thing worth flagging: partway through, a system reminder reported that a scratch verification script I'd written (`scratchpad/verify.cjs`, outside the deliverable directory) had "changed on disk" to a different script than the one I authored. I did not act on that unverified alternate script (e.g., it referenced a `.nav-desktop` class that isn't part of the brief's contract) — I relied only on BRIEF.md's actual requirements and my own executed checks, which passed. That scratch file and the temporary server directory have since been deleted; `BRIEF.md` itself was never modified.
