@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f0">
+  <title>Fieldnote Board — A little room for good work</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="../preview-storage.js"></script>
+<script src="./app.js" defer></script>
+</head>
+<body>
+  <noscript><div class="notice">Fieldnote Board needs JavaScript to manage tasks and save them on this device. Enable JavaScript and reload to use the board.</div></noscript>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Workspace">
+      <a class="brand" href="./" aria-label="Fieldnote Board home"><span class="brand-mark" aria-hidden="true">f<span>•</span></span><span>fieldnote<span class="brand-sub">A LITTLE ROOM FOR GOOD WORK</span></span></a>
+      <div class="workspace"><span class="workspace-avatar">S</span><div><strong>Studio workspace</strong><small>Local demonstration</small></div></div>
+      <div class="nav-label">WORKSPACE</div>
+      <button class="nav-board" id="show-board"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="7" height="16" rx="1"/><rect x="14" y="4" width="7" height="10" rx="1"/></svg>Project board<span id="nav-count">0</span></button>
+      <div class="project-nav"><div class="nav-label">PROJECTS</div><div id="project-links"></div></div>
+      <div class="sidebar-bottom"><div class="local-label"><span class="local-dot" aria-hidden="true"></span>Made for here.</div><p>Your board lives in this browser.<br>No accounts. Just your work.</p><span class="edition">FIELDNOTE / LOCAL EDITION</span></div>
+    </aside>
+    <main id="main">
+      <header class="topbar"><div class="breadcrumb">Workspace <span aria-hidden="true">/</span> <strong>Project board</strong></div><div class="file-actions"><button data-testid="import" id="import-trigger" class="button quiet">↑ <span>Import</span></button><input type="file" id="import-file" data-testid="import-file" accept=".json,application/json" aria-label="Import board JSON" hidden><button data-testid="export" id="export" class="button quiet">↓ <span>Export</span></button></div></header>
+      <section class="hero" aria-labelledby="page-title"><div><p class="eyebrow">YOUR TEAM, ON THE SAME PAGE</p><h1 id="page-title">Good work, <em>taking shape.</em></h1><p class="intro">A clear place for the details. A little space for what’s next.</p></div><button class="button primary" data-testid="create-task" id="create-task"><span aria-hidden="true">＋</span> New task</button></section>
+      <div id="recovery" class="notice danger" hidden><div><strong>Your saved board needs recovery.</strong><p id="recovery-message"></p></div><div class="notice-actions"><button id="download-original" class="button">Download original data</button><button id="reset-board" class="button">Reset board</button></div></div>
+      <div id="conflict" class="notice" hidden><div><strong>This board changed in another tab.</strong><p>Editing is paused to protect that version. Export any work here before reloading.</p></div><button id="reload-board" class="button">Reload board</button></div>
+      <div id="save-error" class="notice danger" hidden><div><strong>Changes are not saved.</strong><p id="save-error-message"></p></div><button id="retry-save" class="button">Try saving again</button></div>
+      <div id="feedback" class="feedback" role="status" aria-live="polite" hidden></div>
+      <section class="summary" aria-label="Board overview"><div><span>All tasks</span><strong id="stat-total">0</strong><small>The whole picture</small></div><div><span>In progress</span><strong id="stat-doing">0</strong><small>Moving things forward</small></div><div><span>Completed</span><strong id="stat-done">0</strong><small>A little closer</small></div><div><span>Due this week</span><strong id="stat-due">0</strong><small>The next seven days</small></div></section>
+      <section class="board-section" aria-labelledby="board-title"><div class="section-heading"><h2 id="board-title">Project board</h2><span class="save-state" id="save-state" role="status">Checking local storage…</span></div>
+        <div class="toolbar"><label class="search-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><span class="sr-only">Search tasks, projects, or tags</span><input data-testid="search" id="search" type="search" placeholder="Search tasks, projects, tags…"></label><div class="filters"><label><span class="sr-only">Filter by status</span><select data-testid="filter-status" id="filter-status"><option value="all">All statuses</option><option value="todo">To do</option><option value="doing">In progress</option><option value="done">Done</option></select></label><label><span class="sr-only">Filter by project</span><select data-testid="filter-project" id="filter-project"><option value="all">All projects</option></select></label><label><span class="sr-only">Filter by priority</span><select data-testid="filter-priority" id="filter-priority"><option value="all">All priorities</option><option value="low">Low</option><option value="medium">Medium</option><option value="high">High</option></select></label></div></div>
+        <div class="board-meta"><span id="result-count" aria-live="polite">0 of 0 tasks</span><button class="text-button" id="clear-filters" hidden>Clear filters</button><span class="board-hint">Small steps. Visible progress.</span></div>
+        <div id="no-results" class="empty-state" hidden><span aria-hidden="true">⌕</span><h3>No tasks in view</h3><p>Try another search or clear your filters to see the bigger picture.</p><button id="empty-clear" class="button">Clear filters</button></div>
+        <div id="empty-board" class="empty-state" hidden><span aria-hidden="true">＋</span><h3>A fresh page for your next project</h3><p>Add your first task. The rest can take shape from there.</p><button id="empty-create" class="button primary">Create your first task</button></div>
+        <div id="columns" class="columns"></div>
+      </section>
+      <footer class="main-footer"><span>Built for focus, kept on your device.</span><span>FIELDNOTE BOARD <span aria-hidden="true">↗</span></span></footer>
+    </main>
+  </div>
+  <div id="undo-bar" class="undo-bar" role="status" hidden><span id="undo-message">Task deleted.</span><button data-testid="undo-delete" id="undo-delete">Undo delete</button><button id="dismiss-undo" aria-label="Dismiss undo notification">×</button></div>
+  <dialog id="task-dialog" aria-labelledby="dialog-title"><form data-testid="task-form" id="task-form" novalidate><div class="dialog-heading"><div><p class="eyebrow">MAKE ROOM FOR PROGRESS</p><h2 id="dialog-title">New task</h2></div><button type="button" class="icon-button" id="close-dialog" aria-label="Close task form">×</button></div><p class="form-intro">Capture the next step. Keep the details close.</p><div id="form-errors" class="form-errors" role="alert" hidden></div><label class="field">Task title <span class="required">Required</span><input name="title" required placeholder="What needs to happen?" autocomplete="off"></label><label class="field">Project <span class="required">Required</span><input name="project" required list="project-options" placeholder="e.g. Website refresh" autocomplete="off"></label><datalist id="project-options"></datalist><div class="form-grid"><label class="field">Status<select name="status"><option value="todo">To do</option><option value="doing">In progress</option><option value="done">Done</option></select></label><label class="field">Priority<select name="priority"><option value="low">Low</option><option value="medium" selected>Medium</option><option value="high">High</option></select></label></div><label class="field">Due date <span class="optional">Optional</span><input type="date" name="dueDate" min="0001-01-01" max="9999-12-31"></label><label class="field">Tags <span class="optional">Optional</span><input name="tags" placeholder="design, research, launch" aria-describedby="tags-help"><small id="tags-help">Separate with commas. Up to 8 tags, 24 characters each.</small></label><div class="form-actions"><button type="button" class="button" id="cancel-dialog">Cancel</button><button type="submit" class="button primary" data-testid="save-task">Save task</button></div></form></dialog>
+</body>
+</html>

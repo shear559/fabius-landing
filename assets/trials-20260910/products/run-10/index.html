@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f5ee">
+  <title>Fieldnote — Studio board</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%232f4737'/%3E%3Cpath d='M10 8h14v4H14v4h8v4h-8v6h-4z' fill='%23ddeb93'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <noscript><div class="noscript">Fieldnote needs JavaScript to manage your board. Enable JavaScript and reload. Your existing local data will remain untouched.</div></noscript>
+  <svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="i-board" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16M15 4v16"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5M4 16v5h16v-5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 10h18"/></symbol>
+    <symbol id="i-edit" viewBox="0 0 24 24"><path d="m15 4 5 5M4 20l5-1L21 7a2 2 0 0 0-4-4L5 15z"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7m4-7v7"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M19 4C7 2 2 8 6 15s15 2 13-11ZM5 20 15 9"/></symbol>
+  </defs></svg>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Workspace">
+      <a href="./" class="brand" aria-label="Fieldnote home"><span class="brand-mark">f<span>•</span></span><span>fieldnote<span class="brand-period">.</span></span></a>
+      <div class="workspace"><span class="workspace-avatar">S</span><div><strong>Studio workspace</strong><span>A little room for good work</span></div></div>
+      <div class="sidebar-label">WORKSPACE</div>
+      <nav aria-label="Main navigation"><a href="#board" class="nav-item active" aria-current="page"><svg><use href="#i-board"/></svg>Studio board<span id="nav-count">0</span></a></nav>
+      <div class="sidebar-projects"><div class="sidebar-label">ON THIS BOARD</div><div id="project-list"></div></div>
+      <div class="sidebar-note"><svg><use href="#i-leaf"/></svg><h2>Space to make progress.</h2><p>Big ideas, small next steps.<br>Make a little room for both.</p><span>YOUR WORK, AT YOUR PACE</span></div>
+      <div class="local-foot"><span class="live-dot"></span><div><strong>Local by design</strong><span>On this browser. In your hands.</span></div></div>
+    </aside>
+    <div class="main-wrap">
+      <header class="topbar"><div class="breadcrumb">Workspace <span>/</span> <strong>Studio board</strong></div><div class="topbar-right"><span class="demo-label">DEMO WORKSPACE</span><span class="profile" aria-label="Studio workspace">ST</span></div></header>
+      <main id="board">
+        <section class="page-heading" aria-labelledby="page-title"><div><div class="eyebrow"><span></span> A CLEARER VIEW OF WHAT’S NEXT</div><h1 id="page-title">Good work starts here.</h1><p>Your team’s ideas, next steps, and little victories. All in one place.</p></div><button class="button primary" data-testid="create-task"><svg><use href="#i-plus"/></svg>New task</button></section>
+        <div id="notices" class="notices" aria-live="polite"></div>
+        <section class="overview" aria-label="Board overview">
+          <div class="stat"><div class="stat-label">On the board<svg><use href="#i-board"/></svg></div><div class="stat-value"><strong id="stat-total">0</strong><span>ideas in motion</span></div></div>
+          <div class="stat"><div class="stat-label">In progress<svg><use href="#i-clock"/></svg></div><div class="stat-value"><strong id="stat-doing">0</strong><span>getting there</span></div></div>
+          <div class="stat"><div class="stat-label">Completed<svg><use href="#i-check"/></svg></div><div class="stat-value"><strong id="stat-done">0</strong><span>small wins count</span></div></div>
+          <div class="stat progress-stat"><div class="stat-label">A little progress, every day<span id="progress-percent">0%</span></div><div class="progress-track" role="progressbar" aria-label="Tasks completed" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="progress-fill"></span></div><div class="progress-caption" id="progress-caption">Your next chapter starts with a task.</div></div>
+        </section>
+        <section class="board-section" aria-labelledby="board-title">
+          <div class="board-toolbar"><div class="board-title"><svg><use href="#i-board"/></svg><h2 id="board-title">Studio board</h2><span class="board-view">BOARD VIEW</span></div><div class="transfer-actions"><button class="button text-button" id="import-trigger"><svg><use href="#i-upload"/></svg>Import</button><input type="file" accept=".json,application/json" data-testid="import-file" id="import-file" class="visually-hidden" aria-label="Import board JSON"><button class="button text-button" data-testid="export"><svg><use href="#i-download"/></svg>Export</button></div></div>
+          <div class="filters"><label class="search-field"><svg><use href="#i-search"/></svg><input type="search" data-testid="search" placeholder="Find a task, project, or tag…" aria-label="Search tasks"></label><div class="filter-selects"><label><span class="visually-hidden">Filter by project</span><select data-testid="filter-project"><option value="all">All projects</option></select></label><label><span class="visually-hidden">Filter by status</span><select data-testid="filter-status"><option value="all">All statuses</option><option value="todo">To do</option><option value="doing">In progress</option><option value="done">Done</option></select></label><label><span class="visually-hidden">Filter by priority</span><select data-testid="filter-priority"><option value="all">All priorities</option><option value="high">High priority</option><option value="medium">Medium priority</option><option value="low">Low priority</option></select></label></div></div>
+          <div class="results-bar"><span id="result-count" role="status">Showing 0 of 0 tasks</span><button id="clear-filters" class="inline-button" hidden>Clear filters</button><span class="save-state" id="save-state"><span class="live-dot"></span>Saved on this browser</span></div>
+          <div id="empty-state" class="empty-state" hidden></div>
+          <div class="kanban" id="kanban">
+            <section class="column todo" aria-labelledby="todo-title"><div class="column-heading"><span class="status-dot"></span><h3 id="todo-title">To do</h3><span class="column-count" id="count-todo">0</span><button class="icon-button add-column" data-add-status="todo" aria-label="Add a to do task"><svg><use href="#i-plus"/></svg></button></div><p class="column-description">A good place to begin.</p><div class="card-list" id="tasks-todo"></div></section>
+            <section class="column doing" aria-labelledby="doing-title"><div class="column-heading"><span class="status-dot"></span><h3 id="doing-title">In progress</h3><span class="column-count" id="count-doing">0</span><button class="icon-button add-column" data-add-status="doing" aria-label="Add an in progress task"><svg><use href="#i-plus"/></svg></button></div><p class="column-description">Taking shape, one step at a time.</p><div class="card-list" id="tasks-doing"></div></section>
+            <section class="column done" aria-labelledby="done-title"><div class="column-heading"><span class="status-dot"></span><h3 id="done-title">Done</h3><span class="column-count" id="count-done">0</span><button class="icon-button add-column" data-add-status="done" aria-label="Add a completed task"><svg><use href="#i-plus"/></svg></button></div><p class="column-description">Take a moment. You made it happen.</p><div class="card-list" id="tasks-done"></div></section>
+          </div>
+        </section>
+        <footer class="page-footer"><span><svg><use href="#i-leaf"/></svg>Less noise. More forward.</span><span>Private to this browser <span class="footer-dot">·</span> Export to keep a copy</span></footer>
+      </main>
+    </div>
+  </div>
+  <div id="undo-toast" class="undo-toast" role="status" hidden><span id="undo-message"></span><button data-testid="undo-delete">Undo delete</button><button id="dismiss-undo" class="icon-button" aria-label="Dismiss undo notification"><svg><use href="#i-close"/></svg></button></div>
+  <div id="announcement" class="visually-hidden" role="status" aria-live="polite"></div>
+  <dialog id="task-dialog" aria-labelledby="dialog-title"><form data-testid="task-form" novalidate><div class="dialog-heading"><div><div class="eyebrow">MAKE ROOM FOR WHAT’S NEXT</div><h2 id="dialog-title">New task</h2></div><button type="button" class="icon-button close-dialog" aria-label="Close task form"><svg><use href="#i-close"/></svg></button></div><p class="dialog-intro">A clear next step goes a long way.</p><div id="form-notice" class="form-notice" role="alert" hidden></div><div class="form-fields"><label class="field">Task title <span class="required-note">required</span><input name="title" placeholder="What needs to happen?" autocomplete="off" required aria-describedby="error-title"><span class="field-error" id="error-title"></span></label><label class="field">Project <span class="required-note">required</span><input name="project" placeholder="e.g. Website refresh" list="project-suggestions" autocomplete="off" required aria-describedby="error-project"><datalist id="project-suggestions"></datalist><span class="field-error" id="error-project"></span></label><div class="form-row"><label class="field">Status<select name="status"><option value="todo">To do</option><option value="doing">In progress</option><option value="done">Done</option></select></label><label class="field">Priority<select name="priority"><option value="low">Low</option><option value="medium" selected>Medium</option><option value="high">High</option></select></label></div><label class="field">Due date <span class="optional-note">optional</span><input name="dueDate" type="text" placeholder="YYYY-MM-DD" inputmode="numeric" autocomplete="off" aria-describedby="error-dueDate"><span class="field-error" id="error-dueDate"></span></label><label class="field">Tags <span class="optional-note">optional</span><input name="tags" placeholder="design, planning, next-up" autocomplete="off" aria-describedby="tags-help error-tags"><span class="field-hint" id="tags-help">Separate with commas. Up to 8 tags, 24 characters each.</span><span class="field-error" id="error-tags"></span></label></div><div class="dialog-footer"><button type="button" class="button secondary close-dialog">Cancel</button><button type="submit" class="button primary" data-testid="save-task">Create task<svg><use href="#i-arrow"/></svg></button></div></form></dialog>
+</body>
+</html>

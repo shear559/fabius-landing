@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Meet Lattice, a fictional local-first research notebook. Keep notes, sources, and questions together, on your own device.">
+  <meta name="theme-color" content="#f5f3ec">
+  <title>Lattice — Room for your next good question</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#" aria-label="Lattice home"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M10 2v28M22 2v28M2 10h28M2 22h28M2 2l28 28M2 30 30 2"/></svg>Lattice<span class="brand-dot">.</span></a>
+      <nav class="desktop-nav" aria-label="Main navigation"><a href="#features">Features</a><a href="#workflow">How it works</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></nav>
+      <span class="demo-label">A fictional product demo</span>
+      <button class="menu-toggle" data-testid="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation" hidden><span></span><span></span></button>
+    </div>
+    <nav id="mobile-nav" class="mobile-nav" data-testid="mobile-nav" aria-label="Mobile navigation" hidden><a href="#features">Features</a><a href="#workflow">How it works</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></nav>
+  </header>
+  <main id="main">
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="small-star" aria-hidden="true">✳</span> For the independently curious</p>
+        <h1 id="hero-title">Room for your next <em>good question.</em></h1>
+        <p class="hero-description">Meet Lattice. A local-first research notebook for gathering ideas, keeping sources close, and finding your own way through.</p>
+        <a class="button button-dark" href="#workflow">Explore the workflow <span aria-hidden="true">↗</span></a>
+        <p class="hero-footnote"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="8" width="12" height="9" rx="2"/><path d="M7 8V6a3 3 0 0 1 6 0v2"/></svg>Your notes. Your device. Your thinking.</p>
+      </div>
+      <div class="hero-art" role="img" aria-label="Illustrative Lattice notebook: a project called The life of a city, containing a field note about public spaces with a source link and a connected question.">
+        <div class="orbit-field" aria-hidden="true"><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div></div>
+        <span class="art-label">A LITTLE STRUCTURE. A LOT OF POSSIBILITY.</span>
+        <div class="notebook">
+          <div class="notebook-top"><span class="mini-mark">▦</span><span>Your workspace <span class="path-divider">/</span> <strong>The life of a city</strong></span><span class="local-state"><span></span> On this device</span></div>
+          <div class="notebook-body">
+            <aside class="notebook-sidebar"><p class="mini-label">PROJECT</p><div class="sidebar-item selected">▤ <span>All notes</span><small>08</small></div><div class="sidebar-item">⌘ <span>Connections</span></div><div class="sidebar-item">▧ <span>Sources</span><small>05</small></div><p class="mini-label sidebar-label">COLLECTIONS</p><div class="collection"><i></i> Public spaces</div><div class="collection"><i></i> Everyday rituals</div><div class="sidebar-bottom"><span>＋</span> A new question</div></aside>
+            <div class="notebook-page"><div class="note-meta"><span>FIELD NOTE</span><span>NO. 004</span></div><h2>What makes a place feel like it belongs to everyone?</h2><p class="note-date">The life of a city · September 10</p><div class="note-rule"></div><p>The most interesting spaces aren't always the ones we planned.</p><blockquote>“A place becomes a place when people begin to make it their own.”</blockquote><p class="note-body-small">Look for the little things: a chair moved into the shade, a conversation at the corner.</p><div class="source-reference"><span aria-hidden="true">↗</span><div><span class="mini-label">SOURCE KEPT CLOSE</span><strong>Public space · reading notes.md</strong></div></div><div class="note-tags"><span>urban life</span><span>observation</span></div></div>
+          </div>
+        </div>
+        <div class="connection-note"><span class="connection-icon" aria-hidden="true">↳</span><div><span class="mini-label">A THREAD TO FOLLOW</span><p>Who gets to feel at home here?</p><span class="connection-caption">Connected to “Everyday rituals”</span></div></div>
+        <span class="art-caption">An illustrative workspace, not a live application.</span>
+      </div>
+    </section>
+    <div class="principles container" aria-label="Product essentials"><span>Made for your own line of inquiry</span><p><span aria-hidden="true">↳</span> Local device storage</p><p><span aria-hidden="true">↗</span> Markdown export</p><p><span aria-hidden="true">⌘</span> Sources alongside notes</p></div>
+    <section id="features" class="features section-space" aria-labelledby="features-title">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow">01 / A notebook that thinks with you</p><h2 id="features-title">Follow the <em>thought.</em></h2></div><p>A passing observation. A useful source. A question that won't leave you alone. Give them somewhere to meet.</p></div>
+        <div class="feature-tabs" role="tablist" aria-label="Explore Lattice features" hidden>
+          <button id="tab-capture" role="tab" data-testid="feature-capture" aria-controls="panel-capture" aria-selected="true" tabindex="0"><span>01</span> Capture <span class="tab-arrow" aria-hidden="true">↗</span></button>
+          <button id="tab-connect" role="tab" data-testid="feature-connect" aria-controls="panel-connect" aria-selected="false" tabindex="-1"><span>02</span> Connect <span class="tab-arrow" aria-hidden="true">↗</span></button>
+          <button id="tab-export" role="tab" data-testid="feature-export" aria-controls="panel-export" aria-selected="false" tabindex="-1"><span>03</span> Export <span class="tab-arrow" aria-hidden="true">↗</span></button>
+        </div>
+        <div id="panel-capture" data-testid="panel-capture" class="feature-panel">
+          <div class="feature-copy"><span class="feature-kicker">MAKE A START</span><h3>Catch the idea.  Keep the context.</h3><p>Turn a highlight, a field observation, or a half-formed thought into a note. Keep a source link alongside it, so your future self can find the way back.</p><ul class="check-list"><li>Notes stored on your device</li><li>Reusable templates for each new project</li><li>Optional local full-text search</li></ul></div>
+          <div class="feature-visual capture-visual" aria-label="Example note with an observation and a linked source"><div class="sample-note"><div class="sample-top"><span class="mini-label">NEW NOTE / PUBLIC SPACES</span><span aria-hidden="true">↗</span></div><h4>The informal city</h4><p>What can a well-worn path tell us about how people actually use a place?</p><div class="sample-source"><span aria-hidden="true">↗</span><span>Source link <strong>Field journal / Walk 03</strong></span></div><div class="template-line"><span aria-hidden="true">▤</span> From your Field observation template</div></div><span class="visual-caption">The observation and its origin. Together.</span></div>
+        </div>
+        <div id="panel-connect" data-testid="panel-connect" class="feature-panel">
+          <div class="feature-copy"><span class="feature-kicker">PICK UP A THREAD</span><h3>Bring the source back into view.</h3><p>A good question often starts between two notes. Keep source links with your thinking, then use optional local full-text search to revisit a phrase across your notebook.</p><ul class="check-list"><li>Trace a thought back to its original source</li><li>Find familiar phrases in your local notes</li><li>Build context as your research grows</li></ul></div>
+          <div class="feature-visual connect-visual" aria-label="Illustrative local search results for public space"><div class="search-example"><span aria-hidden="true">⌕</span> public space <span class="search-label">LOCAL SEARCH</span></div><div class="search-result"><span class="mini-label">FIELD NOTE</span><h4>The informal city</h4><p>How people make <mark>public space</mark> their own.</p></div><div class="search-result"><span class="mini-label">READING NOTE</span><h4>A sense of belonging</h4><p>Who feels welcome in a <mark>public space</mark>?</p></div><span class="visual-caption">Return to a phrase. Discover a new direction.</span></div>
+        </div>
+        <div id="panel-export" data-testid="panel-export" class="feature-panel">
+          <div class="feature-copy"><span class="feature-kicker">TAKE IT FROM HERE</span><h3>Your thinking has places to go.</h3><p>Export notes as Markdown files to keep a backup or continue writing in another tool. Your research can outgrow your notebook without leaving your words behind.</p><ul class="check-list"><li>A familiar, portable text format</li><li>Back up by exporting your files</li><li>Exported files stay yours after cancellation</li></ul></div>
+          <div class="feature-visual export-visual" aria-label="Example exported Markdown file"><div class="markdown-file"><div class="sample-top"><span>the-informal-city.md</span><span class="file-badge">MD</span></div><pre><span>#</span> The informal city
+
+What can a well-worn path tell us
+about how people use a place?
+
+<span>##</span> A question to follow
+Who gets to feel at home here?
+
+<span>##</span> Source
+Field journal / Walk 03</pre></div><span class="visual-caption">Plain text. Open possibilities.</span></div>
+        </div>
+      </div>
+    </section>
+    <section id="workflow" class="workflow section-space" aria-labelledby="workflow-title"><div class="container"><div class="section-heading"><div><p class="eyebrow">02 / From a spark to something more</p><h2 id="workflow-title">Less setup.  More <em>following through.</em></h2></div><p>Research rarely travels in a straight line. Start simply, leave yourself a trail, and see where it leads.</p></div><ol class="workflow-steps"><li><span class="step-number">01</span><h3>Make room for a question.</h3><p>Start a project with a reusable template. Give your inquiry a name, even if it's a working one.</p><span class="step-caption">BEGIN WITH CURIOSITY</span></li><li><span class="step-number">02</span><h3>Gather as you go.</h3><p>Capture notes and add their source links. Search locally when you want to pick up an earlier thought.</p><span class="step-caption">BUILD YOUR OWN CONTEXT</span></li><li><span class="step-number">03</span><h3>Carry your thinking forward.</h3><p>Export your notes as Markdown. Keep a file backup, share your writing, or move into your next draft.</p><span class="step-caption">MAKE SOMETHING OF IT</span></li></ol></div></section>
+    <section id="pricing" class="pricing section-space" aria-labelledby="pricing-title"><div class="container"><div class="section-heading"><div><p class="eyebrow">03 / Choose your room to think</p><h2 id="pricing-title">Independent work.  Straightforward <em>plans.</em></h2></div><div class="pricing-intro"><p>Two ways to make space for your research. These are fictional plans and prices for this demonstration.</p><div class="billing-control" role="group" aria-label="Billing period" hidden><button data-testid="billing-monthly" aria-pressed="true">Monthly</button><button data-testid="billing-yearly" aria-pressed="false">Yearly</button></div></div></div><div class="plans"><article class="plan"><div class="plan-heading"><h3>Solo</h3><span>YOUR PERSONAL NOTEBOOK</span></div><p class="plan-description">For the independent researcher following a thread.</p><div class="price-line" aria-live="polite" aria-atomic="true"><span class="price" data-testid="price-solo">$12</span><span class="price-period">/ month</span></div><p class="billing-description">Billed monthly. Fictional pricing.</p><p class="annual-fallback">Yearly option: $108 per year, billed yearly.</p><div class="plan-rule"></div><ul class="check-list"><li>Local-first notes with source links</li><li>Reusable project templates</li><li>Markdown export</li><li>Optional local full-text search</li></ul><p class="plan-note">One place for your own line of inquiry.</p></article><article class="plan studio-plan"><div class="plan-heading"><h3>Studio</h3><span>A BROADER WORKSPACE</span></div><p class="plan-description">For an independent practice with many lines of inquiry.</p><div class="price-line" aria-live="polite" aria-atomic="true"><span class="price" data-testid="price-studio">$29</span><span class="price-period">/ month</span></div><p class="billing-description">Billed monthly. Fictional pricing.</p><p class="annual-fallback">Yearly option: $264 per year, billed yearly.</p><div class="plan-rule"></div><ul class="check-list"><li>All the notebook essentials in Solo</li><li>Local-first notes with source links</li><li>Reusable project templates</li><li>Markdown export and optional local search</li></ul><p class="plan-note">A concept plan; additional capabilities are not specified.</p></article></div><p class="pricing-footnote"><span aria-hidden="true">↳</span> Just an exploration. No signup, checkout, or payment processing.</p></div></section>
+    <section id="faq" class="faq section-space" aria-labelledby="faq-title"><div class="container faq-layout"><div><p class="eyebrow">04 / A few good questions</p><h2 id="faq-title">Before you  settle <em>in.</em></h2><p class="faq-intro">A little clarity on what local-first means for your work.</p></div><div class="faq-list"><details><summary data-testid="faq-0">Where do my notes live?<span aria-hidden="true"></span></summary><p>Your notes are stored locally on your device. Lattice is a fictional local-first notebook, designed around keeping your research on the device you use.</p></details><details><summary data-testid="faq-1">Can I take my notes to another app?<span aria-hidden="true"></span></summary><p>Yes. Export your notes as Markdown files, a portable text format you can open in a text editor or bring into another app that supports Markdown.</p></details><details><summary data-testid="faq-2">How do I back up my research?<span aria-hidden="true"></span></summary><p>Export your notes as files and keep copies in a backup location you control. Lattice does not promise automatic cloud backup; regularly exporting files is how you make a backup.</p></details><details><summary data-testid="faq-3">What happens if I cancel?<span aria-hidden="true"></span></summary><p>Cancellation has no effect on files you have already exported. Those files remain with you and can be opened independently of Lattice.</p></details></div></div></section>
+    <section class="closing container" aria-labelledby="closing-title"><svg class="closing-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M10 2v28M22 2v28M2 10h28M2 22h28M2 2l28 28M2 30 30 2"/></svg><h2 id="closing-title">Stay with the <em>question.</em></h2><p>Give your curiosity a place to become something.</p><a class="button button-dark" href="#workflow">Explore the workflow <span aria-hidden="true">↗</span></a></section>
+  </main>
+  <footer class="site-footer container"><a class="brand" href="#" aria-label="Lattice home">Lattice<span class="brand-dot">.</span></a><p>A fictional product demonstration. No account required or created.</p><a href="#main">Back to top <span aria-hidden="true">↑</span></a></footer>
+</body>
+</html>

@@ -254,3 +254,8 @@ details[open]>summary .trial2-caret{transform:rotate(90deg)}
 @media(prefers-reduced-motion:reduce){
   .trial2-lab *,.trial2-lab *::before,.trial2-lab *::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
 }
+
+/* ── the decisions study as the second block of the section ── */
+.trial2-section{margin-top:calc(var(--trial-s6) * 2);padding-top:var(--trial-s6);border-top:2px solid var(--ink)}
+.trial2-section .trial2-heading h3{font-size:clamp(32px,4.8vw,58px);letter-spacing:-.035em;line-height:1.04;text-wrap:balance;font-weight:700;margin:0}
+.trial2-section .trial-intro{margin-top:var(--trial-s4)}
