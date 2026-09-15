@@ -1,0 +1,341 @@
+{
+ "schemaVersion": 1,
+ "runId": "run-08",
+ "kind": "app",
+ "startedAt": "2026-09-15T01:14:13.181Z",
+ "helperSha256": "2448fa17cc9a54989a8ae7134baa2bfda9ee4cca000603582a3ce873d3c54f4a",
+ "source": {
+  "files": [
+   {
+    "file": "app.js",
+    "bytes": 31334,
+    "sha256": "7564c5cdc43f8231d93a9ee1d2f39ca2aacb6c5fc8a6215b50064b42d268b45d"
+   },
+   {
+    "file": "BRIEF.md",
+    "bytes": 5357,
+    "sha256": "3903c0863ef3b0651174ddf195beb008abdbf640dc502ad72cbc54d5a3ee4ae7"
+   },
+   {
+    "file": "index.html",
+    "bytes": 10324,
+    "sha256": "2dab459f05da9bfe1c56ca2f5c8fe329a8cebffd857d1aff0f42932996b3f9b5"
+   },
+   {
+    "file": "README.md",
+    "bytes": 6285,
+    "sha256": "4e402c03c6077cfa9d1ad60235e314aa9f899ee6372d1613835be8b3f9a46924"
+   },
+   {
+    "file": "styles.css",
+    "bytes": 12967,
+    "sha256": "bf7431c3a9c662d6089a3bde1692b501a1b085bb8e93addb24d952879d9e6775"
+   }
+  ],
+  "treeSha256": "1c85f0607d91057a41a8e0e351aa8d793161dc863df1d92e6816c07ec4f8f8a0"
+ },
+ "policy": {
+  "presentation": "Composed walkthrough from captured states; not a recording of model generation.",
+  "browser": "Google Chrome",
+  "desktopViewport": {
+   "width": 1440,
+   "height": 960
+  },
+  "mobileViewport": {
+   "width": 360,
+   "height": 800
+  },
+  "deviceScaleFactor": 1,
+  "fullPage": false,
+  "reducedMotion": "reduce",
+  "screenshotAnimations": "disabled",
+  "freshContexts": true,
+  "externalRequests": "blocked",
+  "candidateEdits": false,
+  "scoresProvided": false
+ },
+ "snapshots": [
+  {
+   "id": "initial",
+   "label": "Desktop first visit \u2014 untouched initial output",
+   "file": "initial.png",
+   "actionSucceeded": true,
+   "observed": {
+    "httpStatus": 200,
+    "freshStorage": true,
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Fieldnote Board\n\nReef Resilience Publication Team \u00b7 local-first demo\n\nBoard\nList\nSearch tasks by title, project or tag\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nManuscript Production\nReef Resilience Study\nPriority\nAll priorities\nLow\nMedium\nHigh\nExport\nImport\nNew task\n\n7 of 7 tasks shown\n\nTO DO\n3\nRequest co-author review of results figures\n\nManuscript Production\n\nHIGH\nSep 22, 2026\nreview\nfigures\nStatus\nTo do\nDoing\nDone\nDraft methods section for water temperature logging\n\nManuscript Production\n\nMEDIUM\nSep 25, 2026\nwriting\nStatus\nTo do\nDoing\nDone\nFormat citations to journal style guide\n\nManuscript Production\n\nLOW\nOct 1, 2026\nformatting\nreferences\nStatus\nTo do\nDoing\nDone\nDOING\n2\nCross-check coral cover counts against photo quadrats\n\nReef Resilience Study\n\nHIGH\nSep 18, 2026\nqa\ndata\nStatus\nTo do\nDoing\nDone\nReconcile species ID discrepancies with lab reference set\n\nReef Resilience Study\n\nHIGH\nNo due date\ntaxonomy\nStatus\nTo do\nDoing\nDone\nDONE\n2\nDigitize field notebooks from March transects\n\nReef Resilience Study\n\nMEDIUM\nAug 20, 2026\nfieldwork\ndata-entry\nStatus\nTo do\nDoing\nDone\nArchive raw sensor logs to lab drive\n\nReef Resilience Study\n\nLOW\nAug 5, 2026\narchive\nStatus\nTo do\nDoing\nDone",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-15T01:14:15.268Z",
+   "actionStartedAt": "2026-09-15T01:14:14.474Z",
+   "sha256": "e84074b651de1c01bb52d9205c6e2b1d77dc185e2406205680ee4b1f1d4520b4",
+   "bytes": 130854
+  },
+  {
+   "id": "new-task-form",
+   "label": "New task form opened",
+   "file": "new-task-form.png",
+   "actionSucceeded": true,
+   "observed": {
+    "visible": true,
+    "fields": [
+     {
+      "name": "title",
+      "type": "text",
+      "value": ""
+     },
+     {
+      "name": "project",
+      "type": "text",
+      "value": ""
+     },
+     {
+      "name": "status",
+      "type": "select-one",
+      "value": "todo"
+     },
+     {
+      "name": "priority",
+      "type": "select-one",
+      "value": "medium"
+     },
+     {
+      "name": "dueDate",
+      "type": "date",
+      "value": ""
+     },
+     {
+      "name": "tags",
+      "type": "text",
+      "value": ""
+     }
+    ],
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Fieldnote Board\n\nReef Resilience Publication Team \u00b7 local-first demo\n\nBoard\nList\nSearch tasks by title, project or tag\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nManuscript Production\nReef Resilience Study\nPriority\nAll priorities\nLow\nMedium\nHigh\nExport\nImport\nNew task\n\n7 of 7 tasks shown\n\nTO DO\n3\nRequest co-author review of results figures\n\nManuscript Production\n\nHIGH\nSep 22, 2026\nreview\nfigures\nStatus\nTo do\nDoing\nDone\nDraft methods section for water temperature logging\n\nManuscript Production\n\nMEDIUM\nSep 25, 2026\nwriting\nStatus\nTo do\nDoing\nDone\nFormat citations to journal style guide\n\nManuscript Production\n\nLOW\nOct 1, 2026\nformatting\nreferences\nStatus\nTo do\nDoing\nDone\nDOING\n2\nCross-check coral cover counts against photo quadrats\n\nReef Resilience Study\n\nHIGH\nSep 18, 2026\nqa\ndata\nStatus\nTo do\nDoing\nDone\nReconcile species ID discrepancies with lab reference set\n\nReef Resilience Study\n\nHIGH\nNo due date\ntaxonomy\nStatus\nTo do\nDoing\nDone\nDONE\n2\nDigitize field notebooks from March transects\n\nReef Resilience Study\n\nMEDIUM\nAug 20, 2026\nfieldwork\ndata-entry\nStatus\nTo do\nDoing\nDone\nArchive raw sensor logs to lab drive\n\nReef Resilience Study\n\nLOW\nAug 5, 2026\narchive\nStatus\nTo do\nDoing\nDone\nNew task\nTitle\nProject\nStatus\nTo do\nDoing\nDone\nPriority\nLow\nMedium\nHigh\nDue date\nTags comma-separated, up to 8\nCancel\nSave task",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-15T01:14:15.754Z",
+   "actionStartedAt": "2026-09-15T01:14:15.377Z",
+   "sha256": "e2c48ced5eb0354ddbf44ae055329911d878e9b6b6abe2aa2f8dfc51dd87bb58",
+   "bytes": 132552
+  },
+  {
+   "id": "after-create",
+   "label": "Review launch evidence created and present in saved board",
+   "file": "after-create.png",
+   "actionSucceeded": true,
+   "observed": {
+    "requested": {
+     "title": "Review launch evidence",
+     "project": "Research",
+     "status": "doing",
+     "priority": "high",
+     "dueDate": "2026-09-20",
+     "tags": "evidence,launch"
+    },
+    "storageError": null,
+    "matchingRecords": [
+     {
+      "id": "774b546a-c1ae-4282-acfb-35823531484f",
+      "title": "Review launch evidence",
+      "project": "Research",
+      "status": "doing",
+      "priority": "high",
+      "dueDate": "2026-09-20",
+      "tags": [
+       "evidence",
+       "launch"
+      ]
+     }
+    ],
+    "rendered": true,
+    "visibleCards": [
+     {
+      "id": "seed-pub-2",
+      "text": "Request co-author review of results figures\n\nManuscript Production\n\nHIGH\nSep 22, 2026\nreview\nfigures\nStatus\nTo do\nDoing\nDone"
+     },
+     {
+      "id": "seed-pub-1",
+      "text": "Draft methods section for water temperature logging\n\nManuscript Production\n\nMEDIUM\nSep 25, 2026\nwriting\nStatus\nTo do\nDoing\nDone"
+     },
+     {
+      "id": "seed-pub-3",
+      "text": "Format citations to journal style guide\n\nManuscript Production\n\nLOW\nOct 1, 2026\nformatting\nreferences\nStatus\nTo do\nDoing\nDone"
+     },
+     {
+      "id": "seed-reef-2",
+      "text": "Cross-check coral cover counts against photo quadrats\n\nReef Resilience Study\n\nHIGH\nSep 18, 2026\nqa\ndata\nStatus\nTo do\nDoing\nDone"
+     },
+     {
+      "id": "774b546a-c1ae-4282-acfb-35823531484f",
+      "text": "Review launch evidence\n\nResearch\n\nHIGH\nSep 20, 2026\nevidence\nlaunch\nStatus\nTo do\nDoing\nDone"
+     },
+     {
+      "id": "seed-reef-3",
+      "text": "Reconcile species ID discrepancies with lab reference set\n\nReef Resilience Study\n\nHIGH\nNo due date\ntaxonomy\nStatus\nTo do\nDoing\nDone"
+     },
+     {
+      "id": "seed-reef-1",
+      "text": "Digitize field notebooks from March transects\n\nReef Resilience Study\n\nMEDIUM\nAug 20, 2026\nfieldwork\ndata-entry\nStatus\nTo do\nDoing\nDone"
+     },
+     {
+      "id": "seed-reef-4",
+      "text": "Archive raw sensor logs to lab drive\n\nReef Resilience Study\n\nLOW\nAug 5, 2026\narchive\nStatus\nTo do\nDoing\nDone"
+     }
+    ],
+    "beforeStorageSha256": "1db10556efab30fd4db3c851d19f6d272cc6fea1f0ff4a91069cbdfe09251b3d",
+    "afterStorageSha256": "aef7ff41fbfc065fa2f0d5b607141136cf6fb39262e2079b0d17a40e1ce1ceee",
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Fieldnote Board\n\nReef Resilience Publication Team \u00b7 local-first demo\n\nBoard\nList\nSearch tasks by title, project or tag\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nManuscript Production\nReef Resilience Study\nResearch\nPriority\nAll priorities\nLow\nMedium\nHigh\nExport\nImport\nNew task\n\n8 of 8 tasks shown\n\nTO DO\n3\nRequest co-author review of results figures\n\nManuscript Production\n\nHIGH\nSep 22, 2026\nreview\nfigures\nStatus\nTo do\nDoing\nDone\nDraft methods section for water temperature logging\n\nManuscript Production\n\nMEDIUM\nSep 25, 2026\nwriting\nStatus\nTo do\nDoing\nDone\nFormat citations to journal style guide\n\nManuscript Production\n\nLOW\nOct 1, 2026\nformatting\nreferences\nStatus\nTo do\nDoing\nDone\nDOING\n3\nCross-check coral cover counts against photo quadrats\n\nReef Resilience Study\n\nHIGH\nSep 18, 2026\nqa\ndata\nStatus\nTo do\nDoing\nDone\nReview launch evidence\n\nResearch\n\nHIGH\nSep 20, 2026\nevidence\nlaunch\nStatus\nTo do\nDoing\nDone\nReconcile species ID discrepancies with lab reference set\n\nReef Resilience Study\n\nHIGH\nNo due date\ntaxonomy\nStatus\nTo do\nDoing\nDone\nDONE\n2\nDigitize field notebooks from March transects\n\nReef Resilience Study\n\nMEDIUM\nAug 20, 2026\nfieldwork\ndata-entry\nStatus\nTo do\nDoing\nDone\nArchive raw sensor logs to lab drive\n\nReef Resilience Study\n\nLOW\nAug 5, 2026\narchive\nStatus\nTo do\nDoing\nDone",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-15T01:14:16.380Z",
+   "actionStartedAt": "2026-09-15T01:14:15.877Z",
+   "sha256": "2d0e0857e69a3b91d30d705989a98740b3c5a45fb8b5771deadfadd15ad174f5",
+   "bytes": 144304
+  },
+  {
+   "id": "search",
+   "label": "Search for Review launch evidence; matching task shown",
+   "file": "search.png",
+   "actionSucceeded": true,
+   "observed": {
+    "search": "Review launch evidence",
+    "visibleCards": [
+     {
+      "id": "774b546a-c1ae-4282-acfb-35823531484f",
+      "text": "Review launch evidence\n\nResearch\n\nHIGH\nSep 20, 2026\nevidence\nlaunch\nStatus\nTo do\nDoing\nDone"
+     }
+    ],
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Fieldnote Board\n\nReef Resilience Publication Team \u00b7 local-first demo\n\nBoard\nList\nSearch tasks by title, project or tag\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nManuscript Production\nReef Resilience Study\nResearch\nPriority\nAll priorities\nLow\nMedium\nHigh\nExport\nImport\nNew task\n\n1 of 8 tasks shown\n\nTO DO\n0\n\nNo matching tasks\n\nDOING\n1\nReview launch evidence\n\nResearch\n\nHIGH\nSep 20, 2026\nevidence\nlaunch\nStatus\nTo do\nDoing\nDone\nDONE\n0\n\nNo matching tasks",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-15T01:14:16.869Z",
+   "actionStartedAt": "2026-09-15T01:14:16.481Z",
+   "sha256": "bc6bba1930f6e40c833abcec92ef47c21132b98d773f3e8c489af598f8096701",
+   "bytes": 56861
+  },
+  {
+   "id": "import-error",
+   "label": "Malformed JSON selected; visible error and saved board unchanged",
+   "file": "import-error.png",
+   "actionSucceeded": true,
+   "observed": {
+    "formDismissed": false,
+    "confirmation": {
+     "clicked": false
+    },
+    "dialogs": [],
+    "newVisibleFeedback": [
+     "That file is not valid JSON."
+    ],
+    "nativeError": false,
+    "storageUnchanged": true,
+    "beforeStorageSha256": "aef7ff41fbfc065fa2f0d5b607141136cf6fb39262e2079b0d17a40e1ce1ceee",
+    "afterStorageSha256": "aef7ff41fbfc065fa2f0d5b607141136cf6fb39262e2079b0d17a40e1ce1ceee",
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 58
+     },
+     "documentWidth": 1440,
+     "visibleText": "Fieldnote Board\n\nReef Resilience Publication Team \u00b7 local-first demo\n\nBoard\nList\nSearch tasks by title, project or tag\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nManuscript Production\nReef Resilience Study\nResearch\nPriority\nAll priorities\nLow\nMedium\nHigh\nExport\nImport\nNew task\n\n8 of 8 tasks shown\n\nThat file is not valid JSON.\n\nTO DO\n3\nRequest co-author review of results figures\n\nManuscript Production\n\nHIGH\nSep 22, 2026\nreview\nfigures\nStatus\nTo do\nDoing\nDone\nDraft methods section for water temperature logging\n\nManuscript Production\n\nMEDIUM\nSep 25, 2026\nwriting\nStatus\nTo do\nDoing\nDone\nFormat citations to journal style guide\n\nManuscript Production\n\nLOW\nOct 1, 2026\nformatting\nreferences\nStatus\nTo do\nDoing\nDone\nDOING\n3\nCross-check coral cover counts against photo quadrats\n\nReef Resilience Study\n\nHIGH\nSep 18, 2026\nqa\ndata\nStatus\nTo do\nDoing\nDone\nReview launch evidence\n\nResearch\n\nHIGH\nSep 20, 2026\nevidence\nlaunch\nStatus\nTo do\nDoing\nDone\nReconcile species ID discrepancies with lab reference set\n\nReef Resilience Study\n\nHIGH\nNo due date\ntaxonomy\nStatus\nTo do\nDoing\nDone\nDONE\n2\nDigitize field notebooks from March transects\n\nReef Resilience Study\n\nMEDIUM\nAug 20, 2026\nfieldwork\ndata-entry\nStatus\nTo do\nDoing\nDone\nArchive raw sensor logs to lab drive\n\nReef Resilience Study\n\nLOW\nAug 5, 2026\narchive\nStatus\nTo do\nDoing\nDone",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-15T01:14:17.389Z",
+   "actionStartedAt": "2026-09-15T01:14:16.958Z",
+   "sha256": "9fa2f2626adf93dfc9123bfdf9f57480ca0ded4b8d05db1a147ec40106eeb348",
+   "bytes": 142591
+  }
+ ],
+ "mobilefile": "mobile-initial.png",
+ "mobile": {
+  "id": "mobile-initial",
+  "label": "Mobile first visit \u2014 separate fresh context",
+  "file": "mobile-initial.png",
+  "sha256": "b9cd9d01d44e7a6a91ff5e6ec18408669d3a591ba9ab4647712519ab9cdcff0b",
+  "bytes": 46115,
+  "actionSucceeded": true,
+  "observed": {
+   "httpStatus": 200,
+   "freshStorage": true,
+   "render": {
+    "path": "/nested/benchmark/",
+    "viewport": {
+     "width": 360,
+     "height": 800
+    },
+    "scroll": {
+     "x": 0,
+     "y": 0
+    },
+    "documentWidth": 360,
+    "visibleText": "Fieldnote Board\n\nReef Resilience Publication Team \u00b7 local-first demo\n\nBoard\nList\nSearch tasks by title, project or tag\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nManuscript Production\nReef Resilience Study\nPriority\nAll priorities\nLow\nMedium\nHigh\nExport\nImport\nNew task\n\n7 of 7 tasks shown\n\nTO DO\n3\nRequest co-author review of results figures\n\nManuscript Production\n\nHIGH\nSep 22, 2026\nreview\nfigures\nStatus\nTo do\nDoing\nDone\nDraft methods section for water temperature logging\n\nManuscript Production\n\nMEDIUM\nSep 25, 2026\nwriting\nStatus\nTo do\nDoing\nDone\nFormat citations to journal style guide\n\nManuscript Production\n\nLOW\nOct 1, 2026\nformatting\nreferences\nStatus\nTo do\nDoing\nDone\nDOING\n2\nCross-check coral cover counts against photo quadrats\n\nReef Resilience Study\n\nHIGH\nSep 18, 2026\nqa\ndata\nStatus\nTo do\nDoing\nDone\nReconcile species ID discrepancies with lab reference set\n\nReef Resilience Study\n\nHIGH\nNo due date\ntaxonomy\nStatus\nTo do\nDoing\nDone\nDONE\n2\nDigitize field notebooks from March transects\n\nReef Resilience Study\n\nMEDIUM\nAug 20, 2026\nfieldwork\ndata-entry\nStatus\nTo do\nDoing\nDone\nArchive raw sensor logs to lab drive\n\nReef Resilience Study\n\nLOW\nAug 5, 2026\narchive\nStatus\nTo do\nDoing\nDone",
+    "brokenVisibleImages": []
+   }
+  }
+ },
+ "missingStates": [],
+ "captureFailures": [],
+ "actionErrors": [],
+ "infrastructureErrors": [],
+ "console": [],
+ "network": [],
+ "dialogs": [],
+ "browserVersion": "152.0.7977.83",
+ "sourceAfterTreeSha256": "1c85f0607d91057a41a8e0e351aa8d793161dc863df1d92e6816c07ec4f8f8a0",
+ "sourceUnchanged": true,
+ "finishedAt": "2026-09-15T01:14:18.944Z"
+}

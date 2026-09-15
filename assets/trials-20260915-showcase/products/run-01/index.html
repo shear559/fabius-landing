@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lattice — a local-first research notebook (fictional product demo)</title>
+<meta name="description" content="Lattice is a fictional local-first research notebook concept. This page is a design and engineering demonstration, not a real product.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============ ICON SPRITE ============ -->
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+  <defs>
+    <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="icon-capture" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 10h8M8 14h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="17" cy="15.5" r="1.4" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="icon-connect" viewBox="0 0 24 24"><circle cx="6" cy="7" r="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="18" cy="7" r="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="18" r="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 8l7-.7M7.5 9l3.6 7M16.4 9l-3.6 7" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
+    <symbol id="icon-export" viewBox="0 0 24 24"><path d="M12 3v11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M8 8l4-4 4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 15v3.5A1.5 1.5 0 0 0 6.5 20h11a1.5 1.5 0 0 0 1.5-1.5V15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="icon-play" viewBox="0 0 24 24"><path d="M7 5l12 7-12 7V5z" fill="currentColor"/></symbol>
+    <symbol id="icon-pause" viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14" fill="currentColor"/><rect x="14" y="5" width="4" height="14" fill="currentColor"/></symbol>
+    <symbol id="icon-restart" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 1 2.6 5.9" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M4 17v-5h5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="icon-doc" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M14 3v4h4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 13h6M9 16.5h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+    <symbol id="icon-template" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="13" y="4" width="7" height="16" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="4" y="13" width="7" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="icon-lattice-mark" viewBox="0 0 24 24"><circle cx="5" cy="5" r="2" fill="currentColor"/><circle cx="19" cy="5" r="2" fill="currentColor"/><circle cx="12" cy="12" r="2" fill="currentColor"/><circle cx="5" cy="19" r="2" fill="currentColor"/><circle cx="19" cy="19" r="2" fill="currentColor"/><path d="M5 5l7 7M19 5l-7 7M5 19l7-7M19 19l-7-7" stroke="currentColor" stroke-width="1.3"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="fiction-banner" role="note">
+  Fictional product demonstration — Lattice is not a real, released product. No purchases are processed on this page.
+</div>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="#top">
+      <svg class="brand-mark" width="28" height="28" aria-hidden="true"><use href="#icon-lattice-mark"/></svg>
+      <span>Lattice</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Primary">
+      <a href="#features">Features</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-primary btn-small desktop-only" href="#workflow">Explore the workflow</a>
+      <button type="button" class="menu-toggle" data-testid="menu-toggle" aria-expanded="false" aria-controls="mobile-nav">
+        <svg class="icon" aria-hidden="true"><use href="#icon-menu"/></svg>
+        <span class="sr-only">Menu</span>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-nav" class="mobile-nav" data-testid="mobile-nav" aria-label="Mobile" hidden>
+    <a href="#features">Features</a>
+    <a href="#workflow">Workflow</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a class="btn btn-primary btn-block" href="#workflow">Explore the workflow</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Local-first research notebook · concept</p>
+        <h1>Your research, kept together — on your own device.</h1>
+        <p class="hero-lede">
+          Lattice is a fictional notebook concept for independent researchers who capture sources, connect ideas,
+          and export clean Markdown — without handing notes to someone else's server.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#workflow">Explore the workflow</a>
+          <a class="btn btn-ghost" href="#pricing">See pricing</a>
+        </div>
+        <ul class="hero-facts">
+          <li><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg>Notes stored on your device</li>
+          <li><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg>Markdown export, anytime</li>
+          <li><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg>Source links live beside every note</li>
+        </ul>
+      </div>
+
+      <div class="hero-demo">
+        <div class="demo-frame" data-testid="hero-demo" data-state="capture">
+          <div class="demo-titlebar">
+            <span class="demo-dot"></span><span class="demo-dot"></span><span class="demo-dot"></span>
+            <span class="demo-titlebar-label">lattice — untitled project</span>
+          </div>
+
+          <svg class="demo-illustration" viewBox="0 0 480 320" role="img" aria-labelledby="demo-illustration-title">
+            <title id="demo-illustration-title">Illustration of a Lattice workspace moving through capture, connect, and export</title>
+
+            <rect x="0" y="0" width="480" height="320" class="demo-bg"/>
+
+            <!-- source panel (left) -->
+            <g class="demo-layer demo-layer-capture">
+              <rect x="18" y="24" width="150" height="150" rx="8" class="panel-card source-card"/>
+              <rect x="30" y="38" width="90" height="8" rx="4" class="line-strong"/>
+              <rect x="30" y="54" width="126" height="5" rx="2.5" class="line-soft"/>
+              <rect x="30" y="65" width="126" height="5" rx="2.5" class="line-soft"/>
+              <rect x="30" y="76" width="80" height="5" rx="2.5" class="line-soft"/>
+              <rect x="30" y="96" width="126" height="60" rx="6" class="panel-inset"/>
+              <circle class="cursor-dot" cx="146" cy="150" r="5"/>
+            </g>
+
+            <!-- arrow from source to note -->
+            <path class="flow-arrow flow-capture" d="M172 96 C 195 96, 195 96, 214 96" fill="none" stroke-linecap="round" marker-end="url(#arrowhead)"/>
+
+            <!-- note card (center) -->
+            <g class="demo-layer demo-layer-capture demo-layer-connect">
+              <rect x="222" y="56" width="150" height="120" rx="8" class="panel-card note-card"/>
+              <rect x="234" y="70" width="70" height="8" rx="4" class="line-strong accent-fill"/>
+              <rect x="234" y="88" width="126" height="5" rx="2.5" class="line-soft"/>
+              <rect x="234" y="99" width="126" height="5" rx="2.5" class="line-soft"/>
+              <rect x="234" y="110" width="96" height="5" rx="2.5" class="line-soft"/>
+              <rect x="234" y="128" width="58" height="16" rx="8" class="tag-chip"/>
+              <text x="242" y="139" class="tag-text">source · p.12</text>
+            </g>
+
+            <!-- connected note nodes (appear in connect state) -->
+            <g class="demo-layer demo-layer-connect">
+              <circle cx="300" cy="230" r="26" class="node-card node-b"/>
+              <text x="300" y="228" class="node-label" text-anchor="middle">Method</text>
+              <text x="300" y="240" class="node-label" text-anchor="middle">notes</text>
+
+              <circle cx="392" cy="150" r="26" class="node-card node-c"/>
+              <text x="392" y="148" class="node-label" text-anchor="middle">Related</text>
+              <text x="392" y="160" class="node-label" text-anchor="middle">source</text>
+
+              <circle cx="220" cy="248" r="22" class="node-card node-d"/>
+              <text x="220" y="252" class="node-label" text-anchor="middle">Quote</text>
+
+              <path class="link-line" d="M280 152 C 290 185, 292 205, 296 205" fill="none"/>
+              <path class="link-line" d="M340 130 C 360 130, 372 138, 380 145" fill="none"/>
+              <path class="link-line" d="M260 165 C 245 195, 235 210, 226 227" fill="none"/>
+            </g>
+
+            <!-- export panel (right) -->
+            <g class="demo-layer demo-layer-export">
+              <path class="flow-arrow flow-export" d="M372 96 C 395 96, 395 96, 414 96" fill="none" stroke-linecap="round" marker-end="url(#arrowhead)"/>
+              <rect x="414" y="30" width="52" height="66" rx="6" class="panel-card export-card"/>
+              <path d="M420 40h32l8 8v40a2 2 0 0 1-2 2h-38a2 2 0 0 1-2-2V42a2 2 0 0 1 2-2z" class="export-doc"/>
+              <rect x="424" y="58" width="24" height="3.5" rx="1.5" class="line-soft-export"/>
+              <rect x="424" y="66" width="24" height="3.5" rx="1.5" class="line-soft-export"/>
+              <rect x="424" y="74" width="16" height="3.5" rx="1.5" class="line-soft-export"/>
+            </g>
+
+            <defs>
+              <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+                <path d="M0,0 L8,4 L0,8 z" class="arrow-fill"/>
+              </marker>
+            </defs>
+          </svg>
+
+          <p class="demo-caption" data-testid="demo-caption">
+            <strong>Capture —</strong> save a passage straight from a source, with the citation attached.
+          </p>
+
+          <div class="demo-controls" role="group" aria-label="Workflow demonstration controls">
+            <button type="button" class="demo-btn" data-testid="demo-play" aria-pressed="false">
+              <svg class="icon icon-sm" aria-hidden="true"><use href="#icon-play" data-icon="play"/></svg>
+              <span data-label>Play</span>
+            </button>
+            <button type="button" class="demo-btn" data-testid="demo-restart">
+              <svg class="icon icon-sm" aria-hidden="true"><use href="#icon-restart"/></svg>
+              <span>Restart</span>
+            </button>
+            <div class="demo-steps" aria-hidden="true">
+              <span class="demo-step-dot" data-step="capture"></span>
+              <span class="demo-step-dot" data-step="connect"></span>
+              <span class="demo-step-dot" data-step="export"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURES ============ -->
+  <section class="features" id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Features</p>
+        <h2>Three moves, one notebook</h2>
+        <p class="section-lede">Every research session is some mix of capturing, connecting, and exporting. Lattice keeps all three close together.</p>
+      </div>
+
+      <div class="tabs">
+        <div class="tablist" role="tablist" aria-label="Lattice features">
+          <button type="button" class="tab" role="tab" id="tab-capture" data-testid="feature-capture" aria-selected="true" aria-controls="panel-capture" tabindex="0">
+            <svg class="icon" aria-hidden="true"><use href="#icon-capture"/></svg>Capture
+          </button>
+          <button type="button" class="tab" role="tab" id="tab-connect" data-testid="feature-connect" aria-selected="false" aria-controls="panel-connect" tabindex="-1">
+            <svg class="icon" aria-hidden="true"><use href="#icon-connect"/></svg>Connect
+          </button>
+          <button type="button" class="tab" role="tab" id="tab-export" data-testid="feature-export" aria-selected="false" aria-controls="panel-export" tabindex="-1">
+            <svg class="icon" aria-hidden="true"><use href="#icon-export"/></svg>Export
+          </button>
+        </div>
+
+        <div class="panels">
+          <div class="panel" id="panel-capture" data-testid="panel-capture" role="tabpanel" aria-labelledby="tab-capture" tabindex="0">
+            <div class="panel-visual panel-visual-capture" aria-hidden="true">
+              <svg class="icon icon-lg" ><use href="#icon-capture"/></svg>
+            </div>
+            <div class="panel-copy">
+              <h3>Capture without leaving the page</h3>
+              <p>Select a passage from an article, PDF, or dataset and save it as a note. The source link travels with it automatically, so you always know where an idea came from.</p>
+              <ul class="check-list">
+                <li><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg>Source links attached to every note</li>
+                <li><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg>Quick tagging while the context is fresh</li>
+                <li><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg>Everything saved to local device storage</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="panel" id="panel-connect" data-testid="panel-connect" role="tabpanel" aria-labelledby="tab-connect" tabindex="0" hidden>
+            <div class="panel-visual panel-visual-connect" aria-hidden="true">
+              <svg class="icon icon-lg"><use href="#icon-connect"/></svg>
+            </div>
+            <div class="panel-copy">
+              <h3>See how your notes relate</h3>
+              <p>Link related notes and sources into a working map of your project. Backlinks make it easy to notice patterns across sources you captured weeks apart.</p>
+              <ul class="check-list">
+                <li><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg>Two-way links between notes</li>
+                <li><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg>Optional local full-text search across your notebook</li>
+                <li><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg>A map view for spotting overlooked connections</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="panel" id="panel-export" data-testid="panel-export" role="tabpanel" aria-labelledby="tab-export" tabindex="0" hidden>
+            <div class="panel-visual panel-visual-export" aria-hidden="true">
+              <svg class="icon icon-lg"><use href="#icon-export"/></svg>
+            </div>
+            <div class="panel-copy">
+              <h3>Take your work with you</h3>
+              <p>Export any note, or a whole project, as clean Markdown files ready for a paper draft, a static site, or another tool entirely. Nothing is locked in.</p>
+              <ul class="check-list">
+                <li><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg>Markdown export for notes and projects</li>
+                <li><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg>Reusable project templates for recurring research formats</li>
+                <li><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg>Exported files are yours to back up however you like</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WORKFLOW ============ -->
+  <section class="workflow" id="workflow">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Workflow</p>
+        <h2>From source to finished draft</h2>
+        <p class="section-lede">A three-step loop you repeat as often as a project needs.</p>
+      </div>
+
+      <ol class="steps">
+        <li class="step">
+          <div class="step-number">01</div>
+          <svg class="icon icon-lg" aria-hidden="true"><use href="#icon-capture"/></svg>
+          <h3>Capture</h3>
+          <p>Save passages and citations the moment you find them, straight into a project notebook stored on your device.</p>
+        </li>
+        <li class="step">
+          <div class="step-number">02</div>
+          <svg class="icon icon-lg" aria-hidden="true"><use href="#icon-connect"/></svg>
+          <h3>Connect</h3>
+          <p>Link related notes, follow backlinks, and use local full-text search to resurface earlier findings.</p>
+        </li>
+        <li class="step">
+          <div class="step-number">03</div>
+          <svg class="icon icon-lg" aria-hidden="true"><use href="#icon-export"/></svg>
+          <h3>Export</h3>
+          <p>Turn a project into Markdown files whenever you're ready to draft, publish, or archive it.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ PRICING ============ -->
+  <section class="pricing" id="pricing">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Pricing</p>
+        <h2>Two plans, no surprises</h2>
+        <p class="section-lede">Fictional prices for this demonstration. No checkout or payment is processed on this page.</p>
+      </div>
+
+      <div class="billing-toggle" role="group" aria-label="Billing period">
+        <button type="button" class="billing-btn is-active" data-testid="billing-monthly" aria-pressed="true">Monthly</button>
+        <button type="button" class="billing-btn" data-testid="billing-yearly" aria-pressed="false">Yearly <span class="save-badge">save ~25%</span></button>
+      </div>
+
+      <div class="price-cards">
+        <div class="price-card">
+          <h3>Solo</h3>
+          <p class="price-tagline">For one independent researcher.</p>
+          <p class="price-amount">
+            <span class="price-currency">$</span><span data-testid="price-solo">12</span><span class="price-period" data-testid="period-solo">/month</span>
+          </p>
+          <ul class="check-list">
+            <li><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg>Unlimited notes, stored on your device</li>
+            <li><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg>Markdown export</li>
+            <li><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg>Source links on every note</li>
+            <li><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg>1 reusable project template</li>
+          </ul>
+          <a class="btn btn-ghost btn-block" href="#faq">Read the FAQ</a>
+        </div>
+
+        <div class="price-card price-card-featured">
+          <p class="featured-badge">Most researchers pick this</p>
+          <h3>Studio</h3>
+          <p class="price-tagline">For a small research group.</p>
+          <p class="price-amount">
+            <span class="price-currency">$</span><span data-testid="price-studio">29</span><span class="price-period" data-testid="period-studio">/month</span>
+          </p>
+          <ul class="check-list">
+            <li><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg>Everything in Solo</li>
+            <li><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg>Unlimited reusable project templates</li>
+            <li><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg>Optional local full-text search</li>
+            <li><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg>Shared project structure for co-authors</li>
+          </ul>
+          <a class="btn btn-primary btn-block" href="#faq">Read the FAQ</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">FAQ</p>
+        <h2>Good questions</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary data-testid="faq-0">Where are my notes stored?</summary>
+          <p>Everything you capture in Lattice is stored on your own device. This is a local-first concept: your notebook lives with you, not on a remote server.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-testid="faq-1">Can I get my notes out of Lattice?</summary>
+          <p>Yes. Any note or project can be exported as Markdown, a plain, portable file format you can open in almost any editor or publishing tool.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-testid="faq-2">How do I back up my research?</summary>
+          <p>Back up by exporting your files to wherever you keep backups — an external drive, your own sync tool, and so on. Lattice does not promise automatic cloud backup.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-testid="faq-3">What happens if I cancel?</summary>
+          <p>Cancelling has no effect on files you've already exported. Those Markdown files are yours to keep and use, independent of any subscription.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-row">
+    <div class="brand footer-brand">
+      <svg class="brand-mark" width="22" height="22" aria-hidden="true"><use href="#icon-lattice-mark"/></svg>
+      <span>Lattice</span>
+    </div>
+    <p class="footer-note">
+      Lattice is a fictional product created for a design and engineering demonstration. Facts on this page (storage, export format, pricing) are supplied fiction, not claims about a real product.
+    </p>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="#features">Features</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

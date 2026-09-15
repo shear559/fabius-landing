@@ -1,0 +1,77 @@
+{
+  "generation": {
+    "id": "run-07",
+    "task": "app",
+    "repeat": 2,
+    "arm": "baseline",
+    "started": "2026-09-15T00:54:33.862398Z",
+    "ended": "2026-09-15T01:05:09.157854Z",
+    "wall_seconds": 635.3,
+    "exit_code": 0,
+    "capped": false,
+    "command": [
+      "[user]/.antigravity-ide/extensions/anthropic.claude-code-2.1.260-darwin-x64/resources/native-binary/claude",
+      "-p",
+      "<PROMPT>",
+      "--model",
+      "claude-sonnet-5",
+      "--setting-sources",
+      "project",
+      "--strict-mcp-config",
+      "--permission-mode",
+      "bypassPermissions",
+      "--no-session-persistence",
+      "--output-format",
+      "stream-json",
+      "--verbose",
+      "--disallowedTools",
+      "WebFetch",
+      "WebSearch",
+      "--tools",
+      "Read,Write,Edit,Bash,Glob,Grep,Skill"
+    ]
+  },
+  "measurement": {
+    "id": "run-07",
+    "task": "app",
+    "repeat": 2,
+    "arm": "baseline",
+    "model": "claude-sonnet-5",
+    "elapsed_seconds": 633.7,
+    "wall_seconds": 635.3,
+    "output_tokens": 66374,
+    "tool_calls": 27,
+    "turns": 29,
+    "started": "2026-09-15T00:54:33.862398Z",
+    "ended": "2026-09-15T01:05:09.157854Z",
+    "capped": false,
+    "exit_code": 0,
+    "skill_calls": [],
+    "contract_reads": [],
+    "fabius_skill_calls": [],
+    "plugins_loaded": [],
+    "fabius_skills_visible": false,
+    "missing_deliverables": [],
+    "status": "Completed",
+    "files": {
+      "README.md": {
+        "bytes": 7761,
+        "sha256": "899e7bcf801e336d8a40b5b78c4a06b58208b66678d0c0da79e371201f886d40"
+      },
+      "app.js": {
+        "bytes": 36227,
+        "sha256": "d14411dc1331918a5723a446bc7c8a22c4c1a85c93727518d08ebce8f1ce1c12"
+      },
+      "index.html": {
+        "bytes": 8929,
+        "sha256": "5dfb3982202c7664ae439f3f49bccb27785ee958e2ab4fa415322162f15d8979"
+      },
+      "styles.css": {
+        "bytes": 13135,
+        "sha256": "94eb596135d140329d5f291f5e987cf1630ef47cf70b254f805a371fabd1ff92"
+      }
+    },
+    "grade_exit": 1,
+    "capture_exit": 0
+  }
+}

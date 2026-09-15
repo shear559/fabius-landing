@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fieldnote Board</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<noscript>
+  <div class="noscript-banner">
+    Fieldnote Board needs JavaScript to run. Please enable JavaScript in your browser settings and reload this page.
+  </div>
+</noscript>
+
+<div id="app" hidden>
+  <a class="skip-link" href="#main-region">Skip to task list</a>
+
+  <header class="app-header">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true" data-icon="logo"></span>
+      <div class="brand-text">
+        <h1>Fieldnote Board</h1>
+        <p class="tagline">Task tracker for the Fieldnote research publication team</p>
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary" data-testid="create-task">
+      <span class="icon" aria-hidden="true" data-icon="plus"></span>
+      New task
+    </button>
+  </header>
+
+  <div id="banner-region" class="banner-region" aria-live="polite"></div>
+
+  <section class="overview" aria-label="Board overview">
+    <div class="stat-tile" data-stat="total">
+      <span class="stat-value">0</span>
+      <span class="stat-label">Total tasks</span>
+    </div>
+    <div class="stat-tile" data-stat="todo">
+      <span class="stat-value">0</span>
+      <span class="stat-label">To do</span>
+    </div>
+    <div class="stat-tile" data-stat="doing">
+      <span class="stat-value">0</span>
+      <span class="stat-label">Doing</span>
+    </div>
+    <div class="stat-tile" data-stat="done">
+      <span class="stat-value">0</span>
+      <span class="stat-label">Done</span>
+    </div>
+    <div class="stat-tile stat-tile-warn" data-stat="overdue">
+      <span class="stat-value">0</span>
+      <span class="stat-label">Overdue</span>
+    </div>
+  </section>
+
+  <section class="toolbar" aria-label="Search, filter and view controls">
+    <div class="field search-field">
+      <label for="search">Search tasks</label>
+      <input id="search" type="search" data-testid="search" placeholder="Search title, project or tags">
+    </div>
+    <div class="field">
+      <label for="filter-status">Status</label>
+      <select id="filter-status" data-testid="filter-status">
+        <option value="all">All statuses</option>
+        <option value="todo">To do</option>
+        <option value="doing">Doing</option>
+        <option value="done">Done</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="filter-project">Project</label>
+      <select id="filter-project" data-testid="filter-project">
+        <option value="all">All projects</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="filter-priority">Priority</label>
+      <select id="filter-priority" data-testid="filter-priority">
+        <option value="all">All priorities</option>
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+    </div>
+
+    <div class="view-switch" role="group" aria-label="Board view">
+      <button type="button" class="view-btn" data-testid="view-board" aria-pressed="true">
+        <span class="icon" aria-hidden="true" data-icon="board"></span> Board
+      </button>
+      <button type="button" class="view-btn" data-testid="view-list" aria-pressed="false">
+        <span class="icon" aria-hidden="true" data-icon="list"></span> List
+      </button>
+    </div>
+
+    <div class="io-actions">
+      <button type="button" class="btn btn-secondary" data-testid="export">
+        <span class="icon" aria-hidden="true" data-icon="download"></span> Export JSON
+      </button>
+      <label class="btn btn-secondary file-btn">
+        <span class="icon" aria-hidden="true" data-icon="upload"></span> Import JSON
+        <input type="file" accept="application/json,.json" data-testid="import-file" class="visually-hidden-file">
+      </label>
+    </div>
+  </section>
+
+  <p id="count-line" class="count-line" aria-live="polite"></p>
+
+  <main id="main-region" aria-label="Tasks"></main>
+</div>
+
+<div id="recovery-screen" class="recovery-screen" hidden>
+  <div class="recovery-panel" role="alert">
+    <span class="icon recovery-icon" aria-hidden="true" data-icon="alert"></span>
+    <h1>We found a problem with your saved board</h1>
+    <p id="recovery-message">The data saved in this browser could not be read as a valid Fieldnote board. Nothing has been changed or overwritten.</p>
+    <p class="recovery-hint">You can download the original saved bytes for your records, or reset the board to start fresh with a new local board. Resetting cannot be undone.</p>
+    <div class="recovery-actions">
+      <button type="button" class="btn btn-secondary" data-testid="download-corrupt-backup">
+        <span class="icon" aria-hidden="true" data-icon="download"></span> Download original data
+      </button>
+      <button type="button" class="btn btn-primary" data-testid="reset-board">Reset board</button>
+    </div>
+  </div>
+</div>
+
+<div id="modal-overlay" class="modal-overlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="form-title">
+    <div class="modal-header">
+      <h2 id="form-title">New task</h2>
+      <button type="button" class="icon-btn" data-testid="close-form" aria-label="Close form">
+        <span class="icon" aria-hidden="true" data-icon="close"></span>
+      </button>
+    </div>
+    <form data-testid="task-form" novalidate>
+      <input type="hidden" name="id">
+      <div class="form-row">
+        <label for="f-title">Title</label>
+        <input id="f-title" name="title" type="text" maxlength="140" autocomplete="off">
+        <p class="field-error" id="err-title" role="alert"></p>
+      </div>
+      <div class="form-row">
+        <label for="f-project">Project</label>
+        <input id="f-project" name="project" type="text" maxlength="100" autocomplete="off" list="project-suggestions">
+        <datalist id="project-suggestions"></datalist>
+        <p class="field-error" id="err-project" role="alert"></p>
+      </div>
+      <div class="form-row-group">
+        <div class="form-row">
+          <label for="f-status">Status</label>
+          <select id="f-status" name="status">
+            <option value="todo">To do</option>
+            <option value="doing">Doing</option>
+            <option value="done">Done</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="f-priority">Priority</label>
+          <select id="f-priority" name="priority">
+            <option value="low">Low</option>
+            <option value="medium" selected>Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <label for="f-dueDate">Due date</label>
+        <input id="f-dueDate" name="dueDate" type="date">
+        <p class="field-error" id="err-dueDate" role="alert"></p>
+      </div>
+      <div class="form-row">
+        <label for="f-tags">Tags <span class="hint">(comma-separated, up to 8)</span></label>
+        <input id="f-tags" name="tags" type="text" autocomplete="off" placeholder="e.g. draft, figures, reviewer-2">
+        <p class="field-error" id="err-tags" role="alert"></p>
+      </div>
+      <div class="form-actions">
+        <button type="button" class="btn btn-secondary" data-testid="cancel-task">Cancel</button>
+        <button type="submit" class="btn btn-primary" data-testid="save-task">Save task</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<template id="task-card-template">
+  <article class="task-card" data-testid="task-card">
+    <header class="task-card-head">
+      <h3 class="task-title"></h3>
+      <span class="priority-flag" aria-hidden="true" data-icon="flag"></span>
+    </header>
+    <p class="task-project">
+      <span class="icon" aria-hidden="true" data-icon="folder"></span>
+      <span class="task-project-name"></span>
+    </p>
+    <p class="task-due">
+      <span class="icon" aria-hidden="true" data-icon="calendar"></span>
+      <span class="task-due-text"></span>
+    </p>
+    <ul class="task-tags"></ul>
+    <div class="task-card-controls">
+      <label class="status-label">
+        <span class="visually-hidden">Status</span>
+        <select data-action="status"></select>
+      </label>
+      <div class="task-card-buttons">
+        <button type="button" class="icon-btn" data-action="edit">
+          <span class="icon" aria-hidden="true" data-icon="pencil"></span>
+          <span class="visually-hidden">Edit</span>
+        </button>
+        <button type="button" class="icon-btn icon-btn-danger" data-action="delete">
+          <span class="icon" aria-hidden="true" data-icon="trash"></span>
+          <span class="visually-hidden">Delete</span>
+        </button>
+      </div>
+    </div>
+  </article>
+</template>
+
+<script src="./app.js"></script>
+</body>
+</html>

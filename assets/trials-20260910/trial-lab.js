@@ -1,4 +1,4 @@
-/* Fabius paired build viewer (September 10 study), second edition.
+/* Fabius paired build viewer, product-focused edition.
    Shows the actual generated pages and apps live in sandboxed frames, the recorded walkthroughs,
    the solver curves and proofs, every check, the blind design reviews and the process notes.
    No generated demo products, no inferred scores; data is untrusted and reaches the DOM as text. */
@@ -8,13 +8,14 @@
   if (!root) return;
   const find = name => root.querySelector(`[data-trial-${name}]`);
   const armNames = { baseline: 'Without Fabius', fabius: 'With Fabius' };
-  const taskNames = { math: 'Math', landing: 'Landing page', app: 'App' };
-  const reviewKinds = { strength: 'strength', tradeoff: 'tradeoff', 'usability concern': 'concern' };
-  const devices = { desktop: { width: 1280, height: 800, label: 'Desktop' }, phone: { width: 390, height: 700, label: 'Phone' } };
+  const taskNames = { math: 'Math', landing: 'Website', app: 'App' };
+  const taskCaptions = { landing: 'Design & interaction', app: 'A complete workspace', math: 'Reasoning & proof' };
+  const devices = { desktop: { width: 1080, height: 1000, label: 'Desktop' }, phone: { width: 390, height: 700, label: 'Phone' } };
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const countFormat = new Intl.NumberFormat('en-US');
   const decimalFormat = new Intl.NumberFormat('en-US', { maximumFractionDigits: 1 });
   const textCache = new Map();
+  let mathAssetsPromise;
   let data, taskIndex = 0, repeatIndex = 0, frameIndex = 0, mobileArm = 'baseline', viewMode = 'live', device = matchMedia('(max-width: 699px)').matches ? 'phone' : 'desktop';
   let frameIds = [], captureViews = [], pointViews = [], liveViews = [], timer = null, generation = 0, frameRequest = 0;
   let playbackButton, frameSlider, frameOutput, zoomInvoker, resizeObserver = null;
@@ -24,6 +25,17 @@
     if (className) element.className = className;
     if (text !== undefined) element.textContent = String(text);
     return element;
+  }
+  function icon(kind) {
+    const paths = {
+      landing: ['M4 5h16v14H4z', 'M4 9h16', 'M7 7h.01M10 7h.01', 'M7 12h5M7 15h8'],
+      app: ['M4 4h16v16H4z', 'M9 4v16', 'M12 8h5M12 12h5M12 16h3'],
+      math: ['M5 5h14L8 12l11 7H5'],
+      expand: ['M8 4H4v4M16 4h4v4M4 16v4h4M20 16v4h-4']
+    };
+    const svg = svgNode('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': 1.5, 'stroke-linecap': 'round', 'stroke-linejoin': 'round', 'aria-hidden': 'true', class: 'trial-icon' });
+    for (const d of paths[kind] || []) svg.append(svgNode('path', { d }));
+    return svg;
   }
   function svgNode(tag, attributes = {}) {
     const element = document.createElementNS('http://www.w3.org/2000/svg', tag);
@@ -90,8 +102,8 @@
           if (arm.reviewMethod !== undefined && !isText(arm.reviewMethod, 400)) throw Error('Invalid review method.');
           if (arm.scenarios !== undefined && (!arm.scenarios || !Number.isInteger(arm.scenarios.passed) || !Number.isInteger(arm.scenarios.executed) || arm.scenarios.passed < 0 || arm.scenarios.passed > arm.scenarios.executed)) throw Error('Invalid scenario counts.');
           for (const field of ['seconds', 'tokens', 'toolCalls']) if (arm[field] !== null && arm[field] !== undefined && (!finite(arm[field]) || arm[field] < 0)) throw Error('Invalid measured usage.');
-          for (const field of ['artifactUrl', 'proofUrl', 'productUrl', 'previewUrl', 'solutionUrl', 'codeUrl', 'verificationUrl']) if (arm[field] !== undefined && !safeURL(arm[field])) throw Error('Invalid artifact link.');
-          for (const field of ['previewUrl', 'solutionUrl', 'codeUrl', 'verificationUrl']) if (arm[field] !== undefined && !sameOriginURL(arm[field])) throw Error('Preview files must be same-origin.');
+          for (const field of ['artifactUrl', 'proofUrl', 'productUrl', 'previewUrl', 'solutionUrl', 'codeUrl', 'verificationUrl', 'diagramUrl']) if (arm[field] !== undefined && !safeURL(arm[field])) throw Error('Invalid artifact link.');
+          for (const field of ['previewUrl', 'solutionUrl', 'codeUrl', 'verificationUrl', 'diagramUrl']) if (arm[field] !== undefined && !sameOriginURL(arm[field])) throw Error('Preview files must be same-origin.');
           if (!Array.isArray(arm.snapshots) || arm.snapshots.length > 50 || arm.snapshots.some(snapshot => !isText(snapshot.id) || !isText(snapshot.label) || !safeURL(snapshot.url))) throw Error('Invalid capture data.');
           if (new Set(arm.snapshots.map(snapshot => snapshot.id)).size !== arm.snapshots.length) throw Error('Duplicate capture states.');
           if (arm.curve !== undefined && (!Array.isArray(arm.curve) || arm.curve.length > 5000 || arm.curve.some(point => !['t', 'x', 'y', 'z', 'value'].every(key => finite(point[key]))))) throw Error('Invalid candidate samples.');
@@ -128,7 +140,10 @@
     const tabs = find('tabs');
     tabs.replaceChildren();
     data.tasks.forEach((task, index) => {
-      const button = node('button', '', taskNames[task.id]);
+      const button = node('button');
+      const copy = node('span', 'trial-tab-copy');
+      copy.append(node('strong', '', taskNames[task.id]), node('span', '', taskCaptions[task.id]));
+      button.append(icon(task.id), copy);
       button.type = 'button';
       button.id = `trial-tab-${task.id}`;
       button.setAttribute('role', 'tab');
@@ -179,6 +194,7 @@
     const panel = find('panel');
     const task = currentTask();
     const run = currentRun();
+    panel.dataset.task = task.id;
     const intro = node('div', 'trial-task-intro');
     intro.append(node('h3', '', task.title), node('p', '', task.summary));
     panel.replaceChildren(intro);
@@ -220,11 +236,11 @@
   function renderViewControls(panel, task) {
     const box = node('div', 'trial-view-controls');
     const modeRow = node('div', 'trial-switch-row');
-    modeRow.append(node('span', 'trial-switch-label', 'Show'));
+
     const modes = node('div', 'trial-switch');
     modes.setAttribute('role', 'group');
     modes.setAttribute('aria-label', 'What to show for both conditions');
-    for (const [key, label] of [['live', 'The real product, live'], ['recorded', 'Recorded walkthrough']]) {
+    for (const [key, label] of [['live', 'Live'], ['recorded', 'Captures']]) {
       const button = node('button', '', label);
       button.type = 'button';
       button.setAttribute('aria-pressed', String(viewMode === key));
@@ -240,12 +256,12 @@
     box.append(modeRow);
     if (viewMode === 'live') {
       const deviceRow = node('div', 'trial-switch-row');
-      deviceRow.append(node('span', 'trial-switch-label', 'Frame'));
+
       const frames = node('div', 'trial-switch');
       frames.setAttribute('role', 'group');
       frames.setAttribute('aria-label', 'Preview frame size for both conditions');
       for (const [key, spec] of Object.entries(devices)) {
-        const button = node('button', '', `${spec.label} · ${spec.width}px`);
+        const button = node('button', '', spec.label);
         button.type = 'button';
         button.setAttribute('aria-pressed', String(device === key));
         button.addEventListener('click', () => {
@@ -276,7 +292,8 @@
     const marker = node('span', 'trial-arm-marker');
     marker.setAttribute('aria-hidden', 'true');
     title.append(marker, document.createTextNode(armNames[name]));
-    heading.append(title, node('span', 'trial-run-status', arm ? (isText(arm.status) ? arm.status : 'Recorded run') : 'Not available'));
+    heading.append(title);
+    if (arm) { const status = node('span', 'trial-run-status', isText(arm.status) ? arm.status : 'Recorded run'); status.title = status.textContent; heading.append(status); }
     article.append(heading);
     if (task.id === 'math') {
       const pointHolder = node('div');
@@ -314,12 +331,21 @@
       metrics.append(pair);
     }
     article.append(metrics);
-    if (task.id === 'math') renderSolution(article, name, arm);
+    if (task.id === 'math') {
+      if (arm.diagramUrl) {
+        const figure = node('figure', 'trial-proof-figure');
+        const img = new Image(); img.src = sameOriginURL(arm.diagramUrl); img.alt = `${armNames[name]}: the submitted feasible-region diagram`;
+        const enlarge = node('button', 'trial-button', 'Enlarge diagram'); enlarge.type = 'button';
+        enlarge.addEventListener('click', () => openZoom(name, { url: arm.diagramUrl, label: 'Submitted geometric diagram' }, enlarge));
+        figure.append(img, enlarge); article.append(figure);
+      }
+      renderSolution(article, name, arm);
+    }
     renderChecks(article, arm, task);
     const links = node('div', 'trial-artifact-links');
     appendLink(links, 'Source ZIP', arm.artifactUrl);
     appendLink(links, 'Proof / check record', arm.proofUrl);
-    if (isUiTask(task)) appendLink(links, 'Open the product in a new tab', arm.previewUrl || arm.productUrl, true);
+
     if (links.childElementCount) article.append(links);
     return article;
   }
@@ -358,7 +384,7 @@
     shell.dataset.device = device;
     const bar = node('div', 'trial-device-bar');
     for (let i = 0; i < 3; i += 1) { const dot = node('i'); dot.setAttribute('aria-hidden', 'true'); bar.append(dot); }
-    bar.append(node('span', '', `${armNames[name]} · ${taskNames[task.id].toLowerCase()}`));
+    bar.append(node('span', '', task.id === 'app' ? 'Fieldnote / Workspace' : 'Lattice / Home'));
     const screen = node('div', 'trial-device-screen');
     screen.dataset.loading = 'true';
     screen.append(node('p', 'trial-device-loading', `Loading the generated ${task.id === 'app' ? 'app' : 'page'}…`));
@@ -372,13 +398,17 @@
     screen.append(frame);
     shell.append(bar, screen);
     const foot = node('div', 'trial-device-foot');
-    const note = node('p', '', task.id === 'app' ? 'Isolated sandbox \u00b7 in-memory storage for this preview' : 'Isolated sandbox \u00b7 click and scroll inside');
+    const note = node('p', '', task.id === 'app' ? 'Try the app · resets on reload' : 'Click, scroll, explore');
     const actions = node('div', 'trial-device-actions');
-    const reload = node('button', 'trial-button', 'Reload');
+    const expand = node('button', 'trial-button trial-expand', 'Full size');
+    expand.prepend(icon('expand')); expand.type = 'button';
+    expand.setAttribute('aria-label', `Open ${armNames[name]} at full size`);
+    expand.addEventListener('click', () => openLiveZoom(name, url, expand));
+    const reload = node('button', 'trial-button', 'Reset');
     reload.type = 'button';
     reload.addEventListener('click', () => { screen.dataset.loading = 'true'; frame.src = url; announce(`${armNames[name]} preview reloaded; its board starts over.`); });
-    actions.append(reload);
-    appendLink(actions, 'Open in a new tab', url, true);
+    actions.append(expand, reload);
+
     foot.append(note, actions);
     holder.append(shell, foot);
     const view = { name, shell, screen, frame };
@@ -397,18 +427,25 @@
   function fitLiveFrames() {
     const spec = devices[device];
     for (const view of liveViews) {
-      const available = view.screen.clientWidth;
+      const available = view.shell.clientWidth;
       if (!available) continue;
       const scale = Math.min(1, available / spec.width);
       view.frame.style.transform = `scale(${scale})`;
       view.screen.style.height = `${Math.round(spec.height * scale)}px`;
       view.screen.style.marginInline = 'auto';
-      view.screen.style.width = scale === 1 && spec.width < available ? `${spec.width}px` : '';
+      view.screen.style.width = `${Math.min(spec.width, available)}px`;
     }
   }
   function watchLiveFrames(comparison) {
     if (!('ResizeObserver' in window)) return;
-    resizeObserver = new ResizeObserver(() => fitLiveFrames());
+    let observedWidth = -1;
+    const activeGeneration = generation;
+    resizeObserver = new ResizeObserver(entries => {
+      const width = entries[0].contentRect.width;
+      if (width === observedWidth) return;
+      observedWidth = width;
+      requestAnimationFrame(() => { if (generation === activeGeneration) fitLiveFrames(); });
+    });
     resizeObserver.observe(comparison);
   }
 
@@ -499,10 +536,33 @@
     playback.append(controls, node('p', 'trial-playback-note', 'Real captures of both products after the same actions.'));
     panel.insertBefore(playback, before);
   }
+  function openLiveZoom(name, url, invoker) {
+    zoomInvoker = invoker;
+    stopPlayback();
+    const dialog = find('zoom');
+    dialog.dataset.content = 'live';
+    find('zoom-note').hidden = false;
+    dialog.dataset.device = device;
+    root.querySelector('#trial-zoom-title').textContent = `${armNames[name]} · full-size preview`;
+    const frame = document.createElement('iframe');
+    frame.title = `${armNames[name]} full-size product preview`;
+    frame.addEventListener('load', () => { frame.dataset.ready = 'true'; });
+    frame.setAttribute('sandbox', 'allow-scripts allow-forms allow-modals allow-downloads');
+    frame.setAttribute('referrerpolicy', 'no-referrer');
+    frame.src = url;
+    find('zoom-image').replaceChildren(frame);
+    find('original').href = url;
+    find('original').textContent = 'Open in a new tab';
+    dialog.showModal();
+    find('close').focus();
+  }
   function openZoom(name, snapshot, invoker) {
     zoomInvoker = invoker;
     stopPlayback();
     const dialog = find('zoom');
+    dialog.dataset.content = 'capture';
+    find('zoom-note').hidden = true;
+    find('original').textContent = 'Open original capture';
     const img = new Image();
     img.src = safeURL(snapshot.url);
     img.alt = `${armNames[name]} — ${snapshot.label}. Actual captured output.`;
@@ -523,7 +583,9 @@
   }
   function renderMathStatement(panel, task) {
     if (!isText(task.question) || !task.question) return;
-    const box = node('div', 'trial-statement');
+    const box = node('details', 'trial-statement');
+    box.append(node('summary', '', 'The exact problem'));
+    const content = node('div', 'trial-statement-content');
     const left = node('div', 'trial-statement-row');
     left.append(node('h4', '', 'The problem, for every t in [−2, 4]'));
     const math = mathNode('math', undefined, { display: 'block' });
@@ -555,7 +617,8 @@
     ];
     for (const parts of rows) { const m = mathNode('math'); m.append(mrow(parts)); constraints.append(m); }
     right.append(constraints);
-    box.append(left, right);
+    content.append(left, right);
+    box.append(content);
     panel.append(box);
   }
   function sampleNumber(value) { return finite(value) ? String(value) : 'Unavailable'; }
@@ -569,7 +632,13 @@
     const times = [...new Set(all.map(point => point.t))].sort((a, b) => a - b);
     const box = node('div', 'trial-math');
     const header = node('div', 'trial-math-header');
-    header.append(node('h4', '', 'Optimal value f(t), six regimes'));
+    header.append(node('h4', '', 'One problem. Six regimes.'));
+    const agreement = node('p', 'trial-agreement');
+    const other = new Map((run.fabius?.curve || []).map(p => [p.t, p]));
+    const compared = (run.baseline?.curve || []).filter(p => other.has(p.t));
+    const equal = compared.length && compared.every(p => ['x','y','z','value'].every(k => Math.abs(p[k] - other.get(p.t)[k]) <= 1e-9));
+    agreement.textContent = equal ? 'Both solvers agree at every shared sample.' : 'Compare the solvers at each recorded sample.';
+    box.append(agreement);
     const legend = node('div', 'trial-chart-legend');
     for (const label of Object.values(armNames)) {
       const item = node('span');
@@ -668,6 +737,15 @@
       minis.push({ cursor: miniCursor, mx });
     }
     box.append(multiples);
+    const regimes = node('div', 'trial-regime-nav');
+    regimes.setAttribute('role', 'group'); regimes.setAttribute('aria-label', 'Explore the six parameter regimes');
+    const regimeButtons = edges.slice(0,-1).map((edge,i) => {
+      const button = node('button', '', `${i+1}`); button.type = 'button';
+      button.title = `${edge} ≤ t ≤ ${edges[i+1]}`; button.setAttribute('aria-label', `Regime ${i+1}, t from ${edge} to ${edges[i+1]}`);
+      button.addEventListener('click', () => { stopPlayback(); const mid = (edge+edges[i+1])/2; const nearest = times.reduce((best,t,j) => Math.abs(t-mid)<Math.abs(times[best]-mid)?j:best,0); slider.value = String(nearest); update(nearest); });
+      regimes.append(button); return button;
+    });
+    box.append(regimes);
     const scrub = node('div', 'trial-math-scrub');
     const label = node('label');
     label.htmlFor = 'trial-parameter';
@@ -713,6 +791,7 @@
     panel.append(box);
     function update(index) {
       const t = times[index];
+      regimeButtons.forEach((button,i) => button.setAttribute('aria-pressed', String(t >= edges[i] && (t < edges[i+1] || i === edges.length-2))));
       label.textContent = `t = ${sampleNumber(t)}`;
       slider.setAttribute('aria-valuetext', `t equals ${sampleNumber(t)}`);
       cursor.setAttribute('x1', String(mapX(t)));
@@ -777,7 +856,8 @@
       const [, url, kind] = files[index];
       body.dataset.kind = kind;
       body.replaceChildren(node('p', 'trial-solution-status', 'Loading the submitted file…'));
-      loadText(url).then(text => {
+      loadText(url).then(async text => {
+        if (kind !== 'code') await loadMathAssets();
         if (!body.isConnected || body.dataset.kind !== kind || body.getAttribute('aria-labelledby') !== buttons[index].id) return;
         body.replaceChildren(kind === 'code' ? renderCode(text) : renderProse(text));
       }).catch(() => {
@@ -807,15 +887,44 @@
     for (const line of text.replace(/\r\n?/g, '\n').split('\n')) pre.append(node('span', '', line.length ? line : ' '));
     return pre;
   }
+  function loadMathAssets() {
+    if (mathAssetsPromise) return mathAssetsPromise;
+    const base = '/assets/vendor/katex-0.18.7/';
+    mathAssetsPromise = Promise.all([
+      new Promise(resolve => {
+        const css = document.createElement('link'); css.rel = 'stylesheet'; css.href = `${base}katex.min.css`;
+        const timer = setTimeout(resolve, 8000);
+        css.onload = css.onerror = () => { clearTimeout(timer); resolve(); };
+        document.head.append(css);
+      }),
+      new Promise(resolve => {
+        const script = document.createElement('script'); script.src = `${base}katex.min.js`; script.async = true;
+        const timer = setTimeout(resolve, 8000);
+        script.onload = script.onerror = () => { clearTimeout(timer); resolve(); };
+        document.head.append(script);
+      })
+    ]);
+    return mathAssetsPromise;
+  }
+  function tex(text, display = false) {
+    const span = node('span', 'trial-tex', text);
+    if (window.katex) {
+      try {
+        window.katex.render(text, span, { displayMode: display, throwOnError: true, trust: false, macros: { '\\*': '*' }, strict: 'ignore', maxExpand: 1000, maxSize: 20 });
+        span.dataset.typeset = 'true';
+      } catch { span.textContent = text; span.dataset.typeset = 'false'; span.title = 'Original equation; this expression could not be typeset.'; }
+    }
+    return span;
+  }
   function inline(text, parent) {
-    const parts = text.split(/(\*\*[^*\n]+\*\*|`[^`\n]+`|\$\$[^$\n]+\$\$|\$[^$\n]+\$|\\\([^\n]*?\\\)|\\\[[^\n]*?\\\])/);
+    const parts = text.split(/(\*\*[^*\n]+\*\*|`[^`\n]+`|\$\$[^\n]+?\$\$|\$[^$\n]+\$|\\\([^\n]*?\\\)|\\\[[^\n]*?\\\])/);
     for (const part of parts) {
       if (!part) continue;
       if (part.startsWith('**') && part.endsWith('**') && part.length > 4) parent.append(node('strong', '', part.slice(2, -2)));
       else if (part.startsWith('`') && part.endsWith('`') && part.length > 2) parent.append(node('code', '', part.slice(1, -1)));
-      else if (part.startsWith('$$') && part.endsWith('$$') && part.length > 4) parent.append(node('span', 'trial-tex', part.slice(2, -2)));
-      else if (part.startsWith('$') && part.endsWith('$') && part.length > 2) parent.append(node('span', 'trial-tex', part.slice(1, -1)));
-      else if ((part.startsWith('\\(') && part.endsWith('\\)')) || (part.startsWith('\\[') && part.endsWith('\\]'))) parent.append(node('span', 'trial-tex', part.slice(2, -2)));
+      else if (part.startsWith('$$') && part.endsWith('$$') && part.length > 4) parent.append(tex(part.slice(2, -2), part.startsWith('$$') || part.startsWith('\\[')));
+      else if (part.startsWith('$') && part.endsWith('$') && part.length > 2) parent.append(tex(part.slice(1, -1)));
+      else if ((part.startsWith('\\(') && part.endsWith('\\)')) || (part.startsWith('\\[') && part.endsWith('\\]'))) parent.append(tex(part.slice(2, -2), part.startsWith('$$') || part.startsWith('\\[')));
       else parent.append(document.createTextNode(part));
     }
   }
@@ -888,6 +997,7 @@
       const text = await response.text();
       if (text.length > 2000000) throw Error('Results exceed the viewer limit.');
       data = validate(JSON.parse(text));
+      data.tasks.sort((a,b) => ['landing','app','math'].indexOf(a.id) - ['landing','app','math'].indexOf(b.id));
       renderProtocol();
       find('status').hidden = true;
       find('explorer').hidden = false;
@@ -910,9 +1020,15 @@
   });
   find('retry').addEventListener('click', load);
   find('close').addEventListener('click', () => find('zoom').close());
+  window.addEventListener('message', event => {
+    const dialog = find('zoom');
+    const frame = find('zoom-image').querySelector('iframe');
+    if (dialog.open && frame && event.source === frame.contentWindow && event.data?.type === 'fabius-preview-escape') dialog.close();
+  });
   find('zoom').addEventListener('close', () => {
     if (zoomInvoker?.isConnected) zoomInvoker.focus({ preventScroll: true });
     zoomInvoker = null;
+    find('zoom-image').replaceChildren();
   });
   document.addEventListener('visibilitychange', () => { if (document.hidden) stopPlayback(); });
   window.addEventListener('pagehide', stopPlayback);

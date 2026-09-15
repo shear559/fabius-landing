@@ -1,0 +1,98 @@
+{
+  "generation": {
+    "id": "run-10",
+    "task": "math",
+    "repeat": 1,
+    "arm": "fabius",
+    "started": "2026-09-15T01:05:09.160088Z",
+    "ended": "2026-09-15T01:17:49.443650Z",
+    "wall_seconds": 760.3,
+    "exit_code": 0,
+    "capped": false,
+    "command": [
+      "[user]/.antigravity-ide/extensions/anthropic.claude-code-2.1.260-darwin-x64/resources/native-binary/claude",
+      "-p",
+      "/fabius <PROMPT> + route instruction",
+      "--model",
+      "claude-sonnet-5",
+      "--setting-sources",
+      "project",
+      "--strict-mcp-config",
+      "--permission-mode",
+      "bypassPermissions",
+      "--no-session-persistence",
+      "--output-format",
+      "stream-json",
+      "--verbose",
+      "--disallowedTools",
+      "WebFetch",
+      "WebSearch",
+      "--tools",
+      "Read,Write,Edit,Bash,Glob,Grep,Skill",
+      "--plugin-dir",
+      "[user]/.claude/plugins/cache/fabius/fabius/3.1.0"
+    ]
+  },
+  "measurement": {
+    "id": "run-10",
+    "task": "math",
+    "repeat": 1,
+    "arm": "fabius",
+    "model": "claude-sonnet-5",
+    "elapsed_seconds": 758.6,
+    "wall_seconds": 760.3,
+    "output_tokens": 73438,
+    "tool_calls": 40,
+    "turns": 44,
+    "started": "2026-09-15T01:05:09.160088Z",
+    "ended": "2026-09-15T01:17:49.443650Z",
+    "capped": false,
+    "exit_code": 0,
+    "skill_calls": [
+      "fabius:fabius-parcus",
+      "fabius:fabius-disciplina",
+      "fabius:fabius-scientia"
+    ],
+    "contract_reads": [],
+    "fabius_skill_calls": [
+      "fabius:fabius-parcus",
+      "fabius:fabius-disciplina",
+      "fabius:fabius-scientia"
+    ],
+    "plugins_loaded": [
+      {
+        "name": "fabius",
+        "path": "[user]/.claude/plugins/cache/fabius/fabius/3.1.0",
+        "source": "fabius@inline",
+        "version": "3.1.0"
+      }
+    ],
+    "fabius_skills_visible": true,
+    "missing_deliverables": [],
+    "status": "Completed",
+    "files": {
+      "diagram.svg": {
+        "bytes": 5546,
+        "sha256": "d48b218607b83b931c8aaa7b357361384a14d3d99218d8bafe655679bcd6e07b"
+      },
+      "solution.md": {
+        "bytes": 15491,
+        "sha256": "64050f80c9a9866853ee68dcdca2121aa09d4534febe0a24868e3f9c546aeb6d"
+      },
+      "solution.py": {
+        "bytes": 2013,
+        "sha256": "a2c749e0a1cf4e434bcc6c6c28f14d2289f0bd80b82e46ca4226a2da5c3aadc9"
+      },
+      "verification.md": {
+        "bytes": 6109,
+        "sha256": "1b14fcdc829c9f833d2093333579ee5a424840f4e092bc535662b21191166d8b"
+      },
+      "verify.py": {
+        "bytes": 4751,
+        "sha256": "c11f5ed74e804061a9a6c88ba4643cd59c7de82df3aff00c81aa5dd1f688be7c"
+      }
+    },
+    "score_exit": 0,
+    "curve_points": 127
+  }
+}

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lattice — a local-first research notebook (fictional product demo)</title>
+<meta name="description" content="Lattice is a fictional local-first research notebook concept: notes stay on your device, sources travel with every note, and everything exports to plain Markdown. Demonstration only.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23201d17'/%3E%3Cpath d='M9 22V10l7 12 7-12v12' stroke='%23e7714a' stroke-width='2.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
+</head>
+<body id="top">
+
+<svg xmlns="http://www.w3.org/2000/svg" class="icon-sprite" aria-hidden="true">
+  <symbol id="icon-capture" viewBox="0 0 24 24"><path d="M4 16.5V19a1 1 0 0 0 1 1h2.5L18 9.5 14.5 6 4 16.5Z"/><path d="M16 4.5 19.5 8"/></symbol>
+  <symbol id="icon-connect" viewBox="0 0 24 24"><circle cx="6" cy="7" r="2.4"/><circle cx="18" cy="7" r="2.4"/><circle cx="12" cy="18" r="2.4"/><path d="M8.1 8.2 10 16M15.9 8.2 14 16M8.4 7h7.2"/></symbol>
+  <symbol id="icon-export" viewBox="0 0 24 24"><path d="M12 3v11"/><path d="M7.5 10 12 14.5 16.5 10"/><path d="M4.5 17.5v2A1.5 1.5 0 0 0 6 21h12a1.5 1.5 0 0 0 1.5-1.5v-2"/></symbol>
+  <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15 20 20"/></symbol>
+  <symbol id="icon-template" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 9.5h16M9.5 9.5V20"/></symbol>
+  <symbol id="icon-check" viewBox="0 0 24 24"><path d="M5 12.5 10 17.5 19 7"/></symbol>
+  <symbol id="icon-dash" viewBox="0 0 24 24"><path d="M6 12h12"/></symbol>
+  <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="icon-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="icon-play" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></symbol>
+  <symbol id="icon-pause" viewBox="0 0 24 24"><path d="M7.5 5.5h3v13h-3zM13.5 5.5h3v13h-3z"/></symbol>
+  <symbol id="icon-restart" viewBox="0 0 24 24"><path d="M19 12a7 7 0 1 1-2.2-5.1"/><path d="M19 4.5V9h-4.5"/></symbol>
+  <symbol id="icon-link" viewBox="0 0 24 24"><path d="M9.5 14.5 14.5 9.5"/><path d="M11 7l1.4-1.4a3.2 3.2 0 0 1 4.5 4.5L15.5 11.5"/><path d="M13 17l-1.4 1.4a3.2 3.2 0 0 1-4.5-4.5L8.5 12.5"/></symbol>
+</svg>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<p class="fiction-banner">Fictional product demonstration — Lattice is not a real, purchasable app. No accounts, payments, or data leave this page.</p>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8"/><path class="brand-mark-glyph" d="M9 22V10l7 12 7-12v12" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Lattice</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Primary">
+      <a href="#features">Features</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-primary btn-sm desktop-only" href="#pricing">Get Lattice</a>
+      <button type="button" class="menu-toggle" data-testid="menu-toggle" aria-expanded="false" aria-controls="mobile-nav">
+        <svg class="icon menu-icon-open" aria-hidden="true"><use href="#icon-menu"></use></svg>
+        <svg class="icon menu-icon-close" aria-hidden="true"><use href="#icon-close"></use></svg>
+        <span class="visually-hidden">Menu</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-nav" id="mobile-nav" data-testid="mobile-nav" hidden>
+    <nav aria-label="Mobile">
+      <a href="#features">Features</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-primary" href="#pricing">Get Lattice</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Local-first research notebook — concept demo</p>
+        <h1>Your research, held together.</h1>
+        <p class="hero-lede">Lattice keeps every note, source and thread on your own device — capture findings, connect them into a real picture, and export the whole thing to plain Markdown whenever you want.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-lg" href="#workflow">Explore the workflow</a>
+          <a class="btn btn-ghost btn-lg" href="#features">See the features</a>
+        </div>
+        <p class="hero-fineprint">Supplied fictional product facts for this demonstration — not a real app, service, or business claim.</p>
+      </div>
+
+      <div class="hero-scene-wrap">
+        <div class="hero-scene" id="hero-scene" data-stage="capture">
+          <svg class="scene-svg" viewBox="0 0 600 440" role="img" aria-labelledby="scene-title scene-desc">
+            <title id="scene-title">A Lattice workspace, illustrated</title>
+            <desc id="scene-desc">Three research notes appear on a desk, link together with source lines, then export together into a Markdown file.</desc>
+
+            <rect class="scene-desk" x="8" y="8" width="584" height="424" rx="20"/>
+            <g class="scene-grid" aria-hidden="true">
+              <path d="M8 96h584M8 184h584M8 272h584M8 360h584"/>
+            </g>
+
+            <!-- Note 1 -->
+            <g class="scene-note" data-note="1">
+              <rect x="48" y="56" width="188" height="110" rx="12"/>
+              <circle class="tag-dot" cx="68" cy="80" r="5"/>
+              <text x="84" y="85" class="note-title">Tidal Survey — Field Notes</text>
+              <text x="68" y="108" class="note-line">Spring tide amplitude up</text>
+              <text x="68" y="126" class="note-line">18% at north inlet site.</text>
+              <g class="source-chip" transform="translate(68,138)">
+                <rect width="120" height="20" rx="10"/>
+                <svg class="icon source-icon" x="6" y="3" width="14" height="14"><use href="#icon-link"></use></svg>
+                <text x="26" y="14">source: field-log-03</text>
+              </g>
+            </g>
+
+            <!-- Note 2 -->
+            <g class="scene-note" data-note="2">
+              <rect x="364" y="40" width="188" height="110" rx="12"/>
+              <circle class="tag-dot" cx="384" cy="64" r="5"/>
+              <text x="400" y="69" class="note-title">Interview — J. Alvarez</text>
+              <text x="384" y="92" class="note-line">Cooperative reports fewer</text>
+              <text x="384" y="110" class="note-line">landings since March.</text>
+              <g class="source-chip" transform="translate(384,122)">
+                <rect width="120" height="20" rx="10"/>
+                <svg class="icon source-icon" x="6" y="3" width="14" height="14"><use href="#icon-link"></use></svg>
+                <text x="26" y="14">source: interview-07</text>
+              </g>
+            </g>
+
+            <!-- Note 3 -->
+            <g class="scene-note" data-note="3">
+              <rect x="200" y="230" width="200" height="110" rx="12"/>
+              <circle class="tag-dot" cx="220" cy="254" r="5"/>
+              <text x="236" y="259" class="note-title">Satellite Overlay, March</text>
+              <text x="220" y="282" class="note-line">Overlay shows inlet shift</text>
+              <text x="220" y="300" class="note-line">matches survey markers.</text>
+              <g class="source-chip" transform="translate(220,312)">
+                <rect width="132" height="20" rx="10"/>
+                <svg class="icon source-icon" x="6" y="3" width="14" height="14"><use href="#icon-link"></use></svg>
+                <text x="26" y="14">source: sat-imagery-12</text>
+              </g>
+            </g>
+
+            <!-- Connections -->
+            <g class="scene-links">
+              <path class="link-line" d="M236 111 C300 150, 300 190, 300 230"/>
+              <path class="link-line" d="M400 150 C360 190, 340 210, 320 250"/>
+              <path class="link-line" d="M236 95 C300 60, 340 60, 384 95"/>
+              <circle class="link-node" cx="300" cy="230" r="5"/>
+              <circle class="link-node" cx="236" cy="111" r="5"/>
+              <circle class="link-node" cx="384" cy="95" r="5"/>
+            </g>
+
+            <!-- Export -->
+            <g class="scene-export">
+              <g class="export-card" transform="translate(230,190)">
+                <rect width="140" height="52" rx="10"/>
+                <text x="14" y="22" class="export-title">research-notes</text>
+                <text x="14" y="38" class="export-ext">.md · exported</text>
+              </g>
+              <g class="export-target" transform="translate(500,352)">
+                <rect width="64" height="52" rx="10"/>
+                <svg class="icon" x="20" y="14" width="24" height="24"><use href="#icon-export"></use></svg>
+              </g>
+              <path class="export-arrow" d="M300 244 C380 300, 440 330, 496 366"/>
+            </g>
+          </svg>
+
+          <div class="scene-controls">
+            <button type="button" class="scene-btn" id="scene-toggle" aria-pressed="false">
+              <svg class="icon" id="scene-toggle-icon" aria-hidden="true"><use href="#icon-play"></use></svg>
+              <span id="scene-toggle-label">Play demonstration</span>
+            </button>
+            <button type="button" class="scene-btn" id="scene-restart">
+              <svg class="icon" aria-hidden="true"><use href="#icon-restart"></use></svg>
+              <span>Restart</span>
+            </button>
+            <div class="scene-dots" aria-hidden="true">
+              <span class="scene-dot" data-dot="capture"></span>
+              <span class="scene-dot" data-dot="connect"></span>
+              <span class="scene-dot" data-dot="export"></span>
+            </div>
+          </div>
+          <p class="scene-status" id="scene-status" aria-live="polite">Showing: Capture — a note is saved with its source attached.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Explore Lattice</p>
+        <h2>One notebook, three moves</h2>
+        <p class="section-lede">Every project moves through the same three motions. Switch tabs to see what each one looks like inside Lattice.</p>
+      </div>
+
+      <div class="tabs-wrap">
+        <div class="tabs" role="tablist" aria-label="Lattice feature areas">
+          <button type="button" role="tab" id="tab-capture" class="tab" data-testid="feature-capture" aria-selected="true" aria-controls="panel-capture">
+            <svg class="icon" aria-hidden="true"><use href="#icon-capture"></use></svg> Capture
+          </button>
+          <button type="button" role="tab" id="tab-connect" class="tab" data-testid="feature-connect" aria-selected="false" aria-controls="panel-connect" tabindex="-1">
+            <svg class="icon" aria-hidden="true"><use href="#icon-connect"></use></svg> Connect
+          </button>
+          <button type="button" role="tab" id="tab-export" class="tab" data-testid="feature-export" aria-selected="false" aria-controls="panel-export" tabindex="-1">
+            <svg class="icon" aria-hidden="true"><use href="#icon-export"></use></svg> Export
+          </button>
+        </div>
+
+        <div class="panels">
+          <section id="panel-capture" data-testid="panel-capture" class="panel" role="tabpanel" aria-labelledby="tab-capture" tabindex="0">
+            <div class="panel-copy">
+              <h3>Capture without friction</h3>
+              <ul>
+                <li>Drop in text, a link, or a file — Lattice keeps the original source attached to the note automatically.</li>
+                <li>Everything saves straight to your device; nothing uploads while you write.</li>
+                <li>A quick-capture flow turns a stray thought into a structured note in seconds.</li>
+              </ul>
+            </div>
+            <div class="panel-mock mock-capture" aria-hidden="true">
+              <div class="mock-card"><span class="mock-dot"></span><div class="mock-lines"><span></span><span></span></div><div class="mock-chip">source attached</div></div>
+            </div>
+          </section>
+
+          <section id="panel-connect" data-testid="panel-connect" class="panel" role="tabpanel" aria-labelledby="tab-connect" tabindex="0" hidden>
+            <div class="panel-copy">
+              <h3>See how your research connects</h3>
+              <ul>
+                <li>Link related notes to build a web of evidence instead of a flat list.</li>
+                <li>Reusable project templates keep every new investigation structured the same way.</li>
+                <li>Follow a thread from a claim back to its source in a single click.</li>
+              </ul>
+            </div>
+            <div class="panel-mock mock-connect" aria-hidden="true">
+              <svg viewBox="0 0 160 110"><circle cx="30" cy="30" r="7"/><circle cx="130" cy="24" r="7"/><circle cx="80" cy="86" r="7"/><path d="M35 36 76 80M126 30 84 82M36 28 124 24"/></svg>
+            </div>
+          </section>
+
+          <section id="panel-export" data-testid="panel-export" class="panel" role="tabpanel" aria-labelledby="tab-export" tabindex="0" hidden>
+            <div class="panel-copy">
+              <h3>Take it with you</h3>
+              <ul>
+                <li>Export any note, or a whole project, to clean Markdown.</li>
+                <li>Files land in a folder you control — easy to back up, sync, or move elsewhere.</li>
+                <li>No lock-in: what you write in Lattice is what you keep.</li>
+              </ul>
+            </div>
+            <div class="panel-mock mock-export" aria-hidden="true">
+              <div class="mock-file"><svg class="icon"><use href="#icon-export"></use></svg><span>tidal-survey.md</span></div>
+              <div class="mock-file"><svg class="icon"><use href="#icon-export"></use></svg><span>interview-notes.md</span></div>
+              <div class="mock-file"><svg class="icon"><use href="#icon-export"></use></svg><span>project-overview.md</span></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="workflow" id="workflow">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">How it fits together</p>
+        <h2>A three-step workflow</h2>
+        <p class="section-lede">The same shape holds up whether you're tracking one lead or an entire project.</p>
+      </div>
+
+      <ol class="workflow-steps">
+        <li class="workflow-step">
+          <span class="step-number">01</span>
+          <svg class="icon step-icon" aria-hidden="true"><use href="#icon-capture"></use></svg>
+          <h3>Capture</h3>
+          <p>Save a note the moment you find something. Its source — a link, file, or reference — attaches automatically.</p>
+        </li>
+        <li class="workflow-step">
+          <span class="step-number">02</span>
+          <svg class="icon step-icon" aria-hidden="true"><use href="#icon-connect"></use></svg>
+          <h3>Connect</h3>
+          <p>Link the note to related ones and drop it into a reusable project template so the shape of the project holds.</p>
+        </li>
+        <li class="workflow-step">
+          <span class="step-number">03</span>
+          <svg class="icon step-icon" aria-hidden="true"><use href="#icon-export"></use></svg>
+          <h3>Export</h3>
+          <p>Export to Markdown whenever you want a clean, portable copy — for a collaborator, an archive, or yourself.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="pricing" id="pricing">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Pricing</p>
+        <h2>Two plans, one notebook</h2>
+        <p class="section-lede">Fictional pricing for this demonstration only. No checkout, no payment, no real charge.</p>
+      </div>
+
+      <div class="billing-toggle" role="group" aria-label="Billing period">
+        <button type="button" class="billing-btn" data-testid="billing-monthly" aria-pressed="true">Monthly</button>
+        <button type="button" class="billing-btn" data-testid="billing-yearly" aria-pressed="false">Yearly <span class="billing-note">billed annually</span></button>
+      </div>
+
+      <div class="pricing-grid">
+        <article class="price-card">
+          <h3>Solo</h3>
+          <p class="price-tagline">For one researcher, one set of projects.</p>
+          <p class="price-amount"><span data-testid="price-solo"><span class="price-value">$12</span><span class="price-unit">/mo</span></span></p>
+          <p class="price-period-label" data-period-label>billed monthly</p>
+          <ul class="price-features">
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg> Unlimited local notes</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg> Markdown export</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg> Source links on every note</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg> 1 reusable project template</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-dash"></use></svg> Full-text search (basic)</li>
+          </ul>
+          <a class="btn btn-ghost btn-lg price-cta" href="#faq">See how billing works</a>
+        </article>
+
+        <article class="price-card price-card-featured">
+          <p class="price-badge">Most for multi-project work</p>
+          <h3>Studio</h3>
+          <p class="price-tagline">For researchers running several projects at once.</p>
+          <p class="price-amount"><span data-testid="price-studio"><span class="price-value">$29</span><span class="price-unit">/mo</span></span></p>
+          <p class="price-period-label" data-period-label>billed monthly</p>
+          <ul class="price-features">
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg> Everything in Solo</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg> Unlimited reusable templates</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg> Full local full-text search</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg> Multiple notebook vaults</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg> Bulk Markdown export</li>
+          </ul>
+          <a class="btn btn-primary btn-lg price-cta" href="#faq">See how billing works</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Questions</p>
+        <h2>Frequently asked</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary data-testid="faq-0">Where does my data live?</summary>
+          <p>On your device. Notes are stored locally rather than on a remote server, so your working notebook stays with you.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-testid="faq-1">Can I get my notes out in a usable format?</summary>
+          <p>Yes. Any note or project can be exported to plain Markdown, so the files stay readable and portable outside Lattice.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-testid="faq-2">How do backups work?</summary>
+          <p>Backups happen by exporting your files yourself. There is no automatic cloud backup promised — exporting regularly is how you keep a copy safe.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-testid="faq-3">What happens to my notes if I cancel?</summary>
+          <p>Cancelling has no effect on files you've already exported — those Markdown files are yours and stay exactly as they were.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8"/><path class="brand-mark-glyph" d="M9 22V10l7 12 7-12v12" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Lattice</span>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="#features">Features</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <p class="footer-fineprint">Lattice is a fictional product built for a design and engineering demonstration. It is not a real service — no customers, reviews, ratings, or performance figures shown here are real.</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script src="../preview-keys.js"></script>
+</body>
+</html>

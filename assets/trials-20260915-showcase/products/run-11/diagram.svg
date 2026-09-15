@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" preserveAspectRatio="xMidYMid meet"
+     style="width:100%;height:auto;display:block"
+     role="img" aria-labelledby="svgTitle svgDesc" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <title id="svgTitle">Feasible region and optimizer path for the parametric QP</title>
+  <desc id="svgDesc">
+    Pentagonal feasible region in the (x,y) plane after eliminating z = 1-x-y, with vertices
+    V1(0,0), V2(1/2,0), V3(3/5,1/10), V4(3/5,2/5), V5(0,1). The optimizer's path as t ranges
+    over [-2,4] runs from (0,1/4) to (3/8,0) to (1/2,0) to (3/5,1/10), matching regimes A-F.
+  </desc>
+
+  <rect x="0" y="0" width="600" height="800" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="300" y="30" text-anchor="middle" font-size="20" font-weight="700" fill="#1a1a1a">
+    Feasible region (x,y) after eliminating z, and optimizer path
+  </text>
+  <text x="300" y="52" text-anchor="middle" font-size="13.5" fill="#444444">
+    z = 1 - x - y.  Path traces (x(t), y(t)) as t runs from -2 to 4.
+  </text>
+
+  <!-- gridlines -->
+  <g stroke="#e6e6e6" stroke-width="1">
+    <line x1="143.9" y1="544.8" x2="143.9" y2="105.2"/>
+    <line x1="266.3" y1="544.8" x2="266.3" y2="78.8"/>
+    <line x1="388.7" y1="544.8" x2="388.7" y2="78.8"/>
+    <line x1="511.1" y1="544.8" x2="511.1" y2="78.8"/>
+    <line x1="143.9" y1="544.8" x2="547.8" y2="544.8"/>
+    <line x1="143.9" y1="456.9" x2="547.8" y2="456.9"/>
+    <line x1="143.9" y1="369.0" x2="547.8" y2="369.0"/>
+    <line x1="143.9" y1="281.0" x2="547.8" y2="281.0"/>
+    <line x1="143.9" y1="193.1" x2="547.8" y2="193.1"/>
+    <line x1="143.9" y1="105.2" x2="547.8" y2="105.2"/>
+  </g>
+
+  <!-- axes -->
+  <g stroke="#1a1a1a" stroke-width="2">
+    <line x1="143.9" y1="544.8" x2="547.8" y2="544.8"/>
+    <polygon points="547.8,544.8 538.8,540.3 538.8,549.3" fill="#1a1a1a"/>
+    <line x1="143.9" y1="544.8" x2="143.9" y2="78.8"/>
+    <polygon points="143.9,78.8 139.4,87.8 148.4,87.8" fill="#1a1a1a"/>
+  </g>
+  <text x="552" y="558" font-size="15" fill="#1a1a1a">x</text>
+  <text x="150" y="72" font-size="15" fill="#1a1a1a">y</text>
+
+  <!-- x ticks -->
+  <g font-size="12.5" fill="#333333" text-anchor="middle">
+    <text x="143.9" y="563">0</text>
+    <text x="266.3" y="563">1/5</text>
+    <text x="388.7" y="563">2/5</text>
+    <text x="511.1" y="563">3/5</text>
+  </g>
+  <!-- y ticks -->
+  <g font-size="12.5" fill="#333333" text-anchor="end">
+    <text x="136" y="549.3">0</text>
+    <text x="136" y="461.4">1/5</text>
+    <text x="136" y="373.5">2/5</text>
+    <text x="136" y="285.5">3/5</text>
+    <text x="136" y="197.6">4/5</text>
+    <text x="136" y="109.7">1</text>
+  </g>
+
+  <!-- feasible pentagon -->
+  <polygon points="143.9,544.8 449.9,544.8 511.1,500.9 511.1,369.0 143.9,105.2"
+           fill="#cfe3f7" fill-opacity="0.75" stroke="#2b6cb0" stroke-width="2.5" stroke-linejoin="round"/>
+
+  <!-- edge constraint labels -->
+  <g font-size="12.5" fill="#2b6cb0">
+    <text x="230" y="562" text-anchor="middle">y = 0</text>
+    <text x="497" y="523" text-anchor="start" font-size="11.5">2y+z=1/2</text>
+    <text x="518" y="435" text-anchor="start">x = 3/5</text>
+    <text x="330" y="228" text-anchor="middle" transform="rotate(-31 330 228)">x + y = 1  (z = 0)</text>
+    <text x="118" y="325" text-anchor="middle" transform="rotate(-90 118 325)">x = 0</text>
+  </g>
+
+  <!-- optimizer path -->
+  <polyline points="143.9,434.9 373.4,544.8 449.9,544.8 511.1,500.9"
+            fill="none" stroke="#d9480f" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- path breakpoint markers -->
+  <g stroke="#7a2a05" stroke-width="1.5" fill="#ffcf9e">
+    <circle cx="143.9" cy="434.9" r="6"/>
+    <circle cx="373.4" cy="544.8" r="6"/>
+    <circle cx="449.9" cy="544.8" r="6"/>
+    <circle cx="511.1" cy="500.9" r="6"/>
+  </g>
+
+  <!-- vertex markers -->
+  <g stroke="#0b3d78" stroke-width="1.5" fill="#1a1a1a">
+    <circle cx="143.9" cy="544.8" r="4.5"/>
+    <circle cx="449.9" cy="544.8" r="4.5"/>
+    <circle cx="511.1" cy="500.9" r="4.5"/>
+    <circle cx="511.1" cy="369.0" r="4.5"/>
+    <circle cx="143.9" cy="105.2" r="4.5"/>
+  </g>
+
+  <!-- vertex labels -->
+  <g font-size="13" fill="#0b3d78" font-weight="600">
+    <text x="128" y="565" text-anchor="end">V1 (0,0)</text>
+    <text x="520" y="366" text-anchor="start">V4 (3/5,2/5)</text>
+    <text x="150" y="98" text-anchor="start">V5 (0,1)</text>
+  </g>
+
+  <!-- combined vertex + regime labels for the two path endpoints that coincide with polygon vertices -->
+  <g font-size="12.5" fill="#0b3d78" font-weight="600">
+    <text x="449.9" y="565" text-anchor="middle">V2 (1/2, 0)</text>
+    <text x="449.9" y="580" text-anchor="middle" fill="#7a2a05" font-size="11.5" font-style="italic">D:  t in [-1/2, 0]</text>
+  </g>
+  <g font-size="12.5" fill="#0b3d78" font-weight="600">
+    <text x="518" y="492" text-anchor="start">V3 (3/5, 1/10)</text>
+    <text x="518" y="507" text-anchor="start" fill="#7a2a05" font-size="11.5" font-style="italic">F:  t in [9/5, 4]</text>
+  </g>
+
+  <!-- path point labels (breakpoints not already covered above) -->
+  <g font-size="12.5" fill="#7a2a05" font-weight="600">
+    <text x="150" y="424" text-anchor="start">t in [-2,-3/2]: (0,1/4)</text>
+    <text x="365" y="526" text-anchor="end">t=-1: (3/8,0)</text>
+  </g>
+
+  <!-- regime tags along the path -->
+  <g font-size="12.5" fill="#7a2a05" font-style="italic">
+    <text x="230" y="500" text-anchor="middle">B</text>
+    <text x="400" y="533" text-anchor="middle">C</text>
+    <text x="466" y="512" text-anchor="middle">E</text>
+  </g>
+  <text x="178" y="452" font-size="12.5" fill="#7a2a05" font-style="italic" text-anchor="middle">A</text>
+
+  <!-- legend -->
+  <g font-size="13" fill="#1a1a1a">
+    <rect x="30" y="600" width="540" height="180" fill="#f7f7f7" stroke="#cccccc" stroke-width="1" rx="6"/>
+    <text x="46" y="622" font-weight="700" font-size="14">Regimes (letters match solution.md)</text>
+    <text x="46" y="644">A  t in [-2, -3/2]      fixed point (x,y)=(0, 1/4)              only x&gt;=0 active</text>
+    <text x="46" y="664">B  t in [-3/2, -1]      interior arc, only the equation x+y+z=1 active</text>
+    <text x="46" y="684">C  t in [-1, -1/2]      edge y=0</text>
+    <text x="46" y="704">D  t in [-1/2, 0]       fixed at vertex V2=(1/2,0)   y&gt;=0 and 2y+z&gt;=1/2 active</text>
+    <text x="46" y="724">E  t in [0, 9/5]        edge 2y+z=1/2</text>
+    <text x="46" y="744">F  t in [9/5, 4]        fixed at vertex V3=(3/5,1/10)  x&lt;=3/5 and 2y+z&gt;=1/2 active</text>
+    <text x="46" y="766" fill="#555555" font-size="11.5">Blue region = feasible (x,y); orange path = unique optimizer (x(t),y(t)); z = 1-x-y throughout.</text>
+  </g>
+</svg>

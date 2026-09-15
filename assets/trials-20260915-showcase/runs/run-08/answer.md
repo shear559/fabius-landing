@@ -1,0 +1,5 @@
+Built **Fieldnote Board**: `index.html`, `styles.css`, `app.js` (no deps, no build step, relative assets only), plus `README.md`. BRIEF.md untouched.
+
+Verified end-to-end with Playwright against the app served from a nested path at both 1440px and 360px: seeding, CRUD, edit-preserves-others, inline status control, search/filters/count/no-results, XSS-safe text rendering, delete+undo+reload, export (full board), import (atomic rejection of malformed/duplicate-id/bad-enum/bad-date/oversized files, confirmed replace on valid import, survives reload), corrupt-storage recovery (exact-byte preservation, download, confirmed reset), cross-tab conflict banner with blocked destructive controls until reload, Escape-to-close with focus restore, and Board/List view parity — all passing with zero console errors.
+
+Caught and fixed two real bugs via the screenshots: a `[hidden]` CSS-specificity bug that left the inactive view visible, and filter `<select>` elements overflowing their grid track at 360px width.

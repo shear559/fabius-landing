@@ -1,0 +1,3 @@
+The Lattice landing page is complete in this directory: `index.html`, `styles.css`, `app.js`, `README.md`, and `verify.js` (the Playwright check script, kept as evidence).
+
+All required interactions pass automated checks: mobile nav open/close with `aria-expanded` sync, Escape-to-close with focus return, tab semantics with arrow-key navigation, billing toggle with exact price restoration, all four FAQ entries, the CTA linking to `#workflow`, JS-disabled content discoverability, and reduced-motion behavior (hero demo doesn't autoplay). Color tokens were checked against WCAG contrast math (all ≥5:1). Full details, decisions, and limitations are in README.md.

@@ -1,0 +1,77 @@
+{
+  "generation": {
+    "id": "run-01",
+    "task": "landing",
+    "repeat": 1,
+    "arm": "baseline",
+    "started": "2026-09-15T00:41:53.698447Z",
+    "ended": "2026-09-15T00:46:56.471808Z",
+    "wall_seconds": 302.8,
+    "exit_code": 0,
+    "capped": false,
+    "command": [
+      "[user]/.antigravity-ide/extensions/anthropic.claude-code-2.1.260-darwin-x64/resources/native-binary/claude",
+      "-p",
+      "<PROMPT>",
+      "--model",
+      "claude-sonnet-5",
+      "--setting-sources",
+      "project",
+      "--strict-mcp-config",
+      "--permission-mode",
+      "bypassPermissions",
+      "--no-session-persistence",
+      "--output-format",
+      "stream-json",
+      "--verbose",
+      "--disallowedTools",
+      "WebFetch",
+      "WebSearch",
+      "--tools",
+      "Read,Write,Edit,Bash,Glob,Grep,Skill"
+    ]
+  },
+  "measurement": {
+    "id": "run-01",
+    "task": "landing",
+    "repeat": 1,
+    "arm": "baseline",
+    "model": "claude-sonnet-5",
+    "elapsed_seconds": 300.9,
+    "wall_seconds": 302.8,
+    "output_tokens": 31644,
+    "tool_calls": 17,
+    "turns": 20,
+    "started": "2026-09-15T00:41:53.698447Z",
+    "ended": "2026-09-15T00:46:56.471808Z",
+    "capped": false,
+    "exit_code": 0,
+    "skill_calls": [],
+    "contract_reads": [],
+    "fabius_skill_calls": [],
+    "plugins_loaded": [],
+    "fabius_skills_visible": false,
+    "missing_deliverables": [],
+    "status": "Completed",
+    "files": {
+      "README.md": {
+        "bytes": 6623,
+        "sha256": "670624a1d9eedd237748adb9bd63900f7bf8fba01f79897285df208d0039d181"
+      },
+      "app.js": {
+        "bytes": 6291,
+        "sha256": "a75a16a17d61b92a6705c070e9f2f7ed38317510232821bc53dfcfe772c303ff"
+      },
+      "index.html": {
+        "bytes": 23616,
+        "sha256": "c6eaa3d36a518508c062e7ef1fb901f1bf49309bfc927af2a2815a4563aabe0d"
+      },
+      "styles.css": {
+        "bytes": 15258,
+        "sha256": "ed0ebbaa93895c21dc0b372b92259cc77d2afa7348dcf7af504f5ac8d09cee9f"
+      }
+    },
+    "grade_exit": 0,
+    "capture_exit": 0
+  }
+}

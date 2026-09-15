@@ -1,0 +1,6 @@
+Delivered: `index.html`, `styles.css`, `app.js`, and `README.md` for Lattice, a fictional local-first research-notebook landing page.
+
+- Editorial visual system (warm paper canvas, serif display + system sans, one rust accent), original inline SVG icon family, and a hand-built hero scene illustrating capture→connect→export with user-controlled Play/Pause/Restart (reduced-motion aware).
+- All required test seams implemented: `menu-toggle`/`mobile-nav` with synced `aria-expanded`, Escape-to-close + focus return, and close-on-link-select; accessible `feature-capture/connect/export` tabs with arrow-key navigation and `panel-*` visibility; `billing-monthly/yearly` toggling `price-solo`/`price-studio` between $12/$29 monthly and $108/$264 yearly; four native `faq-0..3` details/summary; primary CTA linking to `#workflow`.
+- Verified live in headless Chromium served from a nested path: 38/38 interaction/content assertions passed, including a JavaScript-disabled pass confirming prices, nav links, all three feature panels, and FAQs stay discoverable without JS, plus a no-horizontal-overflow check at 360px. Reviewed screenshots at 360px and 1440px for layout and hierarchy.
+- README documents run instructions, design/implementation decisions, exactly what was checked, and known limitations (no automated a11y/Lighthouse audit, single-browser verification).

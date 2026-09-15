@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fieldnote Board</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<noscript>
+  <div class="noscript-banner">
+    Fieldnote Board needs JavaScript to run. Please enable JavaScript in your browser and reload this page.
+  </div>
+</noscript>
+
+<!-- Original icon family, single sprite source -->
+<svg aria-hidden="true" style="display:none">
+  <symbol id="icon-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="icon-edit" viewBox="0 0 24 24"><path d="M4 20h4L18.5 9.5a2.1 2.1 0 0 0-3-3L5 17v3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="none"/></symbol>
+  <symbol id="icon-trash" viewBox="0 0 24 24"><path d="M5 7h14M9 7V5h6v2M7 7l1 13h8l1-13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+  <symbol id="icon-undo" viewBox="0 0 24 24"><path d="M8 7 4 11l4 4M4 11h10a5 5 0 0 1 0 10h-2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+  <symbol id="icon-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="2" fill="none"/><path d="m20 20-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="icon-export" viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 17v3a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+  <symbol id="icon-import" viewBox="0 0 24 24"><path d="M12 15V3m0 0-4 4m4-4 4 4M5 17v3a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+  <symbol id="icon-board" viewBox="0 0 24 24"><rect x="4" y="4" width="4" height="16" rx="1" stroke="currentColor" stroke-width="2"/><rect x="10" y="4" width="4" height="10" rx="1" stroke="currentColor" stroke-width="2"/><rect x="16" y="4" width="4" height="13" rx="1" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="icon-list" viewBox="0 0 24 24"><path d="M8 6h12M8 12h12M8 18h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="4" cy="6" r="1.3" fill="currentColor"/><circle cx="4" cy="12" r="1.3" fill="currentColor"/><circle cx="4" cy="18" r="1.3" fill="currentColor"/></symbol>
+  <symbol id="icon-warning" viewBox="0 0 24 24"><path d="M12 3 2 20h20L12 3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="none"/><path d="M12 10v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="17" r="1" fill="currentColor"/></symbol>
+  <symbol id="icon-flag" viewBox="0 0 24 24"><path d="M6 3v18M6 4h11l-3 4 3 4H6" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="none"/></symbol>
+  <symbol id="icon-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2" stroke="currentColor" stroke-width="2"/><path d="M4 10h16M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="icon-tag" viewBox="0 0 24 24"><path d="M3 11 12 2h6a3 3 0 0 1 3 3v6l-9 9a2 2 0 0 1-3 0l-6-6a2 2 0 0 1 0-3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="none"/><circle cx="16" cy="8" r="1.3" fill="currentColor"/></symbol>
+  <symbol id="icon-notes" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="icon-reload" viewBox="0 0 24 24"><path d="M20 11A8 8 0 1 0 18.5 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M20 5v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+</svg>
+
+<div id="app" hidden>
+  <a class="skip-link" href="#main-content">Skip to task board</a>
+
+  <header class="app-header">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"><svg width="26" height="26"><use href="#icon-notes"></use></svg></span>
+      <div>
+        <h1>Fieldnote Board</h1>
+        <p class="brand-tagline">Local-first tracker for the &ldquo;Trail Data Atlas&rdquo; research publication</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button type="button" class="btn btn-ghost" id="export-btn" data-testid="export">
+        <svg width="18" height="18" aria-hidden="true"><use href="#icon-export"></use></svg>
+        Export JSON
+      </button>
+      <label class="btn btn-ghost file-btn" for="import-file">
+        <svg width="18" height="18" aria-hidden="true"><use href="#icon-import"></use></svg>
+        Import JSON
+      </label>
+      <input type="file" id="import-file" data-testid="import-file" accept="application/json" class="visually-hidden">
+      <button type="button" class="btn btn-primary" id="create-task-btn" data-testid="create-task">
+        <svg width="18" height="18" aria-hidden="true"><use href="#icon-plus"></use></svg>
+        New task
+      </button>
+    </div>
+  </header>
+
+  <div id="banner-region" aria-live="polite"></div>
+
+  <main id="main-content">
+    <section class="overview" aria-label="Board overview">
+      <div class="stat-tile" data-stat="total">
+        <span class="stat-value" id="stat-total">0</span>
+        <span class="stat-label">Total tasks</span>
+      </div>
+      <div class="stat-tile" data-stat="todo">
+        <span class="stat-value" id="stat-todo">0</span>
+        <span class="stat-label">To do</span>
+      </div>
+      <div class="stat-tile" data-stat="doing">
+        <span class="stat-value" id="stat-doing">0</span>
+        <span class="stat-label">Doing</span>
+      </div>
+      <div class="stat-tile" data-stat="done">
+        <span class="stat-value" id="stat-done">0</span>
+        <span class="stat-label">Done</span>
+      </div>
+    </section>
+
+    <section class="toolbar" aria-label="Search and filters">
+      <div class="field search-field">
+        <label for="search" class="visually-hidden">Search tasks</label>
+        <svg width="18" height="18" class="search-icon" aria-hidden="true"><use href="#icon-search"></use></svg>
+        <input type="search" id="search" data-testid="search" placeholder="Search title, project or tags&hellip;">
+      </div>
+      <div class="field">
+        <label for="filter-status">Status</label>
+        <select id="filter-status" data-testid="filter-status">
+          <option value="all">All statuses</option>
+          <option value="todo">To do</option>
+          <option value="doing">Doing</option>
+          <option value="done">Done</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="filter-project">Project</label>
+        <select id="filter-project" data-testid="filter-project">
+          <option value="all">All projects</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="filter-priority">Priority</label>
+        <select id="filter-priority" data-testid="filter-priority">
+          <option value="all">All priorities</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+      </div>
+      <div class="view-switch" role="group" aria-label="Board view switch">
+        <button type="button" class="view-btn is-active" id="view-board-btn" data-view="board" aria-pressed="true">
+          <svg width="16" height="16" aria-hidden="true"><use href="#icon-board"></use></svg>
+          Board
+        </button>
+        <button type="button" class="view-btn" id="view-list-btn" data-view="list" aria-pressed="false">
+          <svg width="16" height="16" aria-hidden="true"><use href="#icon-list"></use></svg>
+          List
+        </button>
+      </div>
+    </section>
+
+    <p class="result-count" id="result-count" aria-live="polite">0 of 0 tasks</p>
+
+    <section id="board-view" class="board-view"></section>
+    <section id="list-view" class="list-view" hidden></section>
+  </main>
+
+  <div id="toast-region" class="toast-region" aria-live="assertive"></div>
+</div>
+
+<!-- Task form modal -->
+<div id="modal-backdrop" class="modal-backdrop" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" id="task-modal">
+    <div class="modal-header">
+      <h2 id="modal-title">New task</h2>
+      <button type="button" class="icon-btn" id="modal-close-btn" aria-label="Close dialog">
+        <svg width="20" height="20" aria-hidden="true"><use href="#icon-close"></use></svg>
+      </button>
+    </div>
+    <form id="task-form" data-testid="task-form" novalidate>
+      <input type="hidden" name="id" id="field-id">
+      <div class="form-row">
+        <label for="field-title">Title</label>
+        <input type="text" id="field-title" name="title" maxlength="120" required aria-describedby="error-title">
+        <p class="field-error" id="error-title" role="alert"></p>
+      </div>
+      <div class="form-row">
+        <label for="field-project">Project</label>
+        <input type="text" id="field-project" name="project" maxlength="80" list="project-suggestions" required aria-describedby="error-project">
+        <datalist id="project-suggestions"></datalist>
+        <p class="field-error" id="error-project" role="alert"></p>
+      </div>
+      <div class="form-row form-row-split">
+        <div>
+          <label for="field-status">Status</label>
+          <select id="field-status" name="status">
+            <option value="todo">To do</option>
+            <option value="doing">Doing</option>
+            <option value="done">Done</option>
+          </select>
+        </div>
+        <div>
+          <label for="field-priority">Priority</label>
+          <select id="field-priority" name="priority">
+            <option value="low">Low</option>
+            <option value="medium" selected>Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <label for="field-dueDate">Due date</label>
+        <input type="date" id="field-dueDate" name="dueDate" aria-describedby="error-dueDate">
+        <p class="field-error" id="error-dueDate" role="alert"></p>
+      </div>
+      <div class="form-row">
+        <label for="field-tags">Tags <span class="hint">(comma-separated, up to 8)</span></label>
+        <input type="text" id="field-tags" name="tags" placeholder="e.g. draft, review" aria-describedby="error-tags">
+        <p class="field-error" id="error-tags" role="alert"></p>
+      </div>
+      <div class="form-actions">
+        <button type="button" class="btn btn-ghost" id="cancel-task-btn">Cancel</button>
+        <button type="submit" class="btn btn-primary" data-testid="save-task">Save task</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<template id="task-card-template">
+  <article class="task-card" data-testid="task-card">
+    <header class="task-card-head">
+      <h3 class="task-title"></h3>
+      <span class="priority-badge">
+        <svg width="12" height="12" aria-hidden="true"><use href="#icon-flag"></use></svg>
+        <span class="priority-text"></span>
+      </span>
+    </header>
+    <p class="task-project"></p>
+    <div class="task-meta">
+      <span class="task-due">
+        <svg width="14" height="14" aria-hidden="true"><use href="#icon-calendar"></use></svg>
+        <span class="due-text"></span>
+      </span>
+    </div>
+    <ul class="task-tags"></ul>
+    <div class="task-controls">
+      <select class="status-select" data-action="status"></select>
+      <button type="button" class="icon-btn" data-action="edit">
+        <svg width="16" height="16" aria-hidden="true"><use href="#icon-edit"></use></svg>
+        <span class="visually-hidden">Edit</span>
+      </button>
+      <button type="button" class="icon-btn icon-btn-danger" data-action="delete">
+        <svg width="16" height="16" aria-hidden="true"><use href="#icon-trash"></use></svg>
+        <span class="visually-hidden">Delete</span>
+      </button>
+    </div>
+  </article>
+</template>
+
+<script src="../preview-storage.js"></script>
+<script src="./app.js"></script>
+<script src="../preview-keys.js"></script>
+</body>
+</html>

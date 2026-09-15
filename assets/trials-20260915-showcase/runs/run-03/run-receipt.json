@@ -1,0 +1,77 @@
+{
+  "generation": {
+    "id": "run-03",
+    "task": "landing",
+    "repeat": 2,
+    "arm": "baseline",
+    "started": "2026-09-15T00:41:53.699388Z",
+    "ended": "2026-09-15T00:50:38.648969Z",
+    "wall_seconds": 524.9,
+    "exit_code": 0,
+    "capped": false,
+    "command": [
+      "[user]/.antigravity-ide/extensions/anthropic.claude-code-2.1.260-darwin-x64/resources/native-binary/claude",
+      "-p",
+      "<PROMPT>",
+      "--model",
+      "claude-sonnet-5",
+      "--setting-sources",
+      "project",
+      "--strict-mcp-config",
+      "--permission-mode",
+      "bypassPermissions",
+      "--no-session-persistence",
+      "--output-format",
+      "stream-json",
+      "--verbose",
+      "--disallowedTools",
+      "WebFetch",
+      "WebSearch",
+      "--tools",
+      "Read,Write,Edit,Bash,Glob,Grep,Skill"
+    ]
+  },
+  "measurement": {
+    "id": "run-03",
+    "task": "landing",
+    "repeat": 2,
+    "arm": "baseline",
+    "model": "claude-sonnet-5",
+    "elapsed_seconds": 523.3,
+    "wall_seconds": 524.9,
+    "output_tokens": 46133,
+    "tool_calls": 21,
+    "turns": 25,
+    "started": "2026-09-15T00:41:53.699388Z",
+    "ended": "2026-09-15T00:50:38.648969Z",
+    "capped": false,
+    "exit_code": 0,
+    "skill_calls": [],
+    "contract_reads": [],
+    "fabius_skill_calls": [],
+    "plugins_loaded": [],
+    "fabius_skills_visible": false,
+    "missing_deliverables": [],
+    "status": "Completed",
+    "files": {
+      "README.md": {
+        "bytes": 6341,
+        "sha256": "5bc5bd07c6de14f863e3d4d7ed1576d9e6df324b5df98dd1538d4b4f353e8132"
+      },
+      "app.js": {
+        "bytes": 6830,
+        "sha256": "12e4a173e490c3f99ab8fbee687a62944b4343dd932d41eee112f3f2a04d6805"
+      },
+      "index.html": {
+        "bytes": 26878,
+        "sha256": "c37dd0e8a98ec93e952a48eca4de23ee59e24173fba8c7b031a7d5034d0eaa2a"
+      },
+      "styles.css": {
+        "bytes": 20518,
+        "sha256": "57368e4e49efde07ba69bf8b3c9223c5f85632ea7eda2d90fafd600bb5032a7b"
+      }
+    },
+    "grade_exit": 1,
+    "capture_exit": 0
+  }
+}

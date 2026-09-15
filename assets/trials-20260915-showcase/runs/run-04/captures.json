@@ -1,0 +1,244 @@
+{
+ "schemaVersion": 1,
+ "runId": "run-04",
+ "kind": "landing",
+ "startedAt": "2026-09-15T00:55:12.953Z",
+ "helperSha256": "2448fa17cc9a54989a8ae7134baa2bfda9ee4cca000603582a3ce873d3c54f4a",
+ "source": {
+  "files": [
+   {
+    "file": "app.js",
+    "bytes": 5892,
+    "sha256": "ffa2c1f292ec9670a9f23f6d439959fcee64b4a2f36cad3c5a59148675450ca2"
+   },
+   {
+    "file": "BRIEF.md",
+    "bytes": 4167,
+    "sha256": "fa7cab009fde679f4c7ba187f2c9bed8696d33811850ede147154e005572556b"
+   },
+   {
+    "file": "index.html",
+    "bytes": 21545,
+    "sha256": "407752ed5875a24a7c6c293d686718e1097cd7c64679ad4a1fc4ef0bf3d41fe5"
+   },
+   {
+    "file": "README.md",
+    "bytes": 5741,
+    "sha256": "81f7c00062aecd71f831aef605b6afd6dc08dd8310be73c95caecec315dec2b3"
+   },
+   {
+    "file": "styles.css",
+    "bytes": 19755,
+    "sha256": "11964be903aa26a71d81d2bfdb5dc36d36e4d5222630a393b1b478738198a5e1"
+   }
+  ],
+  "treeSha256": "a1d3146411d4f2db0125e31e3c1a13fb37e773308c4a462f1a8c632dee5ff772"
+ },
+ "policy": {
+  "presentation": "Composed walkthrough from captured states; not a recording of model generation.",
+  "browser": "Google Chrome",
+  "desktopViewport": {
+   "width": 1440,
+   "height": 960
+  },
+  "mobileViewport": {
+   "width": 360,
+   "height": 800
+  },
+  "deviceScaleFactor": 1,
+  "fullPage": false,
+  "reducedMotion": "reduce",
+  "screenshotAnimations": "disabled",
+  "freshContexts": true,
+  "externalRequests": "blocked",
+  "candidateEdits": false,
+  "scoresProvided": false
+ },
+ "snapshots": [
+  {
+   "id": "initial",
+   "label": "Desktop first visit \u2014 untouched initial output",
+   "file": "initial.png",
+   "actionSucceeded": true,
+   "observed": {
+    "httpStatus": 200,
+    "freshStorage": true,
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Skip to content\n\nFictional product demonstration \u2014 Lattice is not a real, purchasable app. No accounts, payments, or data leave this page.\n\nLattice\nFeatures\nWorkflow\nPricing\nFAQ\nGet Lattice\n\nLOCAL-FIRST RESEARCH NOTEBOOK \u2014 CONCEPT DEMO\n\nYour research, held together.\n\nLattice keeps every note, source and thread on your own device \u2014 capture findings, connect them into a real picture, and export the whole thing to plain Markdown whenever you want.\n\nExplore the workflow\nSee the features\n\nSupplied fictional product facts for this demonstration \u2014 not a real app, service, or business claim.\n\nTidal Survey \u2014 Field Notes\nSpring tide amplitude up\n18% at north inlet site.\nsource: field-log-03\nInterview \u2014 J. Alvarez\nCooperative reports fewer\nlandings since March.\nsource: interview-07\nSatellite Overlay, March\nOverlay shows inlet shift\nmatches survey markers.\nsource: sat-imagery-12\nresearch-notes\n.md \u00b7 exported\nShow next stage\nRestart\n\nShowing: Capture \u2014 a note is saved with its source attached.\n\nEXPLORE LATTICE\n\nOne notebook, three moves\n\nEvery project moves through the same three motions. Switch tabs to see what each one looks like inside Lattice.\n\nCapture\nConnect\nExport\nCapture without friction\nDrop in text, a link, or a file \u2014 Lattice keeps the original source attached to the note automatically.\nEverything saves straight to your device; nothing uploads while you write.\nA quick-capture flow turns a stray thought into a structured note in seconds.\nsource attached\n\nHOW IT FITS TOGETHER\n\nA three-step workflow\n\nThe same shape holds up whether you're tracking one lead or an entire project.\n\n01\nCapture\n\nSave a note the moment you find something. Its source \u2014 a link, file, or reference \u2014 attaches automatically.\n\n02\nConnect\n\nLink the note to related ones and drop it into a reusable project template so the shape of the project holds.\n\n03\nExport\n\nExport to Markdown whenever you want a clean, portable copy \u2014 for a collaborator, an archive, or yourself.\n\nPRICING\n\nTwo plans, one notebook\n\nFictional pricing for this demonstration only. No checkout, no payment, no real charge.\n\nMonthly\nYearly\nbilled annually\nSolo\n\nFor one researcher, one set of projects.\n\n$12/mo\n\nbilled monthly\n\nUnlimited local notes\nMarkdown export\nSource links on every note\n1 reusable project template\nFull-text search (basic)\nSee how billing works\n\nMost for multi-project work\n\nStudio\n\nFor researchers running several projects at once.\n\n$29/mo\n\nbilled monthly\n\nEverything in Solo\nUnlimited reusable templates\nFull loc",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-15T00:55:15.629Z",
+   "actionStartedAt": "2026-09-15T00:55:14.889Z",
+   "sha256": "ef3e7aeb61b3e260c37ab01ff66bae92b41731822e3d3959a41f6b4d9239bdc2",
+   "bytes": 135121
+  },
+  {
+   "id": "feature-connect",
+   "label": "Connect feature selected; its panel is visible",
+   "file": "feature-connect.png",
+   "actionSucceeded": true,
+   "observed": {
+    "selected": "true",
+    "panelVisible": true,
+    "panelText": "See how your research connects\nLink related notes to build a web of evidence instead of a flat list.\nReusable project templates keep every new investigation structured the same way.\nFollow a thread from a claim back to its source in a single click.",
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 1006
+     },
+     "documentWidth": 1440,
+     "visibleText": "Skip to content\n\nFictional product demonstration \u2014 Lattice is not a real, purchasable app. No accounts, payments, or data leave this page.\n\nLattice\nFeatures\nWorkflow\nPricing\nFAQ\nGet Lattice\n\nLOCAL-FIRST RESEARCH NOTEBOOK \u2014 CONCEPT DEMO\n\nYour research, held together.\n\nLattice keeps every note, source and thread on your own device \u2014 capture findings, connect them into a real picture, and export the whole thing to plain Markdown whenever you want.\n\nExplore the workflow\nSee the features\n\nSupplied fictional product facts for this demonstration \u2014 not a real app, service, or business claim.\n\nTidal Survey \u2014 Field Notes\nSpring tide amplitude up\n18% at north inlet site.\nsource: field-log-03\nInterview \u2014 J. Alvarez\nCooperative reports fewer\nlandings since March.\nsource: interview-07\nSatellite Overlay, March\nOverlay shows inlet shift\nmatches survey markers.\nsource: sat-imagery-12\nresearch-notes\n.md \u00b7 exported\nShow next stage\nRestart\n\nShowing: Capture \u2014 a note is saved with its source attached.\n\nEXPLORE LATTICE\n\nOne notebook, three moves\n\nEvery project moves through the same three motions. Switch tabs to see what each one looks like inside Lattice.\n\nCapture\nConnect\nExport\nSee how your research connects\nLink related notes to build a web of evidence instead of a flat list.\nReusable project templates keep every new investigation structured the same way.\nFollow a thread from a claim back to its source in a single click.\n\nHOW IT FITS TOGETHER\n\nA three-step workflow\n\nThe same shape holds up whether you're tracking one lead or an entire project.\n\n01\nCapture\n\nSave a note the moment you find something. Its source \u2014 a link, file, or reference \u2014 attaches automatically.\n\n02\nConnect\n\nLink the note to related ones and drop it into a reusable project template so the shape of the project holds.\n\n03\nExport\n\nExport to Markdown whenever you want a clean, portable copy \u2014 for a collaborator, an archive, or yourself.\n\nPRICING\n\nTwo plans, one notebook\n\nFictional pricing for this demonstration only. No checkout, no payment, no real charge.\n\nMonthly\nYearly\nbilled annually\nSolo\n\nFor one researcher, one set of projects.\n\n$12/mo\n\nbilled monthly\n\nUnlimited local notes\nMarkdown export\nSource links on every note\n1 reusable project template\nFull-text search (basic)\nSee how billing works\n\nMost for multi-project work\n\nStudio\n\nFor researchers running several projects at once.\n\n$29/mo\n\nbilled monthly\n\nEverything in Solo\nUnlimited reusable templates\nFull local full-text search\nMultiple notebook vaults\nBulk",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-15T00:55:19.138Z",
+   "actionStartedAt": "2026-09-15T00:55:18.783Z",
+   "sha256": "d6e17117499dd5df7616489dddcb7d3d3155e835c7d77bf64d662c7907cfd02e",
+   "bytes": 87995
+  },
+  {
+   "id": "billing-yearly",
+   "label": "Yearly billing selected; displayed prices are 108 and 264",
+   "file": "billing-yearly.png",
+   "actionSucceeded": true,
+   "observed": {
+    "solo": "$108/yr",
+    "studio": "$264/yr",
+    "amounts": [
+     108,
+     264
+    ],
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 2477
+     },
+     "documentWidth": 1440,
+     "visibleText": "Skip to content\n\nFictional product demonstration \u2014 Lattice is not a real, purchasable app. No accounts, payments, or data leave this page.\n\nLattice\nFeatures\nWorkflow\nPricing\nFAQ\nGet Lattice\n\nLOCAL-FIRST RESEARCH NOTEBOOK \u2014 CONCEPT DEMO\n\nYour research, held together.\n\nLattice keeps every note, source and thread on your own device \u2014 capture findings, connect them into a real picture, and export the whole thing to plain Markdown whenever you want.\n\nExplore the workflow\nSee the features\n\nSupplied fictional product facts for this demonstration \u2014 not a real app, service, or business claim.\n\nTidal Survey \u2014 Field Notes\nSpring tide amplitude up\n18% at north inlet site.\nsource: field-log-03\nInterview \u2014 J. Alvarez\nCooperative reports fewer\nlandings since March.\nsource: interview-07\nSatellite Overlay, March\nOverlay shows inlet shift\nmatches survey markers.\nsource: sat-imagery-12\nresearch-notes\n.md \u00b7 exported\nShow next stage\nRestart\n\nShowing: Capture \u2014 a note is saved with its source attached.\n\nEXPLORE LATTICE\n\nOne notebook, three moves\n\nEvery project moves through the same three motions. Switch tabs to see what each one looks like inside Lattice.\n\nCapture\nConnect\nExport\nSee how your research connects\nLink related notes to build a web of evidence instead of a flat list.\nReusable project templates keep every new investigation structured the same way.\nFollow a thread from a claim back to its source in a single click.\n\nHOW IT FITS TOGETHER\n\nA three-step workflow\n\nThe same shape holds up whether you're tracking one lead or an entire project.\n\n01\nCapture\n\nSave a note the moment you find something. Its source \u2014 a link, file, or reference \u2014 attaches automatically.\n\n02\nConnect\n\nLink the note to related ones and drop it into a reusable project template so the shape of the project holds.\n\n03\nExport\n\nExport to Markdown whenever you want a clean, portable copy \u2014 for a collaborator, an archive, or yourself.\n\nPRICING\n\nTwo plans, one notebook\n\nFictional pricing for this demonstration only. No checkout, no payment, no real charge.\n\nMonthly\nYearly\nbilled annually\nSolo\n\nFor one researcher, one set of projects.\n\n$108/yr\n\nbilled yearly\n\nUnlimited local notes\nMarkdown export\nSource links on every note\n1 reusable project template\nFull-text search (basic)\nSee how billing works\n\nMost for multi-project work\n\nStudio\n\nFor researchers running several projects at once.\n\n$264/yr\n\nbilled yearly\n\nEverything in Solo\nUnlimited reusable templates\nFull local full-text search\nMultiple notebook vaults\nBulk",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-15T00:55:19.846Z",
+   "actionStartedAt": "2026-09-15T00:55:19.442Z",
+   "sha256": "4a2c84fad43bf0b7d5085726989f0f0107010d4d6184ff646b99d60b9d7831de",
+   "bytes": 91236
+  },
+  {
+   "id": "workflow",
+   "label": "Workflow section in the viewport",
+   "file": "workflow.png",
+   "actionSucceeded": true,
+   "observed": {
+    "visible": true,
+    "text": "HOW IT FITS TOGETHER\n\nA three-step workflow\n\nThe same shape holds up whether you're tracking one lead or an entire project.\n\n01\nCapture\n\nSave a note the moment you find something. Its source \u2014 a link, file, or reference \u2014 attaches automatically.\n\n02\nConnect\n\nLink the note to related ones and drop it into a reusable project template so the shape of the project holds.\n\n03\nExport\n\nExport to Markdown whenever you want a clean, portable copy \u2014 for a collaborator, an archive, or yourself.",
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 1547
+     },
+     "documentWidth": 1440,
+     "visibleText": "Skip to content\n\nFictional product demonstration \u2014 Lattice is not a real, purchasable app. No accounts, payments, or data leave this page.\n\nLattice\nFeatures\nWorkflow\nPricing\nFAQ\nGet Lattice\n\nLOCAL-FIRST RESEARCH NOTEBOOK \u2014 CONCEPT DEMO\n\nYour research, held together.\n\nLattice keeps every note, source and thread on your own device \u2014 capture findings, connect them into a real picture, and export the whole thing to plain Markdown whenever you want.\n\nExplore the workflow\nSee the features\n\nSupplied fictional product facts for this demonstration \u2014 not a real app, service, or business claim.\n\nTidal Survey \u2014 Field Notes\nSpring tide amplitude up\n18% at north inlet site.\nsource: field-log-03\nInterview \u2014 J. Alvarez\nCooperative reports fewer\nlandings since March.\nsource: interview-07\nSatellite Overlay, March\nOverlay shows inlet shift\nmatches survey markers.\nsource: sat-imagery-12\nresearch-notes\n.md \u00b7 exported\nShow next stage\nRestart\n\nShowing: Capture \u2014 a note is saved with its source attached.\n\nEXPLORE LATTICE\n\nOne notebook, three moves\n\nEvery project moves through the same three motions. Switch tabs to see what each one looks like inside Lattice.\n\nCapture\nConnect\nExport\nSee how your research connects\nLink related notes to build a web of evidence instead of a flat list.\nReusable project templates keep every new investigation structured the same way.\nFollow a thread from a claim back to its source in a single click.\n\nHOW IT FITS TOGETHER\n\nA three-step workflow\n\nThe same shape holds up whether you're tracking one lead or an entire project.\n\n01\nCapture\n\nSave a note the moment you find something. Its source \u2014 a link, file, or reference \u2014 attaches automatically.\n\n02\nConnect\n\nLink the note to related ones and drop it into a reusable project template so the shape of the project holds.\n\n03\nExport\n\nExport to Markdown whenever you want a clean, portable copy \u2014 for a collaborator, an archive, or yourself.\n\nPRICING\n\nTwo plans, one notebook\n\nFictional pricing for this demonstration only. No checkout, no payment, no real charge.\n\nMonthly\nYearly\nbilled annually\nSolo\n\nFor one researcher, one set of projects.\n\n$108/yr\n\nbilled yearly\n\nUnlimited local notes\nMarkdown export\nSource links on every note\n1 reusable project template\nFull-text search (basic)\nSee how billing works\n\nMost for multi-project work\n\nStudio\n\nFor researchers running several projects at once.\n\n$264/yr\n\nbilled yearly\n\nEverything in Solo\nUnlimited reusable templates\nFull local full-text search\nMultiple notebook vaults\nBulk",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-15T00:55:20.255Z",
+   "actionStartedAt": "2026-09-15T00:55:20.060Z",
+   "sha256": "8a5f03592ea2570b6b62920dac1365789cc5a53d6675a4c376fba08458c133ea",
+   "bytes": 99345
+  },
+  {
+   "id": "faq",
+   "label": "First FAQ opened; actual answer shown",
+   "file": "faq.png",
+   "actionSucceeded": true,
+   "observed": {
+    "tag": "SUMMARY",
+    "parent": "DETAILS",
+    "open": true,
+    "text": "Where does my data live?\n\nOn your device. Notes are stored locally rather than on a remote server, so your working notebook stays with you.",
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 3232
+     },
+     "documentWidth": 1440,
+     "visibleText": "Skip to content\n\nFictional product demonstration \u2014 Lattice is not a real, purchasable app. No accounts, payments, or data leave this page.\n\nLattice\nFeatures\nWorkflow\nPricing\nFAQ\nGet Lattice\n\nLOCAL-FIRST RESEARCH NOTEBOOK \u2014 CONCEPT DEMO\n\nYour research, held together.\n\nLattice keeps every note, source and thread on your own device \u2014 capture findings, connect them into a real picture, and export the whole thing to plain Markdown whenever you want.\n\nExplore the workflow\nSee the features\n\nSupplied fictional product facts for this demonstration \u2014 not a real app, service, or business claim.\n\nTidal Survey \u2014 Field Notes\nSpring tide amplitude up\n18% at north inlet site.\nsource: field-log-03\nInterview \u2014 J. Alvarez\nCooperative reports fewer\nlandings since March.\nsource: interview-07\nSatellite Overlay, March\nOverlay shows inlet shift\nmatches survey markers.\nsource: sat-imagery-12\nresearch-notes\n.md \u00b7 exported\nShow next stage\nRestart\n\nShowing: Capture \u2014 a note is saved with its source attached.\n\nEXPLORE LATTICE\n\nOne notebook, three moves\n\nEvery project moves through the same three motions. Switch tabs to see what each one looks like inside Lattice.\n\nCapture\nConnect\nExport\nSee how your research connects\nLink related notes to build a web of evidence instead of a flat list.\nReusable project templates keep every new investigation structured the same way.\nFollow a thread from a claim back to its source in a single click.\n\nHOW IT FITS TOGETHER\n\nA three-step workflow\n\nThe same shape holds up whether you're tracking one lead or an entire project.\n\n01\nCapture\n\nSave a note the moment you find something. Its source \u2014 a link, file, or reference \u2014 attaches automatically.\n\n02\nConnect\n\nLink the note to related ones and drop it into a reusable project template so the shape of the project holds.\n\n03\nExport\n\nExport to Markdown whenever you want a clean, portable copy \u2014 for a collaborator, an archive, or yourself.\n\nPRICING\n\nTwo plans, one notebook\n\nFictional pricing for this demonstration only. No checkout, no payment, no real charge.\n\nMonthly\nYearly\nbilled annually\nSolo\n\nFor one researcher, one set of projects.\n\n$108/yr\n\nbilled yearly\n\nUnlimited local notes\nMarkdown export\nSource links on every note\n1 reusable project template\nFull-text search (basic)\nSee how billing works\n\nMost for multi-project work\n\nStudio\n\nFor researchers running several projects at once.\n\n$264/yr\n\nbilled yearly\n\nEverything in Solo\nUnlimited reusable templates\nFull local full-text search\nMultiple notebook vaults\nBulk",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-15T00:55:20.622Z",
+   "actionStartedAt": "2026-09-15T00:55:20.399Z",
+   "sha256": "30b1fd2c89f2d32909ae8fb990e9964716f4c1ed69a6fcc21f994c0e87d4f7da",
+   "bytes": 69131
+  }
+ ],
+ "mobilefile": "mobile-initial.png",
+ "mobile": {
+  "id": "mobile-initial",
+  "label": "Mobile first visit \u2014 separate fresh context",
+  "file": "mobile-initial.png",
+  "sha256": "7158bd7e80a4656c00f8a03e3a6e1b76206895047c81f5eafa8c664bc6b3e349",
+  "bytes": 63415,
+  "actionSucceeded": true,
+  "observed": {
+   "httpStatus": 200,
+   "freshStorage": true,
+   "render": {
+    "path": "/nested/benchmark/",
+    "viewport": {
+     "width": 360,
+     "height": 800
+    },
+    "scroll": {
+     "x": 0,
+     "y": 0
+    },
+    "documentWidth": 360,
+    "visibleText": "Skip to content\n\nFictional product demonstration \u2014 Lattice is not a real, purchasable app. No accounts, payments, or data leave this page.\n\nLattice\nGet Lattice\nMenu\n\nLOCAL-FIRST RESEARCH NOTEBOOK \u2014 CONCEPT DEMO\n\nYour research, held together.\n\nLattice keeps every note, source and thread on your own device \u2014 capture findings, connect them into a real picture, and export the whole thing to plain Markdown whenever you want.\n\nExplore the workflow\nSee the features\n\nSupplied fictional product facts for this demonstration \u2014 not a real app, service, or business claim.\n\nTidal Survey \u2014 Field Notes\nSpring tide amplitude up\n18% at north inlet site.\nsource: field-log-03\nInterview \u2014 J. Alvarez\nCooperative reports fewer\nlandings since March.\nsource: interview-07\nSatellite Overlay, March\nOverlay shows inlet shift\nmatches survey markers.\nsource: sat-imagery-12\nresearch-notes\n.md \u00b7 exported\nShow next stage\nRestart\n\nShowing: Capture \u2014 a note is saved with its source attached.\n\nEXPLORE LATTICE\n\nOne notebook, three moves\n\nEvery project moves through the same three motions. Switch tabs to see what each one looks like inside Lattice.\n\nCapture\nConnect\nExport\nCapture without friction\nDrop in text, a link, or a file \u2014 Lattice keeps the original source attached to the note automatically.\nEverything saves straight to your device; nothing uploads while you write.\nA quick-capture flow turns a stray thought into a structured note in seconds.\nsource attached\n\nHOW IT FITS TOGETHER\n\nA three-step workflow\n\nThe same shape holds up whether you're tracking one lead or an entire project.\n\n01\nCapture\n\nSave a note the moment you find something. Its source \u2014 a link, file, or reference \u2014 attaches automatically.\n\n02\nConnect\n\nLink the note to related ones and drop it into a reusable project template so the shape of the project holds.\n\n03\nExport\n\nExport to Markdown whenever you want a clean, portable copy \u2014 for a collaborator, an archive, or yourself.\n\nPRICING\n\nTwo plans, one notebook\n\nFictional pricing for this demonstration only. No checkout, no payment, no real charge.\n\nMonthly\nYearly\nbilled annually\nSolo\n\nFor one researcher, one set of projects.\n\n$12/mo\n\nbilled monthly\n\nUnlimited local notes\nMarkdown export\nSource links on every note\n1 reusable project template\nFull-text search (basic)\nSee how billing works\n\nMost for multi-project work\n\nStudio\n\nFor researchers running several projects at once.\n\n$29/mo\n\nbilled monthly\n\nEverything in Solo\nUnlimited reusable templates\nFull local full-text search\nMulti",
+    "brokenVisibleImages": []
+   }
+  }
+ },
+ "missingStates": [],
+ "captureFailures": [],
+ "actionErrors": [],
+ "infrastructureErrors": [],
+ "console": [],
+ "network": [],
+ "dialogs": [],
+ "browserVersion": "152.0.7977.83",
+ "sourceAfterTreeSha256": "a1d3146411d4f2db0125e31e3c1a13fb37e773308c4a462f1a8c632dee5ff772",
+ "sourceUnchanged": true,
+ "finishedAt": "2026-09-15T00:55:24.340Z"
+}

@@ -1,0 +1,49 @@
+{
+  "id": "run-03",
+  "note": "Supplementary inspection added after generation. These observations and captures do not alter the frozen functional score.",
+  "checks": [
+    {
+      "kind": "chromium",
+      "action": "Product demonstration control",
+      "pass": true,
+      "before": "Pause",
+      "after": "Play"
+    },
+    {
+      "kind": "chromium",
+      "action": "Restart is available and clickable",
+      "pass": true
+    },
+    {
+      "kind": "chromium",
+      "action": "Runtime errors during supplementary inspection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "kind": "webkit",
+      "action": "Product demonstration control",
+      "pass": true,
+      "before": "Pause",
+      "after": "Play"
+    },
+    {
+      "kind": "webkit",
+      "action": "Restart is available and clickable",
+      "pass": true
+    },
+    {
+      "kind": "webkit",
+      "action": "Runtime errors during supplementary inspection",
+      "pass": true,
+      "errors": []
+    }
+  ],
+  "snapshots": [
+    {
+      "id": "product-demo",
+      "label": "Product demonstration",
+      "file": "product-demo.webp"
+    }
+  ]
+}

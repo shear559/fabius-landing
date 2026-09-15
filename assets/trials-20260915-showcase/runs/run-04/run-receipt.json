@@ -1,0 +1,94 @@
+{
+  "generation": {
+    "id": "run-04",
+    "task": "landing",
+    "repeat": 2,
+    "arm": "fabius",
+    "started": "2026-09-15T00:46:56.473196Z",
+    "ended": "2026-09-15T00:54:33.860245Z",
+    "wall_seconds": 457.4,
+    "exit_code": 0,
+    "capped": false,
+    "command": [
+      "[user]/.antigravity-ide/extensions/anthropic.claude-code-2.1.260-darwin-x64/resources/native-binary/claude",
+      "-p",
+      "/fabius <PROMPT> + route instruction",
+      "--model",
+      "claude-sonnet-5",
+      "--setting-sources",
+      "project",
+      "--strict-mcp-config",
+      "--permission-mode",
+      "bypassPermissions",
+      "--no-session-persistence",
+      "--output-format",
+      "stream-json",
+      "--verbose",
+      "--disallowedTools",
+      "WebFetch",
+      "WebSearch",
+      "--tools",
+      "Read,Write,Edit,Bash,Glob,Grep,Skill",
+      "--plugin-dir",
+      "[user]/.claude/plugins/cache/fabius/fabius/3.1.0"
+    ]
+  },
+  "measurement": {
+    "id": "run-04",
+    "task": "landing",
+    "repeat": 2,
+    "arm": "fabius",
+    "model": "claude-sonnet-5",
+    "elapsed_seconds": 455.6,
+    "wall_seconds": 457.4,
+    "output_tokens": 45048,
+    "tool_calls": 21,
+    "turns": 25,
+    "started": "2026-09-15T00:46:56.473196Z",
+    "ended": "2026-09-15T00:54:33.860245Z",
+    "capped": false,
+    "exit_code": 0,
+    "skill_calls": [
+      "fabius:fabius-parcus",
+      "fabius:fabius-disciplina",
+      "fabius:fabius-decor"
+    ],
+    "contract_reads": [],
+    "fabius_skill_calls": [
+      "fabius:fabius-parcus",
+      "fabius:fabius-disciplina",
+      "fabius:fabius-decor"
+    ],
+    "plugins_loaded": [
+      {
+        "name": "fabius",
+        "path": "[user]/.claude/plugins/cache/fabius/fabius/3.1.0",
+        "source": "fabius@inline",
+        "version": "3.1.0"
+      }
+    ],
+    "fabius_skills_visible": true,
+    "missing_deliverables": [],
+    "status": "Completed",
+    "files": {
+      "README.md": {
+        "bytes": 5741,
+        "sha256": "81f7c00062aecd71f831aef605b6afd6dc08dd8310be73c95caecec315dec2b3"
+      },
+      "app.js": {
+        "bytes": 5892,
+        "sha256": "ffa2c1f292ec9670a9f23f6d439959fcee64b4a2f36cad3c5a59148675450ca2"
+      },
+      "index.html": {
+        "bytes": 21545,
+        "sha256": "407752ed5875a24a7c6c293d686718e1097cd7c64679ad4a1fc4ef0bf3d41fe5"
+      },
+      "styles.css": {
+        "bytes": 19755,
+        "sha256": "11964be903aa26a71d81d2bfdb5dc36d36e4d5222630a393b1b478738198a5e1"
+      }
+    },
+    "grade_exit": 0,
+    "capture_exit": 0
+  }
+}

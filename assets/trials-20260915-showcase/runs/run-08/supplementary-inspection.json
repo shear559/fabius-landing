@@ -1,0 +1,69 @@
+{
+  "id": "run-08",
+  "note": "Supplementary inspection added after generation. These observations and captures do not alter the frozen functional score.",
+  "checks": [
+    {
+      "kind": "chromium",
+      "action": "Board to List",
+      "pass": true,
+      "visibleIds": [
+        "seed-pub-1",
+        "seed-pub-2",
+        "seed-pub-3",
+        "seed-reef-1",
+        "seed-reef-2",
+        "seed-reef-3",
+        "seed-reef-4"
+      ],
+      "storageUnchanged": true
+    },
+    {
+      "kind": "chromium",
+      "action": "Filtered List to Board",
+      "pass": true,
+      "search": "Cross-check",
+      "matching": 1
+    },
+    {
+      "kind": "chromium",
+      "action": "Runtime errors during supplementary inspection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "kind": "webkit",
+      "action": "Board to List",
+      "pass": true,
+      "visibleIds": [
+        "seed-pub-1",
+        "seed-pub-2",
+        "seed-pub-3",
+        "seed-reef-1",
+        "seed-reef-2",
+        "seed-reef-3",
+        "seed-reef-4"
+      ],
+      "storageUnchanged": true
+    },
+    {
+      "kind": "webkit",
+      "action": "Filtered List to Board",
+      "pass": true,
+      "search": "Cross-check",
+      "matching": 1
+    },
+    {
+      "kind": "webkit",
+      "action": "Runtime errors during supplementary inspection",
+      "pass": true,
+      "errors": []
+    }
+  ],
+  "snapshots": [
+    {
+      "id": "list-view",
+      "label": "List view",
+      "file": "list-view.webp"
+    }
+  ]
+}

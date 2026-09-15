@@ -1,0 +1,8 @@
+All deliverables are in place. Summary:
+
+- **`solution.md`** — exact answer table for all 6 regimes across $t\in[-2,4]$, the geometry (pentagon after eliminating $z$, the fixed line $8x+12y=3$ that the unconstrained minimizer slides along), a proved monotone comparative-statics lemma, KKT setup with explicit sign convention, a per-regime stationarity/feasibility/multiplier-sign proof, a two-part completeness argument (interval tiling + $t$-independent exclusion of the untouched vertices/edges), value-function continuity/$C^1$/concavity analysis via the envelope theorem, and a plain-language explanation of each transition.
+- **`solution.py`** — stdlib-only `solve(t)` using exact `Fraction` arithmetic internally, returns `x,y,z,value` plus `regime`/`active`/`multipliers`; raises on bad input, no side effects on import.
+- **`diagram.svg`** — self-contained, mobile-width-tested (rendered headlessly at 375px and inspected) SVG of the feasible pentagon with labeled vertices and the numbered optimizer path.
+- **`verification.md`** / **`verify.py`** — reproducible script cross-checking against independent symbolic (sympy) and numeric (SciPy SLSQP, multi-start) solves, feasibility/multiplier/continuity sweeps, and API edge cases; all 16 checks pass, with documented limitations.
+
+One correction made along the way worth noting: my first hand-derived KKT multiplier for regime 5 was wrong (I'd mistakenly reused the vertex-C value); recomputing symbolically caught it, and it's now fixed in both `solution.py` and `solution.md`.

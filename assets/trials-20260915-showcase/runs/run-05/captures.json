@@ -1,0 +1,350 @@
+{
+ "schemaVersion": 1,
+ "runId": "run-05",
+ "kind": "app",
+ "startedAt": "2026-09-15T01:06:14.580Z",
+ "helperSha256": "2448fa17cc9a54989a8ae7134baa2bfda9ee4cca000603582a3ce873d3c54f4a",
+ "source": {
+  "files": [
+   {
+    "file": "app.js",
+    "bytes": 33845,
+    "sha256": "e526305e03c7ae84d385a5736f4c1087b8a879aaedb4a12a27234b65770c268b"
+   },
+   {
+    "file": "BRIEF.md",
+    "bytes": 5357,
+    "sha256": "3903c0863ef3b0651174ddf195beb008abdbf640dc502ad72cbc54d5a3ee4ae7"
+   },
+   {
+    "file": "index.html",
+    "bytes": 12522,
+    "sha256": "52b4743f1525de8393f98484af9ec13a1dac270e17b544856475c3784ba8d617"
+   },
+   {
+    "file": "README.md",
+    "bytes": 8141,
+    "sha256": "f68b5f740251fc47929f34b2a98d0dc7293f86ee3932ae802d2ce67fff794156"
+   },
+   {
+    "file": "styles.css",
+    "bytes": 13063,
+    "sha256": "057d6b4ebc3a88459eff7697567b55cf813ae2570327d42dea3877e2bdd022df"
+   }
+  ],
+  "treeSha256": "55945d6c0685c359af2c44fa8756a217e6aaa55063c068732dcacec86f0025ed"
+ },
+ "policy": {
+  "presentation": "Composed walkthrough from captured states; not a recording of model generation.",
+  "browser": "Google Chrome",
+  "desktopViewport": {
+   "width": 1440,
+   "height": 960
+  },
+  "mobileViewport": {
+   "width": 360,
+   "height": 800
+  },
+  "deviceScaleFactor": 1,
+  "fullPage": false,
+  "reducedMotion": "reduce",
+  "screenshotAnimations": "disabled",
+  "freshContexts": true,
+  "externalRequests": "blocked",
+  "candidateEdits": false,
+  "scoresProvided": false
+ },
+ "snapshots": [
+  {
+   "id": "initial",
+   "label": "Desktop first visit \u2014 untouched initial output",
+   "file": "initial.png",
+   "actionSucceeded": true,
+   "observed": {
+    "httpStatus": 200,
+    "freshStorage": true,
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Skip to task board\nFieldnote Board\n\nLocal-first tracker for the \u201cTrail Data Atlas\u201d research publication\n\nExport JSON\nImport JSON\nNew task\n8\nTOTAL TASKS\n4\nTO DO\n2\nDOING\n2\nDONE\nSearch tasks\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nCommunity Outreach\nSurvey Instrument Redesign\nTrail Data Atlas\nPriority\nAll priorities\nLow\nMedium\nHigh\nBoard\nList\n\n8 of 8 tasks\n\nTO DO\n4\nClean elevation dataset for outliers\nHIGH\n\nTrail Data Atlas\n\nSep 17, 2026\ndata-cleaning\nTo do\nDoing\nDone\nEdit\nDelete\nDesign cover figure for atlas\nLOW\n\nTrail Data Atlas\n\nNo due date\ndesign\nTo do\nDoing\nDone\nEdit\nDelete\nRecruit second reviewer for instrument\nMEDIUM\n\nSurvey Instrument Redesign\n\nNo due date\nreview\nTo do\nDoing\nDone\nEdit\nDelete\nSchedule ranger station briefing\nLOW\n\nCommunity Outreach\n\nSep 29, 2026\noutreach\nscheduling\nTo do\nDoing\nDone\nEdit\nDelete\nDOING\n2\nDraft chapter 2: methodology\nHIGH\n\nTrail Data Atlas\n\nSep 20, 2026\nwriting\nmethods\nTo do\nDoing\nDone\nEdit\nDelete\nPilot test trail-condition survey form\nMEDIUM\n\nSurvey Instrument Redesign\n\nSep 22, 2026\nsurvey\npilot\nTo do\nDoing\nDone\nEdit\nDelete\nDONE\n2\nCollect GPS traces from spring survey\nMEDIUM\n\nTrail Data Atlas\n\nSep 5, 2026\nfieldwork\ngps\nTo do\nDoing\nDone\nEdit\nDelete\nTranslate consent form to Spanish\nMEDIUM\n\nCommunity Outreach\n\nAug 26, 2026\ntranslation\nTo do\nDoing\nDone\nEdit\nDelete",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-15T01:06:17.456Z",
+   "actionStartedAt": "2026-09-15T01:06:16.681Z",
+   "sha256": "9f6c535d6d1fa62fac0830c9727d0869e114d148f6d42a6303a9714da12f3ca3",
+   "bytes": 151390
+  },
+  {
+   "id": "new-task-form",
+   "label": "New task form opened",
+   "file": "new-task-form.png",
+   "actionSucceeded": true,
+   "observed": {
+    "visible": true,
+    "fields": [
+     {
+      "name": "id",
+      "type": "hidden",
+      "value": ""
+     },
+     {
+      "name": "title",
+      "type": "text",
+      "value": ""
+     },
+     {
+      "name": "project",
+      "type": "text",
+      "value": ""
+     },
+     {
+      "name": "status",
+      "type": "select-one",
+      "value": "todo"
+     },
+     {
+      "name": "priority",
+      "type": "select-one",
+      "value": "medium"
+     },
+     {
+      "name": "dueDate",
+      "type": "date",
+      "value": ""
+     },
+     {
+      "name": "tags",
+      "type": "text",
+      "value": ""
+     }
+    ],
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Skip to task board\nFieldnote Board\n\nLocal-first tracker for the \u201cTrail Data Atlas\u201d research publication\n\nExport JSON\nImport JSON\nNew task\n8\nTOTAL TASKS\n4\nTO DO\n2\nDOING\n2\nDONE\nSearch tasks\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nCommunity Outreach\nSurvey Instrument Redesign\nTrail Data Atlas\nPriority\nAll priorities\nLow\nMedium\nHigh\nBoard\nList\n\n8 of 8 tasks\n\nTO DO\n4\nClean elevation dataset for outliers\nHIGH\n\nTrail Data Atlas\n\nSep 17, 2026\ndata-cleaning\nTo do\nDoing\nDone\nEdit\nDelete\nDesign cover figure for atlas\nLOW\n\nTrail Data Atlas\n\nNo due date\ndesign\nTo do\nDoing\nDone\nEdit\nDelete\nRecruit second reviewer for instrument\nMEDIUM\n\nSurvey Instrument Redesign\n\nNo due date\nreview\nTo do\nDoing\nDone\nEdit\nDelete\nSchedule ranger station briefing\nLOW\n\nCommunity Outreach\n\nSep 29, 2026\noutreach\nscheduling\nTo do\nDoing\nDone\nEdit\nDelete\nDOING\n2\nDraft chapter 2: methodology\nHIGH\n\nTrail Data Atlas\n\nSep 20, 2026\nwriting\nmethods\nTo do\nDoing\nDone\nEdit\nDelete\nPilot test trail-condition survey form\nMEDIUM\n\nSurvey Instrument Redesign\n\nSep 22, 2026\nsurvey\npilot\nTo do\nDoing\nDone\nEdit\nDelete\nDONE\n2\nCollect GPS traces from spring survey\nMEDIUM\n\nTrail Data Atlas\n\nSep 5, 2026\nfieldwork\ngps\nTo do\nDoing\nDone\nEdit\nDelete\nTranslate consent form to Spanish\nMEDIUM\n\nCommunity Outreach\n\nAug 26, 2026\ntranslation\nTo do\nDoing\nDone\nEdit\nDelete\nNew task\nTitle\n\nProject\n\nStatus\nTo do\nDoing\nDone\nPriority\nLow\nMedium\nHigh\nDue date\n\nTags (comma-separated, up to 8)\n\nCancel\nSave task",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-15T01:06:17.955Z",
+   "actionStartedAt": "2026-09-15T01:06:17.571Z",
+   "sha256": "9e04b043535785ae2360fbea1c606952969ec2c1b5a29fccac5d6dc866c339b9",
+   "bytes": 151286
+  },
+  {
+   "id": "after-create",
+   "label": "Review launch evidence created and present in saved board",
+   "file": "after-create.png",
+   "actionSucceeded": true,
+   "observed": {
+    "requested": {
+     "title": "Review launch evidence",
+     "project": "Research",
+     "status": "doing",
+     "priority": "high",
+     "dueDate": "2026-09-20",
+     "tags": "evidence,launch"
+    },
+    "storageError": null,
+    "matchingRecords": [
+     {
+      "id": "t-bdc447c2-feb0-4e9b-9476-6d8727089798",
+      "title": "Review launch evidence",
+      "project": "Research",
+      "status": "doing",
+      "priority": "high",
+      "dueDate": "2026-09-20",
+      "tags": [
+       "evidence",
+       "launch"
+      ]
+     }
+    ],
+    "rendered": true,
+    "visibleCards": [
+     {
+      "id": "seed-03",
+      "text": "Clean elevation dataset for outliers\nHIGH\n\nTrail Data Atlas\n\nSep 17, 2026\ndata-cleaning\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "seed-04",
+      "text": "Design cover figure for atlas\nLOW\n\nTrail Data Atlas\n\nNo due date\ndesign\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "seed-06",
+      "text": "Recruit second reviewer for instrument\nMEDIUM\n\nSurvey Instrument Redesign\n\nNo due date\nreview\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "seed-08",
+      "text": "Schedule ranger station briefing\nLOW\n\nCommunity Outreach\n\nSep 29, 2026\noutreach\nscheduling\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "seed-01",
+      "text": "Draft chapter 2: methodology\nHIGH\n\nTrail Data Atlas\n\nSep 20, 2026\nwriting\nmethods\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "seed-05",
+      "text": "Pilot test trail-condition survey form\nMEDIUM\n\nSurvey Instrument Redesign\n\nSep 22, 2026\nsurvey\npilot\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "t-bdc447c2-feb0-4e9b-9476-6d8727089798",
+      "text": "Review launch evidence\nHIGH\n\nResearch\n\nSep 20, 2026\nevidence\nlaunch\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "seed-02",
+      "text": "Collect GPS traces from spring survey\nMEDIUM\n\nTrail Data Atlas\n\nSep 5, 2026\nfieldwork\ngps\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "seed-07",
+      "text": "Translate consent form to Spanish\nMEDIUM\n\nCommunity Outreach\n\nAug 26, 2026\ntranslation\nTo do\nDoing\nDone\nEdit\nDelete"
+     }
+    ],
+    "beforeStorageSha256": "dd7ea995ffbed1bec1179856e22689e3a1fe92dbd533aa9b08683e2bd3a1fdd8",
+    "afterStorageSha256": "c149678bd70552446f5ac5783a15f13cc7bdd3232a782eaa47149ae6fe211ed8",
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 135
+     },
+     "documentWidth": 1440,
+     "visibleText": "Skip to task board\nFieldnote Board\n\nLocal-first tracker for the \u201cTrail Data Atlas\u201d research publication\n\nExport JSON\nImport JSON\nNew task\n9\nTOTAL TASKS\n4\nTO DO\n3\nDOING\n2\nDONE\nSearch tasks\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nCommunity Outreach\nResearch\nSurvey Instrument Redesign\nTrail Data Atlas\nPriority\nAll priorities\nLow\nMedium\nHigh\nBoard\nList\n\n9 of 9 tasks\n\nTO DO\n4\nClean elevation dataset for outliers\nHIGH\n\nTrail Data Atlas\n\nSep 17, 2026\ndata-cleaning\nTo do\nDoing\nDone\nEdit\nDelete\nDesign cover figure for atlas\nLOW\n\nTrail Data Atlas\n\nNo due date\ndesign\nTo do\nDoing\nDone\nEdit\nDelete\nRecruit second reviewer for instrument\nMEDIUM\n\nSurvey Instrument Redesign\n\nNo due date\nreview\nTo do\nDoing\nDone\nEdit\nDelete\nSchedule ranger station briefing\nLOW\n\nCommunity Outreach\n\nSep 29, 2026\noutreach\nscheduling\nTo do\nDoing\nDone\nEdit\nDelete\nDOING\n3\nDraft chapter 2: methodology\nHIGH\n\nTrail Data Atlas\n\nSep 20, 2026\nwriting\nmethods\nTo do\nDoing\nDone\nEdit\nDelete\nPilot test trail-condition survey form\nMEDIUM\n\nSurvey Instrument Redesign\n\nSep 22, 2026\nsurvey\npilot\nTo do\nDoing\nDone\nEdit\nDelete\nReview launch evidence\nHIGH\n\nResearch\n\nSep 20, 2026\nevidence\nlaunch\nTo do\nDoing\nDone\nEdit\nDelete\nDONE\n2\nCollect GPS traces from spring survey\nMEDIUM\n\nTrail Data Atlas\n\nSep 5, 2026\nfieldwork\ngps\nTo do\nDoing\nDone\nEdit\nDelete\nTranslate consent form to Spanish\nMEDIUM\n\nCommunity Outreach\n\nAug 26, 2026\ntranslation\nTo do\nDoing\nDone\nEdit\nDelete",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-15T01:06:18.595Z",
+   "actionStartedAt": "2026-09-15T01:06:18.074Z",
+   "sha256": "77a495e82c0d4701c038e5e742b7316d91ed187579c27b348d75a135f1323275",
+   "bytes": 159412
+  },
+  {
+   "id": "search",
+   "label": "Search for Review launch evidence; matching task shown",
+   "file": "search.png",
+   "actionSucceeded": true,
+   "observed": {
+    "search": "Review launch evidence",
+    "visibleCards": [
+     {
+      "id": "t-bdc447c2-feb0-4e9b-9476-6d8727089798",
+      "text": "Review launch evidence\nHIGH\n\nResearch\n\nSep 20, 2026\nevidence\nlaunch\nTo do\nDoing\nDone\nEdit\nDelete"
+     }
+    ],
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Skip to task board\nFieldnote Board\n\nLocal-first tracker for the \u201cTrail Data Atlas\u201d research publication\n\nExport JSON\nImport JSON\nNew task\n9\nTOTAL TASKS\n4\nTO DO\n3\nDOING\n2\nDONE\nSearch tasks\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nCommunity Outreach\nResearch\nSurvey Instrument Redesign\nTrail Data Atlas\nPriority\nAll priorities\nLow\nMedium\nHigh\nBoard\nList\n\n1 of 9 tasks\n\nTO DO\n0\n\nNo tasks.\n\nDOING\n1\nReview launch evidence\nHIGH\n\nResearch\n\nSep 20, 2026\nevidence\nlaunch\nTo do\nDoing\nDone\nEdit\nDelete\nDONE\n0\n\nNo tasks.",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-15T01:06:19.081Z",
+   "actionStartedAt": "2026-09-15T01:06:18.685Z",
+   "sha256": "44e1d82d1a47ad6d349bf9c24c31667a1e907432593931e6dcc7bc6b770394dc",
+   "bytes": 72999
+  },
+  {
+   "id": "import-error",
+   "label": "Malformed JSON selected; visible error and saved board unchanged",
+   "file": "import-error.png",
+   "actionSucceeded": true,
+   "observed": {
+    "formDismissed": false,
+    "confirmation": {
+     "clicked": false
+    },
+    "dialogs": [],
+    "newVisibleFeedback": [
+     "The file is not valid JSON. The current board was not changed."
+    ],
+    "nativeError": false,
+    "storageUnchanged": true,
+    "beforeStorageSha256": "c149678bd70552446f5ac5783a15f13cc7bdd3232a782eaa47149ae6fe211ed8",
+    "afterStorageSha256": "c149678bd70552446f5ac5783a15f13cc7bdd3232a782eaa47149ae6fe211ed8",
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 70
+     },
+     "documentWidth": 1440,
+     "visibleText": "Skip to task board\nFieldnote Board\n\nLocal-first tracker for the \u201cTrail Data Atlas\u201d research publication\n\nExport JSON\nImport JSON\nNew task\n\nImport was not applied\n\nThe file is not valid JSON. The current board was not changed.\n\nDismiss\n9\nTOTAL TASKS\n4\nTO DO\n3\nDOING\n2\nDONE\nSearch tasks\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nCommunity Outreach\nResearch\nSurvey Instrument Redesign\nTrail Data Atlas\nPriority\nAll priorities\nLow\nMedium\nHigh\nBoard\nList\n\n9 of 9 tasks\n\nTO DO\n4\nClean elevation dataset for outliers\nHIGH\n\nTrail Data Atlas\n\nSep 17, 2026\ndata-cleaning\nTo do\nDoing\nDone\nEdit\nDelete\nDesign cover figure for atlas\nLOW\n\nTrail Data Atlas\n\nNo due date\ndesign\nTo do\nDoing\nDone\nEdit\nDelete\nRecruit second reviewer for instrument\nMEDIUM\n\nSurvey Instrument Redesign\n\nNo due date\nreview\nTo do\nDoing\nDone\nEdit\nDelete\nSchedule ranger station briefing\nLOW\n\nCommunity Outreach\n\nSep 29, 2026\noutreach\nscheduling\nTo do\nDoing\nDone\nEdit\nDelete\nDOING\n3\nDraft chapter 2: methodology\nHIGH\n\nTrail Data Atlas\n\nSep 20, 2026\nwriting\nmethods\nTo do\nDoing\nDone\nEdit\nDelete\nPilot test trail-condition survey form\nMEDIUM\n\nSurvey Instrument Redesign\n\nSep 22, 2026\nsurvey\npilot\nTo do\nDoing\nDone\nEdit\nDelete\nReview launch evidence\nHIGH\n\nResearch\n\nSep 20, 2026\nevidence\nlaunch\nTo do\nDoing\nDone\nEdit\nDelete\nDONE\n2\nCollect GPS traces from spring survey\nMEDIUM\n\nTrail Data Atlas\n\nSep 5, 2026\nfieldwork\ngps\nTo do\nDoing\nDone\nEdit\nDelete\nTranslate consent form to Spanish\nMEDIUM\n\nCommunity Outreach\n\nAug 26, 2026\ntranslation\nTo do\nDoing\nDone\nEdit\nDelete",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-15T01:06:19.599Z",
+   "actionStartedAt": "2026-09-15T01:06:19.151Z",
+   "sha256": "cd4e6c431f8996c518312adb29020101b6326869f69014e413932e7136718647",
+   "bytes": 161442
+  }
+ ],
+ "mobilefile": "mobile-initial.png",
+ "mobile": {
+  "id": "mobile-initial",
+  "label": "Mobile first visit \u2014 separate fresh context",
+  "file": "mobile-initial.png",
+  "sha256": "8699ec0951900c98cb3c2b70413efefb47fa717f5a577ec1356b946c5a3b487b",
+  "bytes": 44763,
+  "actionSucceeded": true,
+  "observed": {
+   "httpStatus": 200,
+   "freshStorage": true,
+   "render": {
+    "path": "/nested/benchmark/",
+    "viewport": {
+     "width": 360,
+     "height": 800
+    },
+    "scroll": {
+     "x": 0,
+     "y": 0
+    },
+    "documentWidth": 360,
+    "visibleText": "Skip to task board\nFieldnote Board\n\nLocal-first tracker for the \u201cTrail Data Atlas\u201d research publication\n\nExport JSON\nImport JSON\nNew task\n8\nTOTAL TASKS\n4\nTO DO\n2\nDOING\n2\nDONE\nSearch tasks\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nCommunity Outreach\nSurvey Instrument Redesign\nTrail Data Atlas\nPriority\nAll priorities\nLow\nMedium\nHigh\nBoard\nList\n\n8 of 8 tasks\n\nTO DO\n4\nClean elevation dataset for outliers\nHIGH\n\nTrail Data Atlas\n\nSep 17, 2026\ndata-cleaning\nTo do\nDoing\nDone\nEdit\nDelete\nDesign cover figure for atlas\nLOW\n\nTrail Data Atlas\n\nNo due date\ndesign\nTo do\nDoing\nDone\nEdit\nDelete\nRecruit second reviewer for instrument\nMEDIUM\n\nSurvey Instrument Redesign\n\nNo due date\nreview\nTo do\nDoing\nDone\nEdit\nDelete\nSchedule ranger station briefing\nLOW\n\nCommunity Outreach\n\nSep 29, 2026\noutreach\nscheduling\nTo do\nDoing\nDone\nEdit\nDelete\nDOING\n2\nDraft chapter 2: methodology\nHIGH\n\nTrail Data Atlas\n\nSep 20, 2026\nwriting\nmethods\nTo do\nDoing\nDone\nEdit\nDelete\nPilot test trail-condition survey form\nMEDIUM\n\nSurvey Instrument Redesign\n\nSep 22, 2026\nsurvey\npilot\nTo do\nDoing\nDone\nEdit\nDelete\nDONE\n2\nCollect GPS traces from spring survey\nMEDIUM\n\nTrail Data Atlas\n\nSep 5, 2026\nfieldwork\ngps\nTo do\nDoing\nDone\nEdit\nDelete\nTranslate consent form to Spanish\nMEDIUM\n\nCommunity Outreach\n\nAug 26, 2026\ntranslation\nTo do\nDoing\nDone\nEdit\nDelete",
+    "brokenVisibleImages": []
+   }
+  }
+ },
+ "missingStates": [],
+ "captureFailures": [],
+ "actionErrors": [],
+ "infrastructureErrors": [],
+ "console": [],
+ "network": [],
+ "dialogs": [],
+ "browserVersion": "152.0.7977.83",
+ "sourceAfterTreeSha256": "55945d6c0685c359af2c44fa8756a217e6aaa55063c068732dcacec86f0025ed",
+ "sourceUnchanged": true,
+ "finishedAt": "2026-09-15T01:06:21.061Z"
+}

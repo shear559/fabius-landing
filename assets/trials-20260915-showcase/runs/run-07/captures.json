@@ -1,0 +1,350 @@
+{
+ "schemaVersion": 1,
+ "runId": "run-07",
+ "kind": "app",
+ "startedAt": "2026-09-15T01:06:56.025Z",
+ "helperSha256": "2448fa17cc9a54989a8ae7134baa2bfda9ee4cca000603582a3ce873d3c54f4a",
+ "source": {
+  "files": [
+   {
+    "file": "app.js",
+    "bytes": 36227,
+    "sha256": "d14411dc1331918a5723a446bc7c8a22c4c1a85c93727518d08ebce8f1ce1c12"
+   },
+   {
+    "file": "BRIEF.md",
+    "bytes": 5357,
+    "sha256": "3903c0863ef3b0651174ddf195beb008abdbf640dc502ad72cbc54d5a3ee4ae7"
+   },
+   {
+    "file": "index.html",
+    "bytes": 8929,
+    "sha256": "5dfb3982202c7664ae439f3f49bccb27785ee958e2ab4fa415322162f15d8979"
+   },
+   {
+    "file": "README.md",
+    "bytes": 7761,
+    "sha256": "899e7bcf801e336d8a40b5b78c4a06b58208b66678d0c0da79e371201f886d40"
+   },
+   {
+    "file": "styles.css",
+    "bytes": 13135,
+    "sha256": "94eb596135d140329d5f291f5e987cf1630ef47cf70b254f805a371fabd1ff92"
+   }
+  ],
+  "treeSha256": "dfc1f81dd7781bfd72c4882d367d90cb5ca299fd72ecbbf4b1b8db1c2d0bd7bf"
+ },
+ "policy": {
+  "presentation": "Composed walkthrough from captured states; not a recording of model generation.",
+  "browser": "Google Chrome",
+  "desktopViewport": {
+   "width": 1440,
+   "height": 960
+  },
+  "mobileViewport": {
+   "width": 360,
+   "height": 800
+  },
+  "deviceScaleFactor": 1,
+  "fullPage": false,
+  "reducedMotion": "reduce",
+  "screenshotAnimations": "disabled",
+  "freshContexts": true,
+  "externalRequests": "blocked",
+  "candidateEdits": false,
+  "scoresProvided": false
+ },
+ "snapshots": [
+  {
+   "id": "initial",
+   "label": "Desktop first visit \u2014 untouched initial output",
+   "file": "initial.png",
+   "actionSucceeded": true,
+   "observed": {
+    "httpStatus": 200,
+    "freshStorage": true,
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Skip to task list\nFieldnote Board\n\nTask tracker for the Fieldnote research publication team\n\nNew task\n8\nTOTAL TASKS\n3\nTO DO\n3\nDOING\n2\nDONE\n2\nOVERDUE\nSearch tasks\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nReef Resilience Manuscript\nSpring Grant Report\nPriority\nAll priorities\nLow\nMedium\nHigh\nBoard\nList\nExport JSON\nImport JSON\n\nShowing 8 of 8 tasks.\n\nTo do\n3\nGet co-author sign-off on final draft\nPriority: High\n\nSpring Grant Report\n\nOverdue: Sep 12, 2026\n\nreview\nsignoff\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nDesign figures for results section\nPriority: Medium\n\nReef Resilience Manuscript\n\nDue Sep 25, 2026\n\nfigures\ndesign\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nSelect target journal and format references\nPriority: Low\n\nReef Resilience Manuscript\n\nNo due date\n\nsubmission\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nDoing\n3\nDraft introduction section\nPriority: High\n\nReef Resilience Manuscript\n\nDue Sep 18, 2026\n\nwriting\ndraft\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nRun statistical analysis on transect data\nPriority: High\n\nReef Resilience Manuscript\n\nOverdue: Sep 10, 2026\n\nstats\nanalysis\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nWrite progress narrative for funder\nPriority: High\n\nSpring Grant Report\n\nDue Sep 16, 2026\n\nwriting\nfunder\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nDone\n2\nCollect coral bleaching survey data\nPriority: Medium\n\nReef Resilience Manuscript\n\nDue Aug 30, 2026\n\ndata\nfieldwork\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nCompile budget summary for Q3\nPriority: Medium\n\nSpring Grant Report\n\nDue Sep 1, 2026\n\nbudget\nreporting\nStatus\nTo do\nDoing\nDone\nEdit\nDelete",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-15T01:06:58.048Z",
+   "actionStartedAt": "2026-09-15T01:06:57.280Z",
+   "sha256": "7fc063bb0449520ff935673dc15835e2f3bab60cc2f9d56e00261045972d6be2",
+   "bytes": 137110
+  },
+  {
+   "id": "new-task-form",
+   "label": "New task form opened",
+   "file": "new-task-form.png",
+   "actionSucceeded": true,
+   "observed": {
+    "visible": true,
+    "fields": [
+     {
+      "name": "id",
+      "type": "hidden",
+      "value": ""
+     },
+     {
+      "name": "title",
+      "type": "text",
+      "value": ""
+     },
+     {
+      "name": "project",
+      "type": "text",
+      "value": ""
+     },
+     {
+      "name": "status",
+      "type": "select-one",
+      "value": "todo"
+     },
+     {
+      "name": "priority",
+      "type": "select-one",
+      "value": "medium"
+     },
+     {
+      "name": "dueDate",
+      "type": "date",
+      "value": ""
+     },
+     {
+      "name": "tags",
+      "type": "text",
+      "value": ""
+     }
+    ],
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Skip to task list\nFieldnote Board\n\nTask tracker for the Fieldnote research publication team\n\nNew task\n8\nTOTAL TASKS\n3\nTO DO\n3\nDOING\n2\nDONE\n2\nOVERDUE\nSearch tasks\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nReef Resilience Manuscript\nSpring Grant Report\nPriority\nAll priorities\nLow\nMedium\nHigh\nBoard\nList\nExport JSON\nImport JSON\n\nShowing 8 of 8 tasks.\n\nTo do\n3\nGet co-author sign-off on final draft\nPriority: High\n\nSpring Grant Report\n\nOverdue: Sep 12, 2026\n\nreview\nsignoff\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nDesign figures for results section\nPriority: Medium\n\nReef Resilience Manuscript\n\nDue Sep 25, 2026\n\nfigures\ndesign\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nSelect target journal and format references\nPriority: Low\n\nReef Resilience Manuscript\n\nNo due date\n\nsubmission\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nDoing\n3\nDraft introduction section\nPriority: High\n\nReef Resilience Manuscript\n\nDue Sep 18, 2026\n\nwriting\ndraft\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nRun statistical analysis on transect data\nPriority: High\n\nReef Resilience Manuscript\n\nOverdue: Sep 10, 2026\n\nstats\nanalysis\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nWrite progress narrative for funder\nPriority: High\n\nSpring Grant Report\n\nDue Sep 16, 2026\n\nwriting\nfunder\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nDone\n2\nCollect coral bleaching survey data\nPriority: Medium\n\nReef Resilience Manuscript\n\nDue Aug 30, 2026\n\ndata\nfieldwork\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nCompile budget summary for Q3\nPriority: Medium\n\nSpring Grant Report\n\nDue Sep 1, 2026\n\nbudget\nreporting\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nNew task\nTitle\n\nProject\n\nStatus\nTo do\nDoing\nDone\nPriority\nLow\nMedium\nHigh\nDue date\n\nTags (comma-separated, up to 8)\n\nCancel\nSave task",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-15T01:06:58.558Z",
+   "actionStartedAt": "2026-09-15T01:06:58.171Z",
+   "sha256": "c57cf2f5270c71d7f48094f013e2523364904a491aa4e5fa8db9dad33baf9343",
+   "bytes": 152612
+  },
+  {
+   "id": "after-create",
+   "label": "Review launch evidence created and present in saved board",
+   "file": "after-create.png",
+   "actionSucceeded": true,
+   "observed": {
+    "requested": {
+     "title": "Review launch evidence",
+     "project": "Research",
+     "status": "doing",
+     "priority": "high",
+     "dueDate": "2026-09-20",
+     "tags": "evidence,launch"
+    },
+    "storageError": null,
+    "matchingRecords": [
+     {
+      "id": "task-4c5ec49f-d89a-488b-bc43-75c5be1b0e19",
+      "title": "Review launch evidence",
+      "project": "Research",
+      "status": "doing",
+      "priority": "high",
+      "dueDate": "2026-09-20",
+      "tags": [
+       "evidence",
+       "launch"
+      ]
+     }
+    ],
+    "rendered": true,
+    "visibleCards": [
+     {
+      "id": "seed-8",
+      "text": "Get co-author sign-off on final draft\nPriority: High\n\nSpring Grant Report\n\nOverdue: Sep 12, 2026\n\nreview\nsignoff\nStatus\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "seed-4",
+      "text": "Design figures for results section\nPriority: Medium\n\nReef Resilience Manuscript\n\nDue Sep 25, 2026\n\nfigures\ndesign\nStatus\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "seed-5",
+      "text": "Select target journal and format references\nPriority: Low\n\nReef Resilience Manuscript\n\nNo due date\n\nsubmission\nStatus\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "seed-1",
+      "text": "Draft introduction section\nPriority: High\n\nReef Resilience Manuscript\n\nDue Sep 18, 2026\n\nwriting\ndraft\nStatus\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "task-4c5ec49f-d89a-488b-bc43-75c5be1b0e19",
+      "text": "Review launch evidence\nPriority: High\n\nResearch\n\nDue Sep 20, 2026\n\nevidence\nlaunch\nStatus\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "seed-3",
+      "text": "Run statistical analysis on transect data\nPriority: High\n\nReef Resilience Manuscript\n\nOverdue: Sep 10, 2026\n\nstats\nanalysis\nStatus\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "seed-7",
+      "text": "Write progress narrative for funder\nPriority: High\n\nSpring Grant Report\n\nDue Sep 16, 2026\n\nwriting\nfunder\nStatus\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "seed-2",
+      "text": "Collect coral bleaching survey data\nPriority: Medium\n\nReef Resilience Manuscript\n\nDue Aug 30, 2026\n\ndata\nfieldwork\nStatus\nTo do\nDoing\nDone\nEdit\nDelete"
+     },
+     {
+      "id": "seed-6",
+      "text": "Compile budget summary for Q3\nPriority: Medium\n\nSpring Grant Report\n\nDue Sep 1, 2026\n\nbudget\nreporting\nStatus\nTo do\nDoing\nDone\nEdit\nDelete"
+     }
+    ],
+    "beforeStorageSha256": "02f0c4b4be4702f63ff5bbdf15d2b62c8800ae69a57fcb49f7083d9e0dc7e24b",
+    "afterStorageSha256": "af3c79ceeb94d6c5e5020e5681f91c51e2427b9f33b65789b22ab0d57858e96d",
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 206
+     },
+     "documentWidth": 1440,
+     "visibleText": "Skip to task list\nFieldnote Board\n\nTask tracker for the Fieldnote research publication team\n\nNew task\n9\nTOTAL TASKS\n3\nTO DO\n4\nDOING\n2\nDONE\n2\nOVERDUE\nSearch tasks\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nReef Resilience Manuscript\nResearch\nSpring Grant Report\nPriority\nAll priorities\nLow\nMedium\nHigh\nBoard\nList\nExport JSON\nImport JSON\n\nShowing 9 of 9 tasks.\n\nTo do\n3\nGet co-author sign-off on final draft\nPriority: High\n\nSpring Grant Report\n\nOverdue: Sep 12, 2026\n\nreview\nsignoff\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nDesign figures for results section\nPriority: Medium\n\nReef Resilience Manuscript\n\nDue Sep 25, 2026\n\nfigures\ndesign\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nSelect target journal and format references\nPriority: Low\n\nReef Resilience Manuscript\n\nNo due date\n\nsubmission\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nDoing\n4\nDraft introduction section\nPriority: High\n\nReef Resilience Manuscript\n\nDue Sep 18, 2026\n\nwriting\ndraft\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nReview launch evidence\nPriority: High\n\nResearch\n\nDue Sep 20, 2026\n\nevidence\nlaunch\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nRun statistical analysis on transect data\nPriority: High\n\nReef Resilience Manuscript\n\nOverdue: Sep 10, 2026\n\nstats\nanalysis\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nWrite progress narrative for funder\nPriority: High\n\nSpring Grant Report\n\nDue Sep 16, 2026\n\nwriting\nfunder\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nDone\n2\nCollect coral bleaching survey data\nPriority: Medium\n\nReef Resilience Manuscript\n\nDue Aug 30, 2026\n\ndata\nfieldwork\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nCompile budget summary for Q3\nPriority: Medium\n\nSpring Grant Report\n\nDue Sep 1, 2026\n\nbudget\nreporting\nStatus\nTo do\nDoing\nDone\nEdit\nDelete",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-15T01:06:59.174Z",
+   "actionStartedAt": "2026-09-15T01:06:58.669Z",
+   "sha256": "baf446cb3d48b09ee1f25ba954bc559aac2723286940e51dcfcd2284d3e93102",
+   "bytes": 134178
+  },
+  {
+   "id": "search",
+   "label": "Search for Review launch evidence; matching task shown",
+   "file": "search.png",
+   "actionSucceeded": true,
+   "observed": {
+    "search": "Review launch evidence",
+    "visibleCards": [
+     {
+      "id": "task-4c5ec49f-d89a-488b-bc43-75c5be1b0e19",
+      "text": "Review launch evidence\nPriority: High\n\nResearch\n\nDue Sep 20, 2026\n\nevidence\nlaunch\nStatus\nTo do\nDoing\nDone\nEdit\nDelete"
+     }
+    ],
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Skip to task list\nFieldnote Board\n\nTask tracker for the Fieldnote research publication team\n\nNew task\n9\nTOTAL TASKS\n3\nTO DO\n4\nDOING\n2\nDONE\n2\nOVERDUE\nSearch tasks\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nReef Resilience Manuscript\nResearch\nSpring Grant Report\nPriority\nAll priorities\nLow\nMedium\nHigh\nBoard\nList\nExport JSON\nImport JSON\n\nShowing 1 of 9 tasks.\n\nTo do\n0\n\nNo tasks here.\n\nDoing\n1\nReview launch evidence\nPriority: High\n\nResearch\n\nDue Sep 20, 2026\n\nevidence\nlaunch\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nDone\n0\n\nNo tasks here.",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-15T01:06:59.658Z",
+   "actionStartedAt": "2026-09-15T01:06:59.265Z",
+   "sha256": "5226894e2979681aab209555f5266a01b262e238cbb0364186907b9399e3d64a",
+   "bytes": 67029
+  },
+  {
+   "id": "import-error",
+   "label": "Malformed JSON selected; visible error and saved board unchanged",
+   "file": "import-error.png",
+   "actionSucceeded": true,
+   "observed": {
+    "formDismissed": false,
+    "confirmation": {
+     "clicked": false
+    },
+    "dialogs": [],
+    "newVisibleFeedback": [
+     "Import failed: the file is not valid JSON."
+    ],
+    "nativeError": false,
+    "storageUnchanged": true,
+    "beforeStorageSha256": "af3c79ceeb94d6c5e5020e5681f91c51e2427b9f33b65789b22ab0d57858e96d",
+    "afterStorageSha256": "af3c79ceeb94d6c5e5020e5681f91c51e2427b9f33b65789b22ab0d57858e96d",
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 34
+     },
+     "documentWidth": 1440,
+     "visibleText": "Skip to task list\nFieldnote Board\n\nTask tracker for the Fieldnote research publication team\n\nNew task\n\nImport failed: the file is not valid JSON.\n\n9\nTOTAL TASKS\n3\nTO DO\n4\nDOING\n2\nDONE\n2\nOVERDUE\nSearch tasks\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nReef Resilience Manuscript\nResearch\nSpring Grant Report\nPriority\nAll priorities\nLow\nMedium\nHigh\nBoard\nList\nExport JSON\nImport JSON\n\nShowing 9 of 9 tasks.\n\nTo do\n3\nGet co-author sign-off on final draft\nPriority: High\n\nSpring Grant Report\n\nOverdue: Sep 12, 2026\n\nreview\nsignoff\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nDesign figures for results section\nPriority: Medium\n\nReef Resilience Manuscript\n\nDue Sep 25, 2026\n\nfigures\ndesign\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nSelect target journal and format references\nPriority: Low\n\nReef Resilience Manuscript\n\nNo due date\n\nsubmission\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nDoing\n4\nDraft introduction section\nPriority: High\n\nReef Resilience Manuscript\n\nDue Sep 18, 2026\n\nwriting\ndraft\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nReview launch evidence\nPriority: High\n\nResearch\n\nDue Sep 20, 2026\n\nevidence\nlaunch\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nRun statistical analysis on transect data\nPriority: High\n\nReef Resilience Manuscript\n\nOverdue: Sep 10, 2026\n\nstats\nanalysis\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nWrite progress narrative for funder\nPriority: High\n\nSpring Grant Report\n\nDue Sep 16, 2026\n\nwriting\nfunder\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nDone\n2\nCollect coral bleaching survey data\nPriority: Medium\n\nReef Resilience Manuscript\n\nDue Aug 30, 2026\n\ndata\nfieldwork\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nCompile budget summary for Q3\nPriority: Medium\n\nSpring Grant Report\n\nDue Sep 1, 2026\n\nbudget\nreporting\nStatus\nTo do\nDoing\nDone\nEdit\nDelete",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-15T01:07:00.185Z",
+   "actionStartedAt": "2026-09-15T01:06:59.729Z",
+   "sha256": "09abcd9bd45feb0eb8c5d0c6848fee21cf6415caa7f708840cce324e636b5f96",
+   "bytes": 140260
+  }
+ ],
+ "mobilefile": "mobile-initial.png",
+ "mobile": {
+  "id": "mobile-initial",
+  "label": "Mobile first visit \u2014 separate fresh context",
+  "file": "mobile-initial.png",
+  "sha256": "3d8585d052c0465edd642f45c20870acec0b35db701c71909106c55dbb1e364f",
+  "bytes": 34977,
+  "actionSucceeded": true,
+  "observed": {
+   "httpStatus": 200,
+   "freshStorage": true,
+   "render": {
+    "path": "/nested/benchmark/",
+    "viewport": {
+     "width": 360,
+     "height": 800
+    },
+    "scroll": {
+     "x": 0,
+     "y": 0
+    },
+    "documentWidth": 360,
+    "visibleText": "Skip to task list\nFieldnote Board\n\nTask tracker for the Fieldnote research publication team\n\nNew task\n8\nTOTAL TASKS\n3\nTO DO\n3\nDOING\n2\nDONE\n2\nOVERDUE\nSearch tasks\nStatus\nAll statuses\nTo do\nDoing\nDone\nProject\nAll projects\nReef Resilience Manuscript\nSpring Grant Report\nPriority\nAll priorities\nLow\nMedium\nHigh\nBoard\nList\nExport JSON\nImport JSON\n\nShowing 8 of 8 tasks.\n\nTo do\n3\nGet co-author sign-off on final draft\nPriority: High\n\nSpring Grant Report\n\nOverdue: Sep 12, 2026\n\nreview\nsignoff\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nDesign figures for results section\nPriority: Medium\n\nReef Resilience Manuscript\n\nDue Sep 25, 2026\n\nfigures\ndesign\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nSelect target journal and format references\nPriority: Low\n\nReef Resilience Manuscript\n\nNo due date\n\nsubmission\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nDoing\n3\nDraft introduction section\nPriority: High\n\nReef Resilience Manuscript\n\nDue Sep 18, 2026\n\nwriting\ndraft\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nRun statistical analysis on transect data\nPriority: High\n\nReef Resilience Manuscript\n\nOverdue: Sep 10, 2026\n\nstats\nanalysis\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nWrite progress narrative for funder\nPriority: High\n\nSpring Grant Report\n\nDue Sep 16, 2026\n\nwriting\nfunder\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nDone\n2\nCollect coral bleaching survey data\nPriority: Medium\n\nReef Resilience Manuscript\n\nDue Aug 30, 2026\n\ndata\nfieldwork\nStatus\nTo do\nDoing\nDone\nEdit\nDelete\nCompile budget summary for Q3\nPriority: Medium\n\nSpring Grant Report\n\nDue Sep 1, 2026\n\nbudget\nreporting\nStatus\nTo do\nDoing\nDone\nEdit\nDelete",
+    "brokenVisibleImages": []
+   }
+  }
+ },
+ "missingStates": [],
+ "captureFailures": [],
+ "actionErrors": [],
+ "infrastructureErrors": [],
+ "console": [],
+ "network": [],
+ "dialogs": [],
+ "browserVersion": "152.0.7977.83",
+ "sourceAfterTreeSha256": "dfc1f81dd7781bfd72c4882d367d90cb5ca299fd72ecbbf4b1b8db1c2d0bd7bf",
+ "sourceUnchanged": true,
+ "finishedAt": "2026-09-15T01:07:02.090Z"
+}

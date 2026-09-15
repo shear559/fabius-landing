@@ -1,0 +1,81 @@
+{
+  "generation": {
+    "id": "run-09",
+    "task": "math",
+    "repeat": 1,
+    "arm": "baseline",
+    "started": "2026-09-15T01:04:22.235308Z",
+    "ended": "2026-09-15T01:18:53.528061Z",
+    "wall_seconds": 871.3,
+    "exit_code": 0,
+    "capped": false,
+    "command": [
+      "[user]/.antigravity-ide/extensions/anthropic.claude-code-2.1.260-darwin-x64/resources/native-binary/claude",
+      "-p",
+      "<PROMPT>",
+      "--model",
+      "claude-sonnet-5",
+      "--setting-sources",
+      "project",
+      "--strict-mcp-config",
+      "--permission-mode",
+      "bypassPermissions",
+      "--no-session-persistence",
+      "--output-format",
+      "stream-json",
+      "--verbose",
+      "--disallowedTools",
+      "WebFetch",
+      "WebSearch",
+      "--tools",
+      "Read,Write,Edit,Bash,Glob,Grep,Skill"
+    ]
+  },
+  "measurement": {
+    "id": "run-09",
+    "task": "math",
+    "repeat": 1,
+    "arm": "baseline",
+    "model": "claude-sonnet-5",
+    "elapsed_seconds": 868.9,
+    "wall_seconds": 871.3,
+    "output_tokens": 87688,
+    "tool_calls": 41,
+    "turns": 42,
+    "started": "2026-09-15T01:04:22.235308Z",
+    "ended": "2026-09-15T01:18:53.528061Z",
+    "capped": false,
+    "exit_code": 0,
+    "skill_calls": [],
+    "contract_reads": [],
+    "fabius_skill_calls": [],
+    "plugins_loaded": [],
+    "fabius_skills_visible": false,
+    "missing_deliverables": [],
+    "status": "Completed",
+    "files": {
+      "diagram.svg": {
+        "bytes": 6496,
+        "sha256": "01afb83c0380fff1570276af069d37394bfa02a43682b2e421aaf25f217a1961"
+      },
+      "solution.md": {
+        "bytes": 19191,
+        "sha256": "7987c67e8b3b88e0e73c3fd74ac0ed0cd72b09286767d2ed67d538a91e042854"
+      },
+      "solution.py": {
+        "bytes": 3971,
+        "sha256": "c85d021d42b1be50e184f009775fbecb79690ef95e4db05c7729d6760754e8d8"
+      },
+      "verification.md": {
+        "bytes": 6300,
+        "sha256": "05b2dd7ca06be16b8b9d0d8339560ef9f4eb5441ac53ebdd6cdeddc18f3ee81a"
+      },
+      "verify.py": {
+        "bytes": 7316,
+        "sha256": "11610d828c20c8dff4473e5f6d951e3cd3c1ffe07b8e2a4fb21b2749b0ea3a3d"
+      }
+    },
+    "score_exit": 0,
+    "curve_points": 127
+  }
+}

@@ -1,0 +1,7 @@
+[
+  {
+    "run": "run-11",
+    "judge": "J1",
+    "outcome": "Original judge timed out; identical frozen proof reviewed again in a fresh bare session. The original timeout record is retained privately; no candidate regeneration or successful-judge rerun."
+  }
+]

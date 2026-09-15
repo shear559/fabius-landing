@@ -1,0 +1,7 @@
+All five deliverables are in place, BRIEF.md is untouched, and every check passed.
+
+**Delivered in this directory:**
+- `solution.md` — exact answer table (6 regimes over t∈[-2,4], transitions at t=-3/2,-1,-1/2,0,9/5), the pentagon geometry after eliminating z, a strict-convexity uniqueness argument, full KKT derivation with explicit sign convention and multipliers for every regime, an exhaustive proof that every non-selected vertex/edge (A, D, E, edge CD, edge DE) is infeasible in multiplier sign for all t in the domain, C¹-continuity analysis at each transition, and a plain-language walkthrough.
+- `solution.py` — stdlib-only `solve(t)` implementing the closed form; importing it is side-effect-free (verified empty stdout).
+- `diagram.svg` — self-contained, no external resources, labeled pentagon (A–E) with the optimizer's path (P1→P2→B→C) and a plain-language legend; verified to scale correctly at mobile width when embedded responsively.
+- `verification.md` + `verify.py` — reproducible checks: exact-formula/feasibility consistency, cross-check against independent SLSQP solves (max diff ~1e-13/1e-8), an independent brute-force grid oracle, continuity/C¹ checks at all five transitions, and an envelope-theorem self-consistency check — all passing, with stated limitations (numerics corroborate but don't replace the KKT proof).

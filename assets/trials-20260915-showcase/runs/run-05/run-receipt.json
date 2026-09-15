@@ -1,0 +1,77 @@
+{
+  "generation": {
+    "id": "run-05",
+    "task": "app",
+    "repeat": 1,
+    "arm": "baseline",
+    "started": "2026-09-15T00:48:48.551440Z",
+    "ended": "2026-09-15T01:04:22.233953Z",
+    "wall_seconds": 933.7,
+    "exit_code": 0,
+    "capped": false,
+    "command": [
+      "[user]/.antigravity-ide/extensions/anthropic.claude-code-2.1.260-darwin-x64/resources/native-binary/claude",
+      "-p",
+      "<PROMPT>",
+      "--model",
+      "claude-sonnet-5",
+      "--setting-sources",
+      "project",
+      "--strict-mcp-config",
+      "--permission-mode",
+      "bypassPermissions",
+      "--no-session-persistence",
+      "--output-format",
+      "stream-json",
+      "--verbose",
+      "--disallowedTools",
+      "WebFetch",
+      "WebSearch",
+      "--tools",
+      "Read,Write,Edit,Bash,Glob,Grep,Skill"
+    ]
+  },
+  "measurement": {
+    "id": "run-05",
+    "task": "app",
+    "repeat": 1,
+    "arm": "baseline",
+    "model": "claude-sonnet-5",
+    "elapsed_seconds": 931.9,
+    "wall_seconds": 933.7,
+    "output_tokens": 83013,
+    "tool_calls": 49,
+    "turns": 53,
+    "started": "2026-09-15T00:48:48.551440Z",
+    "ended": "2026-09-15T01:04:22.233953Z",
+    "capped": false,
+    "exit_code": 0,
+    "skill_calls": [],
+    "contract_reads": [],
+    "fabius_skill_calls": [],
+    "plugins_loaded": [],
+    "fabius_skills_visible": false,
+    "missing_deliverables": [],
+    "status": "Completed",
+    "files": {
+      "README.md": {
+        "bytes": 8141,
+        "sha256": "f68b5f740251fc47929f34b2a98d0dc7293f86ee3932ae802d2ce67fff794156"
+      },
+      "app.js": {
+        "bytes": 33845,
+        "sha256": "e526305e03c7ae84d385a5736f4c1087b8a879aaedb4a12a27234b65770c268b"
+      },
+      "index.html": {
+        "bytes": 12522,
+        "sha256": "52b4743f1525de8393f98484af9ec13a1dac270e17b544856475c3784ba8d617"
+      },
+      "styles.css": {
+        "bytes": 13063,
+        "sha256": "057d6b4ebc3a88459eff7697567b55cf813ae2570327d42dea3877e2bdd022df"
+      }
+    },
+    "grade_exit": 1,
+    "capture_exit": 0
+  }
+}

@@ -1,0 +1,363 @@
+{
+ "schemaVersion": 1,
+ "runId": "run-06",
+ "kind": "app",
+ "startedAt": "2026-09-15T01:01:42.220Z",
+ "helperSha256": "2448fa17cc9a54989a8ae7134baa2bfda9ee4cca000603582a3ce873d3c54f4a",
+ "source": {
+  "files": [
+   {
+    "file": "app.js",
+    "bytes": 35645,
+    "sha256": "3455ea5bfb1eff5600dcefc6b485d79f356f966e32a2053666f725093554e895"
+   },
+   {
+    "file": "BRIEF.md",
+    "bytes": 5357,
+    "sha256": "3903c0863ef3b0651174ddf195beb008abdbf640dc502ad72cbc54d5a3ee4ae7"
+   },
+   {
+    "file": "index.html",
+    "bytes": 13190,
+    "sha256": "47a65fb4a92b3b5870cc74f68e5bb6c7af3768c4c498c02e9eb95c8b4c1018c1"
+   },
+   {
+    "file": "README.md",
+    "bytes": 5354,
+    "sha256": "3ecdc951b2c78c9da353d2f7cb3e8d087d342bf1d1f50eeb7c0980ec3c1dcb95"
+   },
+   {
+    "file": "styles.css",
+    "bytes": 13380,
+    "sha256": "475b995454d537eddcff7b170f0a7efd5cdf217dcc3bd2c48c881f9a40d48801"
+   }
+  ],
+  "treeSha256": "53437e8437f0f901bf27e1d65fb54bea51a42bef6f92a31ccf980c31664cc446"
+ },
+ "policy": {
+  "presentation": "Composed walkthrough from captured states; not a recording of model generation.",
+  "browser": "Google Chrome",
+  "desktopViewport": {
+   "width": 1440,
+   "height": 960
+  },
+  "mobileViewport": {
+   "width": 360,
+   "height": 800
+  },
+  "deviceScaleFactor": 1,
+  "fullPage": false,
+  "reducedMotion": "reduce",
+  "screenshotAnimations": "disabled",
+  "freshContexts": true,
+  "externalRequests": "blocked",
+  "candidateEdits": false,
+  "scoresProvided": false
+ },
+ "snapshots": [
+  {
+   "id": "initial",
+   "label": "Desktop first visit \u2014 untouched initial output",
+   "file": "initial.png",
+   "actionSucceeded": true,
+   "observed": {
+    "httpStatus": 200,
+    "freshStorage": true,
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Fieldnote Board\n\nSmall research publication team \u00b7 local-only demo\n\nBoard\nList\n5\nTODO\n2\nDOING\n1\nDONE\nNew task\nSearch tasks by title, project or tags\nFilter by status\nAll statuses\nTodo\nDoing\nDone\nFilter by project\nAll projects\nManuscript\nSite Survey\nFilter by priority\nAll priorities\nLow\nMedium\nHigh\nExport\nImport\n\nShowing 8 of 8 tasks\n\nTodo\n5\nLog GPS coordinates for transects\nLow\n\nSite Survey\n\nfieldwork\ngps\nTodo\nDoing\nDone\nDraft methods section\nMedium\n\nManuscript\nDue 2026-09-25\n\nwriting\nTodo\nDoing\nDone\nDraft results and figures\nMedium\n\nManuscript\nDue 2026-09-29\n\nwriting\nfigures\nTodo\nDoing\nDone\nInternal peer review of draft\nLow\n\nManuscript\n\nreview\nTodo\nDoing\nDone\nSubmit to Journal of Field Ecology\nHigh\n\nManuscript\nDue 2026-10-10\n\nsubmission\nTodo\nDoing\nDone\nDoing\n2\nCollect Plot 4 soil samples\nHigh\n\nSite Survey\nDue 2026-09-18\n\nfieldwork\nsampling\nTodo\nDoing\nDone\nRun statistical analysis on Q3 samples\nHigh\n\nManuscript\nDue 2026-09-22\n\nanalysis\nstats\nTodo\nDoing\nDone\nDone\n1\nCalibrate soil moisture sensors\nMedium\n\nSite Survey\nDue 2026-08-20\n\nfieldwork\nequipment\nTodo\nDoing\nDone",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-15T01:01:44.963Z",
+   "actionStartedAt": "2026-09-15T01:01:44.139Z",
+   "sha256": "6732c101ced58f852a3a82d91d44e86c5e777f8f8dac74dd3dad2742c8a1dc63",
+   "bytes": 99557
+  },
+  {
+   "id": "new-task-form",
+   "label": "New task form opened",
+   "file": "new-task-form.png",
+   "actionSucceeded": true,
+   "observed": {
+    "visible": true,
+    "fields": [
+     {
+      "name": "title",
+      "type": "text",
+      "value": ""
+     },
+     {
+      "name": "project",
+      "type": "text",
+      "value": ""
+     },
+     {
+      "name": "status",
+      "type": "select-one",
+      "value": "todo"
+     },
+     {
+      "name": "priority",
+      "type": "select-one",
+      "value": "medium"
+     },
+     {
+      "name": "dueDate",
+      "type": "date",
+      "value": ""
+     },
+     {
+      "name": "tags",
+      "type": "text",
+      "value": ""
+     }
+    ],
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Fieldnote Board\n\nSmall research publication team \u00b7 local-only demo\n\nBoard\nList\n5\nTODO\n2\nDOING\n1\nDONE\nNew task\nSearch tasks by title, project or tags\nFilter by status\nAll statuses\nTodo\nDoing\nDone\nFilter by project\nAll projects\nManuscript\nSite Survey\nFilter by priority\nAll priorities\nLow\nMedium\nHigh\nExport\nImport\n\nShowing 8 of 8 tasks\n\nTodo\n5\nLog GPS coordinates for transects\nLow\n\nSite Survey\n\nfieldwork\ngps\nTodo\nDoing\nDone\nDraft methods section\nMedium\n\nManuscript\nDue 2026-09-25\n\nwriting\nTodo\nDoing\nDone\nDraft results and figures\nMedium\n\nManuscript\nDue 2026-09-29\n\nwriting\nfigures\nTodo\nDoing\nDone\nInternal peer review of draft\nLow\n\nManuscript\n\nreview\nTodo\nDoing\nDone\nSubmit to Journal of Field Ecology\nHigh\n\nManuscript\nDue 2026-10-10\n\nsubmission\nTodo\nDoing\nDone\nDoing\n2\nCollect Plot 4 soil samples\nHigh\n\nSite Survey\nDue 2026-09-18\n\nfieldwork\nsampling\nTodo\nDoing\nDone\nRun statistical analysis on Q3 samples\nHigh\n\nManuscript\nDue 2026-09-22\n\nanalysis\nstats\nTodo\nDoing\nDone\nDone\n1\nCalibrate soil moisture sensors\nMedium\n\nSite Survey\nDue 2026-08-20\n\nfieldwork\nequipment\nTodo\nDoing\nDone\nNew task\nTitle\nProject\nStatus\nTodo\nDoing\nDone\nPriority\nLow\nMedium\nHigh\nDue date\nTags comma-separated, up to 8\nCancel\nSave task",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-15T01:01:45.456Z",
+   "actionStartedAt": "2026-09-15T01:01:45.078Z",
+   "sha256": "141a3b19b475e6dc1226eacf64442e142212548c743d62583408b3fedaf61981",
+   "bytes": 106788
+  },
+  {
+   "id": "after-create",
+   "label": "Review launch evidence created and present in saved board",
+   "file": "after-create.png",
+   "actionSucceeded": true,
+   "observed": {
+    "requested": {
+     "title": "Review launch evidence",
+     "project": "Research",
+     "status": "doing",
+     "priority": "high",
+     "dueDate": "2026-09-20",
+     "tags": "evidence,launch"
+    },
+    "storageError": null,
+    "matchingRecords": [
+     {
+      "id": "t-ee4ff5c4-faaa-4ec9-a3d8-2cbeda791a6f",
+      "title": "Review launch evidence",
+      "project": "Research",
+      "status": "doing",
+      "priority": "high",
+      "dueDate": "2026-09-20",
+      "tags": [
+       "evidence",
+       "launch"
+      ]
+     }
+    ],
+    "rendered": true,
+    "visibleCards": [
+     {
+      "id": "seed-3",
+      "text": "Log GPS coordinates for transects\nLow\n\nSite Survey\n\nfieldwork\ngps\nTodo\nDoing\nDone"
+     },
+     {
+      "id": "seed-5",
+      "text": "Draft methods section\nMedium\n\nManuscript\nDue 2026-09-25\n\nwriting\nTodo\nDoing\nDone"
+     },
+     {
+      "id": "seed-6",
+      "text": "Draft results and figures\nMedium\n\nManuscript\nDue 2026-09-29\n\nwriting\nfigures\nTodo\nDoing\nDone"
+     },
+     {
+      "id": "seed-7",
+      "text": "Internal peer review of draft\nLow\n\nManuscript\n\nreview\nTodo\nDoing\nDone"
+     },
+     {
+      "id": "seed-8",
+      "text": "Submit to Journal of Field Ecology\nHigh\n\nManuscript\nDue 2026-10-10\n\nsubmission\nTodo\nDoing\nDone"
+     },
+     {
+      "id": "seed-2",
+      "text": "Collect Plot 4 soil samples\nHigh\n\nSite Survey\nDue 2026-09-18\n\nfieldwork\nsampling\nTodo\nDoing\nDone"
+     },
+     {
+      "id": "seed-4",
+      "text": "Run statistical analysis on Q3 samples\nHigh\n\nManuscript\nDue 2026-09-22\n\nanalysis\nstats\nTodo\nDoing\nDone"
+     },
+     {
+      "id": "t-ee4ff5c4-faaa-4ec9-a3d8-2cbeda791a6f",
+      "text": "Review launch evidence\nHigh\n\nResearch\nDue 2026-09-20\n\nevidence\nlaunch\nTodo\nDoing\nDone"
+     },
+     {
+      "id": "seed-1",
+      "text": "Calibrate soil moisture sensors\nMedium\n\nSite Survey\nDue 2026-08-20\n\nfieldwork\nequipment\nTodo\nDoing\nDone"
+     }
+    ],
+    "beforeStorageSha256": "89af75a1d8ab142717c1bb27138317bbf0c7c2a4e8f92004a796cfb865c22333",
+    "afterStorageSha256": "52434a8fbaad01a55903f39f83df74ade8fed5747bcea03a385e72c2f9039eb2",
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 195
+     },
+     "documentWidth": 1440,
+     "visibleText": "Fieldnote Board\n\nSmall research publication team \u00b7 local-only demo\n\nBoard\nList\n5\nTODO\n3\nDOING\n1\nDONE\nNew task\nSearch tasks by title, project or tags\nFilter by status\nAll statuses\nTodo\nDoing\nDone\nFilter by project\nAll projects\nManuscript\nResearch\nSite Survey\nFilter by priority\nAll priorities\nLow\nMedium\nHigh\nExport\nImport\n\nShowing 9 of 9 tasks\n\nTodo\n5\nLog GPS coordinates for transects\nLow\n\nSite Survey\n\nfieldwork\ngps\nTodo\nDoing\nDone\nDraft methods section\nMedium\n\nManuscript\nDue 2026-09-25\n\nwriting\nTodo\nDoing\nDone\nDraft results and figures\nMedium\n\nManuscript\nDue 2026-09-29\n\nwriting\nfigures\nTodo\nDoing\nDone\nInternal peer review of draft\nLow\n\nManuscript\n\nreview\nTodo\nDoing\nDone\nSubmit to Journal of Field Ecology\nHigh\n\nManuscript\nDue 2026-10-10\n\nsubmission\nTodo\nDoing\nDone\nDoing\n3\nCollect Plot 4 soil samples\nHigh\n\nSite Survey\nDue 2026-09-18\n\nfieldwork\nsampling\nTodo\nDoing\nDone\nRun statistical analysis on Q3 samples\nHigh\n\nManuscript\nDue 2026-09-22\n\nanalysis\nstats\nTodo\nDoing\nDone\nReview launch evidence\nHigh\n\nResearch\nDue 2026-09-20\n\nevidence\nlaunch\nTodo\nDoing\nDone\nDone\n1\nCalibrate soil moisture sensors\nMedium\n\nSite Survey\nDue 2026-08-20\n\nfieldwork\nequipment\nTodo\nDoing\nDone",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-15T01:01:46.047Z",
+   "actionStartedAt": "2026-09-15T01:01:45.552Z",
+   "sha256": "422acb1cbf13b47345fe0a8da026976f3962d19a6ba47d095d2fc2f4ccc19513",
+   "bytes": 105409
+  },
+  {
+   "id": "search",
+   "label": "Search for Review launch evidence; matching task shown",
+   "file": "search.png",
+   "actionSucceeded": true,
+   "observed": {
+    "search": "Review launch evidence",
+    "visibleCards": [
+     {
+      "id": "t-ee4ff5c4-faaa-4ec9-a3d8-2cbeda791a6f",
+      "text": "Review launch evidence\nHigh\n\nResearch\nDue 2026-09-20\n\nevidence\nlaunch\nTodo\nDoing\nDone"
+     }
+    ],
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Fieldnote Board\n\nSmall research publication team \u00b7 local-only demo\n\nBoard\nList\n5\nTODO\n3\nDOING\n1\nDONE\nNew task\nSearch tasks by title, project or tags\nFilter by status\nAll statuses\nTodo\nDoing\nDone\nFilter by project\nAll projects\nManuscript\nResearch\nSite Survey\nFilter by priority\nAll priorities\nLow\nMedium\nHigh\nExport\nImport\n\nShowing 1 of 9 tasks\n\nTodo\n0\n\nNo tasks here.\n\nDoing\n1\nReview launch evidence\nHigh\n\nResearch\nDue 2026-09-20\n\nevidence\nlaunch\nTodo\nDoing\nDone\nDone\n0\n\nNo tasks here.",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-15T01:01:46.552Z",
+   "actionStartedAt": "2026-09-15T01:01:46.161Z",
+   "sha256": "27fbf32d9257ef8c8782a8e480a5c97aa6724e7a326e98b46568bc79d148ec36",
+   "bytes": 51686
+  },
+  {
+   "id": "import-error",
+   "label": "Malformed JSON rejected in a browser alert; saved board unchanged",
+   "file": "import-error.png",
+   "actionSucceeded": true,
+   "observed": {
+    "formDismissed": false,
+    "confirmation": {
+     "clicked": false
+    },
+    "dialogs": [
+     {
+      "viewport": {
+       "width": 1440,
+       "height": 960
+      },
+      "type": "alert",
+      "message": "Import failed: the file is not valid JSON.",
+      "action": "accept"
+     }
+    ],
+    "newVisibleFeedback": [],
+    "nativeError": true,
+    "storageUnchanged": true,
+    "beforeStorageSha256": "52434a8fbaad01a55903f39f83df74ade8fed5747bcea03a385e72c2f9039eb2",
+    "afterStorageSha256": "52434a8fbaad01a55903f39f83df74ade8fed5747bcea03a385e72c2f9039eb2",
+    "render": {
+     "path": "/nested/benchmark/",
+     "viewport": {
+      "width": 1440,
+      "height": 960
+     },
+     "scroll": {
+      "x": 0,
+      "y": 0
+     },
+     "documentWidth": 1440,
+     "visibleText": "Fieldnote Board\n\nSmall research publication team \u00b7 local-only demo\n\nBoard\nList\n5\nTODO\n3\nDOING\n1\nDONE\nNew task\nSearch tasks by title, project or tags\nFilter by status\nAll statuses\nTodo\nDoing\nDone\nFilter by project\nAll projects\nManuscript\nResearch\nSite Survey\nFilter by priority\nAll priorities\nLow\nMedium\nHigh\nExport\nImport\n\nShowing 9 of 9 tasks\n\nTodo\n5\nLog GPS coordinates for transects\nLow\n\nSite Survey\n\nfieldwork\ngps\nTodo\nDoing\nDone\nDraft methods section\nMedium\n\nManuscript\nDue 2026-09-25\n\nwriting\nTodo\nDoing\nDone\nDraft results and figures\nMedium\n\nManuscript\nDue 2026-09-29\n\nwriting\nfigures\nTodo\nDoing\nDone\nInternal peer review of draft\nLow\n\nManuscript\n\nreview\nTodo\nDoing\nDone\nSubmit to Journal of Field Ecology\nHigh\n\nManuscript\nDue 2026-10-10\n\nsubmission\nTodo\nDoing\nDone\nDoing\n3\nCollect Plot 4 soil samples\nHigh\n\nSite Survey\nDue 2026-09-18\n\nfieldwork\nsampling\nTodo\nDoing\nDone\nRun statistical analysis on Q3 samples\nHigh\n\nManuscript\nDue 2026-09-22\n\nanalysis\nstats\nTodo\nDoing\nDone\nReview launch evidence\nHigh\n\nResearch\nDue 2026-09-20\n\nevidence\nlaunch\nTodo\nDoing\nDone\nDone\n1\nCalibrate soil moisture sensors\nMedium\n\nSite Survey\nDue 2026-08-20\n\nfieldwork\nequipment\nTodo\nDoing\nDone",
+     "brokenVisibleImages": []
+    }
+   },
+   "capturedAt": "2026-09-15T01:01:47.250Z",
+   "actionStartedAt": "2026-09-15T01:01:46.639Z",
+   "sha256": "cb6326cc17debedece8ea4357901bb90bd5fec5091533655b1d50c5e312c439f",
+   "bytes": 107382
+  }
+ ],
+ "mobilefile": "mobile-initial.png",
+ "mobile": {
+  "id": "mobile-initial",
+  "label": "Mobile first visit \u2014 separate fresh context",
+  "file": "mobile-initial.png",
+  "sha256": "2936262723049a282696eb2d45e6ddb77e34875e13d529ee24499d8294ab5d59",
+  "bytes": 43311,
+  "actionSucceeded": true,
+  "observed": {
+   "httpStatus": 200,
+   "freshStorage": true,
+   "render": {
+    "path": "/nested/benchmark/",
+    "viewport": {
+     "width": 360,
+     "height": 800
+    },
+    "scroll": {
+     "x": 0,
+     "y": 0
+    },
+    "documentWidth": 360,
+    "visibleText": "Fieldnote Board\n\nSmall research publication team \u00b7 local-only demo\n\nBoard\nList\n5\nTODO\n2\nDOING\n1\nDONE\nNew task\nSearch tasks by title, project or tags\nFilter by status\nAll statuses\nTodo\nDoing\nDone\nFilter by project\nAll projects\nManuscript\nSite Survey\nFilter by priority\nAll priorities\nLow\nMedium\nHigh\nExport\nImport\n\nShowing 8 of 8 tasks\n\nTodo\n5\nLog GPS coordinates for transects\nLow\n\nSite Survey\n\nfieldwork\ngps\nTodo\nDoing\nDone\nDraft methods section\nMedium\n\nManuscript\nDue 2026-09-25\n\nwriting\nTodo\nDoing\nDone\nDraft results and figures\nMedium\n\nManuscript\nDue 2026-09-29\n\nwriting\nfigures\nTodo\nDoing\nDone\nInternal peer review of draft\nLow\n\nManuscript\n\nreview\nTodo\nDoing\nDone\nSubmit to Journal of Field Ecology\nHigh\n\nManuscript\nDue 2026-10-10\n\nsubmission\nTodo\nDoing\nDone\nDoing\n2\nCollect Plot 4 soil samples\nHigh\n\nSite Survey\nDue 2026-09-18\n\nfieldwork\nsampling\nTodo\nDoing\nDone\nRun statistical analysis on Q3 samples\nHigh\n\nManuscript\nDue 2026-09-22\n\nanalysis\nstats\nTodo\nDoing\nDone\nDone\n1\nCalibrate soil moisture sensors\nMedium\n\nSite Survey\nDue 2026-08-20\n\nfieldwork\nequipment\nTodo\nDoing\nDone",
+    "brokenVisibleImages": []
+   }
+  }
+ },
+ "missingStates": [],
+ "captureFailures": [],
+ "actionErrors": [],
+ "infrastructureErrors": [],
+ "console": [],
+ "network": [],
+ "dialogs": [
+  {
+   "viewport": {
+    "width": 1440,
+    "height": 960
+   },
+   "type": "alert",
+   "message": "Import failed: the file is not valid JSON.",
+   "action": "accept"
+  }
+ ],
+ "browserVersion": "152.0.7977.83",
+ "sourceAfterTreeSha256": "53437e8437f0f901bf27e1d65fb54bea51a42bef6f92a31ccf980c31664cc446",
+ "sourceUnchanged": true,
+ "finishedAt": "2026-09-15T01:01:48.683Z"
+}
