@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "revision": 4,
+  "updatedAt": "2026-09-10T14:50:12.167618+00:00",
+  "rubricSha256": "dce74ebefa667827386eafd630efb81f79f0cbe431c5ee815efc307829278cd5",
+  "originalRunnerSha256": "890abb84250f5037d52e43d44b5f8db042b4141e79b59fdcbcb6d65e3ca6dde4",
+  "currentRunnerSha256": "3fffdc7370a5f9b657f0cc22708a013c4a5e35232263a15427e2490cda85c503",
+  "criteriaChanged": false,
+  "initialControlValidation": {
+    "runnerSha256": "890abb84250f5037d52e43d44b5f8db042b4141e79b59fdcbcb6d65e3ca6dde4",
+    "casesPassed": 13,
+    "cases": 13,
+    "scenarioExecutions": 52,
+    "completedBeforeCandidateInspection": true
+  },
+  "revisionRegression": {
+    "positiveDocumentTopLinkExecutionsPassed": 4,
+    "negativeMissingSectionExecutionsCorrectlyFailed": 4,
+    "allFourEnvironmentsCovered": true
+  },
+  "matrix": {
+    "engines": [
+      "chromium",
+      "webkit"
+    ],
+    "widths": [
+      360,
+      1440
+    ],
+    "landingExecutions": 28,
+    "appExecutions": 68
+  },
+  "groups": {
+    "landing": 7,
+    "app": 16
+  },
+  "changes": [
+    {
+      "id": "valid-document-top-link",
+      "description": "Corrected an oracle false positive: an empty fragment is valid navigation to the document top. Named fragments still require an existing section. Original failed results are retained. The first affected run was fully rerun; later candidates use the identical correction."
+    },
+    {
+      "id": "billing-period-manual-evidence",
+      "description": "Capture the visible text adjacent to each amount and manually verify the actual billing period for every landing. A global page-text match alone is not accepted as proof."
+    },
+    {
+      "id": "visible-inline-form-feedback",
+      "description": "The oracle now recognizes newly appearing visible inline validation messages without demanding an undocumented notice selector. Static labels, user field values and hidden text do not establish error feedback."
+    },
+    {
+      "id": "equivalent-local-framing",
+      "description": "Explicit equivalent local-device wording is recognized, and exact visible framing is manually reviewed for every app."
+    },
+    {
+      "id": "equivalent-import-failure-phrasing",
+      "description": "Recognize visible not-valid-JSON and could-not-complete error messages. Positive wording controls and negative silent-error controls passed; both apps receive the same A08 rerun."
+    }
+  ],
+  "evidenceFiles": [
+    "rubric.json",
+    "grade.mjs",
+    "grade.pre-anchor-fix.mjs",
+    "selftest-results/summary.json",
+    "anchor-regression/summary.json",
+    "runner-corrections.md",
+    "grade.pre-inline-feedback-fix.mjs",
+    "inline-regression/summary.json",
+    "grade.pre-import-wording-fix.mjs",
+    "wording-regression/summary.json",
+    "probe-modal-focus.mjs",
+    "probe-project-sentinel.mjs",
+    "probe-project-selection-trace.mjs"
+  ],
+  "limits": [
+    "Automatic checks measure supplied contracts, not design quality.",
+    "Screenshot artifacts need independent visual review.",
+    "Unspecified confirmation/recovery control wording may require documented symmetric selector adjudication.",
+    "Counts are scenario coverage, not independent model trials."
+  ],
+  "additionalRegression": {
+    "casesMatched": 6,
+    "cases": 6,
+    "scenarioExecutions": 18,
+    "purpose": "Visible inline error feedback, missing-feedback rejection, equivalent/absent local framing and silent quota failures."
+  },
+  "importWordingAndFocusRegression": {
+    "casesMatched": 5,
+    "cases": 5,
+    "scenarioExecutions": 16,
+    "includesDeliberateFocusLoss": true
+  },
+  "supplementaryAppEvidence": {
+    "runIds": [
+      "run-08",
+      "run-06",
+      "run-04",
+      "run-10"
+    ],
+    "modalFocus": {
+      "separateOpeningPaths": [
+        "pointer",
+        "keyboard"
+      ],
+      "environmentsPerOpening": 4,
+      "delayMs": 550,
+      "partOfOriginalA06Criterion": true
+    },
+    "projectNamedAll": {
+      "classification": "exploratory-after-primary-rubric-freeze",
+      "environmentsPerApp": 4,
+      "primaryScoresChanged": false,
+      "diagnosticTrace": "A document capture-phase listener records the actual requested project option before application handlers; this distinguishes a bad selector from an application resetting the selection. All four apps receive identical observation-only tracing."
+    },
+    "primaryRunnerChanged": false
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "revision": 3,
+  "recordedAt": "2026-09-10T14:27:58.797658+00:00",
+  "previousRunnerSha256": "e10673649047a80f76e3e8b773e48974918b079aaf956aa1cfc1bda334ac660f",
+  "runnerSha256": "9b1a775f8ac61407b848b6c660fb7e80d17104caf51575675ca3be0b4f1ddf61",
+  "rubricSha256": "dce74ebefa667827386eafd630efb81f79f0cbe431c5ee815efc307829278cd5",
+  "criteriaChanged": false,
+  "changes": [
+    "Recognize newly appearing visible inline validation feedback without accepting static labels or hidden content.",
+    "Recognize equivalent visible local-device framing; manual review records the exact UI wording."
+  ],
+  "regressions": [
+    {
+      "defect": "inline-feedback",
+      "id": "A06",
+      "shouldPass": true,
+      "matched": true,
+      "summary": {
+        "passed": 4,
+        "failed": 0,
+        "scenarioExecutions": 4,
+        "infrastructureErrors": 0,
+        "byCheck": {
+          "A06": {
+            "passed": 4,
+            "executed": 4
+          }
+        }
+      }
+    },
+    {
+      "defect": "silent-inline",
+      "id": "A06",
+      "shouldPass": false,
+      "matched": true,
+      "summary": {
+        "passed": 0,
+        "failed": 4,
+        "scenarioExecutions": 4,
+        "infrastructureErrors": 0,
+        "byCheck": {
+          "A06": {
+            "passed": 0,
+            "executed": 4
+          }
+        }
+      }
+    },
+    {
+      "defect": "local-framing",
+      "id": "A01",
+      "shouldPass": true,
+      "matched": true,
+      "summary": {
+        "passed": 4,
+        "failed": 0,
+        "scenarioExecutions": 4,
+        "infrastructureErrors": 0,
+        "byCheck": {
+          "A01": {
+            "passed": 4,
+            "executed": 4
+          }
+        }
+      }
+    },
+    {
+      "defect": "missing-framing",
+      "id": "A01",
+      "shouldPass": false,
+      "matched": true,
+      "summary": {
+        "passed": 0,
+        "failed": 4,
+        "scenarioExecutions": 4,
+        "infrastructureErrors": 0,
+        "byCheck": {
+          "A01": {
+            "passed": 0,
+            "executed": 4
+          }
+        }
+      }
+    },
+    {
+      "defect": "control",
+      "id": "A13",
+      "shouldPass": true,
+      "matched": true,
+      "summary": {
+        "passed": 1,
+        "failed": 0,
+        "scenarioExecutions": 1,
+        "infrastructureErrors": 0,
+        "byCheck": {
+          "A13": {
+            "passed": 1,
+            "executed": 1
+          }
+        }
+      }
+    },
+    {
+      "defect": "silent-write",
+      "id": "A13",
+      "shouldPass": false,
+      "matched": true,
+      "summary": {
+        "passed": 0,
+        "failed": 1,
+        "scenarioExecutions": 1,
+        "infrastructureErrors": 0,
+        "byCheck": {
+          "A13": {
+            "passed": 0,
+            "executed": 1
+          }
+        }
+      }
+    }
+  ],
+  "affectedRunsSoFar": [
+    "run-08"
+  ],
+  "originalReportsPreserved": true,
+  "symmetricApplication": "Run-08 fully rerun; run-06 and later apps use this revision. Landing predicates unchanged."
+}

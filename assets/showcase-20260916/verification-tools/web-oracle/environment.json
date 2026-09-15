@@ -1,0 +1,15 @@
+{
+  "recordedAt": "2026-09-10T14:03:28.083Z",
+  "node": "v26.0.0",
+  "platform": "darwin",
+  "arch": "x64",
+  "playwrightVersion": "1.60.0",
+  "browsers": {
+    "chromium": {
+      "version": "148.0.7778.96"
+    },
+    "webkit": {
+      "version": "26.4"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "revision": 2,
+  "recordedAt": "2026-09-10T14:16:36.133695+00:00",
+  "previousRunnerSha256": "890abb84250f5037d52e43d44b5f8db042b4141e79b59fdcbcb6d65e3ca6dde4",
+  "runnerSha256": "e10673649047a80f76e3e8b773e48974918b079aaf956aa1cfc1bda334ac660f",
+  "rubricSha256": "dce74ebefa667827386eafd630efb81f79f0cbe431c5ee815efc307829278cd5",
+  "criteriaChanged": false,
+  "changes": [
+    "Corrected standard document-top anchors while preserving missing-section failures.",
+    "Captured adjacent pricing labels for symmetric manual adjudication of the existing billing-period criterion."
+  ],
+  "regressionEvidence": [
+    {
+      "defect": "control",
+      "matched": true,
+      "summary": {
+        "passed": 4,
+        "failed": 0,
+        "scenarioExecutions": 4,
+        "infrastructureErrors": 0,
+        "byCheck": {
+          "L01": {
+            "passed": 4,
+            "executed": 4
+          }
+        }
+      }
+    },
+    {
+      "defect": "missing-anchor",
+      "matched": true,
+      "summary": {
+        "passed": 0,
+        "failed": 4,
+        "scenarioExecutions": 4,
+        "infrastructureErrors": 0,
+        "byCheck": {
+          "L01": {
+            "passed": 0,
+            "executed": 4
+          }
+        }
+      }
+    }
+  ],
+  "affectedRunsSoFar": [
+    "run-12"
+  ],
+  "originalReportsPreserved": true,
+  "symmetricApplication": "Run-12 fully rerun; every later landing uses this revision."
+}

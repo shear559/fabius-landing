@@ -1,0 +1,235 @@
+{
+  "passed": 43,
+  "failed": 0,
+  "scope": "Focused checks after styling the app filters and packaging the source. Local header mirror only.",
+  "results": [
+    {
+      "name": "chromium390/filter-touch-targets",
+      "pass": true,
+      "actual": [
+        {
+          "h": 44,
+          "w": 113.328125
+        },
+        {
+          "h": 44,
+          "w": 113.328125
+        },
+        {
+          "h": 44,
+          "w": 113.34375
+        }
+      ]
+    },
+    {
+      "name": "chromium390/styled-filter-works",
+      "pass": true
+    },
+    {
+      "name": "chromium390/method-no-overflow",
+      "pass": true
+    },
+    {
+      "name": "chromium390/support.html/font-and-fit",
+      "pass": true
+    },
+    {
+      "name": "chromium390/privacy.html/font-and-fit",
+      "pass": true
+    },
+    {
+      "name": "chromium390/terms.html/font-and-fit",
+      "pass": true
+    },
+    {
+      "name": "chromium390/old-study-tabs",
+      "pass": true
+    },
+    {
+      "name": "chromium390/console-clean",
+      "pass": true,
+      "actual": []
+    },
+    {
+      "name": "chromium1440/filter-touch-targets",
+      "pass": true,
+      "actual": [
+        {
+          "h": 44,
+          "w": 95
+        },
+        {
+          "h": 44,
+          "w": 93
+        },
+        {
+          "h": 44,
+          "w": 96
+        }
+      ]
+    },
+    {
+      "name": "chromium1440/styled-filter-works",
+      "pass": true
+    },
+    {
+      "name": "sidebar-project-filter",
+      "pass": true
+    },
+    {
+      "name": "sidebar-reset",
+      "pass": true
+    },
+    {
+      "name": "chromium1440/method-no-overflow",
+      "pass": true
+    },
+    {
+      "name": "chromium1440/support.html/font-and-fit",
+      "pass": true
+    },
+    {
+      "name": "chromium1440/privacy.html/font-and-fit",
+      "pass": true
+    },
+    {
+      "name": "chromium1440/terms.html/font-and-fit",
+      "pass": true
+    },
+    {
+      "name": "chromium1440/old-study-tabs",
+      "pass": true
+    },
+    {
+      "name": "chromium1440/console-clean",
+      "pass": true,
+      "actual": []
+    },
+    {
+      "name": "webkit390/method-no-overflow",
+      "pass": true
+    },
+    {
+      "name": "webkit390/support.html/font-and-fit",
+      "pass": true
+    },
+    {
+      "name": "webkit390/privacy.html/font-and-fit",
+      "pass": true
+    },
+    {
+      "name": "webkit390/terms.html/font-and-fit",
+      "pass": true
+    },
+    {
+      "name": "webkit390/old-study-tabs",
+      "pass": true
+    },
+    {
+      "name": "webkit390/console-clean",
+      "pass": true,
+      "actual": []
+    },
+    {
+      "name": "webkit1440/method-no-overflow",
+      "pass": true
+    },
+    {
+      "name": "webkit1440/support.html/font-and-fit",
+      "pass": true
+    },
+    {
+      "name": "webkit1440/privacy.html/font-and-fit",
+      "pass": true
+    },
+    {
+      "name": "webkit1440/terms.html/font-and-fit",
+      "pass": true
+    },
+    {
+      "name": "webkit1440/old-study-tabs",
+      "pass": true
+    },
+    {
+      "name": "webkit1440/console-clean",
+      "pass": true,
+      "actual": []
+    },
+    {
+      "name": "website/embedded-font-loaded",
+      "pass": true
+    },
+    {
+      "name": "app/embedded-font-loaded",
+      "pass": true
+    },
+    {
+      "name": "math/embedded-font-loaded",
+      "pass": true
+    },
+    {
+      "name": "proof-return-preview",
+      "pass": true
+    },
+    {
+      "name": "download/assets/showcase-20260916/website/source.zip",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "bytes": 125276
+      }
+    },
+    {
+      "name": "download/assets/showcase-20260916/app/source.zip",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "bytes": 133485
+      }
+    },
+    {
+      "name": "download/assets/showcase-20260916/math/source.zip",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "bytes": 1097040
+      }
+    },
+    {
+      "name": "download/assets/showcase-20260916/verification-tools.zip",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "bytes": 148663
+      }
+    },
+    {
+      "name": "download/assets/showcase-20260916/manifest.json",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "bytes": 24256
+      }
+    },
+    {
+      "name": "download/assets/showcase-20260916/evidence/integration.json",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "bytes": 21489
+      }
+    },
+    {
+      "name": "font-CORS/assets/showcase-20260916/website/rubik.woff2",
+      "pass": true
+    },
+    {
+      "name": "font-CORS/assets/showcase-20260916/math/katex/fonts/KaTeX_Main-Regular.woff2",
+      "pass": true
+    },
+    {
+      "name": "font-CORS/assets/fonts/rubik/Rubik-Variable.woff2",
+      "pass": true
+    }
+  ]
+}

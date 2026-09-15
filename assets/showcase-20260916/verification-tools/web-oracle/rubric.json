@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "frozenAt": "2026-09-10",
+  "interpretation": "Scenario groups are contract checks, not independent samples or a quality score. Every scenario runs at 360x844 and 1440x1000 in isolated Chromium and WebKit contexts. A grouped scenario passes only when all its required observations pass. Visual design is reviewed separately from screenshots. No criteria may be added after candidates are inspected; runner bug fixes must be logged.",
+  "landing": [
+    {"id":"L01","name":"Useful factual content and valid navigation","criteria":"Fictional demonstration, named product and all supplied capabilities, three-step workflow, two pricing plans, four FAQs, working CTA and section links, no external resource fetches or invented quantified social proof."},
+    {"id":"L02","name":"Mobile navigation lifecycle","criteria":"Open/close synchronizes aria-expanded; visible menu links target sections; Escape closes and restores toggle focus; link selection closes; desktop navigation remains reachable."},
+    {"id":"L03","name":"Feature tab state and keyboard","criteria":"All three tabs have role=tab and matching tabpanels, one visible selected panel; click and arrow-key changes synchronize selected state and display distinct content."},
+    {"id":"L04","name":"Billing round trip","criteria":"Monthly 12/29 per month; yearly 108/264 per year; returning restores monthly values and visible period labels."},
+    {"id":"L05","name":"Native FAQ interactions and supplied answers","criteria":"Exactly four details/summary entries, individually operable with meaningful answer content consistent with supplied local-storage/export/backup/cancellation facts."},
+    {"id":"L06","name":"No-JavaScript fallback","criteria":"Product content, pricing and section navigation remain visible and useful with JavaScript disabled."},
+    {"id":"L07","name":"Responsive rendering, keyboard names and reduced motion","criteria":"No horizontal document overflow, nonzero main content and loaded local illustration/resources, meaningful accessible names for visible controls, and no active long nonessential animation under prefers-reduced-motion. Screenshots support separate design review."}
+  ],
+  "app": [
+    {"id":"A01","name":"Empty-storage initialization","criteria":"At least six valid unique records, two projects and every status; matching rendered cards and useful fictional/local-only framing."},
+    {"id":"A02","name":"Create/edit and persistence","criteria":"Create trims fields and deduplicates tags case-insensitively, generates a unique ID; edit updates only target; both persist across reload."},
+    {"id":"A03","name":"Status update preserves other records","criteria":"Native status select changes only target status, displays new value and survives reload."},
+    {"id":"A04","name":"Delete and exact undo","criteria":"Delete removes target from UI/storage; visible undo restores exact record and persists on reload."},
+    {"id":"A05","name":"Combined search and filters","criteria":"Case-insensitive title/project/tag search; status/project/priority filters intersect; filtered cards match exactly; no-result state and visible total/matching count."},
+    {"id":"A06","name":"Form validation and modal keyboard lifecycle","criteria":"Blank and overlong text and invalid calendar date cannot mutate board; visible feedback; modal form closes on Escape and returns focus when applicable."},
+    {"id":"A07","name":"Full export and confirmed import round trip","criteria":"Export includes filtered-out tasks; valid replacement requires explicit confirmation, replaces records atomically and persists on reload."},
+    {"id":"A08","name":"Reject malformed/unsupported import atomically","criteria":"Malformed JSON, wrong schema and invalid enum leave the exact stored board unchanged with visible error."},
+    {"id":"A09","name":"Reject duplicate IDs and invalid date atomically","criteria":"Duplicate IDs, non-calendar dates and overlong task text each leave the prior board unchanged with visible error."},
+    {"id":"A10","name":"Import size boundary","criteria":"Files exceeding 1 MiB are rejected without replacement and with visible error."},
+    {"id":"A11","name":"Imported hostile text remains text","criteria":"Valid confirmed record containing HTML-shaped title/project/tags displays literal text without executing script or injecting event-bearing elements."},
+    {"id":"A12","name":"Corrupt storage recovery","criteria":"Exact corrupt bytes survive startup; visible recovery notice; original bytes can be downloaded; reset requires explicit confirmation."},
+    {"id":"A13","name":"Storage write failure keeps work recoverable","criteria":"Thrown writes preserve persisted board, visibly report unsaved/storage failure, and retain attempted work in memory or form."},
+    {"id":"A14","name":"Cross-tab stale-write protection","criteria":"Real second-tab storage event prompts visible conflict/reload notice and prevents silent overwrite of newer state; safe documented reconciliation accepted for manual review."},
+    {"id":"A15","name":"Responsive rendering and accessible controls","criteria":"No horizontal overflow, useful content and meaningful accessible names for controls at both widths; screenshots support separate qualitative design review."},
+    {"id":"A16","name":"No-JavaScript notice and reduced motion","criteria":"Useful visible no-JavaScript message; reduced-motion context has no active long nonessential animation."}
+  ],
+  "limits": ["No model judge is used by this oracle.","The browser oracle checks supplied contracts, not universal security, correctness or visual quality.","Visual design and possible invented claims require a separate blinded review of captured artifacts.","A runner infrastructure error is distinct from a failed product scenario and must not count as a product failure."]
+}

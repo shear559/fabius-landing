@@ -1,0 +1,32 @@
+{
+  "benchmark": "parametric-convex-qp-six-regimes-v1",
+  "amendment": 1,
+  "recorded_at_utc": "2026-09-10T14:02:54.798690+00:00",
+  "reason": "Align the proof rubric with the already frozen candidate brief: math.md explicitly requires continuity/differentiability of the value. This requirement was mistakenly marked optional in the original rubric. The mathematical task, exact answer, numeric scorer, tolerances and test probes are unchanged.",
+  "candidate_output_inspection": "No experiment candidate outputs inspected by the oracle author before this amendment. Parent reports the first pair is running.",
+  "original_freeze_receipt_sha256": "6f84fa18bccb14132d710f6ad926794e4ba295c2a645ee531c46ea128b47d0d6",
+  "original_freeze_receipt_preserved_unchanged": true,
+  "file": "proof-rubric.json",
+  "original_sha256": "bd5cf47ba98dbe6c6c72e0cf5556a882a71a01e0f2b423890146d861aa36a23f",
+  "amended_sha256": "da5db0ba0413c84f861a4bd289f777cd3c2a96e3e174d4941b5a1ab8cc6be2ba",
+  "changes": [
+    {
+      "field": "dimensions[id=closed_transition_analysis].necessary_evidence",
+      "before": "Explains why each regime starts/ends at the listed exact value; neighboring optimizer and value formulas agree at all five transitions. Zero multipliers at transitions do not break the argument. Must justify the nonzero-length fixed-vertex interval.",
+      "after": "Explains why each regime starts/ends at the listed exact value; neighboring optimizer and value formulas agree at all five transitions. Establishes continuity and differentiability of the value function across those transitions, hence C1 on the domain with one-sided endpoint derivatives; matching one-sided derivatives or V'(t)=-2*x*(t) together with continuous x* suffices. Zero multipliers at transitions do not break the argument. Must justify the nonzero-length fixed-vertex interval."
+    },
+    {
+      "field": "optional_consistency_checks",
+      "before": [
+        "V is C1",
+        "V is concave",
+        "V'(t)=-2*x*(t)"
+      ],
+      "after": [
+        "V is concave",
+        "V'(t)=-2*x*(t)"
+      ]
+    }
+  ],
+  "verification": "JSON parsed; all eight dimensions retained; continuity/differentiability required; C1 removed from optional checks; freeze receipt and all other frozen files remain unchanged."
+}

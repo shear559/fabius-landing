@@ -244,7 +244,7 @@
   }
 
   /* ── install tabs — roving tabindex, arrow keys, hidden panels ── */
-  $$('[role="tablist"]').forEach((list) => {
+  $$('#install [role="tablist"]').forEach((list) => {
     const tabs = $$('[role="tab"]', list);
     if (!tabs.length) return;
     const panels = tabs.map((t) => document.getElementById(t.getAttribute('aria-controls')));

@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "revision": 4,
+  "recordedAt": "2026-09-10T14:36:15.777744+00:00",
+  "previousRunnerSha256": "9b1a775f8ac61407b848b6c660fb7e80d17104caf51575675ca3be0b4f1ddf61",
+  "runnerSha256": "3fffdc7370a5f9b657f0cc22708a013c4a5e35232263a15427e2490cda85c503",
+  "rubricSha256": "dce74ebefa667827386eafd630efb81f79f0cbe431c5ee815efc307829278cd5",
+  "criteriaChanged": false,
+  "changes": [
+    "Accept equivalent visible import-failure wording without accepting silent rejection."
+  ],
+  "regressions": [
+    {
+      "defect": "import-phrasing",
+      "id": "A08",
+      "shouldPass": true,
+      "matched": true,
+      "summary": {
+        "passed": 4,
+        "failed": 0,
+        "scenarioExecutions": 4,
+        "infrastructureErrors": 0,
+        "byCheck": {
+          "A08": {
+            "passed": 4,
+            "executed": 4
+          }
+        }
+      }
+    },
+    {
+      "defect": "silent-import",
+      "id": "A08",
+      "shouldPass": false,
+      "matched": true,
+      "summary": {
+        "passed": 0,
+        "failed": 4,
+        "scenarioExecutions": 4,
+        "infrastructureErrors": 0,
+        "byCheck": {
+          "A08": {
+            "passed": 0,
+            "executed": 4
+          }
+        }
+      }
+    },
+    {
+      "defect": "control",
+      "id": "A08",
+      "shouldPass": true,
+      "matched": true,
+      "summary": {
+        "passed": 4,
+        "failed": 0,
+        "scenarioExecutions": 4,
+        "infrastructureErrors": 0,
+        "byCheck": {
+          "A08": {
+            "passed": 4,
+            "executed": 4
+          }
+        }
+      }
+    },
+    {
+      "defect": "control",
+      "id": "A06",
+      "shouldPass": true,
+      "matched": true,
+      "summary": {
+        "passed": 2,
+        "failed": 0,
+        "scenarioExecutions": 2,
+        "infrastructureErrors": 0,
+        "byCheck": {
+          "A06": {
+            "passed": 2,
+            "executed": 2
+          }
+        }
+      }
+    },
+    {
+      "defect": "focus-loss",
+      "id": "A06",
+      "shouldPass": false,
+      "matched": true,
+      "summary": {
+        "passed": 0,
+        "failed": 2,
+        "scenarioExecutions": 2,
+        "infrastructureErrors": 0,
+        "byCheck": {
+          "A06": {
+            "passed": 0,
+            "executed": 2
+          }
+        }
+      }
+    }
+  ],
+  "symmetricApplication": "A08 rerun in all four environments for run-08 and run-06. Original complete matrices retain their original hashes; adjudications point to the corrected focused results.",
+  "unrelatedFocusRequirement": "A06 unchanged. Delayed pointer/keyboard probes and a deliberate focus-loss fixture establish behavior."
+}

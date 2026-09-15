@@ -1,0 +1,12 @@
+{
+  "font": "Rubik",
+  "glyph_count": 885,
+  "required_hebrew_latin_digits_missing": [],
+  "axes": [
+    {
+      "tag": "wght",
+      "min": 300.0,
+      "max": 900.0
+    }
+  ]
+}

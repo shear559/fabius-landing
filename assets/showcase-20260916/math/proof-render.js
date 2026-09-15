@@ -1,0 +1,1 @@
+(()=>{'use strict';document.querySelectorAll('[data-tex]').forEach(el=>{try{katex.render(el.dataset.tex,el,{displayMode:el.dataset.display==='true',throwOnError:true,trust:false,macros:{'\\*':'*'},strict:'ignore',maxExpand:1000,maxSize:20});}catch(error){el.dataset.renderError='true';console.warn('Formula retained as source:',error.message);}});})();

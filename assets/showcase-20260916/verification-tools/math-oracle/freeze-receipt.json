@@ -1,0 +1,55 @@
+{
+  "benchmark": "parametric-convex-qp-six-regimes-v1",
+  "frozen_at_utc": "2026-09-10T13:54:59.183673+00:00",
+  "preparation_scope": "Reference, independent oracle and scoring rules finalized without seeing either experiment arm output.",
+  "independent_math_tasks": 1,
+  "optimizer_regimes": 6,
+  "exact_transitions": [
+    "-3/2",
+    "-1",
+    "-1/2",
+    "0",
+    "9/5"
+  ],
+  "numeric_probe_count": 1233,
+  "numeric_probe_families_overlap": true,
+  "numeric_probe_families": {
+    "domain_endpoint": 2,
+    "regular_grid": 601,
+    "seeded_rational": 600,
+    "regime_interior": 18,
+    "breakpoint_neighbour": 30,
+    "exact_breakpoint": 5
+  },
+  "proof_rubric_dimensions": 8,
+  "validation": {
+    "command": "python3 -I -S -B outputs/paired-build-benchmark/math-oracle/test_oracle.py",
+    "tests_passed": 15,
+    "tests_failed": 0,
+    "wall_seconds_reported_by_unittest": 11.462,
+    "exact_reference_vs_independent_geometry_grid_points": 6001,
+    "exact_boundary_neighbour_probes": 15,
+    "exact_kkt_probes_including_closed_endpoints": 606,
+    "scorer_positive_fixture": "Independent closed-form polynomial implementation including extra output keys accepted.",
+    "scorer_negative_fixtures": [
+      "nonfinite",
+      "boolean",
+      "text",
+      "missing_key",
+      "exception",
+      "feasible_suboptimal",
+      "wrong_value",
+      "import_failure",
+      "wall_clock_timeout"
+    ]
+  },
+  "files": {
+    "candidate_runner.py": "4ba4bd3060dce5284bfbbb4732907fdf7637fc9b06b9ac4ba222b8906c8f371d",
+    "oracle.py": "7e81e95ff00fcf632937235d7cc649e7f653b4179a817571e716f7372f12f9b6",
+    "proof-rubric.json": "bd5cf47ba98dbe6c6c72e0cf5556a882a71a01e0f2b423890146d861aa36a23f",
+    "reference.json": "1f8ed87fb2209ac1f3d741291ecec274b6ad5b261a7b37c95d21355ecf8752ac",
+    "reference.md": "165f3f88a726ed803ab6825baa0ec463965c5583a3310501aa503ea1f1dab0aa",
+    "score.py": "66d71897bd33ac56059649f561e6ac2af1b14abeae98d67143b5acec248ca0a1",
+    "test_oracle.py": "89b42f631e096195e3ee789c2be11fc08117a72f9cdd51df66db784723711a67"
+  }
+}

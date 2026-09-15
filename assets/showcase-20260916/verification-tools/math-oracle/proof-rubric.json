@@ -1,0 +1,43 @@
+{
+  "benchmark": "parametric-convex-qp-six-regimes-v1",
+  "scope": "One parametric mathematical problem; rubric dimensions are not independent problems.",
+  "grading": "Blinded human/agent inspection using candidate proof and reference; each dimension is pass, partial, fail, or missing with precise quotation/file evidence. Do not infer a proof from numerical agreement or a test count. A valid alternative derivation or consistent alternative multiplier sign convention is acceptable.",
+  "dimension_count": 8,
+  "dimensions": [
+    {
+      "id": "global_existence_uniqueness",
+      "necessary_evidence": "Nonempty compact feasible set and strict convexity on the equality subspace. A correct positive-definite reduced Hessian, full Hessian argument, or equivalent positive quadratic form suffices. Must link strict convexity to uniqueness."
+    },
+    {
+      "id": "complete_piecewise_optimizer",
+      "necessary_evidence": "All six exact optimizer formulas with five exact transitions -3/2,-1,-1/2,0,9/5, covering the whole closed domain without a gap. Equivalent merged notation accepted. Must include the fixed vertex for the whole interval [-1/2,0]."
+    },
+    {
+      "id": "exact_value_function",
+      "necessary_evidence": "Correct exact minimum-value formula on every regime, derived or explicitly evaluated from the optimizer. A plot, a numerical list, or only solve(t) code does not replace the symbolic value function."
+    },
+    {
+      "id": "primal_feasibility",
+      "necessary_evidence": "Checks or defensible interval inequalities showing all coordinates sum to one and satisfy all five inequalities on every claimed interval. It is acceptable to demonstrate z is always positive, but not to silently drop its constraint from the global problem."
+    },
+    {
+      "id": "dual_stationarity_certificate",
+      "necessary_evidence": "Defines a Lagrangian/sign convention and provides correct equality and all inequality multipliers, permitting zeros to be specified globally. Shows stationarity or gives an algebraically complete table that makes its verification immediate. Equivalent reduced multipliers plus recoverable equality multiplier accepted."
+    },
+    {
+      "id": "dual_feasibility_complementarity",
+      "necessary_evidence": "Establishes correct multiplier signs and complementarity over each full interval. Correctly explains simultaneous active constraints at vertices and does not require strict positivity at boundaries."
+    },
+    {
+      "id": "closed_transition_analysis",
+      "necessary_evidence": "Explains why each regime starts/ends at the listed exact value; neighboring optimizer and value formulas agree at all five transitions. Establishes continuity and differentiability of the value function across those transitions, hence C1 on the domain with one-sided endpoint derivatives; matching one-sided derivatives or V'(t)=-2*x*(t) together with continuous x* suffices. Zero multipliers at transitions do not break the argument. Must justify the nonzero-length fixed-vertex interval."
+    },
+    {
+      "id": "global_all_real_sufficiency",
+      "necessary_evidence": "Uses convex KKT sufficiency, an explicit positive quadratic-gap argument, or a complete exact geometric comparison to prove the stated candidate is globally optimal for every real t in the domain. Numerical spot checks or an unsupported assertion of optimality are insufficient."
+    }
+  ],
+  "overall_proof_pass": "All eight dimensions pass; no material unresolved contradiction. Do not award a numeric percentage based on prose volume.",
+  "optional_consistency_checks": ["V is concave", "V'(t)=-2*x*(t)"],
+  "avoid_penalizing": ["Different valid variable names", "Opposite equality-multiplier sign with matching convention", "An interval endpoint assigned to either adjacent coincident formula", "Short complete proofs", "Omitted optional consistency checks"]
+}

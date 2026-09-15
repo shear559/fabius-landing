@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "total_assertions": 254,
+  "exact_assertions": 182,
+  "solver_spot_assertions": 72,
+  "regimes": 6,
+  "joins": 5,
+  "arithmetic": "fractions.Fraction",
+  "scope": "Exact polynomial KKT identities, affine feasibility and multiplier signs on closed intervals, objective formulas, endpoint agreement, value derivatives, and executable solver spot checks."
+}

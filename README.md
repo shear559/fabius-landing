@@ -8,7 +8,7 @@ The public site for **fabius — one set of rules above every model**.
 
 ## Content baseline
 
-Aligned with the **3.1.0** Fabius source (whitepaper `fabius-as-a-system.pdf`, 51 pages, SHA-256 `a002c8c8d94903d33b541bcaf1f7cca65eb0acf043e684d168167035484dabd9`). The page leads with “one set of rules above every model”, retaining the green palette, Barlow typography, system map and three capability outcomes. The previously removed skill-card grids, setup split and explainer video remain absent.
+Aligned with the **3.1.0** Fabius source (whitepaper `fabius-as-a-system.pdf`, 51 pages, SHA-256 `a002c8c8d94903d33b541bcaf1f7cca65eb0acf043e684d168167035484dabd9`). The page leads with “one set of rules above every model”, retaining the green palette, Rubik typography, system map and three capability outcomes. The previously removed skill-card grids, setup split and explainer video remain absent.
 
 Fabius supplies instructions, workflows and original local helpers for scheduling, retrieval, design and completion evidence. The host supplies the model, tools and permissions. Model marks illustrate families; they do not establish tested integration or a universal quality gain.
 
@@ -30,13 +30,21 @@ The reviewer example uses explicitly hypothetical probabilities. Its independenc
 
 ## Structure and design
 
-Static `index.html`, `styles.css` and `main.js`; no build or package installation. The page contains the hero, three capability outcomes, the paired trial explorer, system/research explanations, installation tabs and thirteen FAQ entries. The FAQ and its JSON-LD must remain word-for-word equivalent.
+Static `index.html`, `styles.css` and `main.js`; no build or package installation. The page contains the hero, three capability outcomes, the interactive refinement gallery, system/research explanations, installation tabs and thirteen FAQ entries. The FAQ and its JSON-LD must remain word-for-word equivalent.
 
-The design uses the existing green tokens (`#76b900`, with darker text variants), self-hosted Barlow, square buttons and green-on-black system diagrams. The map has sixteen nodes: router, lean core, thirteen specialists and the shared reference spine. Its twenty-eight connectors are built from the specialist table in `main.js`. On narrow screens the map scrolls inside its own container. Reduced motion renders a static diagram.
+The design uses the existing green tokens (`#76b900`, with darker text variants), self-hosted Rubik, square buttons and green-on-black system diagrams. The map has sixteen nodes: router, lean core, thirteen specialists and the shared reference spine. Its twenty-eight connectors are built from the specialist table in `main.js`. On narrow screens the map scrolls inside its own container. Reduced motion renders a static diagram.
 
-## Paired artifact trials
+## Worked refinement gallery — September 16
 
-The `#trials` section presents the September 15 showcase (`assets/trials-20260915-showcase/`): twelve fresh claude-sonnet-5 generations, two per condition per task. The baseline is a bare headless Claude Code session. The treatment loads Fabius 3.1.0 and explicitly requests its relevant contracts. Both receive the same enriched brief, tools and time limit. The website brief requests distinct feature states and a user-controlled product demonstration; the app adds Board/List views; the math brief adds a feasible-region diagram and a compact exact answer.
+`#trials` opens three newly refined products under `assets/showcase-20260916/`: Lattice, Fieldnote and an interactive exact optimization proof. It supports an initial/refined switch, phone/desktop framing, controlled walkthroughs, full-size previews and standalone ZIP downloads. Rubik is self-hosted with its OFL and checked for Hebrew/Latin coverage.
+
+This is explicitly an iterative illustration using additional work and reference access, not a new controlled comparison. The original neutral viewer is retained at `build-study.html`. The initial artifacts are the first baseline submissions (01/05/09); original study assets are unchanged. App logic starts from run 06, then receives a new interface and targeted robustness fixes.
+
+Measured standalone checks: website 28/28 browser scenarios, app 68/68; math 1,233/1,233 numerical probes plus 182 exact and 72 numerical certificate/solver assertions. Method, failure history, execution receipts, source and portable evaluators are linked from `assets/showcase-20260916/verification.html`.
+
+## Preserved paired artifact trials
+
+The `build-study.html` page presents the September 15 showcase (`assets/trials-20260915-showcase/`): twelve fresh claude-sonnet-5 generations, two per condition per task. The baseline is a bare headless Claude Code session. The treatment loads Fabius 3.1.0 and explicitly requests its relevant contracts. Both receive the same enriched brief, tools and time limit. The website brief requests distinct feature states and a user-controlled product demonstration; the app adds Board/List views; the math brief adds a feasible-region diagram and a compact exact answer.
 
 The viewer in `assets/trials-20260910/trial-lab.js` and `trial-lab.css` opens on Website, followed by App and Math. It shows both run pairs, live products and captured states, desktop/phone framing and full-size previews. Mobile switches between conditions. Mathematics loads a pinned, self-hosted KaTeX 0.18.7 copy on demand to typeset submitted equations; its MIT licence and upstream hashes are in `assets/vendor/katex-0.18.7/`. It includes the submitted diagrams, an interactive plot of actual solver samples, six regime controls, the proof, code and verification notes. Checks and methodology stay collapsed until requested.
 

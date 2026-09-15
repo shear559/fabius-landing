@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fieldnote Board</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<noscript>
+  <div class="noscript-banner">Fieldnote Board needs JavaScript enabled to run. Please enable JavaScript and reload the page.</div>
+</noscript>
+
+<!-- Original monoline icon set, single sprite, currentColor, 24x24, stroke-width 1.75 -->
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+  <defs>
+    <symbol id="icon-mark" viewBox="0 0 24 24">
+      <path d="M4 20V6a2 2 0 0 1 2-2h9l5 5v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/>
+      <path d="M15 4v4a1 1 0 0 0 1 1h4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/>
+      <path d="M8 12h8M8 15.5h5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-plus" viewBox="0 0 24 24">
+      <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-pencil" viewBox="0 0 24 24">
+      <path d="M16.5 4.5 19.5 7.5 8 19H5v-3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M14.5 6.5 17.5 9.5" stroke="currentColor" stroke-width="1.6"/>
+    </symbol>
+    <symbol id="icon-trash" viewBox="0 0 24 24">
+      <path d="M5 7h14M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7M7 7l1 12.5A1.5 1.5 0 0 0 9.5 21h5a1.5 1.5 0 0 0 1.5-1.5L17 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M10 11v6M14 11v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-undo" viewBox="0 0 24 24">
+      <path d="M7 8H4V5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M4.5 8.5A8 8 0 1 1 4 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24">
+      <circle cx="10.5" cy="10.5" r="6" fill="none" stroke="currentColor" stroke-width="1.75"/>
+      <path d="M15.2 15.2 20 20" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-download" viewBox="0 0 24 24">
+      <path d="M12 4v11M8 11l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M5 19h14" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-upload" viewBox="0 0 24 24">
+      <path d="M12 20V9M8 13l4-4 4 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M5 19h14" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-grid" viewBox="0 0 24 24">
+      <rect x="4" y="4" width="6.5" height="6.5" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <rect x="13.5" y="4" width="6.5" height="6.5" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <rect x="4" y="13.5" width="6.5" height="6.5" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    </symbol>
+    <symbol id="icon-list" viewBox="0 0 24 24">
+      <path d="M9 6h11M9 12h11M9 18h11" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+      <circle cx="4.5" cy="6" r="1.1" fill="currentColor"/>
+      <circle cx="4.5" cy="12" r="1.1" fill="currentColor"/>
+      <circle cx="4.5" cy="18" r="1.1" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24">
+      <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-alert" viewBox="0 0 24 24">
+      <path d="M12 4 21 20H3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M12 10v4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      <circle cx="12" cy="17.3" r="0.9" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-refresh" viewBox="0 0 24 24">
+      <path d="M20 11A8 8 0 1 0 18.5 15.5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+      <path d="M20 6v5h-5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<aside class="workspace-rail"><a class="rail-brand" href="#main-content"><svg class="icon" aria-hidden="true"><use href="#icon-mark"></use></svg>fieldnote<span>workspace</span></a><div class="rail-space"><span class="space-avatar">F</span><div>Field research<small>Personal workspace</small></div><span>⌄</span></div><p class="rail-label">WORKSPACE</p><nav aria-label="Workspace"><button class="rail-link active" data-project="all"><svg class="icon" aria-hidden="true"><use href="#icon-grid"></use></svg> All tasks <span id="rail-total">8</span></button><button class="rail-link" data-quick-status="doing"><svg class="icon" aria-hidden="true"><use href="#icon-refresh"></use></svg> In progress</button><button class="rail-link" data-quick-status="done"><span class="rail-check">✓</span> Completed</button></nav><p class="rail-label">YOUR PROJECTS</p><div id="rail-projects"></div><div class="rail-bottom"><div class="local-dot"></div><div>On this device<small>Fictional, local-only demo</small></div></div></aside><div class="app-shell">
+  <header class="app-header">
+    <div class="app-header__brand"><span class="breadcrumb">Workspace <span>/</span> <b>All tasks</b></span></div>
+    <div class="view-switch" role="group" aria-label="Board view">
+      <button type="button" class="view-switch__btn" id="view-board-btn" data-view="board" aria-pressed="true">
+        <svg class="icon" aria-hidden="true"><use href="#icon-grid"></use></svg> Board
+      </button>
+      <button type="button" class="view-switch__btn" id="view-list-btn" data-view="list" aria-pressed="false">
+        <svg class="icon" aria-hidden="true"><use href="#icon-list"></use></svg> List
+      </button>
+    </div>
+  </header>
+
+  <div id="conflict-banner" class="banner banner--info" role="alert" hidden>
+    <svg class="icon" aria-hidden="true"><use href="#icon-refresh"></use></svg>
+    <p>This board was changed in another tab. Reload to see the latest version before making more edits.</p>
+    <button type="button" id="reload-board-btn" class="btn btn--secondary">Reload board</button>
+  </div>
+
+  <div id="save-error-banner" class="banner banner--danger" role="alert" hidden></div>
+
+  <div id="recovery-banner" class="banner banner--danger" role="alert" hidden>
+    <svg class="icon" aria-hidden="true"><use href="#icon-alert"></use></svg>
+    <div>
+      <p><strong>Saved board data could not be read.</strong> It looks corrupted, so nothing was changed or overwritten.</p>
+      <div class="banner__actions">
+        <button type="button" id="download-corrupt-btn" class="btn btn--secondary">Download original data</button>
+        <button type="button" id="reset-board-btn" class="btn btn--danger">Reset board&hellip;</button>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content" class="app-main">
+    <section class="project-intro"><div><p class="kicker">A PLACE FOR WORK IN PROGRESS</p><h1>Make space.<br>Move things forward.</h1><p>Your fieldwork, drafts and next steps.<br>One clear view of the work ahead.</p><div class="project-pills"><span>Field research</span><span>Local workspace</span></div></div><div class="project-art" aria-hidden="true"><div class="art-orbit o1"></div><div class="art-orbit o2"></div><div class="art-orbit o3"></div><div class="art-sphere"></div><span class="art-caption">FROM QUESTION TO PUBLICATION</span></div></section>
+    <section class="overview" id="overview" aria-label="Board overview"><div class="overview-label"><span>WORKSPACE AT A GLANCE</span><strong>A little progress,<br>clearly in view.</strong></div><div class="stat-pill" data-status="todo"><span class="stat-pill__value" id="count-todo">0</span><span class="stat-pill__label">To do</span><span class="stat-line"></span></div><div class="stat-pill" data-status="doing"><span class="stat-pill__value" id="count-doing">0</span><span class="stat-pill__label">In progress</span><span class="stat-line"></span></div><div class="stat-pill" data-status="done"><span class="stat-pill__value" id="count-done">0</span><span class="stat-pill__label">Completed</span><span class="stat-line"></span></div></section>
+    <div class="board-heading"><div><h2>Your task board</h2><p>Small steps. A clear direction.</p></div><span class="demo-label">Fictional · local-only demo</span></div>
+    <section class="toolbar" aria-label="Task tools">
+      <button type="button" class="btn btn--primary" data-testid="create-task">
+        <svg class="icon" aria-hidden="true"><use href="#icon-plus"></use></svg> New task
+      </button>
+
+      <div class="toolbar__search">
+        <svg class="icon" aria-hidden="true"><use href="#icon-search"></use></svg>
+        <label class="sr-only" for="search">Search tasks by title, project or tags</label>
+        <input type="search" id="search" data-testid="search" placeholder="Search title, project, tags&hellip;">
+      </div>
+
+      <label class="sr-only" for="filter-status">Filter by status</label>
+      <select id="filter-status" data-testid="filter-status" class="select">
+        <option value="all">All statuses</option>
+        <option value="todo">Todo</option>
+        <option value="doing">Doing</option>
+        <option value="done">Done</option>
+      </select>
+
+      <label class="sr-only" for="filter-project">Filter by project</label>
+      <select id="filter-project" data-testid="filter-project" class="select">
+        <option value="all">All projects</option>
+      </select>
+
+      <label class="sr-only" for="filter-priority">Filter by priority</label>
+      <select id="filter-priority" data-testid="filter-priority" class="select">
+        <option value="all">All priorities</option>
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+
+      <div class="toolbar__io">
+        <button type="button" class="btn btn--secondary" data-testid="export">
+          <svg class="icon" aria-hidden="true"><use href="#icon-download"></use></svg> Export
+        </button>
+        <label class="btn btn--secondary btn--file" tabindex="0" role="button" aria-label="Import board">
+          <svg class="icon" aria-hidden="true"><use href="#icon-upload"></use></svg> Import
+          <input type="file" accept="application/json" data-testid="import-file" class="sr-only" id="import-file">
+        </label>
+      </div>
+    </section>
+
+    <p id="result-count" class="result-count" aria-live="polite">Showing 0 of 0 tasks</p>
+
+    <section id="board-view" class="board-columns" aria-label="Task board"></section>
+    <section id="list-view" class="list-wrap" aria-label="Task list" hidden></section>
+
+    <p id="empty-state" class="empty-state" hidden></p><button type="button" id="clear-filters" class="btn btn--secondary" hidden>Clear filters</button><p class="workspace-foot">A working prototype. Data stays in this browser; export a backup to keep it.</p>
+  </main>
+</div>
+
+<div id="task-dialog-backdrop" class="modal-backdrop" hidden>
+  <div id="task-dialog" class="modal" role="dialog" aria-modal="true" aria-labelledby="task-dialog-title">
+    <div class="modal__header">
+      <h2 id="task-dialog-title">New task</h2>
+      <button type="button" class="icon-btn" id="task-dialog-close" aria-label="Close dialog">
+        <svg class="icon" aria-hidden="true"><use href="#icon-close"></use></svg>
+      </button>
+    </div>
+    <form data-testid="task-form" id="task-form" novalidate>
+      <div class="field">
+        <label for="field-title">Title</label>
+        <input id="field-title" name="title" maxlength="140" required>
+      </div>
+      <div class="field">
+        <label for="field-project">Project</label>
+        <input id="field-project" name="project" maxlength="100" required>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="field-status">Status</label>
+          <select id="field-status" name="status">
+            <option value="todo">Todo</option>
+            <option value="doing">Doing</option>
+            <option value="done">Done</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="field-priority">Priority</label>
+          <select id="field-priority" name="priority">
+            <option value="low">Low</option>
+            <option value="medium" selected>Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="field-dueDate">Due date</label>
+          <input id="field-dueDate" name="dueDate" type="date">
+        </div>
+        <div class="field">
+          <label for="field-tags">Tags <span class="field__hint">comma-separated, up to 8</span></label>
+          <input id="field-tags" name="tags" placeholder="fieldwork, writing">
+        </div>
+      </div>
+      <div class="form-errors" role="alert" aria-live="assertive" id="form-errors" hidden></div>
+      <div class="modal__actions">
+        <button type="button" class="btn btn--secondary" data-action="cancel">Cancel</button>
+        <button type="submit" class="btn btn--primary" data-testid="save-task">Save task</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="reset-dialog-backdrop" class="modal-backdrop" hidden>
+  <div id="reset-dialog" class="modal modal--small" role="dialog" aria-modal="true" aria-labelledby="reset-dialog-title">
+    <div class="modal__header">
+      <h2 id="reset-dialog-title">Reset board?</h2>
+      <button type="button" class="icon-btn" id="reset-dialog-close" aria-label="Close dialog">
+        <svg class="icon" aria-hidden="true"><use href="#icon-close"></use></svg>
+      </button>
+    </div>
+    <p>This clears the corrupted data and starts a fresh sample board. This cannot be undone.</p>
+    <div class="modal__actions">
+      <button type="button" class="btn btn--secondary" data-action="cancel-reset">Cancel</button>
+      <button type="button" class="btn btn--danger" id="confirm-reset-btn">Reset board</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite" hidden>
+  <span id="toast-message"></span>
+  <button type="button" class="btn btn--secondary btn--small" data-testid="undo-delete" hidden>
+    <svg class="icon" aria-hidden="true"><use href="#icon-undo"></use></svg> Undo
+  </button>
+</div>
+
+<script src="./app.js"></script>
+</body>
+</html>

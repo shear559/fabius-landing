@@ -1,0 +1,270 @@
+{
+  "schemaVersion": 1,
+  "scope": "Blind browser contract grading; neutral IDs only, no treatment mapping read. Counts are coverage, not independent model trials.",
+  "apps": [
+    {
+      "runId": "run-08",
+      "groupsPassed": 16,
+      "groupsTotal": 16,
+      "materialFailureIds": [],
+      "adjudication": "graded/run-08/web/adjudication.json",
+      "executions": {
+        "passed": 68,
+        "failed": 0,
+        "executed": 68,
+        "method": "Original complete matrix plus a symmetric corrected A08 rerun in all four environments. Original reports and hashes retained."
+      },
+      "focusPasses": 8,
+      "focusExecutions": 8,
+      "exploratoryProjectAll": {
+        "confirmed": false,
+        "observedPasses": 4,
+        "executions": 4,
+        "primaryScoresChanged": false
+      }
+    },
+    {
+      "runId": "run-06",
+      "groupsPassed": 15,
+      "groupsTotal": 16,
+      "materialFailureIds": [
+        "A06"
+      ],
+      "adjudication": "graded/run-06/web/adjudication.json",
+      "executions": {
+        "passed": 66,
+        "failed": 2,
+        "executed": 68,
+        "method": "Original complete matrix plus a symmetric corrected A08 rerun in all four environments. Original reports and hashes retained."
+      },
+      "focusPasses": 6,
+      "focusExecutions": 8,
+      "exploratoryProjectAll": {
+        "confirmed": true,
+        "observedPasses": 0,
+        "executions": 4,
+        "primaryScoresChanged": false
+      }
+    },
+    {
+      "runId": "run-04",
+      "groupsPassed": 15,
+      "groupsTotal": 16,
+      "materialFailureIds": [
+        "A06"
+      ],
+      "adjudication": "graded/run-04/web/adjudication.json",
+      "executions": {
+        "passed": 66,
+        "failed": 2,
+        "executed": 68,
+        "method": "Complete matrix under current revision 4; no overrides or criterion changes."
+      },
+      "focusPasses": 6,
+      "focusExecutions": 8,
+      "exploratoryProjectAll": {
+        "confirmed": true,
+        "observedPasses": 0,
+        "executions": 4,
+        "primaryScoresChanged": false
+      }
+    },
+    {
+      "runId": "run-10",
+      "groupsPassed": 15,
+      "groupsTotal": 16,
+      "materialFailureIds": [
+        "A06"
+      ],
+      "adjudication": "graded/run-10/web/adjudication.json",
+      "executions": {
+        "passed": 66,
+        "failed": 2,
+        "executed": 68,
+        "method": "Complete matrix under current revision 4; no overrides or criterion changes."
+      },
+      "focusPasses": 6,
+      "focusExecutions": 8,
+      "exploratoryProjectAll": {
+        "confirmed": false,
+        "observedPasses": 4,
+        "executions": 4,
+        "primaryScoresChanged": false
+      }
+    }
+  ],
+  "landings": [
+    {
+      "runId": "run-12",
+      "groupsPassed": 7,
+      "groupsTotal": 7,
+      "materialFailureIds": [],
+      "adjudication": "graded/run-12/web/adjudication.json",
+      "executions": {
+        "passed": 28,
+        "failed": 0,
+        "scenarioExecutions": 28,
+        "infrastructureErrors": 0,
+        "byCheck": {
+          "L01": {
+            "passed": 4,
+            "executed": 4
+          },
+          "L02": {
+            "passed": 4,
+            "executed": 4
+          },
+          "L03": {
+            "passed": 4,
+            "executed": 4
+          },
+          "L04": {
+            "passed": 4,
+            "executed": 4
+          },
+          "L05": {
+            "passed": 4,
+            "executed": 4
+          },
+          "L06": {
+            "passed": 4,
+            "executed": 4
+          },
+          "L07": {
+            "passed": 4,
+            "executed": 4
+          }
+        }
+      }
+    },
+    {
+      "runId": "run-03",
+      "groupsPassed": 7,
+      "groupsTotal": 7,
+      "materialFailureIds": [],
+      "adjudication": "graded/run-03/web/adjudication.json",
+      "executions": {
+        "passed": 28,
+        "failed": 0,
+        "scenarioExecutions": 28,
+        "infrastructureErrors": 0,
+        "byCheck": {
+          "L01": {
+            "passed": 4,
+            "executed": 4
+          },
+          "L02": {
+            "passed": 4,
+            "executed": 4
+          },
+          "L03": {
+            "passed": 4,
+            "executed": 4
+          },
+          "L04": {
+            "passed": 4,
+            "executed": 4
+          },
+          "L05": {
+            "passed": 4,
+            "executed": 4
+          },
+          "L06": {
+            "passed": 4,
+            "executed": 4
+          },
+          "L07": {
+            "passed": 4,
+            "executed": 4
+          }
+        }
+      }
+    },
+    {
+      "runId": "run-07",
+      "groupsPassed": 7,
+      "groupsTotal": 7,
+      "materialFailureIds": [],
+      "adjudication": "graded/run-07/web/adjudication.json",
+      "executions": {
+        "passed": 28,
+        "failed": 0,
+        "scenarioExecutions": 28,
+        "infrastructureErrors": 0,
+        "byCheck": {
+          "L01": {
+            "passed": 4,
+            "executed": 4
+          },
+          "L02": {
+            "passed": 4,
+            "executed": 4
+          },
+          "L03": {
+            "passed": 4,
+            "executed": 4
+          },
+          "L04": {
+            "passed": 4,
+            "executed": 4
+          },
+          "L05": {
+            "passed": 4,
+            "executed": 4
+          },
+          "L06": {
+            "passed": 4,
+            "executed": 4
+          },
+          "L07": {
+            "passed": 4,
+            "executed": 4
+          }
+        }
+      }
+    },
+    {
+      "runId": "run-01",
+      "groupsPassed": 7,
+      "groupsTotal": 7,
+      "materialFailureIds": [],
+      "adjudication": "graded/run-01/web/adjudication.json",
+      "executions": {
+        "passed": 28,
+        "failed": 0,
+        "scenarioExecutions": 28,
+        "infrastructureErrors": 0,
+        "byCheck": {
+          "L01": {
+            "passed": 4,
+            "executed": 4
+          },
+          "L02": {
+            "passed": 4,
+            "executed": 4
+          },
+          "L03": {
+            "passed": 4,
+            "executed": 4
+          },
+          "L04": {
+            "passed": 4,
+            "executed": 4
+          },
+          "L05": {
+            "passed": 4,
+            "executed": 4
+          },
+          "L06": {
+            "passed": 4,
+            "executed": 4
+          },
+          "L07": {
+            "passed": 4,
+            "executed": 4
+          }
+        }
+      }
+    }
+  ]
+}

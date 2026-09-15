@@ -1,0 +1,71 @@
+{
+  "benchmark": "parametric-convex-qp-six-regimes-v1",
+  "version": 1,
+  "created_before_candidate_outputs": true,
+  "problem": {
+    "parameter_domain": ["-2", "4"],
+    "objective": "x^2 + 2*y^2 + 3*z^2 + x*y - y*z + (2-2*t)*x + 5*y + z",
+    "equality": "x+y+z=1",
+    "inequalities_le_zero": ["-x", "-y", "-z", "x-3/5", "1/2-2*y-z"]
+  },
+  "polynomial_convention": "Arrays are exact rational coefficients in ascending powers of t; all row intervals are closed and overlapping boundary values agree.",
+  "multiplier_convention": "L = f + nu*(x+y+z-1) + lambda_x*(-x) + lambda_y*(-y) + lambda_z*(-z) + lambda_cap*(x-3/5) + lambda_slant*(1/2-2*y-z)",
+  "breakpoints": ["-3/2", "-1", "-1/2", "0", "9/5"],
+  "reduced_hessian": [[8, 8], [8, 12]],
+  "regimes": [
+    {
+      "id": "left_face",
+      "interval": ["-2", "-3/2"],
+      "x": ["0"], "y": ["1/4"], "z": ["3/4"], "value": ["29/8"],
+      "nu": ["-21/4"],
+      "lambda_x": ["-3", "-2"], "lambda_y": ["0"], "lambda_z": ["0"],
+      "lambda_cap": ["0"], "lambda_slant": ["0"],
+      "active_inequalities_on_open_interval": ["x_nonnegative"]
+    },
+    {
+      "id": "interior",
+      "interval": ["-3/2", "-1"],
+      "x": ["9/8", "3/4"], "y": ["-1/2", "-1/2"], "z": ["3/8", "-1/4"],
+      "value": ["31/16", "-9/4", "-3/4"], "nu": ["-15/4", "1"],
+      "lambda_x": ["0"], "lambda_y": ["0"], "lambda_z": ["0"],
+      "lambda_cap": ["0"], "lambda_slant": ["0"],
+      "active_inequalities_on_open_interval": []
+    },
+    {
+      "id": "bottom_face",
+      "interval": ["-1", "-1/2"],
+      "x": ["5/8", "1/4"], "y": ["0"], "z": ["3/8", "-1/4"],
+      "value": ["39/16", "-5/4", "-1/4"], "nu": ["-13/4", "3/2"],
+      "lambda_x": ["0"], "lambda_y": ["2", "2"], "lambda_z": ["0"],
+      "lambda_cap": ["0"], "lambda_slant": ["0"],
+      "active_inequalities_on_open_interval": ["y_nonnegative"]
+    },
+    {
+      "id": "bottom_slant_vertex",
+      "interval": ["-1/2", "0"],
+      "x": ["1/2"], "y": ["0"], "z": ["1/2"], "value": ["5/2", "-1"],
+      "nu": ["-3", "2"],
+      "lambda_x": ["0"], "lambda_y": ["0", "-2"], "lambda_z": ["0"],
+      "lambda_cap": ["0"], "lambda_slant": ["1", "2"],
+      "active_inequalities_on_open_interval": ["y_nonnegative", "slanted"]
+    },
+    {
+      "id": "slanted_face",
+      "interval": ["0", "9/5"],
+      "x": ["1/2", "1/18"], "y": ["0", "1/18"], "z": ["1/2", "-1/9"],
+      "value": ["5/2", "-1", "-1/18"], "nu": ["-3", "11/6"],
+      "lambda_x": ["0"], "lambda_y": ["0"], "lambda_z": ["0"],
+      "lambda_cap": ["0"], "lambda_slant": ["1", "10/9"],
+      "active_inequalities_on_open_interval": ["slanted"]
+    },
+    {
+      "id": "cap_slant_vertex",
+      "interval": ["9/5", "4"],
+      "x": ["3/5"], "y": ["1/10"], "z": ["3/10"], "value": ["67/25", "-6/5"],
+      "nu": ["3/10"],
+      "lambda_x": ["0"], "lambda_y": ["0"], "lambda_z": ["0"],
+      "lambda_cap": ["-18/5", "2"], "lambda_slant": ["3"],
+      "active_inequalities_on_open_interval": ["x_cap", "slanted"]
+    }
+  ]
+}
