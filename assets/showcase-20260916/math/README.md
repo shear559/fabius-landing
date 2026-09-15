@@ -18,3 +18,7 @@ Open http://localhost:8080 in a browser. No build, package installation or remot
 
 Rubik is distributed under OFL.txt. The original font includes Hebrew and Latin.
 Read proof.html for the complete typeset proof, solution.md for its source, solution.py for the solver and verify.py for exact checks. KaTeX is included under katex/LICENSE.
+
+## Visual update
+
+September 16: Equal screen units on both axes, exact objective sublevel bands, a discrete color key and active boundaries determined from constraint slack. Every transition includes zero-multiplier binding constraints. The exact Python solver and proof are unchanged. See the adjacent showcase visual-refresh.md for checks and scope.

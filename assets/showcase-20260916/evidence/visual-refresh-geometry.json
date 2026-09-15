@@ -1,0 +1,1457 @@
+{
+  "date": "2026-09-15T22:37:53.035Z",
+  "base": "http://127.0.0.1:8806",
+  "scope": "Visual refresh: Chromium and WebKit, mobile 390 and desktop 1440. Actual SVG contour residuals, equal screen units, all binding constraints at transitions, rendered color bands, layout, icons, fonts, preview storage, static emblem glow and console/network. Engine emulation, not physical-device testing.",
+  "passed": 92,
+  "failed": 0,
+  "results": [
+    {
+      "name": "chromium-390/math-t=-2",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "x"
+        ],
+        "actual": [
+          "x"
+        ],
+        "contourError": 5.329070518200751e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0,
+          "y": 0.25,
+          "z": 0.75,
+          "cap": 0.6,
+          "slant": 0.75
+        },
+        "valueError": 0
+      }
+    },
+    {
+      "name": "chromium-390/math-t=-1.75",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "x"
+        ],
+        "actual": [
+          "x"
+        ],
+        "contourError": 4.440892098500626e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0,
+          "y": 0.25,
+          "z": 0.75,
+          "cap": 0.6,
+          "slant": 0.75
+        },
+        "valueError": 0
+      }
+    },
+    {
+      "name": "chromium-390/math-t=-1.5",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "x"
+        ],
+        "actual": [
+          "x"
+        ],
+        "contourError": 3.552713678800501e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0,
+          "y": 0.25,
+          "z": 0.75,
+          "cap": 0.6,
+          "slant": 0.75
+        },
+        "valueError": 0
+      }
+    },
+    {
+      "name": "chromium-390/math-t=-1.25",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [],
+        "actual": [],
+        "contourError": 4.440892098500626e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.1875,
+          "y": 0.125,
+          "z": 0.6875,
+          "cap": 0.4125,
+          "slant": 0.4375
+        },
+        "valueError": 2.4999999999941735e-05
+      }
+    },
+    {
+      "name": "chromium-390/math-t=-1",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "y"
+        ],
+        "actual": [
+          "y"
+        ],
+        "contourError": 4.440892098500626e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.375,
+          "y": 0,
+          "z": 0.625,
+          "cap": 0.22499999999999998,
+          "slant": 0.125
+        },
+        "valueError": 0
+      }
+    },
+    {
+      "name": "chromium-390/math-t=-0.75",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "y"
+        ],
+        "actual": [
+          "y"
+        ],
+        "contourError": 4.440892098500626e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.4375,
+          "y": 0,
+          "z": 0.5625,
+          "cap": 0.16249999999999998,
+          "slant": 0.0625
+        },
+        "valueError": 2.4999999999941735e-05
+      }
+    },
+    {
+      "name": "chromium-390/math-t=-0.5",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "slant",
+          "y"
+        ],
+        "actual": [
+          "slant",
+          "y"
+        ],
+        "contourError": 6.217248937900877e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.5,
+          "y": 0,
+          "z": 0.5,
+          "cap": 0.09999999999999998,
+          "slant": 0
+        },
+        "valueError": 0
+      }
+    },
+    {
+      "name": "chromium-390/math-t=-0.25",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "slant",
+          "y"
+        ],
+        "actual": [
+          "slant",
+          "y"
+        ],
+        "contourError": 5.329070518200751e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.5,
+          "y": 0,
+          "z": 0.5,
+          "cap": 0.09999999999999998,
+          "slant": 0
+        },
+        "valueError": 0
+      }
+    },
+    {
+      "name": "chromium-390/math-t=0",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "slant",
+          "y"
+        ],
+        "actual": [
+          "slant",
+          "y"
+        ],
+        "contourError": 6.217248937900877e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.5,
+          "y": 0,
+          "z": 0.5,
+          "cap": 0.09999999999999998,
+          "slant": 0
+        },
+        "valueError": 0
+      }
+    },
+    {
+      "name": "chromium-390/math-t=0.9",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "slant"
+        ],
+        "actual": [
+          "slant"
+        ],
+        "contourError": 1.4210854715202004e-14,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.55,
+          "y": 0.05,
+          "z": 0.39999999999999997,
+          "cap": 0.04999999999999993,
+          "slant": 0
+        },
+        "valueError": 2.220446049250313e-16
+      }
+    },
+    {
+      "name": "chromium-390/math-t=1.8",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "cap",
+          "slant"
+        ],
+        "actual": [
+          "cap",
+          "slant"
+        ],
+        "contourError": 1.6431300764452317e-14,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.6,
+          "y": 0.1,
+          "z": 0.30000000000000004,
+          "cap": 0,
+          "slant": 0
+        },
+        "valueError": 2.220446049250313e-16
+      }
+    },
+    {
+      "name": "chromium-390/math-t=2.9",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "cap",
+          "slant"
+        ],
+        "actual": [
+          "cap",
+          "slant"
+        ],
+        "contourError": 3.730349362740526e-14,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.6,
+          "y": 0.1,
+          "z": 0.30000000000000004,
+          "cap": 0,
+          "slant": 0
+        },
+        "valueError": 4.440892098500626e-16
+      }
+    },
+    {
+      "name": "chromium-390/math-t=4",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "cap",
+          "slant"
+        ],
+        "actual": [
+          "cap",
+          "slant"
+        ],
+        "contourError": 5.5067062021407764e-14,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.6,
+          "y": 0.1,
+          "z": 0.30000000000000004,
+          "cap": 0,
+          "slant": 0
+        },
+        "valueError": 4.440892098500626e-16
+      }
+    },
+    {
+      "name": "chromium-390/math-fit",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/website/fit",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/icons",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/website-grain",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/app/fit",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/app-blue",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/preview-storage",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/static-logo-glow",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/console-clean",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "chromium-390/network-clean",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "chromium-1440/math-t=-2",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "x"
+        ],
+        "actual": [
+          "x"
+        ],
+        "contourError": 5.329070518200751e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0,
+          "y": 0.25,
+          "z": 0.75,
+          "cap": 0.6,
+          "slant": 0.75
+        },
+        "valueError": 0
+      }
+    },
+    {
+      "name": "chromium-1440/math-t=-1.75",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "x"
+        ],
+        "actual": [
+          "x"
+        ],
+        "contourError": 4.440892098500626e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0,
+          "y": 0.25,
+          "z": 0.75,
+          "cap": 0.6,
+          "slant": 0.75
+        },
+        "valueError": 0
+      }
+    },
+    {
+      "name": "chromium-1440/math-t=-1.5",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "x"
+        ],
+        "actual": [
+          "x"
+        ],
+        "contourError": 3.552713678800501e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0,
+          "y": 0.25,
+          "z": 0.75,
+          "cap": 0.6,
+          "slant": 0.75
+        },
+        "valueError": 0
+      }
+    },
+    {
+      "name": "chromium-1440/math-t=-1.25",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [],
+        "actual": [],
+        "contourError": 4.440892098500626e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.1875,
+          "y": 0.125,
+          "z": 0.6875,
+          "cap": 0.4125,
+          "slant": 0.4375
+        },
+        "valueError": 2.4999999999941735e-05
+      }
+    },
+    {
+      "name": "chromium-1440/math-t=-1",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "y"
+        ],
+        "actual": [
+          "y"
+        ],
+        "contourError": 4.440892098500626e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.375,
+          "y": 0,
+          "z": 0.625,
+          "cap": 0.22499999999999998,
+          "slant": 0.125
+        },
+        "valueError": 0
+      }
+    },
+    {
+      "name": "chromium-1440/math-t=-0.75",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "y"
+        ],
+        "actual": [
+          "y"
+        ],
+        "contourError": 4.440892098500626e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.4375,
+          "y": 0,
+          "z": 0.5625,
+          "cap": 0.16249999999999998,
+          "slant": 0.0625
+        },
+        "valueError": 2.4999999999941735e-05
+      }
+    },
+    {
+      "name": "chromium-1440/math-t=-0.5",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "slant",
+          "y"
+        ],
+        "actual": [
+          "slant",
+          "y"
+        ],
+        "contourError": 6.217248937900877e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.5,
+          "y": 0,
+          "z": 0.5,
+          "cap": 0.09999999999999998,
+          "slant": 0
+        },
+        "valueError": 0
+      }
+    },
+    {
+      "name": "chromium-1440/math-t=-0.25",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "slant",
+          "y"
+        ],
+        "actual": [
+          "slant",
+          "y"
+        ],
+        "contourError": 5.329070518200751e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.5,
+          "y": 0,
+          "z": 0.5,
+          "cap": 0.09999999999999998,
+          "slant": 0
+        },
+        "valueError": 0
+      }
+    },
+    {
+      "name": "chromium-1440/math-t=0",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "slant",
+          "y"
+        ],
+        "actual": [
+          "slant",
+          "y"
+        ],
+        "contourError": 6.217248937900877e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.5,
+          "y": 0,
+          "z": 0.5,
+          "cap": 0.09999999999999998,
+          "slant": 0
+        },
+        "valueError": 0
+      }
+    },
+    {
+      "name": "chromium-1440/math-t=0.9",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "slant"
+        ],
+        "actual": [
+          "slant"
+        ],
+        "contourError": 1.4210854715202004e-14,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.55,
+          "y": 0.05,
+          "z": 0.39999999999999997,
+          "cap": 0.04999999999999993,
+          "slant": 0
+        },
+        "valueError": 2.220446049250313e-16
+      }
+    },
+    {
+      "name": "chromium-1440/math-t=1.8",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "cap",
+          "slant"
+        ],
+        "actual": [
+          "cap",
+          "slant"
+        ],
+        "contourError": 1.6431300764452317e-14,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.6,
+          "y": 0.1,
+          "z": 0.30000000000000004,
+          "cap": 0,
+          "slant": 0
+        },
+        "valueError": 2.220446049250313e-16
+      }
+    },
+    {
+      "name": "chromium-1440/math-t=2.9",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "cap",
+          "slant"
+        ],
+        "actual": [
+          "cap",
+          "slant"
+        ],
+        "contourError": 3.730349362740526e-14,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.6,
+          "y": 0.1,
+          "z": 0.30000000000000004,
+          "cap": 0,
+          "slant": 0
+        },
+        "valueError": 4.440892098500626e-16
+      }
+    },
+    {
+      "name": "chromium-1440/math-t=4",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "cap",
+          "slant"
+        ],
+        "actual": [
+          "cap",
+          "slant"
+        ],
+        "contourError": 5.5067062021407764e-14,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.6,
+          "y": 0.1,
+          "z": 0.30000000000000004,
+          "cap": 0,
+          "slant": 0
+        },
+        "valueError": 4.440892098500626e-16
+      }
+    },
+    {
+      "name": "chromium-1440/math-fit",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/website/fit",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/icons",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/website-grain",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/app/fit",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/app-blue",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/preview-storage",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/static-logo-glow",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/console-clean",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "chromium-1440/network-clean",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "webkit-390/math-t=-2",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "x"
+        ],
+        "actual": [
+          "x"
+        ],
+        "contourError": 5.329070518200751e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0,
+          "y": 0.25,
+          "z": 0.75,
+          "cap": 0.6,
+          "slant": 0.75
+        },
+        "valueError": 0
+      }
+    },
+    {
+      "name": "webkit-390/math-t=-1.75",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "x"
+        ],
+        "actual": [
+          "x"
+        ],
+        "contourError": 4.440892098500626e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0,
+          "y": 0.25,
+          "z": 0.75,
+          "cap": 0.6,
+          "slant": 0.75
+        },
+        "valueError": 0
+      }
+    },
+    {
+      "name": "webkit-390/math-t=-1.5",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "x"
+        ],
+        "actual": [
+          "x"
+        ],
+        "contourError": 3.552713678800501e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0,
+          "y": 0.25,
+          "z": 0.75,
+          "cap": 0.6,
+          "slant": 0.75
+        },
+        "valueError": 0
+      }
+    },
+    {
+      "name": "webkit-390/math-t=-1.25",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [],
+        "actual": [],
+        "contourError": 4.440892098500626e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.1875,
+          "y": 0.125,
+          "z": 0.6875,
+          "cap": 0.4125,
+          "slant": 0.4375
+        },
+        "valueError": 2.4999999999941735e-05
+      }
+    },
+    {
+      "name": "webkit-390/math-t=-1",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "y"
+        ],
+        "actual": [
+          "y"
+        ],
+        "contourError": 4.440892098500626e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.375,
+          "y": 0,
+          "z": 0.625,
+          "cap": 0.22499999999999998,
+          "slant": 0.125
+        },
+        "valueError": 0
+      }
+    },
+    {
+      "name": "webkit-390/math-t=-0.75",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "y"
+        ],
+        "actual": [
+          "y"
+        ],
+        "contourError": 4.440892098500626e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.4375,
+          "y": 0,
+          "z": 0.5625,
+          "cap": 0.16249999999999998,
+          "slant": 0.0625
+        },
+        "valueError": 2.4999999999941735e-05
+      }
+    },
+    {
+      "name": "webkit-390/math-t=-0.5",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "slant",
+          "y"
+        ],
+        "actual": [
+          "slant",
+          "y"
+        ],
+        "contourError": 5.329070518200751e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.5,
+          "y": 0,
+          "z": 0.5,
+          "cap": 0.09999999999999998,
+          "slant": 0
+        },
+        "valueError": 0
+      }
+    },
+    {
+      "name": "webkit-390/math-t=-0.25",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "slant",
+          "y"
+        ],
+        "actual": [
+          "slant",
+          "y"
+        ],
+        "contourError": 5.329070518200751e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.5,
+          "y": 0,
+          "z": 0.5,
+          "cap": 0.09999999999999998,
+          "slant": 0
+        },
+        "valueError": 0
+      }
+    },
+    {
+      "name": "webkit-390/math-t=0",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "slant",
+          "y"
+        ],
+        "actual": [
+          "slant",
+          "y"
+        ],
+        "contourError": 6.217248937900877e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.5,
+          "y": 0,
+          "z": 0.5,
+          "cap": 0.09999999999999998,
+          "slant": 0
+        },
+        "valueError": 0
+      }
+    },
+    {
+      "name": "webkit-390/math-t=0.9",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "slant"
+        ],
+        "actual": [
+          "slant"
+        ],
+        "contourError": 1.4210854715202004e-14,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.55,
+          "y": 0.05,
+          "z": 0.39999999999999997,
+          "cap": 0.04999999999999993,
+          "slant": 0
+        },
+        "valueError": 2.220446049250313e-16
+      }
+    },
+    {
+      "name": "webkit-390/math-t=1.8",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "cap",
+          "slant"
+        ],
+        "actual": [
+          "cap",
+          "slant"
+        ],
+        "contourError": 1.7763568394002505e-14,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.6,
+          "y": 0.1,
+          "z": 0.30000000000000004,
+          "cap": 0,
+          "slant": 0
+        },
+        "valueError": 2.220446049250313e-16
+      }
+    },
+    {
+      "name": "webkit-390/math-t=2.9",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "cap",
+          "slant"
+        ],
+        "actual": [
+          "cap",
+          "slant"
+        ],
+        "contourError": 3.730349362740526e-14,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.6,
+          "y": 0.1,
+          "z": 0.30000000000000004,
+          "cap": 0,
+          "slant": 0
+        },
+        "valueError": 4.440892098500626e-16
+      }
+    },
+    {
+      "name": "webkit-390/math-t=4",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "cap",
+          "slant"
+        ],
+        "actual": [
+          "cap",
+          "slant"
+        ],
+        "contourError": 5.5067062021407764e-14,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.6,
+          "y": 0.1,
+          "z": 0.30000000000000004,
+          "cap": 0,
+          "slant": 0
+        },
+        "valueError": 4.440892098500626e-16
+      }
+    },
+    {
+      "name": "webkit-390/math-fit",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/website/fit",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/icons",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/website-grain",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/app/fit",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/app-blue",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/preview-storage",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/static-logo-glow",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/console-clean",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "webkit-390/network-clean",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "webkit-1440/math-t=-2",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "x"
+        ],
+        "actual": [
+          "x"
+        ],
+        "contourError": 5.329070518200751e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0,
+          "y": 0.25,
+          "z": 0.75,
+          "cap": 0.6,
+          "slant": 0.75
+        },
+        "valueError": 0
+      }
+    },
+    {
+      "name": "webkit-1440/math-t=-1.75",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "x"
+        ],
+        "actual": [
+          "x"
+        ],
+        "contourError": 4.440892098500626e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0,
+          "y": 0.25,
+          "z": 0.75,
+          "cap": 0.6,
+          "slant": 0.75
+        },
+        "valueError": 0
+      }
+    },
+    {
+      "name": "webkit-1440/math-t=-1.5",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "x"
+        ],
+        "actual": [
+          "x"
+        ],
+        "contourError": 3.552713678800501e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0,
+          "y": 0.25,
+          "z": 0.75,
+          "cap": 0.6,
+          "slant": 0.75
+        },
+        "valueError": 0
+      }
+    },
+    {
+      "name": "webkit-1440/math-t=-1.25",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [],
+        "actual": [],
+        "contourError": 4.440892098500626e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.1875,
+          "y": 0.125,
+          "z": 0.6875,
+          "cap": 0.4125,
+          "slant": 0.4375
+        },
+        "valueError": 2.4999999999941735e-05
+      }
+    },
+    {
+      "name": "webkit-1440/math-t=-1",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "y"
+        ],
+        "actual": [
+          "y"
+        ],
+        "contourError": 4.440892098500626e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.375,
+          "y": 0,
+          "z": 0.625,
+          "cap": 0.22499999999999998,
+          "slant": 0.125
+        },
+        "valueError": 0
+      }
+    },
+    {
+      "name": "webkit-1440/math-t=-0.75",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "y"
+        ],
+        "actual": [
+          "y"
+        ],
+        "contourError": 4.440892098500626e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.4375,
+          "y": 0,
+          "z": 0.5625,
+          "cap": 0.16249999999999998,
+          "slant": 0.0625
+        },
+        "valueError": 2.4999999999941735e-05
+      }
+    },
+    {
+      "name": "webkit-1440/math-t=-0.5",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "slant",
+          "y"
+        ],
+        "actual": [
+          "slant",
+          "y"
+        ],
+        "contourError": 5.329070518200751e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.5,
+          "y": 0,
+          "z": 0.5,
+          "cap": 0.09999999999999998,
+          "slant": 0
+        },
+        "valueError": 0
+      }
+    },
+    {
+      "name": "webkit-1440/math-t=-0.25",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "slant",
+          "y"
+        ],
+        "actual": [
+          "slant",
+          "y"
+        ],
+        "contourError": 5.329070518200751e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.5,
+          "y": 0,
+          "z": 0.5,
+          "cap": 0.09999999999999998,
+          "slant": 0
+        },
+        "valueError": 0
+      }
+    },
+    {
+      "name": "webkit-1440/math-t=0",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "slant",
+          "y"
+        ],
+        "actual": [
+          "slant",
+          "y"
+        ],
+        "contourError": 6.217248937900877e-15,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.5,
+          "y": 0,
+          "z": 0.5,
+          "cap": 0.09999999999999998,
+          "slant": 0
+        },
+        "valueError": 0
+      }
+    },
+    {
+      "name": "webkit-1440/math-t=0.9",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "slant"
+        ],
+        "actual": [
+          "slant"
+        ],
+        "contourError": 1.4210854715202004e-14,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.55,
+          "y": 0.05,
+          "z": 0.39999999999999997,
+          "cap": 0.04999999999999993,
+          "slant": 0
+        },
+        "valueError": 2.220446049250313e-16
+      }
+    },
+    {
+      "name": "webkit-1440/math-t=1.8",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "cap",
+          "slant"
+        ],
+        "actual": [
+          "cap",
+          "slant"
+        ],
+        "contourError": 1.7763568394002505e-14,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.6,
+          "y": 0.1,
+          "z": 0.30000000000000004,
+          "cap": 0,
+          "slant": 0
+        },
+        "valueError": 2.220446049250313e-16
+      }
+    },
+    {
+      "name": "webkit-1440/math-t=2.9",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "cap",
+          "slant"
+        ],
+        "actual": [
+          "cap",
+          "slant"
+        ],
+        "contourError": 3.730349362740526e-14,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.6,
+          "y": 0.1,
+          "z": 0.30000000000000004,
+          "cap": 0,
+          "slant": 0
+        },
+        "valueError": 4.440892098500626e-16
+      }
+    },
+    {
+      "name": "webkit-1440/math-t=4",
+      "pass": true,
+      "detail": {
+        "scaleEqual": true,
+        "expected": [
+          "cap",
+          "slant"
+        ],
+        "actual": [
+          "cap",
+          "slant"
+        ],
+        "contourError": 5.5067062021407764e-14,
+        "fillCount": 9,
+        "valid": "true",
+        "slacks": {
+          "x": 0.6,
+          "y": 0.1,
+          "z": 0.30000000000000004,
+          "cap": 0,
+          "slant": 0
+        },
+        "valueError": 4.440892098500626e-16
+      }
+    },
+    {
+      "name": "webkit-1440/math-fit",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/website/fit",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/icons",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/website-grain",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/app/fit",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/app-blue",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/preview-storage",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/static-logo-glow",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/console-clean",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "webkit-1440/network-clean",
+      "pass": true,
+      "detail": []
+    }
+  ]
+}

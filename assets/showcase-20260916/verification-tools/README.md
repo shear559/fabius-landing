@@ -23,3 +23,13 @@ BASE_URL=http://127.0.0.1:8806 node assets/showcase-20260916/verification-tools/
 ```
 
 The server mirrors Vercel response headers, maps the canonical origin to loopback, supports clean HTML URLs and omits HTTPS upgrade for local HTTP. Integration screenshots are normal-motion captures. Service-worker blocking is not injected because Playwright's blocking script itself throws inside opaque-origin frames; the products do not register a service worker. The embedded Escape assertion waits for asynchronous postMessage delivery.
+
+## Visual refinement verification
+
+```sh
+BASE_URL=http://127.0.0.1:8806 QA_OUT=./visual-results node assets/showcase-20260916/verification-tools/visual-refresh.mjs
+```
+
+This checks actual SVG geometry and rendered fills, binding constraints including degenerate joins, equal units, layout, icon availability, preview storage and the static emblem halo. It saves mobile/desktop screenshots in both engines for separate visual inspection. Set BASE_URL to the canonical production origin to repeat against the deployed site. A live run is required to claim live verification.
+
+The focused final-review runner accepts both the .html proof-return route and Vercel's extensionless clean route. Integration and final-review receipts identify their environment with the base field.

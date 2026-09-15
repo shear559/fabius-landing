@@ -18,3 +18,7 @@ Open http://localhost:8080 in a browser. No build, package installation or remot
 
 Rubik is distributed under OFL.txt. The original font includes Hebrew and Latin.
 The app stores data in browser local storage for this origin. Export a JSON backup before clearing browser data or moving origins. The website’s embedded preview uses temporary storage; this standalone source does not.
+
+## Visual update
+
+September 16: Cobalt controls, a sky-to-violet project panel and blue/teal status surfaces. The standalone storage logic is unchanged. See the adjacent showcase visual-refresh.md for checks and scope.

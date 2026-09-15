@@ -1,0 +1,1150 @@
+{
+  "startedAt": "2026-09-15T22:35:28.331Z",
+  "finishedAt": "2026-09-15T22:36:40.534Z",
+  "base": "http://127.0.0.1:8806",
+  "scope": "Local production-header mirror. Chromium and WebKit 390/1440, gallery interactions, fonts, FAQ, installation, no-JS, reduced motion, embedded walkthroughs and solver-backed browser probes. Not a production or physical-device test.",
+  "passed": 279,
+  "failed": 0,
+  "results": [
+    {
+      "name": "chromium-390/Rubik",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/hero-visible",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/FAQ-parity",
+      "pass": true,
+      "detail": {
+        "count": 13,
+        "parity": true
+      }
+    },
+    {
+      "name": "chromium-390/mobile-menu-open",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/mobile-menu-close",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/website/panel-visible",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/website/sandbox",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/website/desktop",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/website/phone",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/website/original",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/website/expand",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/website/close-focus",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/app/panel-visible",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/app/sandbox",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/app/desktop",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/app/phone",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/app/original",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/app/expand",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/app/close-focus",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/math/panel-visible",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/math/sandbox",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/math/desktop",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/math/phone",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/math/original",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/math/expand",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/math/close-focus",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/gallery-keyboard",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/gallery-tab-isolation",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/install-claude",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/install-codex",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/install-grok",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/install-any",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/no-horizontal-overflow",
+      "pass": true
+    },
+    {
+      "name": "chromium-390/console-clean",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "chromium-390/network-clean",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "chromium-1440/Rubik",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/hero-visible",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/FAQ-parity",
+      "pass": true,
+      "detail": {
+        "count": 13,
+        "parity": true
+      }
+    },
+    {
+      "name": "chromium-1440/website/panel-visible",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/website/sandbox",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/website/desktop",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/website/phone",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/website/original",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/website/expand",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/website/close-focus",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/app/panel-visible",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/app/sandbox",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/app/desktop",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/app/phone",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/app/original",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/app/expand",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/app/close-focus",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/math/panel-visible",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/math/sandbox",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/math/desktop",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/math/phone",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/math/original",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/math/expand",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/math/close-focus",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/gallery-keyboard",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/gallery-tab-isolation",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/install-claude",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/install-codex",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/install-grok",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/install-any",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/no-horizontal-overflow",
+      "pass": true
+    },
+    {
+      "name": "chromium-1440/console-clean",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "chromium-1440/network-clean",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "chromium/nojs-fallback",
+      "pass": true
+    },
+    {
+      "name": "chromium/nojs-no-empty-stage",
+      "pass": true
+    },
+    {
+      "name": "chromium/reduced-next-step",
+      "pass": true
+    },
+    {
+      "name": "chromium/reduced-no-timer",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/Rubik",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/hero-visible",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/FAQ-parity",
+      "pass": true,
+      "detail": {
+        "count": 13,
+        "parity": true
+      }
+    },
+    {
+      "name": "webkit-390/mobile-menu-open",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/mobile-menu-close",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/website/panel-visible",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/website/sandbox",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/website/desktop",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/website/phone",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/website/original",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/website/expand",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/website/close-focus",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/app/panel-visible",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/app/sandbox",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/app/desktop",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/app/phone",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/app/original",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/app/expand",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/app/close-focus",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/math/panel-visible",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/math/sandbox",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/math/desktop",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/math/phone",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/math/original",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/math/expand",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/math/close-focus",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/gallery-keyboard",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/gallery-tab-isolation",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/install-claude",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/install-codex",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/install-grok",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/install-any",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/no-horizontal-overflow",
+      "pass": true
+    },
+    {
+      "name": "webkit-390/console-clean",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "webkit-390/network-clean",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "webkit-1440/Rubik",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/hero-visible",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/FAQ-parity",
+      "pass": true,
+      "detail": {
+        "count": 13,
+        "parity": true
+      }
+    },
+    {
+      "name": "webkit-1440/website/panel-visible",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/website/sandbox",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/website/desktop",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/website/phone",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/website/original",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/website/expand",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/website/close-focus",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/app/panel-visible",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/app/sandbox",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/app/desktop",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/app/phone",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/app/original",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/app/expand",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/app/close-focus",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/math/panel-visible",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/math/sandbox",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/math/desktop",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/math/phone",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/math/original",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/math/expand",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/math/close-focus",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/gallery-keyboard",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/gallery-tab-isolation",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/install-claude",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/install-codex",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/install-grok",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/install-any",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/no-horizontal-overflow",
+      "pass": true
+    },
+    {
+      "name": "webkit-1440/console-clean",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "webkit-1440/network-clean",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "webkit/nojs-fallback",
+      "pass": true
+    },
+    {
+      "name": "webkit/nojs-no-empty-stage",
+      "pass": true
+    },
+    {
+      "name": "webkit/reduced-next-step",
+      "pass": true
+    },
+    {
+      "name": "webkit/reduced-no-timer",
+      "pass": true
+    },
+    {
+      "name": "embedded-app/tour-saved-task",
+      "pass": true
+    },
+    {
+      "name": "embedded-app/nested-escape",
+      "pass": true
+    },
+    {
+      "name": "embedded-app/outer-escape",
+      "pass": true
+    },
+    {
+      "name": "embedded-website/tour-pricing",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-0",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-1",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-2",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-3",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-4",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-5",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-6",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-7",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-8",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-9",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-10",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-11",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-12",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-13",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-14",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-15",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-16",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-17",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-18",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-19",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-20",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-21",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-22",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-23",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-24",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-25",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-26",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-27",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-28",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-29",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-30",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-31",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-32",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-33",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-34",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-35",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-36",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-37",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-38",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-39",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-40",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-41",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-42",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-43",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-44",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-45",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-46",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-47",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-48",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-49",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-50",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-51",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-52",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-53",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-54",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-55",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-56",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-57",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-58",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-59",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-60",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-61",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-62",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-63",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-64",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-65",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-66",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-67",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-68",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-69",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-70",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-71",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-72",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-73",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-74",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-75",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-76",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-77",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-78",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-79",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-80",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-81",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-82",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-83",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-84",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-85",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-86",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-87",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-88",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-89",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-90",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-91",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-92",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-93",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-94",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-95",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-96",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-97",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-98",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-99",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-100",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-101",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-102",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-103",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-104",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-105",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-106",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-107",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-108",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-109",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-110",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-111",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-112",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-113",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-114",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-115",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-116",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-117",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-118",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-119",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-120",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-121",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-122",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-123",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-124",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-125",
+      "pass": true
+    },
+    {
+      "name": "math-browser/probe-126",
+      "pass": true
+    },
+    {
+      "name": "proof/math/proof.html/typeset",
+      "pass": true
+    },
+    {
+      "name": "proof/math/proof.html/no-error",
+      "pass": true
+    },
+    {
+      "name": "proof/original-math.html/typeset",
+      "pass": true
+    },
+    {
+      "name": "proof/original-math.html/no-error",
+      "pass": true
+    }
+  ]
+}

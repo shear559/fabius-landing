@@ -18,3 +18,7 @@ Open http://localhost:8080 in a browser. No build, package installation or remot
 
 Rubik is distributed under OFL.txt. The original font includes Hebrew and Latin.
 The website and its example pricing describe a fictional product. There is no purchase or signup backend.
+
+## Visual update
+
+September 16: Colored grain surfaces and inlined Phosphor Duotone icons. Phosphor is distributed under PHOSPHOR-LICENSE.txt (MIT). See the adjacent showcase visual-refresh.md for checks and scope.

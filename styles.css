@@ -828,3 +828,10 @@ img{display:block;max-width:100%}
 .field-top::before{z-index:0;border-radius:inherit}
 .field-top > *{position:relative;z-index:1}
 .core::after,.system::after{z-index:1}
+
+/* Fabius light: a sharp emblem with a restrained, steady green halo. */
+:root{--emblem-light:#bbef68;--emblem-near:#94d63c99;--emblem-far:#76b90045;--emblem-glass:#85bb2538;--emblem-halo-size:100px}
+.brand-mark{filter:drop-shadow(0 0 3px var(--emblem-near)) drop-shadow(0 0 10px var(--emblem-far))}
+.field-mark{position:relative;isolation:isolate;overflow:visible;border-color:var(--emblem-near);color:var(--emblem-light);background:linear-gradient(145deg,var(--emblem-glass),#ffffff08);box-shadow:inset 0 1px 0 #efffd780,inset 0 0 16px #94d63c12,0 0 20px #94d63c25,0 0 45px var(--emblem-far)}
+.field-mark:before{content:'';position:absolute;width:var(--emblem-halo-size);height:var(--emblem-halo-size);z-index:-1;pointer-events:none;border-radius:50%;background:radial-gradient(circle,#9fea4038,transparent 68%)}
+.field-mark svg{filter:drop-shadow(0 0 2px #f0ffd699) drop-shadow(0 0 7px #b7f65d99)}

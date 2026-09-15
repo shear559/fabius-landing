@@ -4,3 +4,27 @@
 @media(max-width:1000px){.hero h1{font-size:48px}.hero-art{height:460px}.hero-actions{gap:12px;flex-wrap:wrap}.notebook-content{grid-template-columns:75px 1fr}.notebook article{padding:18px}.notebook h2{font-size:24px}.feature-layout{gap:32px}.desktop-nav{gap:20px}.nav-cta{display:none}.hero{padding-top:40px}.feature-section,.pricing{padding-block:72px}}
 @media(max-width:700px){.nav{min-height:78px}.desktop-nav{display:none}.menu{display:block;background:transparent;border:1px solid var(--line);padding:10px 14px;min-height:44px;border-radius:4px;font-size:12px}.hero{grid-template-columns:1fr;padding-top:35px;padding-bottom:45px;gap:20px}.hero h1{font-size:clamp(39px,10.5vw,60px)}.eyebrow{font-size:9px}.lead{font-size:14px;line-height:1.7}.hero-art{height:415px;margin-top:20px}.notebook{width:100%;margin-left:0}.notebook-content{grid-template-columns:75px 1fr}.notebook article{padding:16px}.notebook h2{font-size:25px}.notebook article p{font-size:8px}.notebook aside{font-size:7px}.paper-chip{width:135px;padding:14px;top:0}.paper-chip strong{font-size:16px}.leaf{height:55px}.connection-chip{left:10px;bottom:10px;padding:12px 16px}.principles{display:grid;grid-template-columns:1fr 1fr;gap:20px;font-size:10px}.principles span:before{margin-right:8px;font-size:12px}.feature-layout,.faq{grid-template-columns:1fr;gap:24px}.feature-section,.pricing{padding-block:64px}.feature-layout{margin-top:30px}.feature-tabs button{padding:22px 0}.feature-tabs strong{font-size:20px}.feature-stage{min-height:390px}.feature-panel{padding:22px 16px}.capture-note,.export-sheet{width:88%}.workflow{padding-block:56px}.workflow-top{align-items:flex-start;flex-direction:column}.workflow h2{font-size:39px}.journey{grid-template-columns:1fr;gap:24px;margin-top:30px}.journey-step{display:grid;grid-template-columns:1fr 95px;padding-top:18px;position:relative}.journey-step>span,.journey-step>strong,.journey-step>p{grid-column:1}.journey-visual{grid-column:2;grid-row:1/4;height:80px;margin:0;gap:3px}.journey-visual i{width:23px;height:40px}.links i{width:25px;height:22px}.exported i{width:45px;height:58px;font-size:15px}.journey-step strong{font-size:20px}.journey-step p{font-size:10px}.price-grid{grid-template-columns:1fr}.price-card{padding:28px}.faq{padding-bottom:64px}.faq h2{font-size:36px}footer{flex-wrap:wrap}footer p{display:none}footer>span{font-size:8px}.demo-notice{font-size:9px;padding:7px 14px}.hero-actions .button{font-size:12px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+
+/* Colored paper: one grain recipe, only on the colored illustration surfaces. */
+:root{--grain:url('grain.png');--mint:#9eddbb;--sky:#abd9db;--orchid:#d5c2e8;--paint-light:#e8f7c4;--paint-shadow:#749b72;--icon-sm:16px;--icon-md:24px;--icon-lg:36px}
+.ui-icon{width:var(--icon-sm);height:var(--icon-sm);flex:none;vertical-align:middle;fill:currentColor;stroke:none}
+.button>.ui-icon,.text-link>.ui-icon,.nav-cta>.ui-icon{margin-left:8px}
+.hero-art:before{content:'';position:absolute;inset:8% -4% 4%;z-index:-1;border-radius:48% 52% 40% 60%;background:var(--grain) 0 0/180px,radial-gradient(ellipse at 15% 18%,var(--paint-light),transparent 65%),radial-gradient(ellipse at 90% 78%,var(--orchid),transparent 62%),linear-gradient(135deg,var(--mint),var(--sky));background-blend-mode:overlay,normal,normal,normal;transform:rotate(-8deg)}
+.hero-art .orb{display:none}
+.paper-chip{background:var(--grain) 0 0/180px,linear-gradient(145deg,var(--paint-light),var(--lime));background-blend-mode:overlay,normal}
+.connection-chip{background:var(--grain) 0 0/180px,linear-gradient(125deg,var(--green),#3e7052);background-blend-mode:soft-light,normal}
+.connection-chip .ui-icon{width:var(--icon-lg);height:var(--icon-lg)}
+.notebook aside>span:not(.mini-brand){display:flex;align-items:center;gap:5px}
+.notebook aside .ui-icon{width:12px;height:12px}
+.source-icon .ui-icon{width:var(--icon-md);height:var(--icon-md)}
+.principles>span{display:flex;align-items:center;gap:12px}
+.principles span:before{content:none}
+.principles .ui-icon{width:var(--icon-md);height:var(--icon-md);color:var(--green)}
+.feature-stage{background:var(--grain) 0 0/180px,radial-gradient(ellipse at 90% 95%,var(--sky),transparent 70%),linear-gradient(130deg,var(--paint-light),var(--mint));background-blend-mode:overlay,normal,normal}
+.step{width:44px;height:44px;border:0;border-radius:10px;background:var(--wash)}
+.step .ui-icon{width:var(--icon-md);height:var(--icon-md)}
+.feature-tabs button>.ui-icon{margin-left:auto;margin-top:12px}
+.file-icon .ui-icon{width:var(--icon-lg);height:var(--icon-lg);color:var(--green)}
+.studio{background:var(--grain) 0 0/180px,radial-gradient(ellipse at 100% 0,var(--sky),transparent 65%),linear-gradient(145deg,var(--paint-light),#e1edd8);background-blend-mode:overlay,normal,normal}
+.play-controls button{display:flex;align-items:center;gap:18px}
+@media(max-width:700px){.hero-art:before{inset:5% -5% 6%}.principles>span{gap:8px}.principles .ui-icon{width:20px;height:20px}.feature-tabs button{gap:14px}.feature-tabs strong{font-size:19px}}

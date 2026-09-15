@@ -42,6 +42,8 @@ This is explicitly an iterative illustration using additional work and reference
 
 Measured standalone checks: website 28/28 browser scenarios, app 68/68; math 1,233/1,233 numerical probes plus 182 exact and 72 numerical certificate/solver assertions. Method, failure history, execution receipts, source and portable evaluators are linked from `assets/showcase-20260916/verification.html`.
 
+The subsequent visual update adds colored grain and Phosphor Duotone icons to Lattice, a blue Fieldnote palette, a static green Fabius emblem glow, and a mathematically faithful equal-scale diagram with objective bands and all binding constraints highlighted at transitions. See `assets/showcase-20260916/visual-refresh.md` for source, checks and visual-review limits.
+
 ## Preserved paired artifact trials
 
 The `build-study.html` page presents the September 15 showcase (`assets/trials-20260915-showcase/`): twelve fresh claude-sonnet-5 generations, two per condition per task. The baseline is a bare headless Claude Code session. The treatment loads Fabius 3.1.0 and explicitly requests its relevant contracts. Both receive the same enriched brief, tools and time limit. The website brief requests distinct feature states and a user-controlled product demonstration; the app adds Board/List views; the math brief adds a feasible-region diagram and a compact exact answer.
