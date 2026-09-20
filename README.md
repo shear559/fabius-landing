@@ -8,7 +8,7 @@ The public site for **fabius — one set of rules above every model**.
 
 ## Content baseline
 
-Aligned with the **3.1.0** Fabius source (whitepaper `fabius-as-a-system.pdf`, 51 pages, SHA-256 `a002c8c8d94903d33b541bcaf1f7cca65eb0acf043e684d168167035484dabd9`). The page leads with “one set of rules above every model”, retaining the green palette, Rubik typography, system map and three capability outcomes. The previously removed skill-card grids, setup split and explainer video remain absent.
+Aligned with the **3.2.0** Fabius source (whitepaper `fabius-as-a-system.pdf`, 51 pages, SHA-256 `67c3634f1375ac28a0c9c8307ce4fedd12b2daddadf4a69d2f6c8b46db1e021e`). The page leads with “one set of rules above every model”, retaining the green palette, Rubik typography, system map and three capability outcomes. The previously removed skill-card grids, setup split and explainer video remain absent.
 
 Fabius supplies instructions, workflows and original local helpers for scheduling, retrieval, design and completion evidence. The host supplies the model, tools and permissions. Model marks illustrate families; they do not establish tested integration or a universal quality gain.
 
