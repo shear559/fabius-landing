@@ -9,7 +9,10 @@
 //      The layer's score is the minimum over its box (worst pixel), not an average.
 //   5. Threshold: 3:1 for large text (>= 24 px, or >= 18.66 px bold), else 4.5:1.
 // Also checks the export PNG/WebP exist at the right size and the export matches the SVG render.
-// Usage: node product/measure/measure.js   -> measure/contrast-report.json + contrast-report.md
+// Usage, from the studio folder root: node measure/measure.js
+//   -> measure/contrast-report.json and measure/contrast-report.md
+// Add --renders to keep the intermediate screenshots in measure/renders/{full,bg}-<id>.png;
+// without it they go to a temporary folder that is deleted at the end.
 'use strict';
 const path = require('path');
 const fs = require('fs');
@@ -26,7 +29,8 @@ const probe = (file) => execFileSync('ffprobe', ['-v', 'error', '-show_entries',
 
 (async () => {
   const browser = await chromium.launch();
-  const outDir = path.resolve(ROOT, '..', 'out', 'measure');
+  const keep = process.argv.includes('--renders');
+  const outDir = keep ? path.join(ROOT, 'measure', 'renders') : fs.mkdtempSync(path.join(require('os').tmpdir(), 'lattice-measure-'));
   fs.mkdirSync(outDir, { recursive: true });
   const report = { method: 'worst pixel in each text layer box vs. the same render with type hidden; WCAG 2.x relative luminance', formats: [] };
 
@@ -76,6 +80,7 @@ const probe = (file) => execFileSync('ffprobe', ['-v', 'error', '-show_entries',
     });
   }
   await browser.close();
+  if (!keep) fs.rmSync(outDir, { recursive: true, force: true });
 
   fs.writeFileSync(path.join(__dirname, 'contrast-report.json'), JSON.stringify(report, null, 2));
   const md = ['# Contrast and safe-area report', '', report.method + '.', '',

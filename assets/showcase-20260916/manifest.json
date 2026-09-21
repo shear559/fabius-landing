@@ -44,8 +44,8 @@
       "bytes": 1157
     },
     "demo-control.js": {
-      "sha256": "db9c761ef809bae832caf23a98c5abe1eaebf3df0831fbf236d02de3fd37cf26",
-      "bytes": 1994
+      "sha256": "4e9beceb0e09835c72c8de381729bbf0ec6729e77d5c78b6717b5cfcf369a4ff",
+      "bytes": 2175
     },
     "document.css": {
       "sha256": "cc805de222862cff6a2c17cb4f52f4cc1026a79e1f3e8ce4fe4b4de7711485c0",
@@ -440,12 +440,12 @@
       "bytes": 353
     },
     "showcase.css": {
-      "sha256": "34b5c34e7cd4949454124190a2c9d4fd31b0b64142d4cc9e780a495f57bc183e",
-      "bytes": 8627
+      "sha256": "58d289b2858e6b4312930f3f426976d9cac5b7ac65a04433332ce75239dd0b70",
+      "bytes": 8743
     },
     "showcase.js": {
-      "sha256": "70c187355ae23e69e2643a2b80ea91c5e7b0bec8638c5dc633f7f2bcb367bf71",
-      "bytes": 8735
+      "sha256": "d85902fd7b669b8514cd9b91a8ff8254f5bfa4e5645c369dc8c2af6e7d91e843",
+      "bytes": 9705
     },
     "verification-tools/README.md": {
       "sha256": "7e3c2523e3c1d0e36206675d1a93de9f64352ee16fad399487402e2c17be266d",

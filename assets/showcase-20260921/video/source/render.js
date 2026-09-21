@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 /* Render the Lattice launch film.
-   node product/source/render.js              capture every frame, then encode everything
-   node product/source/render.js --encode     re-encode from the existing lossless master
-   node product/source/render.js --verify 40  re-capture 40 evenly spaced frames and compare hashes
-   node product/source/render.js --meta       rewrite captions, chapters, contrast and film-data.js only
+   Run from the folder that holds index.html:
+   node source/render.js              capture every frame, then encode everything
+   node source/render.js --encode     re-encode from the existing lossless master
+   node source/render.js --verify 30  re-capture 30 evenly spaced frames, last first, and compare hashes
+   node source/render.js --verify all re-capture every frame, last first, and compare hashes
+   node source/render.js --meta       rewrite captions, chapters, contrast and film-data.js only
    Needs: Playwright (require(process.env.PLAYWRIGHT) or 'playwright'), ffmpeg, cwebp. */
 'use strict';
 const fs = require('fs'), path = require('path'), os = require('os'), crypto = require('crypto');
@@ -24,44 +26,56 @@ const sha = b => crypto.createHash('sha256').update(b).digest('hex');
 const ff = (...a) => execFileSync('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', ...a], { stdio: 'inherit' });
 const log = (...a) => console.log('[render]', ...a);
 
+const launch = () => chromium.launch({ args: ['--disable-gpu', '--font-render-hinting=none', '--disable-lcd-text', '--force-color-profile=srgb'] });
+async function openPage(browser) {
+  const page = await browser.newPage({ viewport: { width: T.width, height: T.height }, deviceScaleFactor: 1 });
+  page.on('pageerror', e => { throw e; });
+  await page.goto('file://' + path.join(SRC, 'scenes', 'film.html'));
+  await page.evaluate(() => window.__ready);
+  return page;
+}
 async function openPages(n) {
   // Software rasterising, fixed scale and no GPU keep pixels identical between runs.
-  const browser = await chromium.launch({ args: ['--disable-gpu', '--font-render-hinting=none', '--disable-lcd-text', '--force-color-profile=srgb'] });
+  const browser = await launch();
   const pages = [];
-  for (let i = 0; i < n; i++) {
-    const page = await browser.newPage({ viewport: { width: T.width, height: T.height }, deviceScaleFactor: 1 });
-    page.on('pageerror', e => { throw e; });
-    await page.goto('file://' + path.join(SRC, 'scenes', 'film.html'));
-    await page.evaluate(() => window.__ready);
-    pages.push(page);
-  }
+  for (let i = 0; i < n; i++) pages.push(await openPage(browser));
   return { browser, pages };
 }
-const shot = async (page, f) => {
+// Every frame is captured in a page of its own, opened for it and closed after it. A page that had
+// drawn other frames first kept rasterised glyphs from them: the scaled mock-UI text in the Connect
+// scene came out up to 2 levels different in frames 651-653 depending on which frame came before.
+// A fresh page draws frame 0 then frame f, whatever the capture order, so pixels depend only on f.
+const shot = async (browser, f) => {
+  const page = await openPage(browser);
   await page.evaluate(t => window.__seek(t), f / T.fps);
-  return page.screenshot({ type: 'png', animations: 'disabled', caret: 'hide' });
+  const buf = await page.screenshot({ type: 'png', animations: 'disabled', caret: 'hide' });
+  await page.close();
+  return buf;
 };
+// Capture frames on WORKERS pages at once; hand each finished frame to `use` in list order.
+async function captureAll(list, use) {
+  const browser = await launch();
+  for (let k = 0; k < list.length; k += WORKERS) {
+    const batch = await Promise.all(list.slice(k, k + WORKERS).map(f => shot(browser, f)));
+    for (let i = 0; i < batch.length; i++) await use(list[k + i], batch[i]);
+    if (Math.floor(k / 150) !== Math.floor((k + WORKERS) / 150)) log(`frame ${k + batch.length}/${list.length}`);
+  }
+  await browser.close();
+}
 
 async function capture() {
   fs.mkdirSync(BUILD, { recursive: true });
   const enc = spawn('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', '-f', 'image2pipe', '-framerate', String(T.fps), '-c:v', 'png', '-i', '-',
     '-c:v', 'libx264rgb', '-qp', '0', '-preset', 'ultrafast', '-pix_fmt', 'rgb24', MASTER], { stdio: ['pipe', 'inherit', 'inherit'] });
   const done = new Promise((res, rej) => enc.on('close', c => (c ? rej(new Error('ffmpeg ' + c)) : res())));
-  const { browser, pages } = await openPages(WORKERS);
   const hashes = [];
   const t0 = Date.now();
-  for (let f = 0; f < FRAMES; f += WORKERS) {
-    const batch = await Promise.all(pages.map((p, i) => (f + i < FRAMES ? shot(p, f + i) : null)));
-    for (const buf of batch) {
-      if (!buf) continue;
-      hashes.push(sha(buf));
-      if (!enc.stdin.write(buf)) await new Promise(r => enc.stdin.once('drain', r));
-    }
-    if (f % 150 === 0) log(`frame ${f}/${FRAMES}`);
-  }
+  await captureAll([...Array(FRAMES).keys()], async (f, buf) => {
+    hashes.push(sha(buf));
+    if (!enc.stdin.write(buf)) await new Promise(r => enc.stdin.once('drain', r));
+  });
   enc.stdin.end();
   await done;
-  await browser.close();
   const secs = (Date.now() - t0) / 1000;
   fs.writeFileSync(HASHES, hashes.map((h, i) => `${h}  frame-${String(i).padStart(4, '0')}`).join('\n') + '\n');
   const all = sha(hashes.join('\n'));
@@ -71,13 +85,12 @@ async function capture() {
 
 async function verify(n) {
   const want = fs.readFileSync(HASHES, 'utf8').trim().split('\n').map(l => l.split('  ')[0]);
-  const { browser, pages } = await openPages(1);
+  // Sampled frames are captured last first, the reverse of the render's order.
+  const list = n >= FRAMES ? [...Array(FRAMES).keys()] : [...Array(n).keys()].map(k => Math.round((k * (FRAMES - 1)) / (n - 1)));
+  list.reverse();
+  n = list.length;
   let bad = 0;
-  for (let k = 0; k < n; k++) {
-    const f = Math.round((k * (FRAMES - 1)) / (n - 1));
-    if (sha(await shot(pages[0], f)) !== want[f]) { bad++; log('MISMATCH frame', f); }
-  }
-  await browser.close();
+  await captureAll(list, (f, buf) => { if (sha(buf) !== want[f]) { bad++; log('MISMATCH frame', f); } });
   log(`verify: ${n - bad}/${n} re-captured frames identical to frames.sha256`);
   process.exitCode = bad ? 1 : 0;
   // Record the result next to the other render numbers so the page reports what was measured.
@@ -93,24 +106,21 @@ const stamp = s => {
   return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(sec).padStart(2, '0')}.${String(ms % 1000).padStart(3, '0')}`;
 };
 
-// Browsers stack simultaneous cues bottom-up, which reverses reading order. So each time a line
-// appears, a new cue starts holding every line then on screen, top to bottom, until the next line
-// or the end of the scene. A line arriving within MERGE seconds of the cue's start joins that cue
-// instead, so no caption flashes up for a fraction of a second (an eyebrow and its headline arrive
-// together).
-const MERGE = 0.6;
+// The film is silent and shows every word itself, so captions never repeat those words: each scene
+// has one cue describing its picture, held for the whole scene. WebVTT settings pin the cue into a
+// region no text in that scene enters (measured on the frames: nothing on the left half below 860 of
+// 1080, nothing on the end card below 810). Only settings both engines parse are used: Chromium drops
+// a line or position setting that carries an alignment suffix (",end", ",line-left"). The engines
+// still lay the same settings out differently: WebKit puts the cue's top edge at `line` %, Chromium
+// also shifts the box up by `line` % of its own height (and left by `position` % of its width).
+// At line:88% the top edge lands at 950 px in WebKit and about 892 px in Chromium, both clear.
+const PLACES = {
+  left: { line: 88, position: 6, size: 48, align: 'start' },
+  center: { line: 88, position: 50, size: 100, align: 'center' }
+};
+const settings = p => `line:${p.line}% position:${p.position}% size:${p.size}% align:${p.align}`;
 function cueList() {
-  return T.scenes.flatMap(s => {
-    const groups = [];
-    s.lines.forEach((l, i) => {
-      const g = groups[groups.length - 1];
-      if (g && l.at - g.start < MERGE) g.upto = i; else groups.push({ start: l.at, upto: i });
-    });
-    return groups.map((g, k) => ({
-      start: g.start, end: k + 1 < groups.length ? groups[k + 1].start : s.end,
-      text: s.lines.slice(0, g.upto + 1).map(x => x.text).join('\n'), beat: s.beat, scene: s.id
-    }));
-  });
+  return T.scenes.map(s => ({ start: s.start, end: s.end, text: s.caption.text, place: PLACES[s.caption.place], beat: s.beat, scene: s.id }));
 }
 
 function captions() {
@@ -118,7 +128,7 @@ function captions() {
   for (const c of cueList()) {
     const s = T.scenes.find(x => x.id === c.scene);
     if (c.beat !== beat) { beat = c.beat; vtt += `NOTE Beat: ${s.beat} — ${s.title} (${stamp(s.start)} to ${stamp(s.end)})\n\n`; }
-    vtt += `${c.scene}-${++n}\n${stamp(c.start)} --> ${stamp(c.end)}\n${c.text}\n\n`;
+    vtt += `${c.scene}-${++n}\n${stamp(c.start)} --> ${stamp(c.end)} ${settings(c.place)}\n${c.text}\n\n`;
   }
   fs.writeFileSync(path.join(OUT, 'captions.vtt'), vtt);
   let ch = 'WEBVTT\n\n';
@@ -189,11 +199,11 @@ function writeData(stats, cues, contrastRows) {
   const data = {
     fps: T.fps, width: T.width, height: T.height, duration: T.duration, frames: FRAMES, framesInMp4: mp4.frames,
     scenes: T.scenes.map((s, i) => ({ id: s.id, title: s.title, beat: s.beat, start: s.start, end: s.end, thumb: `thumbs/${i + 1}-${s.id}.webp`, lines: s.lines.map(l => l.text) })),
-    cues, captions: cueList().map(({ start, end, text }) => ({ start, end, text })), mp4, webm: probe(path.join(OUT, 'film.webm')),
+    cues, captions: cueList().map(({ start, end, text, place }) => ({ start, end, text, place })), mp4, webm: probe(path.join(OUT, 'film.webm')),
     contrast: contrastRows.map(({ scene, text, px, weight, kind, need, median, p5, encoded, pass }) => ({ scene, text, px, weight, kind, need, median, p5, mp4: encoded && encoded.median, mp4p5: encoded && encoded.p5, pass })),
     reading: { ...T.reading, scenes: read.map(({ scene, length, hold, holdNeeded, pass }) => ({ scene, length, hold, holdNeeded, pass })) },
     posterBytes: size('poster.webp'), thumbBytes: T.scenes.reduce((a, s, i) => a + size(`thumbs/${i + 1}-${s.id}.webp`), 0),
-    masterBytes: fs.statSync(MASTER).size, ...stats, renderedOn: 'Chromium (Playwright), software raster, ' + WORKERS + ' pages'
+    masterBytes: fs.statSync(MASTER).size, ...stats, renderedOn: 'Chromium (Playwright), software raster, a fresh page per frame, ' + WORKERS + ' at a time'
   };
   fs.writeFileSync(path.join(OUT, 'film-data.js'), '/* Generated by source/render.js — do not edit. */\nwindow.FILM = ' + JSON.stringify(data, null, 1) + ';\n');
   const mb = n => `${n} bytes (${(n / 1e6).toFixed(2)} MB)`;
@@ -203,13 +213,14 @@ function writeData(stats, cues, contrastRows) {
 }
 
 (async () => {
-  if (arg[0] === '--verify') return verify(parseInt(arg[1] || '30', 10));
+  if (arg[0] === '--verify') return verify(arg[1] === 'all' ? FRAMES : parseInt(arg[1] || '30', 10));
   let stats = {};
   const prev = path.join(OUT, 'film-data.js');
   if (arg[0] === '--meta') {
     const old = JSON.parse(fs.readFileSync(prev, 'utf8').replace(/^[^]*?window\.FILM = /, '').replace(/;\s*$/, ''));
     const cues = captions();
-    writeData({ captureSeconds: old.captureSeconds, filmHash: old.filmHash, encodeSeconds: old.encodeSeconds }, cues, await contrast());
+    // The frames did not change, so the last --verify result still stands.
+    writeData({ captureSeconds: old.captureSeconds, filmHash: old.filmHash, encodeSeconds: old.encodeSeconds, verified: old.verified }, cues, await contrast());
     return;
   }
   if (arg[0] === '--encode' && fs.existsSync(prev)) {

@@ -60,7 +60,7 @@
     ['Script', `${F.scenes.length} scenes`, `${lineCount} on-screen lines, each one taken from the Lattice site. One file drives scenes, captions and chapters.`],
     ['Timing', `${secs(F.mp4.duration)}`, `Paced for reading at ${R.wordsPerSecond * 60} words a minute. Every scene holds at least ${Math.min(...holds).toFixed(1)} s after its last line is read; the end card holds ${endHold.toFixed(1)} s, complete.`],
     ['Storyboard', `${F.scenes.length} key frames`, `Thumbnails pulled from the lossless master: ${kb(F.thumbBytes)} in total, plus a ${kb(F.posterBytes)} poster.`],
-    ['Scenes', 'HTML · CSS · SVG', 'The site’s colours, Rubik, grain and Phosphor icons. No CSS animation: each frame is a pure function of time.'],
+    ['Scenes', 'HTML · CSS · SVG', 'The site’s colours, Rubik, grain and Phosphor icons. No CSS animation and no clock: each frame is drawn from its time alone, in a page of its own.'],
     ['Render', `${F.mp4.frames} frames`, `${F.mp4.width}×${F.mp4.height} at ${F.mp4.fps} fps, captured in Chromium in ${Math.round(F.captureSeconds)} s.${F.verified ? ` ${F.verified.identical} of ${F.verified.sampled} re-captured frames hash identically.` : ''}`],
     ['Encode', `${mb(F.mp4.bytes)}`, `MP4 (H.264, ${F.mp4.pixFmt}, Rec. 709 matrix, faststart). The VP9 WebM is ${mb(F.webm.bytes)}. Both from a lossless master; ${F.cues} caption cues.`]
   ];
@@ -86,7 +86,8 @@
     ]));
   }
 
-  // Captions: on by default, one toggle, kept in sync with the browser's own caption menu.
+  // Captions: on by default, one toggle, kept in sync with the browser's own caption menu. The film is
+  // silent and shows every word itself, so the captions describe the picture instead of repeating it.
   // Captions come from captions.vtt. An opaque-origin sandbox treats that file as cross-origin and
   // refuses it, so there the same cues are built from film-data.js, which render.js wrote from the
   // same script.
@@ -94,7 +95,12 @@
   function useFallback() {
     if (fallback || !window.VTTCue || !F.captions) return;
     fallback = video.addTextTrack('captions', 'English', 'en');
-    for (const c of F.captions) fallback.addCue(new VTTCue(c.start, c.end, c.text));
+    for (const c of F.captions) {
+      // Same placement as captions.vtt: a region of the frame that no on-screen text enters.
+      const q = Object.assign(new VTTCue(c.start, c.end, c.text), { snapToLines: false, line: c.place.line,
+        position: c.place.position, size: c.place.size, align: c.place.align });
+      fallback.addCue(q);
+    }
     if (trackEl) trackEl.track.mode = 'disabled';
     setCaptions(cc.getAttribute('aria-pressed') !== 'false');
   }

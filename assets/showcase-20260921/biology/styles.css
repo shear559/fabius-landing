@@ -159,3 +159,4 @@ svg .leader { stroke: var(--ink-2); stroke-width: 1; }
 .power-t { margin: 0; }
 .power-t caption { text-align: left; font-weight: 600; padding: 6px 8px 2px; font-size: 0.85rem; }
 @media (max-width: 480px) { .power-t th, .power-t td { padding: 4px 5px; } .power-t thead th { min-width: 0; } }
+.nw { white-space: nowrap; }

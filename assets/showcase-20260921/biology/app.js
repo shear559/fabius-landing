@@ -89,8 +89,8 @@
   // ------------------------------------------------------------ tooltip
   var tip = $("tip");
   function showTip(g, clientX, clientY) {
-    tip.innerHTML = "<b>" + g.gene + "</b>" + (g.sig ? " · " + (g.lfc > 0 ? "up" : "down") + " at FDR 5 %" : "") +
-      "<br>log₂FC " + f2(g.lfc) + " (95 % CI " + f2(g.lfc - tq * g.lfcSE) + " to " + f2(g.lfc + tq * g.lfcSE) + ")" +
+    tip.innerHTML = "<b>" + g.gene + "</b>" + (g.sig ? " · " + (g.lfc > 0 ? "up" : "down") + " at FDR 5\u00a0%" : "") +
+      "<br>log₂FC " + f2(g.lfc) + " (95\u00a0% CI " + f2(g.lfc - tq * g.lfcSE) + " to " + f2(g.lfc + tq * g.lfcSE) + ")" +
       "<br>mean count " + fnum(g.baseMean) + " · p " + fmtP(g.pvalue) + " · adj. p " + fmtP(g.padj);
     tip.hidden = false;
     var r = tip.getBoundingClientRect();
@@ -280,7 +280,7 @@
   }
   function pctRange(r) {
     var lo = Math.round(100 * r[0]), hi = Math.round(100 * r[1]);
-    return lo === hi ? lo + " %" : lo + "–" + hi + " %";
+    return lo === hi ? lo + "\u00a0%" : lo + "–" + hi + "\u00a0%";
   }
   function header() {
     var n = S.n_sig;
@@ -288,18 +288,18 @@
     var ciNear = Math.min.apply(null, sig.map(function (g) { return Math.abs(g.lfc) - tq * g.lfcSE; }));
     var shr = sig.map(function (g) { return Math.abs(g.lfcShrunk); });
     var p2 = powerAt(2), p4 = powerAt(4);
-    $("lede").innerHTML = "At a false discovery rate of 5 %, <strong>" + n + " of " + S.n_tested.toLocaleString("en") +
+    $("lede").innerHTML = "At a false discovery rate of 5\u00a0%, <strong>" + n + " of " + S.n_tested.toLocaleString("en") +
       " tested genes</strong> change with the treatment: " + S.n_up + " up and " + S.n_down + " down. Their estimated changes are " +
-      Math.pow(2, S.abs_lfc_sig_range[0]).toFixed(1) + "- to " + Math.pow(2, S.abs_lfc_sig_range[1]).toFixed(1) + "-fold, and every 95 % interval excludes changes smaller than " +
+      Math.pow(2, S.abs_lfc_sig_range[0]).toFixed(1) + "- to " + Math.pow(2, S.abs_lfc_sig_range[1]).toFixed(1) + "-fold, and every 95\u00a0% interval excludes changes smaller than " +
       Math.pow(2, ciNear).toFixed(1) + "-fold." +
       (p2 ? " <strong>The test is strict:</strong> in simulations of this design it finds only " + pctRange(p4) + " of true 4-fold changes and " + pctRange(p2) +
         " of true 2-fold changes. Read the " + n + " as the clearest responders, not the whole response." : "");
     var k = [
-      ["Significant genes (FDR 5 %)", n, S.n_up + " up · " + S.n_down + " down"],
+      ["Significant genes (FDR 5\u00a0%)", n, S.n_up + " up · " + S.n_down + " down"],
       ["Median |log₂FC| of hits", S.abs_lfc_sig_median.toFixed(2), "≈ " + Math.pow(2, S.abs_lfc_sig_median).toFixed(1) + "-fold; shrunken " +
         Math.pow(2, Math.min.apply(null, shr)).toFixed(1) + "–" + Math.pow(2, Math.max.apply(null, shr)).toFixed(1) + "-fold"],
       ["True 4-fold changes detected", p4 ? pctRange(p4) : "–", p2 ? "2-fold: " + pctRange(p2) + " (simulated)" : ""],
-      ["Genes with a run effect", S.run_effect.n_run_fdr05, "at FDR 5 % (low power at 3 df)"],
+      ["Genes with a run effect", S.run_effect.n_run_fdr05, "at FDR 5\u00a0% (low power at 3 df)"],
       ["Outlier counts (Cook's)", S.cooks.n_genes_flagged, "genes flagged; lenient cut-off at 3 df"],
       ["Test degrees of freedom", S.test.df.toFixed(1), S.test.residual_df + " residual + " + S.test.prior_df.toFixed(1) + " borrowed"]
     ];
@@ -319,9 +319,9 @@
     var sc = S.power.slice().sort(function (a, b) { return a.pi - b.pi; });
     var html = "<h2 id=\"h-sens\">How many real changes would this test catch?</h2>" +
       "<p>Share of simulated true changes found at FDR 5&nbsp;%, by size. The bar spans two scenarios: " +
-      sc.map(function (x) { return Math.round(100 * x.pi) + " % of genes changed (" + x.mean_called.toFixed(0) + " genes called per data set)"; }).join(" and ") +
+      sc.map(function (x) { return Math.round(100 * x.pi) + "\u00a0% of genes changed (" + x.mean_called.toFixed(0) + " genes called per data set)"; }).join(" and ") +
       ". The real data gave " + S.n_sig + ", between the two.</p>" +
-      '<table class="sens-t"><caption class="sr-only">Share of true changes detected, by fold change</caption><thead><tr><th scope="col">True change</th><th scope="col">Detected</th><th scope="col"><span class="sr-only">Range bar, 0 to 100 %</span></th></tr></thead><tbody>' +
+      '<table class="sens-t"><caption class="sr-only">Share of true changes detected, by fold change</caption><thead><tr><th scope="col">True change</th><th scope="col">Detected</th><th scope="col"><span class="sr-only">Range bar, 0 to 100\u00a0%</span></th></tr></thead><tbody>' +
       sc[0].folds.map(function (f) {
         var r = powerAt(f.fold), lo = Math.round(100 * r[0]), hi = Math.round(100 * r[1]);
         return "<tr><th scope=\"row\">" + f.fold + "-fold</th><td>" + pctRange(r) + "</td><td class=\"bar-cell\" aria-hidden=\"true\"><span class=\"track\"><span class=\"rng\" style=\"left:" + lo + "%;width:" + Math.max(1, hi - lo) + "%\"></span></span></td></tr>";
@@ -378,12 +378,12 @@
     lg.textContent = "● run A   □ run B   — group mean (log scale)";
 
     var ci0 = g.lfc - tq * g.lfcSE, ci1 = g.lfc + tq * g.lfcSE;
-    var dir = !g.sig ? "not significant at FDR 5 %" : g.lfc > 0 ? "higher in treated" : "lower in treated";
+    var dir = !g.sig ? "not significant at FDR 5\u00a0%" : g.lfc > 0 ? "higher in treated" : "lower in treated";
     var cls = !g.sig ? "" : g.lfc > 0 ? "up-t" : "down-t";
     var html = '<p class="gene-title">' + g.gene + ' <span class="badge ' + cls + '">' + dir + "</span></p>" +
       '<dl class="stat-list">' +
       "<dt>log₂ fold change</dt><dd>" + f2(g.lfc) + " (" + fold(g.lfc) + ")</dd>" +
-      "<dt>95 % interval</dt><dd>" + f2(ci0) + " to " + f2(ci1) + " (" + fold(ci0) + " to " + fold(ci1) + ")</dd>" +
+      "<dt>95\u00a0% interval</dt><dd>" + f2(ci0) + " to " + f2(ci1) + " (" + fold(ci0) + " to " + fold(ci1) + ")</dd>" +
       "<dt>Shrunken log₂FC</dt><dd>" + f2(g.lfcShrunk) + "</dd>" +
       "<dt>p / adjusted p</dt><dd>" + fmtP(g.pvalue) + " / " + fmtP(g.padj) + "</dd>" +
       "<dt>Mean normalised count</dt><dd>" + fnum(g.baseMean) + "</dd>" +
@@ -409,7 +409,7 @@
     { k: "gene", t: "Gene", fmt: null },
     { k: "baseMean", t: "Mean count", fmt: function (g) { return fnum(g.baseMean); } },
     { k: "lfc", t: "log₂FC", fmt: function (g) { return '<span class="' + (g.sig ? g.cls + "-t" : "") + '">' + f2(g.lfc) + "</span>"; } },
-    { k: "ci", t: "95 % CI", sort: false, fmt: function (g) { return f2(g.lfc - tq * g.lfcSE) + " to " + f2(g.lfc + tq * g.lfcSE); } },
+    { k: "ci", t: "95\u00a0% CI", sort: false, fmt: function (g) { return f2(g.lfc - tq * g.lfcSE) + " to " + f2(g.lfc + tq * g.lfcSE); } },
     { k: "lfcShrunk", t: "Shrunken", fmt: function (g) { return f2(g.lfcShrunk); } },
     { k: "pvalue", t: "p", fmt: function (g) { return fmtP(g.pvalue); } },
     { k: "padj", t: "Adj. p", fmt: function (g) { return fmtP(g.padj); } }
@@ -519,7 +519,7 @@
       Math.round(ve[0] * 100) + " percent of variance, PC2 " + Math.round(ve[1] * 100) + " percent. " +
       S.samples.map(function (s, j) { return s + " at PC1 " + sc[j][0].toFixed(1) + ", PC2 " + sc[j][1].toFixed(1); }).join("; ") }, $("pca"));
     axes(root, x, y, W, H, m, niceTicks(xd[0], xd[1], 5), niceTicks(yd[0], yd[1], 5),
-      "PC1 (" + Math.round(ve[0] * 100) + " % of variance)", "PC2 (" + Math.round(ve[1] * 100) + " %)");
+      "PC1 (" + Math.round(ve[0] * 100) + "\u00a0% of variance)", "PC2 (" + Math.round(ve[1] * 100) + "\u00a0%)");
     var placed = [];
     S.samples.forEach(function (s, j) {
       marker(root, x(sc[j][0]), y(sc[j][1]), S.runs[j], cCol[S.conditions[j]], 6);
@@ -601,7 +601,7 @@
       Math.sqrt(S.design.var_inflation_condition).toFixed(2) + ". But the separation rests on two samples, ctrl_3 (the only control in run B) and trt_1 (the only treated sample in run A). " +
       "Leaving out ctrl_3, the fold changes agree with the full analysis only at r = " + loo.ctrl_3.lfc_r.toFixed(2) + " (" + loo.ctrl_3.n_sig + " significant genes); leaving out trt_1, r = " + loo.trt_1.lfc_r.toFixed(2) +
       " (" + loo.trt_1.n_sig + " genes). Leaving out any other sample, r = " + looOthers().lo.toFixed(2) + "–" + looOthers().hi.toFixed(2) + ".</p>" +
-      "<p>In this data the run effect looks small: no gene has a run effect at FDR 5 %, though with 3 residual df that test can only catch large run effects (median |log₂ run effect| " + S.run_effect.median_abs_run_lfc.toFixed(2) +
+      "<p>In this data the run effect looks small: no gene has a run effect at FDR 5\u00a0%, though with 3 residual df that test can only catch large run effects (median |log₂ run effect| " + S.run_effect.median_abs_run_lfc.toFixed(2) +
       ", which is within the noise of 3 residual degrees of freedom), and the PCA separates samples by condition on PC1, not by run. Ignoring run gives " + sens.no_run_n_sig +
       " significant genes, " + sens.no_run_overlap + " of them shared with the main list; the main analysis keeps run in the model because the design calls for it. " +
       "Whether run and treatment <em>interact</em> cannot be tested usefully: that model leaves " + S.design.interaction_residual_df + " residual degrees of freedom.</p>";
@@ -623,19 +623,19 @@
     if (!S.power || !S.power.length) return "";
     var sc = S.power.slice().sort(function (a, b) { return b.pi - a.pi; });
     var bands = sc[0].folds[0].by_mean.map(function (b) { var k = function (v) { return v >= 1000 ? v / 1000 + "k" : String(v); };
-      return "mean " + (b.hi === null ? "≥ " + k(b.lo) : b.lo === 0 ? "&lt; " + k(b.hi) : k(b.lo) + "–" + k(b.hi)); });
+      return "mean " + (b.hi === null ? "≥\u00a0" + k(b.lo) : b.lo === 0 ? "&lt;\u00a0" + k(b.hi) : k(b.lo) + "–" + k(b.hi)); });
     var tables = sc.map(function (x) {
-      return '<div class="table-wrap power-wrap" tabindex="0" role="region" aria-label="Simulated detection, ' + Math.round(100 * x.pi) + ' % of genes changed"><table class="power-t"><caption>' +
-        Math.round(100 * x.pi) + " % of genes changed</caption><thead><tr><th scope=\"col\">True change</th><th scope=\"col\">All genes</th>" +
+      return '<div class="table-wrap power-wrap" tabindex="0" role="region" aria-label="Simulated detection, ' + Math.round(100 * x.pi) + '\u00a0% of genes changed"><table class="power-t"><caption>' +
+        Math.round(100 * x.pi) + "\u00a0% of genes changed</caption><thead><tr><th scope=\"col\">True change</th><th scope=\"col\">All genes</th>" +
         bands.map(function (b) { return "<th scope=\"col\">" + b + "</th>"; }).join("") + "</tr></thead><tbody>" +
         x.folds.map(function (f) {
-          return "<tr><th scope=\"row\">" + f.fold + "-fold</th><td>" + Math.round(100 * f.power) + " %</td>" +
-            f.by_mean.map(function (b) { return "<td>" + Math.round(100 * b.power) + " %" + (b.n < 30 ? "*" : "") + "</td>"; }).join("") + "</tr>";
+          return "<tr><th scope=\"row\">" + f.fold + "-fold</th><td>" + Math.round(100 * f.power) + "\u00a0%</td>" +
+            f.by_mean.map(function (b) { return "<td>" + Math.round(100 * b.power) + "\u00a0%" + (b.n < 30 ? "*" : "") + "</td>"; }).join("") + "</tr>";
         }).join("") + "</tbody></table></div>";
     }).join("");
     return "<li><strong>How conservative is the test?</strong> The same simulation was repeated with every true change set to one of " +
       sc[0].folds.map(function (f) { return f.fold; }).join(", ") + "-fold (equal shares, random direction, run effect included), and with two shares of changed genes, " +
-      sc.map(function (x) { return Math.round(100 * x.pi) + " % (" + x.n_rep + " data sets, on average " + x.mean_called.toFixed(1) + " genes called, realised FDR " + Math.round(100 * x.fdr) + " %)"; }).join(" and ") +
+      sc.map(function (x) { return Math.round(100 * x.pi) + "\u00a0% (" + x.n_rep + " data sets, on average " + x.mean_called.toFixed(1) + " genes called, realised FDR " + Math.round(100 * x.fdr) + "\u00a0%)"; }).join(" and ") +
       ", because how many genes change affects how strict Benjamini–Hochberg is. The real list of " + S.n_sig + " falls between the two. A gene counts as detected only if it is called with the right direction. " +
       "Each cell is the share detected; each fold size has " + Math.min.apply(null, sc.map(function (x) { return Math.min.apply(null, x.folds.map(function (f) { return f.n; })); })) + "–" +
       Math.max.apply(null, sc.map(function (x) { return Math.max.apply(null, x.folds.map(function (f) { return f.n; })); })) + " true changes per scenario (* fewer than 30 in that mean-count band, so rough). Mean is the mean normalised count; the 11 listed genes have means of 139–4,978." +
@@ -645,11 +645,11 @@
   function methods() {
     var st = S.selftest;
     var sens = S.sensitivity;
-    var simTxt = st ? "On data simulated from this experiment's own size factors, means, dispersion trend and a run effect (" + st.length + " repeats, 10 % true changes), this procedure gave a realised FDR of " +
+    var simTxt = st ? "On data simulated from this experiment's own size factors, means, dispersion trend and a run effect (" + st.length + " repeats, 10\u00a0% true changes), this procedure gave a realised FDR of " +
       Math.round(100 * Math.min.apply(null, st.map(function (r) { return r.fdr; }))) + "–" + Math.round(100 * Math.max.apply(null, st.map(function (r) { return r.fdr; }))) +
-      " % and found " + Math.round(100 * Math.min.apply(null, st.map(function (r) { return r.power; }))) + "–" + Math.round(100 * Math.max.apply(null, st.map(function (r) { return r.power; }))) +
-      " % of the truly changed genes (true changes drawn from 1.4- to 5.7-fold). The usual normal reference would have given a realised FDR of " + Math.round(100 * Math.min.apply(null, st.map(function (r) { return r.fdr_normal_ref; }))) + "–" +
-      Math.round(100 * Math.max.apply(null, st.map(function (r) { return r.fdr_normal_ref; }))) + " %, well above the 5 % promised." : "";
+      "\u00a0% and found " + Math.round(100 * Math.min.apply(null, st.map(function (r) { return r.power; }))) + "–" + Math.round(100 * Math.max.apply(null, st.map(function (r) { return r.power; }))) +
+      "\u00a0% of the truly changed genes (true changes drawn from 1.4- to 5.7-fold). The usual normal reference would have given a realised FDR of " + Math.round(100 * Math.min.apply(null, st.map(function (r) { return r.fdr_normal_ref; }))) + "–" +
+      Math.round(100 * Math.max.apply(null, st.map(function (r) { return r.fdr_normal_ref; }))) + "\u00a0%, well above the 5\u00a0% promised." : "";
     $("methods").innerHTML =
       "<h3>What was done</h3><ol>" +
       "<li><strong>Input.</strong> Raw integer counts for " + S.n_genes.toLocaleString("en") + " genes in 6 samples. " + S.n_filtered + " genes with fewer than 10 reads in total were not tested.</li>" +
@@ -660,16 +660,16 @@
       "<li><strong>Dispersion.</strong> Gene-wise estimates by Cox–Reid adjusted profile likelihood; a trend α = a₀ + a₁/mean fitted to them; then empirical-Bayes shrinkage toward the trend (prior variance of log dispersion " + S.dispersion.sigma2_prior.toFixed(2) +
       ", which is DESeq2's floor: the observed spread was no larger than sampling noise with 3 residual df would produce). " + S.dispersion.n_disp_outliers + " genes whose own estimate sits far above the trend keep it.</li>" +
       "<li><strong>Test.</strong> Wald statistic for the condition coefficient, compared with a t distribution on " + S.test.df.toFixed(1) + " degrees of freedom (" + S.test.residual_df + " residual + " + S.test.prior_df.toFixed(1) +
-      " contributed by the dispersion prior), then Benjamini–Hochberg at 5 %. 95 % intervals use the same t quantile (" + S.test.ci_quantile.toFixed(2) + ").</li>" +
+      " contributed by the dispersion prior), then Benjamini–Hochberg at 5\u00a0%. 95\u00a0% intervals use the same t quantile (" + S.test.ci_quantile.toFixed(2) + ").</li>" +
       "<li><strong>Why not the standard normal reference?</strong> " + simTxt + " With it, " + sens.normal_n_sig + " genes would be called; all " + sens.normal_overlap + " of the main list are among them. Using only the 3 residual df calls " + sens.t3_n_sig + " genes; that ignores the information shared across genes.</li>" +
       powerItem() +
-      "<li><strong>Shrunken fold changes.</strong> A normal prior on the log fold change (width set from the upper 5 % of estimates, SD " + S.lfc_prior_sd.toFixed(2) + " log₂ units) gives a more conservative point estimate for ranking and plotting. Tests and intervals use the unshrunken estimate.</li>" +
-      "<li><strong>Outliers.</strong> Cook's distance per gene and sample against the F(3, 3) 99 % cut-off (" + S.cooks.cutoff.toFixed(1) + "): " + S.cooks.n_genes_flagged + " genes flagged. With 3 residual df this cut-off is lenient and catches only extreme single counts. At sample level, PCA and sample distances show no sample standing apart; ctrl_1 and ctrl_2 differ most along PC2 (" + Math.round(S.pca.var_explained[1] * 100) + " % of variance), which is consistent with replicate spread rather than a run effect (both are in run A).</li>" +
+      "<li><strong>Shrunken fold changes.</strong> A normal prior on the log fold change (width set from the upper 5\u00a0% of estimates, SD " + S.lfc_prior_sd.toFixed(2) + " log₂ units) gives a more conservative point estimate for ranking and plotting. Tests and intervals use the unshrunken estimate.</li>" +
+      "<li><strong>Outliers.</strong> Cook's distance per gene and sample against the F(3, 3) 99\u00a0% cut-off (" + S.cooks.cutoff.toFixed(1) + "): " + S.cooks.n_genes_flagged + " genes flagged. With 3 residual df this cut-off is lenient and catches only extreme single counts. At sample level, PCA and sample distances show no sample standing apart; ctrl_1 and ctrl_2 differ most along PC2 (" + Math.round(S.pca.var_explained[1] * 100) + "\u00a0% of variance), which is consistent with replicate spread rather than a run effect (both are in run A).</li>" +
       "<li><strong>Implementation.</strong> The DESeq2 procedure was re-implemented in Python (numpy, scipy) because R and DESeq2 were not available here; it was not checked against DESeq2 itself.</li></ol>" +
       "<h3>What this design cannot tell you</h3><ul>" +
       "<li><strong>Absent from the list is not unchanged.</strong> With 3 replicates and a median dispersion of " + S.dispersion.median_disp.toFixed(2) + ", a true 2-fold change is almost never detected (" + pctRange(powerAt(2)) + " in simulation) and a true 4-fold change is missed more often than it is found (" + pctRange(powerAt(4)) + " detected). The smallest estimated change in the list is " + Math.pow(2, S.abs_lfc_sig_range[0]).toFixed(1) + "-fold. The list is a floor, not the extent of the response.</li>" +
       "<li><strong>Fold changes of the listed genes are probably overestimated.</strong> When power is this low, the genes that pass tend to be those whose noise happened to push the estimate outward (the winner's curse). The shrunken estimates, and the lower ends of the intervals, are the safer guides to size.</li>" +
-      "<li><strong>A listed gene can still be a false positive.</strong> FDR 5 % bounds the expected share of false positives in the list: for " + S.n_sig + " genes, fewer than one on average. " + (st ? "In simulation the realised FDR was " + Math.round(100 * Math.min.apply(null, st.map(function (r) { return r.fdr; }))) + "–" + Math.round(100 * Math.max.apply(null, st.map(function (r) { return r.fdr; }))) + " %, " : "") + "but that assumes the simulation matches reality, and it cannot say which gene, if any, is false.</li>" +
+      "<li><strong>A listed gene can still be a false positive.</strong> FDR 5\u00a0% bounds the expected share of false positives in the list: for " + S.n_sig + " genes, fewer than one on average. " + (st ? "In simulation the realised FDR was " + Math.round(100 * Math.min.apply(null, st.map(function (r) { return r.fdr; }))) + "–" + Math.round(100 * Math.max.apply(null, st.map(function (r) { return r.fdr; }))) + "\u00a0%, " : "") + "but that assumes the simulation matches reality, and it cannot say which gene, if any, is false.</li>" +
       "<li><strong>The list is fragile.</strong> Leaving out any one sample (2 residual df instead of 3) shrinks the list to " + looRange() + " genes. Leaving out ctrl_3 or trt_1, the two samples that break the link between run and treatment, also scrambles the fold changes (r = " +
       S.sensitivity.leave_one_out.ctrl_3.lfc_r.toFixed(2) + " and " + S.sensitivity.leave_one_out.trt_1.lfc_r.toFixed(2) + " with the full analysis, against " + looOthers().lo.toFixed(2) + "–" + looOthers().hi.toFixed(2) + " for the others). More replicates, balanced across runs, would fix this.</li>" +
       "<li><strong>One dose, one time point, one culture set-up.</strong> Nothing here says whether responses are direct or downstream, transient or lasting, or dose-dependent, or whether they hold in other strains or conditions.</li>" +
@@ -716,6 +716,39 @@
     var nw = window.innerWidth <= 600;
     if (nw !== lastW) { lastW = nw; charts.forEach(function (c) { c.relabel(); }); }
   });
+  // keep numbers with their units: no line break inside "5 %", "3 df", "r = 0.6", "FDR 5", "0–1 %", "2.9–5.5-fold"
+  var GLUE = [[/(\d) (?=%|s\b|df\b|px\b)/g, "$1\u00a0"], [/\bFDR (?=\d)/g, "FDR\u00a0"],
+    [/\b([rn]) (?=[=<>≤≥])/g, "$1\u00a0"], [/([=<>≤≥≈]) (?=[−+\d])/g, "$1\u00a0"]];
+  var WRAP = /[−+×÷]?\d[\d.,]*(?:\u00a0%)?(?:–[−+×÷]?\d[\d.,]*(?:\u00a0%)?)?(?:-fold)?/g;
+  function glueText(n) {
+    var el = n.parentNode;
+    if (!el || el.nodeType !== 1 || el.closest("svg, script, style, option, textarea, .nw")) return;
+    var t = n.data;
+    GLUE.forEach(function (r) { t = t.replace(r[0], r[1]); });
+    var frag = null, last = 0, m;
+    WRAP.lastIndex = 0;
+    while ((m = WRAP.exec(t))) {
+      if (!m[0]) { WRAP.lastIndex++; continue; }
+      if (!/–|-fold/.test(m[0])) continue; // only ranges and n-fold can break inside
+      frag = frag || document.createDocumentFragment();
+      frag.appendChild(document.createTextNode(t.slice(last, m.index)));
+      var sp = document.createElement("span"); sp.className = "nw"; sp.textContent = m[0];
+      frag.appendChild(sp); last = m.index + m[0].length;
+    }
+    if (frag) { frag.appendChild(document.createTextNode(t.slice(last))); el.replaceChild(frag, n); }
+    else if (t !== n.data) n.data = t;
+  }
+  function glue(root) {
+    if (root.nodeType === 3) return glueText(root);
+    if (root.nodeType !== 1) return;
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT), list = [], n;
+    while ((n = w.nextNode())) list.push(n);
+    list.forEach(glueText);
+  }
+  glue(document.body);
+  new MutationObserver(function (ms) {
+    ms.forEach(function (m) { if (m.type === "characterData") glueText(m.target); else m.addedNodes.forEach(glue); });
+  }).observe(document.body, { childList: true, subtree: true, characterData: true });
   window.addEventListener("scroll", function () {
     // keep the keyboard tooltip attached to its point; pointer tooltips just close
     var c = charts.filter(function (ch) { return ch.root === document.activeElement; })[0];

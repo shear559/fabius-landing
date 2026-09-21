@@ -3,7 +3,8 @@
 
 Reruns end to end from counts.csv + metadata.csv:
     python3 product/analysis.py                # analysis + simulation self-test and power (~1.5 min)
-                                               # -> out/results.csv, out/stats.json, product/data.js
+                                               # -> out/results.csv, out/stats.json, product/data.js,
+                                               #    out/analysis-output.txt (copy of the console log)
     python3 product/analysis.py --no-selftest  # skip the simulation (known-truth FDR / power check)
 
 Method: a DESeq2-style negative-binomial GLM written in numpy/scipy (DESeq2 / pydeseq2
@@ -556,5 +557,27 @@ def main():
     print("wrote out/results.csv, out/stats.json, product/data.js")
 
 
+class Tee:
+    """Echo stdout into out/analysis-output.txt so the rerun leaves its own log."""
+    def __init__(self, *streams):
+        self.streams = streams
+
+    def write(self, s):
+        for st in self.streams:
+            st.write(s)
+
+    def flush(self):
+        for st in self.streams:
+            st.flush()
+
+
 if __name__ == "__main__":
-    main()
+    os.makedirs(os.path.join(ROOT, "out"), exist_ok=True)
+    with open(os.path.join(ROOT, "out", "analysis-output.txt"), "w") as log:
+        sys.stdout = Tee(sys.__stdout__, log)
+        try:
+            print("$ python3 product/analysis.py" + "".join(" " + a for a in sys.argv[1:]))
+            main()
+            print("wrote out/analysis-output.txt")
+        finally:
+            sys.stdout = sys.__stdout__

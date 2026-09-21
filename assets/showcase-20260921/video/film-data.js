@@ -88,82 +88,73 @@ window.FILM = {
    ]
   }
  ],
- "cues": 15,
+ "cues": 6,
  "captions": [
   {
-   "start": 0.4,
-   "end": 2.4,
-   "text": "From scattered to connected\nA thought, a passage, a source."
-  },
-  {
-   "start": 2.4,
+   "start": 0,
    "end": 7.2,
-   "text": "From scattered to connected\nA thought, a passage, a source.\nGive it a place before it disappears."
+   "text": "No sound. Loose notes drift apart.",
+   "place": {
+    "line": 88,
+    "position": 6,
+    "size": 48,
+    "align": "start"
+   }
   },
   {
-   "start": 7.6,
-   "end": 8.8,
-   "text": "Lattice\nCollect the pieces."
-  },
-  {
-   "start": 8.8,
-   "end": 9.8,
-   "text": "Lattice\nCollect the pieces.\nFind the connection."
-  },
-  {
-   "start": 9.8,
+   "start": 7.2,
    "end": 14.6,
-   "text": "Lattice\nCollect the pieces.\nFind the connection.\nA notebook for the thought that becomes something bigger."
+   "text": "A note opens in the Lattice app.",
+   "place": {
+    "line": 88,
+    "position": 6,
+    "size": 48,
+    "align": "start"
+   }
   },
   {
-   "start": 15,
-   "end": 16.3,
-   "text": "01 / Capture\nCapture the spark."
-  },
-  {
-   "start": 16.3,
+   "start": 14.6,
    "end": 20.2,
-   "text": "01 / Capture\nCapture the spark.\nCollect a note and its source."
+   "text": "The note links back to its source.",
+   "place": {
+    "line": 88,
+    "position": 6,
+    "size": 48,
+    "align": "start"
+   }
   },
   {
-   "start": 20.6,
-   "end": 21.9,
-   "text": "02 / Connect\nSee the relationship."
-  },
-  {
-   "start": 21.9,
+   "start": 20.2,
    "end": 25.8,
-   "text": "02 / Connect\nSee the relationship.\nKeep related notes in view."
+   "text": "Lines join one idea to four notes.",
+   "place": {
+    "line": 88,
+    "position": 6,
+    "size": 48,
+    "align": "start"
+   }
   },
   {
-   "start": 26.2,
-   "end": 27.5,
-   "text": "03 / Export\nLet the idea travel."
-  },
-  {
-   "start": 27.5,
+   "start": 25.8,
    "end": 31.4,
-   "text": "03 / Export\nLet the idea travel.\nExport clean Markdown."
+   "text": "The note turns into a Markdown file.",
+   "place": {
+    "line": 88,
+    "position": 6,
+    "size": 48,
+    "align": "start"
+   }
   },
   {
-   "start": 32.2,
-   "end": 33,
-   "text": "lattice"
-  },
-  {
-   "start": 33,
-   "end": 34.5,
-   "text": "lattice\nMake room for the connection."
-  },
-  {
-   "start": 34.5,
-   "end": 36,
-   "text": "lattice\nMake room for the connection.\nLocal-first. Your notes. Your next idea."
-  },
-  {
-   "start": 36,
+   "start": 31.4,
    "end": 39.5,
-   "text": "lattice\nMake room for the connection.\nLocal-first. Your notes. Your next idea.\nA fictional product demonstration."
+   "text": "The Lattice mark draws on green.",
+   "place": {
+    "line": 88,
+    "position": 50,
+    "size": 100,
+    "align": "center"
+   }
   }
  ],
  "mp4": {
@@ -174,7 +165,7 @@ window.FILM = {
   "height": 1080,
   "fps": 30,
   "frames": 1185,
-  "bytes": 5329134,
+  "bytes": 5330872,
   "duration": 39.5
  },
  "webm": {
@@ -185,7 +176,7 @@ window.FILM = {
   "height": 1080,
   "fps": 30,
   "frames": 1185,
-  "bytes": 5875761,
+  "bytes": 5951817,
   "duration": 39.5
  },
  "contrast": [
@@ -341,7 +332,7 @@ window.FILM = {
    "need": 3,
    "median": 14.14,
    "p5": 14.14,
-   "mp4": 14.42,
+   "mp4": 14.4,
    "mp4p5": 13.67,
    "pass": true
   },
@@ -355,7 +346,7 @@ window.FILM = {
    "median": 7.71,
    "p5": 5.89,
    "mp4": 7.74,
-   "mp4p5": 5.98,
+   "mp4p5": 5.95,
    "pass": true
   },
   {
@@ -503,10 +494,13 @@ window.FILM = {
  },
  "posterBytes": 77272,
  "thumbBytes": 65254,
- "masterBytes": 292300691,
- "captureSeconds": 309.3,
- "filmHash": "32812411e74a5b027bc0333ca5ed9f376ebbe06d1ea14ce134b0cd5ae4202608",
- "encodeSeconds": 184.8,
- "renderedOn": "Chromium (Playwright), software raster, 8 pages",
- "verified": {"identical":29,"sampled":30}
+ "masterBytes": 292299077,
+ "captureSeconds": 519.7,
+ "filmHash": "862831ce09d4efd0f91a34856fd0a253cee1348767602ee8837c46d1172123f5",
+ "encodeSeconds": 224.4,
+ "verified": {
+  "identical": 1185,
+  "sampled": 1185
+ },
+ "renderedOn": "Chromium (Playwright), software raster, a fresh page per frame, 8 at a time"
 };

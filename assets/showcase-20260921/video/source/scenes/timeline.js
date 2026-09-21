@@ -1,5 +1,7 @@
 /* The film's script: one source for the scenes, the captions and the chapters.
-   Every word below is taken from the Lattice website (lattice/index.html). Times are seconds. */
+   Every on-screen word below is taken from the Lattice website (lattice/index.html). Times are seconds.
+   `caption` is not on screen: the film is silent and shows every word itself, so the caption track
+   describes the picture instead, in a region of the frame that no text in that scene ever enters. */
 (function (root) {
   const TIMELINE = {
     fps: 30,
@@ -16,6 +18,7 @@
     scenes: [
       {
         id: 'scatter', title: 'Scattered', beat: 'The problem', start: 0, end: 7.2, thumb: 5.5,
+        caption: { text: 'No sound. Loose notes drift apart.', place: 'left' },
         lines: [
           { role: 'eyebrow', text: 'From scattered to connected', at: 0.4 },
           { role: 'title', text: 'A thought, a passage, a source.', at: 0.8 },
@@ -24,6 +27,7 @@
       },
       {
         id: 'notebook', title: 'A notebook', beat: 'What Lattice does', start: 7.2, end: 14.6, thumb: 12.6,
+        caption: { text: 'A note opens in the Lattice app.', place: 'left' },
         lines: [
           { role: 'eyebrow', text: 'Lattice', at: 7.6 },
           { role: 'title', text: 'Collect the pieces.', at: 7.9 },
@@ -33,6 +37,7 @@
       },
       {
         id: 'capture', title: 'Capture the spark', beat: 'Feature 01', start: 14.6, end: 20.2, thumb: 18.9,
+        caption: { text: 'The note links back to its source.', place: 'left' },
         lines: [
           { role: 'eyebrow', text: '01 / Capture', at: 15.0 },
           { role: 'title', text: 'Capture the spark.', at: 15.3 },
@@ -41,6 +46,7 @@
       },
       {
         id: 'connect', title: 'See the relationship', beat: 'Feature 02', start: 20.2, end: 25.8, thumb: 24.5,
+        caption: { text: 'Lines join one idea to four notes.', place: 'left' },
         lines: [
           { role: 'eyebrow', text: '02 / Connect', at: 20.6 },
           { role: 'title', text: 'See the relationship.', at: 20.9 },
@@ -49,6 +55,7 @@
       },
       {
         id: 'export', title: 'Let the idea travel', beat: 'Feature 03', start: 25.8, end: 31.4, thumb: 30.1,
+        caption: { text: 'The note turns into a Markdown file.', place: 'left' },
         lines: [
           { role: 'eyebrow', text: '03 / Export', at: 26.2 },
           { role: 'title', text: 'Let the idea travel.', at: 26.5 },
@@ -57,6 +64,7 @@
       },
       {
         id: 'end', title: 'Lattice', beat: 'End card', start: 31.4, end: 39.5, thumb: 39.4,
+        caption: { text: 'The Lattice mark draws on green.', place: 'center' },
         lines: [
           { role: 'brand', text: 'lattice', at: 32.2 },
           { role: 'title', text: 'Make room for the connection.', at: 33.0 },

@@ -1,5 +1,5 @@
 // Builds master.svg, formats/*.svg and data.js from one source of truth.
-// Usage: node product/tools/build.js   (run from any directory)
+// Usage, from the studio folder root (the folder holding index.html): node tools/build.js
 'use strict';
 const fs = require('fs');
 const path = require('path');
@@ -357,11 +357,13 @@ for (const F of FORMATS) fs.writeFileSync(path.join(ROOT, 'formats', `${F.id}.sv
 const pairs = [['ink', 'paper', 4.5, 'body'], ['sage', 'paper', 3, 'large text'], ['green', 'paper', 4.5, 'body'], ['muted', 'paper', 4.5, 'body'], ['white', 'green', 4.5, 'body'], ['lime', 'green', 3, 'graphics'], ['ink', 'chip', 4.5, 'body'], ['ink', 'lime', 4.5, 'body']]
   .map(([fg, bg, need, basis]) => ({ fg, bg, fgHex: T[fg], bgHex: T[bg], ratio: +ratio(T[fg], T[bg]).toFixed(2), need, basis }));
 let measured = null;
+// Decimal units: 1 kB = 1,000 bytes, 1 MB = 1,000,000 bytes.
+const fileSize = (b) => (b >= 1e6 ? `${(b / 1e6).toFixed(2)} MB` : `${Math.max(1, Math.round(b / 1e3))} kB`);
 try { measured = JSON.parse(fs.readFileSync(path.join(ROOT, 'measure', 'contrast-report.json'), 'utf8')); } catch (e) { /* first build */ }
 const data = {
   master: masterSVG('assets/grain.png').replace(/ width="2400" height="2400"/, ''),
   layers: LAYERS.map(([id, label]) => ({ id, label })),
-  formats: FORMATS.map((F) => ({ id: F.id, name: F.name, w: F.w, h: F.h, files: ['png', 'webp'].map((ext) => { const n = `exports/lattice-${F.id}-${F.w}x${F.h}.${ext}`; let kb = null; try { kb = Math.round(fs.statSync(path.join(ROOT, n)).size / 1024); } catch (e) { /* not rendered yet */ } return { ext, href: n, kb }; }), safe: F.safe, cols: F.cols, gutter: F.gutter, decision: F.decision, type: TYPE[F.id] })),
+  formats: FORMATS.map((F) => ({ id: F.id, name: F.name, w: F.w, h: F.h, files: ['png', 'webp'].map((ext) => { const n = `exports/lattice-${F.id}-${F.w}x${F.h}.${ext}`; let bytes = null; try { bytes = fs.statSync(path.join(ROOT, n)).size; } catch (e) { /* not rendered yet */ } return { ext, href: n, bytes, size: bytes == null ? null : fileSize(bytes) }; }), safe: F.safe, cols: F.cols, gutter: F.gutter, decision: F.decision, type: TYPE[F.id] })),
   palette: ['paper', 'ink', 'green', 'sage', 'lime', 'chip', 'mint', 'sky', 'orchid', 'muted'].map((k) => ({ name: k, hex: T[k] })),
   pairs, measured: measured && measured.formats.map((m) => ({ id: m.id, large: m.lowestLarge, body: m.lowestBody, pass: m.pass, safe: m.safeOk })),
 };

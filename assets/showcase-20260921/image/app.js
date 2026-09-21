@@ -124,7 +124,7 @@
     var meta = $('meta');
     meta.textContent = '';
     var dl = el('dl');
-    function row(k, v, cls) { dl.appendChild(el('dt', {}, k)); var d = el('dd', cls ? { class: cls } : {}, v); dl.appendChild(d); }
+    function row(k, v, cls) { var g = el('div'); g.appendChild(el('dt', {}, k)); g.appendChild(el('dd', cls ? { class: cls } : {}, v)); dl.appendChild(g); }
     row('Format', F.name);
     row('Size', F.w + ' × ' + F.h + ' px');
     row('Safe area', F.id === 'story' ? '250 px top and bottom, 6 % sides' : '6 % each side (' + F.safe.x + ' × ' + F.safe.y + ' px)');
@@ -145,8 +145,8 @@
     tr.appendChild(el('td', {}, F.w + ' × ' + F.h));
     F.files.forEach(function (f) {
       var td = el('td');
-      var a = el('a', { href: f.href, download: '' }, f.ext.toUpperCase() + (f.kb ? ' · ' + f.kb + ' KB' : ''));
-      a.setAttribute('aria-label', 'Download ' + F.name + ' ' + f.ext.toUpperCase());
+      var a = el('a', { href: f.href, download: '' }, f.ext.toUpperCase() + (f.size ? ' · ' + f.size : ''));
+      a.setAttribute('aria-label', 'Download ' + F.name + ' ' + f.ext.toUpperCase() + (f.size ? ', ' + f.size : ''));
       td.appendChild(a); tr.appendChild(td);
     });
     body.appendChild(tr);
@@ -162,12 +162,12 @@
   var uses = { 'ink/paper': 'Headlines, body', 'sage/paper': 'Second headline line (large only)', 'green/paper': 'Emphasis line, tagline', 'muted/paper': 'Studio captions', 'white/green': 'Chip text on site', 'lime/green': 'Icons on green chip', 'ink/chip': 'Note-card text', 'ink/lime': 'Text on lime' };
   var pairs = $('pairs');
   D.pairs.forEach(function (p) {
-    var tr = el('tr');
-    var td = el('td'); var chip = el('span', { class: 'chip', 'aria-hidden': 'true' }, 'Aa');
+    var tr = el('tr', { role: 'row' });
+    var td = el('td', { role: 'cell' }); var chip = el('span', { class: 'chip', 'aria-hidden': 'true' }, 'Aa');
     chip.style.color = p.fgHex; chip.style.background = p.bgHex;
     td.appendChild(chip); td.appendChild(document.createTextNode(p.fg + ' on ' + p.bg)); tr.appendChild(td);
-    tr.appendChild(el('td', {}, p.ratio.toFixed(2) + ':1, needs ' + p.need + ':1 (' + p.basis + ')'));
-    tr.appendChild(el('td', {}, uses[p.fg + '/' + p.bg] || ''));
+    tr.appendChild(el('td', { role: 'cell', 'data-label': 'Ratio and AA bar' }, p.ratio.toFixed(2) + ':1, needs ' + p.need + ':1 (' + p.basis + ')'));
+    tr.appendChild(el('td', { role: 'cell', 'data-label': 'Use' }, uses[p.fg + '/' + p.bg] || ''));
     pairs.appendChild(tr);
   });
   var ms = $('measured');
@@ -180,8 +180,8 @@
   });
   var ts = $('type-scale');
   D.formats.forEach(function (F) {
-    var tr = el('tr'); tr.appendChild(el('th', { scope: 'row' }, F.name));
-    [F.type.display, F.type.sub, F.type.body, F.type.eyebrow].forEach(function (v) { tr.appendChild(el('td', {}, v + ' px')); });
+    var tr = el('tr', { role: 'row' }); tr.appendChild(el('th', { scope: 'row', role: 'rowheader' }, F.name));
+    [['Display', F.type.display], ['Lead', F.type.sub], ['Body', F.type.body], ['Eyebrow', F.type.eyebrow]].forEach(function (v) { tr.appendChild(el('td', { role: 'cell', 'data-label': v[0] }, v[1] + ' px')); });
     ts.appendChild(tr);
   });
   var dec = $('decisions');

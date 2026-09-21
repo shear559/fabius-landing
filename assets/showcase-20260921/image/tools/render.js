@@ -1,5 +1,5 @@
 // Renders formats/*.svg with headless Chromium to exports/*.png, then cwebp to exports/*.webp.
-// Usage: node product/tools/render.js
+// Usage, from the studio folder root: node tools/render.js   -> exports/*.png, exports/*.webp, previews/master-preview.png
 'use strict';
 const path = require('path');
 const fs = require('fs');
@@ -9,6 +9,7 @@ const ROOT = path.resolve(__dirname, '..');
 const FORMATS = require('./formats.json');
 
 (async () => {
+  fs.mkdirSync(path.join(ROOT, 'previews'), { recursive: true });
   const browser = await chromium.launch();
   for (const F of FORMATS) {
     const page = await browser.newPage({ viewport: { width: F.w, height: F.h }, deviceScaleFactor: 1 });
@@ -25,6 +26,6 @@ const FORMATS = require('./formats.json');
   const page = await browser.newPage({ viewport: { width: 2400, height: 2400 }, deviceScaleFactor: 0.5 });
   await page.goto('file://' + path.join(ROOT, 'master.svg'));
   await page.waitForTimeout(300);
-  await page.screenshot({ path: path.resolve(ROOT, '..', 'out', 'master-preview.png') });
+  await page.screenshot({ path: path.join(ROOT, 'previews', 'master-preview.png') });
   await browser.close();
 })();

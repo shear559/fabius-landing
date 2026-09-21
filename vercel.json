@@ -130,6 +130,12 @@
       ]
     },
     {
+      "source": "/assets/showcase-20260921/image/(exports/.*|master\\.svg|measure/.*)",
+      "headers": [
+        { "key": "Content-Disposition", "value": "attachment" }
+      ]
+    },
+    {
       "source": "/assets/fonts/rubik/(.*)\\.(woff2|woff|ttf)",
       "headers": [
         { "key": "Access-Control-Allow-Origin", "value": "*" }
