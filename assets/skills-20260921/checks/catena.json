@@ -1,0 +1,31 @@
+{
+ "key": "catena",
+ "checks": [
+  {
+   "name": "Its verify.mjs passes on the release",
+   "state": "pass",
+   "detail": "[INFO] timestamp status: unanchored - No timestamp authority was reachable when this bundle was built (this environment has no network access, so OpenTimestamps/Bitcoin anchoring was not attempted). sealedAtLocalClock is only the local system clock at signing time; it is NOT cryptographically anchored, NOT un-backdatable, and MUST NOT be relied on as proof of when the root existed. Only the signature (possession of the private key) and the Merkle root (exact-byte binding) are established by this bundle.\nRESULT: VALID - files match the sealed release and the signature checks out."
+  },
+  {
+   "name": "One flipped bit in app.js fails verification",
+   "state": "pass",
+   "detail": "[INFO] timestamp status: unanchored - No timestamp authority was reachable when this bundle was built (this environment has no network access, so OpenTimestamps/Bitcoin anchoring was not attempted). sealedAtLocalClock is only the local system clock at signing time; it is NOT cryptographically anchored, NOT un-backdatable, and MUST NOT be relied on as proof of when the root existed. Only the signature (possession of the private key) and the Merkle root (exact-byte binding) are established by this bundle.\nRESULT: INVALID - see failing checks above."
+  },
+  {
+   "name": "Our independent recompute gives the same Merkle root",
+   "state": "pass",
+   "detail": "b5b1268afa6a8c57\u2026"
+  },
+  {
+   "name": "No private key inside the bundle",
+   "state": "pass",
+   "detail": ""
+  },
+  {
+   "name": "Timestamp: none (no network in the run)",
+   "state": "note",
+   "detail": "unanchored"
+  }
+ ],
+ "extra": null
+}

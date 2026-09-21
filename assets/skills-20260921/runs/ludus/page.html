@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Beetle Garden Dash</title>
+<style>
+  html, body {
+    margin: 0; padding: 0; width: 100%; height: 100%;
+    background: #14210f; overflow: hidden;
+    touch-action: none; -webkit-user-select: none; user-select: none;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  canvas { display: block; width: 100vw; height: 100vh; }
+</style>
+</head>
+<body>
+<canvas id="game"></canvas>
+<script>
+(() => {
+  "use strict";
+
+  const canvas = document.getElementById("game");
+  const ctx = canvas.getContext("2d");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  let W = 0, H = 0, DPR = 1;
+  function resize() {
+    W = window.innerWidth;
+    H = window.innerHeight;
+    DPR = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = Math.floor(W * DPR);
+    canvas.height = Math.floor(H * DPR);
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  }
+  resize();
+  window.addEventListener("resize", resize);
+
+  // ---------- Audio (tiny synth beeps, no external assets) ----------
+  let actx = null;
+  function ac() {
+    if (!actx) actx = new (window.AudioContext || window.webkitAudioContext)();
+    return actx;
+  }
+  function beep(freq, dur, type, vol, delay) {
+    try {
+      const a = ac();
+      const t0 = a.currentTime + (delay || 0);
+      const osc = a.createOscillator();
+      const gain = a.createGain();
+      osc.type = type || "sine";
+      osc.frequency.setValueAtTime(freq, t0);
+      gain.gain.setValueAtTime(0, t0);
+      gain.gain.linearRampToValueAtTime(vol || 0.15, t0 + 0.01);
+      gain.gain.exponentialRampToValueAtTime(0.001, t0 + dur);
+      osc.connect(gain).connect(a.destination);
+      osc.start(t0);
+      osc.stop(t0 + dur + 0.02);
+    } catch (e) { /* audio unavailable, ignore */ }
+  }
+  function sfxHop() { beep(320, 0.05, "square", 0.05); }
+  function sfxHit() { beep(120, 0.25, "sawtooth", 0.12); beep(90, 0.3, "sawtooth", 0.08, 0.04); }
+  function sfxEat() { beep(600, 0.08, "triangle", 0.14); beep(900, 0.12, "triangle", 0.12, 0.06); }
+  function sfxGameOver() { beep(300, 0.2, "sawtooth", 0.1); beep(200, 0.25, "sawtooth", 0.1, 0.15); beep(120, 0.35, "sawtooth", 0.1, 0.3); }
+  function sfxStart() { beep(440, 0.08, "triangle", 0.12); beep(660, 0.12, "triangle", 0.12, 0.08); }
+
+  // ---------- Game constants ----------
+  const MAX_SPEED = 280;
+  const ACCEL = 2000;
+  const BEETLE_R = 16;
+  const FOOD_R = 15;
+  const START_LIVES = 3;
+  const INVULN_TIME = 1.3;
+
+  // ---------- State machine ----------
+  const STATE = { MENU: "menu", PLAY: "play", PAUSE: "pause", GAMEOVER: "gameover" };
+  let state = STATE.MENU;
+
+  let highScore = 0;
+
+  // ---------- Entities ----------
+  let beetle, food, leaves, particles, score, lives, shake, flash, timeScale, hitstop;
+  let legPhase = 0;
+
+  function resetGame() {
+    beetle = {
+      x: W / 2, y: H - 60, vx: 0, vy: 0,
+      squash: 1, stretch: 1, facing: -Math.PI / 2,
+      invuln: 0, blink: 0
+    };
+    food = spawnFood();
+    leaves = [];
+    particles = [];
+    score = 0;
+    lives = START_LIVES;
+    shake = 0;
+    flash = 0;
+    timeScale = 1;
+    hitstop = 0;
+    leafSpawnTimer = 0;
+  }
+
+  function spawnFood() {
+    const margin = 50;
+    return {
+      x: margin + Math.random() * (W - margin * 2),
+      y: 70 + Math.random() * 40,
+      bob: Math.random() * Math.PI * 2
+    };
+  }
+
+  function difficultyLevel() { return score; }
+  function leafSpeed() { return 80 + Math.min(difficultyLevel() * 9, 260); }
+  function leafInterval() { return Math.max(0.22, 1.0 - difficultyLevel() * 0.035); }
+  function multiSpawnChance() { return Math.min(0.5, Math.max(0, (difficultyLevel() - 5) * 0.06)); }
+
+  let leafSpawnTimer = 0;
+  function spawnLeaf() {
+    const size = 12 + Math.random() * 10;
+    const colors = ["#d97a2b", "#e0a53c", "#b9552a", "#e8c34a", "#c96a1f"];
+    leaves.push({
+      x: Math.random() * W,
+      y: -20,
+      vy: leafSpeed() * (0.8 + Math.random() * 0.4),
+      swayAmp: 20 + Math.random() * 30,
+      swayFreq: 0.6 + Math.random() * 0.8,
+      swayPhase: Math.random() * Math.PI * 2,
+      rot: Math.random() * Math.PI * 2,
+      rotSpeed: (Math.random() - 0.5) * 3,
+      size,
+      color: colors[(Math.random() * colors.length) | 0],
+      baseX: 0
+    });
+    leaves[leaves.length - 1].baseX = leaves[leaves.length - 1].x;
+  }
+
+  // ---------- Input ----------
+  const keys = {};
+  let joy = null; // {startX, startY, dx, dy}
+  let pauseBtnRect = { x: 0, y: 0, w: 44, h: 44 };
+
+  window.addEventListener("keydown", (e) => {
+    keys[e.code] = true;
+    if (e.code === "Space" || e.code === "Enter") {
+      if (state === STATE.MENU) startGame();
+      else if (state === STATE.GAMEOVER) startGame();
+    }
+    if (e.code === "KeyP" || e.code === "Escape") {
+      togglePause();
+    }
+    if (e.code === "KeyR") {
+      if (state === STATE.PLAY || state === STATE.PAUSE || state === STATE.GAMEOVER) startGame();
+    }
+    if (["ArrowUp","ArrowDown","ArrowLeft","ArrowRight","Space"].includes(e.code)) e.preventDefault();
+  }, { passive: false });
+  window.addEventListener("keyup", (e) => { keys[e.code] = false; });
+
+  function inputDir() {
+    let dx = 0, dy = 0;
+    if (keys["ArrowLeft"] || keys["KeyA"]) dx -= 1;
+    if (keys["ArrowRight"] || keys["KeyD"]) dx += 1;
+    if (keys["ArrowUp"] || keys["KeyW"]) dy -= 1;
+    if (keys["ArrowDown"] || keys["KeyS"]) dy += 1;
+    if (joy) {
+      dx += joy.dx; dy += joy.dy;
+    }
+    const len = Math.hypot(dx, dy);
+    if (len > 1) { dx /= len; dy /= len; }
+    return { dx, dy };
+  }
+
+  function togglePause() {
+    if (state === STATE.PLAY) { state = STATE.PAUSE; }
+    else if (state === STATE.PAUSE) { state = STATE.PLAY; }
+  }
+
+  function startGame() {
+    resetGame();
+    state = STATE.PLAY;
+    sfxStart();
+  }
+
+  canvas.addEventListener("touchstart", (e) => {
+    e.preventDefault();
+    const t = e.changedTouches[0];
+    const rect = canvas.getBoundingClientRect();
+    const tx = t.clientX - rect.left, ty = t.clientY - rect.top;
+
+    if (state === STATE.PLAY && tx >= pauseBtnRect.x && tx <= pauseBtnRect.x + pauseBtnRect.w &&
+        ty >= pauseBtnRect.y && ty <= pauseBtnRect.y + pauseBtnRect.h) {
+      togglePause();
+      return;
+    }
+    if (state === STATE.PAUSE) {
+      // tap anywhere on pause overlay resumes, unless hitting restart zone
+      if (restartBtnRect && pointInRect(tx, ty, restartBtnRect)) { startGame(); return; }
+      togglePause();
+      return;
+    }
+    if (state === STATE.MENU || state === STATE.GAMEOVER) {
+      startGame();
+      return;
+    }
+    if (state === STATE.PLAY) {
+      joy = { id: t.identifier, startX: tx, startY: ty, dx: 0, dy: 0 };
+    }
+  }, { passive: false });
+
+  canvas.addEventListener("touchmove", (e) => {
+    e.preventDefault();
+    if (!joy) return;
+    for (const t of e.changedTouches) {
+      if (t.identifier !== joy.id) continue;
+      const rect = canvas.getBoundingClientRect();
+      const tx = t.clientX - rect.left, ty = t.clientY - rect.top;
+      let dx = tx - joy.startX, dy = ty - joy.startY;
+      const max = 50;
+      const len = Math.hypot(dx, dy);
+      if (len > max) { dx = dx / len * max; dy = dy / len * max; }
+      joy.dx = dx / max; joy.dy = dy / max;
+    }
+  }, { passive: false });
+
+  function endTouch(e) {
+    for (const t of e.changedTouches) {
+      if (joy && t.identifier === joy.id) joy = null;
+    }
+  }
+  canvas.addEventListener("touchend", endTouch, { passive: false });
+  canvas.addEventListener("touchcancel", endTouch, { passive: false });
+
+  function pointInRect(x, y, r) { return x >= r.x && x <= r.x + r.w && y >= r.y && y <= r.y + r.h; }
+
+  // mouse fallback for desktop testing (click to start/restart, click pause button)
+  canvas.addEventListener("mousedown", (e) => {
+    const rect = canvas.getBoundingClientRect();
+    const mx = e.clientX - rect.left, my = e.clientY - rect.top;
+    if (state === STATE.PLAY && pointInRect(mx, my, pauseBtnRect)) { togglePause(); return; }
+    if (state === STATE.MENU || state === STATE.GAMEOVER) startGame();
+    else if (state === STATE.PAUSE) togglePause();
+  });
+
+  // ---------- Update ----------
+  let lastT = performance.now();
+  let restartBtnRect = null;
+
+  function update(dtRaw) {
+    if (hitstop > 0) { hitstop -= dtRaw; return; }
+    const dt = dtRaw * timeScale;
+
+    if (shake > 0) shake = Math.max(0, shake - dt * 4);
+    if (flash > 0) flash = Math.max(0, flash - dt * 3);
+
+    if (state !== STATE.PLAY) return;
+
+    const { dx, dy } = inputDir();
+    const targetVx = dx * MAX_SPEED, targetVy = dy * MAX_SPEED;
+    beetle.vx += Math.sign(targetVx - beetle.vx) * Math.min(Math.abs(targetVx - beetle.vx), ACCEL * dt);
+    beetle.vy += Math.sign(targetVy - beetle.vy) * Math.min(Math.abs(targetVy - beetle.vy), ACCEL * dt);
+
+    beetle.x += beetle.vx * dt;
+    beetle.y += beetle.vy * dt;
+    beetle.x = Math.max(BEETLE_R, Math.min(W - BEETLE_R, beetle.x));
+    beetle.y = Math.max(BEETLE_R + 40, Math.min(H - BEETLE_R, beetle.y));
+
+    const speed = Math.hypot(beetle.vx, beetle.vy);
+    if (speed > 20) beetle.facing = Math.atan2(beetle.vy, beetle.vx);
+    const squashTarget = 1 - Math.min(speed / MAX_SPEED, 1) * 0.12;
+    beetle.squash += (squashTarget - beetle.squash) * Math.min(1, dt * 10);
+    legPhase += dt * (6 + speed * 0.03);
+
+    if (beetle.invuln > 0) { beetle.invuln -= dt; beetle.blink += dt; }
+
+    // leaves
+    leafSpawnTimer -= dt;
+    if (leafSpawnTimer <= 0) {
+      spawnLeaf();
+      if (Math.random() < multiSpawnChance()) spawnLeaf();
+      leafSpawnTimer = leafInterval();
+    }
+    for (let i = leaves.length - 1; i >= 0; i--) {
+      const l = leaves[i];
+      l.y += l.vy * dt;
+      l.rot += l.rotSpeed * dt;
+      l.x = l.baseX + Math.sin(performance.now() * 0.001 * l.swayFreq + l.swayPhase) * l.swayAmp;
+      if (l.y > H + 30) { leaves.splice(i, 1); continue; }
+
+      if (beetle.invuln <= 0) {
+        const d = Math.hypot(l.x - beetle.x, l.y - beetle.y);
+        if (d < BEETLE_R * 0.8 + l.size * 0.5) {
+          onHit();
+          leaves.splice(i, 1);
+        }
+      }
+    }
+
+    // food
+    food.bob += dt * 2;
+    const fd = Math.hypot(food.x - beetle.x, food.y - beetle.y);
+    if (fd < FOOD_R + BEETLE_R * 0.7) {
+      onEat();
+    }
+
+    // particles
+    for (let i = particles.length - 1; i >= 0; i--) {
+      const p = particles[i];
+      p.x += p.vx * dt; p.y += p.vy * dt;
+      p.vy += 220 * dt;
+      p.life -= dt;
+      if (p.life <= 0) particles.splice(i, 1);
+    }
+  }
+
+  function burst(x, y, color, n) {
+    const count = reduceMotion ? Math.ceil(n / 2) : n;
+    for (let i = 0; i < count; i++) {
+      const a = Math.random() * Math.PI * 2;
+      const sp = 60 + Math.random() * 140;
+      particles.push({
+        x, y, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp - 40,
+        life: 0.4 + Math.random() * 0.3, maxLife: 0.7, color, size: 2 + Math.random() * 3
+      });
+    }
+  }
+
+  function onHit() {
+    lives -= 1;
+    beetle.invuln = INVULN_TIME;
+    beetle.vy = -140;
+    beetle.vx *= 0.3;
+    shake = reduceMotion ? 0.15 : 0.5;
+    flash = reduceMotion ? 0.12 : 0.4;
+    hitstop = reduceMotion ? 0.03 : 0.07;
+    burst(beetle.x, beetle.y, "#c94a2b", reduceMotion ? 6 : 14);
+    sfxHit();
+    if (lives <= 0) {
+      state = STATE.GAMEOVER;
+      if (score > highScore) highScore = score;
+      sfxGameOver();
+    }
+  }
+
+  function onEat() {
+    score += 1;
+    burst(food.x, food.y, "#f2c744", reduceMotion ? 8 : 18);
+    hitstop = reduceMotion ? 0.02 : 0.05;
+    sfxEat();
+    food = spawnFood();
+    beetle.y = H - 60;
+    beetle.x = Math.max(BEETLE_R, Math.min(W - BEETLE_R, beetle.x));
+  }
+
+  // ---------- Render helpers ----------
+  function drawGarden() {
+    const g = ctx.createLinearGradient(0, 0, 0, H);
+    g.addColorStop(0, "#1c3a1a");
+    g.addColorStop(1, "#2f5c26");
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, W, H);
+
+    ctx.save();
+    ctx.globalAlpha = 0.08;
+    ctx.strokeStyle = "#ffffff";
+    for (let i = 0; i < 6; i++) {
+      ctx.beginPath();
+      ctx.moveTo(0, (H / 6) * i);
+      ctx.lineTo(W, (H / 6) * i);
+      ctx.stroke();
+    }
+    ctx.restore();
+  }
+
+  function drawLeaf(l) {
+    ctx.save();
+    ctx.translate(l.x, l.y);
+    ctx.rotate(l.rot);
+    ctx.fillStyle = l.color;
+    ctx.beginPath();
+    ctx.moveTo(0, -l.size);
+    ctx.quadraticCurveTo(l.size, -l.size * 0.3, 0, l.size);
+    ctx.quadraticCurveTo(-l.size, -l.size * 0.3, 0, -l.size);
+    ctx.fill();
+    ctx.strokeStyle = "rgba(0,0,0,0.25)";
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(0, -l.size);
+    ctx.lineTo(0, l.size);
+    ctx.stroke();
+    ctx.restore();
+
+    // soft shadow on ground plane feel
+    ctx.save();
+    ctx.globalAlpha = 0.12;
+    ctx.fillStyle = "#000";
+    ctx.beginPath();
+    ctx.ellipse(l.x, Math.min(l.y + 4, H - 6), l.size * 0.5, l.size * 0.2, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  function drawFood() {
+    const bob = Math.sin(food.bob) * 4;
+    const x = food.x, y = food.y + bob;
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.fillStyle = "#c9302b";
+    ctx.beginPath();
+    ctx.arc(0, 0, FOOD_R, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = "rgba(255,255,255,0.35)";
+    ctx.beginPath();
+    ctx.arc(-FOOD_R * 0.3, -FOOD_R * 0.35, FOOD_R * 0.3, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = "#5c3a1e";
+    ctx.fillRect(-2, -FOOD_R - 6, 4, 8);
+    ctx.fillStyle = "#4a8f2f";
+    ctx.beginPath();
+    ctx.ellipse(6, -FOOD_R - 4, 7, 4, -0.5, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+
+    if (!reduceMotion) {
+      const pulse = 0.5 + 0.5 * Math.sin(performance.now() * 0.004);
+      ctx.save();
+      ctx.globalAlpha = 0.15 + pulse * 0.15;
+      ctx.strokeStyle = "#ffe08a";
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.arc(x, y, FOOD_R + 8 + pulse * 4, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.restore();
+    }
+  }
+
+  function drawBeetle() {
+    const b = beetle;
+    const blinking = b.invuln > 0 && Math.floor(b.blink * 10) % 2 === 0;
+    if (blinking) return;
+
+    ctx.save();
+    ctx.translate(b.x, b.y);
+    ctx.rotate(b.facing + Math.PI / 2);
+    ctx.scale(b.squash, 2 - b.squash);
+
+    // legs
+    ctx.strokeStyle = "#1c3a1a";
+    ctx.lineWidth = 2;
+    for (let i = -1; i <= 1; i++) {
+      const wiggle = Math.sin(legPhase + i) * 5;
+      ctx.beginPath();
+      ctx.moveTo(-BEETLE_R * 0.6, i * 7);
+      ctx.lineTo(-BEETLE_R - 6, i * 7 + wiggle);
+      ctx.moveTo(BEETLE_R * 0.6, i * 7);
+      ctx.lineTo(BEETLE_R + 6, i * 7 + wiggle);
+      ctx.stroke();
+    }
+
+    // body
+    const bodyGrad = ctx.createRadialGradient(-4, -6, 2, 0, 0, BEETLE_R + 4);
+    bodyGrad.addColorStop(0, "#7ed957");
+    bodyGrad.addColorStop(1, "#2e8b3a");
+    ctx.fillStyle = bodyGrad;
+    ctx.beginPath();
+    ctx.ellipse(0, 0, BEETLE_R, BEETLE_R * 0.8, 0, 0, Math.PI * 2);
+    ctx.fill();
+
+    // wing line
+    ctx.strokeStyle = "rgba(20,50,20,0.5)";
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.moveTo(0, -BEETLE_R * 0.75);
+    ctx.lineTo(0, BEETLE_R * 0.75);
+    ctx.stroke();
+
+    // shine
+    ctx.fillStyle = "rgba(255,255,255,0.35)";
+    ctx.beginPath();
+    ctx.ellipse(-5, -6, 5, 3, -0.4, 0, Math.PI * 2);
+    ctx.fill();
+
+    // head
+    ctx.fillStyle = "#1c3a1a";
+    ctx.beginPath();
+    ctx.ellipse(BEETLE_R * 0.8, 0, 6, 5, 0, 0, Math.PI * 2);
+    ctx.fill();
+
+    // antennae
+    ctx.strokeStyle = "#1c3a1a";
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.moveTo(BEETLE_R * 0.9, -3);
+    ctx.lineTo(BEETLE_R * 1.4, -9);
+    ctx.moveTo(BEETLE_R * 0.9, 3);
+    ctx.lineTo(BEETLE_R * 1.4, 9);
+    ctx.stroke();
+
+    ctx.restore();
+  }
+
+  function drawParticles() {
+    for (const p of particles) {
+      ctx.save();
+      ctx.globalAlpha = Math.max(0, p.life / p.maxLife);
+      ctx.fillStyle = p.color;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    }
+  }
+
+  function drawHUD() {
+    ctx.save();
+    ctx.font = "bold 22px system-ui, sans-serif";
+    ctx.fillStyle = "#f4f1e6";
+    ctx.textAlign = "left";
+    ctx.textBaseline = "top";
+    ctx.shadowColor = "rgba(0,0,0,0.5)";
+    ctx.shadowBlur = 4;
+    ctx.fillText("Score: " + score, 14, 12);
+    ctx.font = "14px system-ui, sans-serif";
+    ctx.fillText("Best: " + highScore, 14, 40);
+
+    // lives as beetles
+    for (let i = 0; i < START_LIVES; i++) {
+      ctx.save();
+      ctx.translate(W - 26 - i * 30, 26);
+      ctx.fillStyle = i < lives ? "#7ed957" : "rgba(255,255,255,0.2)";
+      ctx.beginPath();
+      ctx.ellipse(0, 0, 10, 8, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    }
+
+    // pause button
+    pauseBtnRect = { x: W - 54, y: 46, w: 40, h: 40 };
+    ctx.fillStyle = "rgba(0,0,0,0.35)";
+    roundRect(pauseBtnRect.x, pauseBtnRect.y, pauseBtnRect.w, pauseBtnRect.h, 8);
+    ctx.fill();
+    ctx.fillStyle = "#f4f1e6";
+    ctx.fillRect(pauseBtnRect.x + 13, pauseBtnRect.y + 10, 5, 20);
+    ctx.fillRect(pauseBtnRect.x + 23, pauseBtnRect.y + 10, 5, 20);
+    ctx.restore();
+  }
+
+  function roundRect(x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+
+  function centerPanel(title, lines, showRestart) {
+    ctx.save();
+    ctx.fillStyle = "rgba(10,20,8,0.62)";
+    ctx.fillRect(0, 0, W, H);
+
+    const pw = Math.min(360, W - 40), ph = 220 + lines.length * 26;
+    const px = (W - pw) / 2, py = (H - ph) / 2;
+    ctx.fillStyle = "rgba(30,50,25,0.92)";
+    roundRect(px, py, pw, ph, 16);
+    ctx.fill();
+    ctx.strokeStyle = "rgba(126,217,87,0.6)";
+    ctx.lineWidth = 2;
+    roundRect(px, py, pw, ph, 16);
+    ctx.stroke();
+
+    ctx.textAlign = "center";
+    ctx.fillStyle = "#f4f1e6";
+    ctx.font = "bold 30px system-ui, sans-serif";
+    ctx.fillText(title, W / 2, py + 46);
+
+    ctx.font = "16px system-ui, sans-serif";
+    lines.forEach((line, i) => {
+      ctx.fillStyle = "rgba(244,241,230,0.9)";
+      ctx.fillText(line, W / 2, py + 96 + i * 26);
+    });
+
+    if (showRestart) {
+      const bw = 200, bh = 46;
+      const bx = W / 2 - bw / 2, by = py + ph - bh - 24;
+      restartBtnRect = { x: bx, y: by, w: bw, h: bh };
+      ctx.fillStyle = "#7ed957";
+      roundRect(bx, by, bw, bh, 10);
+      ctx.fill();
+      ctx.fillStyle = "#14210f";
+      ctx.font = "bold 18px system-ui, sans-serif";
+      ctx.fillText("Tap / Space to Play", W / 2, by + 14);
+    } else {
+      restartBtnRect = null;
+    }
+    ctx.restore();
+  }
+
+  function render() {
+    ctx.save();
+    let sx = 0, sy = 0;
+    if (shake > 0) {
+      const mag = shake * 10;
+      sx = (Math.random() - 0.5) * mag;
+      sy = (Math.random() - 0.5) * mag;
+      ctx.translate(sx, sy);
+    }
+
+    drawGarden();
+
+    if (state === STATE.MENU) {
+      drawFood();
+      drawBeetle();
+    } else {
+      for (const l of leaves) drawLeaf(l);
+      drawFood();
+      drawBeetle();
+      drawParticles();
+    }
+
+    if (flash > 0) {
+      ctx.save();
+      ctx.globalAlpha = flash;
+      ctx.fillStyle = "#ff3b30";
+      ctx.fillRect(-20, -20, W + 40, H + 40);
+      ctx.restore();
+    }
+
+    ctx.restore();
+
+    if (state === STATE.PLAY || state === STATE.PAUSE) drawHUD();
+
+    if (state === STATE.MENU) {
+      centerPanel("Beetle Garden Dash", [
+        "Dodge falling leaves.",
+        "Reach the food to score.",
+        "Arrows/WASD or drag to move.",
+      ], true);
+    } else if (state === STATE.PAUSE) {
+      centerPanel("Paused", [
+        "Score: " + score + "   Best: " + highScore,
+        "P / Esc to resume",
+      ], true);
+    } else if (state === STATE.GAMEOVER) {
+      const isNew = score >= highScore && score > 0;
+      centerPanel("Game Over", [
+        "Score: " + score,
+        isNew ? "New Best!" : "Best: " + highScore,
+      ], true);
+    }
+  }
+
+  // ---------- Main loop ----------
+  function frame(now) {
+    let dt = (now - lastT) / 1000;
+    lastT = now;
+    dt = Math.min(dt, 1 / 20);
+    update(dt);
+    render();
+    requestAnimationFrame(frame);
+  }
+
+  resetGame();
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

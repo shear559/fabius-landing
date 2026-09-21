@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tidepool — pricing</title>
+<style>
+  /* ---------- tokens ---------- */
+  :root{
+    color-scheme: dark;
+    --canvas:    #0A1626;
+    --surface:   #102338;
+    --surface-2: #14293F;
+    --text:      #EDF3F8;
+    --muted:     #9FB2C4;
+    --border:    #5C82A8;
+    --accent:    #FF9E46;
+    --on-accent: #1A0F03;
+    --focus:     #FFB870;
+
+    --space-1: 8px;
+    --space-2: 12px;
+    --space-3: 16px;
+    --space-4: 24px;
+    --space-5: 32px;
+    --space-6: 48px;
+    --space-7: 80px;
+
+    --radius-control: 10px;
+    --radius-card: 16px;
+    --radius-pill: 999px;
+
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+    --press-duration: 100ms;
+    --state-duration: 150ms;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    :root{ --press-duration: 0ms; --state-duration: 0ms; }
+  }
+
+  *, *::before, *::after{ box-sizing: border-box; }
+
+  html{ -webkit-text-size-adjust: 100%; }
+
+  body{
+    margin: 0;
+    background: var(--canvas);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4{
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  p{ margin: 0; }
+
+  a{ color: var(--accent); }
+
+  /* ---------- focus ---------- */
+  :focus{ outline: none; }
+  :focus-visible{
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* ---------- layout shell ---------- */
+  .wrap{
+    max-width: 1120px;
+    margin-inline: auto;
+    padding-inline: var(--space-4);
+  }
+
+  @media (min-width: 700px){
+    .wrap{ padding-inline: var(--space-6); }
+  }
+
+  header.top{
+    padding-block: var(--space-4);
+  }
+
+  .brand{
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: -0.01em;
+  }
+
+  .brand .mark{
+    width: 28px;
+    height: 28px;
+    border-radius: var(--radius-control);
+    background: var(--accent);
+    color: var(--on-accent);
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    font-size: 14px;
+    flex: none;
+  }
+
+  main{ padding-block: var(--space-6) var(--space-7); }
+
+  section.pricing{ padding-block: var(--space-6) var(--space-7); }
+
+  .intro{
+    max-width: 62ch;
+    margin-bottom: var(--space-6);
+  }
+
+  .eyebrow{
+    display: inline-block;
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-3);
+  }
+
+  .intro h1{
+    font-size: clamp(28px, 4.5vw + 1rem, 40px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-3);
+  }
+
+  .intro p{
+    color: var(--muted);
+    font-size: clamp(16px, 1.2vw + 0.9rem, 18px);
+  }
+
+  /* ---------- billing toggle ---------- */
+  .billing{
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-6);
+  }
+
+  fieldset.switch{
+    border: 0;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+  }
+
+  fieldset.switch legend{
+    position: absolute;
+    width: 1px; height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .switch-track{
+    position: relative;
+    display: inline-flex;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-pill);
+    padding: 4px;
+    gap: 4px;
+  }
+
+  .switch-track input{
+    position: absolute;
+    width: 1px; height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .switch-track label{
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-2) var(--space-4);
+    min-height: 44px;
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--muted);
+    cursor: pointer;
+    transition: color var(--state-duration) ease;
+  }
+
+  .switch-track label:has(input:checked){
+    color: var(--on-accent);
+  }
+
+  .switch-track label:has(input:checked)::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--accent);
+    border-radius: var(--radius-pill);
+    z-index: -1;
+  }
+
+  .switch-track label:has(input:focus-visible){
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+  }
+
+  .save-badge{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 13px;
+    padding: 6px var(--space-3);
+    border-radius: var(--radius-pill);
+  }
+
+  /* ---------- plan cards ---------- */
+  .plans{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+    align-items: start;
+  }
+
+  @media (min-width: 700px){
+    .plans{
+      grid-template-columns: repeat(2, minmax(0, 380px));
+    }
+  }
+
+  .plan{
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+    padding: var(--space-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .plan .cta{ margin-top: auto; }
+
+  .plan.is-featured{
+    background: var(--surface-2);
+    border-color: var(--accent);
+  }
+
+  .plan-head{
+    display: grid;
+    gap: 6px;
+  }
+
+  .plan-name{
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: 20px;
+  }
+
+  .tag{
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    background: var(--accent);
+    color: var(--on-accent);
+    padding: 3px 10px;
+    border-radius: var(--radius-pill);
+  }
+
+  .plan-tagline{
+    color: var(--muted);
+    font-size: 15px;
+  }
+
+  .price{
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .price .amount{
+    font-size: clamp(32px, 3.5vw + 1rem, 40px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+
+  .price .period{
+    color: var(--muted);
+    font-size: 15px;
+  }
+
+  .price .note{
+    flex-basis: 100%;
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  .features{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-2);
+  }
+
+  .features li{
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    font-size: 15px;
+  }
+
+  .features svg{
+    flex: none;
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    color: var(--accent);
+  }
+
+  .plan.is-free .features svg{ color: var(--muted); }
+
+  .cta{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-control);
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+    transition: transform var(--press-duration) ease, background var(--state-duration) ease;
+  }
+
+  .cta:hover{ background: var(--surface-2); }
+  .cta:active{ transform: scale(0.97); }
+
+  .cta.is-primary{
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--on-accent);
+  }
+
+  .cta.is-primary:hover{ background: #ffae63; border-color: #ffae63; }
+
+  /* ---------- includes note ---------- */
+  .coverage-note{
+    margin-top: var(--space-5);
+    color: var(--muted);
+    font-size: 14px;
+    max-width: 62ch;
+  }
+
+  /* ---------- FAQ ---------- */
+  section.faq{ padding-block: var(--space-6) var(--space-7); }
+
+  section.faq h2{
+    font-size: 24px;
+    margin-bottom: var(--space-5);
+  }
+
+  .faq-list{
+    display: grid;
+    gap: var(--space-2);
+    max-width: 72ch;
+  }
+
+  details{
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+    padding: var(--space-3) var(--space-4);
+  }
+
+  summary{
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    min-height: 44px;
+  }
+
+  summary::-webkit-details-marker{ display: none; }
+
+  summary .chevron{
+    flex: none;
+    width: 20px;
+    height: 20px;
+    color: var(--muted);
+    transition: transform var(--state-duration) ease;
+  }
+
+  details[open] summary .chevron{ transform: rotate(180deg); }
+
+  details p{
+    color: var(--muted);
+    margin-top: var(--space-2);
+    padding-right: var(--space-5);
+  }
+
+  footer.bottom{
+    padding-block: var(--space-5) var(--space-6);
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  .skip-link{
+    position: absolute;
+    left: var(--space-3);
+    top: -60px;
+    background: var(--accent);
+    color: var(--on-accent);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-control);
+    font-weight: 600;
+    z-index: 10;
+    transition: top var(--state-duration) ease;
+  }
+
+  .skip-link:focus{ top: var(--space-3); }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#pricing-heading">Skip to pricing</a>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand">
+      <span class="mark" aria-hidden="true">T</span>
+      <span>Tidepool</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="pricing wrap" id="pricing">
+    <div class="intro">
+      <span class="eyebrow">Pricing</span>
+      <h1 id="pricing-heading">Tide and swell forecasts for surfers and small-boat sailors</h1>
+      <p>Free for your first 3 spots. Upgrade for full coverage across Portugal and Morocco.</p>
+    </div>
+
+    <div class="billing">
+      <fieldset class="switch">
+        <legend>Billing period</legend>
+        <div class="switch-track">
+          <input type="radio" name="billing" id="billing-monthly" value="monthly" checked>
+          <label for="billing-monthly">Monthly</label>
+          <input type="radio" name="billing" id="billing-yearly" value="yearly">
+          <label for="billing-yearly">Yearly</label>
+        </div>
+      </fieldset>
+      <span class="save-badge">Save 25% yearly</span>
+    </div>
+
+    <div class="plans">
+      <article class="plan is-free" aria-labelledby="plan-free-name">
+        <div class="plan-head">
+          <h2 class="plan-name" id="plan-free-name">Free</h2>
+          <p class="plan-tagline">Get started with your local spots</p>
+        </div>
+
+        <div class="price">
+          <span class="amount">$0</span>
+          <span class="period">forever</span>
+        </div>
+
+        <ul class="features">
+          <li>
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>3 spots of your choosing</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>7-day tide and swell forecast</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Tide height, swell period &amp; direction, wind</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Go / wait calls based on your saved limits</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Updates every 30 minutes</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Offline access to your last forecast</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>iPhone and Apple Watch</span>
+          </li>
+        </ul>
+
+        <a class="cta" href="#">Start free</a>
+      </article>
+
+      <article class="plan is-featured" aria-labelledby="plan-plus-name">
+        <div class="plan-head">
+          <h2 class="plan-name" id="plan-plus-name">Tidepool Plus <span class="tag">14-day trial</span></h2>
+          <p class="plan-tagline">Full coverage, every spot</p>
+        </div>
+
+        <div class="price" aria-live="polite">
+          <span class="amount" id="price-amount">$4</span>
+          <span class="period" id="price-period">per month</span>
+          <span class="note" id="price-note">Billed monthly. Cancel the trial before it ends and you won't be charged.</span>
+        </div>
+
+        <ul class="features">
+          <li>
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>All 312 surf spots and 41 marinas in Portugal and Morocco</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Everything in Free</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Unlimited saved spots</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>14-day free trial</span>
+          </li>
+        </ul>
+
+        <a class="cta is-primary" href="#">Start free trial</a>
+      </article>
+    </div>
+
+    <p class="coverage-note">Tidepool covers 312 surf spots and 41 marinas across Portugal and Morocco, with forecasts 7 days out, refreshed every 30 minutes. Runs on iPhone and Apple Watch — there is no Android app yet.</p>
+  </section>
+
+  <section class="faq wrap" aria-labelledby="faq-heading">
+    <h2 id="faq-heading">Frequently asked questions</h2>
+    <div class="faq-list">
+      <details>
+        <summary>What happens during the 14-day free trial?
+          <svg class="chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <p>Every Tidepool Plus subscription starts with a 14-day free trial, whether you choose monthly or yearly billing.</p>
+      </details>
+      <details>
+        <summary>Where does Tidepool have forecasts?
+          <svg class="chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <p>312 surf spots and 41 marinas across Portugal and Morocco, with a 7-day forecast refreshed every 30 minutes.</p>
+      </details>
+      <details>
+        <summary>How does the go / wait call work?
+          <svg class="chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <p>Each spot shows tide height, swell period and direction, and wind, alongside a go / wait call based on the limits you save for your own rides.</p>
+      </details>
+      <details>
+        <summary>Does Tidepool work without signal?
+          <svg class="chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <p>Yes. Tidepool works offline for the last forecast you opened.</p>
+      </details>
+      <details>
+        <summary>What devices does Tidepool run on?
+          <svg class="chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <p>iPhone and Apple Watch. There is no Android app yet.</p>
+      </details>
+    </div>
+  </section>
+</main>
+
+<footer class="bottom">
+  <div class="wrap">
+    <p>Made by a team of four in Ericeira, Portugal. Tested by 180 surfers and sailors over 10 weeks. Launching October 1, 2026.</p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var monthly = document.getElementById('billing-monthly');
+    var yearly = document.getElementById('billing-yearly');
+    var amount = document.getElementById('price-amount');
+    var period = document.getElementById('price-period');
+    var note = document.getElementById('price-note');
+
+    function render(){
+      if (yearly.checked){
+        amount.textContent = '$36';
+        period.textContent = 'per year';
+        note.textContent = "Billed yearly (about $3/mo). Cancel the trial before it ends and you won't be charged.";
+      } else {
+        amount.textContent = '$4';
+        period.textContent = 'per month';
+        note.textContent = "Billed monthly. Cancel the trial before it ends and you won't be charged.";
+      }
+    }
+
+    monthly.addEventListener('change', render);
+    yearly.addEventListener('change', render);
+    render();
+  })();
+</script>
+
+</body>
+</html>

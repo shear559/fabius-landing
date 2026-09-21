@@ -1,0 +1,80 @@
+{
+ "seconds": 205,
+ "skills": [
+  "fabius-ludus"
+ ],
+ "steps": [
+  {
+   "t": 1.7,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "mkdir -p ./out && ls ."
+  },
+  {
+   "t": 74.1,
+   "tool": "Write",
+   "kind": "write",
+   "label": "./out/index.html"
+  },
+  {
+   "t": 79.1,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "cd ./out"
+  },
+  {
+   "t": 82.6,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "cd ./out"
+  },
+  {
+   "t": 87.3,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "which google-chrome chromium chromium-browser 2>/dev/null; ls /Applications | grep -i chrom 2>/dev/null; node -e \"try{require.resolve('puppeteer');console.log('"
+  },
+  {
+   "t": 90.9,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "cd ./out"
+  },
+  {
+   "t": 94.8,
+   "tool": "Read",
+   "kind": "read",
+   "label": "/tmp/beetle_screenshot.png"
+  },
+  {
+   "t": 101.8,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "cd ./out"
+  },
+  {
+   "t": 105.5,
+   "tool": "Read",
+   "kind": "read",
+   "label": "/tmp/beetle_play.png"
+  },
+  {
+   "t": 121.9,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "cd /tmp"
+  },
+  {
+   "t": 125.5,
+   "tool": "Read",
+   "kind": "read",
+   "label": "/tmp/beetle_gameover.png"
+  },
+  {
+   "t": 144.2,
+   "tool": "Write",
+   "kind": "write",
+   "label": "./out/SUMMARY.md"
+  }
+ ]
+}

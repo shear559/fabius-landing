@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "scheme": {
+    "leaf": "SHA-256(utf8(relativePath) || 0x00 || fileBytes)",
+    "tree": "pairwise SHA-256 of raw child digests, sorted leaves by path, duplicate last node when odd, root = last digest left",
+    "signature": "Ed25519 over the raw 32-byte Merkle root"
+  },
+  "root": "b5b1268afa6a8c570d17af493b7fcf5f8ccdbc7744faf8f272b95f3ea432d0f0",
+  "publicKey": {
+    "format": "spki-pem",
+    "pem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAkI0ANsdkwMkZyP09yHg3sf5WrIW/e3FCTbV0MQejv44=\n-----END PUBLIC KEY-----\n",
+    "rawBase64": "kI0ANsdkwMkZyP09yHg3sf5WrIW/e3FCTbV0MQejv44="
+  },
+  "signature": {
+    "format": "ed25519-raw",
+    "base64": "BZayNzp5d+3DHRvi4RZ6Fe29TpnMv6Eg8BjiUgafPac9NdH4fMGAccrUZHUzDMpNXxVswyZB1I2qoD2fOyxLDg=="
+  },
+  "timestamp": {
+    "status": "unanchored",
+    "sealedAtLocalClock": "2026-09-21T16:30:43.625Z",
+    "note": "No timestamp authority was reachable when this bundle was built (this environment has no network access, so OpenTimestamps/Bitcoin anchoring was not attempted). sealedAtLocalClock is only the local system clock at signing time; it is NOT cryptographically anchored, NOT un-backdatable, and MUST NOT be relied on as proof of when the root existed. Only the signature (possession of the private key) and the Merkle root (exact-byte binding) are established by this bundle."
+  },
+  "files": [
+    {
+      "path": "CHANGELOG.md",
+      "leaf": "454a7ed09878b960316d4868b9fcb59b69c59cd1e1d4977576ee8fac813f91a4"
+    },
+    {
+      "path": "LICENSE.txt",
+      "leaf": "a89a7f0d2c0beed0d915c204d876e8b0ad715acbefb2da3953932131f316fd94"
+    },
+    {
+      "path": "README.md",
+      "leaf": "409b7a1176d5182f3710684fa861313f5406f1c9969a70111e448c29a4abd48e"
+    },
+    {
+      "path": "app.js",
+      "leaf": "1f65a6685e6f03118cbc3455014a6e86ad0dd8f46ceb437d27e62922a4f93582"
+    }
+  ]
+}

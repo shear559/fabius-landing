@@ -117,6 +117,38 @@
       ]
     },
     {
+      "source": "/assets/skills-20260921/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/assets/skills-20260921/(.*)\\.mjs",
+      "headers": [
+        { "key": "Content-Type", "value": "text/javascript; charset=utf-8" }
+      ]
+    },
+    {
+      "source": "/assets/skills-20260921/runs/(.*)",
+      "headers": [
+        { "key": "Content-Security-Policy", "value": "default-src 'none'; img-src 'self' data:; style-src 'unsafe-inline'; frame-ancestors 'none'; sandbox" }
+      ]
+    },
+    {
+      "source": "/assets/skills-20260921/runs/(decor|ludus)/(.*)",
+      "headers": [
+        { "key": "Content-Security-Policy", "value": "default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob:; media-src data: blob:; font-src data:; connect-src 'none'; form-action 'none'; base-uri 'none'; frame-ancestors 'self'; sandbox allow-scripts allow-forms" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" }
+      ]
+    },
+    {
+      "source": "/assets/skills-20260921/(runs|harness|truth|briefs|checks|fixtures)/(.*)\\.(md|json|mjs|py|sh|diff|csv|txt|js)",
+      "headers": [
+        { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
+        { "key": "Content-Security-Policy", "value": "default-src 'none'; sandbox" }
+      ]
+    },
+    {
       "source": "/assets/fonts/rubik/(.*)\\.(woff2|woff|ttf)",
       "headers": [
         { "key": "Access-Control-Allow-Origin", "value": "*" }

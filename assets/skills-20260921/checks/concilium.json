@@ -1,0 +1,26 @@
+{
+ "key": "concilium",
+ "checks": [
+  {
+   "name": "The final answer is the exact 13/27",
+   "state": "pass",
+   "detail": ""
+  },
+  {
+   "name": "3 of 3 seats had it right on their own",
+   "state": "pass",
+   "detail": "the council's value here is the review, not a rescue"
+  },
+  {
+   "name": "Call accounting matches the shipped formula: 7 calls",
+   "state": "pass",
+   "detail": "N + M + R + 1 = 3 + 3 + 0 + 1"
+  },
+  {
+   "name": "First attempt disclosed",
+   "state": "note",
+   "detail": "the first run lost its Fable seat to an account usage limit; rerun with the same question and Opus 4.8 in that seat"
+  }
+ ],
+ "extra": null
+}

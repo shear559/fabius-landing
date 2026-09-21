@@ -1,0 +1,63 @@
+{
+ "seconds": 158,
+ "skills": [
+  "fabius",
+  "fabius-praesidium"
+ ],
+ "steps": [
+  {
+   "t": 0.4,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "ls -la && echo --- && find . -maxdepth 3 -type f | head -100"
+  },
+  {
+   "t": 2.0,
+   "tool": "Read",
+   "kind": "read",
+   "label": "./CONTEXT.md"
+  },
+  {
+   "t": 29.9,
+   "tool": "Skill",
+   "kind": "skill",
+   "label": "loaded fabius-praesidium"
+  },
+  {
+   "t": 32.6,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "sed -n '1,80p' \"[fabius-3.2.0]/skills/fabius-praesidium/references/security-playbook.md\" 2>/dev/null | head -100"
+  },
+  {
+   "t": 49.0,
+   "tool": "Write",
+   "kind": "write",
+   "label": "./out/ROUTE.md"
+  },
+  {
+   "t": 117.5,
+   "tool": "Write",
+   "kind": "write",
+   "label": "./out/THREAT_MODEL.md"
+  },
+  {
+   "t": 131.6,
+   "tool": "Write",
+   "kind": "write",
+   "label": "./out/DECISIONS.md"
+  },
+  {
+   "t": 135.3,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "cd ./out && ls -la && echo --- && wc -l ROUTE.md THREAT_MODEL.md DECISIONS.md && echo --- && awk -F'|' '/^\\|/{print NF}' THREAT_MODEL.md | sort | uniq -c"
+  },
+  {
+   "t": 151.2,
+   "tool": "Write",
+   "kind": "write",
+   "label": "./out/SUMMARY.md"
+  }
+ ]
+}

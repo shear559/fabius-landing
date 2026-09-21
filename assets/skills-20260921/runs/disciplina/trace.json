@@ -1,0 +1,128 @@
+{
+ "seconds": 100,
+ "skills": [
+  "fabius-disciplina"
+ ],
+ "steps": [
+  {
+   "t": 0.0,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "ls -la"
+  },
+  {
+   "t": 1.6,
+   "tool": "Read",
+   "kind": "read",
+   "label": "./ISSUE.md"
+  },
+  {
+   "t": 2.1,
+   "tool": "Read",
+   "kind": "read",
+   "label": "./POLICY.md"
+  },
+  {
+   "t": 2.6,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "find billing tests -type f | sort"
+  },
+  {
+   "t": 7.1,
+   "tool": "Read",
+   "kind": "read",
+   "label": "./billing/proration.py"
+  },
+  {
+   "t": 7.5,
+   "tool": "Read",
+   "kind": "read",
+   "label": "./billing/invoice.py"
+  },
+  {
+   "t": 7.9,
+   "tool": "Read",
+   "kind": "read",
+   "label": "./tests/test_proration.py"
+  },
+  {
+   "t": 15.2,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "grep -rn \"days_in_period\\|30\" billing/ | grep -v __pycache__"
+  },
+  {
+   "t": 17.0,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "python3 -m unittest -v 2>&1"
+  },
+  {
+   "t": 22.3,
+   "tool": "Edit",
+   "kind": "write",
+   "label": "./tests/test_proration.py"
+  },
+  {
+   "t": 24.0,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "python3 -m unittest -v 2>&1 | tee /tmp/before_fix.txt"
+  },
+  {
+   "t": 27.0,
+   "tool": "Edit",
+   "kind": "write",
+   "label": "./billing/proration.py"
+  },
+  {
+   "t": 28.6,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "python3 -m unittest -v 2>&1 | tee /tmp/after_fix.txt"
+  },
+  {
+   "t": 36.2,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "python3 -c \""
+  },
+  {
+   "t": 40.7,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "python3 -c \""
+  },
+  {
+   "t": 57.8,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "python3 -c \""
+  },
+  {
+   "t": 59.9,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "cat billing/proration.py"
+  },
+  {
+   "t": 78.6,
+   "tool": "Write",
+   "kind": "write",
+   "label": "./out/REPORT.md"
+  },
+  {
+   "t": 81.0,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "git diff 2>/dev/null; echo \"---no git, showing files---\"; python3 -m unittest -v 2>&1"
+  },
+  {
+   "t": 94.2,
+   "tool": "Write",
+   "kind": "write",
+   "label": "./out/SUMMARY.md"
+  }
+ ]
+}

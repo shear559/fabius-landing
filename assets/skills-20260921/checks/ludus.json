@@ -1,0 +1,46 @@
+{
+ "key": "ludus",
+ "checks": [
+  {
+   "name": "Chromium 360px: no horizontal overflow, no errors, no outside requests",
+   "state": "pass",
+   "detail": "overflow 0px \u00b7 0 errors \u00b7 0 requests"
+  },
+  {
+   "name": "Chromium 1440px: no horizontal overflow, no errors, no outside requests",
+   "state": "pass",
+   "detail": "overflow 0px \u00b7 0 errors \u00b7 0 requests"
+  },
+  {
+   "name": "A canvas game renders",
+   "state": "pass",
+   "detail": ""
+  },
+  {
+   "name": "Keyboard input changes the game",
+   "state": "pass",
+   "detail": ""
+  },
+  {
+   "name": "It honours prefers-reduced-motion",
+   "state": "pass",
+   "detail": ""
+  },
+  {
+   "name": "It has touch controls",
+   "state": "pass",
+   "detail": ""
+  },
+  {
+   "name": "WebKit 360px: no horizontal overflow, no errors, no outside requests",
+   "state": "pass",
+   "detail": "overflow 0px \u00b7 0 errors \u00b7 0 requests"
+  },
+  {
+   "name": "WebKit 1440px: no horizontal overflow, no errors, no outside requests",
+   "state": "pass",
+   "detail": "overflow 0px \u00b7 0 errors \u00b7 0 requests"
+  }
+ ],
+ "extra": null
+}

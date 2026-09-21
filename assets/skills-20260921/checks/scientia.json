@@ -1,0 +1,91 @@
+{
+ "key": "scientia",
+ "checks": [
+  {
+   "name": "analysis.py reruns and reproduces results.csv byte for byte",
+   "state": "pass",
+   "detail": "identical"
+  },
+  {
+   "name": "No false discoveries: 0 genes called, 0 of them false",
+   "state": "pass",
+   "detail": "it refused to call a gene it could not support"
+  },
+  {
+   "name": "7 of its top 10 candidates are real responders",
+   "state": "note",
+   "detail": "the planted truth, revealed only after the run"
+  },
+  {
+   "name": "Recall at a 5% false-discovery rate: 0 of 60 planted responders",
+   "state": "fail",
+   "detail": "its batch-adjusted test had too little power for 3 vs 3; the report says the study is underpowered"
+  }
+ ],
+ "extra": {
+  "called": [],
+  "truth": [
+   "GENE0119",
+   "GENE0135",
+   "GENE0143",
+   "GENE0181",
+   "GENE0210",
+   "GENE0215",
+   "GENE0227",
+   "GENE0328",
+   "GENE0357",
+   "GENE0404",
+   "GENE0521",
+   "GENE0530",
+   "GENE0552",
+   "GENE0565",
+   "GENE0569",
+   "GENE0592",
+   "GENE0612",
+   "GENE0620",
+   "GENE0628",
+   "GENE0658",
+   "GENE0670",
+   "GENE0683",
+   "GENE0701",
+   "GENE0766",
+   "GENE0778",
+   "GENE0824",
+   "GENE0833",
+   "GENE0901",
+   "GENE0922",
+   "GENE0925",
+   "GENE0949",
+   "GENE0950",
+   "GENE0969",
+   "GENE0997",
+   "GENE1035",
+   "GENE1036",
+   "GENE1081",
+   "GENE1097",
+   "GENE1132",
+   "GENE1137",
+   "GENE1202",
+   "GENE1207",
+   "GENE1223",
+   "GENE1253",
+   "GENE1341",
+   "GENE1366",
+   "GENE1402",
+   "GENE1460",
+   "GENE1474",
+   "GENE1483",
+   "GENE1567",
+   "GENE1587",
+   "GENE1594",
+   "GENE1687",
+   "GENE1692",
+   "GENE1745",
+   "GENE1831",
+   "GENE1897",
+   "GENE1914",
+   "GENE1975"
+  ],
+  "top10_real": 7
+ }
+}

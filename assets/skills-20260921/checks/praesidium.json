@@ -1,0 +1,164 @@
+{
+ "key": "praesidium",
+ "checks": [
+  {
+   "name": "Our exploit probe: 10 of 10 attacks blocked (0 of 10 before)",
+   "state": "pass",
+   "detail": "every attack refused"
+  },
+  {
+   "name": "Legitimate requests still work",
+   "state": "pass",
+   "detail": "owner reads her invoice; her receipt downloads"
+  },
+  {
+   "name": "A bypass we did not plant, found by the run: 'Bearer __proto__' logged in on the original (4 of 4 prototype keys)",
+   "state": "pass",
+   "detail": "closed on the fix: 0 of 4 work now; confirmed by our check, added after the run"
+  },
+  {
+   "name": "Its tests pass on the fixed server",
+   "state": "pass",
+   "detail": "10 passed, 0 failed"
+  },
+  {
+   "name": "Its regression tests fail on the original server",
+   "state": "pass",
+   "detail": "5 failed on the original, as they should"
+  }
+ ],
+ "extra": {
+  "before": {
+   "blocked": 0,
+   "total": 10,
+   "attacks": [
+    {
+     "attack": "IDOR: bob reads alice's invoice 1001",
+     "blocked": false,
+     "detail": "status 200"
+    },
+    {
+     "attack": "IDOR: bob reads alice's invoice 1003",
+     "blocked": false,
+     "detail": "status 200"
+    },
+    {
+     "attack": "Path traversal: ../private/ledger.csv",
+     "blocked": false,
+     "detail": "status 200"
+    },
+    {
+     "attack": "Path traversal, encoded: ..%2Fprivate%2Fledger.csv",
+     "blocked": false,
+     "detail": "status 200"
+    },
+    {
+     "attack": "Path traversal to the source: ../../server.js",
+     "blocked": false,
+     "detail": "status 200"
+    },
+    {
+     "attack": "SSRF: avatar from cloud metadata 169.254.169.254",
+     "blocked": false,
+     "detail": "status 200"
+    },
+    {
+     "attack": "SSRF: avatar from loopback 127.0.0.1",
+     "blocked": false,
+     "detail": "status 200"
+    },
+    {
+     "attack": "SSRF: avatar from localhost name",
+     "blocked": false,
+     "detail": "status 200"
+    },
+    {
+     "attack": "SSRF: avatar from file:// scheme",
+     "blocked": false,
+     "detail": "status 200"
+    },
+    {
+     "attack": "SSRF: avatar from private range 10.0.0.5",
+     "blocked": false,
+     "detail": "status 200"
+    }
+   ],
+   "legit": [
+    {
+     "check": "alice reads her own invoice",
+     "ok": true
+    },
+    {
+     "check": "alice downloads her receipt 1001.txt",
+     "ok": true
+    }
+   ]
+  },
+  "after": {
+   "blocked": 10,
+   "total": 10,
+   "attacks": [
+    {
+     "attack": "IDOR: bob reads alice's invoice 1001",
+     "blocked": true,
+     "detail": "status 404"
+    },
+    {
+     "attack": "IDOR: bob reads alice's invoice 1003",
+     "blocked": true,
+     "detail": "status 404"
+    },
+    {
+     "attack": "Path traversal: ../private/ledger.csv",
+     "blocked": true,
+     "detail": "status 404"
+    },
+    {
+     "attack": "Path traversal, encoded: ..%2Fprivate%2Fledger.csv",
+     "blocked": true,
+     "detail": "status 404"
+    },
+    {
+     "attack": "Path traversal to the source: ../../server.js",
+     "blocked": true,
+     "detail": "status 404"
+    },
+    {
+     "attack": "SSRF: avatar from cloud metadata 169.254.169.254",
+     "blocked": true,
+     "detail": "status 400"
+    },
+    {
+     "attack": "SSRF: avatar from loopback 127.0.0.1",
+     "blocked": true,
+     "detail": "status 400"
+    },
+    {
+     "attack": "SSRF: avatar from localhost name",
+     "blocked": true,
+     "detail": "status 400"
+    },
+    {
+     "attack": "SSRF: avatar from file:// scheme",
+     "blocked": true,
+     "detail": "status 400"
+    },
+    {
+     "attack": "SSRF: avatar from private range 10.0.0.5",
+     "blocked": true,
+     "detail": "status 400"
+    }
+   ],
+   "legit": [
+    {
+     "check": "alice reads her own invoice",
+     "ok": true
+    },
+    {
+     "check": "alice downloads her receipt 1001.txt",
+     "ok": true
+    }
+   ]
+  }
+ }
+}

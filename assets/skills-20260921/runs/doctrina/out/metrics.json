@@ -1,0 +1,297 @@
+{
+  "seed": 42,
+  "dataset": {
+    "n_rows": 720,
+    "n_unique_message_groups": 611,
+    "n_groups_with_duplicates": 84,
+    "n_groups_with_conflicting_labels": 14,
+    "class_distribution": {
+      "account_access": 171,
+      "billing": 185,
+      "feature_request": 179,
+      "bug": 185
+    }
+  },
+  "split": {
+    "dev_pool_rows": 575,
+    "dev_pool_groups": 488,
+    "test_rows": 145,
+    "test_groups": 123,
+    "method": "stratified group split (80/20), grouped by exact message text"
+  },
+  "model": {
+    "type": "Multinomial Naive Bayes, bag-of-words, Laplace smoothing",
+    "hyperparameters": {
+      "alpha": 0.05,
+      "min_df": 1
+    },
+    "vocab_size": 229,
+    "cv_selection": {
+      "method": "5-fold stratified group CV inside dev-pool, selecting max mean macro-F1",
+      "top_5_results": [
+        {
+          "alpha": 0.05,
+          "min_df": 1,
+          "mean_macro_f1": 0.9399537752832122,
+          "std_macro_f1": 0.019488405750885934
+        },
+        {
+          "alpha": 0.1,
+          "min_df": 1,
+          "mean_macro_f1": 0.9399537752832122,
+          "std_macro_f1": 0.019488405750885934
+        },
+        {
+          "alpha": 0.3,
+          "min_df": 1,
+          "mean_macro_f1": 0.9399537752832122,
+          "std_macro_f1": 0.019488405750885934
+        },
+        {
+          "alpha": 0.5,
+          "min_df": 1,
+          "mean_macro_f1": 0.9399537752832122,
+          "std_macro_f1": 0.019488405750885934
+        },
+        {
+          "alpha": 1.0,
+          "min_df": 1,
+          "mean_macro_f1": 0.9399537752832122,
+          "std_macro_f1": 0.019488405750885934
+        }
+      ]
+    }
+  },
+  "control": {
+    "type": "majority-class baseline (predicts most frequent dev-pool label)",
+    "majority_label": "bug"
+  },
+  "test_results": {
+    "model": {
+      "accuracy": 0.9448275862068966,
+      "accuracy_ci95": [
+        0.903448275862069,
+        0.9793103448275862
+      ],
+      "macro_f1": 0.9468030219274002,
+      "macro_f1_ci95": [
+        0.9077043947967959,
+        0.9793090204376753
+      ],
+      "per_class": {
+        "account_access": {
+          "precision": 0.925,
+          "recall": 0.9024390243902439,
+          "f1": 0.9135802469135802,
+          "support": 41
+        },
+        "billing": {
+          "precision": 1.0,
+          "recall": 0.9142857142857143,
+          "f1": 0.955223880597015,
+          "support": 35
+        },
+        "bug": {
+          "precision": 1.0,
+          "recall": 0.9705882352941176,
+          "f1": 0.9850746268656716,
+          "support": 34
+        },
+        "feature_request": {
+          "precision": 0.875,
+          "recall": 1.0,
+          "f1": 0.9333333333333333,
+          "support": 35
+        }
+      },
+      "confusion_matrix": {
+        "classes": [
+          "account_access",
+          "billing",
+          "bug",
+          "feature_request"
+        ],
+        "matrix": [
+          [
+            37,
+            0,
+            0,
+            4
+          ],
+          [
+            2,
+            32,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            33,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            35
+          ]
+        ]
+      }
+    },
+    "control": {
+      "accuracy": 0.23448275862068965,
+      "accuracy_ci95": [
+        0.16551724137931034,
+        0.30344827586206896
+      ],
+      "macro_f1": 0.09497206703910614,
+      "macro_f1_ci95": [
+        0.07100591715976332,
+        0.11640211640211641
+      ],
+      "per_class": {
+        "account_access": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 41
+        },
+        "billing": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 35
+        },
+        "bug": {
+          "precision": 0.23448275862068965,
+          "recall": 1.0,
+          "f1": 0.37988826815642457,
+          "support": 34
+        },
+        "feature_request": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 35
+        }
+      }
+    },
+    "model_vs_control_accuracy_gap": {
+      "mean": 0.7110544827586207,
+      "ci95": [
+        0.6344827586206896,
+        0.7862068965517242
+      ],
+      "bootstrap_p_gap_le_0": 0.0
+    }
+  },
+  "human_fallback_analysis": {
+    "description": "Coverage/accuracy if low-confidence predictions (max posterior probability below threshold) are routed to a human instead of auto-routed.",
+    "thresholds": [
+      {
+        "threshold": 0.0,
+        "coverage": 1.0,
+        "n_kept": 145,
+        "accuracy_on_kept": 0.9448275862068966
+      },
+      {
+        "threshold": 0.5,
+        "coverage": 1.0,
+        "n_kept": 145,
+        "accuracy_on_kept": 0.9448275862068966
+      },
+      {
+        "threshold": 0.6,
+        "coverage": 1.0,
+        "n_kept": 145,
+        "accuracy_on_kept": 0.9448275862068966
+      },
+      {
+        "threshold": 0.7,
+        "coverage": 1.0,
+        "n_kept": 145,
+        "accuracy_on_kept": 0.9448275862068966
+      },
+      {
+        "threshold": 0.8,
+        "coverage": 1.0,
+        "n_kept": 145,
+        "accuracy_on_kept": 0.9448275862068966
+      },
+      {
+        "threshold": 0.9,
+        "coverage": 1.0,
+        "n_kept": 145,
+        "accuracy_on_kept": 0.9448275862068966
+      }
+    ],
+    "calibration_diagnostic": {
+      "posterior_confidence": {
+        "min": 0.993617845428356,
+        "median": 0.9999999377961405,
+        "fraction_below_0.999": 0.020689655172413793,
+        "note": "Posteriors saturate near 1.0 for almost all predictions, including wrong ones, so they are not usable as-is to decide when to defer to a human."
+      },
+      "log_score_margin": {
+        "mean_margin_correct": 18.844989153505715,
+        "mean_margin_wrong": 24.247561126074135,
+        "margin_wrong_min_max": [
+          10.199908487489516,
+          35.65581875112521
+        ],
+        "note": "Wrong predictions are not reliably lower-margin than correct ones (some wrong predictions have near-maximal margin), so margin-based abstention would miss most of the errors seen here."
+      }
+    }
+  },
+  "test_set_errors": [
+    {
+      "message": "my account is locked after too many attempts",
+      "true_label": "billing",
+      "predicted_label": "account_access",
+      "confidence": 0.9999999889479932
+    },
+    {
+      "message": "hello team, add a way to tag notes by colour!!",
+      "true_label": "account_access",
+      "predicted_label": "feature_request",
+      "confidence": 0.9999999999999976
+    },
+    {
+      "message": "quick question: any plans for offline mode on Windows",
+      "true_label": "account_access",
+      "predicted_label": "feature_request",
+      "confidence": 0.9999999996164857
+    },
+    {
+      "message": "I'd love keyboard shortcuts in the editor",
+      "true_label": "account_access",
+      "predicted_label": "feature_request",
+      "confidence": 0.9999612176673278
+    },
+    {
+      "message": "hey, let me schedule exports every week!!",
+      "true_label": "account_access",
+      "predicted_label": "feature_request",
+      "confidence": 0.9999999999999711
+    },
+    {
+      "message": "hello team, how do I change the owner of our workspace (again)",
+      "true_label": "bug",
+      "predicted_label": "account_access",
+      "confidence": 0.9999819425590774
+    },
+    {
+      "message": "it would be great to share search with my team asap",
+      "true_label": "billing",
+      "predicted_label": "feature_request",
+      "confidence": 0.9999999999999996
+    },
+    {
+      "message": "I can't log in after resetting my password ...",
+      "true_label": "billing",
+      "predicted_label": "account_access",
+      "confidence": 0.9999999999999767
+    }
+  ]
+}

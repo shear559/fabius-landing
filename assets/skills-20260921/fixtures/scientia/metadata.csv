@@ -1,0 +1,7 @@
+sample,condition,sequencing_run
+ctrl_1,control,A
+ctrl_2,control,A
+ctrl_3,control,B
+trt_1,treated,A
+trt_2,treated,B
+trt_3,treated,B

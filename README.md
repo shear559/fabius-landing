@@ -18,6 +18,7 @@ Fabius supplies instructions, workflows and original local helpers for schedulin
 | Installation, updates and active-session loading | `README.md`, `skills/fabius/references/skill-frontmatter.md` |
 | Twenty-two core rules, mathematical assumptions and heuristics | `RESEARCH.md`, `paper/proofs.json` |
 | Historical gains, regressions and missing artifacts | `BENCHMARKS.md`, `evals/verify-receipts.mjs` |
+| September 21 skill lab (one real run per skill, with its checks) | `assets/skills-20260921/data.json`, `runs/<skill>/`, `harness/`, `checks/` |
 | September 10 paired mathematics, page and app trials | `assets/trials-20260910/protocol.html`, `report.html`, `runs.json` |
 | September 15 showcase (twelve fresh generations on enriched briefs) | `assets/trials-20260915-showcase/protocol.html`, `report.html`, `results.json`, `all-artifacts.zip` |
 | September 15 original bare-session build trials | `assets/trials-20260915-builds/protocol.html`, `report.html`, `results.json`, `all-artifacts.zip` |
@@ -30,19 +31,21 @@ The reviewer example uses explicitly hypothetical probabilities. Its independenc
 
 ## Structure and design
 
-Static `index.html`, `styles.css` and `main.js`; no build or package installation. The page contains the hero, three capability outcomes, the interactive refinement gallery, system/research explanations, installation tabs and thirteen FAQ entries. The FAQ and its JSON-LD must remain word-for-word equivalent.
+Static `index.html`, `styles.css` and `main.js`; no build or package installation. The page contains the hero, three capability outcomes, the fifteen-skill lab, system/research explanations, installation tabs and thirteen FAQ entries. The FAQ and its JSON-LD must remain word-for-word equivalent.
 
 The design uses the existing green tokens (`#76b900`, with darker text variants), self-hosted Rubik, square buttons and green-on-black system diagrams. The map has sixteen nodes: router, lean core, thirteen specialists and the shared reference spine. Its twenty-eight connectors are built from the specialist table in `main.js`. On narrow screens the map scrolls inside its own container. Reduced motion renders a static diagram.
 
-## Worked refinement gallery — September 16
+## Fifteen-skill lab — September 21
 
-`#trials` opens three newly refined products under `assets/showcase-20260916/`: Lattice, Fieldnote and an interactive exact optimization proof. It supports an initial/refined switch, phone/desktop framing, controlled walkthroughs, full-size previews and standalone ZIP downloads. Rubik is self-hosted with its OFL and checked for Hebrew/Latin coverage.
+`#trials` shows every Fabius skill on a task it was built for: one fresh headless Claude Code session per skill (claude-sonnet-5, Claude Code 2.1.275, only the Fabius 3.2.0 plugin loaded, web tools off, a fresh working folder each time). The council run uses the shipped `concilium` script with three seats and a chairman; its first attempt lost a seat to a usage limit and is published beside the second.
 
-This is explicitly an iterative illustration using additional work and reference access, not a new controlled comparison. The original neutral viewer is retained at `build-study.html`. The initial artifacts are the first baseline submissions (01/05/09); original study assets are unchanged. App logic starts from run 06, then receives a new interface and targeted robustness fixes.
+- **Router widget.** `assets/skills-20260921/runtime/route.mjs` is a byte-identical copy of the plugin's `runtime/src/route.mjs`, with two browser stand-ins (`providers.mjs`, `config.mjs`). Typing a task shows the skills, the capability rung and the model tier, and lights the matching tiles.
+- **Stage.** Each run shows its brief word for word, its outputs, the rules the skill held to, the checks run afterwards, every file it wrote and a replay of its tool steps. Live pages (decor, ludus) run in sandboxed frames; every model output is inserted as text, never markup. The catena seal is recomputed in the browser (SHA-256 leaves, Merkle root, Ed25519 over the root); editing any byte breaks it.
+- **Honesty rules.** Outputs are shown as the run left them. Checks live in `harness/checks.py` and write `checks/<skill>.json`; hidden oracles and planted truth sit in `truth/`. Misses stay visible (scientia called no genes; disciplina left the half-cent rounding rule flagged but unfixed). The praesidium prototype-key bypass was found by the run; the probe that confirms it was added afterwards and is labelled that way.
+- **Rebuild.** `harness/run.sh <skill>` reruns one session; `harness/checks.py` reruns the checks; `harness/build.py` writes `data.json` and `runs/`, masking machine paths, the account name and anything passed in `MASK_NAMES`, and prints how many leaks remain (it must read 0). The catena demo private key is never copied.
+- **Headers.** `vercel.json` serves the lab with must-revalidate caching, `.mjs` as JavaScript, run files as sandboxed plain text, and the two live pages under a frame-only CSP.
 
-Measured standalone checks: website 28/28 browser scenarios, app 68/68; math 1,233/1,233 numerical probes plus 182 exact and 72 numerical certificate/solver assertions. Method, failure history, execution receipts, source and portable evaluators are linked from `assets/showcase-20260916/verification.html`.
-
-The subsequent visual update adds colored grain and Phosphor Duotone icons to Lattice, a blue Fieldnote palette, a static green Fabius emblem glow, and a mathematically faithful equal-scale diagram with objective bands and all binding constraints highlighted at transitions. See `assets/showcase-20260916/visual-refresh.md` for source, checks and visual-review limits.
+The earlier refinement gallery (`assets/showcase-20260916/`) is no longer linked from the page; its files and verification notes remain deployed at their old paths.
 
 ## Preserved paired artifact trials
 

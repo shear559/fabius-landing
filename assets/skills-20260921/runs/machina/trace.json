@@ -1,0 +1,74 @@
+{
+ "seconds": 288,
+ "skills": [
+  "fabius-machina"
+ ],
+ "steps": [
+  {
+   "t": 0.5,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "mkdir -p out && for i in $(seq 1 16); do node -e \"console.log(crypto.randomUUID())\"; done"
+  },
+  {
+   "t": 52.1,
+   "tool": "Write",
+   "kind": "write",
+   "label": "./out/workflow.json"
+  },
+  {
+   "t": 54.7,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "node -e \"const w=require('./out/workflow.json'); console.log('nodes:', w.nodes.length, 'connections keys:', Object.keys(w.connections).length);\""
+  },
+  {
+   "t": 99.1,
+   "tool": "Write",
+   "kind": "write",
+   "label": "./out/workflow.test.mjs"
+  },
+  {
+   "t": 101.0,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "node --test out/workflow.test.mjs 2>&1"
+  },
+  {
+   "t": 109.9,
+   "tool": "Edit",
+   "kind": "write",
+   "label": "./out/workflow.test.mjs"
+  },
+  {
+   "t": 111.5,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "node --test out/workflow.test.mjs 2>&1"
+  },
+  {
+   "t": 136.5,
+   "tool": "Write",
+   "kind": "write",
+   "label": "./out/RUNBOOK.md"
+  },
+  {
+   "t": 138.7,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "ls -la out/ && node --test out/workflow.test.mjs 2>&1 | tail -20"
+  },
+  {
+   "t": 141.6,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "node --test out/workflow.test.mjs 2>&1 | head -20"
+  },
+  {
+   "t": 161.8,
+   "tool": "Write",
+   "kind": "write",
+   "label": "./out/SUMMARY.md"
+  }
+ ]
+}

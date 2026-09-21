@@ -1,0 +1,224 @@
+{
+ "seconds": 463,
+ "skills": [
+  "fabius-decor"
+ ],
+ "steps": [
+  {
+   "t": 0.4,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "ls -la && echo --- && cat FACTS.md"
+  },
+  {
+   "t": 3.6,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "cd [fabius-3.2.0]/skills/fabius-decor && ls references/ && echo --- && sed -n '1,150p' references/visual-system-template.md 2>/dev/null"
+  },
+  {
+   "t": 5.9,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "cd [fabius-3.2.0]/skills/fabius-decor && sed -n '1,120p' references/platform-baseline.md"
+  },
+  {
+   "t": 7.9,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "cd [fabius-3.2.0]/skills/fabius-decor && sed -n '1,100p' references/design-tokens.md | head -150"
+  },
+  {
+   "t": 19.9,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "python3 << 'EOF'"
+  },
+  {
+   "t": 25.3,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "python3 << 'EOF'"
+  },
+  {
+   "t": 29.6,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "python3 << 'EOF'"
+  },
+  {
+   "t": 55.7,
+   "tool": "Write",
+   "kind": "write",
+   "label": "./out/visual-system.md"
+  },
+  {
+   "t": 128.4,
+   "tool": "Write",
+   "kind": "write",
+   "label": "./out/index.html"
+  },
+  {
+   "t": 156.4,
+   "tool": "Edit",
+   "kind": "write",
+   "label": "./out/index.html"
+  },
+  {
+   "t": 159.3,
+   "tool": "Edit",
+   "kind": "write",
+   "label": "./out/index.html"
+  },
+  {
+   "t": 162.8,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "which node python3 chromium chrome google-chrome 2>&1; node --version; python3 --version; ls /Applications | grep -i -E \"chrome|safari|firefox\" 2>&1"
+  },
+  {
+   "t": 166.1,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "ls \"/Applications/Google Chrome.app/Contents/MacOS/\" 2>&1"
+  },
+  {
+   "t": 169.7,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "cd ./out && \\"
+  },
+  {
+   "t": 183.6,
+   "tool": "Read",
+   "kind": "read",
+   "label": "./out/shot-360.png"
+  },
+  {
+   "t": 190.2,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "python3 -c \""
+  },
+  {
+   "t": 242.3,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "\\"
+  },
+  {
+   "t": 253.4,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "pkill -f \"remote-debugging-port=9333\" 2>/dev/null; sleep 1"
+  },
+  {
+   "t": 267.6,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "rm -f shot-360.png shot-1440.png && \\"
+  },
+  {
+   "t": 273.9,
+   "tool": "Read",
+   "kind": "read",
+   "label": "./out/shot-360.png"
+  },
+  {
+   "t": 282.7,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "pkill -f \"remote-debugging-port=9333\" 2>/dev/null; sleep 1"
+  },
+  {
+   "t": 300.2,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --version"
+  },
+  {
+   "t": 309.0,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "cd /tmp && cat > widthtest.html << 'EOF'"
+  },
+  {
+   "t": 313.0,
+   "tool": "Read",
+   "kind": "read",
+   "label": "/tmp/widthtest.png"
+  },
+  {
+   "t": 325.3,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "pkill -f \"remote-debugging-port=9333\" 2>/dev/null; sleep 1"
+  },
+  {
+   "t": 331.2,
+   "tool": "Read",
+   "kind": "read",
+   "label": "/tmp/real360.png"
+  },
+  {
+   "t": 343.2,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "pkill -f \"remote-debugging-port=9333\" 2>/dev/null; sleep 1"
+  },
+  {
+   "t": 349.7,
+   "tool": "Read",
+   "kind": "read",
+   "label": "/tmp/full360.png"
+  },
+  {
+   "t": 351.3,
+   "tool": "Read",
+   "kind": "read",
+   "label": "/tmp/full1440.png"
+  },
+  {
+   "t": 384.5,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "pkill -f \"remote-debugging-port=9333\" 2>/dev/null; sleep 1"
+  },
+  {
+   "t": 402.4,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "pkill -f \"remote-debugging-port=9333\" 2>/dev/null; sleep 1"
+  },
+  {
+   "t": 411.8,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "\\"
+  },
+  {
+   "t": 420.2,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "python3 << 'EOF'"
+  },
+  {
+   "t": 423.7,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "rm -f /tmp/widthtest.html /tmp/widthtest.png /tmp/real360.png /tmp/chrome.log"
+  },
+  {
+   "t": 426.6,
+   "tool": "Bash",
+   "kind": "run",
+   "label": "rm -f shot-360.png shot-1440.png && ls -la"
+  },
+  {
+   "t": 455.5,
+   "tool": "Write",
+   "kind": "write",
+   "label": "./out/SUMMARY.md"
+  }
+ ]
+}

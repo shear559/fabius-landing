@@ -1,0 +1,339 @@
+{
+  "plan": {
+    "schema": "fabius-cohort/v1",
+    "agents": [
+      {
+        "id": "triage",
+        "description": "Classify one new support ticket (English or Portuguese) into exactly one category, tag it, and assign it to the matching helpdesk queue. Dispatch first, on every new ticket, before any drafting happens.",
+        "instructions": "Read the ticket and, only when needed to disambiguate a billing or account-access question, the customer's plan and invoices (read-only). Choose exactly one category: how_to, bug, billing_question, billing_dispute, account_access, feature_request, security_report, or legal; use other only when none apply. Map category to queue: billing_dispute and billing_question to billing; security_report to security (this reaches security@, is never left in a general queue, and is never answered here); legal to legal, routed untouched with no note beyond the routing reason; account_access to account_security; how_to, bug and feature_request to self_serve, engineering and product respectively is out of scope for this role, use self_serve, engineering or product only via the queue enum; other to general. Set needsHumanEscalation true for billing_dispute, security_report and legal. Add a short internal note stating the classification reason for every category except security_report and legal, where the note must stay empty so the content is not summarized or interpreted outside the correct process. Never create a draft reply and never contact the customer; this role has no drafting tool.",
+        "tools": [
+          "read_ticket",
+          "read_customer_account",
+          "add_tag",
+          "assign_queue",
+          "add_internal_note"
+        ],
+        "permissions": {
+          "read": "allow",
+          "write": "allow",
+          "execute": "deny",
+          "network": "deny"
+        },
+        "output": {
+          "type": "object",
+          "properties": {
+            "ticketId": {
+              "type": "string",
+              "maxLength": 64
+            },
+            "category": {
+              "type": "string",
+              "enum": [
+                "how_to",
+                "bug",
+                "billing_question",
+                "billing_dispute",
+                "account_access",
+                "feature_request",
+                "security_report",
+                "legal",
+                "other"
+              ]
+            },
+            "language": {
+              "type": "string",
+              "enum": [
+                "en",
+                "pt"
+              ]
+            },
+            "queue": {
+              "type": "string",
+              "enum": [
+                "self_serve",
+                "engineering",
+                "product",
+                "billing",
+                "account_security",
+                "security",
+                "legal",
+                "general"
+              ]
+            },
+            "tags": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "maxLength": 32
+              },
+              "maxItems": 8
+            },
+            "needsHumanEscalation": {
+              "type": "boolean"
+            },
+            "note": {
+              "type": "string",
+              "maxLength": 500
+            }
+          },
+          "required": [
+            "ticketId",
+            "category",
+            "language",
+            "queue",
+            "tags",
+            "needsHumanEscalation",
+            "note"
+          ],
+          "additionalProperties": false
+        }
+      },
+      {
+        "id": "drafter",
+        "description": "Draft a candidate reply for a ticket the triage agent has already classified as how_to, bug, account_access, feature_request or billing_question (never billing_dispute, security_report or legal). Dispatch only after a successful triage task on one of those categories; the draft is never sent, only queued for a person to approve.",
+        "instructions": "Reread the ticket and, only when needed, the customer's plan and invoices (read-only) to personalize the answer. Search the help centre and cite the article ids actually used; do not invent citations. Write the draft in the ticket's language (en or pt). State confidence as low whenever the help centre does not clearly cover the request, and say so in the draft rather than guessing. Set readyForReview to true always: this role only ever produces a draft awaiting a person's approval and has no permission or tool to send anything to the customer. Add an internal note only when the draft required a judgment call a reviewer should double-check.",
+        "tools": [
+          "read_ticket",
+          "read_customer_account",
+          "search_help_centre",
+          "create_draft_reply",
+          "add_internal_note"
+        ],
+        "permissions": {
+          "read": "allow",
+          "write": "allow",
+          "execute": "deny",
+          "network": "deny"
+        },
+        "output": {
+          "type": "object",
+          "properties": {
+            "ticketId": {
+              "type": "string",
+              "maxLength": 64
+            },
+            "category": {
+              "type": "string",
+              "enum": [
+                "how_to",
+                "bug",
+                "account_access",
+                "feature_request",
+                "billing_question"
+              ]
+            },
+            "draftText": {
+              "type": "string",
+              "maxLength": 4000
+            },
+            "sourcesUsed": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "maxLength": 32
+              },
+              "maxItems": 5
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            },
+            "readyForReview": {
+              "type": "boolean",
+              "enum": [
+                true
+              ]
+            }
+          },
+          "required": [
+            "ticketId",
+            "category",
+            "draftText",
+            "sourcesUsed",
+            "confidence",
+            "readyForReview"
+          ],
+          "additionalProperties": false
+        }
+      }
+    ],
+    "tasks": [
+      {
+        "id": "t_howto",
+        "agent": "triage",
+        "input": {
+          "ticketId": "T-1001",
+          "language": "en",
+          "subject": "How do I export my invoices as CSV?",
+          "body": "Hi, I need to export all my invoices as a CSV file for our accountant. Where is that option?"
+        },
+        "dependsOn": []
+      },
+      {
+        "id": "t_bug",
+        "agent": "triage",
+        "input": {
+          "ticketId": "T-1002",
+          "language": "pt",
+          "subject": "Erro 500 ao salvar relatório",
+          "body": "Toda vez que tento salvar um relatório recebo um erro 500. Aconteceu pela primeira vez hoje de manhã."
+        },
+        "dependsOn": []
+      },
+      {
+        "id": "t_billing_question",
+        "agent": "triage",
+        "input": {
+          "ticketId": "T-1003",
+          "language": "en",
+          "subject": "How do I update my card on file?",
+          "body": "My credit card is expiring next month, how do I add a new one before my next invoice?"
+        },
+        "dependsOn": []
+      },
+      {
+        "id": "t_billing_dispute",
+        "agent": "triage",
+        "input": {
+          "ticketId": "T-1004",
+          "language": "en",
+          "subject": "Charged twice for the same month",
+          "body": "I was billed twice for September and I want a refund for the duplicate charge, this is not right."
+        },
+        "dependsOn": []
+      },
+      {
+        "id": "t_account_access",
+        "agent": "triage",
+        "input": {
+          "ticketId": "T-1005",
+          "language": "pt",
+          "subject": "Não consigo entrar na minha conta",
+          "body": "Meu login não funciona mais e o link de redefinição de senha não chega no meu email."
+        },
+        "dependsOn": []
+      },
+      {
+        "id": "t_feature_request",
+        "agent": "triage",
+        "input": {
+          "ticketId": "T-1006",
+          "language": "en",
+          "subject": "Dark mode?",
+          "body": "Would love a dark mode for the dashboard, any plans for that?"
+        },
+        "dependsOn": []
+      },
+      {
+        "id": "t_security_report",
+        "agent": "triage",
+        "input": {
+          "ticketId": "T-1007",
+          "language": "en",
+          "subject": "Possible account takeover",
+          "body": "Someone logged into my account from a country I have never visited and changed my email. I think I was hacked."
+        },
+        "dependsOn": []
+      },
+      {
+        "id": "t_legal",
+        "agent": "triage",
+        "input": {
+          "ticketId": "T-1008",
+          "language": "en",
+          "subject": "GDPR data deletion request",
+          "body": "This is a formal request under GDPR Article 17 to delete all personal data associated with my account."
+        },
+        "dependsOn": []
+      },
+      {
+        "id": "d_howto",
+        "agent": "drafter",
+        "input": {
+          "ticketId": "T-1001"
+        },
+        "dependsOn": [
+          "t_howto"
+        ]
+      },
+      {
+        "id": "d_bug",
+        "agent": "drafter",
+        "input": {
+          "ticketId": "T-1002"
+        },
+        "dependsOn": [
+          "t_bug"
+        ]
+      },
+      {
+        "id": "d_billing_question",
+        "agent": "drafter",
+        "input": {
+          "ticketId": "T-1003"
+        },
+        "dependsOn": [
+          "t_billing_question"
+        ]
+      },
+      {
+        "id": "d_account_access",
+        "agent": "drafter",
+        "input": {
+          "ticketId": "T-1005"
+        },
+        "dependsOn": [
+          "t_account_access"
+        ]
+      },
+      {
+        "id": "d_feature_request",
+        "agent": "drafter",
+        "input": {
+          "ticketId": "T-1006"
+        },
+        "dependsOn": [
+          "t_feature_request"
+        ]
+      }
+    ]
+  },
+  "order": [
+    "t_howto",
+    "t_bug",
+    "t_billing_question",
+    "t_billing_dispute",
+    "t_account_access",
+    "t_feature_request",
+    "t_security_report",
+    "t_legal",
+    "d_howto",
+    "d_bug",
+    "d_billing_question",
+    "d_account_access",
+    "d_feature_request"
+  ],
+  "levels": [
+    [
+      "t_howto",
+      "t_bug",
+      "t_billing_question",
+      "t_billing_dispute",
+      "t_account_access",
+      "t_feature_request",
+      "t_security_report",
+      "t_legal"
+    ],
+    [
+      "d_howto",
+      "d_bug",
+      "d_billing_question",
+      "d_account_access",
+      "d_feature_request"
+    ]
+  ]
+}
