@@ -1,0 +1,960 @@
+{
+  "method": "worst pixel in each text layer box vs. the same render with type hidden; WCAG 2.x relative luminance",
+  "formats": [
+    {
+      "id": "billboard",
+      "size": "1920x1080",
+      "safe": {
+        "x": 115.2,
+        "y": 64.8
+      },
+      "png": "1920,1080",
+      "webp": "1920,1080",
+      "exportMatchesRender": true,
+      "lowest": 3.69,
+      "lowestLayer": "headline-2",
+      "lowestSize": 96,
+      "lowestNeed": 3,
+      "lowestLarge": {
+        "min": 3.69,
+        "layer": "headline-2",
+        "size": 96,
+        "need": 3
+      },
+      "lowestBody": {
+        "min": 13.88,
+        "layer": "eyebrow",
+        "size": 22,
+        "need": 4.5
+      },
+      "pass": true,
+      "safeOk": true,
+      "layers": [
+        {
+          "layer": "wordmark",
+          "text": "lattice",
+          "fill": "rgb(28, 41, 35)",
+          "size": 52,
+          "weight": 550,
+          "box": [
+            181,
+            75,
+            145.8,
+            62
+          ],
+          "pixels": 9052,
+          "min": 13.88,
+          "worstPixel": [
+            190,
+            75,
+            245,
+            246,
+            239
+          ],
+          "need": 3,
+          "pass": true,
+          "inSafe": true
+        },
+        {
+          "layer": "eyebrow",
+          "text": "A QUIET PLACE FOR A CURIOUS MIND",
+          "fill": "rgb(28, 41, 35)",
+          "size": 22,
+          "weight": 500,
+          "box": [
+            136.9,
+            361,
+            473,
+            27
+          ],
+          "pixels": 12798,
+          "min": 13.88,
+          "worstPixel": [
+            260,
+            362,
+            245,
+            246,
+            239
+          ],
+          "need": 4.5,
+          "pass": true,
+          "inSafe": true
+        },
+        {
+          "layer": "headline",
+          "text": "Collect the pieces.",
+          "fill": "rgb(28, 41, 35)",
+          "size": 96,
+          "weight": 500,
+          "box": [
+            118,
+            424,
+            749.8,
+            114
+          ],
+          "pixels": 85500,
+          "min": 13.88,
+          "worstPixel": [
+            129,
+            424,
+            245,
+            246,
+            239
+          ],
+          "need": 3,
+          "pass": true,
+          "inSafe": true
+        },
+        {
+          "layer": "headline-2",
+          "text": "Find the connection.",
+          "fill": "rgb(107, 128, 103)",
+          "size": 96,
+          "weight": 500,
+          "box": [
+            118,
+            532,
+            845.5,
+            114
+          ],
+          "pixels": 96444,
+          "min": 3.69,
+          "worstPixel": [
+            959,
+            585,
+            234,
+            240,
+            232
+          ],
+          "need": 3,
+          "pass": true,
+          "inSafe": true
+        },
+        {
+          "layer": "lead",
+          "text": "A notebook for the thought that",
+          "fill": "rgb(28, 41, 35)",
+          "size": 40,
+          "weight": 400,
+          "box": [
+            116,
+            693,
+            564.4,
+            47
+          ],
+          "pixels": 26555,
+          "min": 13.88,
+          "worstPixel": [
+            131,
+            693,
+            245,
+            246,
+            239
+          ],
+          "need": 3,
+          "pass": true,
+          "inSafe": true
+        },
+        {
+          "layer": "lead-2",
+          "text": "becomes something bigger.",
+          "fill": "rgb(28, 41, 35)",
+          "size": 40,
+          "weight": 400,
+          "box": [
+            116,
+            745,
+            495,
+            47
+          ],
+          "pixels": 23265,
+          "min": 13.88,
+          "worstPixel": [
+            127,
+            745,
+            245,
+            246,
+            239
+          ],
+          "need": 3,
+          "pass": true,
+          "inSafe": true
+        },
+        {
+          "layer": "note",
+          "text": "Local-first. Your notes. Your next idea.",
+          "fill": "rgb(40, 77, 54)",
+          "size": 26,
+          "weight": 500,
+          "box": [
+            116,
+            920,
+            474.4,
+            31
+          ],
+          "pixels": 14725,
+          "min": 8.76,
+          "worstPixel": [
+            292,
+            920,
+            245,
+            246,
+            239
+          ],
+          "need": 3,
+          "pass": true,
+          "inSafe": true
+        },
+        {
+          "layer": "fiction",
+          "text": "Lattice is a fictional product demonstration.",
+          "fill": "rgb(28, 41, 35)",
+          "size": 22,
+          "weight": 400,
+          "box": [
+            116,
+            973,
+            445.6,
+            27
+          ],
+          "pixels": 12042,
+          "min": 13.88,
+          "worstPixel": [
+            147,
+            973,
+            245,
+            246,
+            239
+          ],
+          "need": 4.5,
+          "pass": true,
+          "inSafe": true
+        }
+      ]
+    },
+    {
+      "id": "social",
+      "size": "1080x1350",
+      "safe": {
+        "x": 64.8,
+        "y": 81
+      },
+      "png": "1080,1350",
+      "webp": "1080,1350",
+      "exportMatchesRender": true,
+      "lowest": 3.93,
+      "lowestLayer": "headline-2",
+      "lowestSize": 92,
+      "lowestNeed": 3,
+      "lowestLarge": {
+        "min": 3.93,
+        "layer": "headline-2",
+        "size": 92,
+        "need": 3
+      },
+      "lowestBody": {
+        "min": 13.88,
+        "layer": "eyebrow",
+        "size": 22,
+        "need": 4.5
+      },
+      "pass": true,
+      "safeOk": true,
+      "layers": [
+        {
+          "layer": "eyebrow",
+          "text": "A QUIET PLACE FOR A CURIOUS MIND",
+          "fill": "rgb(28, 41, 35)",
+          "size": 22,
+          "weight": 500,
+          "box": [
+            86.9,
+            825,
+            473,
+            27
+          ],
+          "pixels": 12798,
+          "min": 13.88,
+          "worstPixel": [
+            114,
+            825,
+            245,
+            246,
+            239
+          ],
+          "need": 4.5,
+          "pass": true,
+          "inSafe": true
+        },
+        {
+          "layer": "headline",
+          "text": "Collect the pieces.",
+          "fill": "rgb(28, 41, 35)",
+          "size": 92,
+          "weight": 500,
+          "box": [
+            67,
+            862,
+            718.1,
+            109
+          ],
+          "pixels": 78371,
+          "min": 13.88,
+          "worstPixel": [
+            81,
+            862,
+            245,
+            246,
+            239
+          ],
+          "need": 3,
+          "pass": true,
+          "inSafe": true
+        },
+        {
+          "layer": "headline-2",
+          "text": "Find the connection.",
+          "fill": "rgb(107, 128, 103)",
+          "size": 92,
+          "weight": 500,
+          "box": [
+            67,
+            956,
+            809.8,
+            109
+          ],
+          "pixels": 88290,
+          "min": 3.93,
+          "worstPixel": [
+            96,
+            956,
+            245,
+            246,
+            239
+          ],
+          "need": 3,
+          "pass": true,
+          "inSafe": true
+        },
+        {
+          "layer": "lead",
+          "text": "A notebook for the thought that",
+          "fill": "rgb(28, 41, 35)",
+          "size": 36,
+          "weight": 400,
+          "box": [
+            66,
+            1088,
+            508.5,
+            43
+          ],
+          "pixels": 21887,
+          "min": 13.88,
+          "worstPixel": [
+            73,
+            1088,
+            245,
+            246,
+            239
+          ],
+          "need": 3,
+          "pass": true,
+          "inSafe": true
+        },
+        {
+          "layer": "lead-2",
+          "text": "becomes something bigger.",
+          "fill": "rgb(28, 41, 35)",
+          "size": 36,
+          "weight": 400,
+          "box": [
+            66,
+            1134,
+            446,
+            43
+          ],
+          "pixels": 19178,
+          "min": 13.88,
+          "worstPixel": [
+            232,
+            1134,
+            245,
+            246,
+            239
+          ],
+          "need": 3,
+          "pass": true,
+          "inSafe": true
+        },
+        {
+          "layer": "wordmark",
+          "text": "lattice",
+          "fill": "rgb(28, 41, 35)",
+          "size": 44,
+          "weight": 550,
+          "box": [
+            121,
+            1215,
+            123.4,
+            52
+          ],
+          "pixels": 6448,
+          "min": 13.88,
+          "worstPixel": [
+            131,
+            1215,
+            245,
+            246,
+            239
+          ],
+          "need": 3,
+          "pass": true,
+          "inSafe": true
+        },
+        {
+          "layer": "fiction",
+          "text": "Lattice is a fictional product demonstration.",
+          "fill": "rgb(28, 41, 35)",
+          "size": 22,
+          "weight": 400,
+          "box": [
+            568.4,
+            1231,
+            445.6,
+            27
+          ],
+          "pixels": 12042,
+          "min": 13.88,
+          "worstPixel": [
+            606,
+            1231,
+            245,
+            246,
+            239
+          ],
+          "need": 4.5,
+          "pass": true,
+          "inSafe": true
+        }
+      ]
+    },
+    {
+      "id": "story",
+      "size": "1080x1920",
+      "safe": {
+        "x": 64.8,
+        "y": 250
+      },
+      "png": "1080,1920",
+      "webp": "1080,1920",
+      "exportMatchesRender": true,
+      "lowest": 3.93,
+      "lowestLayer": "headline-2",
+      "lowestSize": 112,
+      "lowestNeed": 3,
+      "lowestLarge": {
+        "min": 3.93,
+        "layer": "headline-2",
+        "size": 112,
+        "need": 3
+      },
+      "lowestBody": {
+        "min": 13.88,
+        "layer": "fiction",
+        "size": 22,
+        "need": 4.5
+      },
+      "pass": true,
+      "safeOk": true,
+      "layers": [
+        {
+          "layer": "wordmark",
+          "text": "lattice",
+          "fill": "rgb(28, 41, 35)",
+          "size": 48,
+          "weight": 550,
+          "box": [
+            126,
+            273,
+            134.6,
+            57
+          ],
+          "pixels": 7695,
+          "min": 13.88,
+          "worstPixel": [
+            171,
+            273,
+            245,
+            246,
+            239
+          ],
+          "need": 3,
+          "pass": true,
+          "inSafe": true
+        },
+        {
+          "layer": "eyebrow",
+          "text": "A QUIET PLACE FOR A CURIOUS MIND",
+          "fill": "rgb(28, 41, 35)",
+          "size": 24,
+          "weight": 500,
+          "box": [
+            88.8,
+            428,
+            518,
+            28
+          ],
+          "pixels": 14532,
+          "min": 13.88,
+          "worstPixel": [
+            199,
+            428,
+            245,
+            246,
+            239
+          ],
+          "need": 3,
+          "pass": true,
+          "inSafe": true
+        },
+        {
+          "layer": "headline",
+          "text": "Collect",
+          "fill": "rgb(28, 41, 35)",
+          "size": 112,
+          "weight": 500,
+          "box": [
+            67,
+            475,
+            339.2,
+            133
+          ],
+          "pixels": 45220,
+          "min": 13.88,
+          "worstPixel": [
+            85,
+            475,
+            245,
+            246,
+            239
+          ],
+          "need": 3,
+          "pass": true,
+          "inSafe": true
+        },
+        {
+          "layer": "headline",
+          "text": "the pieces.",
+          "fill": "rgb(28, 41, 35)",
+          "size": 112,
+          "weight": 500,
+          "box": [
+            67,
+            585,
+            521.7,
+            133
+          ],
+          "pixels": 69426,
+          "min": 13.88,
+          "worstPixel": [
+            105,
+            585,
+            245,
+            246,
+            239
+          ],
+          "need": 3,
+          "pass": true,
+          "inSafe": true
+        },
+        {
+          "layer": "headline-2",
+          "text": "Find the",
+          "fill": "rgb(107, 128, 103)",
+          "size": 112,
+          "weight": 500,
+          "box": [
+            67,
+            695,
+            394,
+            133
+          ],
+          "pixels": 52402,
+          "min": 3.93,
+          "worstPixel": [
+            71,
+            695,
+            245,
+            246,
+            239
+          ],
+          "need": 3,
+          "pass": true,
+          "inSafe": true
+        },
+        {
+          "layer": "headline-2",
+          "text": "connection.",
+          "fill": "rgb(107, 128, 103)",
+          "size": 112,
+          "weight": 500,
+          "box": [
+            67,
+            805,
+            574.3,
+            133
+          ],
+          "pixels": 76475,
+          "min": 3.93,
+          "worstPixel": [
+            97,
+            805,
+            245,
+            246,
+            239
+          ],
+          "need": 3,
+          "pass": true,
+          "inSafe": true
+        },
+        {
+          "layer": "note",
+          "text": "Local-first. Your notes. Your next idea.",
+          "fill": "rgb(40, 77, 54)",
+          "size": 28,
+          "weight": 500,
+          "box": [
+            66,
+            964,
+            488.7,
+            33
+          ],
+          "pixels": 16137,
+          "min": 8.76,
+          "worstPixel": [
+            129,
+            964,
+            245,
+            246,
+            239
+          ],
+          "need": 3,
+          "pass": true,
+          "inSafe": true
+        },
+        {
+          "layer": "fiction",
+          "text": "Lattice is a fictional product demonstration.",
+          "fill": "rgb(28, 41, 35)",
+          "size": 22,
+          "weight": 400,
+          "box": [
+            66,
+            1015,
+            445.6,
+            27
+          ],
+          "pixels": 12042,
+          "min": 13.88,
+          "worstPixel": [
+            85,
+            1015,
+            245,
+            246,
+            239
+          ],
+          "need": 4.5,
+          "pass": true,
+          "inSafe": true
+        }
+      ]
+    },
+    {
+      "id": "square",
+      "size": "1080x1080",
+      "safe": {
+        "x": 64.8,
+        "y": 64.8
+      },
+      "png": "1080,1080",
+      "webp": "1080,1080",
+      "exportMatchesRender": true,
+      "lowest": 8.76,
+      "lowestLayer": "tagline",
+      "lowestSize": 84,
+      "lowestNeed": 3,
+      "lowestLarge": {
+        "min": 8.76,
+        "layer": "tagline",
+        "size": 84,
+        "need": 3
+      },
+      "lowestBody": {
+        "min": 13.88,
+        "layer": "eyebrow",
+        "size": 20,
+        "need": 4.5
+      },
+      "pass": true,
+      "safeOk": true,
+      "layers": [
+        {
+          "layer": "eyebrow",
+          "text": "A QUIET PLACE FOR A CURIOUS MIND",
+          "fill": "rgb(28, 41, 35)",
+          "size": 20,
+          "weight": 500,
+          "box": [
+            127,
+            797,
+            431.1,
+            24
+          ],
+          "pixels": 10368,
+          "min": 13.88,
+          "worstPixel": [
+            149,
+            797,
+            245,
+            246,
+            239
+          ],
+          "need": 4.5,
+          "pass": true,
+          "inSafe": true
+        },
+        {
+          "layer": "wordmark",
+          "text": "lattice",
+          "fill": "rgb(28, 41, 35)",
+          "size": 42,
+          "weight": 550,
+          "box": [
+            852.5,
+            951,
+            117.8,
+            50
+          ],
+          "pixels": 5950,
+          "min": 13.88,
+          "worstPixel": [
+            964,
+            951,
+            245,
+            246,
+            239
+          ],
+          "need": 3,
+          "pass": true,
+          "inSafe": true
+        },
+        {
+          "layer": "tagline",
+          "text": "Make room for",
+          "fill": "rgb(28, 41, 35)",
+          "size": 84,
+          "weight": 500,
+          "box": [
+            102,
+            831,
+            518.1,
+            100
+          ],
+          "pixels": 51900,
+          "min": 13.88,
+          "worstPixel": [
+            236,
+            832,
+            245,
+            246,
+            239
+          ],
+          "need": 3,
+          "pass": true,
+          "inSafe": true
+        },
+        {
+          "layer": "tagline",
+          "text": "the connection.",
+          "fill": "rgb(40, 77, 54)",
+          "size": 84,
+          "weight": 500,
+          "box": [
+            102,
+            907,
+            569.5,
+            100
+          ],
+          "pixels": 57000,
+          "min": 8.76,
+          "worstPixel": [
+            279,
+            907,
+            245,
+            246,
+            239
+          ],
+          "need": 3,
+          "pass": true,
+          "inSafe": true
+        }
+      ]
+    },
+    {
+      "id": "card",
+      "size": "1200x630",
+      "safe": {
+        "x": 72,
+        "y": 37.8
+      },
+      "png": "1200,630",
+      "webp": "1200,630",
+      "exportMatchesRender": true,
+      "lowest": 3.93,
+      "lowestLayer": "headline-2",
+      "lowestSize": 62,
+      "lowestNeed": 3,
+      "lowestLarge": {
+        "min": 3.93,
+        "layer": "headline-2",
+        "size": 62,
+        "need": 3
+      },
+      "lowestBody": {
+        "min": 13.88,
+        "layer": "fiction",
+        "size": 18,
+        "need": 4.5
+      },
+      "pass": true,
+      "safeOk": true,
+      "layers": [
+        {
+          "layer": "wordmark",
+          "text": "lattice",
+          "fill": "rgb(28, 41, 35)",
+          "size": 36,
+          "weight": 550,
+          "box": [
+            119,
+            76,
+            101,
+            43
+          ],
+          "pixels": 4343,
+          "min": 13.88,
+          "worstPixel": [
+            192,
+            76,
+            245,
+            246,
+            239
+          ],
+          "need": 3,
+          "pass": true,
+          "inSafe": true
+        },
+        {
+          "layer": "headline",
+          "text": "Collect the pieces.",
+          "fill": "rgb(28, 41, 35)",
+          "size": 62,
+          "weight": 500,
+          "box": [
+            74,
+            242,
+            484.7,
+            74
+          ],
+          "pixels": 35890,
+          "min": 13.88,
+          "worstPixel": [
+            109,
+            242,
+            245,
+            246,
+            239
+          ],
+          "need": 3,
+          "pass": true,
+          "inSafe": true
+        },
+        {
+          "layer": "headline-2",
+          "text": "Find the connection.",
+          "fill": "rgb(107, 128, 103)",
+          "size": 62,
+          "weight": 500,
+          "box": [
+            74,
+            318,
+            546.5,
+            74
+          ],
+          "pixels": 40478,
+          "min": 3.93,
+          "worstPixel": [
+            139,
+            318,
+            245,
+            246,
+            239
+          ],
+          "need": 3,
+          "pass": true,
+          "inSafe": true
+        },
+        {
+          "layer": "note",
+          "text": "Local-first. Your notes. Your next idea.",
+          "fill": "rgb(28, 41, 35)",
+          "size": 24,
+          "weight": 400,
+          "box": [
+            74,
+            448,
+            421.2,
+            28
+          ],
+          "pixels": 11816,
+          "min": 13.88,
+          "worstPixel": [
+            130,
+            448,
+            245,
+            246,
+            239
+          ],
+          "need": 3,
+          "pass": true,
+          "inSafe": true
+        },
+        {
+          "layer": "fiction",
+          "text": "Lattice is a fictional product demonstration.",
+          "fill": "rgb(28, 41, 35)",
+          "size": 18,
+          "weight": 400,
+          "box": [
+            74,
+            557,
+            364.6,
+            22
+          ],
+          "pixels": 8030,
+          "min": 13.88,
+          "worstPixel": [
+            113,
+            557,
+            245,
+            246,
+            239
+          ],
+          "need": 4.5,
+          "pass": true,
+          "inSafe": true
+        }
+      ]
+    }
+  ]
+}

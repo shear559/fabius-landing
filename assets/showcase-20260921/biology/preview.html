@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Treated vs control — differential expression explorer</title>
+<link rel="stylesheet" href="styles.css">
+<script defer src="../demo-control.js"></script></head>
+<body>
+<a class="skip" href="#results">Skip to results table</a>
+<header class="top" data-tour-step="0">
+  <div class="wrap">
+    <p class="eyebrow">Yeast RNA-seq · 2,000 genes · 3 control vs 3 treated · two sequencing runs</p>
+    <h1>Which genes respond to the treatment?</h1>
+    <p class="lede" id="lede"></p>
+    <dl class="kpis" id="kpis"></dl>
+    <section class="sens" id="sens" aria-labelledby="h-sens"></section>
+  </div>
+</header>
+
+<main class="wrap">
+  <section aria-labelledby="h-plots" class="block" data-tour-step="1">
+    <div class="block-head">
+      <h2 id="h-plots">Effect size against evidence</h2>
+      <p class="hint">Hover a point, or focus a chart and use <kbd>←</kbd> <kbd>→</kbd> to step through genes, <kbd>↑</kbd> <kbd>↓</kbd> to step through significant genes, <kbd>Enter</kbd> to open one.</p>
+    </div>
+    <div class="legend" aria-hidden="true">
+      <span><i class="dot up"></i>Up in treated (FDR &lt; 5 %)</span>
+      <span><i class="dot down"></i>Down in treated (FDR &lt; 5 %)</span>
+      <span><i class="dot ns"></i>Not significant</span>
+    </div>
+    <div class="grid2">
+      <figure class="chart" id="volcano-fig">
+        <figcaption><strong>Volcano.</strong> log<sub>2</sub> fold change (treated / control) against −log<sub>10</sub> p. The dashed line is the largest p-value still inside the 5 % FDR list. Significant genes are labelled (ID number only) where a label fits without covering another label or point; hover or use the keyboard for the rest.</figcaption>
+        <div class="plot" id="volcano"></div>
+      </figure>
+      <figure class="chart" id="ma-fig">
+        <figcaption><strong>MA plot.</strong> log<sub>2</sub> fold change against mean normalised count. Low-count genes scatter widely and rarely reach significance.</figcaption>
+        <div class="plot" id="ma"></div>
+      </figure>
+    </div>
+    <p class="sr-only" aria-live="polite" id="live"></p>
+  </section>
+
+  <section aria-labelledby="h-gene" class="block" id="gene-section">
+    <div class="block-head">
+      <h2 id="h-gene">Gene detail</h2>
+      <button type="button" class="btn" id="top-gene-btn" data-tour-step="3" data-tour-action="click">Show the strongest hit</button>
+    </div>
+    <div class="gene-grid">
+      <div class="plot small" id="gene-plot"></div>
+      <div id="gene-stats"></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-table" class="block" id="results" data-tour-step="2">
+    <div class="block-head">
+      <h2 id="h-table">Results table</h2>
+    </div>
+    <div class="controls">
+      <label>Search gene
+        <input type="search" id="q" placeholder="e.g. GENE0949" autocomplete="off" spellcheck="false">
+      </label>
+      <label>Adjusted p (FDR)
+        <select id="fdr">
+          <option value="0.01">≤ 0.01</option>
+          <option value="0.05" selected>≤ 0.05</option>
+          <option value="0.1">≤ 0.10</option>
+          <option value="1.01">all tested genes</option>
+        </select>
+      </label>
+      <label>Direction
+        <select id="dir">
+          <option value="all" selected>both</option>
+          <option value="up">up in treated</option>
+          <option value="down">down in treated</option>
+        </select>
+      </label>
+      <p class="count" id="count" aria-live="polite"></p>
+    </div>
+    <div class="table-wrap" tabindex="0" role="region" aria-labelledby="h-table">
+      <table id="tbl">
+        <thead><tr></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <button type="button" class="btn ghost" id="more" hidden>Show more rows</button>
+    <p class="note">The full table (all 2,000 genes, normalised counts included) is written by <code>analysis.py</code> to <code>out/results.csv</code>.</p>
+  </section>
+
+  <section aria-labelledby="h-qc" class="block" data-tour-step="4">
+    <div class="block-head">
+      <h2 id="h-qc">Quality: samples, run and dispersion</h2>
+    </div>
+    <div class="qc-grid">
+      <figure class="chart">
+        <figcaption><strong>Library sizes.</strong> Raw read totals; the number at right is the median-of-ratios size factor used to normalise.</figcaption>
+        <div class="plot" id="libs"></div>
+      </figure>
+      <figure class="chart">
+        <figcaption><strong>Sample PCA.</strong> 500 most variable genes on a variance-stabilised scale. Colour is condition, shape is sequencing run.</figcaption>
+        <div class="plot" id="pca"></div>
+      </figure>
+      <figure class="chart">
+        <figcaption><strong>Sample distances.</strong> Euclidean distance on the variance-stabilised scale; darker is closer.</figcaption>
+        <div class="plot" id="dist"></div>
+      </figure>
+      <figure class="chart">
+        <figcaption><strong>Dispersion.</strong> Per-gene estimates (grey), the fitted trend (line) and the shrunken values used for testing (blue). Genes far above the trend keep their own estimate.</figcaption>
+        <div class="plot" id="disp"></div>
+      </figure>
+    </div>
+    <div class="run-box" id="runbox"></div>
+  </section>
+
+  <section aria-labelledby="h-methods" class="block prose" data-tour-step="5">
+    <h2 id="h-methods">Methods and limits</h2>
+    <div id="methods"></div>
+  </section>
+</main>
+<footer class="wrap foot">
+  <p>All numbers on this page are generated by <code>product/analysis.py</code> from <code>counts.csv</code> and <code>metadata.csv</code>. Gene IDs are anonymous; nothing here identifies what any gene does. Font: Rubik (SIL Open Font License).</p>
+</footer>
+<div class="tip" id="tip" role="presentation" hidden></div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

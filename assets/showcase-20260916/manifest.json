@@ -440,12 +440,12 @@
       "bytes": 353
     },
     "showcase.css": {
-      "sha256": "fbeb8bbf8ccb17b5f51eb34e868ee1cce235abe1da7fdc32944d980db464c007",
-      "bytes": 8197
+      "sha256": "34b5c34e7cd4949454124190a2c9d4fd31b0b64142d4cc9e780a495f57bc183e",
+      "bytes": 8627
     },
     "showcase.js": {
-      "sha256": "dc503d06ea80249db6ced407b211645c3f08ea0598024469dec01d6c19d1c3f7",
-      "bytes": 6633
+      "sha256": "70c187355ae23e69e2643a2b80ea91c5e7b0bec8638c5dc633f7f2bcb367bf71",
+      "bytes": 8735
     },
     "verification-tools/README.md": {
       "sha256": "7e3c2523e3c1d0e36206675d1a93de9f64352ee16fad399487402e2c17be266d",

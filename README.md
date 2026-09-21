@@ -18,6 +18,7 @@ Fabius supplies instructions, workflows and original local helpers for schedulin
 | Installation, updates and active-session loading | `README.md`, `skills/fabius/references/skill-frontmatter.md` |
 | Twenty-two core rules, mathematical assumptions and heuristics | `RESEARCH.md`, `paper/proofs.json` |
 | Historical gains, regressions and missing artifacts | `BENCHMARKS.md`, `evals/verify-receipts.mjs` |
+| September 21 demonstrations: launch film, key visual, RNA-seq study | `assets/showcase-20260921/verification.html`, `manifest.json`, `<demo>/verification.md` |
 | September 10 paired mathematics, page and app trials | `assets/trials-20260910/protocol.html`, `report.html`, `runs.json` |
 | September 15 showcase (twelve fresh generations on enriched briefs) | `assets/trials-20260915-showcase/protocol.html`, `report.html`, `results.json`, `all-artifacts.zip` |
 | September 15 original bare-session build trials | `assets/trials-20260915-builds/protocol.html`, `report.html`, `results.json`, `all-artifacts.zip` |
@@ -43,6 +44,10 @@ This is explicitly an iterative illustration using additional work and reference
 Measured standalone checks: website 28/28 browser scenarios, app 68/68; math 1,233/1,233 numerical probes plus 182 exact and 72 numerical certificate/solver assertions. Method, failure history, execution receipts, source and portable evaluators are linked from `assets/showcase-20260916/verification.html`.
 
 The subsequent visual update adds colored grain and Phosphor Duotone icons to Lattice, a blue Fieldnote palette, a static green Fabius emblem glow, and a mathematically faithful equal-scale diagram with objective bands and all binding constraints highlighted at transitions. See `assets/showcase-20260916/visual-refresh.md` for source, checks and visual-review limits.
+
+## Three more demonstrations — September 21
+
+`#trials` gained three tabs beside the website, app and mathematics builds: **Video** (a 39.5-second Lattice launch film authored as HTML scenes, rendered frame by frame and encoded to H.264 and VP9, with captions, chapters and a storyboard), **Image** (one master SVG for Lattice, five launch formats, contrast measured on the rendered pixels) and **Biology** (a synthetic RNA-seq study with calibrated FDR control and an explorer for every gene). Each was built by a fresh headless Claude Code session on `claude-opus-5` with only Fabius 3.2.0 loaded, then refined once by a second one; the files live in `assets/showcase-20260921/<demo>/`, with `preview.html` = the product plus the tour bridge (`demo-control.js`). Headline checks: the film measures 1920×1080 at 30 fps with both encodes under 6 MB; the key visual passes AA in 5 of 5 formats and re-renders pixel for pixel; the study's 11 calls at 5 % FDR are all planted responders (11 of 60 found). A fourth build (a security review) did not finish and is not published. Method and limits: `assets/showcase-20260921/verification.html`.
 
 ## Preserved paired artifact trials
 

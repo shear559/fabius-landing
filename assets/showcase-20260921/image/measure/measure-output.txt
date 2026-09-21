@@ -1,0 +1,5 @@
+billboard 1920x1080 layers=8  lowest=3.69:1 (headline-2, 96px, needs 3:1) body-lowest=13.88:1 (needs 4.5:1) AA=pass safe=ok png=1920,1080 webp=1920,1080 export=render:true
+social    1080x1350 layers=7  lowest=3.93:1 (headline-2, 92px, needs 3:1) body-lowest=13.88:1 (needs 4.5:1) AA=pass safe=ok png=1080,1350 webp=1080,1350 export=render:true
+story     1080x1920 layers=8  lowest=3.93:1 (headline-2, 112px, needs 3:1) body-lowest=13.88:1 (needs 4.5:1) AA=pass safe=ok png=1080,1920 webp=1080,1920 export=render:true
+square    1080x1080 layers=4  lowest=8.76:1 (tagline, 84px, needs 3:1) body-lowest=13.88:1 (needs 4.5:1) AA=pass safe=ok png=1080,1080 webp=1080,1080 export=render:true
+card      1200x630  layers=5  lowest=3.93:1 (headline-2, 62px, needs 3:1) body-lowest=13.88:1 (needs 4.5:1) AA=pass safe=ok png=1200,630 webp=1200,630 export=render:true

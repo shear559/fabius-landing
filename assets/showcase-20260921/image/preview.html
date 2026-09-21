@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lattice launch key visual · image studio</title>
+<link rel="stylesheet" href="styles.css">
+<script defer src="data.js"></script>
+<script defer src="app.js"></script>
+<script defer src="../demo-control.js"></script></head>
+<body>
+<a class="skip" href="#formats">Skip to formats</a>
+<header class="top wrap" data-tour-step="0">
+  <p class="brand"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 8 16 2l12 6v16l-12 6-12-6ZM4 8l12 7 12-7M16 15v15M4 24l12-7 12 7"/></svg>lattice</p>
+  <p class="eyebrow"><span class="dot"></span> Launch key visual · image studio</p>
+  <h1>One master artwork, five formats.</h1>
+  <p class="lead">A notebook cube on the lattice from the Lattice logo. Threads bring notes to it, and a sprig grows from the top. Every format below is cropped from this one SVG.</p>
+</header>
+
+<main>
+<section class="studio wrap" aria-labelledby="master-h">
+  <div class="section-head">
+    <p class="eyebrow">Master artwork</p>
+    <h2 id="master-h">Drawn in code, live on this page.</h2>
+  </div>
+  <div class="studio-grid">
+    <figure class="stage" id="stage">
+      <div class="stage-art" id="master-host" role="img" aria-label="Lattice master artwork, 2400 by 2400">
+        <noscript><img src="master.svg" alt="Lattice master artwork"></noscript>
+      </div>
+      <figcaption>master.svg · 2400 × 2400 · <a href="master.svg" download>Download SVG</a></figcaption>
+    </figure>
+    <fieldset class="panel layers" data-tour-step="1">
+      <legend>Layers</legend>
+      <p class="hint">Toggle the master's layers. The page redraws the SVG.</p>
+      <ul id="layer-list" class="layer-list"></ul>
+      <button type="button" class="btn quiet" id="layers-reset">Show all layers</button>
+    </fieldset>
+  </div>
+</section>
+
+<section class="formats band" id="formats" aria-labelledby="formats-h">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Formats</p>
+      <h2 id="formats-h">Each export at its true aspect ratio.</h2>
+    </div>
+    <div class="toolbar">
+      <div class="seg" role="group" aria-label="Format" id="format-switch" data-tour-step="2"></div>
+      <div class="seg" role="group" aria-label="Overlays and zoom">
+        <button type="button" class="btn toggle" id="t-grid" aria-pressed="false">Grid</button>
+        <button type="button" class="btn toggle" id="t-safe" aria-pressed="false" data-tour-step="3" data-tour-action="click">Safe area</button>
+        <button type="button" class="btn toggle" id="t-zoom" aria-pressed="false">100 %</button>
+      </div>
+    </div>
+    <div class="preview" id="preview">
+      <div class="viewport" id="viewport" tabindex="0" aria-label="Format preview. Scrolls at 100 %.">
+        <div class="canvas" id="canvas">
+          <picture id="pic"><source id="pic-webp" type="image/webp"><img id="pic-img" alt="" width="1920" height="1080"></picture>
+          <svg class="overlay" id="overlay" aria-hidden="true"></svg>
+        </div>
+      </div>
+      <div class="meta" id="meta" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section class="downloads wrap" id="downloads" aria-labelledby="dl-h" data-tour-step="4">
+  <div class="section-head">
+    <p class="eyebrow">Downloads</p>
+    <h2 id="dl-h">Ten exports, rendered in Chromium.</h2>
+  </div>
+  <table class="dl-table">
+    <thead><tr><th scope="col">Format</th><th scope="col">Size</th><th scope="col">PNG</th><th scope="col">WebP</th></tr></thead>
+    <tbody id="dl-body"></tbody>
+  </table>
+  <p class="small">Contrast and safe areas measured by <a href="measure/measure.js">measure/measure.js</a>. Results: <a href="measure/contrast-report.md">contrast-report.md</a> · <a href="measure/contrast-report.json">JSON</a>.</p>
+</section>
+
+<section class="notes band" id="notes" aria-labelledby="notes-h">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Art direction</p>
+      <h2 id="notes-h">What the site gave us, and what we did with it.</h2>
+    </div>
+    <div class="notes-grid">
+      <article class="note" data-tour-step="5">
+        <h3>Palette and contrast</h3>
+        <p class="small">All colours come from the Lattice stylesheet. Ratios are WCAG 2.x, computed from the hex pairs. AA needs 4.5:1 for body text and 3:1 for large text (24 px and up, or 18.66 px bold) and graphics.</p>
+        <ul class="swatches" id="swatches"></ul>
+        <table class="pairs"><thead><tr><th scope="col">Text on background</th><th scope="col">Ratio and AA bar</th><th scope="col">Use</th></tr></thead><tbody id="pairs"></tbody></table>
+        <p class="small">Measured on the exports, worst pixel behind each text layer:</p>
+        <ul class="measured" id="measured"></ul>
+      </article>
+      <article class="note">
+        <h3>Type scale</h3>
+        <p class="small">Rubik, from the site. Display 500 with −0.055 em tracking, the site's heading setting. Body 400. Eyebrow 500 caps at +0.12 em.</p>
+        <table class="pairs"><thead><tr><th scope="col">Format</th><th scope="col">Display</th><th scope="col">Lead</th><th scope="col">Body</th><th scope="col">Eyebrow</th></tr></thead><tbody id="type-scale"></tbody></table>
+      </article>
+      <article class="note">
+        <h3>Composition per format</h3>
+        <dl class="decisions" id="decisions"></dl>
+      </article>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="wrap foot"><p>Lattice is a fictional product demonstration. Rubik under the SIL Open Font License (<a href="assets/OFL.txt">OFL.txt</a>).</p></footer>
+</body>
+</html>

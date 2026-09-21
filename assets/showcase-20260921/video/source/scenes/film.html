@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lattice — launch film scenes</title>
+<link rel="stylesheet" href="film.css">
+<script src="timeline.js"></script>
+<script defer src="film.js"></script>
+</head>
+<body>
+<main class="stage" id="stage">
+  <div class="blob" id="blob" aria-hidden="true"></div>
+
+  <!-- 1 · The problem: pieces scattered across notes and sources -->
+  <section class="scene" data-scene="scatter">
+    <div class="copy"></div>
+    <div class="art scatter">
+      <div class="frag chip" style="left:520px;top:40px;rotate:7deg" data-a="t:.2;d:1.6;x:-240;y:260;o:1"><span class="kicker">FIELD NOTES / 001</span><strong>What if a city could grow?</strong></div>
+      <div class="frag quote" style="left:40px;top:120px;rotate:-6deg" data-a="t:.3;d:1.7;x:220;y:170;o:1">What changes when we design for the space between buildings?</div>
+      <div class="frag source" style="left:430px;top:600px;rotate:4deg" data-a="t:.4;d:1.6;x:-140;y:-180;o:1"><svg class="icon"><use href="#i-note"/></svg><div><b>Field observations</b><small>A source</small></div></div>
+      <div class="frag tag" style="left:90px;top:520px;rotate:-10deg" data-a="t:.35;d:1.6;x:200;y:-100;o:1">URBAN ECOLOGY</div>
+      <div class="frag tag" style="left:640px;top:420px;rotate:12deg" data-a="t:.5;d:1.5;x:-300;y:-40;o:1">READING LIST</div>
+      <div class="frag mini" style="left:120px;top:730px;rotate:5deg" data-a="t:.45;d:1.7;x:220;y:-330;o:1"><small>RESEARCH NOTE</small><strong>Small spaces. Living systems.</strong></div>
+      <div class="frag pill" style="left:330px;top:330px;rotate:-3deg" data-a="t:.55;d:1.5;x:20;y:30;o:1">Public space</div>
+      <div class="frag pill" style="left:690px;top:230px;rotate:9deg" data-a="t:.6;d:1.6;x:-330;y:120;o:1">Pocket gardens</div>
+    </div>
+  </section>
+
+  <!-- 2 · What Lattice does: one notebook -->
+  <section class="scene" data-scene="notebook">
+    <div class="copy"></div>
+    <div class="art">
+      <div class="notebook" data-a="t:.2;d:1.2;y:90;o:0;s:.96">
+        <div class="window-head"><span class="window-dots">● ● ●</span><span>Urban ecology / Notebook</span><span></span></div>
+        <div class="notebook-content">
+          <aside>
+            <span class="mini-brand">lattice</span>
+            <span class="side-active" data-a="t:1;d:.7;x:-16;o:0"><svg class="icon"><use href="#i-stack"/></svg>All notes</span>
+            <span data-a="t:1.15;d:.7;x:-16;o:0"><svg class="icon"><use href="#i-search"/></svg>Sources</span>
+            <span data-a="t:1.3;d:.7;x:-16;o:0"><svg class="icon"><use href="#i-graph"/></svg>Connections</span>
+            <hr><small>PROJECT</small><span>Urban ecology</span><span>Reading list</span>
+          </aside>
+          <article>
+            <div class="note-meta"><span>RESEARCH NOTE</span><span>On this device</span></div>
+            <h2 data-a="t:.9;d:.9;y:20;o:0">Small spaces. Living systems.</h2>
+            <p data-a="t:1.2;d:.9;y:16;o:0">A pocket garden is more than a patch of green. It is a connection between soil, water, and the people around it.</p>
+            <blockquote data-a="t:1.5;d:.9;y:16;o:0">What changes when we design for the space between buildings?</blockquote>
+            <div class="source-card" data-a="t:1.8;d:.9;y:16;o:0"><svg class="icon big"><use href="#i-note"/></svg><div><b>Field observations</b><small>Source linked to this note</small></div><span>01</span></div>
+          </article>
+        </div>
+      </div>
+      <div class="connection-chip" data-a="t:2.6;d:1;y:30;o:0;s:.94"><svg class="icon big lime"><use href="#i-graph"/></svg><div><small>A connection, found.</small><b>Public space × living systems</b></div></div>
+    </div>
+  </section>
+
+  <!-- 3 · Feature 01: capture -->
+  <section class="scene" data-scene="capture">
+    <div class="copy"></div>
+    <div class="art">
+      <div class="capture-note" data-a="t:.2;d:1.2;y:80;o:0;r:4">
+        <span class="tiny-tag">URBAN ECOLOGY</span>
+        <h3>A new way to see the familiar.</h3>
+        <p>Today’s observation: the smallest shared spaces often hold the most interesting stories.</p>
+        <div class="note-rule"></div>
+        <span class="note-source" data-a="t:2.2;d:.8;y:10;o:0"><svg class="icon"><use href="#i-arrow"/></svg>Field notebook · linked source</span>
+      </div>
+      <svg class="link-line" viewBox="0 0 840 900" aria-hidden="true"><path pathLength="1" data-draw="t:1.5;d:.9" d="M130 690 C 150 800, 300 830, 418 800"/></svg>
+      <div class="source-card floating" data-a="t:1.1;d:1;x:120;o:0"><svg class="icon big"><use href="#i-note"/></svg><div><b>Field observations</b><small>Source linked to this note</small></div><span>01</span></div>
+    </div>
+  </section>
+
+  <!-- 4 · Feature 02: connect -->
+  <section class="scene" data-scene="connect">
+    <div class="copy"></div>
+    <div class="art">
+      <svg class="connection-map" viewBox="0 0 440 310" aria-hidden="true">
+        <path pathLength="1" data-draw="t:1.0;d:.8" d="M220 150 90 65"/>
+        <path pathLength="1" data-draw="t:1.25;d:.8" d="M220 150 350 65"/>
+        <path pathLength="1" data-draw="t:1.5;d:.8" d="M220 150 100 260"/>
+        <path pathLength="1" data-draw="t:1.75;d:.8" d="M220 150 350 260"/>
+        <g class="node core" data-a="t:.3;d:.9;s:.8;o:0"><rect x="140" y="116" width="160" height="68" rx="10"/><text x="220" y="146">Urban ecology</text><text class="map-sub" x="220" y="168">A growing idea</text></g>
+        <g class="node" data-a="t:1.5;d:.8;y:8;o:0"><rect x="20" y="40" width="140" height="50" rx="7"/><text x="90" y="70">Public space</text></g>
+        <g class="node" data-a="t:1.75;d:.8;y:8;o:0"><rect x="280" y="40" width="140" height="50" rx="7"/><text x="350" y="70">Pocket gardens</text></g>
+        <g class="node" data-a="t:2.0;d:.8;y:-8;o:0"><rect x="20" y="235" width="160" height="50" rx="7"/><text x="100" y="265">Field observations</text></g>
+        <g class="node" data-a="t:2.25;d:.8;y:-8;o:0"><rect x="275" y="235" width="150" height="50" rx="7"/><text x="350" y="265">Living systems</text></g>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 5 · Feature 03: export -->
+  <section class="scene" data-scene="export">
+    <div class="copy"></div>
+    <div class="art">
+      <div class="export-sheet" data-a="t:.2;d:1.2;y:80;o:0;r:-3">
+        <svg class="icon huge green"><use href="#i-md"/></svg>
+        <h3>Your ideas, without the lock-in.</h3>
+        <code>
+          <span data-a="t:1.0;d:.5;x:-10;o:0"># Small spaces. Living systems.</span>
+          <span class="gap"></span>
+          <span data-a="t:1.3;d:.5;x:-10;o:0">A pocket garden is more than</span>
+          <span data-a="t:1.45;d:.5;x:-10;o:0">a patch of green.</span>
+          <span class="gap"></span>
+          <span data-a="t:1.75;d:.5;x:-10;o:0">## Sources</span>
+          <span data-a="t:1.95;d:.5;x:-10;o:0">- Field observations</span>
+        </code>
+        <span class="export-file" data-a="t:2.4;d:.8;y:10;o:0">research-notes.md <b>Markdown</b></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 · End card -->
+  <section class="scene end" data-scene="end">
+    <svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><path pathLength="1" data-draw="t:.5;d:1.8" d="M4 8 16 2l12 6v16l-12 6-12-6ZM4 8l12 7 12-7M16 15v15M4 24l12-7 12 7"/></svg>
+    <div class="copy"></div>
+  </section>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <!-- Phosphor Duotone icons (MIT, see assets/PHOSPHOR-LICENSE.txt), as inlined on the Lattice site -->
+      <symbol id="i-note" viewBox="0 0 256 256"><path d="M200,88l-72,72H96V128l72-72Z" opacity="0.2"/><path d="M229.66,58.34l-32-32a8,8,0,0,0-11.320,0l-96,96A8,8,0,0,0,88,128v32a8,8,0,0,0,8,8h32a8,8,0,0,0,5.66-2.34l96-96A8,8,0,0,0,229.66,58.34ZM124.69,152H104V131.31l64-64L188.69,88ZM200,76.69,179.31,56,192,43.31,212.69,64ZM224,128v80a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V48A16,16,0,0,1,48,32h80a8,8,0,0,1,0,16H48V208H208V128a8,8,0,0,1,16,0Z"/></symbol>
+      <symbol id="i-graph" viewBox="0 0 256 256"><path d="M152,128a24,24,0,1,1-24-24A24,24,0,0,1,152,128Z" opacity="0.2"/><path d="M200,152a31.840,31.840,0,0,0-19.53,6.68l-23.11-18A31.65,31.65,0,0,0,160,128c0-.74,0-1.48-.08-2.21l13.23-4.41A32,32,0,1,0,168,104c0,.74,0,1.48.08,2.21l-13.23,4.41A32,32,0,0,0,128,96a32.59,32.59,0,0,0-5.27.44L115.89,81A32,32,0,1,0,96,88a32.59,32.59,0,0,0,5.27-.44l6.84,15.4a31.920,31.920,0,0,0-8.57,39.64L73.83,165.44a32.060,32.060,0,1,0,10.63,12l25.71-22.84a31.910,31.910,0,0,0,37.36-1.24l23.11,18A31.65,31.65,0,0,0,168,184a32,32,0,1,0,32-32Zm0-64a16,16,0,1,1-16,16A16,16,0,0,1,200,88ZM80,56A16,16,0,1,1,96,72,16,16,0,0,1,80,56ZM56,208a16,16,0,1,1,16-16A16,16,0,0,1,56,208Zm56-80a16,16,0,1,1,16,16A16,16,0,0,1,112,128Zm88,72a16,16,0,1,1,16-16A16,16,0,0,1,200,200Z"/></symbol>
+      <symbol id="i-stack" viewBox="0 0 256 256"><path d="M224,80l-96,56L32,80l96-56Z" opacity="0.2"/><path d="M230.91,172A8,8,0,0,1,228,182.91l-96,56a8,8,0,0,1-8.060,0l-96-56A8,8,0,0,1,36,169.09l92,53.65,92-53.65A8,8,0,0,1,230.91,172ZM220,121.09l-92,53.65L36,121.09A8,8,0,0,0,28,134.91l96,56a8,8,0,0,0,8.060,0l96-56A8,8,0,1,0,220,121.09ZM24,80a8,8,0,0,1,4-6.91l96-56a8,8,0,0,1,8.060,0l96,56a8,8,0,0,1,0,13.82l-96,56a8,8,0,0,1-8.060,0l-96-56A8,8,0,0,1,24,80Zm23.88,0L128,126.74,208.12,80,128,33.26Z"/></symbol>
+      <symbol id="i-search" viewBox="0 0 256 256"><path d="M192,112a80,80,0,1,1-80-80A80,80,0,0,1,192,112Z" opacity="0.2"/><path d="M229.66,218.34,179.6,168.28a88.21,88.21,0,1,0-11.32,11.31l50.06,50.070a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 256 256"><path d="M192,64V168L88,64Z" opacity="0.2"/><path d="M192,56H88a8,8,0,0,0-5.66,13.66L128.69,116,58.34,186.34a8,8,0,0,0,11.32,11.32L140,127.31l46.34,46.35A8,8,0,0,0,200,168V64A8,8,0,0,0,192,56Zm-8,92.69-38.34-38.34h0L107.31,72H184Z"/></symbol>
+      <symbol id="i-md" viewBox="0 0 256 256"><path d="M208,88H152V32Z" opacity="0.2"/><path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40v72a8,8,0,0,0,16,0V40h88V88a8,8,0,0,0,8,8h48V224a8,8,0,0,0,16,0V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM144,144H128a8,8,0,0,0-8,8v56a8,8,0,0,0,8,8h16a36,36,0,0,0,0-72Zm0,56h-8V160h8a20,20,0,0,1,0,40Zm-40-48v56a8,8,0,0,1-16,0V177.38L74.55,196.59a8,8,0,0,1-13.1,0L48,177.38V208a8,8,0,0,1-16,0V152a8,8,0,0,1,14.55-4.59L68,178.050l21.45-30.64A8,8,0,0,1,104,152Z"/></symbol>
+    </defs>
+  </svg>
+</main>
+</body>
+</html>
