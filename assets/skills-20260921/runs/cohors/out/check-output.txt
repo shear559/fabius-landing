@@ -1,5 +1,0 @@
-{
-  "ok": true,
-  "tasks": 13,
-  "agents": 2
-}

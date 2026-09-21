@@ -1,7 +1,0 @@
-{
- "process": "geometric Brownian motion, i.i.d. daily returns",
- "annual_drift": 0.07,
- "annual_vol": 0.18,
- "seed": 20260921,
- "note": "no serial dependence, so no timing rule has a true edge"
-}
