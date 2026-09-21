@@ -222,7 +222,9 @@ img{display:block;max-width:100%}
 @keyframes bob{0%,100%{transform:translateY(0) rotate(-1.1deg)}50%{transform:translateY(-3.5px) rotate(1.1deg)}}
 @keyframes stepA{0%,100%{transform:rotate(-9deg)}50%{transform:rotate(9deg)}}
 @keyframes stepB{0%,100%{transform:rotate(9deg)}50%{transform:rotate(-9deg)}}
-@media (prefers-reduced-motion:reduce){.walker{animation:none;left:var(--x,50%);opacity:calc(var(--op,.4) * .8)}.walker-bob,.wb .leg{animation:none}}
+@media (prefers-reduced-motion:reduce){.walker{animation:none;left:min(var(--x,50%),calc(100% - var(--size,60px)));opacity:calc(var(--op,.4) * .8)}.walker-bob,.wb .leg{animation:none}}
+/* parked beetles on a narrow band: the small ones rest in the top and bottom padding, clear of the text column; the two large ones have no room and are not drawn */
+@media (prefers-reduced-motion:reduce) and (max-width:900px){.core-walk .walker{top:var(--py,var(--lane,40%))}.core-walk .walker:not(.no-legs){display:none}}
 
 /* ── section heads ───────────────────────────────────────── */
 .sec-head{max-width:760px;margin:0 0 48px}
@@ -285,12 +287,14 @@ img{display:block;max-width:100%}
   background-size:46px 46px;
   -webkit-mask-image:radial-gradient(125% 85% at 50% 50%,#000 28%,transparent 76%);
   mask-image:radial-gradient(125% 85% at 50% 50%,#000 28%,transparent 76%)}
-.core-walk{position:absolute;inset:0;z-index:1;pointer-events:none}
-.core-in{position:relative;z-index:2}
-.core-kicker{position:relative;z-index:1;font-family:var(--mono);font-size:11.5px;letter-spacing:.34em;color:#9b8fd6;margin-bottom:34px}
+/* one stacking context (.core): grid 0 < contour wordmark 1 < walkers and grain 2 < labels 3,
+   so the beetles walk over the drawing and under the text. .core-in must not get a z-index. */
+.core-walk{position:absolute;inset:0;z-index:2;pointer-events:none}
+.core-in{position:relative}
+.core-kicker{position:relative;z-index:3;font-family:var(--mono);font-size:11.5px;letter-spacing:.34em;color:#9b8fd6;margin-bottom:34px}
 /* the contour wordmark is drawn on the band: transparent ground, full bleed, top/bottom fade baked into the alpha.
    Letters span 24–80% of its height (8% and 26.5% of its width), so the margins place them, not the image box. */
-.core-wordmark{--wm:min(100vw,1680px);position:relative;z-index:0;display:block;width:var(--wm);max-width:none;height:auto;
+.core-wordmark{--wm:min(100vw,1680px);position:relative;z-index:1;display:block;width:var(--wm);max-width:none;height:auto;
   margin:calc(var(--wm) * -.08 + 14px) auto calc(var(--wm) * -.068 + 30px);margin-inline:calc(50% - var(--wm) / 2);
   filter:drop-shadow(0 0 18px rgba(118,185,0,.22))}
 /* labels over the contours keep a halo in the band colour, as a topographic map does; the thin
@@ -301,8 +305,8 @@ img{display:block;max-width:100%}
 @media (min-width:1681px){.core-wordmark{
   -webkit-mask-image:var(--hole),linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);-webkit-mask-composite:source-in;
   mask-image:var(--hole),linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);mask-composite:intersect}}
-.core-tag{position:relative;z-index:1;font-size:clamp(14px,1.9vw,17px);letter-spacing:.06em;color:var(--lav);margin-bottom:20px;font-weight:500;text-transform:lowercase}
-.core-sub{position:relative;z-index:1;max-width:540px;margin:0 auto;color:#b6b0d6;font-size:clamp(15px,1.8vw,17px);line-height:1.62;font-weight:420}
+.core-tag{position:relative;z-index:3;font-size:clamp(14px,1.9vw,17px);letter-spacing:.06em;color:var(--lav);margin-bottom:20px;font-weight:500;text-transform:lowercase}
+.core-sub{position:relative;z-index:3;max-width:540px;margin:0 auto;color:#b6b0d6;font-size:clamp(15px,1.8vw,17px);line-height:1.62;font-weight:420}
 
 /* ── research ────────────────────────────────────────────── */
 .research{padding:var(--sec) 0;background:
@@ -823,7 +827,8 @@ img{display:block;max-width:100%}
 }
 /* the two dark bands: coarse tooth, screened */
 .core::after,.system::after{content:"";position:absolute;inset:0;pointer-events:none;background:var(--grain-dark) 0 0/160px;mix-blend-mode:screen}
-.core::after,.system::after{z-index:1}
+.system::after{z-index:1}
+.core::after{z-index:2}
 
 /* Fabius light: a sharp emblem with a restrained, steady green halo. */
 :root{--emblem-near:#94d63c99;--emblem-far:#76b90045}

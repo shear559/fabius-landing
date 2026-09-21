@@ -177,7 +177,7 @@
   const buildWalkers = (stage, configs) => {
     if (!stage) return;
     const frag = document.createDocumentFragment();
-    configs.forEach((c) => {
+    configs.forEach((c, i) => {
       const w = document.createElement('div');
       // legs are imperceptible below ~52px — skip their two keyframe animations there
       w.className = 'walker' + (c.dir < 0 ? ' rtl' : '') + (c.size < 52 ? ' no-legs' : '');
@@ -186,7 +186,9 @@
       let x = ((c.lane * 1.7 + c.size * 2.3) % 88) + 4;
       // the core band's text column runs down its middle: park its walkers in the outer quarters
       if (stage.id === 'coreWalk') x = x < 50 ? x * .45 : 76 + (x - 50) * .4;
-      w.style.cssText = `--lane:${c.lane}%;--size:${c.size}px;--dur:${c.dur}s;--delay:${c.delay}s;--op:${c.op};--bd:${c.bob}s;--ld:${c.leg}s;--x:${x.toFixed(1)}%`;
+      // --py: on a narrow band the parked core walkers rest in the top or bottom padding instead
+      const py = stage.id === 'coreWalk' ? `;--py:${i % 2 ? 91 : 4}%` : '';
+      w.style.cssText = `--lane:${c.lane}%;--size:${c.size}px;--dur:${c.dur}s;--delay:${c.delay}s;--op:${c.op};--bd:${c.bob}s;--ld:${c.leg}s;--x:${x.toFixed(1)}%${py}`;
       if (c.color) w.style.color = c.color;
       w.innerHTML = `<div class="walker-bob">${WB}</div>`;
       frag.appendChild(w);
