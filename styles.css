@@ -293,9 +293,14 @@ img{display:block;max-width:100%}
 .core-wordmark{--wm:min(100vw,1680px);position:relative;z-index:0;display:block;width:var(--wm);max-width:none;height:auto;
   margin:calc(var(--wm) * -.08 + 14px) auto calc(var(--wm) * -.068 + 30px);margin-inline:calc(50% - var(--wm) / 2);
   filter:drop-shadow(0 0 18px rgba(118,185,0,.22))}
-/* labels over the contours keep a halo in the band colour, as a topographic map does */
+/* labels over the contours keep a halo in the band colour, as a topographic map does; the thin
+   letter-spaced kicker also gets a soft hole in the contours themselves (its centre sits
+   --wm × .08 − 56px below the image top, from the margins above) — grid and grain stay visible */
 .core-kicker,.core-tag,.core-sub{text-shadow:0 0 3px var(--canvas-ink),0 0 8px var(--canvas-ink),0 0 16px var(--canvas-ink)}
-@media (min-width:1681px){.core-wordmark{-webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent)}}
+.core-wordmark{--hole:radial-gradient(300px 26px at 50% calc(var(--wm) * .08 - 56px),transparent 72%,#000);-webkit-mask-image:var(--hole);mask-image:var(--hole)}
+@media (min-width:1681px){.core-wordmark{
+  -webkit-mask-image:var(--hole),linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);-webkit-mask-composite:source-in;
+  mask-image:var(--hole),linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);mask-composite:intersect}}
 .core-tag{position:relative;z-index:1;font-size:clamp(14px,1.9vw,17px);letter-spacing:.06em;color:var(--lav);margin-bottom:20px;font-weight:500;text-transform:lowercase}
 .core-sub{position:relative;z-index:1;max-width:540px;margin:0 auto;color:#b6b0d6;font-size:clamp(15px,1.8vw,17px);line-height:1.62;font-weight:420}
 
@@ -595,9 +600,9 @@ img{display:block;max-width:100%}
   box-shadow:var(--glass-shadow),inset 0 1px 0 rgba(255,255,255,.88);
   backdrop-filter:saturate(155%) blur(24px);-webkit-backdrop-filter:saturate(155%) blur(24px)}
 .hero-field::before{content:"";position:absolute;inset:-80% 40% 50% -12%;background:radial-gradient(circle,rgba(118,185,0,.16),transparent 68%);pointer-events:none}
-.field-top{position:relative;margin:0 16px;border-radius:20px;overflow:hidden;background:#d9c9a3;
-  box-shadow:0 24px 60px -34px rgba(60,40,10,.6),0 2px 6px -3px rgba(60,40,10,.25)}
-.field-top::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(70,48,14,.16),inset 0 1px 0 rgba(255,255,255,.35)}
+.field-top{position:relative;margin:0 16px;border-radius:20px;overflow:hidden;background:#e8ecdf;
+  box-shadow:0 24px 60px -34px rgba(24,40,8,.5),0 2px 6px -3px rgba(24,40,8,.16)}
+.field-top::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(30,50,10,.1),inset 0 1px 0 rgba(255,255,255,.55)}
 .field-banner{display:block;width:100%;height:auto}
 .field-fan{position:relative;height:30px;margin:0 16px}
 .field-fan::before{content:"";position:absolute;left:50%;top:0;bottom:8px;width:1px;background:linear-gradient(var(--primary),var(--lav))}
@@ -680,7 +685,7 @@ img{display:block;max-width:100%}
   .hero-field{border-radius:22px;padding:12px 0 10px}
   .field-top{margin:0 12px;border-radius:16px}
   .core-wordmark{--wm:124vw}
-  .hero-field .router-caption{flex-wrap:wrap;gap:7px;margin-top:10px}.hero-field .router-caption i{width:12px}
+  .hero-field .router-caption{flex-wrap:wrap;gap:7px;margin-top:22px}.hero-field .router-caption i{width:12px}
   .hero-cmd-stack{padding:8px 8px 8px 12px;gap:8px}
   .hero-cmd-lines code{font-size:12.5px}
   .mq-track li{padding:6px 10px 6px 6px}
@@ -695,6 +700,7 @@ img{display:block;max-width:100%}
 @media (max-width:400px){
 }
 @media (max-width:380px){
+  .core-kicker{letter-spacing:.1em}
   .hero-field .router-caption i{display:none}.hero-field .router-caption{flex-direction:column}
   .any-list{grid-template-columns:1fr}
 }
@@ -707,6 +713,7 @@ img{display:block;max-width:100%}
   cursor:pointer;box-shadow:0 8px 20px -14px rgba(42,22,84,.7);transition:background .18s var(--ease),transform .18s var(--ease)}
 .mq-pause:hover{background:var(--tint);transform:translateY(-1px)}
 .mq-pause:active{transform:scale(.94)}
+.mq-pause::before{content:"";position:absolute;inset:-8px;border-radius:50%}
 .mq-pause svg{width:13px;height:13px;fill:currentColor}
 .mq-pause .ic-play{display:none;margin-left:2px}
 .mq-pause[aria-pressed="true"] .ic-pause{display:none}
