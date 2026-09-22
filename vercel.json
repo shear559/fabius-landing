@@ -136,6 +136,12 @@
       ]
     },
     {
+      "source": "/assets/showcase-20260921/(video|image|biology)/(.*)\\.(txt|md|csv|json|zip|py|mp4|webm)",
+      "headers": [
+        { "key": "Content-Disposition", "value": "attachment" }
+      ]
+    },
+    {
       "source": "/assets/fonts/rubik/(.*)\\.(woff2|woff|ttf)",
       "headers": [
         { "key": "Access-Control-Allow-Origin", "value": "*" }

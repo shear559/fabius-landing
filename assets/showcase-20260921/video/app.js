@@ -86,44 +86,34 @@
     ]));
   }
 
-  // Captions: on by default, one toggle, kept in sync with the browser's own caption menu. The film is
-  // silent and shows every word itself, so the captions describe the picture instead of repeating it.
-  // Captions come from captions.vtt. An opaque-origin sandbox treats that file as cross-origin and
-  // refuses it, so there the same cues are built from film-data.js, which render.js wrote from the
-  // same script.
-  let fallback = null, trackEl = null;
-  function useFallback() {
-    if (fallback || !window.VTTCue || !F.captions) return;
-    fallback = video.addTextTrack('captions', 'English', 'en');
-    for (const c of F.captions) {
-      // Same placement as captions.vtt: a region of the frame that no on-screen text enters.
-      const q = Object.assign(new VTTCue(c.start, c.end, c.text), { snapToLines: false, line: c.place.line,
-        position: c.place.position, size: c.place.size, align: c.place.align });
-      fallback.addCue(q);
-    }
-    if (trackEl) trackEl.track.mode = 'disabled';
-    setCaptions(cc.getAttribute('aria-pressed') !== 'false');
+  // Captions: on by default, one toggle. The film is silent and shows every word itself, so the
+  // captions describe the picture instead of repeating it. The page draws the current cue itself, in a
+  // strip under the picture: native caption rendering is placed differently by every engine and lands
+  // on the film's text or under the native controls, so no caption track is handed to the video.
+  const caption = $('#caption'), captionText = $('#caption-text');
+  const cueAt = t => F.captions.find(c => t >= c.start && t < c.end) || (t >= F.duration ? F.captions[F.captions.length - 1] : null);
+  let shown = null;
+  function drawCaption() {
+    const c = cueAt(video.currentTime);
+    if (c === shown) return;
+    shown = c;
+    captionText.textContent = c ? c.text : '';
   }
-  if (window.origin === 'null') useFallback();
-  else {
-    trackEl = el('track', { kind: 'captions', src: 'captions.vtt', srclang: 'en', label: 'English', default: true });
-    trackEl.addEventListener('error', useFallback);
-    video.append(trackEl, el('track', { kind: 'chapters', src: 'chapters.vtt', srclang: 'en', label: 'Chapters' }));
-  }
-  function track() { return fallback || (trackEl && trackEl.track); }
   function setCaptions(on) {
-    const t = track();
-    if (t) t.mode = on ? 'showing' : 'hidden';
+    caption.hidden = !on;
     cc.setAttribute('aria-pressed', String(on));
     ccState.textContent = on ? 'on' : 'off';
   }
   cc.addEventListener('click', () => setCaptions(cc.getAttribute('aria-pressed') !== 'true'));
-  video.textTracks.addEventListener('change', () => {
-    const t = track();
-    if (t) { const on = t.mode === 'showing'; cc.setAttribute('aria-pressed', String(on)); ccState.textContent = on ? 'on' : 'off'; }
-  });
+  // timeupdate alone runs at about 4 Hz; while playing, follow the frames so a cue changes with its scene.
+  let raf = 0;
+  const follow = () => { drawCaption(); raf = video.paused ? 0 : requestAnimationFrame(follow); };
+  video.addEventListener('play', () => { if (!raf) raf = requestAnimationFrame(follow); });
+  for (const e of ['timeupdate', 'seeking', 'seeked', 'loadedmetadata', 'emptied']) video.addEventListener(e, drawCaption);
   setCaptions(true);
-  video.addEventListener('loadedmetadata', () => { if (cc.getAttribute('aria-pressed') === 'true') setCaptions(true); });
+  drawCaption();
+  // Chapters stay available to the browser's own menu; an opaque-origin sandbox would refuse the file.
+  if (window.origin !== 'null') video.append(el('track', { kind: 'chapters', src: 'chapters.vtt', srclang: 'en', label: 'Chapters' }));
 
   // Mark the scene that is playing.
   let current = -1;

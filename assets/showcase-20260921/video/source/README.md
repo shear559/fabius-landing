@@ -24,7 +24,7 @@ It writes into that folder:
 | `film.webm` | VP9, yuv420p, Rec. 709 matrix tagged, two-pass constrained quality |
 | `poster.webp` | frame from the "A notebook" scene, from the lossless master |
 | `thumbs/*.webp` | one storyboard key frame per scene |
-| `captions.vtt` | one cue per scene describing its picture (the film is silent and shows every word itself), placed with WebVTT settings in a region no on-screen text enters |
+| `captions.vtt` | one cue per scene describing its picture (the film is silent and shows every word itself), for other players; placed with WebVTT settings in a region no on-screen text enters |
 | `chapters.vtt` | one chapter per scene |
 | `film-data.js` | the numbers the player page shows, read back from the written files: ffprobe frame count, fps, size and duration; byte sizes from the file system; the contrast table; the reading-time holds |
 | `source/frames.sha256` | SHA-256 of every captured PNG frame |
@@ -36,7 +36,8 @@ Other modes:
 
 ```sh
 node source/render.js --encode      # re-encode outputs from the existing master (no capture)
-node source/render.js --verify 30   # re-capture 30 evenly spaced frames, last first, and compare with source/frames.sha256
+node source/render.js --verify 30   # re-capture 30 evenly spaced frames, last first, compare with source/frames.sha256,
+                                    # and set the one "verified" result in film-data.js
 node source/render.js --verify all  # the same for all 1,185 frames
 node source/render.js --meta        # rewrite captions, chapters, contrast and film-data.js only
 node source/timing.js               # check the script's reading time without rendering
@@ -60,12 +61,22 @@ pose; the end card eases in over 1.2 s and the film ends on it, still.
 The film has no sound and every word is on screen, so the caption track does not repeat them. Each
 scene has one cue, held for the scene, that describes its picture (the `caption` field in
 `source/scenes/timeline.js`). Cues are placed where no text in that scene ever goes: the left half
-below y = 860 of 1080 for the five paper scenes, centred below y = 810 on the end card. The settings
-are `line:88% position:6% size:48% align:start` (the end card: `position:50% size:100% align:center`, the one size both engines centre).
-Alignment suffixes such as `line:96%,end` are not used, because Chromium drops the whole setting when
-it sees one. The two engines lay the same settings out differently: WebKit puts the cue's top edge at
-88 % (950 px), Chromium also shifts the box up by 88 % of its own height (to about 892 px). Both are
-clear of the text; `out/captions-test.js` in the working folder checks this on the rendered pixels.
+below y = 860 of 1080 for the five paper scenes, centred below y = 810 on the end card. The page itself does not use native caption rendering. Each engine places native cues differently
+and draws its controls differently: WebKit lifts a cue above its controls onto the film's text,
+Chromium leaves it under its control bar. So `app.js` draws the current cue from `film-data.js` into a
+strip directly under the picture, outside the video box; neither the film nor the native controls can
+cover it, in any engine or at any width. The captions button shows and hides that strip.
+
+`captions.vtt` is still written for other players, with settings `line:88% position:6% size:48% align:start`
+(the end card: `position:50% size:100% align:center`) that keep the cue in the region above. Alignment
+suffixes such as `line:96%,end` are not used, because Chromium drops the whole setting when it sees one.
+
+To check the player's captions (Chromium and WebKit, 390, 1280 and 1440 px, paused and playing with the
+controls shown, at the start, middle and end of every scene, under the page's Content-Security-Policy):
+
+```sh
+node source/tests/captions-test.js
+```
 
 ## Contrast
 

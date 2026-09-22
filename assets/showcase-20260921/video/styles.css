@@ -9,7 +9,7 @@
   --grain:url('grain.png');
   /* type */
   --font:Rubik,Arial,sans-serif;--mono:ui-monospace,Menlo,Consolas,monospace;
-  --t-xs:12px;--t-sm:14px;--t-body:16px;--t-lg:18px;--t-h3:22px;--t-h2:clamp(34px,5vw,56px);--t-h1:clamp(40px,6.4vw,84px);
+  --t-xs:12px;--t-caption:clamp(16px,1.5vw,19px);--t-sm:14px;--t-body:16px;--t-lg:18px;--t-h3:22px;--t-h2:clamp(34px,5vw,56px);--t-h1:clamp(40px,6.4vw,84px);
   --track-display:-.055em;--track-caps:.12em;
   /* space (8px base) */
   --s1:8px;--s2:12px;--s3:16px;--s4:24px;--s5:32px;--s6:48px;--s7:64px;--s8:80px;
@@ -62,7 +62,11 @@ h1,h2{font-weight:500;letter-spacing:var(--track-display);line-height:1.04;text-
   background:var(--grain) 0 0/180px,radial-gradient(ellipse at 15% 18%,var(--paint-light),transparent 65%),radial-gradient(ellipse at 90% 78%,var(--orchid),transparent 62%),linear-gradient(135deg,var(--mint),var(--sky));
   background-blend-mode:overlay,normal,normal,normal}
 video{width:100%;aspect-ratio:16/9;background:var(--green);border-radius:var(--r-md);box-shadow:var(--shadow)}
-video::cue{font-family:var(--font);background:#1c2923e6;color:var(--white)}
+/* captions: drawn by the page in a strip under the picture, clear of the film's text and the native controls */
+.caption{margin:0;padding:var(--s2) var(--s3);background:var(--ink);color:var(--white);font-size:var(--t-caption);line-height:1.5;
+  border-radius:0 0 var(--r-md) var(--r-md);min-height:calc(1.5em + 2 * var(--s2));box-shadow:var(--shadow)}
+.caption[hidden]{display:none}
+.screen:has(.caption:not([hidden])) video{border-radius:var(--r-md) var(--r-md) 0 0}
 .player-bar{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);flex-wrap:wrap;margin-top:var(--s4)}
 .toggle{display:inline-flex;align-items:center;gap:var(--s1);min-height:var(--control);padding:0 var(--s3);background:var(--white);border:1px solid var(--line);border-radius:var(--r-sm);font-size:var(--t-sm)}
 .toggle:hover{background:var(--wash)}
@@ -136,6 +140,7 @@ footer span{font-size:var(--t-xs);color:var(--muted)}
   .nav{min-height:72px}
   .nav nav{display:none}
   .hero{padding-top:var(--s4)}
+  .caption{min-height:calc(3em + 2 * var(--s2))}
   .chapters,.storyboard,.making{padding-block:var(--s7)}
   .strip-wrap{padding-inline:0}
   .strip{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:var(--s3);padding:0 var(--gutter) var(--s3);scroll-padding-inline:var(--gutter)}
