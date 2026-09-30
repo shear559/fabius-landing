@@ -1,6 +1,6 @@
 {
-  "origin": "http://127.0.0.1:8815",
-  "date": "2026-09-30T14:26:04.922Z",
+  "origin": "https://fabius-landing.vercel.app",
+  "date": "2026-09-30T14:31:03.728Z",
   "runs": [
     {
       "engine": "chromium",
@@ -88,5 +88,6 @@
     }
   ],
   "limitations": "Automated Chromium and WebKit on macOS, with 390 CSS pixel / 2x mobile emulation. No physical phone. Local synthetic policy, queue and agent fixtures; no live scans, cloud infrastructure or model calls.",
-  "scope": "Pre-publication check against a local server mirroring production CSP and byte-range media delivery."
+  "productCommit": "84f7a30dbf01da61dc199f2d31c188c8a912f57e",
+  "scope": "Production verification of the published products. The WebKit playback check waits for actual decoded frames rather than a fixed startup delay."
 }
