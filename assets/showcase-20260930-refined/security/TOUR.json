@@ -1,0 +1,54 @@
+[
+  {
+    "caption": "Review the exact actor, document, action, and deciding policy condition.",
+    "reveal": ".request-surface",
+    "actions": [
+      [
+        "click",
+        "#reset"
+      ]
+    ]
+  },
+  {
+    "caption": "Admin deletion is held at the MFA gate; the trace and receipt explain why.",
+    "reveal": ".request-surface",
+    "actions": [
+      [
+        "select",
+        "#scenario",
+        "admin"
+      ]
+    ]
+  },
+  {
+    "caption": "Apply the one-fact counterfactual. Verified MFA changes Delete from Deny to Allow.",
+    "reveal": ".request-surface",
+    "actions": [
+      [
+        "click",
+        "#apply-counterfactual"
+      ]
+    ]
+  },
+  {
+    "caption": "The request receipt contains the exact facts evaluated by the pure policy.",
+    "reveal": ".receipt-panel",
+    "actions": [
+      [
+        "click",
+        "[data-receipt=\"request\"]"
+      ]
+    ]
+  },
+  {
+    "caption": "Compare every role under the same context; no role may share a Restricted document.",
+    "reveal": ".matrix-section",
+    "actions": [
+      [
+        "select",
+        "#scenario",
+        "restricted"
+      ]
+    ]
+  }
+]

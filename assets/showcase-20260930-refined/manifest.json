@@ -1,0 +1,112 @@
+{
+  "date": "2026-09-30",
+  "edition": "Product refinement following owner review",
+  "biology": "Unchanged approved September 21 artifact",
+  "tasks": {
+    "website": {
+      "url": "/assets/showcase-20260930-refined/website/preview.html",
+      "source": "/assets/showcase-20260930-refined/website/source.zip",
+      "tour": [
+        "Read a complete research note with its original context and connected ideas.",
+        "Inspect how shade, water and shared care contribute to the working question.",
+        "Develop turns the notebook into an editable brief, with source references and open questions.",
+        "Keep your work as Markdown. Review, select or download the complete notebook.",
+        "The demo states its scope: synthetic research, temporary session edits and no cloud account."
+      ]
+    },
+    "app": {
+      "url": "/assets/showcase-20260930-refined/app/preview.html",
+      "source": "/assets/showcase-20260930-refined/app/source.zip",
+      "tour": [
+        "Start with a populated research workspace. Every task has a concrete next step and deliverable.",
+        "Filter the live board to inspect work in progress.",
+        "Switch to List for a compact comparison of tasks, dates and status.",
+        "Create a task with context and a clear definition of done.",
+        "The task is saved in this preview with its context and deliverable. Export a JSON backup to keep the result."
+      ]
+    },
+    "math": {
+      "url": "/assets/showcase-20260930-refined/math/preview.html",
+      "source": "/assets/showcase-20260930-refined/math/source.zip",
+      "tour": [
+        "Start with one changing incentive and its unique optimum.",
+        "Enter the interior: none of the inequality constraints bind.",
+        "Watch the solution reach the floor y = 0.",
+        "The corner holds the optimum while the incentive continues to change.",
+        "Follow the exact coordinate paths and their transition points.",
+        "Inspect the binding constraints and numerical residuals.",
+        "Read every formula or open the complete proof."
+      ]
+    },
+    "video": {
+      "url": "/assets/showcase-20260930-refined/video/preview.html",
+      "source": "/assets/showcase-20260930-refined/video/source.zip",
+      "tour": [
+        "A new film follows one notebook from a first observation to a source-linked field brief.",
+        "Play the 26-second film: the source note moves into the notebook, with its context intact.",
+        "The notebook becomes a relationship map connecting shade, living soil and shared space.",
+        "An insight opens beside the map, keeping both source references in view.",
+        "The ideas become a field brief. The complete MP4, poster and captions are downloadable."
+      ]
+    },
+    "image": {
+      "url": "/assets/showcase-20260930-refined/image/preview.html",
+      "source": "/assets/showcase-20260930-refined/image/source.zip",
+      "tour": [
+        "A new key visual combines the real notebook interface, source fragments and a clear headline.",
+        "The vertical composition is authored for its canvas. The safe-area guide keeps the main message in view.",
+        "Hide the source fragments to inspect the notebook and typography beneath them.",
+        "Restore the complete composition. Every layer belongs to the same Lattice identity.",
+        "Keep the selected layout as a real PNG or WebP. Five full-resolution compositions are ready."
+      ]
+    },
+    "biology": {
+      "url": "/assets/showcase-20260921/biology/preview.html",
+      "source": "/assets/showcase-20260921/biology/source.zip",
+      "tour": [
+        "Eleven genes pass 5 % FDR.",
+        "Effect size against evidence, per gene.",
+        "Filter and sort the results.",
+        "Counts for the strongest hit.",
+        "Samples, run and dispersion checked.",
+        "What this design cannot say."
+      ]
+    },
+    "security": {
+      "url": "/assets/showcase-20260930-refined/security/preview.html",
+      "source": "/assets/showcase-20260930-refined/security/source.zip",
+      "tour": [
+        "Review the exact actor, document, action, and deciding policy condition.",
+        "Admin deletion is held at the MFA gate; the trace and receipt explain why.",
+        "Apply the one-fact counterfactual. Verified MFA changes Delete from Deny to Allow.",
+        "The request receipt contains the exact facts evaluated by the pure policy.",
+        "Compare every role under the same context; no role may share a Restricted document."
+      ]
+    },
+    "architecture": {
+      "url": "/assets/showcase-20260930-refined/architecture/preview.html",
+      "source": "/assets/showcase-20260930-refined/architecture/source.zip",
+      "tour": [
+        "Submit the request and deliver it to the worker. The packet shows current ownership.",
+        "Interrupt the worker and replay the same request. The queue retains one job.",
+        "Restore the worker. The same job begins delivery attempt two.",
+        "Commit once and inspect the exact output record. No video is generated.",
+        "Replay after completion: the same job and output are returned."
+      ]
+    },
+    "swarm": {
+      "url": "/assets/showcase-20260930-refined/swarm/preview.html",
+      "source": "/assets/showcase-20260930-refined/swarm/source.zip",
+      "tour": [
+        "Run the specialists to produce the Luma component from a shared brief.",
+        "The DAG enforces the handoffs; design and engineering can run together.",
+        "The produced component is rendered directly from the completed Engineer artifact.",
+        "Inspect the actual source, then select any specialist for its inputs and output.",
+        "Fault injection pauses the run. Retry only Engineer; completed artifacts remain.",
+        "Completed work survives. Retry only Engineer to produce its component.",
+        "Both specialist outputs now exist, so Reviewer may start.",
+        "The reviewed component and complete handoff are available together."
+      ]
+    }
+  }
+}

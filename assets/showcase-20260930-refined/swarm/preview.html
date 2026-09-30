@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>COHORT — Launch production studio</title><link rel="stylesheet" href="styles.css"><script src="model.mjs" defer></script><script src="app.js" defer></script></head>
+<body><header class="product-header"><a href="#workspace" class="wordmark">COHORT<span class="wordmark-divider">/</span><span class="workspace-label">Production studio</span></a><span class="simulation-note">Local orchestration fixture · no model calls</span></header>
+<main id="workspace"><div class="studio-heading"><div><h1>Luma launch</h1><p>Turn a reading-journal brief into a visible, reviewable component.</p></div><div class="compact-count"><strong id="completed-count">0<span>/4</span></strong><span>tasks complete</span><strong id="round-count">00</strong><span>rounds</span></div></div>
+      <div class="toolbar" data-tour-step="0">
+        <div class="run-controls"><button type="button" class="button primary" id="auto-run">Run through <span aria-hidden="true">↗</span></button>
+          <button type="button" class="button step-button" id="run-button"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 9 6-9 6Z"/></svg><span>Run next round</span></button>
+          <button type="button" class="button reset-button" id="reset-button" aria-label="Reset this run"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 7a6 6 0 1 1-1 5M4 3v4h4"/></svg><span>Reset</span></button>
+        </div>
+        <div class="capacity-control"><span id="capacity-label">Concurrency</span><div class="segmented" role="group" aria-labelledby="capacity-label"><button type="button" data-capacity="1" aria-pressed="false">1</button><button type="button" data-capacity="2" aria-pressed="true">2</button><button type="button" data-capacity="3" aria-pressed="false">3</button></div></div>
+        <button type="button" class="button fault-button" id="fault-button" aria-pressed="false" data-tour-step="3"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m11 2-7 9h5l-1 7 8-10h-6Z"/></svg><span>Engineer failure</span></button>
+      </div>
+
+
+<div class="run-message" aria-live="polite"><span id="run-message"></span><button class="button retry-button" type="button" id="retry-button" hidden>Retry Engineer ↗</button></div>
+<div class="production-grid"><aside class="coordination">      <div class="topology-board" data-tour-step="1">
+        <div class="board-heading"><p class="board-title"><span class="board-mark"></span>Execution graph</p><span class="board-meta">Fan out <span>→</span> gather</span></div>
+        <div class="graph" id="graph" aria-label="Planner then Designer and Engineer in parallel then Reviewer then handoff">
+          <svg class="connections" id="connections" aria-hidden="true"></svg>
+          <button type="button" class="task-node node-planner" data-task="planner" data-status="ready" aria-label="Planner, ready. Inspect outline">
+            <span class="node-top"><span class="node-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 3h6v4H9ZM9 12h6M9 16h4"/></svg></span><span class="task-status">Ready</span></span>
+            <span class="node-name">Planner</span><span class="node-role">Scope the work</span><span class="node-bottom"><span>01</span><span class="node-file">outline.md</span></span>
+          </button>
+          <button type="button" class="task-node node-designer" data-task="designer" data-status="blocked" aria-label="Designer, blocked. Inspect design specification">
+            <span class="node-top"><span class="node-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 9 9-9 9-9-9Z"/><path d="m8 8 8 8M8 16l8-8"/></svg></span><span class="task-status">Blocked</span></span>
+            <span class="node-name">Designer</span><span class="node-role">Define the experience</span><span class="node-bottom"><span>02</span><span class="node-file">design-spec.md</span></span>
+          </button>
+          <button type="button" class="task-node node-engineer" data-task="engineer" data-status="blocked" aria-label="Engineer, blocked. Inspect component">
+            <span class="node-top"><span class="node-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 7-5 5 5 5M17 7l5 5-5 5M14 4l-4 16"/></svg></span><span class="task-status">Blocked</span></span>
+            <span class="node-name">Engineer</span><span class="node-role">Build the component</span><span class="node-bottom"><span>03</span><span class="node-file">launch-card.html</span></span>
+          </button>
+          <button type="button" class="task-node node-reviewer" data-task="reviewer" data-status="blocked" aria-label="Reviewer, blocked. Inspect review checklist">
+            <span class="node-top"><span class="node-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5 8 9 8 9s8-4 8-9V6Z"/><path d="m8 12 3 3 5-6"/></svg></span><span class="task-status">Blocked</span></span>
+            <span class="node-name">Reviewer</span><span class="node-role">Check the handoff</span><span class="node-bottom"><span>04</span><span class="node-file">review.md</span></span>
+          </button>
+          <button type="button" class="packet-node" id="packet-node" data-artifact="packet" aria-label="Handoff packet, waiting for review">
+            <span class="packet-symbol"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="m16 3 12 7v13l-12 7-12-7V10Zm0 13v14M4 10l12 6 12-6M10 6l12 7"/></svg></span><span class="packet-title">Launch handoff</span><span class="packet-status" id="packet-status">Waiting for review</span><span class="packet-file">4 artifacts → 1 packet</span>
+          </button>
+        </div>
+        <div class="worker-lanes" id="worker-lanes" aria-label="Worker lanes"></div>
+        <div class="board-footer"><span class="status-key"><span class="key-dot"></span>Ready / running</span><span id="dependency-note">Planner unlocks both specialists.</span></div>
+      </div>
+</aside>
+<section class="live-stage" aria-labelledby="stage-title" data-tour-step="5"><div class="stage-top"><div><h2 id="stage-title">Launch component</h2><span id="stage-state">Reference target · not yet produced</span></div><div class="view-tabs" role="group" aria-label="Artifact view"><button type="button" data-stage-view="preview" aria-pressed="true">Preview</button><button type="button" data-stage-view="source" aria-pressed="false">Source</button></div></div><div class="design-canvas" id="design-canvas"><div class="browser-frame"><div class="browser-bar"><span class="browser-dots" aria-hidden="true">● ● ●</span><span>luma / launch-card.html</span><span id="build-indicator">REFERENCE</span></div><div class="product-preview"><div class="luma-nav"><span>luma<span class="luma-period">.</span></span><span>A reading journal</span></div><div id="live-artifact"></div><div class="luma-bottom"><span>Collect a thought.<br>Keep what stays.</span><span>YOUR READING, KEPT CLOSE</span></div></div></div><pre id="stage-source" class="stage-source" hidden></pre></div><div class="stage-deliverables" id="stage-deliverables"></div><p class="stage-caption" id="stage-caption"></p></section>
+      <div class="artifact-panel" data-tour-step="2">
+        <div class="panel-heading"><h2>Artifacts</h2><span id="artifact-count">Source brief</span></div>
+        <div class="artifact-tabs" role="tablist" aria-label="Choose an artifact">
+          <button type="button" role="tab" id="tab-brief" data-artifact="brief" aria-controls="artifact-content" aria-selected="true" tabindex="0">Brief</button>
+          <button type="button" role="tab" id="tab-planner" data-artifact="planner" aria-controls="artifact-content" aria-selected="false" tabindex="-1">Outline<span class="tab-state">○</span></button>
+          <button type="button" role="tab" id="tab-designer" data-artifact="designer" aria-controls="artifact-content" aria-selected="false" tabindex="-1">Design<span class="tab-state">○</span></button>
+          <button type="button" role="tab" id="tab-engineer" data-artifact="engineer" aria-controls="artifact-content" aria-selected="false" tabindex="-1">Component<span class="tab-state">○</span></button>
+          <button type="button" role="tab" id="tab-reviewer" data-artifact="reviewer" aria-controls="artifact-content" aria-selected="false" tabindex="-1">Review<span class="tab-state">○</span></button>
+          <button type="button" role="tab" id="tab-packet" data-artifact="packet" aria-controls="artifact-content" aria-selected="false" tabindex="-1">Packet<span class="tab-state">○</span></button>
+        </div>
+        <div id="agent-contract" class="agent-contract"></div><div class="artifact-content" id="artifact-content" role="tabpanel" aria-labelledby="tab-brief" tabindex="0"></div>
+      </div>
+</div><div class="history-row">      <div class="event-panel" data-tour-step="4">
+        <div class="panel-heading"><h2>Event log</h2><span id="event-count">1 event</span></div>
+        <ol class="event-log" id="event-log" aria-label="Execution events, newest first"></ol>
+        <p class="log-note">Local rounds · real state transitions · fixed outputs</p>
+      </div>
+</div><footer class="page-footer"><span>Four specialists. One dependency graph.</span><span>Synthetic brief and fixed artifacts. State stays in this page.</span></footer></main><script src="../demo-control.js" defer></script></body></html>

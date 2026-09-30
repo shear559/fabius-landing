@@ -1,0 +1,65 @@
+[
+  {
+    "caption": "Start with one changing incentive and its unique optimum.",
+    "reveal": ".parameter"
+  },
+  {
+    "caption": "Enter the interior: none of the inequality constraints bind.",
+    "reveal": ".lab",
+    "actions": [
+      [
+        "input",
+        "#parameter",
+        -1.25
+      ]
+    ]
+  },
+  {
+    "caption": "Watch the solution reach the floor y = 0.",
+    "reveal": ".lab",
+    "actions": [
+      [
+        "input",
+        "#parameter",
+        -0.75
+      ]
+    ]
+  },
+  {
+    "caption": "The corner holds the optimum while the incentive continues to change.",
+    "reveal": ".lab",
+    "actions": [
+      [
+        "input",
+        "#parameter",
+        -0.25
+      ]
+    ]
+  },
+  {
+    "caption": "Follow the exact coordinate paths and their transition points.",
+    "reveal": ".response-panel",
+    "actions": [
+      [
+        "input",
+        "#parameter",
+        0.9
+      ]
+    ]
+  },
+  {
+    "caption": "Inspect the binding constraints and numerical residuals.",
+    "reveal": ".detail-grid",
+    "actions": [
+      [
+        "input",
+        "#parameter",
+        2.9
+      ]
+    ]
+  },
+  {
+    "caption": "Read every formula or open the complete proof.",
+    "reveal": ".regime-record"
+  }
+]

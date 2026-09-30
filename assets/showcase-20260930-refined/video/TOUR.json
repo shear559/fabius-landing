@@ -1,0 +1,7 @@
+[
+  {"caption":"A new film follows one notebook from a first observation to a source-linked field brief.","reveal":".screen","actions":[["click","#restart"]]},
+  {"caption":"Play the 26-second film: the source note moves into the notebook, with its context intact.","reveal":".screen","actions":[["click","#play"]]},
+  {"caption":"The notebook becomes a relationship map connecting shade, living soil and shared space.","reveal":".screen","actions":[["click",".chapter[data-start=\"8\"]"]]},
+  {"caption":"An insight opens beside the map, keeping both source references in view.","reveal":".screen","actions":[["click",".chapter[data-start=\"13\"]"]]},
+  {"caption":"The ideas become a field brief. The complete MP4, poster and captions are downloadable.","reveal":".screen","actions":[["click",".chapter[data-start=\"18\"]"]]}
+]

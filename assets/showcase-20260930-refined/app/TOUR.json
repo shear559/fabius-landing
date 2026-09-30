@@ -1,0 +1,82 @@
+[
+  {
+    "caption": "Start with a populated research workspace. Every task has a concrete next step and deliverable.",
+    "reveal": "#board-view",
+    "actions": [
+      [
+        "click",
+        "#view-board-btn"
+      ]
+    ]
+  },
+  {
+    "caption": "Filter the live board to inspect work in progress.",
+    "reveal": ".toolbar",
+    "actions": [
+      [
+        "select",
+        "#filter-status",
+        "doing"
+      ]
+    ]
+  },
+  {
+    "caption": "Switch to List for a compact comparison of tasks, dates and status.",
+    "reveal": "#list-view",
+    "actions": [
+      [
+        "click",
+        "#view-list-btn"
+      ]
+    ]
+  },
+  {
+    "caption": "Create a task with context and a clear definition of done.",
+    "reveal": "#task-dialog",
+    "actions": [
+      [
+        "click",
+        "[data-testid=\"create-task\"]"
+      ],
+      [
+        "fill",
+        "#field-title",
+        "Review the next field visit"
+      ],
+      [
+        "fill",
+        "#field-project",
+        "Site Survey"
+      ],
+      [
+        "fill",
+        "#field-description",
+        "Compare the route notes and list the observations that need a second visit."
+      ],
+      [
+        "fill",
+        "#field-deliverable",
+        "A short follow-up checklist"
+      ]
+    ]
+  },
+  {
+    "caption": "The task is saved in this preview with its context and deliverable. Export a JSON backup to keep the result.",
+    "reveal": "#board-view",
+    "actions": [
+      [
+        "click",
+        "[data-testid=\"save-task\"]"
+      ],
+      [
+        "select",
+        "#filter-status",
+        "all"
+      ],
+      [
+        "click",
+        "#view-board-btn"
+      ]
+    ]
+  }
+]

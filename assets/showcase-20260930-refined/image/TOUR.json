@@ -1,0 +1,7 @@
+[
+  {"caption":"A new key visual combines the real notebook interface, source fragments and a clear headline.","reveal":".preview-surface","actions":[["click","#restore-layers"],["check","#safe-area",false],["click",".format-button[data-format=\"billboard\"]"]]},
+  {"caption":"The vertical composition is authored for its canvas. The safe-area guide keeps the main message in view.","reveal":".preview-surface","actions":[["click",".format-button[data-format=\"story\"]"],["check","#safe-area",true]]},
+  {"caption":"Hide the source fragments to inspect the notebook and typography beneath them.","reveal":".preview-surface","actions":[["click",".format-button[data-format=\"square\"]"],["check","[data-layer-toggle=\"fragments\"]",false]]},
+  {"caption":"Restore the complete composition. Every layer belongs to the same Lattice identity.","reveal":".preview-surface","actions":[["click","#restore-layers"],["check","#safe-area",false],["click",".format-button[data-format=\"billboard\"]"]]},
+  {"caption":"Keep the selected layout as a real PNG or WebP. Five full-resolution compositions are ready.","reveal":".export-box","actions":[["click",".format-button[data-format=\"card\"]"]]}
+]

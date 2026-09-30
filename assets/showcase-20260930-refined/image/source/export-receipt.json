@@ -1,0 +1,76 @@
+{
+  "exports": [
+    {
+      "file": "exports/lattice-refined-billboard-1920x1080.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 680016,
+      "sha256": "42e5da3add0cd400a0398c18793652ad8ac826b0ec14da20b20c587870f1a42d"
+    },
+    {
+      "file": "exports/lattice-refined-billboard-1920x1080.webp",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 104572,
+      "sha256": "b2e552054c01950c1c98e56f9aafe5cd93f976fdbdebcdc43911c28b660c11ed"
+    },
+    {
+      "file": "exports/lattice-refined-social-1080x1350.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 537457,
+      "sha256": "bbaf4a7dd980e550c3944262d09eb4efbfe673801c2c2bdc522794e7fae273fb"
+    },
+    {
+      "file": "exports/lattice-refined-social-1080x1350.webp",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 91074,
+      "sha256": "100ba25ca3cc93f5b134351e77e56376406876a35a3bca0121a993d0d20023c8"
+    },
+    {
+      "file": "exports/lattice-refined-story-1080x1920.png",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 699882,
+      "sha256": "28b1e34a43cedeed519973067a059c4f2c25ab140c170fcfcb6a1e10c9e7442d"
+    },
+    {
+      "file": "exports/lattice-refined-story-1080x1920.webp",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 109950,
+      "sha256": "6e774713dbafd4d32ae2f1faac17c908e43693b769c261cf5e3a09253cf1d103"
+    },
+    {
+      "file": "exports/lattice-refined-square-1080x1080.png",
+      "width": 1080,
+      "height": 1080,
+      "bytes": 416417,
+      "sha256": "e8a0dff7cf82b1a2a0e847ecaae33e799c5bc1c361930fb110c820bdf2ddd0c6"
+    },
+    {
+      "file": "exports/lattice-refined-square-1080x1080.webp",
+      "width": 1080,
+      "height": 1080,
+      "bytes": 76374,
+      "sha256": "d0312e546eb0c81702b23cb40544450388db2e95bf446d36fc83b537b77f9e89"
+    },
+    {
+      "file": "exports/lattice-refined-card-1200x630.png",
+      "width": 1200,
+      "height": 630,
+      "bytes": 342429,
+      "sha256": "103d408160a01d5111c0303c927425be8d1f755a2b25dd7485317ba8ea33e5a5"
+    },
+    {
+      "file": "exports/lattice-refined-card-1200x630.webp",
+      "width": 1200,
+      "height": 630,
+      "bytes": 55706,
+      "sha256": "5b80a26221ed027964dc55afcf80f093336ccef47b9e7eef89045ead90ba0908"
+    }
+  ],
+  "browserErrors": [],
+  "renderer": "Chrome screenshot of HTML/CSS product UI; one persistent browser; five authored layouts"
+}

@@ -1,0 +1,7 @@
+[
+ {"caption":"Read a complete research note with its original context and connected ideas.","reveal":"#notebook","actions":[["click","#tab-capture"]]},
+ {"caption":"Inspect how shade, water and shared care contribute to the working question.","reveal":"#panel-connect","actions":[["click","#tab-connect"],["click","[data-note=\"n2\"]"]]},
+ {"caption":"Develop turns the notebook into an editable brief, with source references and open questions.","reveal":"#panel-develop","actions":[["click","#tab-develop"]]},
+ {"caption":"Keep your work as Markdown. Review, select or download the complete notebook.","reveal":".export-preview","actions":[["click","#export-notebook"]]},
+ {"caption":"The demo states its scope: synthetic research, temporary session edits and no cloud account.","reveal":"#questions","actions":[["click","#close-export"]]}
+]

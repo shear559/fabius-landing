@@ -1,0 +1,40 @@
+{
+  "width": 1920,
+  "height": 1080,
+  "fps": 25,
+  "duration": 26,
+  "frames": 650,
+  "elapsedSeconds": 265.853,
+  "probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "pix_fmt": "yuv420p",
+        "color_range": "tv",
+        "color_space": "bt709",
+        "color_transfer": "bt709",
+        "color_primaries": "bt709",
+        "r_frame_rate": "25/1",
+        "nb_read_frames": "650"
+      }
+    ],
+    "format": {
+      "duration": "26.000000",
+      "size": "9975367"
+    }
+  },
+  "browserErrors": [],
+  "renderer": "One persistent Chrome browser and page; deterministic __seek(t); PNG pipe to H.264; silent.",
+  "openingCorrection": {
+    "frames": 108,
+    "reason": "Resting insight card is fully opaque; entrance/exit fades remain.",
+    "encoding": "First108frames recaptured losslessly; remaining visual content retained; concatenated H.264 CRF16."
+  },
+  "decodedAllFrames": 650,
+  "blackFramesDetected": false,
+  "metadataCorrection": "H.264 VUI set to Rec.709 without re-encoding."
+}

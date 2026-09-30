@@ -1,0 +1,69 @@
+[
+  {
+    "caption": "Submit the request and deliver it to the worker. The packet shows current ownership.",
+    "reveal": ".topology-panel",
+    "actions": [
+      [
+        "select",
+        "#scenario",
+        "recovery"
+      ],
+      [
+        "click",
+        "#next-event"
+      ],
+      [
+        "click",
+        "#next-event"
+      ]
+    ]
+  },
+  {
+    "caption": "Interrupt the worker and replay the same request. The queue retains one job.",
+    "reveal": ".topology-panel",
+    "actions": [
+      [
+        "click",
+        "#next-event"
+      ],
+      [
+        "click",
+        "#next-event"
+      ]
+    ]
+  },
+  {
+    "caption": "Restore the worker. The same job begins delivery attempt two.",
+    "reveal": ".topology-panel",
+    "actions": [
+      [
+        "click",
+        "#next-event"
+      ],
+      [
+        "click",
+        "#next-event"
+      ]
+    ]
+  },
+  {
+    "caption": "Commit once and inspect the exact output record. No video is generated.",
+    "reveal": ".output-panel",
+    "actions": [
+      [
+        "click",
+        "#next-event"
+      ]
+    ]
+  },
+  {
+    "caption": "Replay after completion: the same job and output are returned.",
+    "reveal": ".inspector",
+    "actions": [
+      [
+        "click",
+        "#replay-request"
+      ]
+    ]
+  }
+]

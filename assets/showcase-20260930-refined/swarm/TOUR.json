@@ -1,0 +1,92 @@
+[
+  {
+    "caption": "Run the specialists to produce the Luma component from a shared brief.",
+    "reveal": ".live-stage",
+    "actions": [
+      [
+        "click",
+        "#reset-button"
+      ],
+      [
+        "click",
+        "#auto-run"
+      ]
+    ]
+  },
+  {
+    "caption": "The DAG enforces the handoffs; design and engineering can run together.",
+    "reveal": ".coordination"
+  },
+  {
+    "caption": "The produced component is rendered directly from the completed Engineer artifact.",
+    "reveal": ".live-stage",
+    "actions": [
+      [
+        "click",
+        "[data-stage-view=\"preview\"]"
+      ]
+    ]
+  },
+  {
+    "caption": "Inspect the actual source, then select any specialist for its inputs and output.",
+    "reveal": ".live-stage",
+    "actions": [
+      [
+        "click",
+        "[data-stage-view=\"source\"]"
+      ]
+    ]
+  },
+  {
+    "caption": "Fault injection pauses the run. Retry only Engineer; completed artifacts remain.",
+    "reveal": ".coordination",
+    "actions": [
+      [
+        "click",
+        "#reset-button"
+      ],
+      [
+        "click",
+        "#fault-button"
+      ],
+      [
+        "click",
+        "#auto-run"
+      ]
+    ]
+  },
+  {
+    "caption": "Completed work survives. Retry only Engineer to produce its component.",
+    "reveal": ".coordination",
+    "actions": [
+      [
+        "click",
+        "#retry-button"
+      ]
+    ]
+  },
+  {
+    "caption": "Both specialist outputs now exist, so Reviewer may start.",
+    "reveal": ".live-stage",
+    "actions": [
+      [
+        "click",
+        "#run-button"
+      ]
+    ]
+  },
+  {
+    "caption": "The reviewed component and complete handoff are available together.",
+    "reveal": ".live-stage",
+    "actions": [
+      [
+        "click",
+        "[data-stage-view=\"preview\"]"
+      ],
+      [
+        "click",
+        "#tab-packet"
+      ]
+    ]
+  }
+]
