@@ -1,9 +1,9 @@
 # Fieldnote visual system — September 30, 2026
 
-Operate surface. The board, current work and task context lead; no promotional hero.
+Operate surface inside a visual product demonstration. Preserve the original blue/violet project panel, orbital illustration, cobalt controls and separate task-state columns; richer task detail must not erase that identity.
 
-Rubik is the single family. Neutral canvas `#F6F7F9`, white task surfaces, ink `#242D3B`, secondary text `#626C7A`, line `#DCE1E8`, cobalt accent `#2C55B2` and accent wash `#E9EEF9`. Red is reserved for error and overdue meaning. Functional controls stay ink/neutral; cobalt marks the selected workspace and in-progress state.
+Rubik is the single face. Canvas `#F6F7FE`, white task surfaces, ink `#252E40`, secondary text `#626D82`, line `#DEE3F0`, cobalt `#3858BC`. The project panel moves from pale sky through periwinkle `#BCCBFF` to violet `#DBCAFF`, with local grain. The sphere uses the same blue register. Teal `#227C91` indicates completed work. Red is reserved for errors or overdue tasks.
 
-Project title: 28–30px. Card titles: 15–16px. Descriptions: 12–13px, with full text in the detail editor. Form fields: 16px. Control targets: at least 44px. Spacing uses 8/12/16/20/24/28px and 6–12px radii.
+Project proposition: 34px on phones and 35–48px on desktop. Card titles: 15px, with concise context and a specific deliverable. Form fields: 16px; controls retain 44px targets. Detail dialogs show the full task text.
 
-Desktop has a 204px project rail and three equal board columns. Phone has a compact header, three status counts, a next-task row and vertically stacked columns. List mode becomes readable task rows on narrow screens. Detail dialogs keep a scrollable form within the viewport. No decorative animation or colored card assortment.
+Desktop has a 224px workspace rail, an illustrated project panel, computed status progress and three board columns. Mobile starts in Board, stacks the columns and retains the project identity above them. List remains available as a compact alternative. The orbital artwork is static; no continuous decorative motion is required. All task totals and status bars derive from the actual board.

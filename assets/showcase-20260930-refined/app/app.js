@@ -254,7 +254,6 @@
   // ---------------------------------------------------------------------
 
   function init() {
-    if (window.matchMedia("(max-width: 719px)").matches) state.view = "list";
     resolveStorage();
     document.getElementById("storage-state").textContent = temporaryStorage ? "Temporary session · export to keep changes" : "Saved on this device";
     document.getElementById("rail-storage-state").textContent = temporaryStorage ? "Temporary session" : "On this device";

@@ -2,7 +2,7 @@
 
 A substantial September 30, 2026 refinement of the earlier fictional Lattice notebook. This is a worked product/design iteration with prior source available, not a new controlled comparison.
 
-The landing now contains a functioning notebook: search and read five authored synthetic notes; capture an observation; create reciprocal connections; inspect note context; edit a source-linked Markdown brief; undo a draft rebuild; review, select and download the full Markdown export. The original navigation and keyboard-operated feature modes remain, with Develop replacing the static export illustration. Unsupported pricing was removed.
+The original layered paper illustration, green/mint/lilac field and large headline lead into a functioning notebook: search and read five authored synthetic notes; capture an observation; create reciprocal connections; inspect note context; edit a source-linked Markdown brief; undo a draft rebuild; review, select and download the full Markdown export. The original navigation and keyboard-operated feature modes remain, with Develop replacing the static export illustration. Unsupported pricing was removed.
 
 All research content is explicitly synthetic. No real findings, customers, pricing, performance claims, backend or cloud sync are implied. Edits live only in page memory until exported. No network requests or dependencies beyond bundled same-origin Rubik font assets are used.
 

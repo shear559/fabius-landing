@@ -1,7 +1,7 @@
 [
   {
     "caption": "Start with a populated research workspace. Every task has a concrete next step and deliverable.",
-    "reveal": "#board-view",
+    "reveal": ".project-intro",
     "actions": [
       [
         "click",

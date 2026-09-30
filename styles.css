@@ -834,9 +834,10 @@ img{display:block;max-width:100%}
 :root{--emblem-near:#94d63c99;--emblem-far:#76b90045}
 .brand-mark{filter:drop-shadow(0 0 3px var(--emblem-near)) drop-shadow(0 0 10px var(--emblem-far))}
 
-/* Contour atmosphere, drawn from the repository's topographic identity. */
-:root{--contour-art:url('/assets/fabius-contours.svg');--contour-opacity:.19}
-.hero::after{inset:0;opacity:var(--contour-opacity);background:var(--primary-ink);-webkit-mask:var(--contour-art) center top/max(100%,1440px) auto no-repeat;mask:var(--contour-art) center top/max(100%,1440px) auto no-repeat}
+/* Continuous parallel waves across the hero and demonstration backgrounds. */
+:root{--contour-art:url('/assets/fabius-slalom-lines.svg');--contour-opacity:.14}
+.hero::after{inset:0;opacity:var(--contour-opacity);background:var(--primary-ink);-webkit-mask:var(--contour-art) center top/1600px 720px repeat-y;mask:var(--contour-art) center top/1600px 720px repeat-y}
 .showcase{isolation:isolate}
-.showcase::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:var(--primary-ink);opacity:.12;-webkit-mask:var(--contour-art) center top/1600px auto no-repeat;mask:var(--contour-art) center top/1600px auto no-repeat}
-@media(max-width:650px){.hero::after{opacity:.14;-webkit-mask-size:1000px auto;mask-size:1000px auto}.showcase::before{opacity:.09}}
+.showcase::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:var(--primary-ink);opacity:.1;-webkit-mask:var(--contour-art) center top/1600px 720px repeat-y;mask:var(--contour-art) center top/1600px 720px repeat-y}
+@media(min-width:1600px){.hero::after,.showcase::before{-webkit-mask-size:100% auto;mask-size:100% auto}}
+@media(max-width:650px){.hero::after,.showcase::before{-webkit-mask-size:100% 405px;mask-size:100% 405px}.hero::after{opacity:.12}.showcase::before{opacity:.08}}

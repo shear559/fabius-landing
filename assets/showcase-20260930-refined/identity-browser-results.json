@@ -1,0 +1,61 @@
+{
+  "origin": "http://127.0.0.1:8814",
+  "date": "2026-09-30T14:51:44.691Z",
+  "runs": [
+    {
+      "engine": "chromium",
+      "width": 1440,
+      "mobile": false,
+      "deviceScaleFactor": 1,
+      "passed": true,
+      "checks": [
+        "selected demo interactions: website, app",
+        "selected guided tours",
+        "nine gallery tabs present, Escape/focus and keyboard navigation",
+        "no document overflow, console or HTTP errors"
+      ]
+    },
+    {
+      "engine": "webkit",
+      "width": 1440,
+      "mobile": false,
+      "deviceScaleFactor": 1,
+      "passed": true,
+      "checks": [
+        "selected demo interactions: website, app",
+        "selected guided tours",
+        "nine gallery tabs present, Escape/focus and keyboard navigation",
+        "no document overflow, console or HTTP errors"
+      ]
+    },
+    {
+      "engine": "chromium",
+      "width": 390,
+      "mobile": true,
+      "deviceScaleFactor": 2,
+      "passed": true,
+      "checks": [
+        "selected demo interactions: website, app",
+        "selected guided tours",
+        "nine gallery tabs present, Escape/focus and keyboard navigation",
+        "no document overflow, console or HTTP errors"
+      ]
+    },
+    {
+      "engine": "webkit",
+      "width": 390,
+      "mobile": true,
+      "deviceScaleFactor": 2,
+      "passed": true,
+      "checks": [
+        "selected demo interactions: website, app",
+        "selected guided tours",
+        "nine gallery tabs present, Escape/focus and keyboard navigation",
+        "no document overflow, console or HTTP errors"
+      ]
+    }
+  ],
+  "limitations": "Automated Chromium and WebKit on macOS, with 390 CSS pixel / 2x mobile emulation. No physical phone. Local synthetic policy, queue and agent fixtures; no live scans, cloud infrastructure or model calls.",
+  "mobile_confirmation_at": "2026-09-30T14:55:06.730Z",
+  "visual_capture_note": "The first Chromium full-section screenshot left an offscreen iframe unpainted. Direct in-app inspection and a viewport-positioned Chromium product capture show the Website correctly. The runner now captures visible product frames before whole sections."
+}
