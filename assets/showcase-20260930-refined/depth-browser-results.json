@@ -1,244 +1,93 @@
 {
   "edition": "Independent media and deeper technical demonstrations",
-  "verifiedAt": "2026-09-30T16:17:11.977279+00:00",
-  "origin": "http://127.0.0.1:8814",
-  "deployment": "Pre-publication checks under production-style security headers; production verification follows publication.",
-  "groups": [
+  "productCommit": "8006b84a99789ea8c67db120b659506278cb58e5",
+  "verifiedAt": "2026-09-30T16:32:02.061135+00:00",
+  "origin": "https://fabius-landing.vercel.app",
+  "deployment": "Canonical production URL; existing Git-linked Vercel deployment.",
+  "runs": [
     {
-      "origin": "http://127.0.0.1:8814",
-      "date": "2026-09-30T16:07:03.173Z",
-      "runs": [
-        {
-          "engine": "chromium",
-          "width": 390,
-          "mobile": true,
-          "deviceScaleFactor": 2,
-          "passed": true,
-          "checks": [
-            "selected demo interactions: website, app, math, image",
-            "selected guided tours",
-            "eight gallery tabs present, Escape/focus and keyboard navigation",
-            "no document overflow, console or HTTP errors"
-          ]
-        },
-        {
-          "engine": "chromium",
-          "width": 1440,
-          "mobile": false,
-          "deviceScaleFactor": 1,
-          "passed": true,
-          "checks": [
-            "selected demo interactions: website, app, math, image",
-            "selected guided tours",
-            "eight gallery tabs present, Escape/focus and keyboard navigation",
-            "no document overflow, console or HTTP errors"
-          ]
-        },
-        {
-          "engine": "webkit",
-          "width": 390,
-          "mobile": true,
-          "deviceScaleFactor": 2,
-          "passed": true,
-          "checks": [
-            "selected demo interactions: website, app, math, image",
-            "selected guided tours",
-            "eight gallery tabs present, Escape/focus and keyboard navigation",
-            "no document overflow, console or HTTP errors"
-          ]
-        },
-        {
-          "engine": "webkit",
-          "width": 1440,
-          "mobile": false,
-          "deviceScaleFactor": 1,
-          "passed": true,
-          "checks": [
-            "selected demo interactions: website, app, math, image",
-            "selected guided tours",
-            "eight gallery tabs present, Escape/focus and keyboard navigation",
-            "no document overflow, console or HTTP errors"
-          ]
-        }
-      ],
-      "limitations": "Automated Chromium and WebKit on macOS, with 390 CSS pixel / 2x mobile emulation. No physical phone. Local synthetic policy, queue and agent fixtures; no live scans, cloud infrastructure or model calls."
+      "engine": "chromium",
+      "width": 390,
+      "mobile": true,
+      "deviceScaleFactor": 2,
+      "passed": true,
+      "checks": [
+        "notebook capture/connect/develop/export",
+        "task edit/create/filter/list/export and temporary storage label",
+        "six regimes and five joins with KKT certificate",
+        "multi-barrier policy/minimal repair/tenant denial/request receipt",
+        "ambiguous commit/stale fence/reconciliation/replay unique output",
+        "agent run/failure/retry/artifacts/reset cancellation",
+        "20-second independent film playback and chapter seek",
+        "biological artwork detail/zoom/reset/download",
+        "all eight gallery tabs",
+        "all eight revised guided tours",
+        "dialog escape/focus and keyboard tabs",
+        "no document overflow, console or HTTP errors"
+      ]
     },
     {
-      "origin": "http://127.0.0.1:8814",
-      "date": "2026-09-30T16:12:35.373Z",
-      "runs": [
-        {
-          "engine": "chromium",
-          "width": 390,
-          "mobile": true,
-          "deviceScaleFactor": 2,
-          "passed": true,
-          "checks": [
-            "selected demo interactions: security, architecture",
-            "selected guided tours",
-            "eight gallery tabs present, Escape/focus and keyboard navigation",
-            "no document overflow, console or HTTP errors"
-          ]
-        },
-        {
-          "engine": "chromium",
-          "width": 1440,
-          "mobile": false,
-          "deviceScaleFactor": 1,
-          "passed": true,
-          "checks": [
-            "selected demo interactions: security, architecture",
-            "selected guided tours",
-            "eight gallery tabs present, Escape/focus and keyboard navigation",
-            "no document overflow, console or HTTP errors"
-          ]
-        },
-        {
-          "engine": "webkit",
-          "width": 390,
-          "mobile": true,
-          "deviceScaleFactor": 2,
-          "passed": true,
-          "checks": [
-            "selected demo interactions: security, architecture",
-            "selected guided tours",
-            "eight gallery tabs present, Escape/focus and keyboard navigation",
-            "no document overflow, console or HTTP errors"
-          ]
-        },
-        {
-          "engine": "webkit",
-          "width": 1440,
-          "mobile": false,
-          "deviceScaleFactor": 1,
-          "passed": true,
-          "checks": [
-            "selected demo interactions: security, architecture",
-            "selected guided tours",
-            "eight gallery tabs present, Escape/focus and keyboard navigation",
-            "no document overflow, console or HTTP errors"
-          ]
-        }
-      ],
-      "limitations": "Automated Chromium and WebKit on macOS, with 390 CSS pixel / 2x mobile emulation. No physical phone. Local synthetic policy, queue and agent fixtures; no live scans, cloud infrastructure or model calls."
+      "engine": "chromium",
+      "width": 1440,
+      "mobile": false,
+      "deviceScaleFactor": 1,
+      "passed": true,
+      "checks": [
+        "notebook capture/connect/develop/export",
+        "task edit/create/filter/list/export and temporary storage label",
+        "six regimes and five joins with KKT certificate",
+        "multi-barrier policy/minimal repair/tenant denial/request receipt",
+        "ambiguous commit/stale fence/reconciliation/replay unique output",
+        "agent run/failure/retry/artifacts/reset cancellation",
+        "20-second independent film playback and chapter seek",
+        "biological artwork detail/zoom/reset/download",
+        "all eight gallery tabs",
+        "all eight revised guided tours",
+        "dialog escape/focus and keyboard tabs",
+        "no document overflow, console or HTTP errors"
+      ]
     },
     {
-      "origin": "http://127.0.0.1:8814",
-      "date": "2026-09-30T16:13:51.466Z",
-      "runs": [
-        {
-          "engine": "chromium",
-          "width": 390,
-          "mobile": true,
-          "deviceScaleFactor": 2,
-          "passed": true,
-          "checks": [
-            "selected demo interactions: swarm",
-            "selected guided tours",
-            "eight gallery tabs present, Escape/focus and keyboard navigation",
-            "no document overflow, console or HTTP errors"
-          ]
-        },
-        {
-          "engine": "chromium",
-          "width": 1440,
-          "mobile": false,
-          "deviceScaleFactor": 1,
-          "passed": true,
-          "checks": [
-            "selected demo interactions: swarm",
-            "selected guided tours",
-            "eight gallery tabs present, Escape/focus and keyboard navigation",
-            "no document overflow, console or HTTP errors"
-          ]
-        },
-        {
-          "engine": "webkit",
-          "width": 390,
-          "mobile": true,
-          "deviceScaleFactor": 2,
-          "passed": true,
-          "checks": [
-            "selected demo interactions: swarm",
-            "selected guided tours",
-            "eight gallery tabs present, Escape/focus and keyboard navigation",
-            "no document overflow, console or HTTP errors"
-          ]
-        },
-        {
-          "engine": "webkit",
-          "width": 1440,
-          "mobile": false,
-          "deviceScaleFactor": 1,
-          "passed": true,
-          "checks": [
-            "selected demo interactions: swarm",
-            "selected guided tours",
-            "eight gallery tabs present, Escape/focus and keyboard navigation",
-            "no document overflow, console or HTTP errors"
-          ]
-        }
-      ],
-      "limitations": "Automated Chromium and WebKit on macOS, with 390 CSS pixel / 2x mobile emulation. No physical phone. Local synthetic policy, queue and agent fixtures; no live scans, cloud infrastructure or model calls."
+      "engine": "webkit",
+      "width": 390,
+      "mobile": true,
+      "deviceScaleFactor": 2,
+      "passed": true,
+      "checks": [
+        "notebook capture/connect/develop/export",
+        "task edit/create/filter/list/export and temporary storage label",
+        "six regimes and five joins with KKT certificate",
+        "multi-barrier policy/minimal repair/tenant denial/request receipt",
+        "ambiguous commit/stale fence/reconciliation/replay unique output",
+        "agent run/failure/retry/artifacts/reset cancellation",
+        "20-second independent film playback and chapter seek",
+        "biological artwork detail/zoom/reset/download",
+        "all eight gallery tabs",
+        "all eight revised guided tours",
+        "dialog escape/focus and keyboard tabs",
+        "no document overflow, console or HTTP errors"
+      ]
     },
     {
-      "origin": "http://127.0.0.1:8814",
-      "date": "2026-09-30T16:15:57.673Z",
-      "runs": [
-        {
-          "engine": "chromium",
-          "width": 390,
-          "mobile": true,
-          "deviceScaleFactor": 2,
-          "passed": true,
-          "checks": [
-            "selected demo interactions: video",
-            "selected guided tours",
-            "eight gallery tabs present, Escape/focus and keyboard navigation",
-            "no document overflow, console or HTTP errors"
-          ]
-        },
-        {
-          "engine": "chromium",
-          "width": 1440,
-          "mobile": false,
-          "deviceScaleFactor": 1,
-          "passed": true,
-          "checks": [
-            "selected demo interactions: video",
-            "selected guided tours",
-            "eight gallery tabs present, Escape/focus and keyboard navigation",
-            "no document overflow, console or HTTP errors"
-          ]
-        },
-        {
-          "engine": "webkit",
-          "width": 390,
-          "mobile": true,
-          "deviceScaleFactor": 2,
-          "passed": true,
-          "checks": [
-            "selected demo interactions: video",
-            "selected guided tours",
-            "eight gallery tabs present, Escape/focus and keyboard navigation",
-            "no document overflow, console or HTTP errors"
-          ]
-        },
-        {
-          "engine": "webkit",
-          "width": 1440,
-          "mobile": false,
-          "deviceScaleFactor": 1,
-          "passed": true,
-          "checks": [
-            "selected demo interactions: video",
-            "selected guided tours",
-            "eight gallery tabs present, Escape/focus and keyboard navigation",
-            "no document overflow, console or HTTP errors"
-          ]
-        }
-      ],
-      "limitations": "Automated Chromium and WebKit on macOS, with 390 CSS pixel / 2x mobile emulation. No physical phone. Local synthetic policy, queue and agent fixtures; no live scans, cloud infrastructure or model calls."
+      "engine": "webkit",
+      "width": 1440,
+      "mobile": false,
+      "deviceScaleFactor": 1,
+      "passed": true,
+      "checks": [
+        "notebook capture/connect/develop/export",
+        "task edit/create/filter/list/export and temporary storage label",
+        "six regimes and five joins with KKT certificate",
+        "multi-barrier policy/minimal repair/tenant denial/request receipt",
+        "ambiguous commit/stale fence/reconciliation/replay unique output",
+        "agent run/failure/retry/artifacts/reset cancellation",
+        "20-second independent film playback and chapter seek",
+        "biological artwork detail/zoom/reset/download",
+        "all eight gallery tabs",
+        "all eight revised guided tours",
+        "dialog escape/focus and keyboard tabs",
+        "no document overflow, console or HTTP errors"
+      ]
     }
   ],
   "domainChecks": {
@@ -250,5 +99,11 @@
     "verdict": "ship",
     "scope": "Five revised demos and gallery integration, mobile390/desktop1440; independent reviewer without build transcript"
   },
-  "limitations": "Browser emulation on macOS, not physical phones. Technical demonstrations are deterministic local fixtures; the image and film are creative artworks."
+  "assetVerification": {
+    "matchedFiles": 87,
+    "method": "Fetched every changed public product file and compared SHA-256 with the checked-out product commit before adding this receipt.",
+    "checkedAt": "2026-09-30T16:24:27Z"
+  },
+  "packaging": "Eight portable source ZIPs checked against 180 source files; approved website, app, math and wave source bytes preserved.",
+  "limitations": "Automated Chromium and WebKit on macOS, with 390 CSS pixel / 2x mobile emulation. No physical phone. Local synthetic policy, queue and agent fixtures; no live scans, cloud infrastructure or model calls. The image is generated biological art, not a micrograph. The film is original procedural artwork."
 }
