@@ -1,0 +1,21 @@
+{
+  "surface": "Local production-header mirror, not live deployment",
+  "origin": "null",
+  "seekPassed": true,
+  "downloads": [
+    {
+      "name": "afterlight-v1.mp4",
+      "downloaded": true,
+      "suggestedFilename": "afterlight-v1.mp4",
+      "hash": "3e795cdb4d856cab0b0ff081b46d3386366f78a4791be4c069b1c62157ff5566"
+    },
+    {
+      "name": "poster-afterlight-v1.webp",
+      "downloaded": true,
+      "suggestedFilename": "poster-afterlight-v1.webp",
+      "hash": "d41cb6fa6f9e18e210e687687f84ca24ec921934ac604ed5825aa9a98cede7d7"
+    }
+  ],
+  "errors": [],
+  "bad": []
+}

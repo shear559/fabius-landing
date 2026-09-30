@@ -1,92 +1,46 @@
 [
   {
-    "caption": "Run the specialists to produce the Luma component from a shared brief.",
+    "caption": "One brief starts seven specialists. The reference becomes a produced reading workspace as contracts settle.",
     "reveal": ".live-stage",
-    "actions": [
-      [
-        "click",
-        "#reset-button"
-      ],
-      [
-        "click",
-        "#auto-run"
-      ]
-    ]
+    "actions": [["click", "#reset-button"], ["click", "[data-capacity=\"3\"]"], ["click", "[data-stage-view=\"preview\"]"], ["click", "#auto-run"]]
   },
   {
-    "caption": "The DAG enforces the handoffs; design and engineering can run together.",
+    "caption": "Interface, Data, and Accessibility run in parallel. Integration waits for all three accepted outputs.",
     "reveal": ".coordination"
   },
   {
-    "caption": "The produced component is rendered directly from the completed Engineer artifact.",
+    "caption": "The released product works: choose a book, filter thoughts, save a note, or add one locally.",
     "reveal": ".live-stage",
-    "actions": [
-      [
-        "click",
-        "[data-stage-view=\"preview\"]"
-      ]
-    ]
+    "actions": [["click", "[data-book-id=\"book-distance\"]"], ["click", "[data-note-filter=\"practice\"]"]]
   },
   {
-    "caption": "Inspect the actual source, then select any specialist for its inputs and output.",
-    "reveal": ".live-stage",
-    "actions": [
-      [
-        "click",
-        "[data-stage-view=\"source\"]"
-      ]
-    ]
-  },
-  {
-    "caption": "Fault injection pauses the run. Retry only Engineer; completed artifacts remain.",
+    "caption": "Now corrupt one note identity. A real data contract rejects the candidate and holds the merge.",
     "reveal": ".coordination",
-    "actions": [
-      [
-        "click",
-        "#reset-button"
-      ],
-      [
-        "click",
-        "#fault-button"
-      ],
-      [
-        "click",
-        "#auto-run"
-      ]
-    ]
+    "actions": [["click", "#reset-button"], ["click", "#fault-button"], ["click", "#auto-run"]]
   },
   {
-    "caption": "Completed work survives. Retry only Engineer to produce its component.",
+    "caption": "Inspect the duplicate-ID failure and its rejected candidate. Accepted Interface and Accessibility outputs survive.",
+    "reveal": ".artifact-panel",
+    "actions": [["click", "#tab-engineer"]]
+  },
+  {
+    "caption": "Retry only Data with the valid fixture. The other specialists keep their original artifacts.",
     "reveal": ".coordination",
-    "actions": [
-      [
-        "click",
-        "#retry-button"
-      ]
-    ]
+    "actions": [["click", "#retry-button"]]
   },
   {
-    "caption": "Both specialist outputs now exist, so Reviewer may start.",
+    "caption": "The accepted template, data, and labels now merge. Separate review must pass before Release can package them.",
     "reveal": ".live-stage",
-    "actions": [
-      [
-        "click",
-        "#run-button"
-      ]
-    ]
+    "actions": [["click", "#auto-run"], ["click", "[data-stage-view=\"preview\"]"]]
   },
   {
-    "caption": "The reviewed component and complete handoff are available together.",
+    "caption": "Six computed checks inspect the actual data and composed markup. Their receipt unlocks the local release.",
     "reveal": ".live-stage",
-    "actions": [
-      [
-        "click",
-        "[data-stage-view=\"preview\"]"
-      ],
-      [
-        "click",
-        "#tab-packet"
-      ]
-    ]
+    "actions": [["click", "[data-stage-view=\"checks\"]"], ["click", "#tab-reviewer"]]
+  },
+  {
+    "caption": "Seven accepted outputs, an inspectable source bundle, and a working reading room. No live model calls or deployment.",
+    "reveal": ".live-stage",
+    "actions": [["click", "[data-stage-view=\"preview\"]"], ["click", "#tab-packet"]]
   }
 ]

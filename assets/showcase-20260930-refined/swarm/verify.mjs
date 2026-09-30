@@ -1,171 +1,38 @@
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import vm from 'node:vm';
-import './model.mjs';
-
-const M = globalThis.CohortModel;
+await import('./product-source.mjs');
+await import('./quality.mjs');
+await import('./model.mjs');
+const M = globalThis.CohortModel, Q = globalThis.CohortQuality, P = globalThis.CohortProduct;
 let checks = 0;
-function check(name, fn) {
-  fn();
-  checks += 1;
-  console.log(`PASS ${name}`);
-}
+const test = (name, fn) => { fn(); checks++; console.log(`PASS ${name}`); };
+const freeze = value => { if(value && typeof value==='object'&&!Object.isFrozen(value)){Object.freeze(value);Object.values(value).forEach(freeze);}return value; };
+const settle = (state, model=M, order=null) => { for(const id of order||model.running(state).map(task=>task.id))state=model.settleTask(state,id);return state; };
+const round = state => settle(M.startRound(state));
+const until = (predicate,state=M.createState()) => { let guard=0;while(!predicate(state)){assert.ok(++guard<10);state=round(state);}return state; };
+const prepared = () => round(M.createState());
+const completed = () => until(M.isComplete);
+function assertCap(model){for(const cap of [1,2,3]){let state=model.createState(cap),rounds=0;while(!model.isComplete(state)){state=model.startRound(state);assert.ok(model.running(state).length<=cap,'Running tasks exceed cap');state=settle(state,model);assert.ok(++rounds<=7);}assert.equal(rounds,cap===1?7:cap===2?6:5);assert.equal(Object.keys(state.artifacts).length,7);}}
 
-function settleAll(state, model = M, reversed = false) {
-  const tasks = model.running(state);
-  if (reversed) tasks.reverse();
-  for (const task of tasks) state = model.settleTask(state, task.id);
-  return state;
-}
-
-function completePlanner(state = M.createState(), model = M) {
-  return model.settleTask(model.startRound(state), 'planner');
-}
-
-function assertCap(model) {
-  for (const concurrency of [1, 2, 3]) {
-    let state = model.createState(concurrency);
-    let rounds = 0;
-    while (!model.isComplete(state)) {
-      state = model.startRound(state);
-      assert.ok(model.running(state).length <= concurrency, 'Running tasks exceed the concurrency cap');
-      state = settleAll(state, model);
-      rounds += 1;
-      assert.ok(rounds <= 4, 'The fixed graph did not finish within four rounds');
-    }
-    assert.equal(rounds, concurrency === 1 ? 4 : 3);
-  }
-}
-
-check('Only Planner starts ready; no artifact exists before execution', () => {
-  const state = M.createState();
-  assert.deepEqual(M.ready(state).map(task => task.id), ['planner']);
-  assert.deepEqual(Object.values(state.tasks).map(task => task.status), ['ready', 'blocked', 'blocked', 'blocked']);
-  assert.equal(Object.keys(state.artifacts).length, 0);
-  assert.equal(M.packet(state), null);
-});
-
-check('Planner completion makes both specialists eligible in one parallel round', () => {
-  const state = completePlanner();
-  assert.deepEqual(M.ready(state).map(task => task.id), ['designer', 'engineer']);
-  const next = M.startRound(state);
-  assert.deepEqual(M.running(next).map(task => task.id), ['designer', 'engineer']);
-  assert.equal(next.tasks.designer.lane, 1);
-  assert.equal(next.tasks.engineer.lane, 2);
-  assert.equal(next.tasks.reviewer.status, 'blocked');
-});
-
-check('Review waits for both dependencies under either settlement order', () => {
-  for (const order of [['designer', 'engineer'], ['engineer', 'designer']]) {
-    let state = M.startRound(completePlanner());
-    state = M.settleTask(state, order[0]);
-    assert.equal(state.tasks.reviewer.status, 'blocked');
-    assert.throws(() => M.startRound(state), /already running/);
-    state = M.settleTask(state, order[1]);
-    assert.equal(state.tasks.reviewer.status, 'ready');
-    assert.deepEqual(M.running(M.startRound(state)).map(task => task.id), ['reviewer']);
-  }
-});
-
-check('Concurrency 1 / 2 / 3 is enforced for every dispatch', () => assertCap(M));
-
-check('Third lane stays unused when only two tasks are eligible', () => {
-  const state = M.startRound(completePlanner(M.createState(3)));
-  assert.equal(M.running(state).length, 2);
-  assert.ok(M.running(state).every(task => state.tasks[task.id].lane <= 2));
-});
-
-check('Injected failure blocks review and produces no Engineer artifact', () => {
-  let state = M.setFailure(M.createState(), true);
-  state = completePlanner(state);
-  state = settleAll(M.startRound(state));
-  assert.equal(state.tasks.engineer.status, 'failed');
-  assert.equal(state.tasks.reviewer.status, 'blocked');
-  assert.equal(state.tasks.designer.status, 'completed');
-  assert.equal(state.artifacts.engineer, undefined);
-  assert.equal(Object.keys(state.artifacts).length, 2);
-  assert.equal(state.failureArmed, false);
-  assert.equal(M.packet(state), null);
-  assert.throws(() => M.startRound(state), /Retry the failed task/);
-});
-
-check('Retry runs only the failed task and never duplicates successful work', () => {
-  for (const concurrency of [1, 2, 3]) {
-    let state = M.setFailure(M.createState(concurrency), true);
-    while (state.tasks.engineer.status !== 'failed') state = settleAll(M.startRound(state));
-    const oldArtifacts = { ...state.artifacts };
-    const retry = M.retryTask(state, 'engineer');
-    assert.deepEqual(M.running(retry).map(task => task.id), ['engineer']);
-    assert.equal(retry.tasks.planner.attempts, 1);
-    assert.equal(retry.tasks.designer.attempts, 1);
-    state = M.settleTask(retry, 'engineer');
-    assert.equal(state.tasks.engineer.attempts, 2);
-    assert.equal(state.tasks.engineer.completions, 1);
-    assert.equal(state.tasks.reviewer.status, 'ready');
-    for (const id of Object.keys(oldArtifacts)) assert.equal(state.artifacts[id], oldArtifacts[id]);
-    state = settleAll(M.startRound(state));
-    assert.equal(M.isComplete(state), true);
-    assert.ok(M.TASKS.every(task => state.tasks[task.id].completions === 1));
-    assert.deepEqual(state.events.filter(event => event.kind === 'complete' && event.taskId).map(event => event.taskId), ['planner', 'designer', 'engineer', 'reviewer']);
-  }
-});
-
-check('The complete packet contains every produced fixture exactly once', () => {
-  let state = M.createState();
-  while (!M.isComplete(state)) state = settleAll(M.startRound(state));
-  const packet = M.packet(state);
-  assert.equal(packet.file, 'luma-handoff.md');
-  for (const task of M.TASKS) {
-    assert.equal(packet.content.split(state.artifacts[task.id].content).length - 1, 1);
-  }
-  assert.throws(() => M.startRound(state), /All tasks are complete/);
-});
-
-check('Invalid capacity, duplicate completion, and successful-task retry are rejected', () => {
-  for (const value of [0, 4, -1, '2', NaN, null]) assert.throws(() => M.createState(value), /Concurrency/);
-  const state = completePlanner();
-  assert.throws(() => M.settleTask(state, 'planner'), /not running/);
-  assert.throws(() => M.retryTask(state, 'planner'), /Only a failed task/);
-  assert.throws(() => M.settleTask(state, 'missing'), /Unknown task/);
-  const running = M.startRound(state);
-  assert.throws(() => M.setConcurrency(running, 1), /finish/);
-  assert.throws(() => M.retryTask(running, 'engineer'), /finish/);
-  assert.throws(() => M.setFailure(running, true), /Reset/);
-});
-
-check('Failure can be canceled before dispatch and state transitions leave input untouched', () => {
-  const initial = M.createState();
-  const before = JSON.stringify(initial);
-  let state = M.setFailure(initial, true);
-  state = M.setFailure(state, false);
-  state = M.setConcurrency(state, 3);
-  state = completePlanner(state);
-  state = settleAll(M.startRound(state));
-  assert.equal(state.tasks.engineer.status, 'completed');
-  assert.equal(JSON.stringify(initial), before);
-  assert.equal(M.running(initial).length, 0);
-  assert.equal(initial.events.length, 1);
-});
-
-check('Fresh state fully clears a previous failed run', () => {
-  let oldState = M.setFailure(M.createState(), true);
-  oldState = settleAll(M.startRound(completePlanner(oldState)));
-  assert.equal(oldState.tasks.engineer.status, 'failed');
-  const reset = M.createState(3);
-  assert.equal(reset.concurrency, 3);
-  assert.equal(reset.round, 0);
-  assert.equal(reset.failureArmed, false);
-  assert.equal(reset.events.length, 1);
-  assert.equal(Object.keys(reset.artifacts).length, 0);
-  assert.ok(Object.values(reset.tasks).every(task => task.attempts === 0 && task.completions === 0));
-});
-
-const source = await readFile(new URL('./model.mjs', import.meta.url), 'utf8');
-check('Mutation control: removing the concurrency cap fails the cap oracle', () => {
-  assert.ok(source.includes('ready(state).slice(0, state.concurrency)'));
-  const sandbox = {};
-  vm.runInNewContext(source.replace('ready(state).slice(0, state.concurrency)', 'ready(state)'), sandbox);
-  assert.throws(() => assertCap(sandbox.CohortModel), /Running tasks exceed/);
-});
-
-console.log(`\n${checks} scheduler checks passed. Browser layout, DOM interaction, CSP, and timer cancellation need separate browser verification.`);
+test('Initial graph has seven contracts; only Specification is ready',()=>{const s=M.createState();assert.equal(M.TASKS.length,7);assert.deepEqual(M.ready(s).map(t=>t.id),['planner']);assert.equal(M.packet(s),null);assert.equal(Object.keys(s.artifacts).length,0);});
+test('Specification unlocks all three independent specialists',()=>{const s=M.startRound(prepared());assert.deepEqual(M.running(s).map(t=>t.id),['designer','engineer','accessibility']);assert.deepEqual(M.running(s).map(t=>s.tasks[t.id].lane),[1,2,3]);assert.equal(s.tasks.integrator.status,'blocked');});
+test('All six specialist completion orders preserve the integration barrier',()=>{for(const order of [['designer','engineer','accessibility'],['designer','accessibility','engineer'],['engineer','designer','accessibility'],['engineer','accessibility','designer'],['accessibility','designer','engineer'],['accessibility','engineer','designer']]){let s=M.startRound(prepared());s=M.settleTask(s,order[0]);assert.equal(s.tasks.integrator.status,'blocked');s=M.settleTask(s,order[1]);assert.equal(s.tasks.integrator.status,'blocked');s=M.settleTask(s,order[2]);assert.equal(s.tasks.integrator.status,'ready');assert.equal(s.tasks.reviewer.status,'blocked');}});
+test('Concurrency 1/2/3 caps running work and yields 7/6/5 rounds',()=>assertCap(M));
+test('Integration composes the actual accepted records and labels',()=>{const s=until(s=>s.tasks.integrator.status==='completed');assert.equal(s.artifacts.integrator.data.data,s.artifacts.engineer.data);assert.equal(s.artifacts.integrator.data.access,s.artifacts.accessibility.data);assert.equal(s.artifacts.integrator.content,P.render(s.artifacts.engineer.data,s.artifacts.accessibility.data));assert.ok(s.artifacts.integrator.content.includes('On noticing'));assert.equal(s.tasks.publisher.status,'blocked');});
+test('Integration consumes the emitted interface template, not only its status',()=>{let s=until(s=>s.tasks.integrator.status==='ready');const template=s.artifacts.designer.data.template.replace('Reading journal','Accepted interface marker');s={...s,artifacts:{...s.artifacts,designer:{...s.artifacts.designer,data:{...s.artifacts.designer.data,template}}}};s=round(s);assert.ok(s.artifacts.integrator.content.includes('Accepted interface marker'));assert.equal(s.artifacts.integrator.data.template,template);});
+test('A missing interface slot rejects integration and blocks review',()=>{let s=until(s=>s.tasks.integrator.status==='ready');s={...s,artifacts:{...s.artifacts,designer:{...s.artifacts.designer,data:{...s.artifacts.designer.data,template:'<section>No notes slot</section>'}}}};s=round(s);assert.equal(s.tasks.integrator.status,'failed');assert.equal(s.tasks.integrator.issues[0].code,'MISSING_TEMPLATE_SLOT');assert.equal(s.tasks.reviewer.status,'blocked');});
+test('Review produces six computed passing checks before Release becomes ready',()=>{const s=until(s=>s.tasks.reviewer.status==='completed');assert.equal(s.artifacts.reviewer.data.passed,true);assert.equal(s.artifacts.reviewer.data.checks.length,6);assert.ok(s.artifacts.reviewer.data.checks.every(c=>c.passed));assert.equal(s.tasks.publisher.status,'ready');assert.equal(M.packet(s),null);});
+test('Injected data fault is rejected by a real duplicate-ID check',()=>{let s=M.setFailure(M.createState(),true);s=round(round(s));assert.equal(s.tasks.engineer.status,'failed');assert.equal(s.tasks.engineer.issues[0].code,'DUPLICATE_NOTE_ID');assert.equal(s.tasks.engineer.issues[0].path,'notes[1].id');assert.equal(s.artifacts.engineer,undefined);assert.ok(s.tasks.engineer.candidate.includes('note-01'));assert.equal(s.tasks.integrator.status,'blocked');assert.equal(s.tasks.reviewer.status,'blocked');assert.equal(s.tasks.publisher.status,'blocked');assert.equal(s.tasks.designer.status,'completed');assert.equal(s.tasks.accessibility.status,'completed');});
+test('Retry fixes only the rejected branch and preserves accepted object identities',()=>{for(const cap of [1,2,3]){let s=M.setFailure(M.createState(cap),true);s=until(s=>s.tasks.engineer.status==='failed',s);const accepted={...s.artifacts};s=M.retryTask(s,'engineer');assert.deepEqual(M.running(s).map(t=>t.id),['engineer']);s=M.settleTask(s,'engineer');for(const [id,artifact] of Object.entries(accepted))assert.equal(s.artifacts[id],artifact);s=until(M.isComplete,s);assert.equal(s.tasks.engineer.attempts,2);for(const task of M.TASKS){assert.equal(s.tasks[task.id].completions,1);if(task.id!=='engineer')assert.equal(s.tasks[task.id].attempts,1);}assert.equal(Object.keys(s.artifacts).length,7);}});
+test('A corrupted composed label causes independent review failure and blocks release',()=>{let s=until(s=>s.tasks.integrator.status==='completed');s={...s,artifacts:{...s.artifacts,integrator:{...s.artifacts.integrator,data:{...s.artifacts.integrator.data,html:s.artifacts.integrator.data.html.replace('aria-label="Choose a reading collection"','aria-label=""')}}}};s=round(s);assert.equal(s.tasks.reviewer.status,'failed');assert.ok(s.tasks.reviewer.issues.some(i=>i.code==='REVIEW_LABELS'));assert.equal(s.artifacts.reviewer,undefined);assert.equal(s.tasks.publisher.status,'blocked');assert.equal(M.packet(s),null);});
+test('Reviewer rejects changed data bindings, duplicate IDs, and inline code',()=>{const data=JSON.parse(JSON.stringify(P.DATA)),access={...P.LABELS},html=P.render(data,access);const cases=[['binding',html.replace('data-book-id="book-distance"','data-book-id="unknown"')],['notes',html.replace('data-note-id="note-02"','data-note-id="note-01"')],['ids',html+'<div id="luma-note-text"></div>'],['handlers',html+'<button onclick="alert(1)">Invalid</button>']];for(const [id,broken]of cases){const review=Q.review({html:broken},data,access);assert.equal(review.passed,false);assert.equal(review.checks.find(c=>c.id===id).passed,false);}});
+test('Data validator rejects orphan references, invalid kinds, and nonboolean saved values',()=>{for(const mutate of [d=>d.notes[0].bookId='missing',d=>d.notes[0].kind='unknown',d=>d.notes[0].saved='yes']){const d=JSON.parse(JSON.stringify(P.DATA));mutate(d);assert.ok(Q.validateData(d).length>0);}assert.ok(Q.validateData(null).length);assert.deepEqual(Q.validateData(P.DATA),[]);});
+test('Product renderer binds filters, saved state, and safe text output',()=>{const data=JSON.parse(JSON.stringify(P.DATA));let html=P.render(data,P.LABELS,{bookId:'book-noticing',filter:'practice'});assert.ok(html.includes('data-note-id="note-02"'));assert.ok(!html.includes('data-note-id="note-01"'));html=P.render(data,P.LABELS,{bookId:'book-noticing',savedOnly:true});assert.ok(html.includes('data-note-id="note-01"'));assert.ok(!html.includes('data-note-id="note-02"'));data.notes[0].text='<script>bad</script>';assert.ok(P.render(data).includes('&lt;script&gt;bad&lt;/script&gt;'));});
+test('Finished packet contains all seven unique output sections',()=>{const s=completed(),packet=M.packet(s);assert.equal(s.artifacts.publisher.data.acceptedTaskIds.length,6);for(const task of M.TASKS)assert.equal(packet.content.split(`## ${task.file}\n`).length-1,1);assert.throws(()=>M.startRound(s),/All tasks/);});
+test('State transitions are deterministic and do not mutate frozen input',()=>{let s=M.setFailure(M.createState(),true);for(let i=0;i<2;i++){const before=JSON.stringify(s);freeze(s);const next=M.startRound(s);assert.equal(JSON.stringify(s),before);assert.deepEqual(next,M.startRound(s));s=settle(next);}const before=JSON.stringify(s);freeze(s);M.retryTask(s,'engineer');assert.equal(JSON.stringify(s),before);});
+test('Invalid capacity, double completion, active-round changes, and successful retry fail',()=>{for(const cap of [0,4,'3',null])assert.throws(()=>M.createState(cap),/Concurrency/);const s=prepared(),active=M.startRound(s);assert.throws(()=>M.settleTask(s,'planner'),/not running/);assert.throws(()=>M.retryTask(s,'planner'),/Only a failed/);assert.throws(()=>M.setConcurrency(active,1),/finish/);assert.throws(()=>M.startRound(active),/already running/);assert.throws(()=>M.setFailure(active,true),/Reset/);});
+test('Reset creates a clean run without accepted output or stale failure',()=>{const s=M.createState(2);assert.equal(s.round,0);assert.equal(s.failureArmed,false);assert.equal(s.events.length,1);assert.equal(Object.keys(s.artifacts).length,0);assert.ok(Object.values(s.tasks).every(t=>t.attempts===0));});
+const source=await readFile(new URL('./model.mjs',import.meta.url),'utf8');
+test('Mutation control proves cap oracle catches uncapped dispatch',()=>{const context={CohortProduct:P,CohortQuality:Q};vm.runInNewContext(source.replace('ready(state).slice(0, state.concurrency)','ready(state)'),context);assert.throws(()=>assertCap(context.CohortModel),/exceed cap/);});
+console.log(`\n${checks} checks passed. Browser interactions and rendering are verified separately.`);

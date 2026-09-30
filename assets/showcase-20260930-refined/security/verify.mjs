@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
-const { evaluate, ROLES, RESOURCES, ACTIONS } = createRequire(import.meta.url)('./policy.js');
-const base = { role: 'Editor', resource: 'Team', authenticated: true, mfa: false, sameTeam: true, owner: true };
+const { evaluate, counterfactual, DEFAULT_CONTEXT, ROLES, RESOURCES, ACTIONS } = createRequire(import.meta.url)('./policy.js');
+const base = { ...DEFAULT_CONTEXT };
 let fixedCases = 0;
 const check = (name, changes, action, allowed, code) => {
   const result = evaluate({ ...base, ...changes }, action);
@@ -45,7 +45,7 @@ for (const key of Object.keys(base)) {
 for (const action of ['unknown', '', 'READ', null, undefined, 1]) assert.equal(evaluate(base, action).code, 'INVALID_INPUT');
 let exhaustive = 0;
 for (const role of ROLES) for (const resource of RESOURCES) for (const authenticated of [false, true]) for (const mfa of [false, true]) for (const sameTeam of [false, true]) for (const owner of [false, true]) for (const action of ACTIONS) {
-  const context = { role, resource, authenticated, mfa, sameTeam, owner };
+  const context = { ...base, role, resource, authenticated, mfa, sameTeam, owner };
   const before = JSON.stringify(context);
   const result = evaluate(context, action);
   assert.equal(JSON.stringify(context), before, 'Evaluator mutates input');
@@ -63,3 +63,45 @@ for (const role of ROLES) for (const resource of RESOURCES) for (const authentic
   exhaustive++;
 }
 console.log(`PASS: ${fixedCases} fixed policy cases, ${invalid.length + Object.keys(base).length + 6} invalid-input cases, ${exhaustive} exhaustive decisions. No mutation; deterministic results; deny transitions verified.`);
+
+const held = {...base, role:'Admin', resource:'Restricted', mfa:false, device:'Unmanaged', legalHold:true};
+const denied = evaluate(held,'delete');
+assert.equal(denied.candidateGrant,'DELETE_GRANTED');
+assert.deepEqual(denied.denies.map(d=>d.code),['LEGAL_HOLD','DEVICE_REQUIRED','MFA_REQUIRED']);
+assert.equal(denied.allowed,false);
+const repair = counterfactual(held,'delete');
+assert.equal(repair.cardinality,3);
+assert.deepEqual(new Set(repair.changes.map(c=>c.key)),new Set(['mfa','device','legalHold']));
+for(let mask=0;mask<8;mask++){
+ const modified={...held};repair.changes.forEach((c,i)=>{if(mask&(1<<i))modified[c.key]=c.value;});
+ assert.equal(evaluate(modified,'delete').allowed,mask===7,'Every proper subset of the repair must remain denied');
+}
+assert.equal(counterfactual({...base,role:'Admin',resource:'Restricted'},'share'),null);
+assert.equal(counterfactual({...base,role:'Guest',resource:'Restricted'},'read'),null);
+assert.equal(evaluate({...base,role:'Admin',resource:'Public',revoked:true},'read').code,'ACCESS_REVOKED');
+assert.equal(evaluate({...base,role:'Admin',actorTenant:'Boreal',mfa:true},'delete').code,'TENANT_MISMATCH');
+assert.equal(evaluate({...base,role:'Guest',resource:'Public',authenticated:false,actorTenant:'Boreal'},'read').allowed,false);
+assert.equal(evaluate({...base,role:'Viewer',resource:'Team',device:'Unmanaged'},'read').allowed,true);
+assert.equal(evaluate({...base,role:'Admin',resource:'Restricted',device:'Unmanaged'},'read').code,'DEVICE_REQUIRED');
+assert.equal(evaluate({...base,role:'Admin',mfa:true,legalHold:true},'edit').allowed,true,'Hold blocks deletion only');
+for(const bad of [{device:'Unknown'},{actorTenant:'Unknown'},{resourceTenant:0},{revoked:'false'},{legalHold:null}])assert.equal(evaluate({...base,...bad},'read').code,'INVALID_INPUT');
+let abac=0;
+const names=['authenticated','mfa','sameTeam','owner','revoked','legalHold'];
+for(const role of ROLES)for(const resource of RESOURCES)for(const action of ACTIONS)for(const actorTenant of ['Atlas','Boreal'])for(const resourceTenant of ['Atlas','Boreal'])for(const device of ['Managed','Unmanaged'])for(let mask=0;mask<64;mask++){
+ const c={role,resource,actorTenant,resourceTenant,device,...Object.fromEntries(names.map((n,i)=>[n,Boolean(mask&(1<<i))]))};
+ const r=evaluate(c,action),publicRead=resource==='Public'&&action==='read';
+ if(r.allowed){assert.equal(c.revoked,false);assert.equal(actorTenant,resourceTenant);assert.equal(r.denies.length,0);assert.ok(r.candidateGrant);if(!publicRead)assert.ok(c.authenticated&&c.sameTeam&&role!=='Guest');if(resource==='Restricted'||action!=='read')assert.equal(device,'Managed');if(action==='delete')assert.ok(role==='Admin'&&c.mfa&&!c.legalHold);}
+ if(r.denies.length)assert.equal(r.allowed,false);
+ if(c.revoked||actorTenant!==resourceTenant||(c.legalHold&&action==='delete'))assert.equal(r.allowed,false);
+ abac++;
+}
+console.log(`PASS ${abac} multi-tenant ABAC decisions; explicit-deny precedence; managed-device scope; public tenant isolation; three-fact minimal repair and all proper subsets; immutable counterfactual scope.`);
+
+let accessorReads=0;
+const accessorContext={...base};Object.defineProperty(accessorContext,'role',{enumerable:true,get(){accessorReads++;return 'Admin';}});
+assert.equal(evaluate(accessorContext,'delete').code,'INVALID_INPUT');assert.equal(accessorReads,0,'Untrusted getters must not execute');
+const allBoundaries=evaluate({...held,revoked:true,actorTenant:'Boreal',authenticated:false,sameTeam:false},'delete');
+assert.deepEqual(allBoundaries.denies.map(d=>d.code),['ACCESS_REVOKED','TENANT_MISMATCH','LEGAL_HOLD','SESSION_REQUIRED','TEAM_MISMATCH','DEVICE_REQUIRED','MFA_REQUIRED']);
+assert.equal(allBoundaries.code,'ACCESS_REVOKED');assert.equal(allBoundaries.candidateGrant,'DELETE_GRANTED');
+const beforeRepair=JSON.stringify(held);assert.deepEqual(counterfactual(held,'delete'),repair);assert.equal(JSON.stringify(held),beforeRepair);
+console.log('PASS no getter execution, seven simultaneous denies in explicit precedence order, deterministic non-mutating counterfactual.');

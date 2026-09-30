@@ -1,0 +1,106 @@
+{
+  "checkedAt": "2026-09-30T16:19:17.145Z",
+  "checks": [
+    {
+      "name": "five contiguous chapters, tour schema and portable/index parity",
+      "pass": true
+    },
+    {
+      "name": "complete H.264 decode and exact 500-frame 1080p/25fps metadata",
+      "pass": true,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1920,
+            "height": 1080,
+            "pix_fmt": "yuv420p",
+            "color_space": "bt709",
+            "r_frame_rate": "25/1",
+            "nb_read_frames": "500"
+          }
+        ],
+        "format": {
+          "duration": "20.000000",
+          "size": "9578490"
+        }
+      }
+    },
+    {
+      "name": "five decoded moments have content and visible progression",
+      "pass": true,
+      "changes": [
+        {
+          "time": 6,
+          "meanAbsoluteDifference": 33.670010288065846
+        },
+        {
+          "time": 10,
+          "meanAbsoluteDifference": 34.978330761316876
+        },
+        {
+          "time": 14,
+          "meanAbsoluteDifference": 19.751350308641975
+        },
+        {
+          "time": 18,
+          "meanAbsoluteDifference": 16.733603395061728
+        }
+      ]
+    },
+    {
+      "name": "deterministic repeat-seek pixels, finite-time guard, boundaries and changing geometry",
+      "pass": true,
+      "repeatPixelHash": "45c8248b604ecf59fc8f6cfc42c6e0e6ab29d1e5d2266d56a4264c00362b7f22"
+    }
+  ],
+  "ui": [
+    {
+      "browser": "Chrome",
+      "width": 390,
+      "pass": true,
+      "consoleErrors": [],
+      "failedResponses": [],
+      "chapterFrameFingerprints": [
+        200043441,
+        214167764,
+        319959011,
+        251402316,
+        235313490
+      ]
+    },
+    {
+      "browser": "Chrome",
+      "width": 1440,
+      "pass": true,
+      "consoleErrors": [],
+      "failedResponses": [],
+      "chapterFrameFingerprints": [
+        200043441,
+        214167764,
+        319959011,
+        251402316,
+        235313490
+      ]
+    },
+    {
+      "browser": "WebKit",
+      "width": 390,
+      "pass": true,
+      "consoleErrors": [],
+      "failedResponses": [],
+      "chapterFrameFingerprints": [
+        0,
+        213723056,
+        330948019,
+        254207085,
+        237011850
+      ]
+    }
+  ],
+  "reusedCoreChecksAt": "2026-09-30T16:17:58.398Z",
+  "pass": true
+}

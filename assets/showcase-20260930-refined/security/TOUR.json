@@ -1,6 +1,6 @@
 [
   {
-    "caption": "Review the exact actor, document, action, and deciding policy condition.",
+    "caption": "An Admin matches the delete grant, but retention, device posture and missing MFA each deny it. All three remain visible.",
     "reveal": ".request-surface",
     "actions": [
       [
@@ -10,18 +10,18 @@
     ]
   },
   {
-    "caption": "Admin deletion is held at the MFA gate; the trace and receipt explain why.",
-    "reveal": ".request-surface",
+    "caption": "Tenant isolation overrides the Admin grant even when ownership, device and session requirements are satisfied.",
+    "reveal": ".deny-precedence",
     "actions": [
       [
         "select",
         "#scenario",
-        "admin"
+        "tenant"
       ]
     ]
   },
   {
-    "caption": "Apply the one-fact counterfactual. Verified MFA changes Delete from Deny to Allow.",
+    "caption": "Apply the minimum context change: using the resource tenant permits this edit. The result comes from the same evaluator.",
     "reveal": ".request-surface",
     "actions": [
       [
@@ -31,23 +31,27 @@
     ]
   },
   {
-    "caption": "The request receipt contains the exact facts evaluated by the pure policy.",
+    "caption": "Return to deletion and apply its three-fact minimum repair: verify MFA, use a managed device and release the simulated hold.",
+    "reveal": ".request-surface",
+    "actions": [
+      [
+        "select",
+        "#scenario",
+        "hold"
+      ],
+      [
+        "click",
+        "#apply-counterfactual"
+      ]
+    ]
+  },
+  {
+    "caption": "The evaluation receipt contains the exact permitted request facts. Real authorization must verify these facts on a trusted server.",
     "reveal": ".receipt-panel",
     "actions": [
       [
         "click",
         "[data-receipt=\"request\"]"
-      ]
-    ]
-  },
-  {
-    "caption": "Compare every role under the same context; no role may share a Restricted document.",
-    "reveal": ".matrix-section",
-    "actions": [
-      [
-        "select",
-        "#scenario",
-        "restricted"
       ]
     ]
   }

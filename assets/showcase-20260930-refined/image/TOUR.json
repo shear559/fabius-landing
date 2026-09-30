@@ -1,7 +1,52 @@
 [
-  {"caption":"A new key visual combines the real notebook interface, source fragments and a clear headline.","reveal":".preview-surface","actions":[["click","#restore-layers"],["check","#safe-area",false],["click",".format-button[data-format=\"billboard\"]"]]},
-  {"caption":"The vertical composition is authored for its canvas. The safe-area guide keeps the main message in view.","reveal":".preview-surface","actions":[["click",".format-button[data-format=\"story\"]"],["check","#safe-area",true]]},
-  {"caption":"Hide the source fragments to inspect the notebook and typography beneath them.","reveal":".preview-surface","actions":[["click",".format-button[data-format=\"square\"]"],["check","[data-layer-toggle=\"fragments\"]",false]]},
-  {"caption":"Restore the complete composition. Every layer belongs to the same Lattice identity.","reveal":".preview-surface","actions":[["click","#restore-layers"],["check","#safe-area",false],["click",".format-button[data-format=\"billboard\"]"]]},
-  {"caption":"Keep the selected layout as a real PNG or WebP. Five full-resolution compositions are ready.","reveal":".export-box","actions":[["click",".format-button[data-format=\"card\"]"]]}
+  {
+    "caption": "Enter an imagined microscopic ocean, rich with translucent structures and warm living light.",
+    "reveal": ".artwork",
+    "actions": [
+      [
+        "click",
+        "#reset-view"
+      ]
+    ]
+  },
+  {
+    "caption": "Move into a radiolarian-inspired shell. The same artwork reveals its fine lattice and luminous edges.",
+    "reveal": ".artwork",
+    "actions": [
+      [
+        "click",
+        "[data-detail=\"silica\"]"
+      ]
+    ]
+  },
+  {
+    "caption": "Inspect the amber center and the intricate membranes of the central form. Drag or use arrow keys to explore.",
+    "reveal": ".artwork",
+    "actions": [
+      [
+        "click",
+        "[data-detail=\"light\"]"
+      ]
+    ]
+  },
+  {
+    "caption": "Ribbon-like colonies give the scene its depth and rhythm. Every detail belongs to the complete composition.",
+    "reveal": ".artwork",
+    "actions": [
+      [
+        "click",
+        "[data-detail=\"colony\"]"
+      ]
+    ]
+  },
+  {
+    "caption": "Return to the full artwork. Download the original PNG, its WebP version, or the creative brief.",
+    "reveal": ".artwork",
+    "actions": [
+      [
+        "click",
+        "#reset-view"
+      ]
+    ]
+  }
 ]

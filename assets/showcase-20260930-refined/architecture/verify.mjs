@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 await import('./model.mjs');
-const { initialState, transition, JOB_ID, REQUEST_KEY, OUTPUT_KEY } = globalThis.RelayModel;
+const { initialState, transition, invariants, JOB_ID, REQUEST_KEY, OUTPUT_KEY } = globalThis.RelayModel;
 
 const freeze = value => {
   if (value && typeof value === 'object' && !Object.isFrozen(value)) {
@@ -21,9 +21,13 @@ function check(state) {
     assert.deepEqual(state.outputs, []);
     return;
   }
+  for (const item of invariants(state)) assert.equal(item.pass,true,item.label);
+  assert.equal(state.commitWrites,state.outputs.length);
+  if(state.lease)assert.equal(state.lease.token,state.fence);
+  assert.equal(state.job.acked,state.job.status==='completed');
   assert.equal(state.job.id, JOB_ID);
   assert.equal(state.job.requestKey, REQUEST_KEY);
-  assert.ok(['queued', 'waiting', 'processing', 'completed'].includes(state.job.status));
+  assert.ok(['queued', 'waiting', 'processing', 'uncertain', 'completed'].includes(state.job.status));
   assert.ok(Number.isInteger(state.job.attempts) && state.job.attempts >= 0);
   assert.ok(Number.isInteger(state.job.replays) && state.job.replays >= 0);
   assert.deepEqual(state.queue, ['queued', 'waiting'].includes(state.job.status) ? [JOB_ID] : []);
@@ -34,7 +38,7 @@ function check(state) {
     assert.equal(state.outputs[0].jobId, JOB_ID);
     assert.equal(state.job.outputKey, OUTPUT_KEY);
   } else {
-    assert.equal(state.outputs.length, 0, 'No output before successful completion');
+    assert.ok(state.outputs.length <= 1, 'A committed object may precede completion acknowledgement');
     assert.equal(state.job.outputKey, null);
   }
 }
@@ -111,7 +115,27 @@ for (const [name, recipe] of Object.entries(globalThis.RelayScenarios)) {
   const result = scenario(recipe);
   assert.equal(result.job.status, 'completed', `${name} must finish`);
   assert.equal(result.outputs.length, 1, `${name} must commit once`);
-  assert.equal(result.job.attempts, name === 'recovery' ? 2 : 1, `${name} has the expected delivery attempts`);
-  assert.equal(result.job.replays, name === 'duplicate' ? 3 : name === 'recovery' ? 1 : 0, `${name} has the expected replay count`);
+  assert.equal(result.job.attempts, ['recovery','uncertain','fencing'].includes(name) ? 2 : 1, `${name} has the expected delivery attempts`);
+  assert.equal(result.job.replays, name === 'duplicate' ? 3 : name === 'recovery' ? 1 : name === 'uncertain' ? 2 : 0, `${name} has the expected replay count`);
 }
-console.log('PASS all four shipped browser recipes: expected completion, attempts, replay counts, and unique output');
+console.log('PASS all six shipped browser recipes: expected completion, attempts, replay counts, and unique output');
+
+const ambiguous = scenario(['RUN','NEXT','COMMIT_LOST_ACK']);
+assert.equal(ambiguous.job.status,'uncertain');assert.equal(ambiguous.outputs.length,1);assert.equal(ambiguous.job.acked,false);assert.equal(ambiguous.job.outputKey,null);assert.equal(ambiguous.commitWrites,1);
+const durable=JSON.stringify(ambiguous.outputs);
+const expired=step(ambiguous,'EXPIRE_LEASE');assert.equal(expired.lease,null);assert.equal(expired.queue.length,1);assert.equal(JSON.stringify(expired.outputs),durable);
+const beforeNewLease=step(expired,'STALE_COMMIT');assert.equal(beforeNewLease.rejectedWrites,1);assert.equal(JSON.stringify(beforeNewLease.outputs),durable);
+const delivered=step(expired,'NEXT');assert.equal(delivered.lease.token,2);assert.equal(delivered.lease.holder,'worker_2');
+const fenced=step(delivered,'STALE_COMMIT');assert.equal(fenced.lastWrite.result,'rejected');assert.equal(fenced.job.status,'processing');assert.deepEqual(fenced.lease,delivered.lease);assert.equal(JSON.stringify(fenced.outputs),durable);
+const reconciled=step(fenced,'NEXT');assert.equal(reconciled.job.acked,true);assert.equal(reconciled.commitWrites,1);assert.equal(reconciled.reconciliations,1);assert.equal(reconciled.outputs[0].commitFence,1);assert.equal(reconciled.fence,2);assert.equal(reconciled.events.at(-1).kind,'reconciled');
+assert.equal(JSON.stringify(reconciled.outputs),durable);
+assert.equal(step(reconciled,'STALE_COMMIT').outputs.length,1);
+const localRecovery=step(ambiguous,'NEXT');assert.equal(localRecovery.job.acked,true);assert.equal(localRecovery.commitWrites,1);assert.equal(localRecovery.job.attempts,1);
+const earlyFence=scenario(['RUN','NEXT','EXPIRE_LEASE','NEXT','STALE_COMMIT']);assert.equal(earlyFence.outputs.length,0);assert.equal(earlyFence.rejectedWrites,1);assert.equal(step(earlyFence,'NEXT').outputs[0].commitFence,2);
+const foreign={...delivered,outputs:[{...delivered.outputs[0],sourceVersion:'different-source'}]};const conflict=transition(foreign,'NEXT');assert.equal(conflict.job.acked,false);assert.equal(conflict.lastWrite.result,'identity-conflict');assert.equal(conflict.outputs[0].sourceVersion,'different-source');
+for(const action of ['COMMIT_LOST_ACK','EXPIRE_LEASE','STALE_COMMIT'])assert.deepEqual(step(initialState(),action),initialState());
+let complexTransitions=0;
+function exploreFailures(state,depth){if(!depth)return;for(const action of ['RUN','NEXT','REPLAY','COMMIT_LOST_ACK','EXPIRE_LEASE','STALE_COMMIT']){const next=step(state,action);complexTransitions++;exploreFailures(next,depth-1);}}
+exploreFailures(initialState(),6);
+console.log(`PASS ambiguous commit, pre/post-redelivery fencing, unchanged durable object, same-lease reconciliation, wrong-source refusal, unsupported phase no-ops; ${complexTransitions.toLocaleString('en-US')} additional fault-sequence transitions.`);
+console.log(`TOTAL PASS: ${checkedTransitions.toLocaleString('en-US')} immutable deterministic transitions with identity, queue, fence, unique-write and acknowledgement invariants.`);

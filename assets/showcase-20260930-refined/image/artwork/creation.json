@@ -1,0 +1,22 @@
+{
+  "date": "2026-09-30",
+  "method": "Built-in image_gen generation; WebP encoded with cwebp -q 90",
+  "title": "Pelagic \u2014 Worlds within water",
+  "width": 1536,
+  "height": 1024,
+  "interpretation": "Biologically inspired art, not an actual specimen or scientific measurement",
+  "files": {
+    "artwork/pelagic-1536.png": {
+      "bytes": 3381012,
+      "sha256": "f84b159ff9bc3b08d6e559b9432b7a8647df3a190a2fff79c533b4c2dac06d68"
+    },
+    "artwork/pelagic-1536.webp": {
+      "bytes": 532450,
+      "sha256": "6fec9775e83cb487fd1a57b136ef2f628c1873199fede71e578b1f3da8e17f91"
+    },
+    "artwork/prompt.txt": {
+      "bytes": 1298,
+      "sha256": "8315f7f08a5e170a01a3ac0074c39b88177b0b4380406f23f7246ed04376d938"
+    }
+  }
+}

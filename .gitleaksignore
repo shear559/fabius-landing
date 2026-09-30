@@ -1,3 +1,6 @@
 # This field is the verified public SHA-256 of products/preview-keys.js.
 # The filename's "keys" suffix causes a generic-api-key false positive.
 assets/trials-20260915-showcase/manifest.json:generic-api-key:118
+
+# Verified public SHA-256 of the demo accessibility contract, not a credential.
+assets/showcase-20260930-refined/checksums.json:generic-api-key:156

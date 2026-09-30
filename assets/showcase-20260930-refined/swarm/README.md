@@ -1,45 +1,43 @@
 # COHORT
 
-A local, deterministic agent-workbench demo. Start a static server in this directory and open `index.html`; the product has no dependencies and makes no network requests beyond loading its own HTML, CSS, and scripts.
+A deterministic seven-agent production studio that builds an interactive Luma reading journal from inspectable contracts. Run `python3 -m http.server 8767` here and open `http://localhost:8767/index.html`. Open `product.html` for the standalone delivered reading workspace. No package installation is needed.
 
-## Use
+## Run and inspect
 
-1. Use **Run through** for the whole graph, or **Run next round** for single steps. Planner unlocks Designer and Engineer.
-2. Run the next round. With concurrency 2 or 3, both start together. With 1, only one starts.
-3. The Reviewer becomes ready only after both succeed. Run it to assemble the handoff packet.
-4. Reset, enable **Engineer failure**, and repeat. The failed Engineer holds review. **Retry Engineer** reruns only that task; successful artifacts are retained.
-5. Select graph nodes or artifact tabs to inspect the brief, outline, design specification, component source, review checklist, and final packet.
+**Run through** dispatches the whole graph; **Run next round** steps once. Capacity 1, 2, or 3 limits concurrent tasks. Select a graph node or artifact tab to inspect its owner, input dependencies, output source, and attempt count. Preview, Source, and Gates show the composed product, emitted HTML, and review evidence.
 
-## Simulation limits
-
-- The launch brief, four specialist roles, graph, work durations, and artifact content are fixed synthetic fixtures.
-- No language model, real agent, external tool, backend, account, or provider is called. Concurrent work is represented by independently scheduled local timers.
-- This is a round-based scheduler. Finishing a task makes its dependents eligible; single-step mode waits for the user; Run through dispatches the next ready round after the current one finishes and pauses on failure.
-- Concurrency is a cap, not a promise of full utilization. This graph has at most two independent runnable tasks, so capacity 3 leaves a lane idle.
-- The injected fault fails the Engineer's first attempt. Retry reuses its completed dependencies and produces the fixed component fixture.
-- State exists only in memory. Reset or reload discards it. Reset cancels timers and guards against stale callbacks.
-- The review checklist is a fixture describing the sample handoff, not an independent code audit or quality score.
-
-## Implementation
-
-`model.mjs` contains pure state transitions shared by the app and `verify.mjs`. It is deliberately classic-script-compatible and exposes `globalThis.CohortModel`: sandboxed opaque-origin frames can load the same implementation without module CORS requirements. `app.js` owns DOM rendering and cancellable local task timers. There are no inline scripts, handlers, storage access, or application fetch calls.
-
-Run `node verify.mjs` for the scheduler checks. Run `node --check app.js` and `node --check model.mjs` for syntax checks. Browser verification is performed by the integrating parent task; this directory's builder did not run a browser.
-
-## Visual system
-
-Surface mode: operate. Bands: compact controls → coordination rail + rendered launch component + agent input/output inspector → event ledger.
-
-| Token role | Use | Never |
+| Task | Accepted output | Requires |
 | --- | --- | --- |
-| Paper / white | Workspace and readable artifacts | Simulated status signals |
-| Ink / dark slate | Text and monochrome controls | Decorative gradients on controls |
-| Violet | Active dependency signals and the launch-artifact backdrop | Per-role colors or quality scores |
-| System sans | Headings, controls, body | External font dependency |
-| System monospace | Filenames, step counters, source | Long body copy |
+| Specification | `specification.json` | Product brief |
+| Interface | `interface.html` | Specification |
+| Data engineer | `journal-data.json` | Specification |
+| Accessibility | `access-contract.json` | Specification |
+| Integration | `reading-room.html` | All three specialists |
+| Review gate | `review-receipt.json` | Integration |
+| Release | `release-manifest.json` | Passing review |
 
-The graph stays compact and vertical; desktop places it beside the live artifact and inspector, while mobile leads with the artifact. Controls have at least 44px targets; keyboard focus, named statuses, and reduced-motion handling are explicit.
+The interface emits the template Integration actually consumes. Data emits three fictional books and five original notes. Accessibility emits the labels used by the renderer. The delivered journal supports book selection, kind filters, saved notes, and local note creation. Its controls run real JavaScript; local edits do not rewrite the emitted build artifacts.
 
-## Refinement provenance
+To exercise recovery: **Reset → Inject data fault → Run through**. The first Data candidate has a duplicate note ID; the data validator rejects it and Integration stays blocked. Inspect Data's candidate and diagnostic, then **Retry Data → Run through**. Accepted artifacts retain their identities. Only Data has a second attempt.
 
-Refined on 2026-09-30 with Fabius Decor critique and Cohors guidance. The scheduler and fixture outputs are unchanged. The dominant workspace now renders the actual completed Engineer HTML with the Luma visual specification; before completion it is explicitly labelled a reference target. Added preview/source views, input/output ownership, and cancellable run-through control. Failure still pauses execution and retains completed artifacts. This is a product refinement, not a controlled model comparison. `index.html` and `preview.html` are twins except for the preview host bridge.
+## Quality gate and limits
+
+- The separate reviewer computes six checks against the actual accepted records and composed markup: data identities/references, book bindings, initial note bindings, control labels, document ID uniqueness, and absence of inline executable code. A failing receipt blocks Release.
+- These are bounded data/markup contracts, not a complete accessibility or security audit. `verify.mjs` deliberately corrupts artifacts to prove the reviewer rejects them.
+- This is a local deterministic simulation. Roles, graph, fixture content, and timer durations are fixed. No language model, external agent, provider, account, backend, network service, or deployment is called.
+- Concurrent tasks use independent local timers. The coordinator dispatches a new round after the current round settles; it pauses on failure. Capacity is a cap. This graph has at most three independent runnable tasks.
+- Everything lives in memory. Reset/reload discards local edits. Reset cancels timers and ignores stale callbacks. The download contains the same initial fixture and a completed example handoff.
+
+## Source and verification
+
+`product-source.mjs` holds the shared pure renderer and fixture. `quality.mjs` contains data validation and the separate review. `model.mjs` contains pure scheduler transitions. All three expose classic-script globals so opaque-origin sandbox frames can load them without module CORS. `app.js` owns the studio UI and cancellable timers; `product.js` owns the delivered product interactions.
+
+Run `node build-delivery.mjs` to regenerate the included completed handoff files. Run `node verify.mjs`: **19 meaningful cases**, including six specialist completion orders, all three capacity limits, causal template consumption, blocked integration/release, retry identity preservation, corrupted-review rejection, reset, frozen-state purity, and a mutation control that detects uncapped dispatch. Syntax checks use `node --check` on the application scripts and pure model files.
+
+Browser verification on 2026-09-30 used installed Playwright: Chromium at 390×844 and 1440×1080; WebKit at 390×844. All three passed complete 7/7 execution, six review results, real product controls, injected failure/retry, reset during execution, no document overflow, and no browser/network errors. Additional Chromium checks covered capacity controls, nine keyboard-navigable artifact tabs, 44px visible product controls, opaque-origin classic scripts with strict CSP and `connect-src none`, child-only scrolling, and the extracted standalone archive. Verification is local; deployment verification belongs to the host integration.
+
+`index.html` and `preview.html` are twins except for the latter's `../demo-control.js` gallery bridge. The standalone source archive uses `index.html` and excludes this host-only wrapper. Fonts are system fonts; illustrations are local CSS. There are no external asset dependencies, inline scripts, storage calls, or application fetches. `TOUR.json` defines nine gallery scenes; checkpoint waits are 7/7 at scene 2, failed Data at scene 4, accepted Data at scene 5, and 7/7 at scene 7 (zero-based).
+
+## Provenance
+
+Refined on 2026-09-30 with Fabius Decor, Cohors, and Disciplina guidance. Expanded the original four-task launch fixture into seven causal handoffs, actual data and markup gates, and a composed interactive reading journal. The compact DAG, ownership inspector, and execution record retain the studio's slate/violet identity; visual richness belongs to the product's paper surfaces and illustrated book covers. This is a Fabius-assisted product build, not a controlled model comparison or live model orchestration.

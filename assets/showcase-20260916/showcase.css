@@ -5,11 +5,11 @@
 @media(max-width:650px){.show-controls .show-tour-line{width:100%;padding:0;font-size:10px}}
 
 /* Nine categories stay in view; swipe is no longer required to discover a demo. */
-.show-tabs{grid-template-columns:repeat(9,minmax(0,1fr));gap:8px}
+.show-tabs{grid-template-columns:repeat(8,minmax(0,1fr));gap:8px}
 .show-tab{padding:16px 12px;min-height:132px}.show-tab strong{font-size:13px}.show-tab small{font-size:10px;line-height:1.5}
 .show-devices button{min-height:44px}.show-chrome>a{min-width:44px;min-height:40px}
-@media(max-width:1200px){.show-tabs{grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-flow:row;grid-auto-columns:auto;overflow:visible;padding-bottom:0}.show-tab{min-height:88px;flex-direction:row;align-items:center;gap:12px;padding:16px}.show-tab>b{display:none}.show-tab small{font-size:11px}}
-@media(max-width:650px){.show-tabs{gap:7px}.show-tab{min-height:80px;flex-direction:column;align-items:flex-start;gap:10px;padding:12px 9px}.show-tab strong{font-size:11px;letter-spacing:-.02em}.show-tab small{display:none}.show-tab>svg{width:22px;height:22px}.show-tools{flex-wrap:wrap;justify-content:flex-start}.show-devices{margin-right:auto}.show-devices button{min-height:44px}.show-action{font-size:10px}.show-chrome{height:44px}.show-display[data-device=phone] .show-chrome{height:44px}}
+@media(max-width:1200px){.show-tabs{grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-flow:row;grid-auto-columns:auto;overflow:visible;padding-bottom:0}.show-tab{min-height:88px;flex-direction:row;align-items:center;gap:12px;padding:16px}.show-tab>b{display:none}.show-tab small{font-size:11px}}
+@media(max-width:650px){.show-tabs{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.show-tab{min-height:80px;flex-direction:column;align-items:flex-start;gap:10px;padding:12px 9px}.show-tab strong{font-size:11px;letter-spacing:-.02em}.show-tab small{display:none}.show-tab>svg{width:22px;height:22px}.show-tools{flex-wrap:wrap;justify-content:flex-start}.show-devices{margin-right:auto}.show-devices button{min-height:44px}.show-action{font-size:10px}.show-chrome{height:44px}.show-display[data-device=phone] .show-chrome{height:44px}}
 /* Product capabilities replace historical test tallies in the current gallery. */
 .show-caption>div:first-child{min-width:0}.show-checks{flex:0 1 440px;min-width:0;gap:20px}.show-checks>div{flex:1;min-width:0;padding-left:20px}.show-checks b{font-size:15px;line-height:1.35;white-space:normal;letter-spacing:-.02em}.show-checks span{font-size:10px;max-width:none;line-height:1.5}
 @media(max-width:650px){.show-checks{width:100%;gap:18px}.show-checks>div{padding-left:0}.show-checks>div+div{padding-left:18px}.show-checks b{font-size:14px}.show-checks span{font-size:10px}}

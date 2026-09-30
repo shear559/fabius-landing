@@ -202,6 +202,19 @@
           "value": "SAMEORIGIN"
         }
       ]
+    },
+    {
+      "source": "/assets/showcase-20260930-refined/image/artwork/(.*)\\.(png|webp|txt)",
+      "headers": [
+        {
+          "key": "Content-Disposition",
+          "value": "attachment"
+        }
+      ]
+    },
+    {
+      "source": "/assets/showcase-20260930-refined/video/(afterlight-v1\\.mp4|poster-afterlight-v1\\.webp)",
+      "headers": [{ "key": "Content-Disposition", "value": "attachment" }]
     }
   ]
 }

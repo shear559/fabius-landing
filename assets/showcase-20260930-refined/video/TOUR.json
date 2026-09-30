@@ -1,7 +1,7 @@
 [
-  {"caption":"A new film follows one notebook from a first observation to a source-linked field brief.","reveal":".screen","actions":[["click","#restart"]]},
-  {"caption":"Play the 26-second film: the source note moves into the notebook, with its context intact.","reveal":".screen","actions":[["click","#play"]]},
-  {"caption":"The notebook becomes a relationship map connecting shade, living soil and shared space.","reveal":".screen","actions":[["click",".chapter[data-start=\"8\"]"]]},
-  {"caption":"An insight opens beside the map, keeping both source references in view.","reveal":".screen","actions":[["click",".chapter[data-start=\"13\"]"]]},
-  {"caption":"The ideas become a field brief. The complete MP4, poster and captions are downloadable.","reveal":".screen","actions":[["click",".chapter[data-start=\"18\"]"]]}
+  {"caption":"Afterlight is an independent original motion artwork: sixteen metallic bands shaped by a moving light.","reveal":".screen","actions":[["click","#restart"]]},
+  {"caption":"Play the twenty-second film. Camera, geometry and lighting change continuously through five movements.","reveal":".screen","actions":[["click","#play"]]},
+  {"caption":"Orbit brings the camera close to the sculpture, revealing the bright edges and fine surfaces of its bands.","reveal":".screen","actions":[["click",".chapter[data-start=\"4\"]"]]},
+  {"caption":"Release opens the orbit into a fan of tilted bands. This is imagined geometry, not filmed astronomy.","reveal":".screen","actions":[["click",".chapter[data-start=\"12\"]"]]},
+  {"caption":"The form settles in Afterlight. Download the complete film, poster, descriptions or reproducible source.","reveal":".screen","actions":[["click",".chapter[data-start=\"16\"]"]]}
 ]

@@ -1,282 +1,83 @@
 (() => {
   'use strict';
-  const M = globalThis.CohortModel;
-  const $ = selector => document.querySelector(selector);
-  const $$ = selector => [...document.querySelectorAll(selector)];
-  let state = M.createState();
-  let selectedArtifact = 'brief';
-  let generation = 0;
-  let autoRunning = false;
-  let stageView = 'preview';
+  const M = globalThis.CohortModel, P = globalThis.CohortProduct;
+  const $ = selector => document.querySelector(selector), $$ = selector => [...document.querySelectorAll(selector)];
+  const esc = P.escape;
+  let state = M.createState(), selectedArtifact = 'brief', generation = 0, autoRunning = false, stageView = 'preview', mountedStageKey = '';
   const timers = new Set();
-
-  const escape = value => String(value).replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
-  const capitalize = value => value.charAt(0).toUpperCase() + value.slice(1);
-  const taskName = id => M.TASKS.find(task => task.id === id).name;
-  const statusText = value => value === 'completed' ? 'Complete' : capitalize(value);
-
-  function selectArtifact(id, focus = false) {
-    selectedArtifact = id;
-    renderArtifact();
-    renderNodes();
-    renderWorkspace();
-    if (focus) $('#artifact-content').focus({ preventScroll: true });
+  for (const [index, task] of M.TASKS.entries()) {
+    const node = document.createElement('button'); node.type = 'button'; node.className = `task-node node-${task.id}`; node.dataset.task = task.id;
+    node.innerHTML = `<span class="node-name">${task.short === 'Spec' ? 'Specification' : task.short === 'Merge' ? 'Integration' : task.short === 'Access' ? 'Access' : task.short}</span><span class="task-status">Blocked</span><span class="node-role">${task.role}</span>`;
+    $('#graph').append(node);
+    const tab = document.createElement('button'); tab.type = 'button'; tab.id = `tab-${task.id}`; tab.dataset.artifact = task.id; tab.setAttribute('role','tab'); tab.setAttribute('aria-controls','artifact-content'); tab.setAttribute('aria-selected','false'); tab.tabIndex=-1; tab.innerHTML = `${task.short}<span class="tab-state" aria-hidden="true">○</span>`;
+    $('.artifact-tabs').append(tab);
   }
-
-  function renderNodes() {
-    for (const definition of M.TASKS) {
-      const task = state.tasks[definition.id];
-      const node = $(`[data-task="${definition.id}"]`);
-      node.dataset.status = task.status;
-      node.setAttribute('aria-pressed', String(selectedArtifact === definition.id));
-      node.setAttribute('aria-label', `${definition.name}, ${statusText(task.status)}. Inspect ${definition.file}`);
-      node.querySelector('.task-status').textContent = statusText(task.status);
-    }
-    const done = M.isComplete(state);
-    $('#packet-node').dataset.ready = String(done);
-    $('#packet-node').setAttribute('aria-label', done ? 'Launch handoff ready. Inspect assembled packet.' : 'Launch handoff waiting for review.');
-    $('#packet-status').textContent = done ? 'Ready to inspect' : 'Waiting for review';
+  const packetTab=document.createElement('button');packetTab.type='button';packetTab.id='tab-packet';packetTab.dataset.artifact='packet';packetTab.setAttribute('role','tab');packetTab.setAttribute('aria-controls','artifact-content');packetTab.setAttribute('aria-selected','false');packetTab.tabIndex=-1;packetTab.innerHTML='Bundle<span class="tab-state" aria-hidden="true">○</span>';$('.artifact-tabs').append(packetTab);
+  const sourceDetails = (content,label='Inspect emitted source') => `<details class="source-details"><summary>${label}</summary><pre class="artifact-source">${esc(content)}</pre></details>`;
+  const meta=(kind,file)=>`<div class="artifact-meta"><span>${kind}</span><span>${file}</span></div>`;
+  const name=id=>M.TASKS.find(task=>task.id===id).name;
+  const statusText=status=>status==='completed'?'Accepted':status[0].toUpperCase()+status.slice(1);
+  function renderNodes(){
+    for(const task of M.TASKS){const node=$(`[data-task="${task.id}"]`),current=state.tasks[task.id];node.dataset.status=current.status;node.querySelector('.task-status').textContent=statusText(current.status);node.setAttribute('aria-pressed',String(selectedArtifact===task.id));node.setAttribute('aria-label',`${task.name}, ${statusText(current.status)}. Inspect ${task.file}.`);}
+    $('#packet-node').dataset.ready=String(M.isComplete(state));$('#packet-status').textContent=M.isComplete(state)?'Ready to inspect':'Waiting for review';
+    const lanes=$('#worker-lanes');lanes.innerHTML=Array.from({length:state.concurrency},(_,index)=>{const active=M.running(state).find(task=>state.tasks[task.id].lane===index+1);return `<div class="worker-lane" data-busy="${Boolean(active)}"><span class="lane-number">${index+1}</span><div class="lane-description"><strong>${active?active.short:'Available'}</strong><span>${active?'Running':M.isComplete(state)?'Run complete':'No assignment'}</span></div></div>`;}).join('');
   }
-
-  function renderControls() {
-    const active = M.running(state);
-    const done = M.isComplete(state);
-    const failed = state.tasks.engineer.status === 'failed';
-    const ready = M.ready(state);
-    const run = $('#run-button');
-    run.disabled = active.length > 0 || ready.length === 0;
-    run.querySelector('span').textContent = active.length ? 'Round running…' : done ? 'Run complete' : failed && !ready.length ? 'Retry required' : 'Run next round';
-    for (const button of $$('[data-capacity]')) {
-      button.setAttribute('aria-pressed', String(Number(button.dataset.capacity) === state.concurrency));
-      button.disabled = active.length > 0;
-    }
-    const fault = $('#fault-button');
-    fault.setAttribute('aria-pressed', String(state.failureArmed));
-    fault.disabled = state.tasks.engineer.attempts > 0;
-    fault.querySelector('span').textContent = state.failureArmed ? 'Failure armed' : state.events.some(event => event.kind === 'failed') ? 'Fault injected' : 'Engineer failure';
-    fault.title = fault.disabled ? 'Reset this run to inject a new fault.' : 'Make the Engineer fail once; retry will preserve completed work.';
-    $('#retry-button').hidden = !failed;
-    $('#retry-button').disabled = active.length > 0;
-    $('#completed-count').innerHTML = `${M.completed(state).length}<span>/4</span>`;
-    $('#round-count').textContent = String(state.round).padStart(2, '0');
-    $('#artifact-count').textContent = `${Object.keys(state.artifacts).length} of 4 produced`;
-    let message;
-    if (active.length) message = `${active.map(task => task.name).join(' + ')} ${active.length > 1 ? 'are' : 'is'} running. The next round waits for this one to finish.`;
-    else if (done) message = 'Handoff assembled. Inspect the packet, or reset to try a different execution path.';
-    else if (failed) message = 'Engineer hit the injected fault. Retry that task; completed artifacts stay intact.';
-    else if (!state.round) message = 'Start the Planner to turn the brief into a shared outline.';
-    else if (ready.length > 1) message = `Designer and Engineer are ready. The next round can start ${Math.min(state.concurrency, ready.length)} together.`;
-    else message = `${ready[0].name} is ready. Run the next round to continue.`;
-    $('#run-message').textContent = message;
-    $('#dependency-note').textContent = done ? 'All dependency gates satisfied.' : failed ? 'Review is held until Engineer succeeds.' : state.tasks.reviewer.status === 'ready' ? 'Both specialist artifacts are complete. Review is ready.' : state.tasks.planner.status === 'completed' ? 'Review waits for both design and component.' : 'Planner unlocks both specialists.';
+  function renderControls(){
+    const active=M.running(state),done=M.isComplete(state),failures=M.failed(state),ready=M.ready(state);
+    $('#run-button').disabled=active.length>0||ready.length===0;$('#run-button span').textContent=active.length?'Round running…':done?'Run complete':!ready.length?'Retry required':'Run next round';
+    $('#auto-run').innerHTML=autoRunning?'Pause after round':done?'Release ready':'Run through <span aria-hidden="true">↗</span>';
+    $('#auto-run').disabled=!autoRunning&&(done||failures.length>0||active.length>0);
+    $$('[data-capacity]').forEach(button=>{button.setAttribute('aria-pressed',String(Number(button.dataset.capacity)===state.concurrency));button.disabled=active.length>0;});
+    const fault=$('#fault-button');fault.disabled=state.tasks.engineer.attempts>0;fault.setAttribute('aria-pressed',String(state.failureArmed));fault.querySelector('span').textContent=state.failureArmed?'Data fault armed':state.events.some(event=>event.kind==='failed')?'Fault exercised':'Inject data fault';
+    $('#retry-button').hidden=!failures.length;$('#retry-button').disabled=active.length>0;$('#retry-button').textContent=failures.length?`Retry ${failures[0].short} ↗`:'Retry rejected task ↗';
+    $('#completed-count').innerHTML=`${M.completed(state).length}<span>/7</span>`;$('#round-count').textContent=String(state.round).padStart(2,'0');$('#artifact-count').textContent=`${Object.keys(state.artifacts).length} of 7 produced`;
+    $('#run-message').textContent=active.length?`${active.map(task=>task.name).join(' + ')} running. New rounds wait for these contracts to settle.`:done?'Release accepted. Explore the working reading room, its source, and the computed review receipt.':failures.length?`${failures[0].name} rejected: ${state.tasks[failures[0].id].issues[0].code}. Accepted branches remain intact.`:!state.round?'Start the specification, then dispatch three independent specialists.':`${ready.map(task=>task.name).join(' + ')} ready. ${Math.min(ready.length,state.concurrency)} can start in the next round.`;
+    $('#dependency-note').textContent=failures.length?'Integration and release cannot consume a rejected artifact.':done?'All seven contracts accepted; the release is local.':state.tasks.integrator.status==='ready'?'Three specialist outputs accepted. Integration is ready.':state.tasks.reviewer.status==='ready'?'Integration is complete. A separate validator must accept it.':state.tasks.publisher.status==='ready'?'Review passed. Release can package the accepted files.':'Integration waits for interface, data, and accessibility.';
   }
-
-  function renderLanes() {
-    const active = M.running(state);
-    const lanes = $('#worker-lanes');
-    lanes.dataset.lanes = state.concurrency;
-    lanes.innerHTML = Array.from({ length: state.concurrency }, (_, index) => {
-      const task = active.find(definition => state.tasks[definition.id].lane === index + 1);
-      return `<div class="worker-lane" data-busy="${Boolean(task)}"><span class="lane-number">${index + 1}</span><div class="lane-description"><strong>${task ? task.name : 'Available'}</strong><span>${task ? 'Running' : M.isComplete(state) ? 'Run complete' : 'No task assigned'}</span></div></div>`;
-    }).join('');
+  function renderArtifact(){
+    for(const tab of $$('.artifact-tabs>button')){const id=tab.dataset.artifact,selected=id===selectedArtifact,available=id==='brief'||Boolean(state.artifacts[id])||id==='packet'&&M.isComplete(state);tab.setAttribute('aria-selected',String(selected));tab.tabIndex=selected?0:-1;const marker=tab.querySelector('.tab-state');if(marker)marker.textContent=available?'✓':'○';}
+    const id=selectedArtifact,task=M.TASKS.find(item=>item.id===id),panel=$('#artifact-content');panel.setAttribute('aria-labelledby',`tab-${id}`);
+    $('#agent-contract').innerHTML=task?`<dl class="contract-grid"><dt>Owner</dt><dd>${task.name} · attempt ${state.tasks[id].attempts}</dd><dt>Inputs</dt><dd>${task.deps.length?task.deps.map(dep=>M.TASKS.find(item=>item.id===dep).file).join(' + '):'product-brief.md'}</dd><dt>Output</dt><dd>${task.file}</dd></dl>`:'';
+    if(id==='brief'){panel.innerHTML=`${meta('Source brief','product-brief.md')}<h3>Keep what stays with you.</h3><p class="artifact-description">Build a reading workspace with actual book selection, note filters, saved thoughts, and a local note composer.</p><ul class="issue-list"><li>Interface, data, and accessibility run independently after the specification.</li><li>Integration waits for accepted inputs. Release waits for the separate review receipt.</li></ul>${sourceDetails(M.BRIEF,'Read the full brief')}`;return;}
+    const output=id==='packet'?M.packet(state):state.artifacts[id];
+    if(!output){const current=task?state.tasks[id]:null;const missing=task?task.deps.filter(dep=>state.tasks[dep].status!=='completed'):[];panel.innerHTML=`${meta(current?statusText(current.status):'Pending',task?task.file:'luma-handoff.md')}<h3>${current?.status==='failed'?'The contract rejected this output.':current?.status==='running'?`${task.name} is working.`:current?.status==='ready'?`${task.name} is ready.`:'This handoff waits for its inputs.'}</h3><p class="artifact-description">${current?.status==='failed'?'The invalid candidate is inspectable below. Retry uses the valid fixed input; accepted work is retained.':task?missing.length?`${missing.map(name).join(' + ')} must finish before ${task.name} can start.`:task.output:'The release bundle appears after all seven outputs are accepted.'}</p>${current?.issues.length?`<ul class="issue-list">${current.issues.map(issue=>`<li><code>${esc(issue.code)} · ${esc(issue.path)}</code>${esc(issue.message)}</li>`).join('')}</ul>`:''}${current?.candidate?sourceDetails(current.candidate,'Inspect rejected candidate'):''}`;return;}
+    let content;
+    if(id==='packet')content=`<p class="artifact-description">Seven accepted outputs and a composed reading workspace. The release is local; no site is deployed.</p><div class="packet-list">${M.TASKS.map(item=>`<button type="button" data-open-artifact="${item.id}"><span>${item.file}</span><span aria-hidden="true">↗</span></button>`).join('')}</div>${sourceDetails(output.content,'Inspect the full handoff')}`;
+    else if(id==='reviewer')content=`<p class="artifact-description">These results are computed from the actual integration artifact.</p>${gateList(output.data.checks)}<p class="artifact-description">${esc(output.data.scope)}</p>${sourceDetails(output.content,'Inspect review receipt')}`;
+    else content=`<p class="artifact-description">${task.output}</p>${sourceDetails(output.content,id==='integrator'?'Inspect composed HTML':'Inspect emitted source')}<pre class="artifact-source">${esc(output.content.slice(0,id==='integrator'?450:950))}${output.content.length>(id==='integrator'?450:950)?'\n… expand above for the complete artifact.':''}</pre>`;
+    panel.innerHTML=`${meta(output.kind||task.short,output.file)}<h3>${output.title}</h3>${content}`;
   }
-
-  function renderLog() {
-    $('#event-count').textContent = `${state.events.length} ${state.events.length === 1 ? 'event' : 'events'}`;
-    $('#event-log').innerHTML = [...state.events].reverse().map(event => `<li data-kind="${event.kind}"><span class="event-round">R${String(event.round).padStart(2, '0')}</span><div><p class="event-message">${escape(event.message)}</p><span class="event-kind">${event.kind === 'system' ? 'Coordinator' : event.kind}</span></div></li>`).join('');
+  function gateList(checks){return `<ul class="gate-list">${checks.map(check=>`<li data-check="${check.id}" data-passed="${check.passed}"><span class="gate-mark" aria-hidden="true">${check.passed?'✓':'×'}</span><div><strong>${esc(check.label)}</strong><p>${esc(check.evidence)}</p></div></li>`).join('')}</ul>`;}
+  function renderWorkspace(){
+    const integrated=state.artifacts.integrator,review=state.artifacts.reviewer,done=M.isComplete(state),key=`${generation}-${integrated?'produced':'reference'}`;
+    if(key!==mountedStageKey){globalThis.CohortProductUI.mount($('#live-artifact'),integrated?integrated.data.data:P.DATA,integrated?integrated.data.access:P.LABELS,integrated?integrated.data.template:P.TEMPLATE);mountedStageKey=key;}
+    $('#stage-source').textContent=integrated?integrated.content:P.render(P.DATA,P.LABELS);
+    $('.browser-frame').hidden=stageView!=='preview';$('#stage-source').hidden=stageView!=='source';$('#review-gates').hidden=stageView!=='checks';
+    $('#stage-state').textContent=done?'Released locally · seven accepted outputs':review?'Review passed · release pending':integrated?'Produced by Integration · review pending':'Reference target · not yet produced';
+    $('#build-indicator').textContent=done?'RELEASED':review?'REVIEWED':integrated?'PRODUCED':'REFERENCE';
+    $('#stage-caption').textContent=integrated?'Rendered from the accepted integration artifact. Try book selection, filters, saving, and a local note. Preview edits do not change the emitted source.':'This interactive reference shows the target product. Run the graph to produce and review its real local artifacts.';
+    $('#stage-deliverables').innerHTML=M.TASKS.map(task=>`<span data-complete="${Boolean(state.artifacts[task.id])}"><i aria-hidden="true">${state.artifacts[task.id]?'✓':'○'}</i>${task.short}</span>`).join('');
+    const rejected=state.tasks.engineer.status==='failed';
+    $('#review-gates').innerHTML=review?`<h3>Contract review passed.</h3><p>The reviewer consumes the composed HTML and the accepted specialist inputs.</p>${gateList(review.data.checks)}<p>${esc(review.data.scope)}</p>`:rejected?`<h3>The data contract stopped the merge.</h3><p>A duplicate note identity is an actual schema failure. Integration remains blocked.</p><ul class="issue-list">${state.tasks.engineer.issues.map(issue=>`<li><code>${esc(issue.code)} · ${esc(issue.path)}</code>${esc(issue.message)}</li>`).join('')}</ul><p>Interface and accessibility are preserved. Retry Data, then continue the graph.</p>`:`<h3>Release has an acceptance gate.</h3><p>${integrated?'The product is composed. Run the separate reviewer to execute these checks.':'These checks run after the three specialist artifacts are integrated.'}</p><ul class="gate-list">${['Unique data identities and valid references','Book controls bound to actual records','Initial notes match the selected collection','Named control groups and labelled input','Unique document IDs','No inline executable handlers or scripts'].map(label=>`<li><span class="gate-mark" aria-hidden="true">○</span><div><strong>${label}</strong><p>Waiting for the review task.</p></div></li>`).join('')}</ul>`;
+    $$('[data-stage-view]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.stageView===stageView)));
   }
-
-  const sourceDetails = (content, label = 'Inspect the full artifact') => `<details class="source-details"><summary>${label}</summary><pre class="artifact-source">${escape(content)}</pre></details>`;
-  const meta = (kind, file) => `<div class="artifact-meta"><span>${kind}</span><span>${file}</span></div>`;
-
-  function renderArtifact() {
-    const id = selectedArtifact;
-    for (const tab of $$('.artifact-tabs > button')) {
-      const selected = tab.dataset.artifact === id;
-      tab.setAttribute('aria-selected', String(selected));
-      tab.tabIndex = selected ? 0 : -1;
-      const available = tab.dataset.artifact === 'brief' || Boolean(state.artifacts[tab.dataset.artifact]) || tab.dataset.artifact === 'packet' && M.isComplete(state);
-      const marker = tab.querySelector('.tab-state');
-      if (marker) {
-        marker.textContent = available ? '✓' : '○';
-        marker.setAttribute('aria-hidden', 'true');
-      }
-      tab.setAttribute('aria-label', `${tab.textContent.replace(/[✓○]/g, '').trim()}${available ? ', available' : ', not yet produced'}`);
-    }
-    const panel = $('#artifact-content');
-    panel.setAttribute('aria-labelledby', `tab-${id}`);
-    if (id === 'brief') {
-      panel.innerHTML = `${meta('Source · synthetic project', 'launch-brief.md')}<h3>A quieter place for your reading.</h3><p class="artifact-description">Luma is a fictional reading journal. Build a focused launch-page handoff for people with ideas scattered across notebooks and apps.</p><dl class="brief-details"><div><dt>Audience</dt><dd>Curious readers who want to keep their best ideas.</dd></div><div><dt>Primary action</dt><dd>Start a reading journal.</dd></div><div><dt>Deliverables</dt><dd>Outline · design spec · component · review.</dd></div></dl>${sourceDetails(M.BRIEF, 'Read the complete brief')}`;
-      return;
-    }
-    const artifact = id === 'packet' ? M.packet(state) : state.artifacts[id];
-    if (!artifact) {
-      const definition = M.TASKS.find(task => task.id === id);
-      const task = definition ? state.tasks[id] : null;
-      const missing = definition ? definition.deps.filter(dep => state.tasks[dep].status !== 'completed').map(taskName) : [];
-      let title = 'The packet comes last.';
-      let description = 'Complete the outline, design specification, component, and review to assemble a single handoff.';
-      if (task) {
-        title = task.status === 'failed' ? 'A recoverable fault.' : task.status === 'running' ? `${definition.name} is working.` : task.status === 'ready' ? `${definition.name} is ready.` : 'The handoff has a dependency.';
-        description = task.status === 'failed' ? 'The injected build fault produced no component. Use Retry Engineer above; the successful outline and design stay available.' : task.status === 'running' ? `${definition.file} appears here when this local task completes.` : task.status === 'ready' ? 'The required inputs are available. Run the next round to produce this artifact.' : `${definition.name} needs ${missing.join(' and ')} to finish before it can start.`;
-      }
-      panel.innerHTML = `${meta(task ? statusText(task.status) : 'Pending', definition ? definition.file : 'luma-handoff.md')}<div class="artifact-waiting"><span class="waiting-symbol" aria-hidden="true">${task?.status === 'failed' ? '!' : '·'}</span><h3>${title}</h3><p class="artifact-description">${description}</p><p class="eyebrow">FIXED LOCAL OUTPUT · NO MODEL CALLS</p></div>`;
-      return;
-    }
-    let body;
-    if (id === 'planner') {
-      body = `<p class="artifact-description">The page has one job: help a reader start a journal. Each specialist gets a clear artifact to produce.</p><ol class="outline-list"><li><div><strong>Hero &amp; promise</strong><p>A quieter place for your reading.</p></div></li><li><div><strong>Product &amp; context</strong><p>Keep passages, sources, and ideas together.</p></div></li><li><div><strong>Parallel handoff</strong><p>Designer owns the visual spec. Engineer owns the component.</p></div></li><li><div><strong>Review &amp; assemble</strong><p>Both artifacts must exist before the final check.</p></div></li></ol>${sourceDetails(artifact.content)}`;
-    } else if (id === 'designer') {
-      body = `<p class="artifact-description">Paper, clear type, and one violet accent. A fixed sample of the intended visual direction.</p><div class="design-preview"><span class="luma-mark">luma.</span><h4>A quieter place for your reading.</h4><p>Keep the passages and ideas you want to return to.</p><div class="swatch-list"><span><i class="swatch" aria-hidden="true"></i>Paper</span><span><i class="swatch ink" aria-hidden="true"></i>Ink</span><span><i class="swatch violet" aria-hidden="true"></i>Violet</span></div></div>${sourceDetails(artifact.content, 'Read the design specification')}`;
-    } else if (id === 'engineer') {
-      body = `<p class="artifact-description">A semantic launch-card fixture. Source is displayed as text; it is not executed in this viewer.</p><pre class="artifact-source"><code>${escape(artifact.content)}</code></pre>`;
-    } else if (id === 'reviewer') {
-      body = `<p class="artifact-description">Fixed sample checklist. This records the handoff contract, not an independent audit.</p><ul class="review-list">${artifact.content.split('\n').filter(line => /^\[[x ]\]/.test(line)).map(line => `<li${line.startsWith('[ ]') ? ' class="pending"' : ''}>${escape(line.slice(4))}</li>`).join('')}</ul>${sourceDetails(artifact.content)}`;
-    } else {
-      body = `<p class="artifact-description">Four completed artifacts, assembled into one sample handoff. Open any item, or inspect the combined source below.</p><div class="packet-list">${M.TASKS.map(task => `<button type="button" data-open-artifact="${task.id}"><span>${task.file}</span><span aria-hidden="true">↗</span></button>`).join('')}</div>${sourceDetails(artifact.content, 'Inspect the complete handoff')}`;
-    }
-    panel.innerHTML = `${meta(`${artifact.kind} · fixed fixture`, artifact.file)}<h3>${artifact.title}</h3>${body}`;
-  }
-
-  function drawConnections() {
-    const graph = $('#graph');
-    const bounds = graph.getBoundingClientRect();
-    const svg = $('#connections');
-    svg.setAttribute('viewBox', `0 0 ${bounds.width} ${bounds.height}`);
-    const vertical = true;
-    const edges = [['planner', 'designer'], ['planner', 'engineer'], ['designer', 'reviewer'], ['engineer', 'reviewer'], ['reviewer', 'packet']];
-    svg.replaceChildren();
-    const box = id => (id === 'packet' ? $('#packet-node') : $(`[data-task="${id}"]`)).getBoundingClientRect();
-    for (const [from, to] of edges) {
-      const a = box(from), b = box(to);
-      const x1 = (vertical ? a.left + a.width / 2 : a.right) - bounds.left;
-      const y1 = (vertical ? a.bottom : a.top + a.height / 2) - bounds.top;
-      const x2 = (vertical ? b.left + b.width / 2 : b.left) - bounds.left;
-      const y2 = (vertical ? b.top : b.top + b.height / 2) - bounds.top;
-      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-      const d = vertical ? `M${x1} ${y1} C${x1} ${(y1 + y2) / 2},${x2} ${(y1 + y2) / 2},${x2} ${y2}` : `M${x1} ${y1} C${(x1 + x2) / 2} ${y1},${(x1 + x2) / 2} ${y2},${x2} ${y2}`;
-      path.setAttribute('d', d);
-      const sourceComplete = state.tasks[from].status === 'completed';
-      const targetRunning = to === 'packet' ? M.isComplete(state) : ['ready', 'running'].includes(state.tasks[to].status);
-      path.setAttribute('class', `connection ${sourceComplete && targetRunning ? 'ready-link' : sourceComplete ? 'complete-link' : ''}`);
-      svg.append(path);
-    }
-  }
-
-  function render() {
-    renderNodes();
-    renderControls();
-    renderWorkspace();
-    renderLanes();
-    renderLog();
-    renderArtifact();
-    drawConnections();
-  }
-
-  function scheduleRunningTasks() {
-    const thisGeneration = generation;
-    for (const task of M.running(state)) {
-      const timer = window.setTimeout(() => {
-        timers.delete(timer);
-        if (thisGeneration !== generation) return;
-        state = M.settleTask(state, task.id);
-        selectedArtifact = M.isComplete(state) ? 'packet' : task.id;
-        if (state.tasks.engineer.status === 'failed' || M.isComplete(state)) autoRunning = false;
-        render();
-        if (autoRunning && M.running(state).length === 0 && M.ready(state).length) {
-          const nextTimer = window.setTimeout(() => {
-            timers.delete(nextTimer);
-            if (thisGeneration !== generation || !autoRunning) return;
-            state = M.startRound(state);
-            render();
-            scheduleRunningTasks();
-          }, 300);
-          timers.add(nextTimer);
-        }
-      }, task.duration);
-      timers.add(timer);
-    }
-  }
-
-  function perform(action) {
-    try {
-      state = action();
-      render();
-    } catch (error) {
-      $('#run-message').textContent = error.message;
-    }
-  }
-
-  $('#run-button').addEventListener('click', () => {
-    if ($('#run-button').disabled) return;
-    perform(() => M.startRound(state));
-    scheduleRunningTasks();
-  });
-  $('#reset-button').addEventListener('click', () => {
-    generation += 1;
-    autoRunning = false;
-    timers.forEach(timer => window.clearTimeout(timer));
-    timers.clear();
-    state = M.createState(state.concurrency);
-    selectedArtifact = 'brief';
-    render();
-  });
-  $('#retry-button').addEventListener('click', () => {
-    if ($('#retry-button').disabled) return;
-    perform(() => M.retryTask(state, 'engineer'));
-    scheduleRunningTasks();
-  });
-  $('#fault-button').addEventListener('click', () => perform(() => M.setFailure(state, !state.failureArmed)));
-  $$('[data-capacity]').forEach(button => button.addEventListener('click', () => perform(() => M.setConcurrency(state, Number(button.dataset.capacity)))));
-  $$('[data-task]').forEach(button => button.addEventListener('click', () => {
-    selectArtifact(button.dataset.task);
-    if (window.innerWidth < 760) {
-      const artifactTop = $('.artifact-panel').getBoundingClientRect().top + window.scrollY;
-      document.scrollingElement.scrollTo({ top: Math.max(0, artifactTop - 16), behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
-    }
-  }));
-  $$('[data-artifact]').forEach(button => button.addEventListener('click', () => selectArtifact(button.dataset.artifact)));
-  $('.artifact-tabs').addEventListener('keydown', event => {
-    const tabs = $$('.artifact-tabs > button');
-    const current = tabs.indexOf(document.activeElement);
-    if (current < 0 || !['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
-    event.preventDefault();
-    const next = event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1 : (current + (event.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
-    selectArtifact(tabs[next].dataset.artifact);
-    tabs[next].focus();
-  });
-  $('#artifact-content').addEventListener('click', event => {
-    const button = event.target.closest('[data-open-artifact]');
-    if (button) selectArtifact(button.dataset.openArtifact, true);
-  });
-
-  function renderWorkspace() {
-    const component = state.artifacts.engineer;
-    const reviewed = M.isComplete(state);
-    $('#live-artifact').innerHTML = (component || M.ARTIFACTS.engineer).content;
-    $('#stage-source').textContent = (component || M.ARTIFACTS.engineer).content;
-    $('#stage-source').hidden = stageView !== 'source';
-    $('.browser-frame').hidden = stageView !== 'preview';
-    $('#stage-state').textContent = reviewed ? 'Reviewed handoff · all four tasks complete' : component ? 'Produced by Engineer · waiting for review' : state.artifacts.designer ? 'Design specification ready · component pending' : 'Reference target · not yet produced';
-    $('#build-indicator').textContent = reviewed ? 'REVIEWED' : component ? 'PRODUCED' : 'REFERENCE';
-    $('#stage-caption').textContent = component ? 'This preview renders the completed launch-card.html artifact. Its source is inspectable; the review checklist keeps remaining production work explicit.' : 'The reference shows the intended launch component. Run the specialists to produce the actual source; the label changes only when that task succeeds.';
-    $('#stage-deliverables').innerHTML = M.TASKS.map(task => `<span data-complete="${Boolean(state.artifacts[task.id])}"><i aria-hidden="true">${state.artifacts[task.id] ? '✓' : '○'}</i>${task.name === 'Planner' ? 'Outline' : task.name === 'Engineer' ? 'Component' : task.name === 'Designer' ? 'Design' : 'Review'}</span>`).join('');
-    const task = M.TASKS.find(item => item.id === selectedArtifact);
-    $('#agent-contract').innerHTML = task ? `<dl class="contract-grid"><dt>Owner</dt><dd>${task.name} · attempt ${state.tasks[task.id].attempts}</dd><dt>Inputs</dt><dd>${task.deps.length ? task.deps.map(id => M.TASKS.find(item => item.id === id).file).join(' + ') : 'launch-brief.md'}</dd><dt>Output</dt><dd>${task.file}</dd></dl>` : '';
-    $('#auto-run').innerHTML = autoRunning ? 'Pause after round' : M.isComplete(state) ? 'Handoff complete' : 'Run through <span aria-hidden="true">↗</span>';
-    $('#auto-run').disabled = !autoRunning && (M.isComplete(state) || state.tasks.engineer.status === 'failed' || M.running(state).length > 0);
-    $$('[data-stage-view]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.stageView === stageView)));
-  }
-  $('#auto-run').addEventListener('click', () => {
-    if (autoRunning) { autoRunning = false; renderWorkspace(); return; }
-    if (M.running(state).length || !M.ready(state).length) return;
-    autoRunning = true;
-    state = M.startRound(state);
-    render();
-    scheduleRunningTasks();
-  });
-  $$('[data-stage-view]').forEach(button => button.addEventListener('click', () => { stageView = button.dataset.stageView; renderWorkspace(); }));
-
+  function renderLog(){$('#event-count').textContent=`${state.events.length} events`;$('#event-log').innerHTML=[...state.events].reverse().map(event=>`<li data-kind="${event.kind}"><span class="event-round">R${String(event.round).padStart(2,'0')}</span><div><p class="event-message">${esc(event.message)}</p><span class="event-kind">${event.kind==='system'?'Coordinator':event.kind}</span></div></li>`).join('');}
+  function drawConnections(){const bounds=$('#graph').getBoundingClientRect(),svg=$('#connections');svg.setAttribute('viewBox',`0 0 ${bounds.width} ${bounds.height}`);svg.replaceChildren();for(const task of M.TASKS)for(const dep of task.deps){const a=$(`[data-task="${dep}"]`).getBoundingClientRect(),b=$(`[data-task="${task.id}"]`).getBoundingClientRect(),x1=a.left+a.width/2-bounds.left,y1=a.bottom-bounds.top,x2=b.left+b.width/2-bounds.left,y2=b.top-bounds.top;const path=document.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('d',`M${x1} ${y1} C${x1} ${(y1+y2)/2},${x2} ${(y1+y2)/2},${x2} ${y2}`);path.setAttribute('class',`connection ${state.tasks[dep].status==='completed'?(state.tasks[task.id].status==='ready'||state.tasks[task.id].status==='running'?'ready-link':'complete-link'):''}`);svg.append(path);}}
+  function render(){renderNodes();renderControls();renderWorkspace();renderArtifact();renderLog();drawConnections();}
+  function selectArtifact(id,focus=false){selectedArtifact=id;renderNodes();renderArtifact();if(focus)$('#artifact-content').focus({preventScroll:true});}
+  function schedule(){const token=generation;for(const task of M.running(state)){const timer=setTimeout(()=>{timers.delete(timer);if(token!==generation)return;state=M.settleTask(state,task.id);selectedArtifact=M.isComplete(state)?'packet':task.id;if(M.failed(state).length||M.isComplete(state))autoRunning=false;render();if(autoRunning&&!M.running(state).length&&M.ready(state).length){const next=setTimeout(()=>{timers.delete(next);if(token!==generation||!autoRunning)return;state=M.startRound(state);render();schedule();},180);timers.add(next);}},task.duration);timers.add(timer);}}
+  function start(automatic){if(M.running(state).length||!M.ready(state).length)return;autoRunning=automatic;state=M.startRound(state);render();schedule();}
+  $('#run-button').addEventListener('click',()=>start(false));
+  $('#auto-run').addEventListener('click',()=>{if(autoRunning){autoRunning=false;renderControls();}else start(true);});
+  $('#reset-button').addEventListener('click',()=>{generation+=1;autoRunning=false;timers.forEach(clearTimeout);timers.clear();state=M.createState(state.concurrency);selectedArtifact='brief';render();});
+  $('#retry-button').addEventListener('click',()=>{const failed=M.failed(state)[0];if(!failed||M.running(state).length)return;state=M.retryTask(state,failed.id);render();schedule();});
+  $('#fault-button').addEventListener('click',()=>{state=M.setFailure(state,!state.failureArmed);render();});
+  $$('[data-capacity]').forEach(button=>button.addEventListener('click',()=>{state=M.setConcurrency(state,Number(button.dataset.capacity));render();}));
+  $$('[data-artifact]').forEach(button=>button.addEventListener('click',()=>selectArtifact(button.dataset.artifact)));
+  $$('[data-task]').forEach(button=>button.addEventListener('click',()=>{selectArtifact(button.dataset.task);if(window.innerWidth<760){const top=$('.artifact-panel').getBoundingClientRect().top+window.scrollY;document.scrollingElement.scrollTo({top:Math.max(0,top-16),behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});}}));
+  $('.artifact-tabs').addEventListener('keydown',event=>{const tabs=$$('.artifact-tabs>button'),current=tabs.indexOf(document.activeElement);if(current<0||!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();const next=event.key==='Home'?0:event.key==='End'?tabs.length-1:(current+(event.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;selectArtifact(tabs[next].dataset.artifact);tabs[next].focus();});
+  $('#artifact-content').addEventListener('click',event=>{const button=event.target.closest('[data-open-artifact]');if(button)selectArtifact(button.dataset.openArtifact,true);});
+  $$('[data-stage-view]').forEach(button=>button.addEventListener('click',()=>{stageView=button.dataset.stageView;renderWorkspace();}));
   new ResizeObserver(drawConnections).observe($('#graph'));
   render();
 })();

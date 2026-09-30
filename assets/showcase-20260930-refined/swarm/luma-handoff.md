@@ -1,0 +1,220 @@
+# Luma release
+
+Local deterministic build. No model calls or production deployment.
+
+## specification.json
+
+{
+  "product": "Luma reading room",
+  "records": {
+    "books": 3,
+    "notes": 5
+  },
+  "features": [
+    "choose book",
+    "filter kind",
+    "save note",
+    "add local note"
+  ],
+  "acceptance": [
+    "unique identities",
+    "valid book references",
+    "labelled controls",
+    "external behavior",
+    "separate review before release"
+  ],
+  "constraints": [
+    "deterministic fixtures",
+    "no model calls",
+    "no storage or network"
+  ]
+}
+
+---
+
+## interface.html
+
+<section class="luma-app" aria-label="Reading journal">
+  {{header}}
+  {{intro}}
+  <div class="book-shelf" role="group" aria-label="{{library-label}}">{{books}}</div>
+  {{toolbar}}
+  <div class="reading-notes" aria-live="polite">{{notes}}</div>
+  {{composer}}
+  {{footer}}
+</section>
+
+---
+
+## journal-data.json
+
+{
+  "books": [
+    {
+      "id": "book-noticing",
+      "title": "On noticing",
+      "subtitle": "Attention & everyday life",
+      "spine": "01",
+      "cover": "noticing"
+    },
+    {
+      "id": "book-distance",
+      "title": "The longer view",
+      "subtitle": "Perspective & patience",
+      "spine": "02",
+      "cover": "distance"
+    },
+    {
+      "id": "book-intervals",
+      "title": "Small intervals",
+      "subtitle": "Practice & possibility",
+      "spine": "03",
+      "cover": "intervals"
+    }
+  ],
+  "notes": [
+    {
+      "id": "note-01",
+      "bookId": "book-noticing",
+      "chapter": "The ordinary afternoon",
+      "text": "Attention changes what an ordinary day has to offer. Look again before you look elsewhere.",
+      "kind": "insight",
+      "saved": true
+    },
+    {
+      "id": "note-02",
+      "bookId": "book-noticing",
+      "chapter": "A small observation",
+      "text": "Keep one sentence from today: something you noticed without trying to make it useful.",
+      "kind": "practice",
+      "saved": false
+    },
+    {
+      "id": "note-03",
+      "bookId": "book-distance",
+      "chapter": "Let the idea settle",
+      "text": "Some thoughts need distance before their shape becomes clear. Return to them with less urgency.",
+      "kind": "insight",
+      "saved": true
+    },
+    {
+      "id": "note-04",
+      "bookId": "book-distance",
+      "chapter": "The margin",
+      "text": "Leave room beside the first interpretation. Tomorrow may bring a better question.",
+      "kind": "practice",
+      "saved": false
+    },
+    {
+      "id": "note-05",
+      "bookId": "book-intervals",
+      "chapter": "Begin smaller",
+      "text": "A practice can start with an interval small enough to repeat and meaningful enough to keep.",
+      "kind": "insight",
+      "saved": true
+    }
+  ]
+}
+
+---
+
+## access-contract.json
+
+{
+  "library": "Choose a reading collection",
+  "filters": "Filter reading notes",
+  "text": "Your reading note",
+  "save": "Save note",
+  "unsave": "Unsave note",
+  "add": "Add a note"
+}
+
+---
+
+## reading-room.html
+
+<section class="luma-app" aria-label="Reading journal">
+  <header class="luma-header"><span class="luma-brand">luma<span>.</span></span><nav aria-label="Journal view"><button type="button" data-product-view="all" aria-pressed="true">Library</button><button type="button" data-product-view="saved" aria-pressed="false">Saved <span>3</span></button></nav><button type="button" class="new-note" data-new-note aria-expanded="false">New note <span aria-hidden="true">+</span></button></header>
+  <div class="luma-intro"><div><p>A PLACE FOR WHAT STAYS</p><h2>Reading room<span>.</span></h2></div><span>3 books · 5 notes</span></div>
+  <div class="book-shelf" role="group" aria-label="Choose a reading collection"><button type="button" class="book-card noticing" data-book-id="book-noticing" aria-pressed="true"><span class="book-cover"><span class="book-edition">LUMA EDITIONS / 01</span><strong>On noticing</strong><span class="cover-art" aria-hidden="true"><i></i><i></i><i></i></span><span class="book-subtitle">Attention &amp; everyday life</span></span><span class="book-caption"><span>On noticing</span><span>2 notes</span></span></button><button type="button" class="book-card distance" data-book-id="book-distance" aria-pressed="false"><span class="book-cover"><span class="book-edition">LUMA EDITIONS / 02</span><strong>The longer view</strong><span class="cover-art" aria-hidden="true"><i></i><i></i><i></i></span><span class="book-subtitle">Perspective &amp; patience</span></span><span class="book-caption"><span>The longer view</span><span>2 notes</span></span></button><button type="button" class="book-card intervals" data-book-id="book-intervals" aria-pressed="false"><span class="book-cover"><span class="book-edition">LUMA EDITIONS / 03</span><strong>Small intervals</strong><span class="cover-art" aria-hidden="true"><i></i><i></i><i></i></span><span class="book-subtitle">Practice &amp; possibility</span></span><span class="book-caption"><span>Small intervals</span><span>1 notes</span></span></button></div>
+  <div class="notes-toolbar"><div><h3>Notes from <em>On noticing</em></h3><span>2 thoughts to return to</span></div><div class="note-filters" role="group" aria-label="Filter reading notes"><button type="button" data-note-filter="all" aria-pressed="true">All</button><button type="button" data-note-filter="insight" aria-pressed="false">Ideas</button><button type="button" data-note-filter="practice" aria-pressed="false">Practice</button></div></div>
+  <div class="reading-notes" aria-live="polite"><article class="journal-note" data-note-id="note-01"><div class="note-meta"><span>The ordinary afternoon</span><button type="button" class="save-note" data-save-note="note-01" aria-pressed="true" aria-label="Unsave note: The ordinary afternoon"><svg viewBox="0 0 20 24" aria-hidden="true"><path d="M4 2h12v20l-6-4-6 4Z"/></svg></button></div><p>Attention changes what an ordinary day has to offer. Look again before you look elsewhere.</p><span class="note-kind">An idea to keep</span></article><article class="journal-note" data-note-id="note-02"><div class="note-meta"><span>A small observation</span><button type="button" class="save-note" data-save-note="note-02" aria-pressed="false" aria-label="Save note: A small observation"><svg viewBox="0 0 20 24" aria-hidden="true"><path d="M4 2h12v20l-6-4-6 4Z"/></svg></button></div><p>Keep one sentence from today: something you noticed without trying to make it useful.</p><span class="note-kind">A practice to try</span></article></div>
+  <form class="note-form" hidden><label for="luma-note-text">Your reading note</label><textarea id="luma-note-text" name="note" required maxlength="280" placeholder="A thought you want to return to…"></textarea><div><span>Local to this preview · no account</span><button type="submit">Add a note</button></div></form>
+  <footer class="luma-footer"><span>Keep the thought. Leave room for another.</span><span>Original synthetic reading notes</span></footer>
+</section>
+
+---
+
+## review-receipt.json
+
+{
+  "passed": true,
+  "checks": [
+    {
+      "id": "dataset",
+      "label": "Unique identities and valid book references",
+      "passed": true,
+      "evidence": "3 books and 5 notes pass the schema."
+    },
+    {
+      "id": "binding",
+      "label": "All book selectors are bound to actual records",
+      "passed": true,
+      "evidence": "Every dataset book has a matching product control."
+    },
+    {
+      "id": "notes",
+      "label": "Initial notes match the selected book",
+      "passed": true,
+      "evidence": "The initial view must contain exactly 2 notes from On noticing."
+    },
+    {
+      "id": "labels",
+      "label": "Interactive groups and note input have labels",
+      "passed": true,
+      "evidence": "Collection, filter, and input labels must match the accessibility contract."
+    },
+    {
+      "id": "ids",
+      "label": "Document IDs are unique",
+      "passed": true,
+      "evidence": "1 document IDs inspected."
+    },
+    {
+      "id": "handlers",
+      "label": "No inline executable handlers or scripts",
+      "passed": true,
+      "evidence": "Product behavior is supplied by an external classic script."
+    }
+  ],
+  "scope": "Deterministic data and markup contracts only; not a complete accessibility or security audit."
+}
+
+---
+
+## release-manifest.json
+
+{
+  "product": "Luma reading room",
+  "status": "ready locally",
+  "entry": "product.html",
+  "files": [
+    "product.html",
+    "product.css",
+    "product.js",
+    "product-source.mjs",
+    "journal-data.json",
+    "access-contract.json",
+    "review-receipt.json"
+  ],
+  "review": "review-receipt.json",
+  "acceptedTaskIds": [
+    "planner",
+    "designer",
+    "engineer",
+    "accessibility",
+    "integrator",
+    "reviewer"
+  ],
+  "delivery": "Local fixture bundle; no production deployment."
+}

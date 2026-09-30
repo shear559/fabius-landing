@@ -3,66 +3,78 @@
   const ROLES = Object.freeze(['Viewer', 'Editor', 'Admin', 'Guest']);
   const RESOURCES = Object.freeze(['Public', 'Team', 'Restricted']);
   const ACTIONS = Object.freeze(['read', 'edit', 'share', 'delete']);
-  const FIELDS = Object.freeze(['role', 'resource', 'authenticated', 'mfa', 'sameTeam', 'owner']);
-  const flags = ['authenticated', 'mfa', 'sameTeam', 'owner'];
-  const outcome = (allowed, code, reason, trace) => Object.freeze({ allowed, code, reason, trace: Object.freeze(trace.map(Object.freeze)) });
-
-  function evaluate(context, action) {
-    const trace = [];
-    const step = (id, title, pass, detail) => trace.push({ id, title, status: pass ? 'pass' : 'deny', detail });
-    const deny = (code, reason) => outcome(false, code, reason, trace);
+  const TENANTS = Object.freeze(['Atlas', 'Boreal']);
+  const DEVICES = Object.freeze(['Managed', 'Unmanaged']);
+  const DEFAULT_CONTEXT = Object.freeze({ role: 'Editor', resource: 'Team', authenticated: true, mfa: false, sameTeam: true, owner: true, actorTenant: 'Atlas', resourceTenant: 'Atlas', device: 'Managed', revoked: false, legalHold: false });
+  const FIELDS = Object.freeze(Object.keys(DEFAULT_CONTEXT));
+  const flags = FIELDS.filter(key => typeof DEFAULT_CONTEXT[key] === 'boolean');
+  function validate(context, action) {
     try {
-      const descriptors = context !== null && typeof context === 'object' ? Object.getOwnPropertyDescriptors(context) : {};
-      const values = Object.fromEntries(FIELDS.map(key => [key, descriptors[key]?.value]));
-      const valid = context !== null && typeof context === 'object' &&
-        [Object.prototype, null].includes(Object.getPrototypeOf(context)) &&
-        Reflect.ownKeys(context).length === FIELDS.length &&
-        FIELDS.every(key => Object.hasOwn(descriptors, key) && Object.hasOwn(descriptors[key], 'value')) &&
-        ROLES.includes(values.role) && RESOURCES.includes(values.resource) &&
-        ACTIONS.includes(action) && flags.every(key => typeof values[key] === 'boolean');
-      step('input', 'Known policy input', valid, valid ? 'Role, document, action and flags match the fixture policy.' : 'Missing or unrecognized input fails closed.');
-      if (!valid) return deny('INVALID_INPUT', 'Unrecognized policy input.');
-
-      const { role, resource, authenticated, sameTeam, owner, mfa } = values;
-      if (resource === 'Public' && action === 'read') {
-        step('public', 'Public read grant', true, 'Public documents can be read without a session.');
-        return outcome(true, 'PUBLIC_READ', 'Public documents are readable by everyone.', trace);
-      }
-      step('session', 'Authenticated session', authenticated, authenticated ? 'A signed-in session is present in this simulation.' : 'This request requires a signed-in session.');
-      if (!authenticated) return deny('SESSION_REQUIRED', 'Sign in to request this permission.');
-      if (role === 'Guest') {
-        step('role', 'Role grant', false, 'Guest has public-read access only.');
-        return deny('GUEST_SCOPE', 'Guests can only read public documents.');
-      }
-      step('team', 'Team boundary', sameTeam, sameTeam ? 'Caller and document belong to the same team.' : 'The document belongs to another team; no role bypasses this boundary.');
-      if (!sameTeam) return deny('TEAM_MISMATCH', 'The document is outside your team.');
-
-      if (action === 'read') {
-        const permitted = resource !== 'Restricted' || owner || role === 'Admin';
-        step('scope', 'Document scope', permitted, permitted ? (resource === 'Restricted' ? (role === 'Admin' ? 'Admin can read restricted documents within this team.' : 'You own this restricted document.') : 'Team members may read this document.') : 'Restricted reads require ownership or Admin within the team.');
-        return permitted ? outcome(true, 'READ_GRANTED', 'Your role and document scope permit reading.', trace) : deny('OWNER_REQUIRED', 'Only the owner or a team Admin may read this document.');
-      }
-      if (action === 'delete') {
-        const admin = role === 'Admin';
-        step('role', 'Admin role required', admin, admin ? 'Admin is the only role that may request deletion.' : 'Ownership does not grant deletion; Admin is required.');
-        if (!admin) return deny('ADMIN_REQUIRED', 'Only an Admin may delete documents.');
-        step('mfa', 'MFA for deletion', mfa, mfa ? 'Multi-factor authentication is verified in this context.' : 'Destructive requests require an MFA-verified session.');
-        return mfa ? outcome(true, 'DELETE_GRANTED', 'Admin deletion is permitted with MFA.', trace) : deny('MFA_REQUIRED', 'Verify MFA before deleting this document.');
-      }
-      if (action === 'share' && resource === 'Restricted') {
-        step('classification', 'Restricted sharing rule', false, 'Restricted documents cannot be shared, including by Admin.');
-        return deny('RESTRICTED_SHARING', 'Restricted documents cannot be shared.');
-      }
-      const permitted = role === 'Admin' || (role === 'Editor' && owner);
-      step('role', 'Role and ownership grant', permitted, permitted ? (role === 'Admin' ? 'Admin can manage documents within this team.' : 'Editor owns this document.') : (role === 'Viewer' ? 'Viewer has no write or share grant.' : 'Editor may only edit or share documents they own.'));
-      return permitted ? outcome(true, 'WRITE_GRANTED', action === 'edit' ? 'Your role and ownership permit editing.' : 'Your role and ownership permit sharing.', trace) : deny(role === 'Viewer' ? 'READ_ONLY' : 'OWNER_REQUIRED', role === 'Viewer' ? 'Viewer is a read-only role.' : 'You must own this document.');
-    } catch {
-      step('input', 'Known policy input', false, 'Unreadable input fails closed.');
-      return deny('INVALID_INPUT', 'Unrecognized policy input.');
-    }
+      if (context === null || typeof context !== 'object' || ![Object.prototype, null].includes(Object.getPrototypeOf(context))) return null;
+      const descriptors = Object.getOwnPropertyDescriptors(context);
+      if (Reflect.ownKeys(descriptors).length !== FIELDS.length || !FIELDS.every(key => Object.hasOwn(descriptors, key) && Object.hasOwn(descriptors[key], 'value'))) return null;
+      const values = Object.fromEntries(FIELDS.map(key => [key, descriptors[key].value]));
+      return ROLES.includes(values.role) && RESOURCES.includes(values.resource) && ACTIONS.includes(action) && flags.every(key => typeof values[key] === 'boolean') && TENANTS.includes(values.actorTenant) && TENANTS.includes(values.resourceTenant) && DEVICES.includes(values.device) ? values : null;
+    } catch { return null; }
   }
-
-  const api = Object.freeze({ ROLES, RESOURCES, ACTIONS, evaluate });
-  if (typeof module !== 'undefined' && module.exports) module.exports = api;
-  else root.SentinelPolicy = api;
+  function freezeResult(result) { result.trace.forEach(Object.freeze); result.denies.forEach(Object.freeze); Object.freeze(result.trace); Object.freeze(result.denies); return Object.freeze(result); }
+  function evaluate(context, action) {
+    const value = validate(context, action);
+    if (!value) return freezeResult({ allowed: false, code: 'INVALID_INPUT', reason: 'Unrecognized policy input.', candidateGrant: null, denies: [{ code: 'INVALID_INPUT', reason: 'Unrecognized policy input.' }], trace: [{ id: 'input', title: 'Known policy input', status: 'deny', detail: 'Unknown, missing, accessor-valued or unreadable facts fail closed.' }] });
+    const { role, resource, authenticated, mfa, sameTeam, owner, actorTenant, resourceTenant, device, revoked, legalHold } = value;
+    const publicRead = resource === 'Public' && action === 'read';
+    const admin = role === 'Admin';
+    let candidateGrant = null;
+    let defaultCode = 'READ_ONLY', defaultReason = 'Viewer is a read-only role.';
+    if (publicRead) candidateGrant = 'PUBLIC_READ';
+    else if (action === 'read') { if (role !== 'Guest' && (resource !== 'Restricted' || owner || admin)) candidateGrant = 'READ_GRANTED'; else { defaultCode = 'OWNER_REQUIRED'; defaultReason = 'Only the owner or a team Admin may read this document.'; } }
+    else if (action === 'delete') { if (admin) candidateGrant = 'DELETE_GRANTED'; else { defaultCode = 'ADMIN_REQUIRED'; defaultReason = 'Only an Admin may delete documents.'; } }
+    else if (admin || (role === 'Editor' && owner)) candidateGrant = 'WRITE_GRANTED';
+    else if (role === 'Editor') { defaultCode = 'OWNER_REQUIRED'; defaultReason = 'You must own this document.'; }
+    const rules = [
+      ['revocation', 'Session revocation', revoked, 'ACCESS_REVOKED', 'This identity is explicitly revoked.', 'The identity has no revocation flag.'],
+      ['tenant', 'Tenant isolation', actorTenant !== resourceTenant, 'TENANT_MISMATCH', 'An actor cannot cross the document’s tenant boundary.', actorTenant + ' actor and ' + resourceTenant + ' resource share the same tenant.'],
+      ['hold', 'Retention lock', legalHold && action === 'delete', 'LEGAL_HOLD', 'A legal hold prevents deletion, including by Admin.', legalHold ? 'The hold preserves deletion; this action is not deletion.' : 'No legal hold blocks deletion.'],
+      ['classification', 'Restricted sharing', resource === 'Restricted' && action === 'share', 'RESTRICTED_SHARING', 'Restricted documents cannot be shared.', 'This action has no classification sharing veto.'],
+      ['session', 'Authenticated session', !publicRead && !authenticated, 'SESSION_REQUIRED', 'Sign in to request this permission.', publicRead ? 'Published Public reads do not require a session within the tenant.' : 'An authenticated identity is present.'],
+      ['guest', 'Guest boundary', !publicRead && role === 'Guest', 'GUEST_SCOPE', 'Guests can only read public documents.', 'The role is within the permitted audience.'],
+      ['team', 'Team scope', !publicRead && !sameTeam, 'TEAM_MISMATCH', 'The document is outside your team.', publicRead ? 'Public reads are not team-scoped.' : 'Actor and document share the same team.'],
+      ['device', 'Managed device', (resource === 'Restricted' || action !== 'read') && device !== 'Managed', 'DEVICE_REQUIRED', 'This action requires a managed device.', 'Device posture satisfies this action’s requirements.'],
+      ['mfa', 'MFA for deletion', action === 'delete' && !mfa, 'MFA_REQUIRED', 'Verify MFA before deleting this document.', action === 'delete' ? 'MFA is verified for this destructive action.' : 'This action does not require the deletion MFA gate.']
+    ];
+    const denies = rules.filter(rule => rule[2]).map(rule => ({ code: rule[3], reason: rule[4] }));
+    const trace = [{ id: 'input', title: 'Known policy input', status: 'pass', detail: 'Every context attribute is present, typed and allowlisted.' }, { id: 'candidate', title: 'Candidate role grant', status: candidateGrant ? 'pass' : 'deny', detail: candidateGrant ? role + ' matches ' + candidateGrant + '. This candidate cannot override an explicit deny.' : defaultReason }];
+    for (const [id, title, denied, code, reason, passed] of rules) trace.push({ id, title, status: denied ? 'deny' : 'pass', detail: denied ? reason : passed, code: denied ? code : null });
+    const allowed = Boolean(candidateGrant) && denies.length === 0;
+    const code = denies[0]?.code || candidateGrant || defaultCode;
+    const reasons = { PUBLIC_READ: 'Public reading is permitted inside this tenant.', READ_GRANTED: 'The role, tenant and resource controls permit reading.', WRITE_GRANTED: 'The role, ownership and device controls permit this action.', DELETE_GRANTED: 'Admin deletion is permitted: same tenant, managed device, MFA and no hold.' };
+    return freezeResult({ allowed, code, reason: denies[0]?.reason || (candidateGrant ? reasons[candidateGrant] : defaultReason), candidateGrant, denies, trace });
+  }
+  function counterfactual(context, action) {
+    const values = validate(context, action);
+    if (!values) return null;
+    const original = evaluate(values, action);
+    const alternatives = [
+      ['authenticated', !values.authenticated, values.authenticated ? 'Remove the session' : 'Sign in'],
+      ['sameTeam', !values.sameTeam, values.sameTeam ? 'Leave the team' : 'Use the same team'],
+      ['owner', !values.owner, values.owner ? 'Remove ownership' : 'Grant ownership'],
+      ['mfa', !values.mfa, values.mfa ? 'Remove MFA' : 'Verify MFA'],
+      ['device', values.device === 'Managed' ? 'Unmanaged' : 'Managed', values.device === 'Managed' ? 'Use an unmanaged device' : 'Use a managed device'],
+      ['legalHold', !values.legalHold, values.legalHold ? 'Release the legal hold' : 'Place a legal hold'],
+      ['revoked', !values.revoked, values.revoked ? 'Clear identity revocation' : 'Revoke the identity'],
+      ['actorTenant', values.actorTenant === values.resourceTenant ? TENANTS.find(t => t !== values.resourceTenant) : values.resourceTenant, values.actorTenant === values.resourceTenant ? 'Move to another tenant' : 'Use the resource tenant']
+    ];
+    for (let size = 1; size <= alternatives.length; size++) {
+      for (let mask = 1; mask < 2 ** alternatives.length; mask++) {
+        const changes = alternatives.filter((_, i) => mask & (1 << i));
+        if (changes.length !== size) continue;
+        const candidate = { ...values, ...Object.fromEntries(changes.map(([key, value]) => [key, value])) };
+        const result = evaluate(candidate, action);
+        if (result.allowed !== original.allowed) return { changes: changes.map(([key, value, label]) => ({ key, value, label })), allowed: result.allowed, code: result.code, cardinality: size, domain: 'Fixed role, action, classification and resource tenant; boolean controls, actor tenant and device may change.' };
+      }
+    }
+    return null;
+  }
+  const api = Object.freeze({ ROLES, RESOURCES, ACTIONS, TENANTS, DEVICES, DEFAULT_CONTEXT, evaluate, counterfactual });
+  if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.SentinelPolicy = api;
 })(globalThis);

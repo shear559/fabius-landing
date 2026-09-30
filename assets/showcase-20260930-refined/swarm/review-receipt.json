@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "id": "dataset",
+      "label": "Unique identities and valid book references",
+      "passed": true,
+      "evidence": "3 books and 5 notes pass the schema."
+    },
+    {
+      "id": "binding",
+      "label": "All book selectors are bound to actual records",
+      "passed": true,
+      "evidence": "Every dataset book has a matching product control."
+    },
+    {
+      "id": "notes",
+      "label": "Initial notes match the selected book",
+      "passed": true,
+      "evidence": "The initial view must contain exactly 2 notes from On noticing."
+    },
+    {
+      "id": "labels",
+      "label": "Interactive groups and note input have labels",
+      "passed": true,
+      "evidence": "Collection, filter, and input labels must match the accessibility contract."
+    },
+    {
+      "id": "ids",
+      "label": "Document IDs are unique",
+      "passed": true,
+      "evidence": "1 document IDs inspected."
+    },
+    {
+      "id": "handlers",
+      "label": "No inline executable handlers or scripts",
+      "passed": true,
+      "evidence": "Product behavior is supplied by an external classic script."
+    }
+  ],
+  "scope": "Deterministic data and markup contracts only; not a complete accessibility or security audit."
+}

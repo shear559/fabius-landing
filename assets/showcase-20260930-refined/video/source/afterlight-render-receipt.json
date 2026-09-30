@@ -1,0 +1,117 @@
+{
+  "title": "Afterlight",
+  "duration": 20,
+  "fps": 25,
+  "width": 1920,
+  "height": 1080,
+  "frames": 500,
+  "elapsedSeconds": 788.235,
+  "browserVersion": "154.0.8037.59",
+  "fontLoaded": true,
+  "browserErrors": [],
+  "states": [
+    {
+      "time": 0,
+      "act": "FORM",
+      "eye": [
+        5.7,
+        3.8,
+        8.2
+      ],
+      "geometry": {
+        "rings": 16,
+        "ringVertices": 12000,
+        "sphereVertices": 36000
+      },
+      "bloom": 0.1,
+      "wave": 0.05
+    },
+    {
+      "time": 4,
+      "act": "ORBIT",
+      "eye": [
+        4.022740524781342,
+        4.2504373177842565,
+        7.3615160349854225
+      ],
+      "geometry": {
+        "rings": 16,
+        "ringVertices": 12000,
+        "sphereVertices": 36000
+      },
+      "bloom": 0.12332361516034986,
+      "wave": 0.12886297376093295
+    },
+    {
+      "time": 8,
+      "act": "TIDE",
+      "eye": [
+        0.328125,
+        2.5125,
+        5.3125
+      ],
+      "geometry": {
+        "rings": 16,
+        "ringVertices": 12000,
+        "sphereVertices": 36000
+      },
+      "bloom": 0.21437499999999998,
+      "wave": 0.376875
+    },
+    {
+      "time": 12,
+      "act": "RELEASE",
+      "eye": [
+        -3.628125,
+        6.353125,
+        7.03125
+      ],
+      "geometry": {
+        "rings": 16,
+        "ringVertices": 12000,
+        "sphereVertices": 36000
+      },
+      "bloom": 0.49375,
+      "wave": 0.8453125
+    },
+    {
+      "time": 16,
+      "act": "AFTERLIGHT",
+      "eye": [
+        -4.845846428031956,
+        3.8855440821053335,
+        7.115557550938203
+      ],
+      "geometry": {
+        "rings": 16,
+        "ringVertices": 12000,
+        "sphereVertices": 36000
+      },
+      "bloom": 0.9050022448054782,
+      "wave": 0.5003900611761942
+    }
+  ],
+  "probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "pix_fmt": "yuv420p",
+        "color_range": "tv",
+        "color_space": "bt709",
+        "color_transfer": "bt709",
+        "color_primaries": "bt709",
+        "r_frame_rate": "25/1",
+        "nb_read_frames": "500"
+      }
+    ],
+    "format": {
+      "duration": "20.000000",
+      "size": "9578490"
+    }
+  },
+  "method": "Original deterministic WebGL geometry, normals and lighting. One persistent browser/page; PNG frame stream into H.264. Silent."
+}

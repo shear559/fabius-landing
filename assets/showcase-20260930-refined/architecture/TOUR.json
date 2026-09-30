@@ -1,12 +1,16 @@
 [
   {
-    "caption": "Submit the request and deliver it to the worker. The packet shows current ownership.",
-    "reveal": ".topology-panel",
+    "caption": "Commit the object, then lose its acknowledgement. The durable result exists while the job remains unresolved.",
+    "reveal": ".delivery-proof",
     "actions": [
       [
         "select",
         "#scenario",
-        "recovery"
+        "uncertain"
+      ],
+      [
+        "click",
+        "#next-event"
       ],
       [
         "click",
@@ -19,7 +23,7 @@
     ]
   },
   {
-    "caption": "Interrupt the worker and replay the same request. The queue retains one job.",
+    "caption": "Replay the same request, then expire lease 1. One retained job returns to the queue; its committed object survives.",
     "reveal": ".topology-panel",
     "actions": [
       [
@@ -33,8 +37,8 @@
     ]
   },
   {
-    "caption": "Restore the worker. The same job begins delivery attempt two.",
-    "reveal": ".topology-panel",
+    "caption": "Worker 2 acquires token 2. The late writer with token 1 is rejected without changing the object or active delivery.",
+    "reveal": ".delivery-proof",
     "actions": [
       [
         "click",
@@ -47,7 +51,7 @@
     ]
   },
   {
-    "caption": "Commit once and inspect the exact output record. No video is generated.",
+    "caption": "The current lease adopts the matching existing object and acknowledges completion: one write, one unchanged output.",
     "reveal": ".output-panel",
     "actions": [
       [
@@ -57,12 +61,16 @@
     ]
   },
   {
-    "caption": "Replay after completion: the same job and output are returned.",
-    "reveal": ".inspector",
+    "caption": "Replay returns the same result. Inspect the reconciliation event: token 2 acknowledged the object originally committed under token 1.",
+    "reveal": ".trace-panel",
     "actions": [
       [
         "click",
-        "#replay-request"
+        "#next-event"
+      ],
+      [
+        "click",
+        "[data-event-sequence=\"8\"]"
       ]
     ]
   }

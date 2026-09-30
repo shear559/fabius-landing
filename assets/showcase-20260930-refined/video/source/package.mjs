@@ -1,0 +1,11 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {execFileSync} from 'node:child_process';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const files=["index.html", "preview.html", "styles.css", "app.js", "film-data.js", "TOUR.json", "README.md", "captions.vtt", "chapters.vtt", "rubik.woff2", "afterlight-v1.mp4", "poster-afterlight-v1.webp", "thumbs/afterlight-v1-form.webp", "thumbs/afterlight-v1-orbit.webp", "thumbs/afterlight-v1-tide.webp", "thumbs/afterlight-v1-release.webp", "thumbs/afterlight-v1-afterlight.webp", "source/README.md", "source/afterlight/scene.html", "source/afterlight/scene.css", "source/afterlight/scene.js", "source/afterlight/OFL.txt", "source/render-afterlight.mjs", "source/write-metadata.mjs", "source/verify.mjs", "source/package.mjs", "source/afterlight-frame-hashes.sha256", "source/afterlight-render-receipt.json", "source/verification.json", "source/host-verification.json"];
+for(const f of files)if(!fs.existsSync(path.join(root,f)))throw Error('Missing '+f);
+fs.rmSync(path.join(root,'source.zip'),{force:true});
+execFileSync('zip',['-qr','source.zip',...files,'-x','*/.DS_Store'],{cwd:root});
+execFileSync('unzip',['-t','source.zip'],{cwd:root,stdio:'inherit'});
+console.log('PASS portable archive: '+fs.statSync(path.join(root,'source.zip')).size+' bytes');
