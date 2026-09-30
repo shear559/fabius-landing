@@ -1,0 +1,67 @@
+{
+  "books": [
+    {
+      "id": "book-noticing",
+      "title": "On noticing",
+      "subtitle": "Attention & everyday life",
+      "spine": "01",
+      "cover": "noticing"
+    },
+    {
+      "id": "book-distance",
+      "title": "The longer view",
+      "subtitle": "Perspective & patience",
+      "spine": "02",
+      "cover": "distance"
+    },
+    {
+      "id": "book-intervals",
+      "title": "Small intervals",
+      "subtitle": "Practice & possibility",
+      "spine": "03",
+      "cover": "intervals"
+    }
+  ],
+  "notes": [
+    {
+      "id": "note-01",
+      "bookId": "book-noticing",
+      "chapter": "The ordinary afternoon",
+      "text": "Attention changes what an ordinary day has to offer. Look again before you look elsewhere.",
+      "kind": "insight",
+      "saved": true
+    },
+    {
+      "id": "note-02",
+      "bookId": "book-noticing",
+      "chapter": "A small observation",
+      "text": "Keep one sentence from today: something you noticed without trying to make it useful.",
+      "kind": "practice",
+      "saved": false
+    },
+    {
+      "id": "note-03",
+      "bookId": "book-distance",
+      "chapter": "Let the idea settle",
+      "text": "Some thoughts need distance before their shape becomes clear. Return to them with less urgency.",
+      "kind": "insight",
+      "saved": true
+    },
+    {
+      "id": "note-04",
+      "bookId": "book-distance",
+      "chapter": "The margin",
+      "text": "Leave room beside the first interpretation. Tomorrow may bring a better question.",
+      "kind": "practice",
+      "saved": false
+    },
+    {
+      "id": "note-05",
+      "bookId": "book-intervals",
+      "chapter": "Begin smaller",
+      "text": "A practice can start with an interval small enough to repeat and meaningful enough to keep.",
+      "kind": "insight",
+      "saved": true
+    }
+  ]
+}

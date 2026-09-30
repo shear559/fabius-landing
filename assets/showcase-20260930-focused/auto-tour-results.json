@@ -1,0 +1,25 @@
+{
+  "origin": "http://127.0.0.1:8814",
+  "results": [
+    {
+      "name": "math",
+      "passed": true,
+      "automaticCadenceMs": 3400
+    },
+    {
+      "name": "swarm",
+      "passed": true,
+      "automaticCadenceMs": 3400
+    },
+    {
+      "name": "memory",
+      "passed": true,
+      "automaticCadenceMs": 3400
+    },
+    {
+      "name": "code",
+      "passed": true,
+      "automaticCadenceMs": 3400
+    }
+  ]
+}

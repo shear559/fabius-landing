@@ -1,0 +1,40 @@
+{
+  "date": "2026-09-30",
+  "edition": "Four visible benefits",
+  "source_release": "Fabius 3.3.0 / ce34f26",
+  "kind": "Iteratively authored demonstrations, not paired uplift measurements",
+  "demos": {
+    "math": {
+      "title": "Math / See the optimum move",
+      "entry": "math/index.html",
+      "source": "math/source.zip",
+      "files": 81,
+      "walkthrough_steps": 6,
+      "source_sha256": "c5aafd677d0236493807854da8eda956c663dd146755fcaef6309db60267648e"
+    },
+    "swarm": {
+      "title": "Cohort / Coordinated agent teams",
+      "entry": "swarm/index.html",
+      "source": "swarm/source.zip",
+      "files": 23,
+      "walkthrough_steps": 6,
+      "source_sha256": "0a93408dd0be3b0fe4424a7e5a3ba762b8a4c6ee502585b6a52523ec8c7c8474"
+    },
+    "memory": {
+      "title": "Continuum / Project memory",
+      "entry": "memory/index.html",
+      "source": "memory/source.zip",
+      "files": 8,
+      "walkthrough_steps": 5,
+      "source_sha256": "2f54dd2b3d7b2db2f9ac2811e37f92275028295a639102bb0fbe251e011f9650"
+    },
+    "code": {
+      "title": "Tidy / Readable, executable code",
+      "entry": "code/index.html",
+      "source": "code/source.zip",
+      "files": 8,
+      "walkthrough_steps": 6,
+      "source_sha256": "93aaa5f154575c7718b4ed5e628e81c8c39847214ef28ec5c8297dc7f77c7d43"
+    }
+  }
+}

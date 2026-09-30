@@ -1,0 +1,24 @@
+{
+  "product": "Luma reading room",
+  "status": "ready locally",
+  "entry": "product.html",
+  "files": [
+    "product.html",
+    "product.css",
+    "product.js",
+    "product-source.mjs",
+    "journal-data.json",
+    "access-contract.json",
+    "review-receipt.json"
+  ],
+  "review": "review-receipt.json",
+  "acceptedTaskIds": [
+    "planner",
+    "designer",
+    "engineer",
+    "accessibility",
+    "integrator",
+    "reviewer"
+  ],
+  "delivery": "Local fixture bundle; no production deployment."
+}

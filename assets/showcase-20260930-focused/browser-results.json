@@ -1,0 +1,71 @@
+{
+  "origin": "http://127.0.0.1:8814",
+  "date": "2026-09-30T16:56:30.181Z",
+  "runs": [
+    {
+      "engine": "chromium",
+      "width": 390,
+      "mobile": true,
+      "passed": true,
+      "checks": [
+        "four benefit tabs and working source downloads",
+        "all guided walkthroughs",
+        "math regimes, constraint certificate and keyboard probe",
+        "memory supersession, write, recall, empty state and sourced download",
+        "editable code input, actual output and malformed JSON recovery",
+        "swarm contract failure, retained work, retry, review and working result",
+        "dialog Escape, focus restoration and keyboard tab navigation",
+        "no horizontal document overflow, console or HTTP errors"
+      ]
+    },
+    {
+      "engine": "chromium",
+      "width": 1440,
+      "mobile": false,
+      "passed": true,
+      "checks": [
+        "four benefit tabs and working source downloads",
+        "all guided walkthroughs",
+        "math regimes, constraint certificate and keyboard probe",
+        "memory supersession, write, recall, empty state and sourced download",
+        "editable code input, actual output and malformed JSON recovery",
+        "swarm contract failure, retained work, retry, review and working result",
+        "dialog Escape, focus restoration and keyboard tab navigation",
+        "no horizontal document overflow, console or HTTP errors"
+      ]
+    },
+    {
+      "engine": "webkit",
+      "width": 390,
+      "mobile": true,
+      "passed": true,
+      "checks": [
+        "four benefit tabs and working source downloads",
+        "all guided walkthroughs",
+        "math regimes, constraint certificate and keyboard probe",
+        "memory supersession, write, recall, empty state and sourced download",
+        "editable code input, actual output and malformed JSON recovery",
+        "swarm contract failure, retained work, retry, review and working result",
+        "dialog Escape, focus restoration and keyboard tab navigation",
+        "no horizontal document overflow, console or HTTP errors"
+      ]
+    },
+    {
+      "engine": "webkit",
+      "width": 1440,
+      "mobile": false,
+      "passed": true,
+      "checks": [
+        "four benefit tabs and working source downloads",
+        "all guided walkthroughs",
+        "math regimes, constraint certificate and keyboard probe",
+        "memory supersession, write, recall, empty state and sourced download",
+        "editable code input, actual output and malformed JSON recovery",
+        "swarm contract failure, retained work, retry, review and working result",
+        "dialog Escape, focus restoration and keyboard tab navigation",
+        "no horizontal document overflow, console or HTTP errors"
+      ]
+    }
+  ],
+  "limitations": "Chromium and WebKit on macOS. 390 CSS pixel mobile emulation, not a physical phone. Authored fixtures; no live model calls or cross-session preview memory."
+}

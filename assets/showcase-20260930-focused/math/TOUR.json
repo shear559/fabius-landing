@@ -1,0 +1,67 @@
+[
+  {
+    "caption": "Change one incentive. Every graph follows the same exact solution.",
+    "reveal": "#explorer",
+    "actions": [
+      [
+        "input",
+        "#parameter",
+        "-1.75"
+      ]
+    ]
+  },
+  {
+    "caption": "Inside the polygon, the optimum moves freely. No inequality is binding.",
+    "reveal": "#geometry",
+    "actions": [
+      [
+        "select",
+        "#regime-select",
+        "1"
+      ]
+    ]
+  },
+  {
+    "caption": "At this corner, the optimum holds while the objective value changes.",
+    "reveal": "#geometry",
+    "actions": [
+      [
+        "select",
+        "#regime-select",
+        "3"
+      ]
+    ]
+  },
+  {
+    "caption": "Along the slanted edge, x and y rise. Zero slack identifies the limit.",
+    "reveal": ".linked-views",
+    "actions": [
+      [
+        "select",
+        "#regime-select",
+        "4"
+      ]
+    ]
+  },
+  {
+    "caption": "The x cap ends movement. Two boundaries now bind.",
+    "reveal": "#geometry",
+    "actions": [
+      [
+        "select",
+        "#regime-select",
+        "5"
+      ]
+    ]
+  },
+  {
+    "caption": "Inspect the certificate, exact proof and executable checks behind this worked example.",
+    "reveal": "#certificate",
+    "actions": [
+      [
+        "click",
+        "#certificate-state"
+      ]
+    ]
+  }
+]

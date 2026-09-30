@@ -1,0 +1,17 @@
+import assert from 'node:assert/strict';
+import {RECORDS,retrieve,remember,contextPack} from './model.mjs';
+let checks=0;const check=(name,fn)=>{fn();checks++;console.log('PASS '+name);};
+check('current project only, never superseded or another project',()=>{for(const q of ['release','accounts notes','motion light','keyboard','export'])assert.ok(retrieve(RECORDS,q,6).every(x=>x.record.status==='current'));});
+check('accounts points to the replacement, not the archived proposal',()=>{assert.equal(retrieve(RECORDS,'accounts')[0].record.id,'local-notes');assert.ok(!retrieve(RECORDS,'accounts',6).some(x=>x.record.id==='accounts-old'));});
+check('unmatched question produces no invented records',()=>assert.deepEqual(retrieve(RECORDS,'interplanetary quasars'),[]));
+check('empty question produces no records',()=>assert.deepEqual(retrieve(RECORDS,''),[]));
+check('case and normalization preserve ranking',()=>assert.deepEqual(retrieve(RECORDS,'KEYBOARD').map(x=>x.record.id),retrieve(RECORDS,'keyboard').map(x=>x.record.id)));
+check('repeated query terms do not inflate a record',()=>assert.deepEqual(retrieve(RECORDS,'keyboard keyboard'),retrieve(RECORDS,'keyboard')));
+check('returned citation/body come from the selected source object',()=>{for(const r of retrieve(RECORDS,'release',6))assert.deepEqual(r.record,RECORDS.find(x=>x.id===r.record.id));});
+check('saved decision is retrievable on the next query',()=>{const next=remember(RECORDS,'Offline reading comes before collaboration.');assert.equal(next.length,RECORDS.length+1);assert.equal(retrieve(next,'offline collaboration')[0].record.id,'saved-1');assert.equal(RECORDS.length,8);});
+check('context export contains original source lines and selected bodies',()=>{const results=retrieve(RECORDS,'keyboard'),md=contextPack(results,'keyboard');for(const {record:r}of results){assert.ok(md.includes(r.path+':'+r.line));assert.ok(md.includes(r.body));}});
+check('decision bounds are explicit',()=>{for(const s of ['', 'short', 'x'.repeat(241),null])assert.throws(()=>remember(RECORDS,s));});
+check('retention cap prevents unbounded demo growth',()=>{let state=RECORDS;for(let i=0;i<6;i++)state=remember(state,'Decision '+i+' keeps a useful project constraint.');assert.throws(()=>remember(state,'One extra decision exceeds this demo.'));});
+check('invalid limits and input shapes are refused',()=>{for(const l of [0,-1,7,1.5,NaN])assert.throws(()=>retrieve(RECORDS,'notes',l));assert.throws(()=>retrieve(RECORDS,null));assert.throws(()=>retrieve(RECORDS,'x'.repeat(301)));});
+check('a superseded high-frequency record still cannot enter context',()=>{const malicious=[...RECORDS,{...RECORDS[1],body:'accounts '.repeat(100)}];assert.ok(retrieve(malicious,'accounts',6).every(x=>x.record.status==='current'));});
+console.log(`${checks} memory checks passed.`);

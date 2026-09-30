@@ -1,0 +1,37 @@
+// PLAYWRIGHT_MODULE=/path/to/playwright/index.js node browser.mjs <origin> <output-dir>
+import assert from 'node:assert/strict';
+import {mkdir,writeFile,readFile} from 'node:fs/promises';
+import path from 'node:path';
+const {default:pw}=await import(process.env.PLAYWRIGHT_MODULE||'playwright');
+const origin=process.argv[2]||'http://127.0.0.1:8814',out=path.resolve(process.argv[3]||'browser-results'),base='/assets/showcase-20260930-focused/';
+const gallery=JSON.parse(await readFile(new URL('../gallery.json',import.meta.url),'utf8'));
+const report={origin,date:new Date().toISOString(),runs:[],limitations:'Chromium and WebKit on macOS. 390 CSS pixel mobile emulation, not a physical phone. Authored fixtures; no live model calls or cross-session preview memory.'};await mkdir(out,{recursive:true});
+for(const engine of (process.env.ENGINES||'chromium,webkit').split(',')){
+ const browser=await pw[engine].launch();try{for(const width of (process.env.WIDTHS||'390,1440').split(',').map(Number)){
+ const context=await browser.newContext({viewport:{width,height:900},deviceScaleFactor:width===390?2:1,isMobile:width===390,reducedMotion:'reduce'}),page=await context.newPage(),errors=[],http=[];
+ page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});page.on('response',r=>{if(r.status()>=400)http.push(`${r.status()} ${r.url()}`)});
+ const visit=n=>page.goto(origin+base+n+'/index.html');const layout=async(frame,label)=>assert.equal(await frame.locator('body').evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,label+' overflows');
+ await visit('memory');await page.locator('.graph-node').first().waitFor();await page.locator('[data-query="What changed about accounts?"]').click();assert.equal(await page.locator('[data-context-record="accounts-old"]').count(),0);await page.locator('#show-history').click();assert.match(await page.locator('#source-status').textContent(),/Superseded/);await page.locator('#remember').click();await page.locator('#query').fill('offline reading collaboration');await page.locator('#retrieve').click();assert.equal(await page.locator('[data-context-record="saved-1"]').count(),1);let pending=page.waitForEvent('download');await page.locator('#download-context').click();const memoryFile=await pending;assert.match(await readFile(await memoryFile.path(),'utf8'),/offline reading/);await page.locator('#query').fill('unmatchedzzzz');await page.locator('#retrieve').click();assert.equal(await page.locator('#download-context').isDisabled(),true);
+ await visit('code');await page.locator('#total-minutes').filter({hasText:'160'}).waitFor();await page.locator('#input-json').fill('[{"id":"one","title":"Check the result","project":"Review","minutes":25,"done":false}]');await page.locator('#apply-input').click();assert.equal((await page.locator('#total-minutes').textContent()).trim(),'25');await page.locator('#input-json').fill('{broken');await page.locator('#apply-input').click();assert.notEqual(await page.locator('#result-error').evaluate(e=>getComputedStyle(e).display),'none');assert.equal(await page.locator('#result-content').evaluate(e=>getComputedStyle(e).display),'none');
+ await visit('math');for(const value of ['-2','-1.5','-1.25','-1','-.5','0','1.8','4']){await page.locator('#parameter-entry').fill(value);await page.locator('#parameter-entry').press('Tab');assert.equal(await page.locator('#certificate-state').getAttribute('data-valid'),'true');assert.ok((await page.locator('#residuals dd').allTextContents()).every(v=>Math.abs(Number(v))<1e-8));const coords=await page.locator('#x-value,#y-value,#z-value').allTextContents();assert.ok(Math.abs(coords.map(Number).reduce((a,b)=>a+b,0)-1)<.002);}await page.locator('#geometry').focus();await page.keyboard.press('ArrowRight');assert.match(await page.locator('#probe-readout').textContent(),/./);
+ await page.goto(origin+'/?focused-check='+Date.now());await page.locator('[data-show-task=math]').waitFor();assert.equal(await page.locator('[data-show-task]').count(),4);await page.evaluate(()=>document.fonts.ready);await page.screenshot({path:path.join(out,`${engine}-${width}-hero.png`)});
+ for(const name of Object.keys(gallery)){
+ console.log(`${engine} ${width}: ${name}`);await page.locator(`[data-show-task=${name}]`).click();await page.locator('[data-show-screen] iframe[data-ready=true]').waitFor();const frame=page.frameLocator('[data-show-screen] iframe');await page.locator('[data-show-screen]').scrollIntoViewIfNeeded();await frame.locator('h1').first().waitFor();await frame.locator('body').evaluate(()=>document.fonts.ready.then(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)))));await layout(frame,name);await layout(page,'host');await page.locator('#trials').screenshot({path:path.join(out,`${engine}-${width}-${name}.png`)});
+ for(let i=0;i<gallery[name].tour.length;i++){
+ await page.locator('[data-show-play]').click();await frame.locator('html[data-showcase-step="'+i+'"]').waitFor({state:'attached'});
+ if(name==='swarm'&&i===0)await frame.locator('[data-task=engineer][data-status=failed]').waitFor();
+ if(name==='swarm'&&i===3)await frame.locator('#completed-count').filter({hasText:'7/7'}).waitFor();
+ }
+ if(name==='math')assert.equal(await frame.locator('#certificate').getAttribute('open'),'');
+ if(name==='memory')assert.equal(await frame.locator('[data-context-record="saved-1"]').count(),1);
+ if(name==='code')assert.match(await frame.locator('#checks-panel').textContent(),/15/);
+ if(name==='swarm'){assert.equal(await frame.locator('[data-task=engineer][data-status=completed]').count(),1);await frame.locator('[data-stage-view=preview]').click();await frame.locator('[data-book-id=book-distance]').click();}
+ await layout(frame,name+' after walkthrough');
+ pending=page.waitForEvent('download');await page.locator('[data-show-source]').click();const source=await pending;const bytes=await readFile(await source.path());assert.equal(bytes.subarray(0,2).toString(),'PK');
+ }
+ await page.locator('[data-show-expand]').click();await page.locator('[data-show-zoom][open]').waitFor();await page.keyboard.press('Escape');assert.equal(await page.locator('[data-show-zoom]').evaluate(e=>e.open),false);assert.equal(await page.locator('[data-show-expand]').evaluate(e=>e===document.activeElement),true);
+ await page.locator('[data-show-task=code]').focus();await page.keyboard.press('Home');assert.equal(await page.locator('[data-show-task=math]').getAttribute('aria-selected'),'true');await page.keyboard.press('End');assert.equal(await page.locator('[data-show-task=code]').getAttribute('aria-selected'),'true');
+ assert.deepEqual(errors,[],engine+' console/page errors');assert.deepEqual(http,[],engine+' HTTP errors');report.runs.push({engine,width,mobile:width===390,passed:true,checks:['four benefit tabs and working source downloads','all guided walkthroughs','math regimes, constraint certificate and keyboard probe','memory supersession, write, recall, empty state and sourced download','editable code input, actual output and malformed JSON recovery','swarm contract failure, retained work, retry, review and working result','dialog Escape, focus restoration and keyboard tab navigation','no horizontal document overflow, console or HTTP errors']});await context.close();console.log(`${engine} ${width}: passed`);
+ }}finally{await browser.close();}
+}
+await writeFile(path.join(out,'browser-results.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));

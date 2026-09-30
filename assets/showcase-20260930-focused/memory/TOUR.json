@@ -1,0 +1,7 @@
+[
+ {"caption":"A new task begins with the current project record: relevant decisions, constraints and next steps, each with a source.","reveal":".memory-stage","actions":[["click","#reset"]]},
+ {"caption":"Ask about saving notes. The graph and the context brief update together; unrelated records remain outside the brief.","reveal":".memory-body","actions":[["click","[data-query=\"How should notes be saved?\"]"]]},
+ {"caption":"Follow a changed decision. The old account-first proposal is preserved and points to the current local-notes decision.","reveal":".record-detail","actions":[["click","#show-history"]]},
+ {"caption":"Keep a useful new decision in the project record.","reveal":".remember-panel","actions":[["click","#remember"]]},
+ {"caption":"The next question can retrieve that decision immediately, with its source. The context brief is downloadable.","reveal":".context-panel","actions":[["input","#query","offline reading collaboration"],["click","#retrieve"]]}
+]

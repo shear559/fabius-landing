@@ -4,3 +4,6 @@ assets/trials-20260915-showcase/manifest.json:generic-api-key:118
 
 # Verified public SHA-256 of the demo accessibility contract, not a credential.
 assets/showcase-20260930-refined/checksums.json:generic-api-key:156
+
+# Verified public SHA-256 of the focused demo accessibility contract.
+assets/showcase-20260930-focused/checksums.json:generic-api-key:121

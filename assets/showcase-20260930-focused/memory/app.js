@@ -1,0 +1,31 @@
+import {RECORDS,PROJECT,retrieve,contextPack,remember} from './model.mjs';
+const $=s=>document.querySelector(s),NS='http://www.w3.org/2000/svg';
+let records=structuredClone(RECORDS),results=[],chosen='local-notes';
+const names={'brief':['A quiet place','for reading'],'accounts-old':['Accounts before','launch'],'local-notes':['Local notes.','No account required.'],'keyboard':['Keyboard','comes first'],'identity':['The reading-room','identity'],'export':['Keep a portable','copy'],'duplicates':['Unique note','identities'],'film':['A different','project']};
+function svg(tag,attrs={},text){const e=document.createElementNS(NS,tag);for(const [k,v]of Object.entries(attrs))e.setAttribute(k,v);if(text!==undefined)e.textContent=text;return e;}
+function detail(id,move=false){chosen=id;const r=records.find(x=>x.id===id);if(!r)return;$('#detail-title').textContent=r.title;$('#source-location').textContent=`${r.path}:${r.line} · ${r.date}`;$('#source-body').textContent=r.body;$('#source-status').textContent=r.status==='superseded'?'Superseded → '+records.find(x=>x.id===r.replacement).title:r.status==='outside'?'Outside this project → excluded from retrieval':'Current record → eligible when it matches the task';$('#source-status').classList.toggle('is-old',r.status!=='current');if(move)document.querySelector('.record-detail').scrollIntoView({behavior:'instant',block:'start'});}
+function graph(){
+ const small=$('.graph-wrap').clientWidth<600,width=small?360:760,height=small?472:438,center=small?[180,236]:[380,214],nodeW=small?154:180,nodeH=small?58:60;
+ const positions=small?[[92,44],[268,44],[92,116],[268,116],[92,355],[268,355],[92,427],[268,427]]:[[119,59],[380,48],[641,59],[119,167],[641,167],[119,318],[380,370],[641,318]];
+ const graph=$('#memory-graph');graph.setAttribute('viewBox',`0 0 ${width} ${height}`);const bg=graph.querySelector('rect');bg.setAttribute('width',width);bg.setAttribute('height',height);const edges=$('#graph-edges'),nodes=$('#graph-nodes');edges.replaceChildren();nodes.replaceChildren();
+ const selected=new Set(results.map(r=>r.record.id));const visible=records.slice(0,8);
+ for(let i=0;i<visible.length;i++){
+  const r=visible[i],[x,y]=positions[i],isSelected=selected.has(r.id),classes=[isSelected?'is-selected':'',r.status==='superseded'?'is-old':'',r.status==='outside'?'is-outside':''].join(' ');
+  const [cx,cy]=center;if(r.status!=='outside')edges.append(svg('path',{d:`M ${cx} ${cy} C ${cx} ${(cy+y)/2}, ${x} ${(cy+y)/2}, ${x} ${y}`,class:'graph-edge '+classes}));
+  const g=svg('g',{class:'graph-node '+classes,transform:`translate(${x-nodeW/2},${y-nodeH/2})`,role:'button',tabindex:'0','aria-label':r.title+', '+r.status,'data-record':r.id});g.append(svg('rect',{width:nodeW,height:nodeH,rx:9}),svg('text',{x:12,y:17,class:'node-kind'},r.status==='superseded'?'SUPERSEDED':r.kind.toUpperCase()));const lines=names[r.id]||[r.title];lines.forEach((line,j)=>g.append(svg('text',{x:12,y:34+j*15},line)));g.addEventListener('click',()=>detail(r.id,true));g.addEventListener('keydown',e=>{if(['Enter',' '].includes(e.key)){e.preventDefault();detail(r.id,true);}});nodes.append(g);
+ }
+ const hub=svg('g',{class:'graph-center',transform:`translate(${center[0]-98},${center[1]-41})`});hub.append(svg('rect',{width:196,height:82,rx:14}),svg('text',{x:98,y:35,'text-anchor':'middle'},'Luma'),svg('text',{x:98,y:56,'text-anchor':'middle',class:'center-subtitle'},'one project · a connected memory'));nodes.append(hub);
+ const extra=records.length-RECORDS.length;if(extra){const note=svg('g',{transform:`translate(${center[0]-75},${center[1]+47})`});note.append(svg('text',{x:75,y:13,'text-anchor':'middle',class:'center-subtitle'},`+ ${extra} new decision${extra>1?'s':''} in the record`));nodes.append(note);}
+ $('#record-count').textContent=records.length+' records';
+}
+function render(){
+ const query=$('#query').value;results=retrieve(records,query);$('#context-results').replaceChildren();$('#selected-count').textContent=results.length;$('#download-context').disabled=!results.length;
+ for(const {record:r}of results){const article=document.createElement('article');article.className='context-result';article.dataset.contextRecord=r.id;const kind=document.createElement('span');kind.textContent=r.kind;const h=document.createElement('h3');h.textContent=r.title;const p=document.createElement('p');p.textContent=r.body;const source=document.createElement('button');source.textContent=`${r.path}:${r.line} ↗`;source.setAttribute('aria-label','Read source: '+r.title);source.onclick=()=>detail(r.id,true);article.append(kind,h,p,source);$('#context-results').append(article);}
+ if(!results.length){const p=document.createElement('p');p.className='empty';p.textContent='No current record matches those words. Try a different question; the memory does not invent an answer.';$('#context-results').append(p);}
+ const bars=$('#context-bars');bars.replaceChildren();const total=records.length;for(let i=0;i<total;i++)bars.append(svg('rect',{x:i*84/total,y:results.length&&i<results.length?2:18,width:Math.max(3,84/total-3),height:results.length&&i<results.length?30:14,rx:2,fill:i<results.length?'var(--accent)':'var(--border)'}));graph();
+}
+$('#query-form').onsubmit=e=>{e.preventDefault();render();};document.querySelectorAll('[data-query]').forEach(b=>b.onclick=()=>{$('#query').value=b.dataset.query;render();});$('#show-history').onclick=()=>detail('accounts-old',true);
+$('#remember-form').onsubmit=e=>{e.preventDefault();try{records=remember(records,$('#decision').value);$('#memory-status').textContent='Decision saved. Search for words from your decision to retrieve it.';render();detail(records.at(-1).id);}catch(error){$('#memory-status').textContent=error.message;}};
+$('#reset').onclick=()=>{records=structuredClone(RECORDS);$('#query').value='Prepare the next release';$('#memory-status').textContent='Demo reset. The original records are restored.';render();detail('local-notes');};
+$('#download-context').onclick=()=>{const blob=new Blob([contextPack(results,$('#query').value)],{type:'text/markdown;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='luma-context.md';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
+new ResizeObserver(graph).observe($('.graph-wrap'));render();detail(chosen);

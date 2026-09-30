@@ -1,0 +1,8 @@
+[
+  {"caption":"Readable code turns this messy inbox into a real project plan.","reveal":"#result-panel","actions":[["click","#restore"]]},
+  {"caption":"Lower the per-task limit. The plan, totals and row decisions all change together.","reveal":"#result-panel","actions":[["input","#limit","30"]]},
+  {"caption":"Inspect the exact function that just ran, with its validation kept explicit.","reveal":"#code-panel","actions":[["click","#source-validate"]]},
+  {"caption":"A negative estimate stops processing before any partial plan appears.","reveal":"#result-panel","actions":[["select","#preset","invalid"]]},
+  {"caption":"At the boundary: sixty minutes is included, sixty-one is excluded, and zero is valid.","reveal":"#trace-panel","actions":[["input","#limit","60"],["select","#preset","boundary"]]},
+  {"caption":"Rerun executable checks for duplicates, malformed input, boundary values and unchanged source data.","reveal":"#checks-panel","actions":[["click","#run-checks"]]}
+]

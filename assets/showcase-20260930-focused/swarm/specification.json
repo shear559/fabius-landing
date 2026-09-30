@@ -1,0 +1,25 @@
+{
+  "product": "Luma reading room",
+  "records": {
+    "books": 3,
+    "notes": 5
+  },
+  "features": [
+    "choose book",
+    "filter kind",
+    "save note",
+    "add local note"
+  ],
+  "acceptance": [
+    "unique identities",
+    "valid book references",
+    "labelled controls",
+    "external behavior",
+    "separate review before release"
+  ],
+  "constraints": [
+    "deterministic fixtures",
+    "no model calls",
+    "no storage or network"
+  ]
+}

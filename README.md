@@ -36,13 +36,19 @@ Static `index.html`, `styles.css` and `main.js`; no build or package installatio
 
 The design uses the existing green tokens (`#76b900`, with darker text variants), self-hosted Rubik, square buttons and green-on-black system diagrams. The map has sixteen nodes: router, lean core, thirteen specialists and the shared reference spine. Its twenty-eight connectors are built from the specialist table in `main.js`. On narrow screens the map scrolls inside its own container. Reduced motion renders a static diagram.
 
-## Current gallery — independent media and deeper systems
+## Current gallery — four visible benefits
 
-The active gallery contains **eight** demonstrations: Website, Application, Mathematics, Video, Image, Cybersecurity, Architecture and Agent swarm. The approved Website/Application identities, exact mathematics and continuous wave background remain. **Afterlight** is a standalone twenty-second procedural motion artwork. **Pelagic** is a generated biological image with zoom, detail views, original downloads and its creative brief. Biology is represented by this artwork in the current gallery; the September 21 RNA-seq explorer remains available historically.
+The main gallery now focuses on **Math & visualization, Agent teams, Project memory and Clear code**. The shared light/green/Rubik presentation leads with a useful interaction: synchronized exact graphs; a causal team graph and dispatch record; source-linked retrieval with preserved history; and a readable function with editable input, visible output and executable checks.
+
+Current source, scope and browser verification: `assets/showcase-20260930-focused/verification.html`. Each artifact has a portable `source.zip`, pure model checks and a guided tour. The scheduler and memory examples are local, disclosed fixtures; previews reset on reopening. This edition is an authored refinement, not a new controlled model-uplift study. The established hero and continuous wave background remain unchanged.
+
+## Previous eight-artifact gallery — independent media and deeper systems
+
+The previous gallery contained **eight** demonstrations: Website, Application, Mathematics, Video, Image, Cybersecurity, Architecture and Agent swarm. The approved Website/Application identities, exact mathematics and continuous wave background remain. **Afterlight** is a standalone twenty-second procedural motion artwork. **Pelagic** is a generated biological image with zoom, detail views, original downloads and its creative brief. Biology is represented by this artwork in the current gallery; the September 21 RNA-seq explorer remains available historically.
 
 **Sentinel** now evaluates multiple explicit denies, tenant boundaries, revocation, device trust and minimum counterfactual repairs. **Relay** demonstrates an output committed before its acknowledgement, lease expiry, fencing of a stale worker and retry reconciliation. **Cohort** coordinates seven artifact-producing tasks, three parallel specialists and a computed review gate before releasing an interactive reading workspace. These are deterministic local demonstrations, not live security, infrastructure or model services.
 
-Current source, scope and browser verification: `assets/showcase-20260930-refined/verification.html`. The sections below record previous editions, including the earlier product-linked film/artwork and nine-tab gallery.
+Source, scope and browser verification for that edition: `assets/showcase-20260930-refined/verification.html`. The sections below record previous editions, including the earlier product-linked film/artwork and nine-tab gallery.
 
 ## Worked refinement gallery — September 16
 

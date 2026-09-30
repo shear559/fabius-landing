@@ -1,0 +1,109 @@
+{
+  "math": {
+    "title": "Math / See the optimum move",
+    "heading": "Move a variable. See why the answer changes.",
+    "description": "Explore one optimization problem through its geometry, coordinate paths, objective and constraints. The diagrams follow the exact solution; the proof is one click away.",
+    "metrics": [
+      [
+        "Linked mathematical views",
+        "one parameter, one consistent result"
+      ],
+      [
+        "Exact solution + proof",
+        "follow the reasoning behind the picture"
+      ]
+    ],
+    "height": 1080,
+    "tour": [
+      "Change one incentive. Every graph follows the same exact solution.",
+      "Inside the polygon, the optimum moves freely. No inequality is binding.",
+      "At this corner, the optimum holds while the objective value changes.",
+      "Along the slanted edge, x and y rise. Zero slack identifies the limit.",
+      "The x cap ends movement. Two boundaries now bind.",
+      "Inspect the certificate, exact proof and executable checks behind this worked example."
+    ],
+    "url": "/assets/showcase-20260930-focused/math/preview.html",
+    "source": "/assets/showcase-20260930-focused/math/source.zip",
+    "method": "/assets/showcase-20260930-focused/verification.html"
+  },
+  "swarm": {
+    "title": "Cohort / Coordinated agent teams",
+    "heading": "Give every agent a job. Keep one shared result.",
+    "description": "Watch specialists turn a brief into a working reading room. Follow dependencies, inspect handoffs, and retry a failed task while keeping the accepted work.",
+    "metrics": [
+      [
+        "A visible dependency graph",
+        "parallel work with explicit ownership"
+      ],
+      [
+        "A working final artifact",
+        "release follows a separate review"
+      ]
+    ],
+    "height": 1080,
+    "tour": [
+      "Give each role a clear handoff. Build the journal with a deliberately faulty Data candidate.",
+      "One duplicate note ID stops the merge. The graph keeps three accepted outputs and shows exactly what is waiting.",
+      "Retry only Data. Interface, Accessibility, and the specification keep their original artifacts.",
+      "The valid handoffs rejoin. Separate review and release finish the product; the chart records every real dispatch round.",
+      "Six computed checks inspect the accepted records and composed markup before release is allowed.",
+      "The team delivers a working reading journal. Choose a book, save a thought, or add a note; every handoff is inspectable."
+    ],
+    "url": "/assets/showcase-20260930-focused/swarm/preview.html",
+    "source": "/assets/showcase-20260930-focused/swarm/source.zip",
+    "method": "/assets/showcase-20260930-focused/verification.html"
+  },
+  "memory": {
+    "title": "Continuum / Project memory",
+    "heading": "Your next task should not start from zero.",
+    "description": "Ask a project question and retrieve the decisions behind it, with their sources. See an old decision give way to its replacement, then save a new one and find it again.",
+    "metrics": [
+      [
+        "Relevant context, with sources",
+        "trace each decision to its record"
+      ],
+      [
+        "A memory you can inspect",
+        "current decisions stay distinct from history"
+      ]
+    ],
+    "height": 1080,
+    "tour": [
+      "A new task begins with the current project record: relevant decisions, constraints and next steps, each with a source.",
+      "Ask about saving notes. The graph and the context brief update together; unrelated records remain outside the brief.",
+      "Follow a changed decision. The old account-first proposal is preserved and points to the current local-notes decision.",
+      "Keep a useful new decision in the project record.",
+      "The next question can retrieve that decision immediately, with its source. The context brief is downloadable."
+    ],
+    "url": "/assets/showcase-20260930-focused/memory/preview.html",
+    "source": "/assets/showcase-20260930-focused/memory/source.zip",
+    "method": "/assets/showcase-20260930-focused/verification.html"
+  },
+  "code": {
+    "title": "Tidy / Readable, executable code",
+    "heading": "Understand the code. Check what it actually does.",
+    "description": "Turn a mixed task inbox into a clean project plan. Edit the input, read the function that runs, and trace accepted, duplicate and rejected rows into the actual result.",
+    "metrics": [
+      [
+        "The source is the running function",
+        "short enough to inspect directly"
+      ],
+      [
+        "Visible input, output and checks",
+        "try edge cases and inspect the behavior"
+      ]
+    ],
+    "height": 1080,
+    "tour": [
+      "Readable code turns this messy inbox into a real project plan.",
+      "Lower the per-task limit. The plan, totals and row decisions all change together.",
+      "Inspect the exact function that just ran, with its validation kept explicit.",
+      "A negative estimate stops processing before any partial plan appears.",
+      "At the boundary: sixty minutes is included, sixty-one is excluded, and zero is valid.",
+      "Rerun executable checks for duplicates, malformed input, boundary values and unchanged source data."
+    ],
+    "url": "/assets/showcase-20260930-focused/code/preview.html",
+    "source": "/assets/showcase-20260930-focused/code/source.zip",
+    "method": "/assets/showcase-20260930-focused/verification.html"
+  }
+}

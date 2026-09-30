@@ -1,0 +1,30 @@
+{
+  "date": "2026-09-30",
+  "scope": "Declared local demonstration models; not live model performance",
+  "checks": [
+    {
+      "demo": "math",
+      "command": "node verify.mjs",
+      "passed": true,
+      "output": "{\n  \"passed\": true,\n  \"sampledParameters\": 6001,\n  \"oracle\": \"Independent full-edge minimization plus the feasible unconstrained stationary point\",\n  \"maxCoordinateError\": 1.1102230246251565e-16,\n  \"maxValueError\": 1.7763568394002505e-15,\n  \"maxResidual\": 1.7763568394002505e-15,\n  \"joins\": 5,\n  \"invalidInputs\": 8,\n  \"python\": {\n    \"passed\": true,\n    \"total_assertions\": 254,\n    \"exact_assertions\": 182,\n    \"solver_spot_assertions\": 72,\n    \"regimes\": 6,\n    \"joins\": 5,\n    \"arithmetic\": \"fractions.Fraction\",\n    \"scope\": \"Exact polynomial KKT identities, affine feasibility and multiplier signs on closed intervals, objective formulas, endpoint agreement, value derivatives, and executable solver spot checks.\"\n  }\n}"
+    },
+    {
+      "demo": "swarm",
+      "command": "node verify.mjs",
+      "passed": true,
+      "output": "PASS Initial graph has seven contracts; only Specification is ready\nPASS Specification unlocks all three independent specialists\nPASS All six specialist completion orders preserve the integration barrier\nPASS Concurrency 1/2/3 caps running work and yields 7/6/5 rounds\nPASS Integration composes the actual accepted records and labels\nPASS Integration consumes the emitted interface template, not only its status\nPASS A missing interface slot rejects integration and blocks review\nPASS Review produces six computed passing checks before Release becomes ready\nPASS Injected data fault is rejected by a real duplicate-ID check\nPASS Retry fixes only the rejected branch and preserves accepted object identities\nPASS A corrupted composed label causes independent review failure and blocks release\nPASS Reviewer rejects changed data bindings, duplicate IDs, and inline code\nPASS Data validator rejects orphan references, invalid kinds, and nonboolean saved values\nPASS Product renderer binds filters, saved state, and safe text output\nPASS Finished packet contains all seven unique output sections\nPASS State transitions are deterministic and do not mutate frozen input\nPASS Invalid capacity, double completion, active-round changes, and successful retry fail\nPASS Reset creates a clean run without accepted output or stale failure\nPASS Retained graph state comes only from outputs accepted before a failure\nPASS Round chart records actual dispatches and distinct rejected/retried cells\nPASS Mutation control proves cap oracle catches uncapped dispatch\n\n21 checks passed. Browser interactions and rendering are verified separately."
+    },
+    {
+      "demo": "memory",
+      "command": "node verify.mjs",
+      "passed": true,
+      "output": "PASS current project only, never superseded or another project\nPASS accounts points to the replacement, not the archived proposal\nPASS unmatched question produces no invented records\nPASS empty question produces no records\nPASS case and normalization preserve ranking\nPASS repeated query terms do not inflate a record\nPASS returned citation/body come from the selected source object\nPASS saved decision is retrievable on the next query\nPASS context export contains original source lines and selected bodies\nPASS decision bounds are explicit\nPASS retention cap prevents unbounded demo growth\nPASS invalid limits and input shapes are refused\nPASS a superseded high-frequency record still cannot enter context\n13 memory checks passed."
+    },
+    {
+      "demo": "code",
+      "command": "node verify.mjs",
+      "passed": true,
+      "output": "{\"verdict\":\"pass\",\"browserFixtureChecks\":15,\"independentOracleCases\":768,\"maxTotalMinutes\":24000}"
+    }
+  ]
+}

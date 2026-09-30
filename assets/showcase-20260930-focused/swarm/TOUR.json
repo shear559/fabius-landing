@@ -1,0 +1,8 @@
+[
+  {"caption":"Give each role a clear handoff. Build the journal with a deliberately faulty Data candidate.","reveal":".coordination","actions":[["click","#reset-button"],["click","[data-capacity=\"3\"]"],["click","#fault-button"],["click","#auto-run"]]},
+  {"caption":"One duplicate note ID stops the merge. The graph keeps three accepted outputs and shows exactly what is waiting.","reveal":".coordination","actions":[["click","#tab-engineer"]]},
+  {"caption":"Retry only Data. Interface, Accessibility, and the specification keep their original artifacts.","reveal":".coordination","actions":[["click","#retry-button"]]},
+  {"caption":"The valid handoffs rejoin. Separate review and release finish the product; the chart records every real dispatch round.","reveal":"#rounds-panel","actions":[["click","#auto-run"]]},
+  {"caption":"Six computed checks inspect the accepted records and composed markup before release is allowed.","reveal":".live-stage","actions":[["click","[data-stage-view=\"checks\"]"],["click","#tab-reviewer"]]},
+  {"caption":"The team delivers a working reading journal. Choose a book, save a thought, or add a note; every handoff is inspectable.","reveal":".live-stage","actions":[["click","[data-stage-view=\"preview\"]"],["click","[data-book-id=\"book-distance\"]"],["click","#tab-packet"]]}
+]

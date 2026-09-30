@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tidy — Clear code, visible behavior</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="model.mjs" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="masthead"><a tabindex="0" href="#main" class="wordmark"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M3 5h22M3 14h15M3 23h8"/><circle cx="23" cy="23" r="3"/></svg>Tidy <span>/ Clear code</span></a><span class="mast-note">One function. Inspectable behavior.</span></header>
+  <main id="main" class="shell">
+    <div class="intro"><div><h1>Code you can read.<br>Behavior you can check.</h1><p>Turn a messy task inbox into a clear plan. Follow every decision.</p></div><p class="contribution">Fabius guides a small, readable implementation with explicit validation and executable checks.</p></div>
+    <form id="plan-form" class="command-bar">
+      <div class="field preset-field"><label for="preset">Start with</label><select tabindex="0" id="preset"><option value="mixed">A messy inbox</option><option value="boundary">At the boundary</option><option value="invalid">An invalid estimate</option><option value="empty">An empty inbox</option><option value="custom" disabled>Your edited input</option></select></div>
+      <div class="field limit-field"><label for="limit">Maximum per task <output id="limit-label" for="limit">60 min</output></label><input tabindex="0" id="limit" type="range" min="0" max="180" step="5" value="60"></div>
+      <label class="check-control"><input tabindex="0" id="include-done" type="checkbox"><span>Include completed</span></label>
+      <button tabindex="0" class="primary" type="submit" id="run-plan">Run the function <span aria-hidden="true">↗</span></button>
+    </form>
+    <p id="run-status" class="run-status" role="status" aria-live="polite">Loading the local example…</p>
+    <section class="flow-stage" aria-label="Data flow">
+      <div class="flow-head"><span class="small-label">From inbox to plan</span><span id="flow-note">Every row has a reason.</span></div>
+      <div id="flow" class="flow"></div>
+    </section>
+    <div class="workspace">
+      <section class="result-panel" aria-labelledby="result-title" id="result-panel">
+        <div class="panel-title"><div><span class="small-label">The result</span><h2 id="result-title">Your project plan</h2></div><span id="result-count" class="count-label"></span></div>
+        <div id="result-error" class="error-panel" role="alert" hidden></div>
+        <div id="result-content"><div class="total"><strong id="total-minutes">160</strong><span>minutes selected<br><b id="task-count">5 tasks · 2 projects</b></span></div><div class="stacked-bar" id="stacked-bar" aria-hidden="true"></div><div class="bar-labels" id="bar-labels"></div><div id="groups" class="groups"></div></div>
+        <div class="result-foot"><span>Task limit, not a daily time budget.</span><button tabindex="0" class="text-button" id="show-json" type="button" aria-expanded="false" aria-controls="result-json">View JSON</button></div><pre id="result-json" class="json-output" tabindex="0" hidden></pre>
+      </section>
+      <section class="code-panel" aria-labelledby="code-title" id="code-panel">
+        <div class="code-header"><div><span class="code-dot"></span><h2 id="code-title">model.mjs</h2></div><span>JavaScript</span></div>
+        <div class="source-tabs" role="group" aria-label="Choose the source to inspect"><button tabindex="0" type="button" id="source-transform" aria-pressed="true">The transformation</button><button tabindex="0" type="button" id="source-validate" aria-pressed="false">Input validation</button></div>
+        <pre id="source-code" class="source-code" tabindex="0" aria-label="Actual executing function source"></pre>
+        <div class="code-foot"><span>Actual executing source</span><span>Pure function · no dependencies</span></div>
+      </section>
+    </div>
+    <div class="details-grid">
+      <section class="input-panel" id="input-panel" aria-labelledby="input-title"><div class="section-heading"><div><span class="small-label">Make it yours</span><h2 id="input-title">Edit the input</h2></div><button tabindex="0" type="button" id="restore" class="text-button">Restore example</button></div><label for="input-json" class="input-description">JSON array · id, title, project, minutes, done</label><textarea id="input-json" spellcheck="false" autocapitalize="off" autocomplete="off" aria-describedby="input-hint"></textarea><div class="input-bottom"><p id="input-hint">Edits run when you press “Run the function”. Up to 50 tasks; 0–480 whole minutes each.</p><button tabindex="0" type="button" id="apply-input" class="secondary">Run edited input</button></div></section>
+      <section class="trace-panel" id="trace-panel" aria-labelledby="trace-title"><div class="section-heading"><div><span class="small-label">Nothing disappears silently</span><h2 id="trace-title">Every row, explained</h2></div><span id="trace-count"></span></div><p class="trace-note">Trim spaces. IDs and project names are case-sensitive. The first ID wins, even if that row is excluded.</p><div id="trace-list" class="trace-list"></div></section>
+    </div>
+    <section class="checks-panel" id="checks-panel" aria-labelledby="checks-title"><div class="section-heading"><div><span class="small-label">Evidence you can rerun</span><h2 id="checks-title">Small function. Real edge cases.</h2></div><button tabindex="0" type="button" id="run-checks" class="secondary">Run checks</button></div><p id="checks-status" role="status" aria-live="polite">Checking the function…</p><div id="checks-list" class="checks-list"></div></section>
+    <footer>Authored local example, refined with Fabius 3.3.0. No model calls or measured improvement claims. Data stays in this page and resets on reload.</footer>
+    <noscript>This interactive example needs JavaScript. Its function and runnable checks are included in the source download.</noscript>
+  </main>
+</body>
+</html>
