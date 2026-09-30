@@ -19,7 +19,7 @@
     "code/verify.mjs": "2ec8876af4d3cd95326ec2b0ca97a6385e4fb28645a15ce73f22b33426cd5fd3",
     "demo-control.js": "ac9a72aa64f02d9b63df2c857e24b1817f0eb9cfa47e969434c13f731bf5e9da",
     "gallery.json": "c565071bd2447849b83a21c618fdfc2ef6baca4c720133fad873221bf7cc8725",
-    "manifest.json": "8a47a358c991159bce37e0f89b0e301849dbffac17e25f4b35945ffbf0f9fe53",
+    "manifest.json": "a8b77f62d4609cd296b1a08ce9c56c457abe649994b3d64483525bc8b17eade6",
     "math/OFL.txt": "3cb6a6084f5d942a8f3b5fda0f6a90dde18d7f7f1798886f4043d18f8c1a811e",
     "math/README.md": "f37702e56b7e89ddb970bb693ee4294d93e76b276f11a1f2d199a36b0d6a97db",
     "math/TOUR.json": "d72a33c4ef5bdd06b74158a6135aa082047f6c3460b8cc2d38e5c4ab1103d9a2",
@@ -109,10 +109,10 @@
     "memory/TOUR.json": "693960dae391c6b70e0e7eae46f23ad62232392585af7be84bdbc9bfa3ab546b",
     "memory/app.js": "61b1fbb71cc328f3ef04e29e4072d92819263e808ba944c801684c6576263096",
     "memory/index.html": "d9393ee42e63515b1b5d82ef6ce8544fbd7a74cbed857ac745f2c2360b1af582",
-    "memory/model.mjs": "3dd23918a766598a619da5fe6658694c33d3c58562ee1f5191dff8d33e6538be",
+    "memory/model.mjs": "2aa45f40d7c1c3cdabc0db6fddad978e378905198d7878cd6a5436c889feb002",
     "memory/preview.html": "1111a55497940012a6ce24b97f992d36901a1e930612955a09cd83b796b94d4e",
     "memory/rubik.woff2": "6fd6aa5b7da468e96c75bfc13e74a0527f089d80a518365e787d422958d2552c",
-    "memory/source.zip": "2f54dd2b3d7b2db2f9ac2811e37f92275028295a639102bb0fbe251e011f9650",
+    "memory/source.zip": "5d45184a9490011258d24263228e404a94955bfb70865155af82a9d6d9e2544e",
     "memory/styles.css": "ce603d90858573843db3462eb54c4d36cf3c3ccb4409c2999b7bf31ca4ddc4e4",
     "memory/verify.mjs": "a1179232fb2a5b40a40f61c9d70dd11c8e36e97617027823547e9b2a17fb40b6",
     "model-results.json": "5b8e60c4924b04925b021bf5fc266c68dff71be3c3c3f1b7f0f9590c67bb2612",
@@ -142,7 +142,7 @@
     "swarm/styles.css": "212670c31cf93a108628c6a944bfd17e382402e0471ecceeb35bf1c7cfc80595",
     "swarm/verify.mjs": "237bce3e393c35863b9a2760cdd0a56f2914c18e566fe251eff35b5b906f35fe",
     "swarm/view-model.mjs": "a2a59f55f6b39ef0b639e2914943db90a5b6f71b6d184b7ab9007e1d03449732",
-    "verification-tools/browser.mjs": "7162461f5cfcfc0acd5f757d9b10169ccf556c30f27a6b6ae16384f5ff56488d",
-    "verification.html": "7941d56acc9dc27247c5532819001ad63f165a6697844bc0d3d4834cc62ba28f"
+    "verification-tools/browser.mjs": "d3ed7ec9f021c73fab7d8e7c3f0e9c96e18f4d01d905af5a30c0cf0f8e73f2eb",
+    "verification.html": "e5ad7c03a1f125f6544ffbfbb0d25d4aedfd5b1b3437d00d2c5aee1c1c024cd1"
   }
 }

@@ -2,6 +2,28 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/assets/showcase-20260930-focused/math",
+      "destination": "/assets/showcase-20260930-focused/math/preview",
+      "permanent": false
+    },
+    {
+      "source": "/assets/showcase-20260930-focused/swarm",
+      "destination": "/assets/showcase-20260930-focused/swarm/preview",
+      "permanent": false
+    },
+    {
+      "source": "/assets/showcase-20260930-focused/memory",
+      "destination": "/assets/showcase-20260930-focused/memory/preview",
+      "permanent": false
+    },
+    {
+      "source": "/assets/showcase-20260930-focused/code",
+      "destination": "/assets/showcase-20260930-focused/code/preview",
+      "permanent": false
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

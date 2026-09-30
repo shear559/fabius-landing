@@ -6,7 +6,8 @@
   "demos": {
     "math": {
       "title": "Math / See the optimum move",
-      "entry": "math/index.html",
+      "entry": "math/preview.html",
+      "portable_entry": "math/index.html",
       "source": "math/source.zip",
       "files": 81,
       "walkthrough_steps": 6,
@@ -14,7 +15,8 @@
     },
     "swarm": {
       "title": "Cohort / Coordinated agent teams",
-      "entry": "swarm/index.html",
+      "entry": "swarm/preview.html",
+      "portable_entry": "swarm/index.html",
       "source": "swarm/source.zip",
       "files": 23,
       "walkthrough_steps": 6,
@@ -22,15 +24,17 @@
     },
     "memory": {
       "title": "Continuum / Project memory",
-      "entry": "memory/index.html",
+      "entry": "memory/preview.html",
+      "portable_entry": "memory/index.html",
       "source": "memory/source.zip",
       "files": 8,
       "walkthrough_steps": 5,
-      "source_sha256": "2f54dd2b3d7b2db2f9ac2811e37f92275028295a639102bb0fbe251e011f9650"
+      "source_sha256": "5d45184a9490011258d24263228e404a94955bfb70865155af82a9d6d9e2544e"
     },
     "code": {
       "title": "Tidy / Readable, executable code",
-      "entry": "code/index.html",
+      "entry": "code/preview.html",
+      "portable_entry": "code/index.html",
       "source": "code/source.zip",
       "files": 8,
       "walkthrough_steps": 6,
