@@ -1,6 +1,6 @@
 {
-  "origin": "http://127.0.0.1:8814",
-  "date": "2026-09-30T16:56:30.181Z",
+  "origin": "https://fabius-landing.vercel.app",
+  "date": "2026-09-30T17:01:33.156Z",
   "runs": [
     {
       "engine": "chromium",
@@ -67,5 +67,61 @@
       ]
     }
   ],
-  "limitations": "Chromium and WebKit on macOS. 390 CSS pixel mobile emulation, not a physical phone. Authored fixtures; no live model calls or cross-session preview memory."
+  "limitations": "Chromium and WebKit on macOS. 390 CSS pixel mobile emulation, not a physical phone. Authored fixtures; no live model calls or cross-session preview memory.",
+  "verifiedProductCommit": "5f948f0fe583fbeaf22d59b0123f69d2869d50f2",
+  "directEntryChecks": [
+    {
+      "engine": "chromium",
+      "demo": "math",
+      "redirect": "https://fabius-landing.vercel.app/assets/showcase-20260930-focused/math/preview",
+      "passed": true
+    },
+    {
+      "engine": "chromium",
+      "demo": "swarm",
+      "redirect": "https://fabius-landing.vercel.app/assets/showcase-20260930-focused/swarm/preview",
+      "passed": true
+    },
+    {
+      "engine": "chromium",
+      "demo": "memory",
+      "redirect": "https://fabius-landing.vercel.app/assets/showcase-20260930-focused/memory/preview",
+      "passed": true
+    },
+    {
+      "engine": "chromium",
+      "demo": "code",
+      "redirect": "https://fabius-landing.vercel.app/assets/showcase-20260930-focused/code/preview",
+      "passed": true
+    },
+    {
+      "engine": "webkit",
+      "demo": "math",
+      "redirect": "https://fabius-landing.vercel.app/assets/showcase-20260930-focused/math/preview",
+      "passed": true
+    },
+    {
+      "engine": "webkit",
+      "demo": "swarm",
+      "redirect": "https://fabius-landing.vercel.app/assets/showcase-20260930-focused/swarm/preview",
+      "passed": true
+    },
+    {
+      "engine": "webkit",
+      "demo": "memory",
+      "redirect": "https://fabius-landing.vercel.app/assets/showcase-20260930-focused/memory/preview",
+      "passed": true
+    },
+    {
+      "engine": "webkit",
+      "demo": "code",
+      "redirect": "https://fabius-landing.vercel.app/assets/showcase-20260930-focused/code/preview",
+      "passed": true
+    }
+  ],
+  "publishedFiles": {
+    "checked": 140,
+    "allMatch": true,
+    "verification": "Fetched on the canonical origin and compared with repository SHA-256; index entries redirect to their preview and were checked separately."
+  }
 }
