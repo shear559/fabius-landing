@@ -8,7 +8,7 @@ The public site for **fabius — one set of rules above every model**.
 
 ## Content baseline
 
-Aligned with the **3.2.0** Fabius source (whitepaper `fabius-as-a-system.pdf`, 51 pages, SHA-256 `67c3634f1375ac28a0c9c8307ce4fedd12b2daddadf4a69d2f6c8b46db1e021e`). The page leads with “one set of rules above every model”, retaining the green palette, Rubik typography, system map and three capability outcomes. The previously removed skill-card grids, setup split and explainer video remain absent.
+Aligned with the **3.3.0** Fabius source (whitepaper `fabius-as-a-system.pdf`, 51 pages, SHA-256 `ab92314ba5f564d9baf475cd60f40d3580be34a6e7213a52cd5989461833e136`). The page leads with “one set of rules above every model”, retaining the green palette, Rubik typography, system map and three capability outcomes. The previously removed skill-card grids, setup split and explainer video remain absent.
 
 Fabius supplies instructions, workflows and original local helpers for scheduling, retrieval, design and completion evidence. The host supplies the model, tools and permissions. Model marks illustrate families; they do not establish tested integration or a universal quality gain.
 
@@ -18,6 +18,7 @@ Fabius supplies instructions, workflows and original local helpers for schedulin
 | Installation, updates and active-session loading | `README.md`, `skills/fabius/references/skill-frontmatter.md` |
 | Twenty-two core rules, mathematical assumptions and heuristics | `RESEARCH.md`, `paper/proofs.json` |
 | Historical gains, regressions and missing artifacts | `BENCHMARKS.md`, `evals/verify-receipts.mjs` |
+| September 30 demonstrations: access control, queue architecture, agent-team simulation | `assets/showcase-20260930/verification.html`, `manifest.json`, `<demo>/verify.mjs` |
 | September 21 demonstrations: launch film, key visual, RNA-seq study | `assets/showcase-20260921/verification.html`, `manifest.json`, `<demo>/verification.md` |
 | September 10 paired mathematics, page and app trials | `assets/trials-20260910/protocol.html`, `report.html`, `runs.json` |
 | September 15 showcase (twelve fresh generations on enriched briefs) | `assets/trials-20260915-showcase/protocol.html`, `report.html`, `results.json`, `all-artifacts.zip` |
@@ -48,6 +49,12 @@ The subsequent visual update adds colored grain and Phosphor Duotone icons to La
 ## Three more demonstrations — September 21
 
 `#trials` gained three tabs beside the website, app and mathematics builds: **Video** (a 39.5-second Lattice launch film authored as HTML scenes, rendered frame by frame and encoded to H.264 and VP9, with captions, chapters and a storyboard), **Image** (one master SVG for Lattice, five launch formats, contrast measured on the rendered pixels) and **Biology** (a synthetic RNA-seq study with calibrated FDR control and an explorer for every gene). Each was built by a fresh headless Claude Code session on `claude-opus-5` with only Fabius 3.2.0 loaded, then refined in further sessions (from browser testing and a design read, then from independent reviews of the live pages; two passes for the image and the study, three for the film); the files live in `assets/showcase-20260921/<demo>/`, with `preview.html` = the product plus the tour bridge (`demo-control.js`). Headline checks: the film measures 1920×1080 at 30 fps with both encodes under 6 MB; the key visual passes AA in 5 of 5 formats and re-renders pixel for pixel; the study's 11 calls at 5 % FDR are all planted responders (11 of 60 found). A fourth build (a security review) did not finish and is not published. Method and limits: `assets/showcase-20260921/verification.html`.
+
+## Nine working demonstrations — September 30
+
+The existing six builds are joined by **Sentinel** (an access-control workbench), **Relay** (a queue-based architecture explorer) and **Cohort** (an agent-team scheduler). Each is a functioning, offline product with deterministic fixtures, source code, invariant checks and a guided tour. Their simulations do not perform live audits, deploy cloud infrastructure or call language models. Fabius 3.3.0 contracts guided fresh Codex builder sessions after the headless Claude route encountered its account limit; subsequent refinement follows actual browser findings. This is product work, not a controlled comparison or an independent quality benchmark.
+
+The gallery exposes all nine categories on phones as a compact grid, with the existing full-size preview, phone/desktop controls and downloads. Static green contour lines extend the repository's topographic identity into the hero and gallery. The approved slogan, light canvas, existing artwork and system/research sections stay in place. Method and verified limits are at `assets/showcase-20260930/verification.html`.
 
 ## Preserved paired artifact trials
 

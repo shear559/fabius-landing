@@ -1,0 +1,75 @@
+{
+  "origin": "http://127.0.0.1:8814",
+  "date": "2026-09-30T13:45:57.714Z",
+  "runs": [
+    {
+      "engine": "chromium",
+      "width": 390,
+      "passed": true,
+      "checks": [
+        "policy allow/deny/MFA",
+        "queue interruption/recovery/replay",
+        "agent failure/dependency/retry/handoff",
+        "reset cancels pending completions",
+        "nine gallery tabs",
+        "three complete tours",
+        "dialog escape and focus",
+        "keyboard tab navigation",
+        "no horizontal overflow",
+        "no console or HTTP errors"
+      ]
+    },
+    {
+      "engine": "chromium",
+      "width": 1440,
+      "passed": true,
+      "checks": [
+        "policy allow/deny/MFA",
+        "queue interruption/recovery/replay",
+        "agent failure/dependency/retry/handoff",
+        "reset cancels pending completions",
+        "nine gallery tabs",
+        "three complete tours",
+        "dialog escape and focus",
+        "keyboard tab navigation",
+        "no horizontal overflow",
+        "no console or HTTP errors"
+      ]
+    },
+    {
+      "engine": "webkit",
+      "width": 390,
+      "passed": true,
+      "checks": [
+        "policy allow/deny/MFA",
+        "queue interruption/recovery/replay",
+        "agent failure/dependency/retry/handoff",
+        "reset cancels pending completions",
+        "nine gallery tabs",
+        "three complete tours",
+        "dialog escape and focus",
+        "keyboard tab navigation",
+        "no horizontal overflow",
+        "no console or HTTP errors"
+      ]
+    },
+    {
+      "engine": "webkit",
+      "width": 1440,
+      "passed": true,
+      "checks": [
+        "policy allow/deny/MFA",
+        "queue interruption/recovery/replay",
+        "agent failure/dependency/retry/handoff",
+        "reset cancels pending completions",
+        "nine gallery tabs",
+        "three complete tours",
+        "dialog escape and focus",
+        "keyboard tab navigation",
+        "no horizontal overflow",
+        "no console or HTTP errors"
+      ]
+    }
+  ],
+  "limitations": "Automated Chromium and WebKit on macOS; no physical phone. Synthetic fixtures, no live security audit, cloud deployment or model calls."
+}

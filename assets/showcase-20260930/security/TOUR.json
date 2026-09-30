@@ -1,0 +1,49 @@
+[
+  {
+    "caption": "Start with an Editor updating their own document.",
+    "reveal": "#boundary",
+    "actions": [
+      [
+        "click",
+        "#reset"
+      ]
+    ]
+  },
+  {
+    "caption": "A Guest cannot read this restricted document.",
+    "reveal": "#boundary",
+    "actions": [
+      [
+        "select",
+        "#scenario",
+        "guest"
+      ]
+    ]
+  },
+  {
+    "caption": "Admin deletion still requires a second factor.",
+    "reveal": "#boundary",
+    "actions": [
+      [
+        "select",
+        "#scenario",
+        "admin"
+      ]
+    ]
+  },
+  {
+    "caption": "Verify MFA and follow the granted decision.",
+    "reveal": "#boundary",
+    "actions": [
+      [
+        "check",
+        "#mfa",
+        true
+      ]
+    ]
+  },
+  {
+    "caption": "Compare roles under the same context.",
+    "reveal": ".matrix-section"
+  }
+]

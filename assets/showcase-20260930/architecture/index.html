@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>RELAY — Architecture explorer</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="model.mjs" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="masthead">
+      <a class="wordmark" href="#main-content" aria-label="RELAY architecture explorer"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>RELAY<span class="wordmark-label">ARCHITECTURE EXPLORER</span></a>
+      <span class="model-label">DETERMINISTIC MODEL</span>
+    </header>
+
+    <section class="intro" id="main-content">
+      <div><p class="eyebrow">MEDIA PROCESSING / SYSTEM 01</p><h1>Follow the work.</h1></div>
+      <p class="intro-copy">One request, every handoff. <br>Run a job. Break a worker. Keep the result.</p>
+    </section>
+
+    <section class="command-bar" aria-label="Job simulation controls">
+      <div class="source-file"><span class="file-icon" aria-hidden="true">MOV</span><div><strong>coastline.mov</strong><span>Synthetic input → preview video</span></div></div>
+      <div class="run-controls">
+        <button id="run-job" class="button button-primary" data-tour-step="0" data-tour-action="click"><svg aria-hidden="true" viewBox="0 0 20 20"><path d="m7 4 9 6-9 6Z"/></svg>Run job</button>
+        <button id="next-event" class="button button-secondary" data-tour-step="1" data-tour-action="click" disabled>Next event <span aria-hidden="true">→</span></button>
+        <button id="reset" class="button button-reset" aria-label="Reset the simulation">Reset</button>
+      </div>
+    </section>
+
+    <div class="workspace">
+      <section class="topology-panel" aria-labelledby="topology-title">
+        <header class="panel-top"><div><span class="panel-kicker">THE SYSTEM</span><h2 id="topology-title">From request to result</h2></div><span class="canvas-label"><i></i>LOCAL SIMULATION</span></header>
+        <div id="topology" class="topology" aria-label="Interactive system topology. Select a node to inspect its contract."></div>
+        <div class="canvas-bottom"><p><span class="flow-swatch"></span>Job path <span class="record-swatch"></span>Status write</p><span>Select a node to inspect</span></div>
+        <div class="system-counts" aria-label="Current system counts"><div><strong id="queue-count">0</strong><span>in queue</span></div><div><strong id="attempt-count">0</strong><span>delivery attempts</span></div><div><strong id="output-count">0</strong><span>output objects</span></div></div>
+      </section>
+
+      <aside class="inspector" aria-labelledby="inspector-title">
+        <div class="inspector-heading"><span class="eyebrow">NODE CONTRACT</span><span id="node-index">02 / 06</span></div>
+        <div class="node-heading"><span id="inspector-icon" class="inspector-icon" aria-hidden="true"></span><h2 id="inspector-title">API</h2></div>
+        <p id="node-description" class="node-description"></p>
+        <div class="contract-item"><h3>Owns</h3><p id="node-owns"></p></div>
+        <div class="contract-item"><h3>When it fails</h3><p id="node-failure"></p></div>
+        <div class="worker-control" data-tour-step="2"><div><span class="availability-dot" id="worker-dot"></span><strong id="worker-label">Worker online</strong></div><button class="button button-secondary" id="worker-toggle">Take worker offline</button><p id="worker-note">Interrupt it at any point in the job.</p></div>
+      </aside>
+
+      <section class="trace-panel" aria-labelledby="trace-title">
+        <header class="section-heading"><div><p class="eyebrow">EVENT TRACE</p><h2 id="trace-title">The story so far</h2></div><span id="job-status" class="status-badge">Ready</span></header>
+        <p id="next-hint" class="next-hint" role="status" aria-live="polite">Run the synthetic job to start the trace.</p>
+        <ol id="event-list" class="event-list"><li class="empty-trace"><span class="empty-mark" aria-hidden="true">↳</span><div><strong>No events yet.</strong><p>Every state transition appears here, in order.</p></div></li></ol>
+      </section>
+
+      <section class="identity-panel" aria-labelledby="identity-title">
+        <p class="eyebrow">REQUEST IDENTITY</p><h2 id="identity-title">Same key. Same job.</h2>
+        <code>req_media_01</code><p>Replay the original request. The existing job is returned, even while it is running.</p>
+        <button id="replay-request" class="button button-secondary" data-tour-step="3" data-tour-action="click" disabled>Replay same request <span aria-hidden="true">↻</span></button>
+        <div id="result" class="result" data-tour-step="4"><div class="result-heading"><span class="eyebrow">OUTPUT RECORD</span><span id="replay-count">0 replays</span></div><strong id="result-name">Awaiting completion</strong><p id="result-detail">The output appears only when the worker commits it.</p></div>
+      </section>
+    </div>
+    <footer class="page-footer"><span>RELAY / FICTIONAL MEDIA PIPELINE</span><p>A deterministic architecture model. No deployed infrastructure, real media processing or network calls.</p></footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,64 @@
+[
+  {
+    "caption": "Start the Planner and arm a recoverable Engineer failure.",
+    "reveal": ".topology-board",
+    "actions": [
+      [
+        "click",
+        "#reset-button"
+      ],
+      [
+        "click",
+        "#fault-button"
+      ],
+      [
+        "click",
+        "#run-button"
+      ]
+    ]
+  },
+  {
+    "caption": "Designer and Engineer run in parallel.",
+    "reveal": ".topology-board",
+    "actions": [
+      [
+        "click",
+        "#run-button"
+      ]
+    ]
+  },
+  {
+    "caption": "The failed Engineer blocks review; completed work remains.",
+    "reveal": ".run-message"
+  },
+  {
+    "caption": "Retry only the failed task.",
+    "reveal": ".topology-board",
+    "actions": [
+      [
+        "click",
+        "#retry-button"
+      ]
+    ]
+  },
+  {
+    "caption": "With both artifacts ready, Reviewer can proceed.",
+    "reveal": ".topology-board",
+    "actions": [
+      [
+        "click",
+        "#run-button"
+      ]
+    ]
+  },
+  {
+    "caption": "Inspect the assembled handoff and every source artifact.",
+    "reveal": ".artifact-panel",
+    "actions": [
+      [
+        "click",
+        "#tab-packet"
+      ]
+    ]
+  }
+]

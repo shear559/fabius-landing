@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Fabius demonstrations — security, architecture and agent teams: method</title><link rel="stylesheet" href="../showcase-20260916/document.css"></head>
+<body><main class="doc"><nav><a href="/#trials">← Back to the demonstrations</a></nav>
+<p class="eyebrow">FABIUS / DEMONSTRATIONS / SEPTEMBER 30, 2026</p>
+<h1>Three working systems.<br>Every transition inspectable.</h1>
+<p class="note">These products illustrate work made with Fabius. They are deterministic local demonstrations, not a controlled measurement of the plugin’s effect.</p>
+<h2>How they were made</h2>
+<p>Three independent Codex build sessions received separate briefs, separate output folders and the Fabius 3.3.0 operating rules. Each loaded the lean core, engineering process and design guidance; the security and agent-team builds also loaded their domain guidance. A coordinating session integrated the products, tested their visible behavior in a browser and refined the previews and guided tours.</p>
+<p>An initial attempt to use the previous Claude-based build procedure stopped at the account’s session limit before producing a build. These are the subsequent Codex builds. They are not paired runs, and their results do not establish a model-to-model comparison.</p>
+<h2>What each product does</h2>
+<div class="table-wrap"><table><thead><tr><th>Product</th><th>Working behavior</th><th>Boundary</th></tr></thead><tbody>
+<tr><td><a href="security/preview.html">Sentinel</a></td><td>Evaluates four roles and four actions against document scope, session, team, ownership and MFA. Shows the exact allow/deny trace and a clickable permission matrix.</td><td>All context is synthetic and editable. This is an authorization-policy demonstration, not a security audit. Real enforcement belongs on a trusted server.</td></tr>
+<tr><td><a href="architecture/preview.html">Relay</a></td><td>Traces one job through an API, queue, worker, object store and status record. Worker interruption retains the job; recovery completes it; replay keeps the same identity and one output.</td><td>No infrastructure is deployed and no video is processed. Queue and status durability are model assumptions. Partial storage/commit failures are outside this model.</td></tr>
+<tr><td><a href="swarm/preview.html">Cohort</a></td><td>Schedules Planner, Designer, Engineer and Reviewer under a concurrency limit. Injected failure blocks review; retry preserves completed work. Finished tasks expose their fixed artifacts and an assembled handoff.</td><td>No live models run. The brief and outputs are fixed fixtures; this demonstrates orchestration state, not autonomous reasoning quality or measured speedup.</td></tr>
+</tbody></table></div>
+<h2>Checks that actually ran</h2>
+<ul>
+<li><strong>Sentinel:</strong> 20 fixed policy cases, 27 malformed-input cases and all 768 valid context/action combinations. The evaluator is deterministic, does not mutate input and denies unknown or unreadable context.</li>
+<li><strong>Relay:</strong> 21,977 checked state transitions. The checks exercise worker interruption, restore, replay in every phase, immutable inputs, queue ownership and output uniqueness.</li>
+<li><strong>Cohort:</strong> 12 scheduler checks, including both specialist completion orders, concurrency limits, failure/retry, complete artifact assembly and a mutation control that proves the cap assertion catches a removed limit.</li>
+<li><strong>Browser integration:</strong> Chromium and WebKit at 390 and 1440 CSS pixels, including the production-style sandbox and content policy, working controls, guided tours, all nine gallery tabs, dialog dismissal and keyboard focus. Results are published below.</li>
+</ul>
+<p>Counts describe these specific assertions and fixtures. They are not quality scores, performance benchmarks or evidence that a production system is secure. Automated WebKit ran on an Intel Mac; no physical phone was tested.</p>
+<h2>Read, download, reproduce</h2>
+<p><a href="security/source.zip">Sentinel source</a> · <a href="architecture/source.zip">Relay source</a> · <a href="swarm/source.zip">Cohort source</a></p>
+<p>Unzip a product, serve its folder with a static HTTP server, and open <code>index.html</code>. Run its model checks with <code>node verify.mjs</code>. There is no build step or runtime dependency. The gallery’s preview and walkthrough bridge are separate from the downloadable product.</p>
+<p><a href="verification-tools/browser.mjs">Browser verification script</a> · <a href="browser-results.json">Recorded browser results</a> · <a href="manifest.json">Published SHA-256 hashes</a></p>
+</main></body></html>

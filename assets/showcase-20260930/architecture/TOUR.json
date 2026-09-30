@@ -1,0 +1,70 @@
+[
+  {
+    "caption": "Submit one request to the durable queue.",
+    "reveal": "#topology",
+    "actions": [
+      [
+        "click",
+        "#reset"
+      ],
+      [
+        "click",
+        "#run-job"
+      ]
+    ]
+  },
+  {
+    "caption": "The worker picks up the queued job.",
+    "reveal": "#topology",
+    "actions": [
+      [
+        "click",
+        "#next-event"
+      ]
+    ]
+  },
+  {
+    "caption": "Interrupt the worker. The job returns to the queue.",
+    "reveal": ".worker-control",
+    "actions": [
+      [
+        "click",
+        "#worker-toggle"
+      ]
+    ]
+  },
+  {
+    "caption": "Restore the worker and deliver the retained job again.",
+    "reveal": "#topology",
+    "actions": [
+      [
+        "click",
+        "#worker-toggle"
+      ],
+      [
+        "click",
+        "#next-event"
+      ]
+    ]
+  },
+  {
+    "caption": "Commit one output and mark the job complete.",
+    "reveal": "#result",
+    "actions": [
+      [
+        "click",
+        "#next-event"
+      ]
+    ]
+  },
+  {
+    "caption": "Replay the request. The same job and output remain.",
+    "reveal": ".identity-panel",
+    "actions": [
+      [
+        "click",
+        "#replay-request"
+      ]
+    ]
+  }
+]
