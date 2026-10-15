@@ -44,7 +44,7 @@ Current source, scope and browser verification: `assets/showcase-20260930-focuse
 
 ## Previous eight-artifact gallery — independent media and deeper systems
 
-The previous gallery contained **eight** demonstrations: Website, Application, Mathematics, Video, Image, Cybersecurity, Architecture and Agent swarm. The approved Website/Application identities, exact mathematics and continuous wave background remain. **Afterlight** is a standalone twenty-second procedural motion artwork. **Pelagic** is a generated biological image with zoom, detail views, original downloads and its creative brief. Biology is represented by this artwork in the current gallery; the September 21 RNA-seq explorer remains available historically.
+The previous gallery contained **eight** demonstrations: Website, Application, Mathematics, Video, Image, Cybersecurity, Architecture and Agent swarm. The approved Website/Application identities, exact mathematics and continuous wave background remain. **Afterlight** is a standalone twenty-second procedural motion artwork. **Pelagic** is a generated biological image with zoom, detail views, original downloads and its creative brief. Biology was represented by this artwork in that gallery; the September 21 RNA-seq explorer remains available historically.
 
 **Sentinel** now evaluates multiple explicit denies, tenant boundaries, revocation, device trust and minimum counterfactual repairs. **Relay** demonstrates an output committed before its acknowledgement, lease expiry, fencing of a stale worker and retry reconciliation. **Cohort** coordinates seven artifact-producing tasks, three parallel specialists and a computed review gate before releasing an interactive reading workspace. These are deterministic local demonstrations, not live security, infrastructure or model services.
 
@@ -52,7 +52,7 @@ Source, scope and browser verification for that edition: `assets/showcase-202609
 
 ## Worked refinement gallery — September 16
 
-`#trials` opens three newly refined products under `assets/showcase-20260916/`: Lattice, Fieldnote and an interactive exact optimization proof. Since 2026-09-21 it shows only the builds made with Fabius (the initial-output switch and the comparison line were removed at the owner's request; the initial artifacts stay in the original study at `build-study.html`). It supports phone/desktop framing, controlled walkthroughs, full-size previews and standalone ZIP downloads. Rubik is self-hosted with its OFL and checked for Hebrew/Latin coverage.
+The September 16 edition opened three refined products under `assets/showcase-20260916/`: Lattice, Fieldnote and an interactive exact optimization proof. From 2026-09-21 that edition showed only the builds made with Fabius (the initial-output switch and the comparison line were removed at the owner's request; the initial artifacts stay in the original study at `build-study.html`). It supports phone/desktop framing, controlled walkthroughs, full-size previews and standalone ZIP downloads. Rubik is self-hosted with its OFL and checked for Hebrew/Latin coverage.
 
 This is explicitly an iterative illustration using additional work and reference access, not a new controlled comparison. The original neutral viewer is retained at `build-study.html`. The initial artifacts are the first baseline submissions (01/05/09); original study assets are unchanged. App logic starts from run 06, then receives a new interface and targeted robustness fixes.
 
@@ -66,7 +66,7 @@ The subsequent visual update adds colored grain and Phosphor Duotone icons to La
 
 ## Product refinement — September 30
 
-Following owner review, the approved biology explorer remains byte-for-byte unchanged. The other eight demonstrations now point to `assets/showcase-20260930-refined/`. Lattice contains a working source-linked notebook; Fieldnote carries task context and deliverables; mathematics synchronizes exact paths, constraints and certificates. Sentinel explains document access, Relay exposes packet ownership and persistent-work assumptions, and Cohort renders the team’s produced component. The new Lattice film and five launch compositions are rendered from authored product UI.
+Following owner review, the approved biology explorer remains byte-for-byte unchanged. That refinement edition used `assets/showcase-20260930-refined/`. Lattice contains a working source-linked notebook; Fieldnote carries task context and deliverables; mathematics synchronizes exact paths, constraints and certificates. Sentinel explains document access, Relay exposes packet ownership and persistent-work assumptions, and Cohort renders the team’s produced component. The new Lattice film and five launch compositions are rendered from authored product UI.
 
 Each refined product has a portable source archive. An independent visual pass identified and resolved mobile density, horizontal-table affordance, artifact-tab clipping and chapter-thumbnail sizing. Browser verification, provenance, scope boundaries and reproducible checks are recorded in `assets/showcase-20260930-refined/verification.html`. Earlier editions and their experimental records remain available; this refinement is not a new controlled experiment.
 
@@ -74,7 +74,7 @@ Each refined product has a portable source archive. An independent visual pass i
 
 The existing six builds are joined by **Sentinel** (an access-control workbench), **Relay** (a queue-based architecture explorer) and **Cohort** (an agent-team scheduler). Each is a functioning, offline product with deterministic fixtures, source code, invariant checks and a guided tour. Their simulations do not perform live audits, deploy cloud infrastructure or call language models. Fabius 3.3.0 contracts guided fresh Codex builder sessions after the headless Claude route encountered its account limit; subsequent refinement follows actual browser findings. This is product work, not a controlled comparison or an independent quality benchmark.
 
-The gallery exposes all nine categories on phones as a compact grid, with the existing full-size preview, phone/desktop controls and downloads. Static green contour lines extend the repository's topographic identity into the hero and gallery. The approved slogan, light canvas, existing artwork and system/research sections stay in place. Method and verified limits are at `assets/showcase-20260930/verification.html`.
+That nine-demo edition exposed all categories on phones as a compact grid, with the existing full-size preview, phone/desktop controls and downloads. Static green contour lines extend the repository's topographic identity into the hero and gallery. The approved slogan, light canvas, existing artwork and system/research sections stay in place. Method and verified limits are at `assets/showcase-20260930/verification.html`.
 
 ## Preserved paired artifact trials
 
