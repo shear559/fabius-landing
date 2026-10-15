@@ -292,7 +292,7 @@
   }
 })();
 
-/* ── the system map: router → lean core → 13 layers → spine, drawn as a
+/* ── the system map: router → lean core → 13 available skills → shared result, drawn as a
    curved fan with packets flowing along the connectors — the system-map
    fan view. Connectors draw in on scroll, then the packets flow.
    Reduced-motion: fully drawn, static, no packets. */
@@ -356,13 +356,13 @@
     }
     gNode.appendChild(g);
   };
-  node(router.cx, router.cy, router.w, router.h, 'smap-router', 'fabius — router', 'layer · machinery · tier');
-  node(core.cx, core.cy, core.w, core.h, 'smap-core', 'fabius-parcus — core', 'lean · runs under every layer');
+  node(router.cx, router.cy, router.w, router.h, 'smap-router', 'fabius — router', 'select relevant skills');
+  node(core.cx, core.cy, core.w, core.h, 'smap-core', 'fabius-parcus — core', 'scope · effort · stop condition');
   LAYERS.forEach(([name, sub, acc], i) => node(lx(i), LY, LW, LH, 'smap-layer', name, sub, acc, 'bug-' + name));
-  node(spine.cx, spine.cy, spine.w, spine.h, 'smap-spine', 'the spine', 'references · CORPUS.md · evals · AGENTS.md');
+  node(spine.cx, spine.cy, spine.w, spine.h, 'smap-spine', 'one checked result', 'tools · evidence · approved memory');
 
   const lab = (x, y, t) => gNode.appendChild(mk('text', { class: 'smap-lab', x, y, text: t }));
-  lab(710, 118, 'dispatches'); lab(300, cBot + 54, 'under every layer'); lab(710, 632, 'end to end');
+  lab(710, 118, 'routes'); lab(300, cBot + 54, 'available specialists'); lab(710, 632, 'verify and remember');
 
   if (!RM) paths.forEach((p) => { const L = p.getTotalLength(); p.style.strokeDasharray = L; p.style.strokeDashoffset = L; });
 

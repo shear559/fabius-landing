@@ -2,89 +2,40 @@
 
 The public site for **fabius — one set of rules above every model**.
 
-[Website](https://fabius-landing.vercel.app) · [Rules repository](https://github.com/shear559/fabius) · [Whitepaper](fabius-as-a-system.pdf)
+[Website](https://fabius-landing.vercel.app) · [Fabius repository](https://github.com/shear559/fabius) · [Quickstart](https://github.com/shear559/fabius/blob/main/QUICKSTART.md)
 
-![Fabius — one set of rules above every model](assets/preview-rules-2026-09-09.webp)
+## What the page explains
 
-## Content baseline
+Fabius **3.5.1** organizes fifteen skills around distinct responsibilities: the `fabius` router, the `fabius-parcus` lean core and thirteen specialists. The router is designed to select relevant instructions and compose them around a task. The host supplies the model, loads the instructions and controls tools and permissions. Installation does not guarantee automatic skill activation; the page explains explicit invocation and a first-run check.
 
-Aligned with the **3.5.0** Fabius source (whitepaper `fabius-as-a-system.pdf`, 54 pages, SHA-256 `023e907d18dc4f2646acb510da486af6345947c1d4e7d87e93222dad7ae52107`). The page leads with “one set of rules above every model”, retaining the green palette, Rubik typography, system map and three capability outcomes. The previously removed skill-card grids, setup split and explainer video remain absent.
+The front page follows one flow:
 
-Fabius supplies instructions, workflows and original local helpers for scheduling, retrieval, design and completion evidence. The host supplies the model, tools and permissions. Model marks illustrate families; they do not establish tested integration or a universal quality gain.
+1. The problem: overlapping instructions and useful skills that go unloaded.
+2. A compact roster of the two coordinating skills and thirteen specialists.
+3. Request → route → compose → execute with available tools → verify → remember.
+4. One illustrative launch-page composition: design, copy, engineering and approved project context.
+5. Four interactive demonstrations, followed by installation and ten FAQ answers.
 
-| Public claim | Canonical Fabius source |
-| --- | --- |
-| Fifteen skills and capability ownership | `README.md`, `ARCHITECTURE.md`, `skills/*/SKILL.md` |
-| Installation, updates and active-session loading | `README.md`, `skills/fabius/references/skill-frontmatter.md` |
-| Twenty-two core rules, mathematical assumptions and heuristics | `RESEARCH.md`, `paper/proofs.json` |
-| Historical gains, regressions and missing artifacts | `BENCHMARKS.md`, `evals/verify-receipts.mjs` |
-| September 30 demonstrations: access control, queue architecture, agent-team simulation | `assets/showcase-20260930/verification.html`, `manifest.json`, `<demo>/verify.mjs` |
-| September 21 demonstrations: launch film, key visual, RNA-seq study | `assets/showcase-20260921/verification.html`, `manifest.json`, `<demo>/verification.md` |
-| September 10 paired mathematics, page and app trials | `assets/trials-20260910/protocol.html`, `report.html`, `runs.json` |
-| September 15 showcase (twelve fresh generations on enriched briefs) | `assets/trials-20260915-showcase/protocol.html`, `report.html`, `results.json`, `all-artifacts.zip` |
-| September 15 original bare-session build trials | `assets/trials-20260915-builds/protocol.html`, `report.html`, `results.json`, `all-artifacts.zip` |
-| September 14 build trials (superseded: baseline context not bare; kept for the record) | `assets/trials-20260914-builds/protocol.html`, `report.html` |
-| September 14 behavior trials (sixteen runs, two blind judges) | `assets/trials-20260914/protocol.html`, `report.html`, `results.json`, `all-artifacts.zip` |
-| Local execution, provider processing and permission limits | `runtime/README.md`, `runtime/src/tools.mjs` |
-| Content hashes, signed releases and timestamp status | `PROVENANCE.md`, `provenance/verify.sh` |
+The [skill contracts](https://github.com/shear559/fabius/tree/main/skills) and [architecture](https://github.com/shear559/fabius/blob/main/ARCHITECTURE.md) are the sources for capability ownership. No skill selection, model improvement or tool availability is guaranteed by the landing page.
 
-The reviewer example uses explicitly hypothetical probabilities. Its independence assumption and cost comparison are stated. Research curves are illustrative decision models, not measured performance. The page does not equate release checks with improved model quality.
+## Four interactive demonstrations
 
-## Structure and design
+| Demonstration | Interaction | Source |
+| --- | --- | --- |
+| Math & visualization | Explore exact graphs and see how a changed parameter affects the answer. | [Preview](assets/showcase-20260930-focused/math/preview.html) · [Download](assets/showcase-20260930-focused/math/source.zip) |
+| Agent teams | Inspect the task graph, dispatch decisions and produced artifacts. | [Preview](assets/showcase-20260930-focused/swarm/preview.html) · [Download](assets/showcase-20260930-focused/swarm/source.zip) |
+| Project memory | Retrieve source-linked context with preserved decision history. | [Preview](assets/showcase-20260930-focused/memory/preview.html) · [Download](assets/showcase-20260930-focused/memory/source.zip) |
+| Clear code | Edit input, run a readable function and inspect its output and checks. | [Preview](assets/showcase-20260930-focused/code/preview.html) · [Download](assets/showcase-20260930-focused/code/source.zip) |
 
-Static `index.html`, `styles.css` and `main.js`; no build or package installation. The page contains the hero, three capability outcomes, the interactive refinement gallery, system/research explanations, installation tabs and thirteen FAQ entries. The FAQ and its JSON-LD must remain word-for-word equivalent.
+Each supports a guided walkthrough, phone/desktop framing and a full-size preview. These are authored demonstrations refined with Fabius. They use disclosed local examples, do not call live models and reset when reopened. They illustrate capabilities rather than measuring model improvement. Their [source, scope and recorded checks](assets/showcase-20260930-focused/verification.html) remain available.
 
-The design uses the existing green tokens (`#76b900`, with darker text variants), self-hosted Rubik, square buttons and green-on-black system diagrams. The map has sixteen nodes: router, lean core, thirteen specialists and the shared reference spine. Its twenty-eight connectors are built from the specialist table in `main.js`. On narrow screens the map scrolls inside its own container. Reduced motion renders a static diagram.
+## Source and design
 
-## Current gallery — four visible benefits
+Static `index.html`, `styles.css` and `main.js`; no build step or package installation. The gallery still uses `assets/showcase-20260916/showcase.js` and `showcase.css`. Their dated folder name does not make them archival: they are active dependencies of the current four-demo gallery.
 
-The main gallery now focuses on **Math & visualization, Agent teams, Project memory and Clear code**. The shared light/green/Rubik presentation leads with a useful interaction: synchronized exact graphs; a causal team graph and dispatch record; source-linked retrieval with preserved history; and a readable function with editable input, visible output and executable checks.
+Keep the canonical slogan, green tokens, self-hosted Rubik, square buttons, beetles and continuous S-wave artwork. The system map shows the available skills and their relationship to one result; it is not a live routing trace. It scrolls within its own container on narrow screens and honors reduced motion. The compact roster and workflow provide the same explanation without depending on the diagram.
 
-Current source, scope and browser verification: `assets/showcase-20260930-focused/verification.html`. Each artifact has a portable `source.zip`, pure model checks and a guided tour. The scheduler and memory examples are local, disclosed fixtures; previews reset on reopening. This edition is an authored refinement, not a new controlled model-uplift study. The established hero and continuous wave background remain unchanged.
-
-## Previous eight-artifact gallery — independent media and deeper systems
-
-The previous gallery contained **eight** demonstrations: Website, Application, Mathematics, Video, Image, Cybersecurity, Architecture and Agent swarm. The approved Website/Application identities, exact mathematics and continuous wave background remain. **Afterlight** is a standalone twenty-second procedural motion artwork. **Pelagic** is a generated biological image with zoom, detail views, original downloads and its creative brief. Biology was represented by this artwork in that gallery; the September 21 RNA-seq explorer remains available historically.
-
-**Sentinel** now evaluates multiple explicit denies, tenant boundaries, revocation, device trust and minimum counterfactual repairs. **Relay** demonstrates an output committed before its acknowledgement, lease expiry, fencing of a stale worker and retry reconciliation. **Cohort** coordinates seven artifact-producing tasks, three parallel specialists and a computed review gate before releasing an interactive reading workspace. These are deterministic local demonstrations, not live security, infrastructure or model services.
-
-Source, scope and browser verification for that edition: `assets/showcase-20260930-refined/verification.html`. The sections below record previous editions, including the earlier product-linked film/artwork and nine-tab gallery.
-
-## Worked refinement gallery — September 16
-
-The September 16 edition opened three refined products under `assets/showcase-20260916/`: Lattice, Fieldnote and an interactive exact optimization proof. From 2026-09-21 that edition showed only the builds made with Fabius (the initial-output switch and the comparison line were removed at the owner's request; the initial artifacts stay in the original study at `build-study.html`). It supports phone/desktop framing, controlled walkthroughs, full-size previews and standalone ZIP downloads. Rubik is self-hosted with its OFL and checked for Hebrew/Latin coverage.
-
-This is explicitly an iterative illustration using additional work and reference access, not a new controlled comparison. The original neutral viewer is retained at `build-study.html`. The initial artifacts are the first baseline submissions (01/05/09); original study assets are unchanged. App logic starts from run 06, then receives a new interface and targeted robustness fixes.
-
-Measured standalone checks: website 28/28 browser scenarios, app 68/68; math 1,233/1,233 numerical probes plus 182 exact and 72 numerical certificate/solver assertions. Method, failure history, execution receipts, source and portable evaluators are linked from `assets/showcase-20260916/verification.html`.
-
-The subsequent visual update adds colored grain and Phosphor Duotone icons to Lattice, a blue Fieldnote palette, a static green Fabius emblem glow, and a mathematically faithful equal-scale diagram with objective bands and all binding constraints highlighted at transitions. See `assets/showcase-20260916/visual-refresh.md` for source, checks and visual-review limits.
-
-## Three more demonstrations — September 21
-
-`#trials` gained three tabs beside the website, app and mathematics builds: **Video** (a 39.5-second Lattice launch film authored as HTML scenes, rendered frame by frame and encoded to H.264 and VP9, with captions, chapters and a storyboard), **Image** (one master SVG for Lattice, five launch formats, contrast measured on the rendered pixels) and **Biology** (a synthetic RNA-seq study with calibrated FDR control and an explorer for every gene). Each was built by a fresh headless Claude Code session on `claude-opus-5` with only Fabius 3.2.0 loaded, then refined in further sessions (from browser testing and a design read, then from independent reviews of the live pages; two passes for the image and the study, three for the film); the files live in `assets/showcase-20260921/<demo>/`, with `preview.html` = the product plus the tour bridge (`demo-control.js`). Headline checks: the film measures 1920×1080 at 30 fps with both encodes under 6 MB; the key visual passes AA in 5 of 5 formats and re-renders pixel for pixel; the study's 11 calls at 5 % FDR are all planted responders (11 of 60 found). A fourth build (a security review) did not finish and is not published. Method and limits: `assets/showcase-20260921/verification.html`.
-
-## Product refinement — September 30
-
-Following owner review, the approved biology explorer remains byte-for-byte unchanged. That refinement edition used `assets/showcase-20260930-refined/`. Lattice contains a working source-linked notebook; Fieldnote carries task context and deliverables; mathematics synchronizes exact paths, constraints and certificates. Sentinel explains document access, Relay exposes packet ownership and persistent-work assumptions, and Cohort renders the team’s produced component. The new Lattice film and five launch compositions are rendered from authored product UI.
-
-Each refined product has a portable source archive. An independent visual pass identified and resolved mobile density, horizontal-table affordance, artifact-tab clipping and chapter-thumbnail sizing. Browser verification, provenance, scope boundaries and reproducible checks are recorded in `assets/showcase-20260930-refined/verification.html`. Earlier editions and their experimental records remain available; this refinement is not a new controlled experiment.
-
-## Nine working demonstrations — September 30
-
-The existing six builds are joined by **Sentinel** (an access-control workbench), **Relay** (a queue-based architecture explorer) and **Cohort** (an agent-team scheduler). Each is a functioning, offline product with deterministic fixtures, source code, invariant checks and a guided tour. Their simulations do not perform live audits, deploy cloud infrastructure or call language models. Fabius 3.3.0 contracts guided fresh Codex builder sessions after the headless Claude route encountered its account limit; subsequent refinement follows actual browser findings. This is product work, not a controlled comparison or an independent quality benchmark.
-
-That nine-demo edition exposed all categories on phones as a compact grid, with the existing full-size preview, phone/desktop controls and downloads. Static green contour lines extend the repository's topographic identity into the hero and gallery. The approved slogan, light canvas, existing artwork and system/research sections stay in place. Method and verified limits are at `assets/showcase-20260930/verification.html`.
-
-## Preserved paired artifact trials
-
-The `build-study.html` page presents the September 15 showcase (`assets/trials-20260915-showcase/`): twelve fresh claude-sonnet-5 generations, two per condition per task. The baseline is a bare headless Claude Code session. The treatment loads Fabius 3.1.0 and explicitly requests its relevant contracts. Both receive the same enriched brief, tools and time limit. The website brief requests distinct feature states and a user-controlled product demonstration; the app adds Board/List views; the math brief adds a feasible-region diagram and a compact exact answer.
-
-The viewer in `assets/trials-20260910/trial-lab.js` and `trial-lab.css` opens on Website, followed by App and Math. It shows both run pairs, live products and captured states, desktop/phone framing and full-size previews. Mobile switches between conditions. Mathematics loads a pinned, self-hosted KaTeX 0.18.7 copy on demand to typeset submitted equations; its MIT licence and upstream hashes are in `assets/vendor/katex-0.18.7/`. It includes the submitted diagrams, an interactive plot of actual solver samples, six regime controls, the proof, code and verification notes. Checks and methodology stay collapsed until requested.
-
-Generated executable files are preserved. Preview wrappers add an Escape-key bridge and, for apps, an in-memory Storage stand-in; they run in an opaque-origin sandbox with restrictive headers. A full-size preview is a fresh instance. Source ZIPs contain the submitted executable bytes. Machine-specific paths in Markdown documentation are replaced with placeholders, with original and published hashes recorded in `source-transforms.json`. Captures are real browser states, not recordings of model generation.
-
-Functional criteria, browser scenarios and parameter probes are different units. The original functional oracle is preserved and does not score every new visual requirement. The full app suite is rechecked across every app submission after correcting equivalent-wording recognition and the reset-confirmation selector; original, corrected and merged records are published. Two blinded proof judges assess eight dimensions; both must pass a dimension for it to count. Check counts are not design ratings. Ties, misses and caps remain visible. The public report and protocol link the older studies; this edition changes neither the Fabius release nor the historical whitepaper.
+The visible FAQ and its JSON-LD must remain word-for-word equivalent. Keep executable JavaScript external to satisfy the production CSP. Model and platform marks are illustrative; they do not establish integration testing, affiliation or endorsement.
 
 ## Local preview and verification
 
@@ -92,14 +43,28 @@ Functional criteria, browser scenarios and parameter probes are different units.
 python3 -m http.server 8799
 ```
 
-Serve from the repository root. Before publishing, check the actual page in a browser at phone, tablet and desktop widths, including WebKit. Exercise menu, keyboard tabs, copy buttons, FAQ parity, internal links, images, console and network failures. Inspect reduced motion and verify that the PDF bytes match the Fabius artifact manifest. Test production security headers as well; a plain local server does not supply them.
+Serve from the repository root. Check the rendered page at phone, tablet and desktop widths, including WebKit. Exercise the menu, keyboard tabs, copy buttons, four demo tours, preview sizing, full-size dialog and FAQ. Check local links, images, console and network failures, reduced motion and FAQ/schema parity.
 
-A local browser result does not establish deployment. Production status and PDF bytes must be checked separately after publication.
+A local server does not supply production security headers. After publication, verify the exact [canonical website](https://fabius-landing.vercel.app), its rendered content, assets, console, headers and matching whitepaper. A source change or push alone does not establish that the live page works.
 
 ## Publication
 
-The existing Vercel project is linked to `main`; pushing the website can publish it. Owner approval is required before pushing. Verify the deployed HTML, scripts, stylesheet, PDF hash, console and rendered page on the exact website URL above.
+The existing Vercel project is linked to `main`; a push can publish the site. Keep publication scoped to reviewed changes and verify the resulting deployment. `vercel.json` supplies a same-origin CSP and restricts microphone, camera and geolocation. Assets are cached immutably, so a replaced image needs a new filename. Root stylesheet and JavaScript references carry dated version suffixes when those files change.
 
-`vercel.json` supplies a same-origin CSP and restricts microphone, camera and geolocation. Keep executable scripts external. Files under `assets/` are cached immutably: use a new filename for a replaced image. Root CSS and JavaScript references carry dated version suffixes when those files change. The whitepaper is served at the root and must match the corresponding Fabius release.
+The whitepaper must match the corresponding Fabius release. The product repository provides executable repository checks through `bash scripts/verify-all.sh --mode=dev`; these check implementation and release integrity, not a model-quality gain.
 
-Public source does not imply an open-source licence. Fabius is proprietary with a personal-use installation grant; its [licence](https://github.com/shear559/fabius/blob/main/LICENSE) states the terms.
+## Historical evidence
+
+Historical material remains available without leading the homepage:
+
+- [Evidence archive](https://github.com/shear559/fabius/blob/main/docs/archive/README.md): results, receipts and limitations in the product repository.
+- [Whitepaper](fabius-as-a-system.pdf): the corresponding Fabius release artifact.
+- [Paired artifact study](build-study.html): original submissions, protocol and results.
+- [September 30 refined gallery](assets/showcase-20260930-refined/verification.html): the earlier eight-artifact presentation and its checks.
+- [September 30 systems](assets/showcase-20260930/verification.html), [September 21 media and science](assets/showcase-20260921/verification.html), and [September 16 refinement](assets/showcase-20260916/verification.html): source and methodology for earlier editions.
+
+This presentation change does not rerun experiments, revise historical results or replace archived artifacts.
+
+## Licence
+
+Public source does not imply an open-source licence. Fabius is proprietary. Its [LICENSE](https://github.com/shear559/fabius/blob/main/LICENSE) grants personal, non-commercial installation and use as an agent plugin through the published marketplace command on machines you control. Redistribution, modification and commercial use require prior written permission. Model access and connected services may have separate costs.

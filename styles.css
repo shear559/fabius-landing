@@ -235,17 +235,25 @@ img{display:block;max-width:100%}
 .capabilities{padding:var(--sec) 0;background:var(--surface)}
 .cap-head{max-width:800px}
 .cap-kicker{margin:0 0 16px;color:var(--primary-ink);font-size:.875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
-.cap-outcomes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin:32px 0 56px;padding:28px 0;border-block:1px solid var(--hairline-2)}
-.cap-outcomes h3{font-size:1.375rem;line-height:1.2;margin-bottom:12px}
-.cap-outcomes p{font-size:1rem;line-height:1.6;color:var(--muted);text-wrap:pretty}
+.skill-foundation{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-6);padding-block:var(--space-4);margin-bottom:var(--space-6);border-block:1px solid var(--hairline-2)}
+.skill-foundation article{min-width:0}
+.skill-foundation .skill-role{margin-bottom:var(--space-1);color:var(--primary-ink);font-size:var(--note-size);font-weight:600}
+.skill-foundation h3{font-size:1.5rem;letter-spacing:-.025em;margin-bottom:var(--space-1)}
+.skill-foundation p{max-width:34rem;font-size:1rem;line-height:1.6;color:var(--muted)}
+.skill-roster-label{margin-bottom:var(--space-2);color:var(--ink-2);font-size:var(--note-size);font-weight:500}
+.skill-roster{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:var(--space-6);padding:0;margin:0 0 var(--space-4)}
+.skill-roster li{min-width:0;padding-block:var(--space-3);border-top:1px solid var(--hairline)}
+.skill-roster h3{display:flex;flex-wrap:wrap;align-items:baseline;gap:.25rem .75rem;margin-bottom:var(--space-1);font-size:1rem;font-weight:600}
+.skill-roster h3 span{font-size:.8125rem;font-weight:400;color:var(--primary-ink)}
+.skill-roster p{font-size:var(--note-size);line-height:1.6;color:var(--muted);text-wrap:pretty}
 .cap-source{display:inline-flex;align-items:center;gap:8px;min-height:44px;width:fit-content;color:var(--primary-ink);font-size:.875rem;font-weight:600;line-height:1.4;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
 .cap-source:hover{text-decoration-thickness:2px}
 .cap-layers-link{margin-top:4px}
-@media(max-width:900px){
-  .cap-outcomes{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
-}
+@media(max-width:900px){.skill-roster{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--space-4)}}
 @media(max-width:600px){
-  .cap-outcomes{grid-template-columns:1fr;gap:24px;margin-bottom:32px}
+  .skill-foundation{grid-template-columns:1fr;gap:var(--space-3);margin-bottom:var(--space-4)}
+  .skill-foundation article + article{padding-top:var(--space-3);border-top:1px solid var(--hairline)}
+  .skill-roster{grid-template-columns:1fr}
   .hero-compat{font-size:1rem}
 }
 
@@ -412,6 +420,25 @@ img{display:block;max-width:100%}
 .system .sec-lede em{color:#fff}
 
 /* system map — SVG fan diagram (router → lean core → 13 layers → spine), built + animated by main.js */
+.workflow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-4) var(--space-6);list-style:none;padding:0;margin:0 0 var(--space-6)}
+.workflow li{display:flex;gap:var(--space-2);min-width:0;padding-top:var(--space-3);border-top:1px solid rgba(185,217,119,.22)}
+.workflow-num{flex:none;color:var(--primary-lite);font:var(--note-size)/1.5 var(--mono)}
+.workflow h3{font-size:1.125rem;line-height:1.4;margin-bottom:var(--space-1);color:var(--surface)}
+.workflow p{color:#b6b0d6;font-size:var(--note-size);line-height:1.6}
+.system-note{max-width:var(--info-width);margin:-2rem auto var(--space-6);text-align:center;color:#b6b0d6;font-size:var(--note-size);line-height:1.6}
+.composition{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:var(--space-4) var(--space-6);padding-top:var(--space-6);border-top:1px solid rgba(185,217,119,.22)}
+.composition .cap-kicker{color:var(--primary-lite)}
+.composition h3{font-size:clamp(1.5rem,3vw,2rem);line-height:1.25;letter-spacing:-.025em;color:var(--surface);max-width:25rem;margin-bottom:var(--space-2)}
+.composition-brief > p:last-child{color:#b6b0d6;font-size:1rem;line-height:1.6}
+.composition-roles{list-style:none;padding:0;margin:0}
+.composition-roles li{display:grid;grid-template-columns:6rem minmax(0,1fr);gap:var(--space-2);padding-block:var(--space-2);border-top:1px solid rgba(185,217,119,.16);font-size:var(--note-size);line-height:1.6}
+.composition-roles li:first-child{padding-top:0;border-top:0}
+.composition-roles b{font-weight:500;color:var(--primary-lite)}
+.composition-roles span{color:#b6b0d6}
+.composition-note{grid-column:1/-1;max-width:var(--info-width);color:#b6b0d6;font-size:var(--note-size);line-height:1.6}
+@media(max-width:900px){.workflow{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-4)}.composition{grid-template-columns:1fr}.composition h3{max-width:34rem}}
+@media(max-width:600px){.workflow{grid-template-columns:1fr;gap:var(--space-2)}.system-note{margin-top:-1rem;text-align:left}.composition-roles li{grid-template-columns:5.5rem minmax(0,1fr)}}
+
 .smap-wrap{max-width:1120px;margin:0 auto;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .smap-wrap::-webkit-scrollbar{display:none}
 .smap{display:block;width:100%;min-width:760px;height:auto}
@@ -830,9 +857,9 @@ img{display:block;max-width:100%}
 .system::after{z-index:1}
 .core::after{z-index:2}
 
-/* Fabius light: a sharp emblem with a restrained, steady green halo. */
+/* Keep the emblem filter-free: SVG drop shadows paint a corner artifact in WebKit. */
 :root{--emblem-near:#94d63c99;--emblem-far:#76b90045}
-.brand-mark{filter:drop-shadow(0 0 3px var(--emblem-near)) drop-shadow(0 0 10px var(--emblem-far))}
+.brand-mark{filter:none}
 
 /* Continuous parallel waves across the hero and demonstration backgrounds. */
 :root{--contour-art:url('/assets/fabius-slalom-lines.svg');--contour-opacity:.14}
