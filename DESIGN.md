@@ -1,9 +1,13 @@
 # Fabius visual system
 
-Created by Ariel Shemesh. Retain the light paper canvas, Rubik, green accent, square primary actions, beetle emblem and contour wordmark. Never use provider colors as interface accents. Dark graphite belongs to the model and routing instruments; never apply low-contrast grey to essential copy. Green identifies selection and flow; never use it for invented performance claims.
+Created by Ariel Shemesh. The approved identity is the original light paper canvas, Rubik typography, green accent, square primary actions, beetles, and the glass model field with its banner and two rows of 36 model logos. Preserve that composition and its proportions. Do not replace the logo presentation with a model selector, chip graphic or dashboard.
 
-Motion expresses the movement between model, instructions, tools and project context. It must pause offscreen, respond to the global pause control and respect reduced motion. Never hide readable content behind motion. All selectable examples work with keyboard controls and on narrow screens.
+Keep the original hero waves, workflow, architecture map and section typography. Only the demonstration background uses very faint moving geometric contours. Respect reduced motion and the original marquee pause control. Keep those decorative contours behind content and pause them offscreen.
 
-The provider selector and route trace are authored illustrations. The memory demo retrieves fictional records and stores one optional note locally. Never present these as live model reasoning, remote execution or universal compatibility.
+The router's reasoning is central to the page: preserve the capability ladder, value threshold, dependency chart, expected-value inequality and worked mathematical example. These explain how Fabius chooses effort and context; they are conditional illustrations, distinct from the retired comparative benchmarks. Improve the logo cards within the existing marquee and add only a few background beetles.
 
-The hero retains its original parallel waves. Only the demonstration section uses very faint nested contours that move between geometric forms. Keep SVG lines sharp and the page mostly unchanged in character. Preview frames render at their available CSS width without transform scaling; all real text stays filter-free. Layout grows to a 1728px canvas and reflows down to 320px.
+Gallery frames render at their actual available width without scaling text. Compact phone controls must wrap without clipping. Keep the four working demonstrations and their source downloads. They use local fixtures and do not make model calls or comparative improvement claims.
+
+Use fluid gutters and a canvas up to 2240px wide so desktop sections use the available space. Preserve readable line lengths and the banner's image quality. Reflow the logos, charts and mathematical examples down to 320px without horizontal page scrolling.
+
+Treat future design requests as refinements of this existing identity unless Ariel explicitly asks to replace it.

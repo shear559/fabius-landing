@@ -217,6 +217,11 @@
     { lane: 58, size: 22, dur: 4,   delay: -1, op: .22, dir: 1,  bob: .48 },
     { lane: 34, size: 16, dur: 2.7, delay: -4, op: .18, dir: -1, bob: .4 },
     { lane: 80, size: 14, dur: 2.3, delay: -1, op: .16, dir: 1,  bob: .36 },
+    { lane: 6,  size: 24, dur: 14, delay: -8, op: .22, dir: -1, bob: .9 },
+    { lane: 93, size: 30, dur: 18, delay: -4, op: .24, dir: 1,  bob: 1.1 },
+    { lane: 24, size: 18, dur: 11, delay: -6, op: .18, dir: -1, bob: .8 },
+    { lane: 66, size: 26, dur: 16, delay: -9, op: .22, dir: 1,  bob: 1.0 },
+    { lane: 88, size: 20, dur: 13, delay: -3, op: .20, dir: -1, bob: .9 },
   ];
   const coreWalk = [
     { lane: 20, size: 84, dur: 28, delay: -6, op: .82, dir: 1,  bob: 1.8, leg: .72, color: '#a5d65a' },
@@ -231,7 +236,7 @@
   ].filter((_, i) => small ? i < 5 : true);
   // defer the decorative swarm DOM build off the critical path → smoother first paint / input
   const buildSwarms = () => {
-    buildWalkers($('#swarm'), small ? heroWalk.filter((_, i) => i < 9) : heroWalk);
+    buildWalkers($('#swarm'), small ? [...heroWalk.slice(0, 9), ...heroWalk.slice(-3)] : heroWalk);
     buildWalkers($('#coreWalk'), coreWalk);
   };
   if ('requestIdleCallback' in window) requestIdleCallback(buildSwarms, { timeout: 700 });

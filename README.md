@@ -4,9 +4,10 @@ The product website for [Fabius](https://github.com/shear559/fabius), created by
 
 ## Experience
 
-- A model-family selector explains the separation between instructions, model and host. It makes no model calls.
-- A workflow explorer steps through three authored task routes.
-- A project-memory demo retrieves current fictional records, preserves superseded history, and optionally saves one note in browser local storage. Reset removes only its own entry.
+- The original beetle banner and two moving rows present 36 model families with their logos. A pause control and reduced-motion mode keep the list accessible.
+- The original workflow and skill architecture explain how responsibilities fit together.
+- The original routing charts, value inequality and worked example explain proportional effort, tool costs, dependencies and context selection. Their inputs and assumptions are illustrative, not benchmark results.
+- The project-memory gallery demonstrates retrieval, sources, superseded decisions and saving a decision within the example.
 - Four source-downloadable demonstrations cover math, agent teams, memory and code.
 - Installation, licence and support remain linked to the product repository.
 
@@ -15,14 +16,14 @@ The previous benchmark reports, comparison galleries and score archives are remo
 ## Source
 
 `index.html`, `styles.css`, `main.js`: the main page and original brand system.
-`experience.css`, `experience.mjs`, `experience-model.mjs`: the model, route and memory experiences.
+`polish.css`, `motion.mjs`: native-resolution gallery frames, compact-phone layout and subtle gallery-only contours.
 `assets/gallery/`: shared gallery controls and styles.
 `assets/showcase-20260930-focused/`: the four preserved working examples and their checks.
 `DESIGN.md`: brand and motion constraints.
 
 ## Verification
 
-Run `node --test tests/*.test.mjs` for local memory behavior. Serve the root with a static HTTP server, exercise the model choices, all route steps, memory save/retrieve/new session/reset, installation controls, navigation and four gallery tours at phone and desktop widths. Check reduced motion, keyboard focus, console, network, FAQ/schema parity and local links. Apply `vercel.json` headers during browser testing.
+Serve the root with a static HTTP server and exercise the model marquee, pause control, installation controls, navigation and four gallery tours at phone and desktop widths. Check reduced motion, keyboard focus, console, network, FAQ/schema parity and local links. Apply `vercel.json` headers during browser testing. The gallery's verification page links executable checks and the browser verification script.
 
 After pushing, verify the deployment commit and canonical domain. Keep the whitepaper byte-identical to the corresponding product source. Source downloads have no build step and run without model credentials.
 
