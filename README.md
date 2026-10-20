@@ -10,6 +10,7 @@ The product website for [Fabius](https://github.com/shear559/fabius), created by
 - The project-memory gallery demonstrates retrieval, sources, superseded decisions and saving a decision within the example.
 - Four source-downloadable demonstrations cover math, agent teams, memory and code.
 - Installation, licence and support remain linked to the product repository.
+- Position Fabius as a model-agnostic working method across LLM providers. Lead with the user's model and task; keep named agent apps in setup instructions as examples, not a model whitelist. The default installation tab explains the general instruction-loading route.
 
 The previous benchmark reports, comparison galleries and score archives are removed from the current tree. They remain in Git history. The whitepaper is synchronized with the product repository and describes the architecture and conditional theory without comparative scores.
 
