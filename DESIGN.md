@@ -10,4 +10,6 @@ Gallery frames render at their actual available width without scaling text. Comp
 
 Use fluid gutters and a canvas up to 2240px wide so desktop sections use the available space. Preserve readable line lengths and the banner's image quality. Reflow the logos, charts and mathematical examples down to 320px without horizontal page scrolling.
 
+Desktop typography stays proportional to that wide canvas: cap the hero title at 110px, section headings at 48px and introductory copy at 18px. Mix tiny background beetles with a few slow, larger ones; keep the mobile swarm lighter and respect reduced motion.
+
 Treat future design requests as refinements of this existing identity unless Ariel explicitly asks to replace it.

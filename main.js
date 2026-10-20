@@ -223,6 +223,20 @@
     { lane: 66, size: 26, dur: 16, delay: -9, op: .22, dir: 1,  bob: 1.0 },
     { lane: 88, size: 20, dur: 13, delay: -3, op: .20, dir: -1, bob: .9 },
   ];
+  // Extra depth: scattered miniature beetles and a few slow, larger silhouettes.
+  const heroAccents = [
+    { lane: 11, size: 8,  dur: 11, delay: -4, op: .26, dir: 1,  bob: .7, compact: true },
+    { lane: 27, size: 10, dur: 13, delay: -8, op: .24, dir: -1, bob: .8, compact: true },
+    { lane: 41, size: 9,  dur: 10, delay: -6, op: .22, dir: 1,  bob: .7 },
+    { lane: 57, size: 12, dur: 15, delay: -3, op: .25, dir: -1, bob: .9, compact: true },
+    { lane: 73, size: 8,  dur: 12, delay: -9, op: .24, dir: 1,  bob: .7 },
+    { lane: 86, size: 11, dur: 14, delay: -6, op: .22, dir: -1, bob: .8, compact: true },
+    { lane: 19, size: 13, dur: 16, delay: -11, op: .23, dir: 1, bob: .9 },
+    { lane: 95, size: 9,  dur: 12, delay: -5, op: .24, dir: -1, bob: .7 },
+    { lane: 7,  size: 112, dur: 43, delay: -29, op: .28, dir: -1, bob: 2.3, leg: .88 },
+    { lane: 35, size: 72, dur: 38, delay: -20, op: .19, dir: 1, bob: 2.1, leg: .8, compact: true },
+    { lane: 81, size: 88, dur: 46, delay: -10, op: .25, dir: -1, bob: 2.4, leg: .92 },
+  ];
   const coreWalk = [
     { lane: 20, size: 84, dur: 28, delay: -6, op: .82, dir: 1,  bob: 1.8, leg: .72, color: '#a5d65a' },
     { lane: 68, size: 52, dur: 21, delay: -11, op: .66, dir: -1, bob: 1.5, leg: .6,  color: '#76b900' },
@@ -233,10 +247,17 @@
     { lane: 78, size: 18, dur: 3.2, delay: -2, op: .5,  dir: 1,  bob: .44, color: '#8ccb2e' },
     { lane: 14, size: 16, dur: 2.6, delay: -1, op: .52, dir: -1, bob: .4,  color: '#a5d65a' },
     { lane: 50, size: 14, dur: 2.3, delay: -3, op: .48, dir: 1,  bob: .36, color: '#c9ef7e' },
-  ].filter((_, i) => small ? i < 5 : true);
+    { lane: 10, size: 9,  dur: 12, delay: -8, op: .52, dir: 1,  bob: .7, color: '#c9ef7e', compact: true },
+    { lane: 29, size: 11, dur: 15, delay: -4, op: .48, dir: -1, bob: .8, color: '#a5d65a' },
+    { lane: 73, size: 8,  dur: 11, delay: -6, op: .5,  dir: 1,  bob: .7, color: '#c9ef7e', compact: true },
+    { lane: 91, size: 12, dur: 14, delay: -9, op: .46, dir: -1, bob: .8, color: '#8ccb2e', compact: true },
+    { lane: 7,  size: 96, dur: 41, delay: -24, op: .57, dir: -1, bob: 2.2, leg: .86, color: '#a5d65a' },
+    { lane: 76, size: 64, dur: 35, delay: -16, op: .5, dir: 1, bob: 1.9, leg: .78, color: '#76b900' },
+  ].filter((c, i) => !small || i < 5 || c.compact);
   // defer the decorative swarm DOM build off the critical path → smoother first paint / input
   const buildSwarms = () => {
-    buildWalkers($('#swarm'), small ? [...heroWalk.slice(0, 9), ...heroWalk.slice(-3)] : heroWalk);
+    const heroBase = small ? [...heroWalk.slice(0, 9), ...heroWalk.slice(-3)] : heroWalk;
+    buildWalkers($('#swarm'), [...heroBase, ...heroAccents.filter(c => !small || c.compact)]);
     buildWalkers($('#coreWalk'), coreWalk);
   };
   if ('requestIdleCallback' in window) requestIdleCallback(buildSwarms, { timeout: 700 });

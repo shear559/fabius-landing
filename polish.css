@@ -28,19 +28,21 @@
 .shape-right{right:-26%;top:0;transform:rotate(26deg)}
 .showcase .wrap{position:relative;z-index:1}
 
+@media(min-width:901px){
+  :root{--desktop-display:clamp(64px,6vw,110px);--desktop-heading:clamp(38px,3.2vw,48px);--desktop-lead:18px;--desktop-gallery-heading:clamp(46px,4vw,60px)}
+  .hero-title{font-size:var(--desktop-display)}
+  .hero-sub{max-width:760px;font-size:var(--desktop-lead)}
+  .hero-compat{max-width:760px}
+  .sec-title{font-size:var(--desktop-heading)}
+  .sec-lede{font-size:var(--desktop-lead)}
+  .show-head h2{font-size:var(--desktop-gallery-heading)}
+}
 @media(min-width:1600px){
-  .hero-sub{max-width:900px;font-size:23px}
-  .hero-compat{max-width:900px;font-size:18px}
-  .sec-title{font-size:clamp(48px,3.2vw,64px)}
-  .sec-head{max-width:1080px}.sec-lede{font-size:21px}
-  .rescard{padding:28px;gap:22px}.rescard b{font-size:21px}.rescard p{font-size:16px}
-  .sys-sub{max-width:1000px}.sys-h3{font-size:32px}.sys-p{font-size:18px}
-  .cap-outcomes h3{font-size:26px}.cap-outcomes p{font-size:19px}
-  .cap-outcomes{gap:48px}
-  .gate-fig,.math-work{padding:36px}.work-q{font-size:21px}
-  .work-steps li,.work-concl{font-size:18px}.ws-v{font-size:16px}
-  .fig-title{font-size:20px}.fig-note{font-size:15px}
-  .show-head h2{font-size:76px}.show-head>p{font-size:16px;max-width:430px}
+  .sec-head{max-width:1000px}
+  .rescard{padding:28px;gap:22px}
+  .sys-sub{max-width:900px}
+  .gate-fig,.math-work{padding:36px}
+  .show-head>p{max-width:360px}
 }
 @media(max-width:650px){
   .hero-title{font-size:clamp(40px,12vw,56px)}
