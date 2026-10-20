@@ -559,9 +559,9 @@ img{display:block;max-width:100%}
 
 /* ── reveal — silky expo rise with a whisper of blur + orchestrated stagger ── */
 .reveal{
-  opacity:0;transform:translateY(30px) scale(.986);filter:blur(7px);
-  transition:opacity .92s var(--ease-out),transform .92s var(--ease-out),filter .92s var(--ease-out);
-  transition-delay:calc(var(--reveal-i,0) * 85ms);will-change:opacity,transform,filter
+  opacity:0;transform:translateY(20px);
+  transition:opacity .7s var(--ease-out),transform .7s var(--ease-out);
+  transition-delay:calc(var(--reveal-i,0) * 85ms);will-change:opacity,transform
 }
 .reveal.in{opacity:1;transform:none;filter:none}
 .reveal.done{will-change:auto}
@@ -860,6 +860,7 @@ img{display:block;max-width:100%}
 /* Keep the emblem filter-free: SVG drop shadows paint a corner artifact in WebKit. */
 :root{--emblem-near:#94d63c99;--emblem-far:#76b90045}
 .brand-mark{filter:none}
+
 
 /* Continuous parallel waves across the hero and demonstration backgrounds. */
 :root{--contour-art:url('/assets/fabius-slalom-lines.svg');--contour-opacity:.14}

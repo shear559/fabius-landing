@@ -20,7 +20,7 @@
       "source": "swarm/source.zip",
       "files": 23,
       "walkthrough_steps": 6,
-      "source_sha256": "0a93408dd0be3b0fe4424a7e5a3ba762b8a4c6ee502585b6a52523ec8c7c8474"
+      "source_sha256": "d8aa2c9b0f37b6024c231f1d0da9cf39fb8ff28e011851ac9a60dff13a7c711b"
     },
     "memory": {
       "title": "Continuum / Project memory",
@@ -38,7 +38,8 @@
       "source": "code/source.zip",
       "files": 8,
       "walkthrough_steps": 6,
-      "source_sha256": "93aaa5f154575c7718b4ed5e628e81c8c39847214ef28ec5c8297dc7f77c7d43"
+      "source_sha256": "04b0ffc1cbbc9e548482b9521e599691b9c57e3f302a407a1f02e76a49328ddb"
     }
-  }
+  },
+  "presentation_updated": "2026-10-20"
 }

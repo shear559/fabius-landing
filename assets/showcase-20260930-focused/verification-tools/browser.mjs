@@ -5,7 +5,7 @@ import path from 'node:path';
 const {default:pw}=await import(process.env.PLAYWRIGHT_MODULE||'playwright');
 const origin=process.argv[2]||'http://127.0.0.1:8814',out=path.resolve(process.argv[3]||'browser-results'),base='/assets/showcase-20260930-focused/';
 const gallery=JSON.parse(await readFile(new URL('../gallery.json',import.meta.url),'utf8'));
-const report={origin,date:new Date().toISOString(),runs:[],limitations:'Chromium and WebKit on macOS. 390 CSS pixel mobile emulation, not a physical phone. Authored fixtures; no live model calls or cross-session preview memory.'};await mkdir(out,{recursive:true});
+const report={origin,date:new Date().toISOString(),runs:[],limitations:`${process.env.ENGINES||'chromium,webkit'} on ${process.platform}. Viewport emulation, not physical devices. Authored gallery fixtures; no live model calls or cross-session gallery memory.`};await mkdir(out,{recursive:true});
 for(const engine of (process.env.ENGINES||'chromium,webkit').split(',')){
  const browser=await pw[engine].launch();try{for(const width of (process.env.WIDTHS||'390,1440').split(',').map(Number)){
  const context=await browser.newContext({viewport:{width,height:900},deviceScaleFactor:width===390?2:1,isMobile:width===390,reducedMotion:'reduce'}),page=await context.newPage(),errors=[],http=[];
