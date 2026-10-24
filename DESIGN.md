@@ -46,3 +46,5 @@ Bands: paper hero with painted orbital instruments → green capability illustra
 | One section grammar | Monospace eyebrow, proportional headline, numbered figures and restrained corners | Flattening the technical content or deleting working demonstrations |
 
 The four-phase scene is an illustration. It cycles only while visible and unpaused; manual phase selection freezes the sequence. Pause/resume preserves elapsed time. The shared pause state covers CSS, SMIL and the scene clock. No new animation dependency or external asset service is introduced. — Codex
+
+Verification: production desktop inspection passed for all four demo selectors, task selection, manual phase selection, shared motion pause and offscreen scene pause. The same-origin browser fixture checked narrow phone, tablet and wide-desktop layouts with no horizontal page overflow or broken images; mobile navigation, installation tabs and FAQ expansion worked. Manual stage controls use a two-column touch layout on phones. Physical iPhone/Safari and native reduced-motion emulation were not covered. — Codex, 2026-10-24

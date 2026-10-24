@@ -285,9 +285,9 @@
   .route-phase-readout>span { font-size:.625rem; padding-top:.375rem; }
   .route-phase-readout b { font-size:var(--note-size); }
   .route-phase-readout p { font-size:.8125rem; }
-  .route-phases { gap:.25rem; }
-  .route-phases button { padding:.75rem .375rem; font-size:.625rem; }
-  .route-phases button span { font-size:.625rem; }
+  .route-phases { grid-template-columns:repeat(2,minmax(0,1fr)); gap:.375rem; }
+  .route-phases button { flex-direction:row; align-items:center; padding:.75rem .5rem; font-size:var(--note-size); }
+  .route-phases button span { font-size:.6875rem; }
   .route-story h3 { margin-bottom:var(--space-3); }
   .route-story li p { font-size:1rem; }
   .route-disclosure p { font-size:var(--note-size); }

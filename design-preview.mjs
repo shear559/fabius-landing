@@ -9,7 +9,7 @@ function inspect() {
   if (!doc?.querySelector('.launch-band')) return;
   const overflow = doc.documentElement.scrollWidth > doc.documentElement.clientWidth;
   const broken = [...doc.images].filter(image => image.complete && !image.naturalWidth).length;
-  result.textContent = `${doc.documentElement.clientWidth}px viewport · ${overflow ? 'HORIZONTAL OVERFLOW' : 'no page overflow'} · ${broken} broken images · ${doc.querySelectorAll('main > section').length} sections`;
+  result.textContent = `${doc.defaultView.innerWidth}px CSS viewport · ${overflow ? 'HORIZONTAL OVERFLOW' : 'no page overflow'} · ${broken} broken images · ${doc.querySelectorAll('main > section').length} sections`;
 }
 width.addEventListener('change', () => { frame.style.width = `${width.value}px`; requestAnimationFrame(() => { navigate(); inspect(); }); });
 section.addEventListener('change', navigate);
