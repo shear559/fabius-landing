@@ -1,3 +1,16 @@
 # repo-internal files that the site does not need to serve
 .gitleaksignore
 AGENTS.md
+
+# Authoring and verification files are not part of the public website.
+README.md
+DESIGN.md
+.github
+_checks
+_implementation
+design-preview.html
+design-preview.css
+design-preview.mjs
+**/*.map
+assets/showcase-20260930-focused
+assets/gallery

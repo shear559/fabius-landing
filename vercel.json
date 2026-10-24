@@ -4,26 +4,6 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/assets/showcase-20260930-focused/math",
-      "destination": "/assets/showcase-20260930-focused/math/preview",
-      "permanent": false
-    },
-    {
-      "source": "/assets/showcase-20260930-focused/swarm",
-      "destination": "/assets/showcase-20260930-focused/swarm/preview",
-      "permanent": false
-    },
-    {
-      "source": "/assets/showcase-20260930-focused/memory",
-      "destination": "/assets/showcase-20260930-focused/memory/preview",
-      "permanent": false
-    },
-    {
-      "source": "/assets/showcase-20260930-focused/code",
-      "destination": "/assets/showcase-20260930-focused/code/preview",
-      "permanent": false
-    },
-    {
       "source": "/build-study",
       "destination": "/#trials",
       "permanent": true
@@ -61,6 +41,10 @@
         {
           "key": "Access-Control-Allow-Origin",
           "value": "https://fabius-landing.vercel.app"
+        },
+        {
+          "key": "Cross-Origin-Resource-Policy",
+          "value": "same-origin"
         }
       ]
     },
@@ -78,7 +62,7 @@
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",
-          "value": "*"
+          "value": "https://fabius-landing.vercel.app"
         }
       ]
     },
@@ -87,44 +71,51 @@
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",
-          "value": "*"
+          "value": "https://fabius-landing.vercel.app"
         }
       ]
     },
     {
-      "source": "/assets/showcase-20260930-focused/(.*)",
+      "source": "/(.*)\\.(css|js|mjs|woff2?|ttf|otf)",
       "headers": [
         {
-          "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "src": "/((?!robots\\.txt$|sitemap\\.xml$).*)",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[gG][pP][tT][bB][oO][tT]|[oO][aA][iI]\\-[sS][eE][aA][rR][cC][hH][bB][oO][tT]|[cC][hH][aA][tT][gG][pP][tT]\\-[uU][sS][eE][rR]|[cC][lL][aA][uU][dD][eE][bB][oO][tT]|[cC][lL][aA][uU][dD][eE]\\-[uU][sS][eE][rR]|[cC][lL][aA][uU][dD][eE]\\-[sS][eE][aA][rR][cC][hH][bB][oO][tT]|[aA][nN][tT][hH][rR][oO][pP][iI][cC]\\-[aA][iI]|[cC][cC][bB][oO][tT]|[pP][eE][rR][pP][lL][eE][xX][iI][tT][yY][bB][oO][tT]|[pP][eE][rR][pP][lL][eE][xX][iI][tT][yY]\\-[uU][sS][eE][rR]|[gG][oO][oO][gG][lL][eE]\\-[eE][xX][tT][eE][nN][dD][eE][dD]|[aA][pP][pP][lL][eE][bB][oO][tT]\\-[eE][xX][tT][eE][nN][dD][eE][dD]|[mM][eE][tT][aA]\\-[eE][xX][tT][eE][rR][nN][aA][lL][aA][gG][eE][nN][tT]|[mM][eE][tT][aA]\\-[eE][xX][tT][eE][rR][nN][aA][lL][fF][eE][tT][cC][hH][eE][rR]|[aA][mM][aA][zZ][oO][nN][bB][oO][tT]|[cC][oO][hH][eE][rR][eE]\\-[aA][iI]|[cC][oO][hH][eE][rR][eE]\\-[tT][rR][aA][iI][nN][iI][nN][gG]\\-[dD][aA][tT][aA]\\-[cC][rR][aA][wW][lL][eE][rR]|[dD][iI][fF][fF][bB][oO][tT]|[yY][oO][uU][bB][oO][tT]|[aA][iI]2[bB][oO][tT]|[aA][iI]2[bB][oO][tT]\\-[dD][oO][lL][mM][aA]|[tT][iI][mM][pP][iI][bB][oO][tT]|[pP][aA][nN][gG][aA][eE][aA]|[sS][cC][rR][aA][pP][yY]|[iI][mM][aA][gG][eE][sS][iI][fF][tT][bB][oO][tT]|[aA][hH][rR][eE][fF][sS][bB][oO][tT]|[sS][eE][mM][rR][uU][sS][hH][bB][oO][tT]|[dD][aA][tT][aA][fF][oO][rR][sS][eE][oO][bB][oO][tT]|[mM][jJ]12[bB][oO][tT]|[dD][oO][tT][bB][oO][tT]|[bB][yY][tT][eE][sS][pP][iI][dD][eE][rR]|[pP][eE][tT][aA][lL][bB][oO][tT]|[bB][lL][eE][xX][bB][oO][tT]|[sS][eE][rR][pP][sS][tT][aA][tT][bB][oO][tT]).*"
+        }
+      ],
+      "mitigate": {
+        "action": "deny"
+      }
+    },
+    {
+      "src": "/(assets/.*|[^/]+\\.(css|js|mjs|svg|webmanifest))",
+      "has": [
+        {
+          "type": "header",
+          "key": "sec-fetch-site",
+          "value": "cross-site"
         },
         {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
+          "type": "header",
+          "key": "sec-fetch-dest",
+          "value": "image|style|script|font|audio|video|track|object|embed|worker|sharedworker|serviceworker|manifest"
         }
-      ]
-    },
-    {
-      "source": "/assets/showcase-20260930-focused/(math|swarm|memory|code)/(.*)",
-      "headers": [
-        {
-          "key": "Content-Security-Policy",
-          "value": "default-src 'none'; script-src 'self' https://fabius-landing.vercel.app; style-src 'self' https://fabius-landing.vercel.app 'unsafe-inline'; img-src 'self' https://fabius-landing.vercel.app data: blob:; font-src 'self' https://fabius-landing.vercel.app; connect-src 'none'; frame-ancestors 'self'; base-uri 'none'; form-action 'none'; sandbox allow-scripts allow-forms allow-downloads"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "SAMEORIGIN"
-        }
-      ]
-    },
-    {
-      "source": "/assets/gallery/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
-        }
-      ]
+      ],
+      "mitigate": {
+        "action": "deny"
+      }
     }
   ]
 }

@@ -1,0 +1,29 @@
+# Fabius landing: design and content protection
+
+Owner request, 2026-10-24: apply Averya's anti-copy approach to the Fabius website.
+
+The trust boundary is the public request to the deployment. The assets are the site's copy, runtime CSS/JS, fonts and artwork. The intended controls deter identifiable scraping and prevent another website from embedding runtime assets directly. They do not make a public website confidential.
+
+## Implementation
+
+- Two additive `vercel.json` mitigation routes deny the named AI/scraping agents mirrored from Averya and cross-site browser subresource requests. Both leave normal navigation and same-origin loading alone. Crawler policy and sitemap remain retrievable.
+- `Cross-Origin-Resource-Policy: same-origin`, consistent CORS and asset `X-Robots-Tag: noindex` supplement the existing CSP and frame denial.
+- `.vercelignore` excludes internal documentation/checks, the local responsive fixture, source maps and archived showcase sources. Sources remain in Git. No current public page references these archives.
+- No selection/context-menu blocking, DevTools detection, tracking or visual changes. Installation copy controls retain their original behavior.
+
+The Vercel account API returned `Seawall Config not found` for reads and a scoped PATCH. Automatic approval review rejected a whole-firewall PUT because existing rules could not be verified and preserved. No account firewall configuration was replaced. The deployment routes are an additive alternative, versioned and reversible with the website; they are a maintained user-agent list, not Vercel's managed AI-bot classification.
+
+## Limits
+
+User agents and Fetch Metadata can be spoofed by non-browser clients. Visible content and browser-delivered assets can be saved. `shear559/fabius-landing` is public; the source remains readable through GitHub. Repository visibility was not changed. Conventional search agents and social preview fetches are intentionally allowed.
+
+## Verification and rollback
+
+Run `node --test _checks/protection.test.mjs`. Set `PROTECTION_BASE_URL` to the deployed origin for real HTTP status/header checks. Verify the canonical page, images, motion control, install tabs and command copying in a browser after deployment. Roll back the website commit normally if needed; no account firewall rollback is required.
+
+Sources checked on 2026-10-24:
+- Averya's `_implementation/asset-protection/PROTECTION.md` and current `robots.txt`/`vercel.json`.
+- https://vercel.com/docs/project-configuration/vercel-json
+- https://vercel.com/changelog/web-application-firewall-control-now-available-with-vercel-json
+
+Verification result is recorded in the commit once the live checks have run.

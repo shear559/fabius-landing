@@ -22,8 +22,8 @@ The previous benchmark reports, comparison galleries and score archives are remo
 `polish.css`, `motion.mjs`: compact-phone layout and the shared motion preference.
 `experience.css`, `experience.mjs`: illustrated sections and the interactive routing examples.
 `refinement.css`, `choreography.mjs`: the granular material and secondary color system, standalone foreground scene and routing scene clock.
-`design-preview.html`, `design-preview.css`, `design-preview.mjs`: a noindex, same-origin responsive verification fixture for the public page. It leaves production CSP and framing protection intact.
-`assets/gallery/`, `assets/showcase-20260930-focused/`: archived demonstration assets. The landing page no longer loads or links the four-example gallery, at Ariel’s request.
+`design-preview.html`, `design-preview.css`, `design-preview.mjs`: a local responsive verification fixture, excluded from deployment. It leaves production CSP and framing protection intact.
+`assets/gallery/`, `assets/showcase-20260930-focused/`: archived demonstration assets, retained in Git but excluded from deployment. The landing page no longer loads or links the four-example gallery, at Ariel’s request.
 `DESIGN.md`: brand and motion constraints.
 
 ## Verification
@@ -31,6 +31,12 @@ The previous benchmark reports, comparison galleries and score archives are remo
 Serve the root with a static HTTP server and exercise the model marquee, pause control, installation controls, navigation and routing example at phone and desktop widths. Check reduced motion, keyboard focus, console, network, FAQ/schema parity and local links. Apply `vercel.json` headers during browser testing.
 
 After pushing, verify the deployment commit and canonical domain. Keep the whitepaper byte-identical to the corresponding product source. Source downloads have no build step and run without model credentials.
+
+## Design and content protection
+
+Owner request, 2026-10-24: mirror Averya’s protection against automated reuse. Deployment routes deny the named AI/scraping user agents in `robots.txt` and cross-site subresource requests for runtime assets. Same-origin use, top-level navigation, search crawling and install-command copying remain available. CORP, same-origin CORS, framing restrictions and asset `noindex` headers add browser-level restrictions. Internal notes, local previews, source maps and retired showcase sources are excluded from the public deployment.
+
+Run `node --test _checks/protection.test.mjs` for the matching and deploy-surface checks. These controls are not authentication: headers can be spoofed, visitors can save visible content, and this landing repository remains public. No repository visibility or existing account firewall settings are changed. See `_implementation/content-protection.md` for verification and rollback.
 
 ## Licence
 
