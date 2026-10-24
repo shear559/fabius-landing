@@ -2,19 +2,21 @@
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
 const control = document.querySelector('#mqPause');
 const toggle = document.querySelector('#motionToggle');
+const stageToggle = document.querySelector('#stageMotionToggle');
+const toggles = [toggle, stageToggle].filter(Boolean);
 const marquee = document.querySelector('#marquee');
 const regions = [...document.querySelectorAll('[data-motion-region], .showcase, .system, .core')];
-const animatedSVGs = [...document.querySelectorAll('.shape-object, #sysmapSvg, .route-visual')];
+const animatedSVGs = [...document.querySelectorAll('#sysmapSvg, .route-visual, .stage-artwork')];
 let userPaused = control?.getAttribute('aria-pressed') === 'true';
 function sync() {
   const paused = reduced.matches || document.hidden || userPaused;
   document.body.dataset.motion = paused ? 'paused' : 'running';
   marquee?.classList.toggle('paused', userPaused);
-  toggle?.setAttribute('aria-pressed', String(userPaused));
-  if (toggle) {
-    toggle.querySelector('.motion-label').textContent = userPaused ? 'Resume motion' : 'Pause motion';
-    toggle.querySelector('.motion-symbol').textContent = userPaused ? '▷' : 'Ⅱ';
-  }
+  toggles.forEach(button => {
+    button.setAttribute('aria-pressed', String(userPaused));
+    button.querySelector('.motion-label').textContent = userPaused ? 'Resume motion' : 'Pause motion';
+    button.querySelector('.motion-symbol').textContent = userPaused ? '▷' : 'Ⅱ';
+  });
   control?.setAttribute('aria-label', userPaused ? 'Resume page motion' : 'Pause page motion');
   animatedSVGs.forEach(svg => {
     const offscreen = svg.closest('[data-motion-offscreen="true"]');
@@ -27,11 +29,11 @@ if (control) new MutationObserver(() => {
   userPaused = control.getAttribute('aria-pressed') === 'true';
   sync();
 }).observe(control, { attributes:true, attributeFilter:['aria-pressed'] });
-toggle?.addEventListener('click', () => {
+toggles.forEach(button => button.addEventListener('click', () => {
   userPaused = !userPaused;
   control?.setAttribute('aria-pressed', String(userPaused));
   sync();
-});
+}));
 reduced.addEventListener('change', sync);
 document.addEventListener('visibilitychange', sync);
 if ('IntersectionObserver' in window) {

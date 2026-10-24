@@ -44,12 +44,14 @@ if (tablist && panel) {
       tab.tabIndex = i === index ? 0 : -1;
     });
     panel.setAttribute('aria-labelledby', tabs[index].id);
+    panel.dataset.route = tabs[index].dataset.route;
     document.querySelector('#route-request').textContent = route.request;
     document.querySelector('#route-output').textContent = route.output;
     route.skills.forEach(([name, role], i) => {
       document.querySelector(`#route-name-${i}`).textContent = name;
       document.querySelector(`#route-role-${i}`).textContent = role;
       document.querySelector(`#route-icon-${i}`).setAttribute('href', `#bug-${name}`);
+      document.querySelector(`#route-icon-${i}`).closest('.route-node').dataset.skill = name;
     });
     const items = panel.querySelectorAll('#route-steps li');
     route.steps.forEach(([title, description], i) => {

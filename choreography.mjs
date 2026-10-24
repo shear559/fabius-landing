@@ -88,8 +88,8 @@ if (panel) {
 }
 
 // Small perspective response on precise pointers; artwork only, never text.
-const hero = document.querySelector('.hero');
-const instruments = hero?.querySelector('.hero-instruments');
+const hero = document.querySelector('.fabius-stage');
+const instruments = hero?.querySelector('.stage-scene');
 const precisePointer = matchMedia('(hover: hover) and (pointer: fine)');
 if (hero && instruments) {
   let frame = null;

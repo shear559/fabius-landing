@@ -48,3 +48,9 @@ Bands: paper hero with painted orbital instruments → green capability illustra
 The four-phase scene is an illustration. It cycles only while visible and unpaused; manual phase selection freezes the sequence. Pause/resume preserves elapsed time. The shared pause state covers CSS, SMIL and the scene clock. No new animation dependency or external asset service is introduced. — Codex
 
 Verification: production desktop inspection passed for all four demo selectors, task selection, manual phase selection, shared motion pause and offscreen scene pause. The same-origin browser fixture checked narrow phone, tablet and wide-desktop layouts with no horizontal page overflow or broken images; mobile navigation, installation tabs and FAQ expansion worked. Manual stage controls use a two-column touch layout on phones. Physical iPhone/Safari and native reduced-motion emulation were not covered. — Codex, 2026-10-24
+
+## 2026-10-24 — standalone animation and a connected secondary palette
+
+Ariel's follow-up explicitly moves the Fabius animation out of the background into its own presentation. Remove the wandering background beetles, edge instruments and animated gallery contours. Present the original Fabius artwork in a bounded foreground scene with its own caption and motion control. Static contour lines may support the canvas. Preserve the original banner, model logo field and interactive routing example.
+
+Extend the reference-inspired vocabulary with original outlined geometric objects, offset illustration panels and small orbital marks. The additional palette has fixed roles: granular green = action and execution; sky blue = context and connected capabilities; apricot = design and verification. Recur these colors in the scene, capability illustrations, demo icons, research/installation details and closing artwork. Reading surfaces remain paper; primary actions remain green. Do not copy Pluto's characters, illustrations, UI or copy. — Codex
