@@ -1,4 +1,6 @@
 /* Platform choices and model marks share the approved Fabius material system. */
+.tab-panel > p.panel-foot { display:block; overflow-wrap:anywhere; }
+.tab-panel > p.panel-foot a { text-decoration:underline; text-underline-offset:.2em; }
 .hero-field {
   --platform-white:#fff;
   --platform-line:var(--paper-line);
