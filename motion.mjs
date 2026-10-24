@@ -1,22 +1,45 @@
-// Keep decorative contours in step with the original marquee's pause control.
-const shapes=[...document.querySelectorAll('.shape-object')];
-const reduced=matchMedia('(prefers-reduced-motion: reduce)');
-const control=document.querySelector('#mqPause');
-function sync(){
-  const paused=reduced.matches||document.hidden||control?.getAttribute('aria-pressed')==='true';
-  shapes.forEach(svg=>{
-    if(paused||svg.dataset.offscreen==='true')svg.pauseAnimations();
+// One motion preference for the original marquee and every decorative scene.
+const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+const control = document.querySelector('#mqPause');
+const toggle = document.querySelector('#motionToggle');
+const marquee = document.querySelector('#marquee');
+const regions = [...document.querySelectorAll('[data-motion-region], .showcase, .system, .core')];
+const animatedSVGs = [...document.querySelectorAll('.shape-object, #sysmapSvg')];
+let userPaused = control?.getAttribute('aria-pressed') === 'true';
+function sync() {
+  const paused = reduced.matches || document.hidden || userPaused;
+  document.body.dataset.motion = paused ? 'paused' : 'running';
+  marquee?.classList.toggle('paused', userPaused);
+  toggle?.setAttribute('aria-pressed', String(userPaused));
+  if (toggle) {
+    toggle.querySelector('.motion-label').textContent = userPaused ? 'Resume motion' : 'Pause motion';
+    toggle.querySelector('.motion-symbol').textContent = userPaused ? '▷' : 'Ⅱ';
+  }
+  control?.setAttribute('aria-label', userPaused ? 'Resume page motion' : 'Pause page motion');
+  animatedSVGs.forEach(svg => {
+    const offscreen = svg.closest('[data-motion-offscreen="true"]');
+    if (paused || offscreen) svg.pauseAnimations();
     else svg.unpauseAnimations();
   });
 }
-if(control)new MutationObserver(sync).observe(control,{attributes:true,attributeFilter:['aria-pressed']});
-reduced.addEventListener('change',sync);
-document.addEventListener('visibilitychange',sync);
-if('IntersectionObserver' in window){
-  const observer=new IntersectionObserver(entries=>{
-    entries.forEach(({target,isIntersecting})=>target.dataset.offscreen=String(!isIntersecting));
+if (control) new MutationObserver(() => {
+  userPaused = control.getAttribute('aria-pressed') === 'true';
+  sync();
+}).observe(control, { attributes:true, attributeFilter:['aria-pressed'] });
+toggle?.addEventListener('click', () => {
+  userPaused = !userPaused;
+  control?.setAttribute('aria-pressed', String(userPaused));
+  sync();
+});
+reduced.addEventListener('change', sync);
+document.addEventListener('visibilitychange', sync);
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(({target,isIntersecting}) => {
+      target.dataset.motionOffscreen = String(!isIntersecting);
+    });
     sync();
-  });
-  shapes.forEach(svg=>observer.observe(svg));
+  }, { rootMargin:'100px' });
+  regions.forEach(region => observer.observe(region));
 }
 sync();

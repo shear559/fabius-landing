@@ -4,6 +4,9 @@ The product website for [Fabius](https://github.com/shear559/fabius), created by
 
 ## Experience
 
+- Original orbital beetle artwork frames the hero; illustrated capability cards and a forest-green closing section extend the existing identity.
+- A keyboard-accessible task chooser explains example website, research and automation routes. These are authored illustrations, not live agent runs.
+- A shared motion control pauses the marquee, orbital artwork, beetles and system animation. Motion also respects reduced-motion preferences, tab visibility and offscreen sections.
 - The original beetle banner and two moving rows present 36 model families with their logos. A pause control and reduced-motion mode keep the list accessible.
 - The original workflow and skill architecture explain how responsibilities fit together.
 - The original routing charts, value inequality and worked example explain proportional effort, tool costs, dependencies and context selection. Their inputs and assumptions are illustrative, not benchmark results.
@@ -18,6 +21,7 @@ The previous benchmark reports, comparison galleries and score archives are remo
 
 `index.html`, `styles.css`, `main.js`: the main page and original brand system.
 `polish.css`, `motion.mjs`: native-resolution gallery frames, compact-phone layout and subtle gallery-only contours.
+`experience.css`, `experience.mjs`: illustrated sections and the interactive routing examples.
 `assets/gallery/`: shared gallery controls and styles.
 `assets/showcase-20260930-focused/`: the four preserved working examples and their checks.
 `DESIGN.md`: brand and motion constraints.
