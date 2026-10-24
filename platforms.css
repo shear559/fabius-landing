@@ -76,6 +76,7 @@
 .platform-name { display:flex; flex-direction:column; gap:.375rem; min-width:0; }
 .platform-name small { color:var(--platform-muted); font:500 var(--platform-label)/1.3 var(--mono); letter-spacing:.1em; }
 .platform-name strong { font-size:1.25rem; line-height:1.15; font-weight:650; letter-spacing:-.035em; }
+.platform-name .platform-evidence { color:var(--platform-muted); font-size:var(--platform-label); font-weight:400; font-style:normal; line-height:1.4; }
 .platform-card-foot { display:flex; align-items:center; justify-content:space-between; font-size:0; }
 .platform-card-foot svg { flex:none; width:1.25rem; height:1.25rem; fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; transition:transform var(--platform-speed) var(--scene-ease); }
 .platform-card:active { transform:scale(.99); }
@@ -125,7 +126,7 @@
   .platform-card-foot { grid-column:1/-1; }
   .platform-portable { grid-template-columns:minmax(12rem,1fr) minmax(0,2.6fr); gap:.75rem 2rem; margin-block:2rem 2.5rem; padding-top:2rem; }
   .portable-intro { grid-row:1/3; align-self:center; }
-  .portable-list { display:flex; flex-wrap:wrap; justify-content:flex-end; }
+  .portable-list { grid-template-columns:repeat(3,minmax(0,1fr)); }
   .portable-list a { padding:.625rem .75rem; }
   .portable-setup { justify-self:end; min-height:2.75rem; }
   .model-field { padding-top:2rem; }

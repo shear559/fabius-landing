@@ -47,7 +47,7 @@
 <script type="module" src="/experience.mjs?v=2026-10-24d"></script>
 <link rel="stylesheet" href="/refinement.css?v=2026-10-24e" />
 <script type="module" src="/choreography.mjs?v=2026-10-24d"></script>
-<link rel="stylesheet" href="/platforms.css?v=2026-10-24a" />
+<link rel="stylesheet" href="/platforms.css?v=2026-10-24b" />
 <link rel="preload" href="/assets/fonts/rubik/Rubik-Variable.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 <body>
@@ -194,27 +194,28 @@
         <ul class="platform-grid" aria-label="Plugin installation options">
           <li><a class="platform-card platform-claude" href="#install" data-install-target="tab-claude" aria-label="Claude Code — view plugin installation">
             <span class="platform-icon"><img src="/assets/brands/anthropic.png" alt="" width="64" height="64" decoding="async" /></span>
-            <span class="platform-name"><small>ANTHROPIC</small><strong>Claude Code</strong></span>
+            <span class="platform-name"><small>ANTHROPIC</small><strong>Claude Code</strong><em class="platform-evidence">Install check recorded</em></span>
             <span class="platform-card-foot">View installation <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span>
           </a></li>
-          <li><a class="platform-card platform-codex" href="#install" data-install-target="tab-codex" aria-label="Codex — view plugin installation">
+          <li><a class="platform-card platform-codex" href="#install" data-install-target="tab-codex" aria-label="Codex CLI — view plugin installation">
             <span class="platform-icon"><img src="/assets/brands/openai.png" alt="" width="64" height="64" decoding="async" /></span>
-            <span class="platform-name"><small>OPENAI</small><strong>Codex</strong></span>
+            <span class="platform-name"><small>OPENAI</small><strong>Codex CLI</strong><em class="platform-evidence">Explicit task checked</em></span>
             <span class="platform-card-foot">View installation <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span>
           </a></li>
           <li><a class="platform-card platform-grok" href="#install" data-install-target="tab-grok" aria-label="Grok Build — view plugin installation">
             <span class="platform-icon"><img src="/assets/brands/xai.png" alt="" width="64" height="64" decoding="async" /></span>
-            <span class="platform-name"><small>XAI</small><strong>Grok Build</strong></span>
+            <span class="platform-name"><small>XAI</small><strong>Grok Build</strong><em class="platform-evidence">Install check recorded</em></span>
             <span class="platform-card-foot">View installation <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span>
           </a></li>
         </ul>
         <div class="platform-portable">
-          <div class="portable-intro"><span class="platform-kicker">02 / PORTABLE CORE</span><h3>More places to work.</h3><p>Manual instruction-file setup.</p></div>
+          <div class="portable-intro"><span class="platform-kicker">02 / PORTABLE CORE</span><h3>More places to work.</h3><p>Manual instruction-file setup.<br />No Fabius host tests recorded for these apps.</p></div>
           <ul class="portable-list" aria-label="Portable instruction setup examples">
             <li><a href="#install" data-install-target="tab-any"><img src="/assets/brands/cursor.png" alt="" width="32" height="32" decoding="async" /><span>Cursor</span></a></li>
             <li><a href="#install" data-install-target="tab-any"><img src="/assets/brands/cline.png" alt="" width="32" height="32" decoding="async" /><span>Cline</span></a></li>
             <li><a href="#install" data-install-target="tab-any"><img src="/assets/brands/github.png" alt="" width="32" height="32" decoding="async" /><span>GitHub Copilot</span></a></li>
             <li><a href="#install" data-install-target="tab-any"><img src="/assets/brands/gemini.svg" alt="" width="32" height="32" decoding="async" /><span>Gemini CLI</span></a></li>
+            <li><a href="#install" data-install-target="tab-any"><img src="/assets/brands/antigravity-20261024.svg" alt="" width="32" height="32" decoding="async" /><span>Antigravity</span></a></li>
             <li><a href="#install" data-install-target="tab-any"><img src="/assets/brands/opencode.png" alt="" width="32" height="32" decoding="async" /><span>OpenCode</span></a></li>
           </ul>
           <a class="portable-setup" href="#install" data-install-target="tab-any">Setup &amp; permissions <span aria-hidden="true">↗</span></a>
@@ -523,7 +524,7 @@
           <div class="tabs" role="tablist" aria-label="Choose how your app loads Fabius">
             <button class="tab" role="tab" id="tab-any" aria-selected="true" aria-controls="panel-any" type="button">Your LLM</button>
             <button class="tab" role="tab" id="tab-claude" aria-selected="false" aria-controls="panel-claude" tabindex="-1" type="button">Claude Code</button>
-            <button class="tab" role="tab" id="tab-codex" aria-selected="false" aria-controls="panel-codex" tabindex="-1" type="button">Codex</button>
+            <button class="tab" role="tab" id="tab-codex" aria-selected="false" aria-controls="panel-codex" tabindex="-1" type="button">Codex CLI</button>
             <button class="tab" role="tab" id="tab-grok" aria-selected="false" aria-controls="panel-grok" tabindex="-1" type="button">Grok Build</button>
           </div>
           <span class="terminal-state"><i></i> 15 skills · no build</span>
@@ -555,7 +556,7 @@ grok plugin enable fabius">
           <div class="panel-foot"><span>Grok Build supports the Claude Code plugin layout. Verify the installed version with <code>grok plugin details fabius</code>, then start a fresh session. Pinned releases require an explicit version change to update.</span><button class="copy" type="button" aria-label="Copy the Grok Build install commands">Copy</button></div>
         </div>
         <div class="tab-panel" role="tabpanel" id="panel-any" aria-labelledby="tab-any" data-copy="curl -fsSL https://raw.githubusercontent.com/shear559/fabius/main/AGENTS.md">
-          <p class="panel-foot">Use an instruction-following LLM through an app that loads standing instructions or a system prompt. The portable core is in AGENTS.md; load the router and relevant specialist contracts for the full method. Plugin setup tabs provide app-specific shortcuts.</p>
+          <p class="panel-foot">Use an instruction-following LLM through an app that loads standing instructions or a system prompt. The portable core is in AGENTS.md. It does not load the specialist library: the full method also needs the router, lean core, relevant specialist contracts and their references. Plugin setup tabs provide app-specific shortcuts.</p>
           <div class="install-cmds local-cmds">
             <div class="cmd"><code><span class="muted">$</span> curl -fsSL https://raw.githubusercontent.com/shear559/fabius/main/AGENTS.md</code></div>
           </div>
@@ -565,8 +566,10 @@ grok plugin enable fabius">
             <li><b>Cline</b><small><code>.clinerules/fabius.md</code></small></li>
             <li><b>GitHub Copilot</b><small><code>.github/copilot-instructions.md</code></small></li>
             <li><b>Gemini CLI</b><small><code>GEMINI.md</code></small></li>
+            <li><b>Antigravity</b><small><code>AGENTS.md</code> at the workspace root</small></li>
             <li><b>OpenCode</b><small><code>AGENTS.md</code> at the repo root</small></li>
           </ul>
+          <p class="panel-foot">Antigravity documents workspace rules in <code>AGENTS.md</code> and skill folders at <code>.agents/skills/&lt;skill-folder&gt;/SKILL.md</code>. Preserve the bundled references, check the accepted skill format, and verify which Fabius instructions load in a fresh task. This is a manual setup route; no Antigravity run is recorded in Fabius’s compatibility tests. <a href="https://antigravity.google/docs/rules/" target="_blank" rel="noopener noreferrer">Rules guide ↗</a> · <a href="https://antigravity.google/docs/skills/" target="_blank" rel="noopener noreferrer">Skills guide ↗</a></p>
           <div class="panel-foot"><span>The command prints the portable core for review. Copying or adapting it outside the marketplace-use grant requires separate licence permission. Where authorized, preserve existing project rules and load only the relevant specialist files. The optional local runner also requires separate permission for standalone use.</span><button class="copy" type="button" aria-label="Copy the AGENTS.md download command">Copy</button></div>
         </div>
       </div>

@@ -52,3 +52,5 @@ Initial provider marks fetched 2026-07-29; Ollama and the expanded model-family 
 
 
 2026-10-24 platform refinement: the hero field now uses the original PNG/JPEG/SVG marks for sharper rendering on high-density displays. Primary platform marks render at up to 56 CSS px, model marks at up to 44 CSS px, and portable-host marks at 28 CSS px. Original aspect ratios and colors are preserved; the 96 px derivatives remain available for existing uses.
+
+2026-10-24 Antigravity: `antigravity-20261024.svg` is the unchanged full-color icon from Google’s official press assets, https://antigravity.google/press/ . Source: https://antigravity.google/assets/image/brand/antigravity-icon__full-color.svg . HTTP gzip transport was decoded; the vector artwork was not altered. It identifies a manual instruction-loading example, not a tested Fabius integration or endorsement.
