@@ -82,3 +82,9 @@ Add Antigravity to the manual portable-core examples, using the unchanged full-c
 Sources checked 2026-10-24: https://antigravity.google/docs/rules/ ; https://antigravity.google/docs/skills/ ; https://antigravity.google/press/ .
 
 The six platform choices and the Antigravity SVG were checked on the deployed page and at 320, 375, 768 and 1920 CSS pixels: no page overflow, clipped choices or broken images. Activating Antigravity selected the portable setup panel. Explanatory paragraphs in that panel use normal text flow so inline paths and source links wrap together on phones. These are website checks, not a Fabius run inside Antigravity. — Codex
+
+## 2026-10-24 — Averya-inspired model icon arcs
+
+Ariel identified the model-icon field and asked for Averya's icon treatment. The reference is Averya's current `plat-arc` presentation: individual white sculpted tiles, unchanged brand marks, subtle colored light beneath each tile, and calm travel along a curve. Adapt that visual vocabulary to Fabius rather than adding another card system. Replace the two long text-card belts with two spacious curved icon streams. Keep the existing model names, provider labels and all 36 examples; preserve the repository-grounded platform claims above them.
+
+Use the existing green/sky/apricot surface and original logo assets. Define tile size, shape, elevation, type and motion tokens in the model field. Brand-toned light identifies a mark, never support or quality. Keep legible tile sizes on phones by letting the unseen part of each path extend outside the clipped stage, rather than compressing every logo into a small arc. Retain readable model names, a shared pause control, offscreen pause and a full static model view. Reduced motion, unsupported motion paths and no JavaScript must show the complete static list. No external animation dependency or new provider asset is required. — Codex
