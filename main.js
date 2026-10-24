@@ -298,6 +298,16 @@
         if (n !== null) { e.preventDefault(); select(n, true); }
       });
     });
+    // Platform links reveal the matching setup before their native anchor scroll.
+    $$('[data-install-target]').forEach((link) => {
+      const index = tabs.findIndex((tab) => tab.id === link.dataset.installTarget);
+      if (index < 0) return;
+      link.addEventListener('click', (event) => {
+        if (event.button || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        select(index);
+        tabs[index].focus({ preventScroll: true });
+      });
+    });
   });
 
   /* ── active section in nav ──────────────────────────────── */

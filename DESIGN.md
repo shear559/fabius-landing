@@ -62,3 +62,11 @@ Ariel approved the standalone scene and connected palette, then explicitly asked
 ## 2026-10-24 — demonstration gallery removed by request
 
 Ariel identified the “Think clearly. Build with context.” four-example gallery and asked to remove it because the landing page already has enough content. Remove the entire section, its desktop/mobile navigation links, page-level assets and demonstration FAQ/schema entry. Point the secondary hero action to the existing system architecture. Keep the foreground illustration and interactive routing explanation. Renumber the following section labels. — Codex
+
+## 2026-10-24 — platforms and sharper brand marks
+
+Ariel requested a more polished icon treatment and a clear answer to where Fabius runs. Refine the existing hero field in persuasion mode: original beetle banner → platform heading → three plugin setup links → compact portable-core options → the two model rows. Preserve the standalone illustration, background beetles and the rest of the page.
+
+Claude Code, Codex and Grok Build link to their existing installation tabs. Cursor, Cline, GitHub Copilot, Gemini CLI and OpenCode are examples of manual instruction-file hosts, explicitly labelled portable core, with a link to setup and permissions. A host is not a model. Model availability depends on the host/provider; the model marks are examples, not tested integrations. The public compatibility record remains the source for bounded checks. Do not add a ChatGPT marketplace listing or universal support claim.
+
+Use original, higher-resolution provider assets without recoloring or reshaping their marks. Paper reading surfaces, strong outlined icon frames, restrained grain and the approved green/sky/apricot palette connect this block to the page. Supporting color identifies the three visual card positions, never a compatibility or quality rating. Green retains the action/focus role. On phones, plugin cards become compact rows and portable choices wrap; every setup link remains a full touch target. Model motion retains pause and reduced-motion handling. — Codex
