@@ -4,7 +4,7 @@ const control = document.querySelector('#mqPause');
 const toggle = document.querySelector('#motionToggle');
 const marquee = document.querySelector('#marquee');
 const regions = [...document.querySelectorAll('[data-motion-region], .showcase, .system, .core')];
-const animatedSVGs = [...document.querySelectorAll('.shape-object, #sysmapSvg')];
+const animatedSVGs = [...document.querySelectorAll('.shape-object, #sysmapSvg, .route-visual')];
 let userPaused = control?.getAttribute('aria-pressed') === 'true';
 function sync() {
   const paused = reduced.matches || document.hidden || userPaused;
@@ -18,9 +18,10 @@ function sync() {
   control?.setAttribute('aria-label', userPaused ? 'Resume page motion' : 'Pause page motion');
   animatedSVGs.forEach(svg => {
     const offscreen = svg.closest('[data-motion-offscreen="true"]');
-    if (paused || offscreen) svg.pauseAnimations();
+    if (paused || offscreen || svg.closest('[data-sequence-paused="true"]')) svg.pauseAnimations();
     else svg.unpauseAnimations();
   });
+  document.dispatchEvent(new CustomEvent('fabius:motion', { detail: { paused } }));
 }
 if (control) new MutationObserver(() => {
   userPaused = control.getAttribute('aria-pressed') === 'true';

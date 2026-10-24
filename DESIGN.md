@@ -30,3 +30,19 @@ Sequence: existing hero and model field → illustrated capability outcomes → 
 | Motion | Slow orbit, signal travel, interaction transitions | Scroll hijacking, reduced-motion overrides, hidden content |
 
 The task chooser is an explicitly labelled illustrative route; it does not call a live model. All existing diagrams, mathematical assumptions, demo sources and installation details remain. All continuous animation shares a pause control, respects reduced motion and stops offscreen. The new interaction must support keyboard selection and 320px layouts.
+
+## 2026-10-24 — granular green and continuous art direction
+
+Ariel approved the illustrated direction and requested more of the original grainy green, richer animation and the same design treatment throughout the remaining page. This supersedes the muted mint emphasis above: the existing `#76b900` / `#9ade2b` / `#5e9400` paint ramp leads. Keep the original grain assets, Rubik, content, model banner and model marks.
+
+Bands: paper hero with painted orbital instruments → green capability illustrations → bright painted routing band with a dark animation stage → paper demo gallery with painted framing → dark olive architecture, reasoning and charts → original contour wordmark → paper research with a painted chart frame → light green installation with a dark terminal → editorial FAQ → painted green closing invitation.
+
+| Role | Use | Never |
+| --- | --- | --- |
+| Original granular lime | Routing/closing bands, illustration panels, selected controls and chart frames | Mint as the dominant replacement, low-contrast text on green |
+| Dark olive | Diagram stages, terminal and system band | Purple cast or fake live telemetry |
+| Paper | Reading surfaces and whitespace between high-energy bands | Grain over body copy |
+| Choreographed motion | Four explained routing phases, precise path-following packets, layered orbital instruments | Flashing, fake metrics, hidden critical content or ignoring pause/reduced-motion |
+| One section grammar | Monospace eyebrow, proportional headline, numbered figures and restrained corners | Flattening the technical content or deleting working demonstrations |
+
+The four-phase scene is an illustration. It cycles only while visible and unpaused; manual phase selection freezes the sequence. Pause/resume preserves elapsed time. The shared pause state covers CSS, SMIL and the scene clock. No new animation dependency or external asset service is introduced. — Codex

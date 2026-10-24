@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Fabius — responsive design verification</title>
+  <link rel="stylesheet" href="/design-preview.css">
+  <script type="module" src="/design-preview.mjs"></script>
+</head>
+<body>
+  <header>
+    <b>Fabius / design verification</b>
+    <label>Width <select id="width"><option value="320">320px</option><option value="375" selected>375px</option><option value="390">390px</option><option value="768">768px</option><option value="1366">1366px</option><option value="1920">1920px</option></select></label>
+    <label>Section <select id="section"><option value="top">Hero</option><option value="capabilities">Capabilities</option><option value="routing">Routing</option><option value="trials">Demos</option><option value="system">Architecture</option><option value="research">Research</option><option value="install">Install</option><option value="faq">FAQ</option><option value="launch-title">Closing</option></select></label>
+    <button type="button" id="check">Inspect layout</button>
+    <output id="result" aria-live="polite">Loading public landing page…</output>
+  </header>
+  <main><iframe title="Responsive Fabius landing page" id="preview"></iframe></main>
+</body>
+</html>

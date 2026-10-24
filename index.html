@@ -43,9 +43,11 @@
 </script>
 <script defer src="/main.js?v=2026-10-20d"></script>
 <link rel="stylesheet" href="/polish.css?v=2026-10-20d" />
-<script type="module" src="/motion.mjs?v=2026-10-24a"></script>
+<script type="module" src="/motion.mjs?v=2026-10-24b"></script>
 <link rel="stylesheet" href="/experience.css?v=2026-10-24a" />
 <script type="module" src="/experience.mjs?v=2026-10-24a"></script>
+<link rel="stylesheet" href="/refinement.css?v=2026-10-24b" />
+<script type="module" src="/choreography.mjs?v=2026-10-24b"></script>
 <script defer src="/assets/gallery/showcase.js?v=2026-10-20c"></script>
 <link rel="preload" href="/assets/fonts/rubik/Rubik-Variable.woff2" as="font" type="font/woff2" crossorigin>
 </head>
@@ -120,6 +122,9 @@
 <section class="hero" data-motion-region>
   <div class="hero-instruments" aria-hidden="true">
     <svg class="orbit-art orbit-left" viewBox="0 0 320 440" fill="none">
+      <defs><linearGradient id="hero-metal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b1e75c"/><stop offset=".45" stop-color="#76b900"/><stop offset="1" stop-color="#4e7a00"/></linearGradient></defs>
+      <g class="instrument-gimbal"><ellipse cx="160" cy="210" rx="148" ry="55"/><circle cx="12" cy="210" r="4"/><circle cx="308" cy="210" r="4"/></g>
+      <g class="instrument-calibration"><circle cx="160" cy="210" r="119"/><path d="M160 84v14m0 224v14M34 210h14m224 0h14"/></g>
       <g class="orbit-lines"><ellipse cx="160" cy="210" rx="148" ry="55" transform="rotate(-42 160 210)"/><ellipse cx="160" cy="210" rx="126" ry="94" transform="rotate(-42 160 210)"/><circle cx="160" cy="210" r="105"/></g>
       <g class="orbital-spin"><circle cx="160" cy="105" r="9" class="orbit-signal"/><circle cx="160" cy="315" r="4" class="orbit-dot"/></g>
       <g class="orbit-beetle"><circle cx="160" cy="210" r="60" class="orbit-disc"/><use href="#bug-cohors" x="124" y="169" width="72" height="80"/></g>
@@ -127,6 +132,8 @@
       <text x="160" y="383" text-anchor="middle">01 / ORCHESTRATE</text>
     </svg>
     <svg class="orbit-art orbit-right" viewBox="0 0 320 440" fill="none">
+      <g class="instrument-gimbal"><ellipse cx="160" cy="210" rx="148" ry="55"/><circle cx="12" cy="210" r="4"/><circle cx="308" cy="210" r="4"/></g>
+      <g class="instrument-calibration"><circle cx="160" cy="210" r="119"/><path d="M160 84v14m0 224v14M34 210h14m224 0h14"/></g>
       <g class="orbit-lines"><ellipse cx="160" cy="210" rx="148" ry="55" transform="rotate(42 160 210)"/><ellipse cx="160" cy="210" rx="126" ry="94" transform="rotate(42 160 210)"/><circle cx="160" cy="210" r="105"/></g>
       <g class="orbital-spin orbit-reverse"><circle cx="160" cy="105" r="9" class="orbit-signal"/><circle cx="160" cy="315" r="4" class="orbit-dot"/></g>
       <g class="orbit-beetle"><circle cx="160" cy="210" r="60" class="orbit-disc"/><use href="#bug-disciplina" x="124" y="169" width="72" height="80"/></g>
@@ -185,7 +192,7 @@
 </section>
 
 <!-- ── what the skill layer adds ──────────────────────────────── -->
-<section class="capabilities" id="capabilities" aria-labelledby="capabilities-title">
+<section class="capabilities" id="capabilities" aria-labelledby="capabilities-title" data-motion-region>
   <div class="wrap">
     <header class="sec-head cap-head">
       <p class="cap-kicker">What fabius adds</p>
@@ -226,21 +233,45 @@
       <button type="button" role="tab" id="route-tab-research" aria-controls="route-panel" aria-selected="false" tabindex="-1" data-route="research"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6M7 10h6m-3-3v6"/></svg>Research a question<span aria-hidden="true">↗</span></button>
       <button type="button" role="tab" id="route-tab-automate" aria-controls="route-panel" aria-selected="false" tabindex="-1" data-route="automate"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m13 2-9 12h7l-1 8 10-13h-7z"/></svg>Automate a workflow<span aria-hidden="true">↗</span></button>
     </div>
-    <div class="route-panel" role="tabpanel" id="route-panel" aria-labelledby="route-tab-build" tabindex="0">
+    <div class="route-panel" role="tabpanel" id="route-panel" aria-labelledby="route-tab-build" tabindex="0" data-phase="0">
       <div class="route-diagram">
         <div class="route-diagram-meta"><span>FABIUS / ROUTING EXAMPLE</span><span>ILLUSTRATIVE</span></div>
         <svg class="route-visual" viewBox="0 0 620 460" aria-hidden="true">
-          <g class="route-orbits"><ellipse cx="310" cy="221" rx="230" ry="130"/><ellipse cx="310" cy="221" rx="160" ry="198" transform="rotate(63 310 221)"/><circle cx="310" cy="221" r="112"/></g>
+          <defs>
+            <radialGradient id="route-light"><stop stop-color="#9ade2b" stop-opacity=".18"/><stop offset="1" stop-color="#76b900" stop-opacity="0"/></radialGradient>
+            <linearGradient id="route-metal" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#b1e75c"/><stop offset=".48" stop-color="#76b900"/><stop offset="1" stop-color="#5e9400"/></linearGradient>
+            <path id="route-wire-0" d="M280 192C224 192 250 136 198 136H124V98"/>
+            <path id="route-wire-1" d="M340 192C396 192 370 136 422 136H496V98"/>
+            <path id="route-wire-2" d="M280 250C224 250 250 289 198 289H124V327"/>
+            <path id="route-wire-3" d="M340 250C396 250 370 289 422 289H496V327"/>
+          </defs>
+          <circle class="route-atmosphere" cx="310" cy="221" r="207" fill="url(#route-light)"/>
+          <g class="route-orbits"><ellipse cx="310" cy="221" rx="230" ry="130"/><ellipse cx="310" cy="221" rx="160" ry="198" transform="rotate(63 310 221)"/><circle cx="310" cy="221" r="112"/><circle class="route-calibration" cx="310" cy="221" r="86"/></g>
+          <g class="route-gimbal"><ellipse cx="310" cy="221" rx="145" ry="58"/><circle cx="165" cy="221" r="4"/><circle cx="455" cy="221" r="4"/></g>
           <g class="route-spin"><circle cx="310" cy="109" r="5"/><circle cx="310" cy="333" r="3"/></g>
-          <g class="route-connectors"><path d="M310 173V104H124V77M262 221H124V327M358 221H496V77M310 269V327H496"/></g>
+          <g class="route-connectors"><use href="#route-wire-0"/><use href="#route-wire-1"/><use href="#route-wire-2"/><use href="#route-wire-3"/></g>
+          <g class="route-packets">
+            <circle r="4.5"><animateMotion dur="3.6s" begin="0s" repeatCount="indefinite"><mpath href="#route-wire-0"/></animateMotion></circle>
+            <circle r="4.5"><animateMotion dur="3.6s" begin="-.9s" repeatCount="indefinite"><mpath href="#route-wire-1"/></animateMotion></circle>
+            <circle r="4.5"><animateMotion dur="3.6s" begin="-1.8s" repeatCount="indefinite"><mpath href="#route-wire-2"/></animateMotion></circle>
+            <circle r="4.5"><animateMotion dur="3.6s" begin="-2.7s" repeatCount="indefinite"><mpath href="#route-wire-3"/></animateMotion></circle>
+          </g>
           <g class="route-node" transform="translate(36 28)"><rect width="176" height="70" rx="8"/><use id="route-icon-0" href="#bug-disciplina" x="14" y="15" width="34" height="38"/><text id="route-name-0" x="61" y="32">disciplina</text><text id="route-role-0" class="route-node-role" x="61" y="51">plan + verify</text></g>
           <g class="route-node" transform="translate(408 28)"><rect width="176" height="70" rx="8"/><use id="route-icon-1" href="#bug-decor" x="14" y="15" width="34" height="38"/><text id="route-name-1" x="61" y="32">decor</text><text id="route-role-1" class="route-node-role" x="61" y="51">visual design</text></g>
           <g class="route-node" transform="translate(36 327)"><rect width="176" height="70" rx="8"/><use id="route-icon-2" href="#bug-mercatus" x="14" y="15" width="34" height="38"/><text id="route-name-2" x="61" y="32">mercatus</text><text id="route-role-2" class="route-node-role" x="61" y="51">message + copy</text></g>
           <g class="route-node" transform="translate(408 327)"><rect width="176" height="70" rx="8"/><use id="route-icon-3" href="#bug-archivum" x="14" y="15" width="34" height="38"/><text id="route-name-3" x="61" y="32">archivum</text><text id="route-role-3" class="route-node-role" x="61" y="51">project context</text></g>
           <circle class="route-core-ring" cx="310" cy="221" r="65"/><circle class="route-core" cx="310" cy="221" r="50"/>
+          <path class="route-verify-ring" d="M310 147a74 74 0 1 1-74 74" fill="none"/>
           <use href="#emblem" x="282" y="188" width="56" height="56" class="route-core-mark"/><text class="route-core-label" x="310" y="251" text-anchor="middle">FABIUS</text>
           <text class="route-base-label" x="310" y="438" text-anchor="middle">PARCUS / SCOPE · EFFORT · STOP CONDITION</text>
         </svg>
+        <div class="route-phase-readout"><span id="route-phase-count">01 / 04</span><div><b id="route-phase-title">Understand the goal</b><p id="route-phase-detail">The request and approved context define the work.</p></div><button type="button" id="route-play" aria-pressed="false" aria-label="Pause routing illustration">Ⅱ</button></div>
+        <div class="route-phases" role="group" aria-label="Inspect a stage of the routing illustration">
+          <button type="button" data-phase-select="0" aria-pressed="true"><span>01</span>Understand</button>
+          <button type="button" data-phase-select="1" aria-pressed="false"><span>02</span>Route</button>
+          <button type="button" data-phase-select="2" aria-pressed="false"><span>03</span>Execute</button>
+          <button type="button" data-phase-select="3" aria-pressed="false"><span>04</span>Verify</button>
+        </div>
         <div class="route-diagram-foot"><span>15 available skills</span><span>Only the relevant subset →</span></div>
       </div>
       <div class="route-story">
@@ -285,6 +316,7 @@
   <div class="sys-grid-bg" aria-hidden="true"></div>
   <div class="wrap sys-wrap">
     <header class="sec-head sys-head">
+      <p class="experience-kicker section-index"><span>04 / THE ARCHITECTURE</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h6v6H5zM13 13h6v6h-6zM14 5h5v5M5 14v5h5"/></svg></p>
       <h2 class="sec-title" id="system-title">The rules stay. The model can change.</h2>
       <p class="sec-lede">The rules guide how your model approaches the work: a router selects the relevant specialists, a lean core controls scope, and memory and verification support the task. Your agent app supplies the model, tool access and permissions. You can change the model while keeping the same working method.</p>
     </header>
@@ -429,6 +461,7 @@
 <section class="research" id="research">
   <div class="wrap research-in">
     <div class="research-copy">
+      <p class="experience-kicker section-index"><span>05 / THE METHOD</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16M5 16l5-7 4 3 5-8M14 4h5v5"/></svg></p>
       <h2 class="sec-title">A method you can inspect.</h2>
       <p class="sec-lede">The router chooses relevant skills and the smallest sufficient approach. Parcus keeps the effort focused; Archivum retrieves useful project context instead of loading everything. Additional tools, review and retries should address a named need, while verification remains part of finishing the work.</p>
       <ul class="research-pts">
@@ -452,6 +485,7 @@
 <section class="install" id="install">
   <div class="wrap">
     <header class="sec-head install-head">
+      <p class="experience-kicker section-index"><span>06 / MAKE IT YOURS</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 7 5 5-5 5M13 17h6"/></svg></p>
       <h2 class="sec-title">Install the layer. Keep your model.</h2>
       <p class="sec-lede">Fabius is model-agnostic: the rules travel with your workflow across LLM providers. Choose how your agent app loads instructions below. These are setup routes, not a list of supported models. The <a href="https://github.com/shear559/fabius/blob/main/LICENSE" target="_blank" rel="noopener">current licence</a> grants personal, non-commercial plugin use; other uses require permission. Your model and connected services may have their own costs.</p>
     </header>
@@ -540,6 +574,7 @@ grok plugin enable fabius">
 <section class="faq" id="faq">
   <div class="wrap">
     <header class="sec-head">
+      <p class="experience-kicker section-index"><span>07 / GOOD QUESTIONS</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8a4 4 0 0 1 8 0c0 3-4 3-4 6M12 18v1"/><circle cx="12" cy="12" r="10"/></svg></p>
       <h2 class="sec-title">Frequently asked.</h2>
     </header>
     <div class="faq-list">

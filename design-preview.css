@@ -1,0 +1,9 @@
+:root { font:14px/1.5 system-ui,sans-serif; color:#f4f7ed; background:#101708; }
+* { box-sizing:border-box; }
+body { margin:0; }
+header { display:flex; align-items:center; flex-wrap:wrap; gap:16px; min-height:72px; padding:12px 24px; border-bottom:1px solid #475631; }
+label { display:flex; align-items:center; gap:8px; }
+button,select { min-height:44px; padding:8px 12px; color:#172400; background:#9ade2b; border:0; border-radius:4px; font:inherit; }
+output { font-size:12px; color:#bac7a7; }
+main { padding:24px; overflow:auto; }
+iframe { display:block; margin:auto; width:375px; height:812px; border:1px solid #475631; background:#fafbf7; }
