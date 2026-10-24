@@ -305,7 +305,10 @@
       link.addEventListener('click', (event) => {
         if (event.button || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
         select(index);
-        tabs[index].focus({ preventScroll: true });
+        // The anchor's default action moves focus; restore it on the selected tab.
+        requestAnimationFrame(() => {
+          if (!panels[index]?.hidden) tabs[index].focus({ preventScroll: true });
+        });
       });
     });
   });
