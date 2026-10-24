@@ -54,3 +54,11 @@ Verification: production desktop inspection passed for all four demo selectors, 
 Ariel's follow-up explicitly moves the Fabius animation out of the background into its own presentation. Remove the wandering background beetles, edge instruments and animated gallery contours. Present the original Fabius artwork in a bounded foreground scene with its own caption and motion control. Static contour lines may support the canvas. Preserve the original banner, model logo field and interactive routing example.
 
 Extend the reference-inspired vocabulary with original outlined geometric objects, offset illustration panels and small orbital marks. The additional palette has fixed roles: granular green = action and execution; sky blue = context and connected capabilities; apricot = design and verification. Recur these colors in the scene, capability illustrations, demo icons, research/installation details and closing artwork. Reading surfaces remain paper; primary actions remain green. Do not copy Pluto's characters, illustrations, UI or copy. — Codex
+
+## 2026-10-24 — background beetles restored by request
+
+Ariel approved the standalone scene and connected palette, then explicitly asked to bring back only the original background beetles. This overrides the prior removal requirement for the hero swarm and core walkers. Restore those two original decorative groups and their animation code; retain the standalone scene, new colors, pause controls and the removal of edge instruments/gallery contours. — Codex
+
+## 2026-10-24 — demonstration gallery removed by request
+
+Ariel identified the “Think clearly. Build with context.” four-example gallery and asked to remove it because the landing page already has enough content. Remove the entire section, its desktop/mobile navigation links, page-level assets and demonstration FAQ/schema entry. Point the secondary hero action to the existing system architecture. Keep the foreground illustration and interactive routing explanation. Renumber the following section labels. — Codex

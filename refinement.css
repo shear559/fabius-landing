@@ -342,7 +342,7 @@
 }
 .hero::after { opacity:.055; }
 .fabius-stage {
-  width:100%; margin:var(--space-5) auto var(--space-4); overflow:hidden;
+  width:100%; margin:var(--space-5) auto var(--space-4); overflow:hidden; scroll-margin-top:6rem;
   background:var(--surface); border:1px solid var(--illustration-edge);
   border-radius:var(--material-radius); text-align:left;
 }
