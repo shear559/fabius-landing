@@ -13,3 +13,20 @@ Use fluid gutters and a canvas up to 2240px wide so desktop sections use the ava
 Desktop typography stays proportional to that wide canvas: cap the hero title at 110px, section headings at 48px and introductory copy at 18px. Mix tiny background beetles with a few slow, larger ones; keep the mobile swarm lighter and respect reduced motion.
 
 Treat future design requests as refinements of this existing identity unless Ariel explicitly asks to replace it.
+
+## 2026-10-24 — illustrated system experience
+
+Ariel requested elements inspired by Pluto Security to make the page feel more advanced from end to end. Translate the reference's orbital illustrations, contrasting section bands and interactive feature storytelling into original Fabius artwork. Do not reuse Pluto artwork or copy.
+
+Sequence: existing hero and model field → illustrated capability outcomes → interactive routing example → existing demos and complete technical system → existing brand band, research, installation and FAQ → new closing installation invitation.
+
+| Role | Use | Never |
+| --- | --- | --- |
+| Paper, Rubik, square primary actions | Preserve the approved foundation | Replace the identity with a dashboard |
+| Green | Main emphasis, active route and action | Invent performance or live-status claims |
+| Teal / amber washes | Differentiate memory / verification illustrations | Compete with the green primary action |
+| Deep forest | Routing illustration and closing invitation | Reduce reading contrast |
+| Beetle and orbital linework | Original SVG geometry using existing marks | Substitute for the original banner or model logos |
+| Motion | Slow orbit, signal travel, interaction transitions | Scroll hijacking, reduced-motion overrides, hidden content |
+
+The task chooser is an explicitly labelled illustrative route; it does not call a live model. All existing diagrams, mathematical assumptions, demo sources and installation details remain. All continuous animation shares a pause control, respects reduced motion and stops offscreen. The new interaction must support keyboard selection and 320px layouts.
