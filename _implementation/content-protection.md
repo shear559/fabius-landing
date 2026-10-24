@@ -26,4 +26,9 @@ Sources checked on 2026-10-24:
 - https://vercel.com/docs/project-configuration/vercel-json
 - https://vercel.com/changelog/web-application-firewall-control-now-available-with-vercel-json
 
-Verification result is recorded in the commit once the live checks have run.
+Verified on 2026-10-24 by Codex:
+- Deployment `dpl_BnNFDRi25G8zSnTAcAkn7mBzDRqw`, production, READY, source commit `c0b97bb5354a360d2b6790427a47ce63d6765bf2`; canonical alias confirmed.
+- All five Node tests passed, including ten live HTTP cases. Cross-site CSS embedding and GPTBot returned 403; normal navigation, same-origin CSS, top-level CSS navigation, Googlebot, crawler policy and the PDF returned 200. README and the internal preview returned 404. CORP/noindex response headers matched.
+- Chrome at 1363px: 47 images, zero broken images, fonts loaded, no horizontal overflow. Claude Code and general setup tabs rendered; their copy controls reported success. Pause/resume synchronized across motion controls and was restored to its original state. No application console errors; only browser-extension metadata errors appeared.
+- All twelve existing content/design/interaction/PDF source files were byte-identical to the previous release.
+- Not verified: physical mobile devices and clipboard contents outside the browser. The clipboard adapter returned an empty value despite the page's success status; only the UI success state is claimed. Spoofed/unknown automation is outside the protection claim.
