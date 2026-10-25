@@ -52,6 +52,8 @@ test('excluded authoring files are not referenced by the public page', () => {
   for (const match of html.matchAll(/(?:src|href)="(\/[^"#?]+)(?:[?#][^"]*)?"/g)) {
     const path = match[1];
     if (!/\.[a-z0-9]+$/i.test(path)) continue;
+    // Vercel generates this same-origin endpoint after Web Analytics is enabled.
+    if (path === '/_vercel/insights/script.js') continue;
     assert.ok(readFileSync(new URL(`..${path}`, import.meta.url)).length, path);
   }
 });
@@ -79,4 +81,16 @@ test('live request boundary', { skip: !base }, async () => {
       assert.equal(response.headers.get('x-robots-tag'), 'noindex');
     }
   }
+});
+
+
+test('pageview analytics is present once on every public HTML page without relaxing CSP', () => {
+  for (const page of ['index.html', 'privacy.html', 'support.html', 'terms.html']) {
+    const html = readFileSync(new URL(page, root), 'utf8');
+    assert.equal((html.match(/src="\/_vercel\/insights\/script\.js"/g) || []).length, 1, page);
+    assert.match(html, /<script defer src="\/_vercel\/insights\/script\.js"><\/script>/);
+  }
+  const privacy = readFileSync(new URL('privacy.html', root), 'utf8');
+  assert.doesNotMatch(privacy, /no account sign-in or client-side analytics/);
+  assert.match(privacy, /Vercel Web Analytics/);
 });
