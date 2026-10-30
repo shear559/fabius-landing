@@ -1,4 +1,15 @@
+<p>
+  <img src=".github/assets/readme-banner.svg" alt="Fabius Website — A working method for AI agents" width="100%" />
+</p>
+
 # Fabius Website
+
+<p>
+  <img src=".github/assets/tech-javascript.svg" alt="JavaScript" height="30" />
+  <img src=".github/assets/tech-html5.svg" alt="HTML5" height="30" />
+  <img src=".github/assets/tech-css.svg" alt="CSS" height="30" />
+</p>
+
 
 The public website for [Fabius](https://github.com/shear559/fabius), a coordinated working method for AI agents.
 
