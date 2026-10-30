@@ -1,43 +1,44 @@
-# Fabius landing page
+# Fabius Website
 
-The product website for [Fabius](https://github.com/shear559/fabius), created by Ariel Shemesh. Published at https://fabius-landing.vercel.app. Buildless HTML, CSS and JavaScript; the existing Vercel project deploys `main`.
+The public website for [Fabius](https://github.com/shear559/fabius), a coordinated working method for AI agents.
 
-## Experience
+[Website](https://fabius-landing.vercel.app)
 
-- The original Fabius beetle sits in a standalone, outlined illustration with orbital geometry, connected context/result panels and an accessible motion control. The original wandering background beetles return in the hero and core band at Ariel’s explicit request, while the central animation remains a standalone foreground scene.
-- A keyboard-accessible task chooser explains example website, research and automation routes. These are authored illustrations, not live agent runs.
-- A shared motion control pauses the marquee, standalone artwork and system animation. Motion also respects reduced-motion preferences, tab visibility and offscreen sections.
-- The original granular lime material extends through the capability illustrations, architecture, research, installation and FAQ. Sky blue accents mark context and capabilities; apricot accents mark design and verification. The palette repeats across the illustrations and functional sections. A four-phase routing illustration has path-following signals, manual stage controls and a pause-aware clock. It is explicitly illustrative.
-- The original beetle banner and two moving rows present 36 model families with their logos. A pause control and reduced-motion mode keep the list accessible.
-- The original workflow and skill architecture explain how responsibilities fit together.
-- The original routing charts, value inequality and worked example explain proportional effort, tool costs, dependencies and context selection. Their inputs and assumptions are illustrative, not benchmark results.
-- Installation, licence and support remain linked to the product repository.
-- Position Fabius as a model-agnostic working method across LLM providers. Lead with the user's model and task; keep named agent apps in setup instructions as examples, not a model whitelist. The default installation tab explains the general instruction-loading route.
+The site explains the method, presents interactive demonstrations and directs visitors to installation, research and support. Its animated task routing and agent scenes are illustrative experiences, not live agent execution or measured benchmarks.
 
-The previous benchmark reports, comparison galleries and score archives are removed from the current tree. They remain in Git history. The whitepaper is synchronized with the product repository and describes the architecture and conditional theory without comparative scores.
+## Implementation
 
-## Source
+The website uses authored HTML, CSS and JavaScript with an original beetle-based visual identity, local assets and motion modules. It has no application build step, account system or AI inference backend.
 
-`index.html`, `styles.css`, `main.js`: the main page and original brand system.
-`polish.css`, `motion.mjs`: compact-phone layout and the shared motion preference.
-`experience.css`, `experience.mjs`: illustrated sections and the interactive routing examples.
-`refinement.css`, `choreography.mjs`: the granular material and secondary color system, standalone foreground scene and routing scene clock.
-`design-preview.html`, `design-preview.css`, `design-preview.mjs`: a local responsive verification fixture, excluded from deployment. It leaves production CSP and framing protection intact.
-`assets/gallery/`, `assets/showcase-20260930-focused/`: archived demonstration assets, retained in Git but excluded from deployment. The landing page no longer loads or links the four-example gallery, at Ariel’s request.
-`DESIGN.md`: brand and motion constraints.
+Provider and model marks describe compatibility context; they do not establish partnership or restrict Fabius to a fixed model list.
+
+## Run locally
+
+```sh
+python3 -m http.server 8080 --bind 127.0.0.1
+```
+
+Open `http://127.0.0.1:8080`.
+
+## Source guide
+
+| Area | Purpose |
+| --- | --- |
+| `index.html` | Main product page |
+| CSS files | Layout, visual system and responsive presentation |
+| JavaScript modules | Interaction, motion and demonstrations |
+| `assets/` | Original artwork and supporting media |
+| `privacy.html`, `terms.html`, `support.html` | Supporting public pages |
+| `vercel.json` | Hosting and response configuration |
+
+[DESIGN.md](DESIGN.md) records the visual direction. Keep product claims and paper references aligned with the source Fabius repository.
 
 ## Verification
 
-Serve the root with a static HTTP server and exercise the model marquee, pause control, installation controls, navigation and routing example at phone and desktop widths. Check reduced motion, keyboard focus, console, network, FAQ/schema parity and local links. Apply `vercel.json` headers during browser testing.
+```sh
+node --test _checks/protection.test.mjs
+```
 
-After pushing, verify the deployment commit and canonical domain. Keep the whitepaper byte-identical to the corresponding product source. Source downloads have no build step and run without model credentials.
+Also inspect navigation, responsive layouts, keyboard access, reduced-motion behavior and public links in a browser. The automated protection checks do not verify that the website's demonstrations execute real agent tasks.
 
-## Design and content protection
-
-Owner request, 2026-10-24: mirror Averya’s protection against automated reuse. Deployment routes deny the named AI/scraping user agents in `robots.txt` and cross-site subresource requests for runtime assets. Same-origin use, top-level navigation, search crawling and install-command copying remain available. CORP, same-origin CORS, framing restrictions and asset `noindex` headers add browser-level restrictions. Internal notes, local previews, source maps and retired showcase sources are excluded from the public deployment.
-
-Run `node --test _checks/protection.test.mjs` for the matching and deploy-surface checks. These controls are not authentication: headers can be spoofed, visitors can save visible content, and this landing repository remains public. No repository visibility or existing account firewall settings are changed. See `_implementation/content-protection.md` for verification and rollback.
-
-## Licence
-
-Publicly readable, proprietary. [The product licence](https://github.com/shear559/fabius/blob/main/LICENSE) governs use. Third-party assets retain their notices. See `/privacy` for the website’s local-storage behavior.
+Original artwork and third-party materials retain their respective rights.
