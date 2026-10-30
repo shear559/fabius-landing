@@ -1,5 +1,5 @@
 <p>
-  <img src=".github/assets/readme-banner.svg" alt="Fabius Website — A working method for AI agents" width="100%" />
+  <img src=".github/assets/readme-banner.webp" alt="Fabius Website — A working method for AI agents" width="100%" />
 </p>
 
 # Fabius Website
