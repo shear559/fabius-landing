@@ -41,7 +41,7 @@
   background: #f4f6ef;
 }
 .hero::before {
-  grid-area: 1 / 1;
+  grid-area: 1 / 1 / 2 / 2;
   inset: 0;
   background:
     radial-gradient(ellipse 40% 49% at 51% 35%, #fffff6c7, transparent),
@@ -51,7 +51,7 @@
   z-index: 0;
 }
 .hero::after {
-  grid-area: 2 / 1;
+  grid-area: 2 / 1 / 3 / 2;
   inset: 0;
   opacity: 1;
   mask: none;
