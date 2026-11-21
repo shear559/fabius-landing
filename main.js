@@ -251,16 +251,6 @@
   if ('requestIdleCallback' in window) requestIdleCallback(buildSwarms, { timeout: 700 });
   else setTimeout(buildSwarms, 150);
 
-  /* ── marquee: a pause control everyone can reach (WCAG 2.2.2) ── */
-  const mq = $('#marquee'), mqBtn = $('#mqPause');
-  if (mq && mqBtn) {
-    mqBtn.addEventListener('click', () => {
-      const paused = mq.classList.toggle('paused');
-      mqBtn.setAttribute('aria-pressed', paused ? 'true' : 'false');
-      mqBtn.setAttribute('aria-label', paused ? 'Resume the moving model list' : 'Pause the moving model list');
-    });
-  }
-
   /* ── install tabs — roving tabindex, arrow keys, hidden panels ── */
   $$('#install [role="tablist"]').forEach((list) => {
     const tabs = $$('[role="tab"]', list);

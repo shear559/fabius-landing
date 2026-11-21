@@ -5,7 +5,6 @@ const reduced = matchMedia('(prefers-reduced-motion: reduce)');
 if (panel) {
   const scene = panel.closest('[data-motion-region]');
   const svg = panel.querySelector('.route-visual');
-  const play = panel.querySelector('#route-play');
   const buttons = [...panel.querySelectorAll('[data-phase-select]')];
   const stages = [
     ['Understand the goal', 'The request and approved context define the work.'],
@@ -15,7 +14,7 @@ if (panel) {
   ];
   const duration = 4800;
   let phase = 0;
-  let manuallyPaused = false;
+  let inspectingPhase = false;
   let timer = null;
   let startedAt = 0;
   let remaining = duration;
@@ -37,12 +36,8 @@ if (panel) {
 
   function sync() {
     const globalPause = reduced.matches || document.hidden || document.body.dataset.motion === 'paused';
-    const active = !globalPause && !manuallyPaused && scene.dataset.motionOffscreen !== 'true';
+    const active = !globalPause && !inspectingPhase && scene.dataset.motionOffscreen !== 'true';
     panel.dataset.sequencePaused = String(!active);
-    play.disabled = globalPause;
-    play.textContent = active ? 'Ⅱ' : '▷';
-    play.setAttribute('aria-pressed', String(!active));
-    play.setAttribute('aria-label', globalPause ? 'Routing illustration paused by page motion preference' : active ? 'Pause routing illustration' : 'Play routing illustration');
     if (active) {
       svg.unpauseAnimations();
       if (timer === null) {
@@ -63,18 +58,15 @@ if (panel) {
 
   buttons.forEach((button, index) => button.addEventListener('click', () => {
     stopClock();
-    manuallyPaused = true;
+    inspectingPhase = true;
     phase = index;
     remaining = duration;
     draw();
     sync();
   }));
-  play.addEventListener('click', () => {
-    manuallyPaused = !manuallyPaused;
-    sync();
-  });
   new MutationObserver(() => {
     stopClock();
+    inspectingPhase = false;
     phase = 0;
     remaining = duration;
     draw();
@@ -87,37 +79,49 @@ if (panel) {
   sync();
 }
 
-// Small perspective response on precise pointers; artwork only, never text.
-const hero = document.querySelector('.fabius-stage');
-const instruments = hero?.querySelector('.stage-scene');
+// Share the pointer response between the two opening illustrations.
 const precisePointer = matchMedia('(hover: hover) and (pointer: fine)');
-if (hero && instruments) {
+function bindPointerArtwork(sceneSelector, artworkSelector) {
+  const scene = document.querySelector(sceneSelector);
+  const artwork = scene?.querySelector(artworkSelector);
+  if (!artwork) return;
+
   let frame = null;
-  let x = 0;
-  let y = 0;
+  let clientX = 0;
+  let clientY = 0;
+  let displaced = false;
   const canMove = () => precisePointer.matches && !reduced.matches &&
-    document.body.dataset.motion !== 'paused' && !document.hidden && hero.dataset.motionOffscreen !== 'true';
+    !document.hidden && document.body.dataset.motion !== 'paused' && scene.dataset.motionOffscreen !== 'true';
   const reset = () => {
     if (frame !== null) cancelAnimationFrame(frame);
     frame = null;
-    instruments.style.removeProperty('--pointer-x');
-    instruments.style.removeProperty('--pointer-y');
+    if (!displaced) return;
+    artwork.style.removeProperty('--pointer-x');
+    artwork.style.removeProperty('--pointer-y');
+    displaced = false;
   };
-  hero.addEventListener('pointermove', event => {
-    if (!canMove()) return;
-    const rect = hero.getBoundingClientRect();
-    x = ((event.clientX - rect.left) / rect.width - .5) * 16;
-    y = ((event.clientY - rect.top) / rect.height - .5) * 12;
+  scene.addEventListener('pointermove', event => {
+    if (event.pointerType === 'touch' || !canMove()) return;
+    clientX = event.clientX;
+    clientY = event.clientY;
     if (frame !== null) return;
     frame = requestAnimationFrame(() => {
       frame = null;
       if (!canMove()) return reset();
-      instruments.style.setProperty('--pointer-x', `${x.toFixed(2)}px`);
-      instruments.style.setProperty('--pointer-y', `${y.toFixed(2)}px`);
+      const rect = scene.getBoundingClientRect();
+      if (!rect.width || !rect.height) return reset();
+      const x = ((clientX - rect.left) / rect.width - .5) * 16;
+      const y = ((clientY - rect.top) / rect.height - .5) * 12;
+      artwork.style.setProperty('--pointer-x', `${x.toFixed(2)}px`);
+      artwork.style.setProperty('--pointer-y', `${y.toFixed(2)}px`);
+      displaced = true;
     });
   }, { passive: true });
-  hero.addEventListener('pointerleave', reset);
+  scene.addEventListener('pointerleave', reset);
+  scene.addEventListener('pointercancel', reset);
   document.addEventListener('fabius:motion', () => { if (!canMove()) reset(); });
   reduced.addEventListener('change', reset);
   precisePointer.addEventListener('change', reset);
 }
+bindPointerArtwork('.hero-intro', '.tool-orbit');
+bindPointerArtwork('.fabius-stage', '.stage-scene');

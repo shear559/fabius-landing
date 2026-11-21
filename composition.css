@@ -34,6 +34,7 @@
 .nav .mobile-menu { background: #fcfdf9; }
 
 .hero {
+  --horizon: #b9de78;
   padding: 0 0 clamp(2.5rem, 5vw, 5rem);
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -44,10 +45,12 @@
   grid-area: 1 / 1 / 2 / 2;
   inset: 0;
   background:
-    radial-gradient(ellipse 40% 49% at 51% 35%, #fffff6c7, transparent),
-    radial-gradient(ellipse 68% 69% at 1% 28%, #deddf0 0%, #dcdff262 52%, transparent 85%),
-    radial-gradient(ellipse 63% 82% at 97% 36%, #d2e5e1 0%, #dbeacb55 54%, transparent 86%),
-    linear-gradient(180deg, #fafbf8 5%, #e8eedf 41%, #ddedb6 65%, #c0e777 87%, #afd16f 100%);
+    radial-gradient(ellipse 64% 60% at 47% 19%, #fffef8e6, #fffef63b 52%, transparent 80%),
+    radial-gradient(ellipse 54% 74% at 0% 28%, #d7d6ee 2%, #dedcf09c 45%, transparent 88%),
+    radial-gradient(ellipse 59% 72% at 100% 34%, #cae5dd 3%, #cfe6d68a 48%, transparent 89%),
+    radial-gradient(ellipse 65% 28% at 64% 84%, #e1ff9fb0, transparent 80%),
+    linear-gradient(180deg, #f2f4f0 4%, #e9efe4 43%, #dcebbe 66%, #c6ed83 89%, var(--horizon));
+  background-blend-mode: normal;
   z-index: 0;
 }
 .hero::after {
@@ -57,9 +60,14 @@
   mask: none;
   -webkit-mask: none;
   z-index: 0;
-  background: linear-gradient(to bottom, #afd16f, #667f52 4rem, #253e35 10rem, #14231e 19rem, #172820 29rem, #d8e0d2 47rem, #f4f6ef 55rem);
+  background:
+    radial-gradient(ellipse 46% 9rem at 53% 6rem, #b7d8782b, transparent),
+    linear-gradient(to bottom, var(--horizon), #6f8e58 3rem, #2d4939 7.5rem, #14261f 13rem, #14231d 25rem, #647565 36rem, #e4e9dc 48rem, #f4f6ef 54rem);
 }
 .hero .swarm-track { z-index: 1; }
+.hero .swarm {
+  mask-image: radial-gradient(ellipse clamp(13rem, 34vw, 33rem) 15rem at 50% 17rem, #0007 14%, #000a 52%, #000 95%);
+}
 .hero-intro {
   position: relative;
   z-index: 2;
@@ -73,10 +81,9 @@
   position: absolute;
   inset: 0 calc(50% - 50vw);
   z-index: -1;
-  background: #4c7240;
-  mask: var(--contour-art) center 35% / max(90rem, 104%) auto no-repeat;
-  -webkit-mask: var(--contour-art) center 35% / max(90rem, 104%) auto no-repeat;
-  opacity: .07;
+  background: linear-gradient(108deg, #66638730 1%, #65776a0c 35%, #60753d08 53%, #58715535 96%);
+  mask: var(--contour-art) center 45% / max(73rem, 106%) auto no-repeat;
+  -webkit-mask: var(--contour-art) center 45% / max(73rem, 106%) auto no-repeat;
   pointer-events: none;
 }
 .hero .hero-in { grid-area: 2 / 1; z-index: 2; }
@@ -89,8 +96,6 @@
   letter-spacing: .095em;
 }
 .hero-edition i { height: .45rem; width: .45rem; background: #6b9a35; }
-#motionToggle { color: #334438; border-radius: .5rem; }
-#motionToggle:hover { background: #ffffff80; }
 .hero-intro .eyebrow {
   position: relative;
   z-index: 1;
@@ -119,7 +124,7 @@
 .hero-intro .hero-title .accent { color: #476c22; }
 @supports (background-clip: text) or (-webkit-background-clip: text) {
   .hero-intro .hero-title .accent {
-    background: linear-gradient(110deg, #285a3e 7%, #487625 55%, #527414 94%);
+    background: linear-gradient(108deg, #214e3d 4%, #3d682b 47%, #547323 83%, #486c2e);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -183,12 +188,25 @@
   width: clamp(4rem, 6.8vw, 7rem);
   aspect-ratio: 1;
   border-radius: 26%;
-  border: 1px solid #53605644;
-  background: linear-gradient(145deg, #fff, var(--face) 58%, var(--side));
-  box-shadow: inset 1px 2px 1px #fff, inset -2px -2px 2px #44544735, 1px 2px 0 var(--side), 2px 4px 0 var(--side), 3px 6px 0 var(--side), 5px 12px 16px -9px #19291e70, 8px 25px 31px -16px #1a332e73;
+  border: 1px solid #53605655;
+  background:
+    radial-gradient(ellipse at 15% 0%, #fffffff2, transparent 46%),
+    linear-gradient(147deg, white -12%, var(--face) 50%, var(--side) 117%);
+  box-shadow: inset 0 1.5px 1px white, inset -1px -2px 3px #283c3d22,
+    0 1px 0 var(--side), 1px 3px 0 var(--side), 2px 5px 0 var(--side),
+    3px 6px 0 #51645594, 5px 11px 13px -8px #24372e80, 10px 25px 22px -14px #213d314a;
   transform: perspective(38rem) rotateX(19deg) rotateY(-15deg) rotateZ(var(--tilt));
 }
-.tool-tile img { width: 63%; height: 63%; object-fit: contain; mix-blend-mode: multiply; }
+.tool-tile::before {
+  content: "";
+  position: absolute;
+  inset: 3%;
+  border-radius: 24%;
+  border: 1px solid #ffffff68;
+  border-right-color: #fff3;
+  border-bottom-color: #fff3;
+}
+.tool-tile img { position: relative; width: 61%; height: 61%; object-fit: contain; mix-blend-mode: multiply; }
 .tile-claude img, .tile-grok img { filter: invert(1) contrast(1.35); }
 .tile-claude { --tilt:-16deg; --side:#d88b71; --face:#f9c4ac; left:9%; top:30%; }
 .tile-codex { --tilt:14deg; --face:#dceccb; --side:#93ad88; right:8%; top:33%; }
@@ -231,12 +249,12 @@
   .hero-intro .hero-journey b { font-size: .57rem; }
   .hero-intro .hero-journey i { max-width: 1.5rem; }
   .tool-tile { width: 2.35rem; }
-  .tile-claude { top: 5.9rem; left: 12%; }
-  .tile-codex { top: 6.1rem; right: 11%; }
+  .tile-claude { top: 5.6rem; left: 13%; }
+  .tile-codex { top: 5.6rem; right: 13%; }
   .tile-gemini, .tile-grok { width: 1.65rem; }
-  .tile-gemini { top: 7.65rem; bottom: auto; left: 2.7%; }
-  .tile-grok { top: 7.8rem; bottom: auto; right: 2.7%; }
-  .hero::after { background: linear-gradient(to bottom, #afd16f, #526d48 3rem, #192c23 9rem, #24372c 17rem, #e2e8d9 27rem, #f4f6ef 34rem); }
+  .tile-gemini { top: 7.1rem; bottom: auto; left: 3%; }
+  .tile-grok { top: 7.1rem; bottom: auto; right: 3%; }
+  .hero::after { background: linear-gradient(to bottom, var(--horizon), #688651 2.5rem, #1a3026 7.5rem, #21342a 15rem, #cbd4c4 24rem, #f4f6ef 32rem); }
   .platform-compat { font-size: .9rem; margin: .35rem 0 1rem; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -249,19 +267,20 @@
 
 /* A frosted rim around the original three-part routing illustration. */
 .fabius-stage {
-  --stage-surface: #0c1411;
-  --stage-line: #34433a;
+  --stage-surface: #101915;
+  --stage-line: #3a4940;
   --stage-type: #f1f6ee;
   --stage-muted: #c5d1c8;
-  --stage-signal: #cbf787;
+  --stage-signal: #ceef94;
   --stage-radius: clamp(.85rem, 1.5vw, 1.4rem);
   position: relative;
   padding: clamp(.25rem, .65vw, .625rem);
-  border: 1px solid #9caf94;
+  border: 1px solid #adc29c;
   border-radius: var(--stage-radius);
-  background: linear-gradient(145deg, #708371, #283b31 35%, #17231c 73%, #556352);
+  background: linear-gradient(137deg, #a5baa0 0%, #526959 17%, #2e4037 39%, #182a23 70%, #5c7160 94%, #839778);
   color: var(--stage-type);
-  box-shadow: inset 0 1px 0 #e4f6da70, 0 1.5rem 3rem -2rem #031508c9;
+  box-shadow: inset 0 1px 1px #f4ffe5b8, inset 0 -1px 1px #04130a94,
+    0 .5rem .8rem -.6rem #0b190ce6, 0 2rem 3.5rem -2.1rem #06160cdb;
 }
 .fabius-stage .stage-heading,
 .fabius-stage .stage-legend {
@@ -272,58 +291,51 @@
 .fabius-stage .stage-heading {
   border-radius: calc(var(--stage-radius) - .34rem) calc(var(--stage-radius) - .34rem) 0 0;
   padding-block: clamp(.9rem, 1.8vw, 1.4rem);
+  background: linear-gradient(105deg, #1b2922, var(--stage-surface) 62%, #0e1713);
+  box-shadow: inset 0 1px #eefce012;
 }
 .fabius-stage .stage-heading .experience-kicker { color: var(--stage-signal); letter-spacing: .13em; }
 .fabius-stage .stage-heading h2 { color: var(--stage-type); }
-.fabius-stage #stageMotionToggle {
-  max-width: none;
-  min-height: 2.75rem;
-  padding: .45rem .8rem;
-  border: 1px solid #506154;
-  border-radius: .4rem;
-  background: #1a2620;
-  color: var(--stage-type);
-}
-.fabius-stage #stageMotionToggle:hover { border-color: #8ba282; background: #27362b; }
-.fabius-stage #stageMotionToggle .motion-symbol { color: var(--stage-signal); }
 .fabius-stage :focus-visible { outline: 2px solid var(--stage-signal); outline-offset: .2rem; }
 
 .fabius-stage .stage-scene {
   background:
-    radial-gradient(ellipse at 50% 53%, #526d294d, transparent 43%),
-    radial-gradient(ellipse at 5% 5%, #344a4733, transparent 50%),
-    linear-gradient(160deg, #111c18, #080f0d 75%);
+    radial-gradient(ellipse 31% 53% at 50% 48%, #54713857, transparent 90%),
+    radial-gradient(ellipse 27% 61% at 17% 40%, #32687232, transparent),
+    radial-gradient(ellipse 26% 59% at 84% 53%, #83553726, transparent),
+    linear-gradient(142deg, #18231f, #0c1612 45%, #080f0d 89%);
 }
 .fabius-stage .stage-scene::before {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: linear-gradient(#b3d2b30c 1px, transparent 1px), linear-gradient(90deg, #b3d2b30c 1px, transparent 1px);
-  background-size: clamp(1.25rem, 3.1vw, 3rem) clamp(1.25rem, 3.1vw, 3rem);
-  mask-image: radial-gradient(ellipse at center, black 16%, transparent 85%);
+  background-image: linear-gradient(#adcdba10 1px, transparent 1px), linear-gradient(90deg, #adcdba10 1px, transparent 1px);
+  background-size: clamp(1.25rem, 3.1vw, 2.8rem) clamp(1.25rem, 3.1vw, 2.8rem);
+  background-position: center;
+  mask-image: radial-gradient(ellipse at 50% 58%, black 28%, transparent 86%);
 }
-.fabius-stage .stage-scene::after { opacity: .17; }
+.fabius-stage .stage-scene::after { opacity: .15; }
 .fabius-stage .stage-artwork { position: relative; color: #273517; }
-.fabius-stage .stage-registration { stroke: #b8ceb4; opacity: .31; }
-.fabius-stage .stage-connectors { stroke: var(--stage-signal); stroke-width: 2; opacity: .85; }
-.fabius-stage .stage-packets { fill: #e8ffb6; stroke: #69874a; }
+.fabius-stage .stage-registration { stroke: #acd1b8; opacity: .42; }
+.fabius-stage .stage-connectors { stroke: #d0ef93; stroke-width: 2.3; stroke-dasharray: 2.5 6; opacity: .91; }
+.fabius-stage .stage-packets { fill: #f2ffd5; stroke: #8fb856; }
 .fabius-stage .stage-orbital-back { stroke: #a8cf90; opacity: .65; }
 .fabius-stage .stage-orbital-front { stroke: #d9f4c4; opacity: .9; }
 .fabius-stage .stage-orbital-front .stage-ink-fill { fill: var(--stage-signal); }
 .fabius-stage .stage-base-shadow { fill: #030805; }
-.fabius-stage .stage-platform { fill: #314b40; stroke: #8cad99; }
-.fabius-stage .stage-platform-top { fill: #465d3f; stroke: #aec394; }
-.fabius-stage .stage-hub-shadow { fill: #324921; }
-.fabius-stage .stage-hub-face { stroke: #d5ff9a; }
+.fabius-stage .stage-platform { fill: #243a30; stroke: #84a38b; }
+.fabius-stage .stage-platform-top { fill: #39503b; stroke: #b0c99d; }
+.fabius-stage .stage-hub-shadow { fill: #2c461c; stroke: #96b773; stroke-width: 1; }
+.fabius-stage .stage-hub-face { stroke: #e3ffae; }
 .fabius-stage .stage-hub-label { fill: #182809; }
 .fabius-stage .stage-highlight { stroke: #f0ffc7; opacity: .9; }
 
-.fabius-stage .stage-context { --panel-edge: #a5d5dc; --panel-depth: #14323a; }
-.fabius-stage .stage-result { --panel-edge: #f4bf9f; --panel-depth: #402c24; }
+.fabius-stage .stage-context { --panel-edge: #afdee1; --panel-depth: #1c3940; }
+.fabius-stage .stage-result { --panel-edge: #f6c8a9; --panel-depth: #443229; }
 .fabius-stage .stage-context > rect,
 .fabius-stage .stage-result > rect { fill: var(--panel-depth); stroke: var(--panel-edge); }
-.fabius-stage .stage-side > .stage-shadow { fill: #050b08; }
+.fabius-stage .stage-side > .stage-shadow { fill: #060e0b; stroke: var(--panel-edge); stroke-opacity: .17; stroke-width: 1; }
 .fabius-stage .stage-side > .stage-outline { stroke: var(--panel-edge); }
 .fabius-stage .stage-side > .stage-ink-fill, .fabius-stage .stage-small-text { fill: var(--panel-edge); }
 .fabius-stage .stage-result > .stage-check { stroke: #354324; }
@@ -334,14 +346,14 @@
 .fabius-stage .stage-legend {
   border-radius: 0 0 calc(var(--stage-radius) - .34rem) calc(var(--stage-radius) - .34rem);
   color: var(--stage-muted);
+  background: linear-gradient(112deg, #15201a, #0d1612);
 }
-.fabius-stage .stage-legend i { flex: none; border-color: #adc0aa; }
+.fabius-stage .stage-legend i { flex: none; border-radius: 2px; border-color: #d9e7cc80; box-shadow: inset 0 1px #fff5; }
 .fabius-stage .stage-legend > a { color: var(--stage-signal); }
 
 @media (max-width: 600px) {
   .fabius-stage .stage-heading { gap: .5rem; }
   .fabius-stage .stage-heading h2 { font-size: 1.2rem; }
-  .fabius-stage #stageMotionToggle { padding-inline: .5rem; font-size: .75rem; }
   .fabius-stage .stage-scene { height: auto; padding: .7rem 0; }
   .fabius-stage .stage-artwork { left: auto; width: 100%; height: auto; translate: none; }
   .fabius-stage .stage-side { opacity: 1; }

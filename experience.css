@@ -29,9 +29,6 @@ h1,h2 { text-wrap: balance; }
 .hero-edition { position: absolute; inset: -4.75rem var(--gut) auto; display:flex; align-items:center; justify-content:space-between; gap:var(--space-2); color:var(--primary-ink); font:var(--exp-micro)/1.3 var(--mono); letter-spacing:.1em; border-bottom:var(--exp-px) solid var(--exp-line-light); padding-bottom:var(--space-1); text-align:start; }
 .hero-edition>span { display:flex; align-items:center; gap:var(--space-1); }
 .hero-edition i { display:block; width:.375rem; height:.375rem; background:var(--primary-ink); }
-#motionToggle { display:flex; align-items:center; justify-content:center; gap:var(--space-1); min-height:var(--control); border:0; padding:0 var(--space-1); background:transparent; color:var(--ink-2); font:var(--exp-small)/1.2 var(--sans); cursor:pointer; white-space:nowrap; }
-#motionToggle:hover { background:var(--tint-2); }
-.motion-symbol { font-family:var(--mono); width:1rem; }
 .hero-instruments { position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:1; }
 .orbit-art { position:absolute; width:var(--exp-orbit-size); top:12rem; color:var(--primary-ink); opacity:.86; }
 .orbit-left { left:-5.5%; transform:rotate(-8deg); }
@@ -168,7 +165,6 @@ body[data-motion=paused] *,body[data-motion=paused] *::before,body[data-motion=p
   .route-panel[data-changing=true] .route-story,.route-panel[data-changing=true] .route-node { animation:none; }
   .cap-outcomes article { transition:none; }
   .cap-outcomes article:hover { transform:none; }
-  #motionToggle { display:none; }
 }
 @media(min-width:1700px) {
   .orbit-left { left:0; }.orbit-right { right:0; }
@@ -204,7 +200,6 @@ body[data-motion=paused] *,body[data-motion=paused] *::before,body[data-motion=p
   .hero { padding-top:10rem; }
   .hero-edition { inset-inline:var(--gut); top:-4.5rem; letter-spacing:.025em; gap:var(--space-1); }
   .hero-edition>span { gap:.375rem; max-width:60%; font-size:.5625rem; }
-  #motionToggle { padding-inline:0; font-size:.6875rem; }
   .hero-title { font-size:clamp(2.3rem,10.8vw,3.5rem); }
   .hero-instruments { opacity:.55; }
   .orbit-art { top:20rem; }.orbit-left { left:-12rem; }.orbit-right { right:-12rem; }

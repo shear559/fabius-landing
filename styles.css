@@ -748,25 +748,11 @@ img{display:block;max-width:100%}
 }
 
 
-/* ── marquee pause control (WCAG 2.2.2 — moving content needs a stop) ── */
 .marquee-wrap{position:relative}
-.mq-pause{position:absolute;right:14px;bottom:-19px;z-index:2;width:30px;height:30px;display:grid;place-items:center;
-  padding:0;border:1px solid var(--glass-line);border-radius:50%;background:rgba(255,255,255,.86);color:var(--primary-ink);
-  cursor:pointer;box-shadow:0 8px 20px -14px rgba(42,22,84,.7);transition:background .18s var(--ease),transform .18s var(--ease)}
-.mq-pause:hover{background:var(--tint);transform:translateY(-1px)}
-.mq-pause:active{transform:scale(.94)}
-.mq-pause::before{content:"";position:absolute;inset:-8px;border-radius:50%}
-.mq-pause svg{width:13px;height:13px;fill:currentColor}
-.mq-pause .ic-play{display:none;margin-left:2px}
-.mq-pause[aria-pressed="true"] .ic-pause{display:none}
-.mq-pause[aria-pressed="true"] .ic-play{display:block}
-.marquee.paused .mq-track{animation-play-state:paused}
-@media (prefers-reduced-motion:reduce){.mq-pause{display:none}}
 
 /* ── phone: never truncate a fact, wrap it (A14); a command scrolls sideways, it never breaks mid-token (A8) ── */
 @media (max-width:640px){
   .hero-cmd-lines code{font-size:11.5px;white-space:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch}
-  .mq-pause{right:8px;bottom:-17px;width:28px;height:28px}
 }
 
 /* ── liquid glass (light world) — Apple treatment on the primary surfaces ── */
