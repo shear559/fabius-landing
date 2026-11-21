@@ -4,31 +4,31 @@ const routes = {
     request: '“Build a launch page for my product.”',
     skills: [['disciplina','plan + verify'],['decor','visual design'],['mercatus','message + copy'],['archivum','project context']],
     steps: [
-      ['Understand the brief','Read the brand, audience and existing project decisions.'],
-      ['Compose the right skills','Disciplina plans and checks. Decor designs. Mercatus shapes the message. Archivum supplies approved context.'],
-      ['Verify the experience','Exercise the page, check mobile layouts and inspect the final result.']
+      ['Read the brief','Identify the audience, brand rules and action visitors should take.'],
+      ['Build the page','Write the headline, lay out the page and wire up its main action.'],
+      ['Test the main action','Follow the main link and inspect the layout at phone width.']
     ],
-    output: 'A working page, with checks you can inspect.'
+    output: 'A launch page with a record of the checks.'
   },
   research: {
     request: '“Turn this research question into a visual report.”',
     skills: [['disciplina','evidence + checks'],['scientia','research method'],['archivum','sources + context'],['decor','visual explanation']],
     steps: [
-      ['Define the question','Identify what needs evidence, what is already known and what could change the answer.'],
-      ['Connect evidence to the explanation','Scientia guides the research. Archivum organizes sources. Decor makes the findings legible. Disciplina checks the claims.'],
-      ['Keep uncertainty visible','Trace conclusions to sources and distinguish observed findings from assumptions.']
+      ['Define the question','Identify the decision the report should inform.'],
+      ['Compare the sources','Trace each claim to its source and flag gaps in the evidence.'],
+      ['Present the findings','Choose a chart that shows the finding and its limits.']
     ],
-    output: 'An explained result with sources and visible limitations.'
+    output: 'A visual report with citations.'
   },
   automate: {
     request: '“Connect our tools into a repeatable workflow.”',
     skills: [['disciplina','plan + tests'],['machina','workflow design'],['praesidium','security review'],['archivum','project decisions']],
     steps: [
-      ['Map the real workflow','Read the trigger, inputs, connected services and expected output before choosing the implementation.'],
-      ['Design for the actual boundaries','Machina defines the workflow. Praesidium reviews trust boundaries. Disciplina plans checks. Archivum supplies approved decisions.'],
-      ['Exercise the complete path','Check the result through the connected tools, including error handling and permission boundaries.']
+      ['Map the handoff','Identify the trigger, the input and its destination.'],
+      ['Connect the tools','Map fields between services and check the permissions each step needs.'],
+      ['Test the workflow','Run a sample input and check what happens if a step fails.']
     ],
-    output: 'A repeatable workflow with an inspectable verification path.'
+    output: 'A workflow with test results for success and failure.'
   }
 };
 const tablist = document.querySelector('.route-tabs');
