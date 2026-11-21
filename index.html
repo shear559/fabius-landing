@@ -49,6 +49,7 @@
 <link rel="stylesheet" href="/refinement.css?v=2026-11-21-visual" />
 <script type="module" src="/choreography.mjs?v=2026-10-24d"></script>
 <link rel="stylesheet" href="/platforms.css?v=2026-11-21-visual" />
+<link rel="stylesheet" href="/composition.css?v=1" />
 <link rel="preload" href="/assets/fonts/rubik/Rubik-Variable.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 <body>
@@ -119,7 +120,13 @@
 <!-- ── hero ────────────────────────────────────────────────────── -->
 <section class="hero" data-motion-region>
   <div class="swarm-track" aria-hidden="true"><div class="swarm" id="swarm"></div></div>
-  <div class="wrap hero-in">
+  <div class="wrap hero-intro">
+    <div class="tool-orbit" aria-hidden="true">
+      <span class="tool-tile tile-claude"><img src="/assets/brands/anthropic.png" alt="" width="64" height="64" /></span>
+      <span class="tool-tile tile-codex"><img src="/assets/brands/openai.png" alt="" width="64" height="64" /></span>
+      <span class="tool-tile tile-gemini"><img src="/assets/brands/gemini.svg" alt="" width="64" height="64" /></span>
+      <span class="tool-tile tile-grok"><img src="/assets/brands/xai.png" alt="" width="64" height="64" /></span>
+    </div>
     <div class="hero-edition"><span><i aria-hidden="true"></i> FABIUS / THE OPERATING LAYER</span><button id="motionToggle" type="button" aria-pressed="false"><span class="motion-symbol" aria-hidden="true">Ⅱ</span><span class="motion-label">Pause motion</span></button></div>
     <a class="eyebrow" href="#capabilities">
       <span class="dot"></span> fabius · operating rules for your model <span class="arrow">→</span>
@@ -132,7 +139,6 @@
       <strong>Give your AI model a consistent set of working rules.</strong>
       Its fifteen skills include a router that picks the expertise each task needs, from engineering and design to research, automation, security and memory.
     </p>
-    <p class="hero-compat">Built for instruction-following LLMs across providers, including open models. Bring your model and a compatible agent app; fabius brings the working rules.</p>
     <div class="hero-actions">
       <a class="btn primary lg" href="#install">Install Fabius</a>
       <a class="btn ghost lg" href="#system">Explore the system</a>
@@ -142,6 +148,8 @@
     <div class="hero-journey" aria-label="The Fabius working method">
       <span><b>01</b> Understand</span><i aria-hidden="true"></i><span><b>02</b> Route</span><i aria-hidden="true"></i><span><b>03</b> Execute</span><i aria-hidden="true"></i><span><b>04</b> Verify</span>
     </div>
+  </div>
+  <div class="wrap hero-in">
     <figure class="fabius-stage" id="fabius-motion" data-motion-region aria-labelledby="fabius-stage-title">
       <figcaption class="stage-heading"><div><span class="experience-kicker">FABIUS / IN MOTION</span><h2 id="fabius-stage-title">The pieces work together.</h2></div><button type="button" id="stageMotionToggle" aria-pressed="false"><span class="motion-symbol" aria-hidden="true">Ⅱ</span><span class="motion-label">Pause motion</span></button></figcaption>
       <div class="stage-scene" aria-hidden="true">
@@ -190,6 +198,7 @@
           <div><p class="platform-kicker">YOUR WORKSPACE. YOUR CHOICE.</p><h2 id="platform-title">One method. Your platform.</h2></div>
           <p>Bring fabius into the tools you work in.<br class="platform-break" /> Choose your setup to get started.</p>
         </header>
+        <p class="platform-compat">Built for instruction-following LLMs across providers, including open models. Bring your model and a compatible agent app; fabius brings the working rules.</p>
         <div class="platform-label"><span>01 / PLUGIN SETUP</span><a href="https://github.com/shear559/fabius/blob/main/COMPATIBILITY.md" target="_blank" rel="noopener noreferrer">View compatibility <span aria-hidden="true">↗</span></a></div>
         <ul class="platform-grid" aria-label="Plugin installation options">
           <li><a class="platform-card platform-claude" href="#install" data-install-target="tab-claude" aria-label="Claude Code — view plugin installation">
