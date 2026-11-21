@@ -45,7 +45,7 @@
     manual.wrap = 'off';
     manual.rows = commands.split('\n').length;
     manual.value = commands;
-    manual.setAttribute('aria-label', 'Commands for manual copy');
+    manual.setAttribute('aria-label', 'Text for manual copy');
     manual.setAttribute('aria-describedby', status.id);
     feedback.append(status, manual);
     if (box.classList.contains('hero-cmd')) box.insertAdjacentElement('afterend', feedback);
@@ -57,7 +57,7 @@
       manual.focus({ preventScroll: true });
       manual.select();
       manual.setSelectionRange(0, commands.length);
-      status.textContent = `${message} The commands below are selected. Press Ctrl+C or Command+C, or use your device’s Copy action.`;
+      status.textContent = `${message} The text below is selected. Press Ctrl+C or Command+C, or use your device’s Copy action.`;
       btn.textContent = label;
     };
     btn.addEventListener('click', async () => {
@@ -75,7 +75,7 @@
         }
         await navigator.clipboard.writeText(commands);
         manual.hidden = true;
-        status.textContent = 'Commands copied to clipboard.';
+        status.textContent = 'Copied to clipboard.';
         btn.textContent = 'Copied';
         btn.classList.add('done');
         resetTimer = setTimeout(() => { btn.textContent = label; btn.classList.remove('done'); }, 1600);

@@ -1,41 +1,58 @@
 // Authored routing illustrations. No network calls or simulated live telemetry.
 const routes = {
   build: {
-    request: '“Build a launch page for my product.”',
-    skills: [['disciplina','plan + verify'],['decor','visual design'],['mercatus','message + copy'],['archivum','project context']],
+    request: 'Use Fabius to fix my mobile signup form. Keep the existing brand and test empty, invalid and valid email submissions.',
+    skills: [['disciplina','form behavior'],['decor','mobile layout'],['mercatus','form copy'],['archivum','brand decisions']],
     steps: [
-      ['Understand the brief','Read the brand, audience and existing project decisions.'],
-      ['Compose the right skills','Disciplina plans and checks. Decor designs. Mercatus shapes the message. Archivum supplies approved context.'],
-      ['Verify the experience','Exercise the page, check mobile layouts and inspect the final result.']
+      ['Find the friction', 'Disciplina follows the signup flow. Archivum supplies the approved brand choices.'],
+      ['Make the form usable', 'Decor fits the fields and button to a phone screen. Mercatus writes field labels and error messages.'],
+      ['Exercise the form', 'Submit a blank field, a malformed address and a valid test address. Check the response and keyboard focus for each.']
     ],
-    output: 'A working page, with checks you can inspect.'
+    output: 'A revised form and a check record for all three submissions.'
   },
   research: {
-    request: '“Turn this research question into a visual report.”',
-    skills: [['disciplina','evidence + checks'],['scientia','research method'],['archivum','sources + context'],['decor','visual explanation']],
+    request: 'Use Fabius to compare Zendesk and Freshdesk for a five-person team. Cite the published prices and flag anything that needs a quote.',
+    skills: [['scientia','comparison'],['archivum','dated sources'],['decor','cost table'],['disciplina','price checks']],
     steps: [
-      ['Define the question','Identify what needs evidence, what is already known and what could change the answer.'],
-      ['Connect evidence to the explanation','Scientia guides the research. Archivum organizes sources. Decor makes the findings legible. Disciplina checks the claims.'],
-      ['Keep uncertainty visible','Trace conclusions to sources and distinguish observed findings from assumptions.']
+      ['Set a common basis', 'Scientia fixes the seat count, currency and billing interval so the totals answer the same question.'],
+      ['Build the comparison', 'Archivum records each vendor source and its date. Decor lays out the per-seat price beside the five-seat total.'],
+      ['Check every figure', 'Disciplina traces each price to its source, recomputes the totals and marks quote-only items.']
     ],
-    output: 'An explained result with sources and visible limitations.'
+    output: 'A two-vendor cost table with dated links, comparable totals and any open pricing questions.'
   },
   automate: {
-    request: '“Connect our tools into a repeatable workflow.”',
-    skills: [['disciplina','plan + tests'],['machina','workflow design'],['praesidium','security review'],['archivum','project decisions']],
+    request: 'Use Fabius to clean a sample contacts CSV. Merge duplicate emails, flag missing addresses and verify that running it twice gives the same result.',
+    skills: [['machina','CSV workflow'],['archivum','field rules'],['praesidium','file access'],['disciplina','repeat checks']],
     steps: [
-      ['Map the real workflow','Read the trigger, inputs, connected services and expected output before choosing the implementation.'],
-      ['Design for the actual boundaries','Machina defines the workflow. Praesidium reviews trust boundaries. Disciplina plans checks. Archivum supplies approved decisions.'],
-      ['Exercise the complete path','Check the result through the connected tools, including error handling and permission boundaries.']
+      ['Define a duplicate', 'Archivum retrieves the agreed field rules. Machina uses them to normalize addresses and choose which row to keep.'],
+      ['Work on a copy', 'Machina writes clean rows and exceptions to separate outputs. Praesidium checks that file access is limited to the sample workspace.'],
+      ['Test a second pass', 'Disciplina runs the same fixture twice and compares outputs. A duplicate should merge, and a blank address should appear in the exceptions.']
     ],
-    output: 'A repeatable workflow with an inspectable verification path.'
+    output: 'A cleaned CSV, an exceptions file and a repeat-run comparison.'
   }
 };
 const tablist = document.querySelector('.route-tabs');
 const panel = document.querySelector('#route-panel');
 if (tablist && panel) {
   const tabs = [...tablist.querySelectorAll('[role="tab"]')];
+  const request = panel.querySelector('#route-request');
+  const copy = panel.querySelector('#route-copy');
+  const copyStatus = panel.querySelector('#route-copy-status');
   let animationFrame;
+  if (copy && typeof navigator.clipboard?.writeText === 'function') {
+    copy.hidden = false;
+    copy.addEventListener('click', async () => {
+      const prompt = request.textContent;
+      let message;
+      try {
+        await navigator.clipboard.writeText(prompt);
+        message = 'Prompt copied.';
+      } catch {
+        message = 'Select the prompt text to copy it manually.';
+      }
+      if (prompt === request.textContent) copyStatus.textContent = message;
+    });
+  }
   const select = (index, moveFocus = false) => {
     const route = routes[tabs[index].dataset.route];
     if (!route) return;
@@ -45,7 +62,8 @@ if (tablist && panel) {
     });
     panel.setAttribute('aria-labelledby', tabs[index].id);
     panel.dataset.route = tabs[index].dataset.route;
-    document.querySelector('#route-request').textContent = route.request;
+    request.textContent = route.request;
+    copyStatus.textContent = '';
     document.querySelector('#route-output').textContent = route.output;
     route.skills.forEach(([name, role], i) => {
       document.querySelector(`#route-name-${i}`).textContent = name;
