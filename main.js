@@ -45,7 +45,7 @@
     manual.wrap = 'off';
     manual.rows = commands.split('\n').length;
     manual.value = commands;
-    manual.setAttribute('aria-label', 'Text for manual copy');
+    manual.setAttribute('aria-label', 'Commands for manual copy');
     manual.setAttribute('aria-describedby', status.id);
     feedback.append(status, manual);
     if (box.classList.contains('hero-cmd')) box.insertAdjacentElement('afterend', feedback);
@@ -57,7 +57,7 @@
       manual.focus({ preventScroll: true });
       manual.select();
       manual.setSelectionRange(0, commands.length);
-      status.textContent = `${message} The text below is selected. Press Ctrl+C or Command+C, or use your device’s Copy action.`;
+      status.textContent = `${message} The commands below are selected. Press Ctrl+C or Command+C, or use your device’s Copy action.`;
       btn.textContent = label;
     };
     btn.addEventListener('click', async () => {
@@ -75,7 +75,7 @@
         }
         await navigator.clipboard.writeText(commands);
         manual.hidden = true;
-        status.textContent = 'Copied to clipboard.';
+        status.textContent = 'Commands copied to clipboard.';
         btn.textContent = 'Copied';
         btn.classList.add('done');
         resetTimer = setTimeout(() => { btn.textContent = label; btn.classList.remove('done'); }, 1600);
@@ -144,19 +144,6 @@
     setTimeout(() => revealTargets.forEach(revealOne), 4500);
   }
 
-  /* ── hero parallax — the beetle swarm drifts slower than the page (depth) ── */
-  const swarm = $('#swarm');
-  if (swarm && !reduce) {
-    let ticking = false;
-    const drift = () => {
-      ticking = false;
-      const y = Math.min(scrollY, 760) * 0.15;
-      swarm.style.transform = `translate3d(0,${y.toFixed(1)}px,0)`;
-    };
-    addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(drift); } }, { passive: true });
-    drift();
-  }
-
   /* ── living walkers (sakana-style beetles crossing the field) ── */
   const WB = `<svg class="wb" viewBox="0 0 120 150" fill="none">
     <g stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
@@ -186,16 +173,20 @@
       let x = ((c.lane * 1.7 + c.size * 2.3) % 88) + 4;
       // the core band's text column runs down its middle: park its walkers in the outer quarters
       if (stage.id === 'coreWalk') x = x < 50 ? x * .45 : 76 + (x - 50) * .4;
-      // --py: on a narrow band the parked core walkers rest in the top or bottom padding instead
-      const py = stage.id === 'coreWalk' ? `;--py:${i % 2 ? 91 : 4}%` : '';
-      w.style.cssText = `--lane:${c.lane}%;--size:${c.size}px;--dur:${c.dur}s;--delay:${c.delay}s;--op:${c.op};--bd:${c.bob}s;--ld:${c.leg}s;--x:${x.toFixed(1)}%${py}`;
+      w.style.cssText = `--lane:${c.lane}%;--size:${c.size}px;--dur:${c.dur}s;--delay:${c.delay}s;--op:${c.op};--bd:${c.bob}s;--x:${x.toFixed(1)}%`;
+      if (c.leg) w.style.setProperty('--ld', `${c.leg}s`);
+      if (stage.id === 'coreWalk') {
+        // On narrow screens the static artwork rests in two rows in the band margins.
+        const column = Math.floor(i / 2);
+        const columns = Math.ceil(configs.length / 2);
+        w.style.setProperty('--rest-x', `${(column + .5) * 100 / columns}%`);
+      }
       if (c.color) w.style.color = c.color;
       w.innerHTML = `<div class="walker-bob">${WB}</div>`;
       frag.appendChild(w);
     });
     stage.appendChild(frag);
   };
-  const small = matchMedia('(max-width:640px)').matches;
   // two-tier swarm: a few LARGE + SLOW anchors (graceful depth) and MANY tiny + very fast ones
   const heroWalk = [
     // large, slow anchors
@@ -222,19 +213,17 @@
     { lane: 24, size: 18, dur: 11, delay: -6, op: .18, dir: -1, bob: .8 },
     { lane: 66, size: 26, dur: 16, delay: -9, op: .22, dir: 1,  bob: 1.0 },
     { lane: 88, size: 20, dur: 13, delay: -3, op: .20, dir: -1, bob: .9 },
-  ];
-  // Extra depth: scattered miniature beetles and a few slow, larger silhouettes.
-  const heroAccents = [
-    { lane: 11, size: 8,  dur: 11, delay: -4, op: .26, dir: 1,  bob: .7, compact: true },
-    { lane: 27, size: 10, dur: 13, delay: -8, op: .24, dir: -1, bob: .8, compact: true },
+    // Scattered miniatures and slower silhouettes at different depths.
+    { lane: 11, size: 8,  dur: 11, delay: -4, op: .26, dir: 1,  bob: .7 },
+    { lane: 27, size: 10, dur: 13, delay: -8, op: .24, dir: -1, bob: .8 },
     { lane: 41, size: 9,  dur: 10, delay: -6, op: .22, dir: 1,  bob: .7 },
-    { lane: 57, size: 12, dur: 15, delay: -3, op: .25, dir: -1, bob: .9, compact: true },
+    { lane: 57, size: 12, dur: 15, delay: -3, op: .25, dir: -1, bob: .9 },
     { lane: 73, size: 8,  dur: 12, delay: -9, op: .24, dir: 1,  bob: .7 },
-    { lane: 86, size: 11, dur: 14, delay: -6, op: .22, dir: -1, bob: .8, compact: true },
+    { lane: 86, size: 11, dur: 14, delay: -6, op: .22, dir: -1, bob: .8 },
     { lane: 19, size: 13, dur: 16, delay: -11, op: .23, dir: 1, bob: .9 },
     { lane: 95, size: 9,  dur: 12, delay: -5, op: .24, dir: -1, bob: .7 },
     { lane: 7,  size: 112, dur: 43, delay: -29, op: .28, dir: -1, bob: 2.3, leg: .88 },
-    { lane: 35, size: 72, dur: 38, delay: -20, op: .19, dir: 1, bob: 2.1, leg: .8, compact: true },
+    { lane: 35, size: 72, dur: 38, delay: -20, op: .19, dir: 1, bob: 2.1, leg: .8 },
     { lane: 81, size: 88, dur: 46, delay: -10, op: .25, dir: -1, bob: 2.4, leg: .92 },
   ];
   const coreWalk = [
@@ -247,17 +236,16 @@
     { lane: 78, size: 18, dur: 3.2, delay: -2, op: .5,  dir: 1,  bob: .44, color: '#8ccb2e' },
     { lane: 14, size: 16, dur: 2.6, delay: -1, op: .52, dir: -1, bob: .4,  color: '#a5d65a' },
     { lane: 50, size: 14, dur: 2.3, delay: -3, op: .48, dir: 1,  bob: .36, color: '#c9ef7e' },
-    { lane: 10, size: 9,  dur: 12, delay: -8, op: .52, dir: 1,  bob: .7, color: '#c9ef7e', compact: true },
+    { lane: 10, size: 9,  dur: 12, delay: -8, op: .52, dir: 1,  bob: .7, color: '#c9ef7e' },
     { lane: 29, size: 11, dur: 15, delay: -4, op: .48, dir: -1, bob: .8, color: '#a5d65a' },
-    { lane: 73, size: 8,  dur: 11, delay: -6, op: .5,  dir: 1,  bob: .7, color: '#c9ef7e', compact: true },
-    { lane: 91, size: 12, dur: 14, delay: -9, op: .46, dir: -1, bob: .8, color: '#8ccb2e', compact: true },
+    { lane: 73, size: 8,  dur: 11, delay: -6, op: .5,  dir: 1,  bob: .7, color: '#c9ef7e' },
+    { lane: 91, size: 12, dur: 14, delay: -9, op: .46, dir: -1, bob: .8, color: '#8ccb2e' },
     { lane: 7,  size: 96, dur: 41, delay: -24, op: .57, dir: -1, bob: 2.2, leg: .86, color: '#a5d65a' },
     { lane: 76, size: 64, dur: 35, delay: -16, op: .5, dir: 1, bob: 1.9, leg: .78, color: '#76b900' },
-  ].filter((c, i) => !small || i < 5 || c.compact);
+  ];
   // defer the decorative swarm DOM build off the critical path → smoother first paint / input
   const buildSwarms = () => {
-    const heroBase = small ? [...heroWalk.slice(0, 9), ...heroWalk.slice(-3)] : heroWalk;
-    buildWalkers($('#swarm'), [...heroBase, ...heroAccents.filter(c => !small || c.compact)]);
+    buildWalkers($('#swarm'), heroWalk);
     buildWalkers($('#coreWalk'), coreWalk);
   };
   if ('requestIdleCallback' in window) requestIdleCallback(buildSwarms, { timeout: 700 });

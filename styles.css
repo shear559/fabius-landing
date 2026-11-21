@@ -199,7 +199,8 @@ img{display:block;max-width:100%}
 .swarm{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
 
 /* ── walking beetles (built by main.js into .swarm / .core-walk) ── */
-.walker{position:absolute;top:var(--lane,40%);left:0;width:var(--size,60px);color:var(--lav);opacity:var(--op,.4);
+.walker{position:absolute;top:var(--lane,40%);left:0;width:var(--walker-width);color:var(--lav);opacity:var(--walker-opacity);
+  --walker-width:var(--size,60px);--walker-opacity:var(--op,.4);
   --seam:var(--canvas);animation:cross var(--dur,28s) linear var(--delay,0s) infinite;
   will-change:transform,opacity;backface-visibility:hidden}
 .walker.rtl{animation-direction:reverse}
@@ -215,16 +216,29 @@ img{display:block;max-width:100%}
 /* the beetle eases IN and OUT at the field edges instead of popping — the smoother, filmic feel */
 @keyframes cross{
   0%{transform:translateX(-16vw);opacity:0}
-  6%{opacity:var(--op,.4)}
-  94%{opacity:var(--op,.4)}
+  6%{opacity:var(--walker-opacity)}
+  94%{opacity:var(--walker-opacity)}
   100%{transform:translateX(116vw);opacity:0}
 }
 @keyframes bob{0%,100%{transform:translateY(0) rotate(-1.1deg)}50%{transform:translateY(-3.5px) rotate(1.1deg)}}
 @keyframes stepA{0%,100%{transform:rotate(-9deg)}50%{transform:rotate(9deg)}}
 @keyframes stepB{0%,100%{transform:rotate(9deg)}50%{transform:rotate(-9deg)}}
-@media (prefers-reduced-motion:reduce){.walker{animation:none;left:min(var(--x,50%),calc(100% - var(--size,60px)));opacity:calc(var(--op,.4) * .8)}.walker-bob,.wb .leg{animation:none}}
-/* parked beetles on a narrow band: the small ones rest in the top and bottom padding, clear of the text column; the two large ones have no room and are not drawn */
-@media (prefers-reduced-motion:reduce) and (max-width:900px){.core-walk .walker{top:var(--py,var(--lane,40%))}.core-walk .walker:not(.no-legs){display:none}}
+@media (max-width:640px){
+  .walker{--walker-width:calc(var(--size,60px) * .72)}
+  .swarm .walker{--walker-opacity:calc(var(--op,.4) * .8)}
+}
+@media (prefers-reduced-motion:reduce){
+  .walker{animation:none;left:min(var(--x,50%),calc(100% - var(--walker-width)));opacity:calc(var(--walker-opacity) * .8);will-change:auto}
+  .walker-bob,.wb .leg{animation:none;will-change:auto}
+}
+@media (prefers-reduced-motion:reduce) and (max-width:900px){
+  .core-walk .walker{
+    --walker-width:min(var(--size,60px),1.75rem);
+    left:calc(var(--rest-x) - var(--walker-width) / 2);
+    top:3%;
+  }
+  .core-walk .walker:nth-child(even){top:auto;bottom:3%}
+}
 
 /* ── section heads ───────────────────────────────────────── */
 .sec-head{max-width:760px;margin:0 0 48px}
@@ -552,8 +566,6 @@ img{display:block;max-width:100%}
 /* ── micro-motion (tasteful, reduced-motion gated) ───────── */
 @media (prefers-reduced-motion:no-preference){
   .hero-cmd code::after{content:"";display:inline-block;width:8px;height:1.05em;margin-left:6px;vertical-align:-2px;background:var(--lav);border-radius:1px;animation:blink 1.15s step-end infinite}
-  /* hero swarm parallax is driven per-frame by JS (rAF) — no CSS transition to fight it */
-  .swarm{will-change:transform}
 }
 @keyframes blink{0%,50%{opacity:1}50.01%,100%{opacity:0}}
 
@@ -712,7 +724,6 @@ img{display:block;max-width:100%}
   .route-list{justify-content:flex-start}
 }
 @media (max-width:640px){
-  #swarm .walker:nth-child(-n+3){--op:.11!important}
   .hero-field{border-radius:22px;padding:12px 0 10px}
   .field-top{margin:0 12px;border-radius:16px}
   .core-wordmark{--wm:124vw}

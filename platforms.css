@@ -21,7 +21,7 @@
   --platform-copy:1rem;
   padding-bottom:0;
   background:var(--paper-green);
-  border-color:var(--platform-line);
+  border-color:#9eae8f;
   scroll-margin-top:6rem;
 }
 .hero-field::before { display:none; }
@@ -145,9 +145,9 @@
   --model-row-height:9rem;
   --model-radius:1rem;
   --model-gap:2.25rem;
-  --model-label:.6875rem;
-  --model-caption:.625rem;
-  --model-edge:#dfe5d8;
+  --model-label:.75rem;
+  --model-caption:.7125rem;
+  --model-edge:#c5d1b9;
   --model-shadow:0 2px 2px #263b1612,0 12px 20px -12px #263b1640,inset 0 2px 0 #fff,inset 0 -3px 0 #edf0e8;
   --model-blue:#4285f4;
   --model-violet:#7561df;
